@@ -91,6 +91,77 @@ for (const file in interfaceFiles) {
               )
             )
           )
+          continue
+        }
+        if (contents.code.kind == 'func') {
+          const { docComment } = contents
+          const {
+            return_type: returnType,
+            name,
+            params: rawParams,
+          } = contents.code
+
+          // TODO: Array<...> support
+          if (typeof returnType != 'string') continue
+          if (typeof name != 'string') continue
+
+          let params = []
+
+          if (rawParams?.first_param) {
+            params.push(
+              ...[
+                rawParams.first_param,
+                ...(rawParams?.other.map((val) => val.param) || []),
+              ].map((val) => {
+                let name = 'invalid',
+                  type = 'invalid'
+
+                if (typeof val.name == 'string') name = val.name
+                // TODO: Array<...> support
+                if (typeof val.type == 'string')
+                  type = val.type.replaceAll(' ', '_')
+
+                return ts.factory.createParameterDeclaration(
+                  undefined,
+                  undefined,
+                  name,
+                  undefined,
+                  ts.factory.createTypeReferenceNode(type)
+                )
+              })
+            )
+          }
+
+          let docCommentString = ''
+
+          for (const comment of docComment) {
+            if (comment.kind == 'DOC_COMMENT') {
+              docCommentString += `${cleanUpComment(comment.contents)}\n\n`
+              continue
+            }
+
+            console.log('Invalid comment kind', comment.kind)
+          }
+
+          members.push(
+            ts.addSyntheticLeadingComment(
+              ts.factory.createMethodSignature(
+                undefined,
+                name,
+                undefined,
+                undefined,
+                params,
+                ts.factory.createTypeReferenceNode(
+                  returnType.replaceAll(' ', '_')
+                )
+              ),
+              ts.SyntaxKind.MultiLineCommentTrivia,
+              createDocComment(docCommentString),
+              true
+            )
+          )
+
+          continue
         }
       }
 
@@ -133,8 +204,8 @@ export function cleanUpComment(comment: string): string {
     .join('\n')
     .trim()
 
-  if (comment.startsWith('/**')) {
-    comment = comment.replace('/**', '').replace('*/', '')
+  if (comment.startsWith('/*')) {
+    comment = comment.replace('/**', '').replace('/*', '').replace('*/', '')
     comment = comment.replace(/\n\s*\*/gm, '\n')
   }
 
@@ -147,4 +218,8 @@ export function cleanUpComment(comment: string): string {
     .map((line) => line.trim())
     .join('\n')
     .trim()
+}
+
+function createDocComment(comment: string): string {
+  return `*\n * ${comment.trim().split('\n').join('\n * ')}\n `
 }
