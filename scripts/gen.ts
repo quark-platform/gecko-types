@@ -1,5 +1,6 @@
 import { writeFile } from 'fs/promises'
 import { getAllInterfaces } from 'gecko-index'
+import { member_$0_$0 } from 'gecko-index/lib/parser.js'
 import ts from 'typescript'
 
 const interfaceFiles = await getAllInterfaces()
@@ -38,6 +39,7 @@ for (const file in interfaceFiles) {
       const name = `${node.name}Type`
       let parentInterface: string
       const members: ts.TypeElement[] = []
+      let docComments = []
 
       if (node.base) {
         // This is for Array<...>
@@ -82,13 +84,18 @@ for (const file in interfaceFiles) {
             continue
 
           members.push(
-            ts.factory.createPropertySignature(
-              modifiers,
-              contents.code.name,
-              undefined,
-              ts.factory.createTypeReferenceNode(
-                contents.code.type.replaceAll(' ', '_')
-              )
+            ts.addSyntheticLeadingComment(
+              ts.factory.createPropertySignature(
+                modifiers,
+                contents.code.name,
+                undefined,
+                ts.factory.createTypeReferenceNode(
+                  contents.code.type.replaceAll(' ', '_')
+                )
+              ),
+              ts.SyntaxKind.MultiLineCommentTrivia,
+              generateDocCommentType(contents.docComment),
+              true
             )
           )
           continue
@@ -121,6 +128,8 @@ for (const file in interfaceFiles) {
                 if (typeof val.type == 'string')
                   type = val.type.replaceAll(' ', '_')
 
+                if (name == 'debugger' || name == 'function') name = `_${name}`
+
                 return ts.factory.createParameterDeclaration(
                   undefined,
                   undefined,
@@ -130,17 +139,6 @@ for (const file in interfaceFiles) {
                 )
               })
             )
-          }
-
-          let docCommentString = ''
-
-          for (const comment of docComment) {
-            if (comment.kind == 'DOC_COMMENT') {
-              docCommentString += `${cleanUpComment(comment.contents)}\n\n`
-              continue
-            }
-
-            console.log('Invalid comment kind', comment.kind)
           }
 
           members.push(
@@ -156,7 +154,7 @@ for (const file in interfaceFiles) {
                 )
               ),
               ts.SyntaxKind.MultiLineCommentTrivia,
-              createDocComment(docCommentString),
+              generateDocCommentType(contents.docComment),
               true
             )
           )
@@ -165,20 +163,29 @@ for (const file in interfaceFiles) {
         }
       }
 
+      if (node.doc_comment) {
+        docComments.push(node.doc_comment)
+      }
+
       idlDefFile += printNode(
-        ts.factory.createInterfaceDeclaration(
-          undefined,
-          name,
-          undefined,
-          [
-            ts.factory.createHeritageClause(ts.SyntaxKind.ExtendsKeyword, [
-              ts.factory.createExpressionWithTypeArguments(
-                ts.factory.createIdentifier(parentInterface),
-                undefined
-              ),
-            ]),
-          ],
-          members
+        ts.addSyntheticLeadingComment(
+          ts.factory.createInterfaceDeclaration(
+            [ts.factory.createModifier(ts.SyntaxKind.ExportKeyword)],
+            name,
+            undefined,
+            [
+              ts.factory.createHeritageClause(ts.SyntaxKind.ExtendsKeyword, [
+                ts.factory.createExpressionWithTypeArguments(
+                  ts.factory.createIdentifier(parentInterface),
+                  undefined
+                ),
+              ]),
+            ],
+            members
+          ),
+          ts.SyntaxKind.MultiLineCommentTrivia,
+          generateDocCommentType(docComments),
+          true
         )
       )
       idlDefFile += '\n\n'
@@ -195,6 +202,21 @@ await writeFile('./types/gen/idls.d.ts', idlDefFile)
 function printNode(node: ts.Node): string {
   const printer = ts.createPrinter()
   return printer.printNode(ts.EmitHint.Unspecified, node, idlDefFileBuilder)
+}
+
+function generateDocCommentType(comments: member_$0_$0[]): string {
+  let docCommentString = ''
+
+  for (const comment of comments) {
+    if (comment.kind == 'DOC_COMMENT') {
+      docCommentString += `${cleanUpComment(comment.contents)}\n\n`
+      continue
+    }
+
+    console.log('Invalid comment kind', comment.kind)
+  }
+
+  return `*\n * ${docCommentString.trim().split('\n').join('\n * ')}\n `
 }
 
 export function cleanUpComment(comment: string): string {
@@ -218,8 +240,4 @@ export function cleanUpComment(comment: string): string {
     .map((line) => line.trim())
     .join('\n')
     .trim()
-}
-
-function createDocComment(comment: string): string {
-  return `*\n * ${comment.trim().split('\n').join('\n * ')}\n `
 }
