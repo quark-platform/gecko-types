@@ -3856,9 +3856,11 @@ export interface mozISyncedBookmarksMergerType extends nsISupports {
 export interface mozITXTToHTMLConvType extends nsIStreamConverter {
     /**
      * @param text: plain text to scan. May be a line, paragraph (recommended)
-     * or just a substring.<p>
-     * Must be non-escaped, pure unicode.<p>
-     * <em>Note:</em> ScanTXT(a, o) + ScanTXT(b, o) may be !=
+     * or just a substring.
+     *
+     * Must be non-escaped, pure unicode.
+     *
+     * **Note:** ScanTXT(a, o) + ScanTXT(b, o) may be !=
      * Scan(a + b, o)
      * @param whattodo: Bitfield describing the modes of operation
      * @result      "<", ">" and "&" are escaped and HTML tags are inserted where
@@ -3868,16 +3870,19 @@ export interface mozITXTToHTMLConvType extends nsIStreamConverter {
     /**
      * Adds additional formatting to user edited text, that the user was too lazy
      * or "unknowledged" (DELETEME: is that a word?) to make.
-     * <p>
-     * <em>Note:</em> Don't use kGlyphSubstitution with this function. This option
+     *
+     *
+     * **Note:** Don't use kGlyphSubstitution with this function. This option
      * generates tags, that are unuseable for UAs other than Mozilla. This would
      * be a data loss bug.
      *
      * @param text: HTML source to scan. May be a line, paragraph (recommended)
-     * or just a substring.<p>
+     * or just a substring.
+     *
      * Must be correct HTML. "<", ">" and "&" must be escaped,
-     * other chars must be pure unicode.<p>
-     * <em>Note:</em> ScanTXT(a, o) + ScanTXT(b, o) may be !=
+     * other chars must be pure unicode.
+     *
+     * **Note:** ScanTXT(a, o) + ScanTXT(b, o) may be !=
      * Scan(a + b, o)
      * @param whattodo: Bitfield describing the modes of operation
      * @result      Additional HTML tags are inserted where appropriate.
@@ -17484,8 +17489,8 @@ export interface nsIDocShellTreeItemType extends nsISupports {
      * Compares the provided name against the item's name and
      * returns the appropriate result.
      *
-     * @return <CODE>PR_TRUE</CODE> if names match;
-     * <CODE>PR_FALSE</CODE> otherwise.
+     * @return `PR_TRUE` if names match;
+     * `PR_FALSE` otherwise.
      */
     nameEquals(name: AString): boolean;
     /**
@@ -18328,7 +18333,8 @@ export interface nsIEdgeMigrationUtilsType extends nsISupports {
 
 /**
  * A generic editor action listener interface.
- * <P>
+ *
+ *
  * nsIEditActionListener is the interface used by applications wishing to be notified
  * when the editor modifies the DOM tree.
  *
@@ -19226,10 +19232,10 @@ export interface nsIEmbeddingSiteWindowType extends nsISupports {
      * @param cx     Width of the inner or outer area.
      * @param cy     Height of the inner or outer area.
      *
-     * @return <code>NS_OK</code> if operation was performed correctly;
-     * <code>NS_ERROR_UNEXPECTED</code> if window could not be
+     * @return `NS_OK` if operation was performed correctly;
+     * `NS_ERROR_UNEXPECTED` if window could not be
      * destroyed;
-     * <code>NS_ERROR_INVALID_ARG</code> for bad flag combination
+     * `NS_ERROR_INVALID_ARG` for bad flag combination
      * or illegal dimensions.
      *
      * @see getDimensions
@@ -19240,13 +19246,13 @@ export interface nsIEmbeddingSiteWindowType extends nsISupports {
     setDimensions(flags: unsigned_long, x: long, y: long, cx: long, cy: long): void;
     /**
      * Gets the dimensions of the window. The caller may pass
-     * <CODE>nullptr</CODE> for any value it is uninterested in receiving.
+     * `nullptr` for any value it is uninterested in receiving.
      *
      * @param flags  Combination of position, inner and outer size flag .
-     * @param x      Left hand corner of the outer area; or <CODE>nullptr</CODE>.
-     * @param y      Top corner of the outer area; or <CODE>nullptr</CODE>.
-     * @param cx     Width of the inner or outer area; or <CODE>nullptr</CODE>.
-     * @param cy     Height of the inner or outer area; or <CODE>nullptr</CODE>.
+     * @param x      Left hand corner of the outer area; or `nullptr`.
+     * @param y      Top corner of the outer area; or `nullptr`.
+     * @param cx     Width of the inner or outer area; or `nullptr`.
+     * @param cy     Height of the inner or outer area; or `nullptr`.
      *
      * @see setDimensions
      * @see DIM_FLAGS_POSITION
@@ -19268,11 +19274,10 @@ export interface nsIEmbeddingSiteWindowType extends nsISupports {
      * type of the native window that the address refers to is  platform
      * and OS specific as follows:
      *
-     * <ul>
-     * <li>On Win32 it is an <CODE>HWND</CODE>.</li>
-     * <li>On MacOS this is a <CODE>WindowPtr</CODE>.</li>
-     * <li>On GTK this is a <CODE>GtkWidget*</CODE>.</li>
-     * </ul>
+     *
+     * - On Win32 it is an `HWND`.
+     * - On MacOS this is a `WindowPtr`.
+     * - On GTK this is a `GtkWidget*`.
      */
     readonly siteWindow: voidPtr;
     /**
@@ -23154,8 +23159,8 @@ export interface nsIHTMLEditorType extends nsISupports {
      * getListItemState returns what list item type is in the selection.
      * @param aMixed    True if there is more than one type of list item, or
      * if there is some list and non-list
-     * XXX This ignores `<li>` element selected state.
-     * For example, even if `<li>` and `<dt>` are selected,
+     * XXX This ignores `- ` element selected state.
+     * For example, even if `- ` and `<dt>` are selected,
      * this is set to false.
      * @param aLI       true if "li" list items are selected.
      * @param aDT       true if "dt" list items are selected.
@@ -23174,8 +23179,8 @@ export interface nsIHTMLEditorType extends nsISupports {
      */
     makeOrChangeList(aListType: AString, entireList: boolean, aBulletType: AString): void;
     /**
-     * removeList removes list items (<li>, <dd>, and <dt>) and list structures
-     * (<ul>, <ol>, and <dl>).
+     * removeList removes list items (- , <dd>, and <dt>) and list structures
+     * (, , and <dl>).
      *
      * @param aListType  Unused.
      */
@@ -23187,7 +23192,7 @@ export interface nsIHTMLEditorType extends nsISupports {
      *
      * @param aTagName        The tag name which you want to look for.
      * Must not be empty string.
-     * If "list", the result may be <ul>, <ol> or <dl>
+     * If "list", the result may be ,  or <dl>
      * element.
      * If "td", the result may be <td> or <th>.
      * If "href", the result may be <a> element
@@ -29803,17 +29808,19 @@ export interface nsIMIMEHeaderParamType extends nsISupports {
      * The value is obtained by decoding RFC 2231/5987-style encoding,
      * RFC 2047-style encoding, and converting to UniChar(UTF-16)
      * from charset specified in RFC 2231/2047 encoding, UTF-8,
-     * <code>aFallbackCharset</code>, the locale charset as fallback if
-     * <code>TryLocaleCharset</code> is set, and null-padding as last resort
+     * `aFallbackCharset`, the locale charset as fallback if
+     * `TryLocaleCharset` is set, and null-padding as last resort
      * if all else fails.
      *
-     * <p>
-     * This method internally invokes <code>getParameterInternal</code>,
+     *
+     *
+     * This method internally invokes `getParameterInternal`,
      * However, it does not stop at decoding RFC 2231 (the task for
-     * <code>getParameterInternal</code> but tries to cope
+     * `getParameterInternal` but tries to cope
      * with several non-standard-compliant cases mentioned below.
      *
-     * <p>
+     *
+     *
      * Note that a lot of MUAs put RFC 2047-encoded parameters. Unfortunately,
      * this includes Mozilla as of 2003-05-30. Even more standard-ignorant MUAs,
      * web servers and application servers put 'raw 8bit characters'. This will
@@ -29821,7 +29828,8 @@ export interface nsIMIMEHeaderParamType extends nsISupports {
      * it returns the language tag if the parameter is encoded per RFC 2231 and
      * includes lang.
      *
-     * <p>
+     *
+     *
      * Note that GetParameterHTTP skips some of the workarounds used for
      * mail (MIME) header fields, and thus SHOULD be used from non-mail
      * code.
@@ -29841,7 +29849,7 @@ export interface nsIMIMEHeaderParamType extends nsISupports {
      * to a string containing the value of language
      * obtained from RFC 2231 parsing. Caller has to
      * free it.
-     * @return the value of <code>aParamName</code> in Unichar(UTF-16).
+     * @return the value of `aParamName` in Unichar(UTF-16).
      */
     getParameter(aHeaderVal: ACString, aParamName: string, aFallbackCharset: ACString, aTryLocaleCharset: boolean, aLang: string): AString;
     /**
@@ -29854,13 +29862,15 @@ export interface nsIMIMEHeaderParamType extends nsISupports {
      * defined in RFC 5987, decode the value into a Unicode string, and extract
      * the optional language parameter.
      *
-     * <p>
+     *
+     *
      * This function is purposefully picky; it will abort for all (most?)
      * invalid inputs. This is by design. In particular, it does not support
      * any character encodings other than UTF-8, in order not to promote
      * non-interoperable usage.
      *
-     * <p>
+     *
+     *
      * Code that parses HTTP header fields (as opposed to MIME header fields)
      * should use this function.
      *
@@ -29875,8 +29885,9 @@ export interface nsIMIMEHeaderParamType extends nsISupports {
      * Content-Disposition and Content-Type) and the name of a parameter
      * (e.g. filename, name, charset), returns the value of the parameter
      * after decoding RFC 2231-style encoding.
-     * <p>
-     * For <strong>internal use only</strong>. The only other place where
+     *
+     *
+     * For **internal use only**. The only other place where
      * this needs to be  invoked  is  |MimeHeaders_get_parameter| in
      * mailnews/mime/src/mimehdrs.cpp defined as
      * char * MimeHeaders_get_parameter (const char *header_value,
@@ -29895,7 +29906,7 @@ export interface nsIMIMEHeaderParamType extends nsISupports {
      * @param  aLang       If non-null, it gets assigned a new pointer
      * to a string containing the value of language obtained
      * from RFC 2231 parsing. Caller has to free it.
-     * @return             the value of <code>aParamName</code> after
+     * @return             the value of `aParamName` after
      * RFC 2231 decoding but without charset conversion.
      */
     getParameterInternal(aHeaderVal: string, aParamName: string, aCharset: string, aLang: string): string;
@@ -29906,9 +29917,10 @@ export interface nsIMIMEHeaderParamType extends nsISupports {
      * returns the input header value (in whatever encoding)
      * as it is except that  RFC 822 (using backslash) quotation and
      * CRLF (if aEatContinuation is set) are stripped away
-     * <p>
+     *
+     *
      * For internal use only. The only other place where this needs to be
-     * invoked  is  <code>MIME_DecodeMimeHeader</code> in
+     * invoked  is  `MIME_DecodeMimeHeader` in
      * mailnews/mime/src/mimehdrs.cpp defined as
      * char * Mime_DecodeMimeHeader(char *header_val, const char *charset,
      * bool override, bool eatcontinuation)
@@ -29916,9 +29928,9 @@ export interface nsIMIMEHeaderParamType extends nsISupports {
      * @param aHeaderVal       a header value to decode
      * @param aDefaultCharset  MIME charset to use in place of MIME charset
      * specified in RFC 2047 style encoding
-     * when <code>aOverrideCharset</code> is set.
+     * when `aOverrideCharset` is set.
      * @param aOverrideCharset When set, overrides MIME charset specified
-     * in RFC 2047 style encoding with <code>aDefaultCharset</code>
+     * in RFC 2047 style encoding with `aDefaultCharset`
      * @param aEatContinuation When set, removes CR/LF
      * @return                 decoded header value
      */
@@ -29931,25 +29943,26 @@ export interface nsIMIMEHeaderParamType extends nsISupports {
      * Otherwise,  returns the input header value (in whatever encoding)
      * as it is except that  RFC 822 (using backslash) quotation is
      * stripped off.
-     * <p>
+     *
+     *
      * For internal use only. The only other place where this needs to be
-     * invoked  is  <code>mime_decode_filename</code> in
+     * invoked  is  `mime_decode_filename` in
      * mailnews/mime/src/mimehdrs.cpp defined as
      * char * mime_decode_filename(char *name, const char *charset,
      * MimeDisplayOptions *opt)
      *
      * @param aParamValue      the value of a parameter to decode and convert
      * @param aCharset         charset obtained from RFC 2231 decoding  in which
-     * <code>aParamValue</code> is encoded. If null,
+     * `aParamValue` is encoded. If null,
      * indicates that it needs to try RFC 2047, instead.
      * @param aDefaultCharset  MIME charset to use when aCharset is null and
      * cannot be obtained per RFC 2047 (most likely
      * because 'bare' string is  used.)  Besides, it
      * overrides aCharset/MIME charset obtained from
-     * RFC 2047 if <code>aOverrideCharset</code>  is set.
+     * RFC 2047 if `aOverrideCharset`  is set.
      * @param aOverrideCharset When set, overrides MIME charset specified
      * in RFC 2047 style encoding with
-     * <code>aDefaultCharset</code>
+     * `aDefaultCharset`
      * @return                 decoded parameter
      */
     decodeParameter(aParamValue: ACString, aCharset: string, aDefaultCharset: string, aOverrideCharset: boolean): ACString;
@@ -30295,7 +30308,7 @@ export interface nsIMIMEInputStreamType extends nsIInputStream {
  * (see RFC 2045). It also provides access to nsIMIMEInfo interfaces and
  * acts as a general convenience wrapper of nsIMIMEInfo interfaces.
  *
- * The MIME service maintains a database with a <b>one</b> MIME type <b>to many</b>
+ * The MIME service maintains a database with a **one** MIME type **to many**
  * file extensions rule. Adding the same file extension to multiple MIME types
  * is illegal and behavior is undefined.
  *
@@ -41379,9 +41392,9 @@ export interface nsISHistoryType extends nsISupports {
      * purged from history. During purge operation,
      * the latest documents are maintained and older
      * 'numEntries' documents are removed from history.
-     * @throws                  <code>NS_SUCCESS_LOSS_OF_INSIGNIFICANT_DATA</code>
+     * @throws                  `NS_SUCCESS_LOSS_OF_INSIGNIFICANT_DATA`
      * Purge was vetod.
-     * @throws                  <code>NS_ERROR_FAILURE</code> numEntries is
+     * @throws                  `NS_ERROR_FAILURE` numEntries is
      * invalid or out of bounds with the size of history.
      */
     purgeHistory(aNumEntries: long): void;
@@ -41430,9 +41443,9 @@ export interface nsISHistoryType extends nsISupports {
      *
      * @param aEntry            The entry to obtain the index of.
      *
-     * @return                  <code>NS_OK</code> index for the history entry
+     * @return                  `NS_OK` index for the history entry
      * is obtained successfully.
-     * <code>NS_ERROR_FAILURE</code> Error in obtaining
+     * `NS_ERROR_FAILURE` Error in obtaining
      * index for the given history entry.
      */
     getIndexOfEntry(aEntry: nsISHEntry): long;
@@ -45091,26 +45104,28 @@ export interface nsIStreamBufferAccessType extends nsISupports {
  * Suppose you had code that converted plain text into HTML. You could implement
  * this interface to allow everyone else to use your conversion logic using a
  * standard api.
- * <p>
- * <b>STREAM CONVERTER USERS</b>
+ *
+ *
+ * **STREAM CONVERTER USERS**
  *
  * There are currently two ways to use a stream converter:
- * <ol>
- * <li> <b>SYNCHRONOUS</b> Stream to Stream
+ *
+ * -  **SYNCHRONOUS** Stream to Stream
  * You can supply the service with a stream of type X
  * and it will convert it to your desired output type and return
- * a converted (blocking) stream to you.</li>
+ * a converted (blocking) stream to you.
  *
- * <li> <b>ASYNCHRONOUS</b> nsIStreamListener to nsIStreamListener
+ * -  **ASYNCHRONOUS** nsIStreamListener to nsIStreamListener
  * You can supply data directly to the converter by calling it's
  * nsIStreamListener::OnDataAvailable() method. It will then
  * convert that data from type X to your desired output type and
  * return converted data to you via the nsIStreamListener you passed
- * in by calling its OnDataAvailable() method.</li>
- * </ol>
- * <p>
+ * in by calling its OnDataAvailable() method.
  *
- * <b>STREAM CONVERTER SUPPLIERS</b>
+ *
+ *
+ *
+ * **STREAM CONVERTER SUPPLIERS**
  *
  * Registering a stream converter:
  * Stream converter registration is a two step process. First of all the stream
@@ -45121,14 +45136,14 @@ export interface nsIStreamBufferAccessType extends nsISupports {
  * Stream converter contractid format (the stream converter root key is defined in this
  * file):
  *
- * <pre>@mozilla.org/streamconv;1?from=FROM_MIME_TYPE&to=TO_MIME_TYPE</pre>
+ * `@mozilla.org/streamconv;1?from=FROM_MIME_TYPE&to=TO_MIME_TYPE`
  *
  * @author Jud Valeski
  * @see nsIStreamConverterService
  */
 export interface nsIStreamConverterType extends nsIStreamListener {
     /**
-     * <b>SYNCRONOUS VERSION</b>
+     * **SYNCRONOUS VERSION**
      * Converts a stream of one type, to a stream of another type.
      *
      * Use this method when you have a stream you want to convert.
@@ -45145,7 +45160,7 @@ export interface nsIStreamConverterType extends nsIStreamListener {
      */
     convert(aFromStream: nsIInputStream, aFromType: string, aToType: string, aCtxt: nsISupports): nsIInputStream;
     /**
-     * <b>ASYNCRONOUS VERSION</b>
+     * **ASYNCRONOUS VERSION**
      * Converts data arriving via the converter's nsIStreamListener::OnDataAvailable()
      * method from one type to another, pushing the converted data out to the caller
      * via aListener::OnDataAvailable().
@@ -45201,7 +45216,7 @@ export interface nsIStreamConverterServiceType extends nsISupports {
      */
     convertedType(aFromType: ACString, aChannel: nsIChannel): ACString;
     /**
-     * <b>SYNCHRONOUS VERSION</b>
+     * **SYNCHRONOUS VERSION**
      * Converts a stream of one type, to a stream of another type.
      *
      * Use this method when you have a stream you want to convert.
@@ -45219,7 +45234,7 @@ export interface nsIStreamConverterServiceType extends nsISupports {
      */
     convert(aFromStream: nsIInputStream, aFromType: string, aToType: string, aContext: nsISupports): nsIInputStream;
     /**
-     * <b>ASYNCHRONOUS VERSION</b>
+     * **ASYNCHRONOUS VERSION**
      * Retrieves a nsIStreamListener that receives the original/raw data via its
      * nsIStreamListener::OnDataAvailable() callback, then converts and pushes
      * the data to aListener.
@@ -49084,15 +49099,15 @@ export interface nsITextToSubURIType extends nsISupports {
     /**
      * Unescapes the given URI fragment (for UI purpose only)
      * Note:
-     * <ul>
-     * <li> escaping back the result (unescaped string) is not guaranteed to
+     *
+     * -  escaping back the result (unescaped string) is not guaranteed to
      * give the original escaped string
-     * <li> The URI fragment (escaped) is assumed to be in UTF-8 and converted
+     * -  The URI fragment (escaped) is assumed to be in UTF-8 and converted
      * to AString (UTF-16)
-     * <li> In case of successful conversion any resulting character listed
+     * -  In case of successful conversion any resulting character listed
      * in netwerk/dns/IDNCharacterBlocklist.inc (except space) is escaped
-     * <li> Always succeeeds (callers don't need to do error checking)
-     * </ul>
+     * -  Always succeeeds (callers don't need to do error checking)
+     *
      *
      * @param aURIFragment the URI (or URI fragment) to unescape
      * @param aDontEscape whether to escape IDN blocklisted characters
@@ -50365,7 +50380,7 @@ export interface nsITooltipListenerType extends nsISupports {
      * Coordinates are specified in device pixels, relative to the top-left
      * corner of the browser area.
      *
-     * @return <code>NS_OK</code> if the tooltip was displayed.
+     * @return `NS_OK` if the tooltip was displayed.
      */
     onShowTooltip(aXCoords: long, aYCoords: long, aTipText: AString, aTipDir: AString): void;
     /**
@@ -50402,9 +50417,9 @@ export interface nsITooltipTextProviderType extends nsISupports {
      * @arg aText      The tooltip text.
      * @arg aDirection The text direction (ltr or rtl) to use
      *
-     * @return <CODE>PR_TRUE</CODE> if tooltip text is associated
+     * @return `PR_TRUE` if tooltip text is associated
      * with the node and was returned in the aText argument;
-     * <CODE>PR_FALSE</CODE> otherwise.
+     * `PR_FALSE` otherwise.
      */
     getNodeText(aNode: Node, aText: wstring, aDirection: wstring): boolean;
 }
@@ -50615,7 +50630,8 @@ export interface nsITrackingDBServiceType extends nsISupports {
 
 /**
  * The nsITransaction interface.
- * <P>
+ *
+ *
  * This interface is implemented by an object that needs to
  * execute some behavior that must be tracked by the transaction manager.
  */
@@ -50631,7 +50647,8 @@ export interface nsITransactionType extends nsISupports {
     /**
      * Executes the transaction again. Can only be called on a transaction that
      * was previously undone.
-     * <P>
+     *
+     *
      * In most cases, the redoTransaction() method will actually call the
      * doTransaction() method to execute the transaction again.
      */
@@ -50669,7 +50686,8 @@ export interface nsITransactionType extends nsISupports {
 
 /**
  * The nsITransactionManager interface.
- * <P>
+ *
+ *
  * This interface is implemented by an object that wants to
  * manage/track transactions.
  */
@@ -50677,7 +50695,8 @@ export interface nsITransactionManagerType extends nsISupports {
     /**
      * Calls a transaction's doTransaction() method, then pushes it on the
      * undo stack.
-     * <P>
+     *
+     *
      * This method calls the transaction's AddRef() method.
      * The transaction's Release() method will be called when the undo or redo
      * stack is pruned or when the transaction manager is destroyed.
@@ -52196,9 +52215,9 @@ export interface nsIURIClassifierType extends nsISupports {
      * The URI classifier will call this callback when the URI has been
      * classified.
      *
-     * @return <code>false</code> if classification is not necessary.  The
+     * @return `false` if classification is not necessary.  The
      * callback will not be called.
-     * <code>true</code> if classification will be performed.  The
+     * `true` if classification will be performed.  The
      * callback will be called.
      */
     classify(aPrincipal: nsIPrincipal, aCallback: nsIURIClassifierCallback): boolean;
@@ -52248,16 +52267,16 @@ export interface nsIURIContentListenerType extends nsISupports {
      * preferred by this listener.
      * @param aRequest             Request that is providing the data.
      * @param aContentHandler      nsIStreamListener that will consume the data.
-     * This should be set to <code>nullptr</code> if
+     * This should be set to `nullptr` if
      * this content listener can't handle the content
      * type; in this case, doContent should also fail
      * (i.e., return failure nsresult).
      *
-     * @return                     <code>true</code> if the load should
+     * @return                     `true` if the load should
      * be aborted and consumer wants to
      * handle the load completely by itself.  This
      * causes the URI Loader do nothing else...
-     * <code>false</code> if the URI Loader should
+     * `false` if the URI Loader should
      * continue handling the load and call the
      * returned streamlistener's methods.
      */
@@ -52278,13 +52297,13 @@ export interface nsIURIContentListenerType extends nsISupports {
      * to aDesiredContentType before processing the
      * data.  This causes a stream converted to be
      * inserted into the nsIStreamListener chain.
-     * This argument can be <code>nullptr</code> if
+     * This argument can be `nullptr` if
      * the content should be consumed directly as
      * aContentType.
      *
-     * @return                     <code>true</code> if this is a preferred
+     * @return                     `true` if this is a preferred
      * content handler for aContentType;
-     * <code>false<code> otherwise.
+     * `false` otherwise.
      */
     isPreferred(aContentType: string, aDesiredContentType: string): boolean;
     /**
@@ -52299,12 +52318,12 @@ export interface nsIURIContentListenerType extends nsISupports {
      * to aDesiredContentType before processing the
      * data.  This causes a stream converted to be
      * inserted into the nsIStreamListener chain.
-     * This argument can be <code>nullptr</code> if
+     * This argument can be `nullptr` if
      * the content should be consumed directly as
      * aContentType.
      *
-     * @return                     <code>true</code> if the data can be consumed.
-     * <code>false</code> otherwise.
+     * @return                     `true` if the data can be consumed.
+     * `false` otherwise.
      *
      * Note: I really envision canHandleContent as a method implemented
      * by the docshell as the implementation is generic to all doc
@@ -52526,7 +52545,7 @@ export interface nsIURILoaderType extends nsISupports {
      * give first crack to, the uri loader needs to be able to get it
      * from the window context. We will also be using the window context
      * to get at the progress event sink interface.
-     * <b>Must not be null!</b>
+     * **Must not be null!**
      */
     openURI(aChannel: nsIChannel, aFlags: unsigned_long, aWindowContext: nsIInterfaceRequestor): void;
     /**
@@ -52562,7 +52581,7 @@ export interface nsIURILoaderType extends nsISupports {
      * give first crack to, the uri loader needs to be able to get it
      * from the window context. We will also be using the window context
      * to get at the progress event sink interface.
-     * <b>Must not be null!</b>
+     * **Must not be null!**
      */
     openChannel(aChannel: nsIChannel, aFlags: unsigned_long, aWindowContext: nsIInterfaceRequestor): nsIStreamListener;
     /**
@@ -55047,26 +55066,26 @@ export interface nsISupportsWeakReferenceType extends nsISupports {
 export interface nsIWebBrowserType extends nsISupports {
     /**
      * The chrome object associated with the browser instance. The embedder
-     * must create one chrome object for <I>each</I> browser object
+     * must create one chrome object for _each_ browser object
      * that is instantiated. The embedder must associate the two by setting
      * this property to point to the chrome object before creating the browser
-     * window via the browser's <CODE>nsIBaseWindow</CODE> interface.
+     * window via the browser's `nsIBaseWindow` interface.
      *
-     * The chrome object must also implement <CODE>nsIEmbeddingSiteWindow</CODE>.
+     * The chrome object must also implement `nsIEmbeddingSiteWindow`.
      *
-     * The chrome may optionally implement <CODE>nsIInterfaceRequestor</CODE>,
-     * <CODE>nsIWebBrowserChromeFocus</CODE>,
-     * <CODE>nsIContextMenuListener</CODE> and
-     * <CODE>nsITooltipListener</CODE> to receive additional notifications
+     * The chrome may optionally implement `nsIInterfaceRequestor`,
+     * `nsIWebBrowserChromeFocus`,
+     * `nsIContextMenuListener` and
+     * `nsITooltipListener` to receive additional notifications
      * from the browser object.
      *
      * The chrome object may optionally implement
-     * <CODE>nsIWebProgressListener</CODE> to register a progress listener
+     * `nsIWebProgressListener` to register a progress listener
      * object. If the implementation does this, it must also implement
-     * <CODE>nsIWeakReference</CODE>.
+     * `nsIWeakReference`.
      *
      * @note The implementation should not refcount the supplied chrome
-     * object; it should assume that a non <CODE>nullptr</CODE> value is
+     * object; it should assume that a non `nullptr` value is
      * always valid. The embedder must explicitly set this value back
      * to nullptr if the chrome object is destroyed before the browser
      * object.
@@ -55297,7 +55316,7 @@ export interface nsIWebBrowserPersistType extends nsICancelable {
      * Save the specified URI to file.
      *
      * @param aURI       URI to save to file. Some implementations of this interface
-     * may also support <CODE>nullptr</CODE> to imply the currently
+     * may also support `nullptr` to imply the currently
      * loaded URI.
      * @param aTriggeringPrincipal
      * The triggering principal for the URI we're saving.
@@ -55307,9 +55326,9 @@ export interface nsIWebBrowserPersistType extends nsICancelable {
      * @param aCookieJarSettings The cookieJarSettings for the HTTP channel which
      * is saving the URI.
      * @param aPostData  Post data to pass with an HTTP request or
-     * <CODE>nullptr</CODE>.
+     * `nullptr`.
      * @param aExtraHeaders Additional headers to supply with an HTTP request
-     * or <CODE>nullptr</CODE>.
+     * or `nullptr`.
      * @param aFile      Target file. This may be a nsIFile object or an
      * nsIURI object with a file scheme or a scheme that
      * supports uploading (e.g. ftp).
@@ -55345,7 +55364,7 @@ export interface nsIWebBrowserPersistType extends nsICancelable {
      * document has finished loading!
      *
      * @param aDocument          Document to save to file. Some implementations of
-     * this interface may also support <CODE>nullptr</CODE>
+     * this interface may also support `nullptr`
      * to imply the currently loaded document.  Can be an
      * nsIWebBrowserPersistDocument or Document.
      * @param aFile              Target local file. This may be a nsIFile object or an
