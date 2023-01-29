@@ -1,6 +1,7 @@
 import { writeFile } from 'fs/promises'
 import { getAllInterfaces } from 'gecko-index'
 import { member_$0_$0 } from 'gecko-index/lib/parser.js'
+import { basename } from 'path'
 import ts from 'typescript'
 
 const interfaceFiles = await getAllInterfaces()
@@ -37,16 +38,12 @@ for (const file in interfaceFiles) {
 
     if (node.kind == 'interface_main') {
       const name = `${node.name}Type`
-      let parentInterface: string
+      let parentInterface: ts.Identifier | undefined
       const members: ts.TypeElement[] = []
       let docComments = []
 
-      if (node.base) {
-        // This is for Array<...>
-        if (typeof node.base.extends != 'string') continue
-
-        parentInterface = node.base.extends
-      }
+      if (node.base && typeof node.base.extends == 'string')
+        parentInterface = ts.factory.createIdentifier(node.base.extends)
       // All XPCOM interfaces that aren't import interfaces must extend something
       else continue
 
@@ -174,12 +171,17 @@ for (const file in interfaceFiles) {
             name,
             undefined,
             [
-              ts.factory.createHeritageClause(ts.SyntaxKind.ExtendsKeyword, [
-                ts.factory.createExpressionWithTypeArguments(
-                  ts.factory.createIdentifier(parentInterface),
-                  undefined
-                ),
-              ]),
+              ts.factory.createHeritageClause(
+                ts.SyntaxKind.ExtendsKeyword,
+                !parentInterface
+                  ? []
+                  : [
+                      ts.factory.createExpressionWithTypeArguments(
+                        parentInterface,
+                        undefined
+                      ),
+                    ]
+              ),
             ],
             members
           ),
