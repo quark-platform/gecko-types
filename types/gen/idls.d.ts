@@ -5,7 +5,7 @@
  * );
  * addDebuggerToGlobal(global);
  */
-export interface IJSDebuggerType extends nsISupports {
+declare interface IJSDebuggerType extends nsISupports {
     /**
      * Define the global Debugger constructor on a given global.
      */
@@ -19,25 +19,25 @@ export interface IJSDebuggerType extends nsISupports {
  *
  * See media/webrtc/signaling/include/PeerConnectionImpl.h
  */
-export interface IPeerConnectionObserverType extends nsISupports {
+declare interface IPeerConnectionObserverType extends nsISupports {
 }
 
 /**
  *
  */
-export interface IPeerConnectionType extends nsISupports {
+declare interface IPeerConnectionType extends nsISupports {
 }
 
 /**
  *
  */
-export interface IUrlClassifierUITelemetryType extends nsISupports {
+declare interface IUrlClassifierUITelemetryType extends nsISupports {
 }
 
 /**
  *
  */
-export interface nsIScriptableOKType extends nsISupports {
+declare interface nsIScriptableOKType extends nsISupports {
     /**
      *
      */
@@ -47,7 +47,7 @@ export interface nsIScriptableOKType extends nsISupports {
 /**
  *
  */
-export interface nsIScriptableWithNotXPCOMType extends nsISupports {
+declare interface nsIScriptableWithNotXPCOMType extends nsISupports {
     /**
      *
      */
@@ -57,7 +57,7 @@ export interface nsIScriptableWithNotXPCOMType extends nsISupports {
 /**
  *
  */
-export interface nsISessionStoreFunctionsType extends nsISupports {
+declare interface nsISessionStoreFunctionsType extends nsISupports {
     /**
      *
      */
@@ -71,7 +71,7 @@ export interface nsISessionStoreFunctionsType extends nsISupports {
 /**
  *
  */
-export interface amIAddonManagerStartupType extends nsISupports {
+declare interface amIAddonManagerStartupType extends nsISupports {
     /**
      * Reads and parses startup data from the addonState.json.lz4 file, checks
      * for modifications, and returns the result.
@@ -116,7 +116,7 @@ export interface amIAddonManagerStartupType extends nsISupports {
  * amIWebInstallInfo to display a confirmation UI to the user before running
  * installs.
  */
-export interface amIWebInstallPromptType extends nsISupports {
+declare interface amIWebInstallPromptType extends nsISupports {
     /**
      * Get a confirmation that the user wants to start the installs.
      *
@@ -133,7 +133,7 @@ export interface amIWebInstallPromptType extends nsISupports {
 /**
  *
  */
-export interface extIWebNavigationType extends nsISupports {
+declare interface extIWebNavigationType extends nsISupports {
     /**
      *
      */
@@ -163,7 +163,7 @@ export interface extIWebNavigationType extends nsISupports {
  * @version 0.1
  * @see imagelib2
  */
-export interface imgICacheType extends nsISupports {
+declare interface imgICacheType extends nsISupports {
     /**
      * Evict images from the cache.
      *
@@ -236,7 +236,7 @@ export interface imgICacheType extends nsISupports {
  *
  * Internally, imgIContainer also manages animation of images.
  */
-export interface imgIContainerType extends nsISupports {
+declare interface imgIContainerType extends nsISupports {
     /**
      * The width of the container rectangle.  In the case of any error,
      * zero is returned, and an exception will be thrown.
@@ -618,7 +618,7 @@ export interface imgIContainerType extends nsISupports {
  * internal state of imgContainers. This lets us test
  * things like animation.
  */
-export interface imgIContainerDebugType extends nsISupports {
+declare interface imgIContainerDebugType extends nsISupports {
     /**
      * The # of frames this imgContainer has been notified about.
      * That is equal to the # of times the animation timer has
@@ -631,7 +631,7 @@ export interface imgIContainerDebugType extends nsISupports {
 /**
  * imgIEncoder interface
  */
-export interface imgIEncoderType extends nsIAsyncInputStream {
+declare interface imgIEncoderType extends nsIAsyncInputStream {
     /**
      * data - list of bytes in the format specified by inputFormat
      * width  - width in pixels
@@ -682,7 +682,7 @@ export interface imgIEncoderType extends nsIAsyncInputStream {
  * @version 0.3
  * @see imagelib2
  */
-export interface imgILoaderType extends nsISupports {
+declare interface imgILoaderType extends nsISupports {
     /**
      * Start the load and decode of an image.
      * @param aURI the URI to load
@@ -728,7 +728,7 @@ export interface imgILoaderType extends nsISupports {
 /**
  *
  */
-export interface imgINotificationObserverType extends nsISupports {
+declare interface imgINotificationObserverType extends nsISupports {
     /**
      *
      */
@@ -742,7 +742,7 @@ export interface imgINotificationObserverType extends nsISupports {
  * @version 0.1
  * @see imagelib2
  */
-export interface imgIRequestType extends nsIRequest {
+declare interface imgIRequestType extends nsIRequest {
     /**
      * the image container...
      * @return the image object associated with the request.
@@ -917,7 +917,7 @@ export interface imgIRequestType extends nsIRequest {
 /**
  *
  */
-export interface imgIScriptedNotificationObserverType extends nsISupports {
+declare interface imgIScriptedNotificationObserverType extends nsISupports {
     /**
      *
      */
@@ -955,7 +955,7 @@ export interface imgIScriptedNotificationObserverType extends nsISupports {
 /**
  *
  */
-export interface imgIToolsType extends nsISupports {
+declare interface imgIToolsType extends nsISupports {
     /**
      * decodeImageFromBuffer
      * Caller provides an buffer, a buffer size and a mimetype. We read from
@@ -1101,7 +1101,7 @@ export interface imgIToolsType extends nsISupports {
 /**
  * This is a companion interface for nsIAsyncInputStream::asyncWait.
  */
-export interface imgIContainerCallbackType extends nsISupports {
+declare interface imgIContainerCallbackType extends nsISupports {
     /**
      * If the operation fails, aStatus will contain the error value
      */
@@ -1111,7 +1111,7 @@ export interface imgIContainerCallbackType extends nsISupports {
 /**
  *
  */
-export interface inIDeepTreeWalkerType extends nsISupports {
+declare interface inIDeepTreeWalkerType extends nsISupports {
     /**
      *
      */
@@ -1173,7 +1173,7 @@ export interface inIDeepTreeWalkerType extends nsISupports {
 /**
  *
  */
-export interface mozIAppServicesLoggerType extends nsISupports {
+declare interface mozIAppServicesLoggerType extends nsISupports {
     /**
      *
      */
@@ -1183,7 +1183,7 @@ export interface mozIAppServicesLoggerType extends nsISupports {
 /**
  *
  */
-export interface mozIVisitInfoType extends nsISupports {
+declare interface mozIVisitInfoType extends nsISupports {
     /**
      * The machine-local (internal) id of the visit.
      */
@@ -1208,7 +1208,7 @@ export interface mozIVisitInfoType extends nsISupports {
 /**
  *
  */
-export interface mozIPlaceInfoType extends nsISupports {
+declare interface mozIPlaceInfoType extends nsISupports {
     /**
      * The machine-local (internal) id of the place.
      */
@@ -1239,7 +1239,7 @@ export interface mozIPlaceInfoType extends nsISupports {
  * Shared Callback interface for mozIAsyncHistory methods. The semantics
  * for each method are detailed in mozIAsyncHistory.
  */
-export interface mozIVisitInfoCallbackType extends nsISupports {
+declare interface mozIVisitInfoCallbackType extends nsISupports {
     /**
      * Called when the given place could not be processed.
      *
@@ -1277,7 +1277,7 @@ export interface mozIVisitInfoCallbackType extends nsISupports {
 /**
  *
  */
-export interface mozIVisitedStatusCallbackType extends nsISupports {
+declare interface mozIVisitedStatusCallbackType extends nsISupports {
     /**
      * Notifies whether a certain URI has been visited.
      *
@@ -1299,7 +1299,7 @@ export interface mozIVisitedStatusCallbackType extends nsISupports {
  * expensive work in a batch, then it could be worth doing
  * that in History.cpp.
  */
-export interface mozIAsyncHistoryType extends nsISupports {
+declare interface mozIAsyncHistoryType extends nsISupports {
     /**
      * Adds a set of visits for one or more mozIPlaceInfo objects, and updates
      * each mozIPlaceInfo's title or guid.
@@ -1338,7 +1338,7 @@ export interface mozIAsyncHistoryType extends nsISupports {
 /**
  *
  */
-export interface mozIBridgedSyncEngineCallbackType extends nsISupports {
+declare interface mozIBridgedSyncEngineCallbackType extends nsISupports {
     /**
      *
      */
@@ -1352,7 +1352,7 @@ export interface mozIBridgedSyncEngineCallbackType extends nsISupports {
 /**
  *
  */
-export interface mozIBridgedSyncEngineApplyCallbackType extends nsISupports {
+declare interface mozIBridgedSyncEngineApplyCallbackType extends nsISupports {
     /**
      *
      */
@@ -1366,7 +1366,7 @@ export interface mozIBridgedSyncEngineApplyCallbackType extends nsISupports {
 /**
  *
  */
-export interface mozIBridgedSyncEngineType extends nsISupports {
+declare interface mozIBridgedSyncEngineType extends nsISupports {
     /**
      *
      */
@@ -1432,19 +1432,19 @@ export interface mozIBridgedSyncEngineType extends nsISupports {
 /**
  * Placeholder interfaces to allow passing inner/outer windows through XPIDL.
  */
-export interface mozIDOMWindowType extends nsISupports {
+declare interface mozIDOMWindowType extends nsISupports {
 }
 
 /**
  *
  */
-export interface mozIDOMWindowProxyType extends nsISupports {
+declare interface mozIDOMWindowProxyType extends nsISupports {
 }
 
 /**
  *
  */
-export interface mozIDownloadPlatformType extends nsISupports {
+declare interface mozIDownloadPlatformType extends nsISupports {
     /**
      * Perform platform specific operations when a download is done.
      *
@@ -1487,7 +1487,7 @@ export interface mozIDownloadPlatformType extends nsISupports {
 /**
  *
  */
-export interface mozIExtensionServiceWorkerInfoType extends nsISupports {
+declare interface mozIExtensionServiceWorkerInfoType extends nsISupports {
     /**
      *
      */
@@ -1509,7 +1509,7 @@ export interface mozIExtensionServiceWorkerInfoType extends nsISupports {
 /**
  *
  */
-export interface mozIExtensionListenerCallOptionsType extends nsISupports {
+declare interface mozIExtensionListenerCallOptionsType extends nsISupports {
     /**
      *
      */
@@ -1531,7 +1531,7 @@ export interface mozIExtensionListenerCallOptionsType extends nsISupports {
 /**
  *
  */
-export interface mozIExtensionEventListenerType extends nsISupports {
+declare interface mozIExtensionEventListenerType extends nsISupports {
     /**
      *
      */
@@ -1541,7 +1541,7 @@ export interface mozIExtensionEventListenerType extends nsISupports {
 /**
  *
  */
-export interface mozIExtensionAPIRequestType extends nsISupports {
+declare interface mozIExtensionAPIRequestType extends nsISupports {
     /**
      *
      */
@@ -1591,7 +1591,7 @@ export interface mozIExtensionAPIRequestType extends nsISupports {
 /**
  *
  */
-export interface mozIExtensionAPIRequestResultType extends nsISupports {
+declare interface mozIExtensionAPIRequestResultType extends nsISupports {
     /**
      *
      */
@@ -1605,7 +1605,7 @@ export interface mozIExtensionAPIRequestResultType extends nsISupports {
 /**
  *
  */
-export interface mozIExtensionAPIRequestHandlerType extends nsISupports {
+declare interface mozIExtensionAPIRequestHandlerType extends nsISupports {
     /**
      * Handle an API request originated from the WebExtensions webidl API
      * bindings.
@@ -1648,7 +1648,7 @@ export interface mozIExtensionAPIRequestHandlerType extends nsISupports {
 /**
  *
  */
-export interface mozIExtensionProcessScriptType extends nsISupports {
+declare interface mozIExtensionProcessScriptType extends nsISupports {
     /**
      *
      */
@@ -1666,7 +1666,7 @@ export interface mozIExtensionProcessScriptType extends nsISupports {
 /**
  *
  */
-export interface mozIExtensionStorageAreaType extends nsISupports {
+declare interface mozIExtensionStorageAreaType extends nsISupports {
     /**
      *
      */
@@ -1696,7 +1696,7 @@ export interface mozIExtensionStorageAreaType extends nsISupports {
 /**
  *
  */
-export interface mozIConfigurableExtensionStorageAreaType extends nsISupports {
+declare interface mozIConfigurableExtensionStorageAreaType extends nsISupports {
     /**
      *
      */
@@ -1710,7 +1710,7 @@ export interface mozIConfigurableExtensionStorageAreaType extends nsISupports {
 /**
  *
  */
-export interface mozISyncedExtensionStorageAreaType extends nsISupports {
+declare interface mozISyncedExtensionStorageAreaType extends nsISupports {
     /**
      *
      */
@@ -1720,7 +1720,7 @@ export interface mozISyncedExtensionStorageAreaType extends nsISupports {
 /**
  *
  */
-export interface mozIExtensionStorageListenerType extends nsISupports {
+declare interface mozIExtensionStorageListenerType extends nsISupports {
     /**
      *
      */
@@ -1730,7 +1730,7 @@ export interface mozIExtensionStorageListenerType extends nsISupports {
 /**
  *
  */
-export interface mozIExtensionStorageCallbackType extends nsISupports {
+declare interface mozIExtensionStorageCallbackType extends nsISupports {
     /**
      *
      */
@@ -1744,7 +1744,7 @@ export interface mozIExtensionStorageCallbackType extends nsISupports {
 /**
  *
  */
-export interface mozIGeckoMediaPluginChromeServiceType extends nsISupports {
+declare interface mozIGeckoMediaPluginChromeServiceType extends nsISupports {
     /**
      * Add a directory to scan for gecko media plugins.
      * @note Main-thread API.
@@ -1787,7 +1787,7 @@ export interface mozIGeckoMediaPluginChromeServiceType extends nsISupports {
 /**
  *
  */
-export interface mozIGeckoMediaPluginServiceType extends nsISupports {
+declare interface mozIGeckoMediaPluginServiceType extends nsISupports {
     /**
      * The GMP thread. Callable from any thread.
      */
@@ -1835,7 +1835,7 @@ export interface mozIGeckoMediaPluginServiceType extends nsISupports {
 /**
  *
  */
-export interface mozIInterruptibleType extends nsISupports {
+declare interface mozIInterruptibleType extends nsISupports {
     /**
      *
      */
@@ -1847,7 +1847,7 @@ export interface mozIInterruptibleType extends nsISupports {
  * For asynchronous script loads, ChromeUtils.compileScript() should be used
  * instead.
  */
-export interface mozIJSSubScriptLoaderType extends nsISupports {
+declare interface mozIJSSubScriptLoaderType extends nsISupports {
     /**
      * This method should only be called from JS!
      * In JS, the signature looks like:
@@ -1884,7 +1884,7 @@ export interface mozIJSSubScriptLoaderType extends nsISupports {
 /**
  *
  */
-export interface mozILocaleServiceType extends nsISupports {
+declare interface mozILocaleServiceType extends nsISupports {
     /**
      * Default locale of the browser. The locale we are guaranteed to have
      * resources for that should be used as a last resort fallack in cases
@@ -1960,7 +1960,7 @@ export interface mozILocaleServiceType extends nsISupports {
  * current application locale by default, and fetching OS regional preferences
  * for date time format.
  */
-export interface mozIMozIntlType extends nsISupports {
+declare interface mozIMozIntlType extends nsISupports {
     /**
      *
      */
@@ -2053,7 +2053,7 @@ export interface mozIMozIntlType extends nsISupports {
  * that exposes the thin wrapper around them that binds the functionality
  * to Gecko.
  */
-export interface mozIMozIntlHelperType extends nsISupports {
+declare interface mozIMozIntlHelperType extends nsISupports {
     /**
      *
      */
@@ -2104,7 +2104,7 @@ export interface mozIMozIntlHelperType extends nsISupports {
 /**
  *
  */
-export interface mozIOSPreferencesType extends nsISupports {
+declare interface mozIOSPreferencesType extends nsISupports {
     /**
      * Returns the best locale that the host environment is localized to.
      *
@@ -2147,7 +2147,7 @@ export interface mozIOSPreferencesType extends nsISupports {
 /**
  * This interface represents a Personal Dictionary.
  */
-export interface mozIPersonalDictionaryType extends nsISupports {
+declare interface mozIPersonalDictionaryType extends nsISupports {
     /**
      * Load the dictionary
      */
@@ -2187,13 +2187,13 @@ export interface mozIPersonalDictionaryType extends nsISupports {
  * search provider as well as methods to track opened pages for AutoComplete
  * purposes.
  */
-export interface mozIPlacesAutoCompleteType extends nsISupports {
+declare interface mozIPlacesAutoCompleteType extends nsISupports {
 }
 
 /**
  *
  */
-export interface mozIPlacesPendingOperationType extends nsISupports {
+declare interface mozIPlacesPendingOperationType extends nsISupports {
     /**
      * Cancels a pending operation, if possible.  This will only fail if you try
      * to cancel more than once.
@@ -2205,7 +2205,7 @@ export interface mozIPlacesPendingOperationType extends nsISupports {
  * A simple interface to get the underlying stream from an
  * RemoteLazyInputStream.
  */
-export interface mozIRemoteLazyInputStreamType extends nsISupports {
+declare interface mozIRemoteLazyInputStreamType extends nsISupports {
     /**
      * Attempts to take the internal stream out of this mozIRemoteLazyInputStream.
      * Throws NS_BASE_STREAM_WOULD_BLOCK if the stream isn't available yet, and
@@ -2223,7 +2223,7 @@ export interface mozIRemoteLazyInputStreamType extends nsISupports {
 /**
  *
  */
-export interface mozISandboxReportType extends nsISupports {
+declare interface mozISandboxReportType extends nsISupports {
     /**
      *
      */
@@ -2257,7 +2257,7 @@ export interface mozISandboxReportType extends nsISupports {
 /**
  *
  */
-export interface mozISandboxReportArrayType extends nsISupports {
+declare interface mozISandboxReportArrayType extends nsISupports {
     /**
      *
      */
@@ -2275,7 +2275,7 @@ export interface mozISandboxReportArrayType extends nsISupports {
 /**
  *
  */
-export interface mozISandboxReporterType extends nsISupports {
+declare interface mozISandboxReporterType extends nsISupports {
     /**
      *
      */
@@ -2285,7 +2285,7 @@ export interface mozISandboxReporterType extends nsISupports {
 /**
  * Used to expose information about the configuration of the sanbox.
  */
-export interface mozISandboxSettingsType extends nsISupports {
+declare interface mozISandboxSettingsType extends nsISupports {
     /**
      *
      */
@@ -2304,7 +2304,7 @@ export interface mozISandboxSettingsType extends nsISupports {
 /**
  *
  */
-export interface mozISandboxTestType extends nsISupports {
+declare interface mozISandboxTestType extends nsISupports {
     /**
      *
      */
@@ -2318,7 +2318,7 @@ export interface mozISandboxTestType extends nsISupports {
 /**
  *
  */
-export interface mozIServicesLogSinkType extends nsISupports {
+declare interface mozIServicesLogSinkType extends nsISupports {
     /**
      *
      */
@@ -2348,7 +2348,7 @@ export interface mozIServicesLogSinkType extends nsISupports {
 /**
  * This interface represents a SpellChecker.
  */
-export interface mozISpellCheckingEngineType extends nsISupports {
+declare interface mozISpellCheckingEngineType extends nsISupports {
     /**
      * the personal dictionary
      */
@@ -2393,7 +2393,7 @@ export interface mozISpellCheckingEngineType extends nsISupports {
  * database from the main thread, including creating prepared
  * statements, executing SQL, and examining database errors.
  */
-export interface mozIStorageAsyncConnectionType extends nsISupports {
+declare interface mozIStorageAsyncConnectionType extends nsISupports {
     /**
      * The default behavior for all transactions run on this connection. Defaults
      * to `TRANSACTION_DEFERRED`, and can be overridden for individual
@@ -2646,7 +2646,7 @@ export interface mozIStorageAsyncConnectionType extends nsISupports {
  * consequently can cause the main thread to lock for extended intervals while
  * the asynchronous thread performs some long-running operation.
  */
-export interface mozIStorageAsyncStatementType extends mozIStorageBaseStatement {
+declare interface mozIStorageAsyncStatementType extends mozIStorageBaseStatement {
 }
 
 /**
@@ -2655,7 +2655,7 @@ export interface mozIStorageAsyncStatementType extends mozIStorageBaseStatement 
  * (mozIStorageStatement) that can be used for both synchronous and asynchronous
  * purposes.
  */
-export interface mozIStorageBaseStatementType extends mozIStorageBindingParams {
+declare interface mozIStorageBaseStatementType extends mozIStorageBindingParams {
     /**
      * Finalizes a statement so you can successfully close a database connection.
      * Once a statement has been finalized it can no longer be used for any
@@ -2736,7 +2736,7 @@ export interface mozIStorageBaseStatementType extends mozIStorageBindingParams {
 /**
  *
  */
-export interface mozIStorageBindingParamsType extends nsISupports {
+declare interface mozIStorageBindingParamsType extends nsISupports {
     /**
      * Binds aValue to the parameter with the name aName.
      *
@@ -2848,7 +2848,7 @@ export interface mozIStorageBindingParamsType extends nsISupports {
 /**
  *
  */
-export interface mozIStorageBindingParamsArrayType extends nsISupports {
+declare interface mozIStorageBindingParamsArrayType extends nsISupports {
     /**
      * Creates a new mozIStorageBindingParams object that can be added to this
      * array.
@@ -2873,7 +2873,7 @@ export interface mozIStorageBindingParamsArrayType extends nsISupports {
 /**
  *
  */
-export interface mozIStorageCompletionCallbackType extends nsISupports {
+declare interface mozIStorageCompletionCallbackType extends nsISupports {
     /**
      * Indicates that the event this callback was passed in for has completed.
      *
@@ -2900,7 +2900,7 @@ export interface mozIStorageCompletionCallbackType extends nsISupports {
  *
  * @threadsafe
  */
-export interface mozIStorageConnectionType extends mozIStorageAsyncConnection {
+declare interface mozIStorageConnectionType extends mozIStorageAsyncConnection {
     /**
      * Closes a database connection.  Callers must finalize all statements created
      * for this connection prior to calling this method.  It is illegal to use
@@ -3108,7 +3108,7 @@ export interface mozIStorageConnectionType extends mozIStorageAsyncConnection {
 /**
  *
  */
-export interface mozIStorageErrorType extends nsISupports {
+declare interface mozIStorageErrorType extends nsISupports {
     /**
      * Indicates what type of error occurred.
      */
@@ -3131,7 +3131,7 @@ export interface mozIStorageErrorType extends nsISupports {
  * problem-specific functions.
  * These functions can be called from triggers, too.
  */
-export interface mozIStorageFunctionType extends nsISupports {
+declare interface mozIStorageFunctionType extends nsISupports {
     /**
      * onFunctionCall is called when execution of a custom
      * function should occur.
@@ -3147,7 +3147,7 @@ export interface mozIStorageFunctionType extends nsISupports {
 /**
  *
  */
-export interface mozIStoragePendingStatementType extends nsISupports {
+declare interface mozIStoragePendingStatementType extends nsISupports {
     /**
      * Cancels a pending statement, if possible.  This will only fail if you try
      * cancel more than once.
@@ -3162,7 +3162,7 @@ export interface mozIStoragePendingStatementType extends nsISupports {
  * mozIProgressHandler is to be implemented by storage consumers that
  * wish to receive callbacks during the request execution.
  */
-export interface mozIStorageProgressHandlerType extends nsISupports {
+declare interface mozIStorageProgressHandlerType extends nsISupports {
     /**
      * onProgress is invoked periodically during long running calls.
      *
@@ -3177,7 +3177,7 @@ export interface mozIStorageProgressHandlerType extends nsISupports {
 /**
  *
  */
-export interface mozIStorageResultSetType extends nsISupports {
+declare interface mozIStorageResultSetType extends nsISupports {
     /**
      * Obtains the next row from the result set from the statement that was
      * executed.
@@ -3191,7 +3191,7 @@ export interface mozIStorageResultSetType extends nsISupports {
 /**
  *
  */
-export interface mozIStorageRowType extends mozIStorageValueArray {
+declare interface mozIStorageRowType extends mozIStorageValueArray {
     /**
      * Obtains the result of a given column specified by aIndex.
      *
@@ -3223,7 +3223,7 @@ export interface mozIStorageRowType extends mozIStorageValueArray {
  * @note The first reference to mozIStorageService must be made on the main
  * thread.
  */
-export interface mozIStorageServiceType extends nsISupports {
+declare interface mozIStorageServiceType extends nsISupports {
     /**
      * Open an asynchronous connection to a database.
      *
@@ -3412,7 +3412,7 @@ export interface mozIStorageServiceType extends nsISupports {
  * A SQL statement that can be used for both synchronous and asynchronous
  * purposes.
  */
-export interface mozIStorageStatementType extends mozIStorageBaseStatement {
+declare interface mozIStorageStatementType extends mozIStorageBaseStatement {
     /**
      * Create a clone of this statement, by initializing a new statement
      * with the same connection and same SQL statement as this one.  It
@@ -3611,7 +3611,7 @@ export interface mozIStorageStatementType extends mozIStorageBaseStatement {
 /**
  *
  */
-export interface mozIStorageStatementCallbackType extends nsISupports {
+declare interface mozIStorageStatementCallbackType extends nsISupports {
     /**
      * Called when some result is obtained from the database.  This function can
      * be called more than once with a different storageIResultSet each time for
@@ -3643,7 +3643,7 @@ export interface mozIStorageStatementCallbackType extends nsISupports {
  * Please see https://developer.mozilla.org/en/mozIStorageVacuumParticipant for
  * more information.
  */
-export interface mozIStorageVacuumParticipantType extends nsISupports {
+declare interface mozIStorageVacuumParticipantType extends nsISupports {
     /**
      * The expected page size in bytes for the database.  The vacuum manager will
      * try to correct the page size during idle based on this value.
@@ -3684,7 +3684,7 @@ export interface mozIStorageVacuumParticipantType extends nsISupports {
  * mozIStorageValueArray wraps an array of SQL values, such as a single database
  * row.
  */
-export interface mozIStorageValueArrayType extends nsISupports {
+declare interface mozIStorageValueArrayType extends nsISupports {
     /**
      * numEntries
      *
@@ -3769,7 +3769,7 @@ export interface mozIStorageValueArrayType extends nsISupports {
 /**
  *
  */
-export interface mozISyncedBookmarksMirrorProgressListenerType extends nsISupports {
+declare interface mozISyncedBookmarksMirrorProgressListenerType extends nsISupports {
     /**
      *
      */
@@ -3791,7 +3791,7 @@ export interface mozISyncedBookmarksMirrorProgressListenerType extends nsISuppor
 /**
  *
  */
-export interface mozISyncedBookmarksMirrorCallbackType extends nsISupports {
+declare interface mozISyncedBookmarksMirrorCallbackType extends nsISupports {
     /**
      *
      */
@@ -3805,7 +3805,7 @@ export interface mozISyncedBookmarksMirrorCallbackType extends nsISupports {
 /**
  *
  */
-export interface mozISyncedBookmarksMirrorLoggerType extends nsISupports {
+declare interface mozISyncedBookmarksMirrorLoggerType extends nsISupports {
     /**
      *
      */
@@ -3831,7 +3831,7 @@ export interface mozISyncedBookmarksMirrorLoggerType extends nsISupports {
 /**
  *
  */
-export interface mozISyncedBookmarksMergerType extends nsISupports {
+declare interface mozISyncedBookmarksMergerType extends nsISupports {
     /**
      *
      */
@@ -3853,7 +3853,7 @@ export interface mozISyncedBookmarksMergerType extends nsISupports {
 /**
  *
  */
-export interface mozITXTToHTMLConvType extends nsIStreamConverter {
+declare interface mozITXTToHTMLConvType extends nsIStreamConverter {
     /**
      * @param text: plain text to scan. May be a line, paragraph (recommended)
      * or just a substring.
@@ -3915,7 +3915,7 @@ export interface mozITXTToHTMLConvType extends nsIStreamConverter {
  * XPCOM components.  The actual implementation is TestInterfaceJS, just like
  * for TestInteraceJS.webidl.
  */
-export interface mozITestInterfaceJSType extends nsISupports {
+declare interface mozITestInterfaceJSType extends nsISupports {
     /**
      *
      */
@@ -3930,7 +3930,7 @@ export interface mozITestInterfaceJSType extends nsISupports {
  * Utility functions for determining whether a given URI, channel, or window
  * hierarchy is third party with respect to a known URI.
  */
-export interface mozIThirdPartyUtilType extends nsISupports {
+declare interface mozIThirdPartyUtilType extends nsISupports {
     /**
      * isThirdPartyURI
      *
@@ -4104,7 +4104,7 @@ export interface mozIThirdPartyUtilType extends nsISupports {
 /**
  *
  */
-export interface nsIASN1TreeType extends nsITreeView {
+declare interface nsIASN1TreeType extends nsITreeView {
     /**
      *
      */
@@ -4118,7 +4118,7 @@ export interface nsIASN1TreeType extends nsITreeView {
 /**
  *
  */
-export interface nsIAboutModuleType extends nsISupports {
+declare interface nsIAboutModuleType extends nsISupports {
     /**
      * Constructs a new channel for the about protocol module.
      *
@@ -4141,7 +4141,7 @@ export interface nsIAboutModuleType extends nsISupports {
 /**
  *
  */
-export interface nsIAboutNewTabServiceType extends nsISupports {
+declare interface nsIAboutNewTabServiceType extends nsISupports {
     /**
      * Returns the default URL (local or activity stream depending on pref)
      */
@@ -4164,7 +4164,7 @@ export interface nsIAboutNewTabServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIInstalledApplicationType extends nsISupports {
+declare interface nsIInstalledApplicationType extends nsISupports {
     /**
      *
      */
@@ -4178,7 +4178,7 @@ export interface nsIInstalledApplicationType extends nsISupports {
 /**
  *
  */
-export interface nsIAboutThirdPartyType extends nsISupports {
+declare interface nsIAboutThirdPartyType extends nsISupports {
     /**
      * Returns a bitwise combination of the ModuleType_* flags
      * for the given leaf name of a module.
@@ -4205,7 +4205,7 @@ export interface nsIAboutThirdPartyType extends nsISupports {
  * This interface allows the security manager to query custom per-addon security
  * policy.
  */
-export interface nsIAddonPolicyServiceType extends nsISupports {
+declare interface nsIAddonPolicyServiceType extends nsISupports {
     /**
      * Returns the default content security policy which applies to extension
      * documents which do not specify any custom policies.
@@ -4261,7 +4261,7 @@ export interface nsIAddonPolicyServiceType extends nsISupports {
  * This interface exposes functionality related to add-on content policy
  * enforcement.
  */
-export interface nsIAddonContentPolicyType extends nsISupports {
+declare interface nsIAddonContentPolicyType extends nsISupports {
     /**
      * Checks a custom content security policy string, to ensure that it meets
      * minimum security requirements. Returns null for valid policies, or a
@@ -4273,7 +4273,7 @@ export interface nsIAddonContentPolicyType extends nsISupports {
 /**
  *
  */
-export interface nsIAlertNotificationImageListenerType extends nsISupports {
+declare interface nsIAlertNotificationImageListenerType extends nsISupports {
     /**
      * Called when the image finishes loading.
      *
@@ -4293,7 +4293,7 @@ export interface nsIAlertNotificationImageListenerType extends nsISupports {
 /**
  *
  */
-export interface nsIAlertActionType extends nsISupports {
+declare interface nsIAlertActionType extends nsISupports {
     /**
      * Returns a string identifying a user action to be displayed on the alert.
      *
@@ -4328,7 +4328,7 @@ export interface nsIAlertActionType extends nsISupports {
 /**
  *
  */
-export interface nsIAlertNotificationType extends nsISupports {
+declare interface nsIAlertNotificationType extends nsISupports {
     /**
      * Initializes an alert notification.
      */
@@ -4437,7 +4437,7 @@ export interface nsIAlertNotificationType extends nsISupports {
 /**
  *
  */
-export interface nsIAlertsServiceType extends nsISupports {
+declare interface nsIAlertsServiceType extends nsISupports {
     /**
      *
      */
@@ -4483,7 +4483,7 @@ export interface nsIAlertsServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIAlertsDoNotDisturbType extends nsISupports {
+declare interface nsIAlertsDoNotDisturbType extends nsISupports {
     /**
      * Toggles a manual Do Not Disturb mode for the service to reduce the amount
      * of disruption that alerts cause the user.
@@ -4505,7 +4505,7 @@ export interface nsIAlertsDoNotDisturbType extends nsISupports {
 /**
  *
  */
-export interface nsIAlertsIconDataType extends nsISupports {
+declare interface nsIAlertsIconDataType extends nsISupports {
     /**
      * Shows an alert with an icon. Web notifications use the favicon of the
      * page that created the alert. If the favicon is not in the Places database,
@@ -4517,7 +4517,7 @@ export interface nsIAlertsIconDataType extends nsISupports {
 /**
  *
  */
-export interface nsIAlertsIconURIType extends nsISupports {
+declare interface nsIAlertsIconURIType extends nsISupports {
     /**
      * Shows an alert with an icon URI. Web notifications use |moz-anno:|
      * URIs to reference favicons from Places. If the page doesn't have a
@@ -4529,7 +4529,7 @@ export interface nsIAlertsIconURIType extends nsISupports {
 /**
  *
  */
-export interface nsIAndroidEventCallbackType extends nsISupports {
+declare interface nsIAndroidEventCallbackType extends nsISupports {
     /**
      *
      */
@@ -4543,7 +4543,7 @@ export interface nsIAndroidEventCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIAndroidEventFinalizerType extends nsISupports {
+declare interface nsIAndroidEventFinalizerType extends nsISupports {
     /**
      *
      */
@@ -4553,7 +4553,7 @@ export interface nsIAndroidEventFinalizerType extends nsISupports {
 /**
  *
  */
-export interface nsIAndroidEventListenerType extends nsISupports {
+declare interface nsIAndroidEventListenerType extends nsISupports {
     /**
      *
      */
@@ -4563,7 +4563,7 @@ export interface nsIAndroidEventListenerType extends nsISupports {
 /**
  *
  */
-export interface nsIAndroidEventDispatcherType extends nsISupports {
+declare interface nsIAndroidEventDispatcherType extends nsISupports {
     /**
      *
      */
@@ -4581,7 +4581,7 @@ export interface nsIAndroidEventDispatcherType extends nsISupports {
 /**
  *
  */
-export interface nsIAndroidViewType extends nsIAndroidEventDispatcher {
+declare interface nsIAndroidViewType extends nsIAndroidEventDispatcher {
     /**
      *
      */
@@ -4591,7 +4591,7 @@ export interface nsIAndroidViewType extends nsIAndroidEventDispatcher {
 /**
  *
  */
-export interface nsIAndroidBridgeType extends nsIAndroidEventDispatcher {
+declare interface nsIAndroidBridgeType extends nsIAndroidEventDispatcher {
     /**
      *
      */
@@ -4602,7 +4602,7 @@ export interface nsIAndroidBridgeType extends nsIAndroidEventDispatcher {
  * Interface for the native event system layer.  This interface is designed
  * to be used on the main application thread only.
  */
-export interface nsIAppShellType extends nsISupports {
+declare interface nsIAppShellType extends nsISupports {
     /**
      * Enter an event loop.  Don't leave until exit() is called.
      */
@@ -4657,7 +4657,7 @@ export interface nsIAppShellType extends nsISupports {
 /**
  *
  */
-export interface nsIAppShellServiceType extends nsISupports {
+declare interface nsIAppShellServiceType extends nsISupports {
     /**
      *
      */
@@ -4744,7 +4744,7 @@ export interface nsIAppShellServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIAppStartupType extends nsISupports {
+declare interface nsIAppStartupType extends nsISupports {
     /**
      * Create the hidden window.
      */
@@ -4910,7 +4910,7 @@ export interface nsIAppStartupType extends nsISupports {
 /**
  *
  */
-export interface nsIAppWindowType extends nsISupports {
+declare interface nsIAppWindowType extends nsISupports {
     /**
      * The docshell owning the XUL for this window.
      */
@@ -5067,7 +5067,7 @@ export interface nsIAppWindowType extends nsISupports {
 /**
  *
  */
-export interface nsIApplicationChooserFinishedCallbackType extends nsISupports {
+declare interface nsIApplicationChooserFinishedCallbackType extends nsISupports {
     /**
      *
      */
@@ -5077,7 +5077,7 @@ export interface nsIApplicationChooserFinishedCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIApplicationChooserType extends nsISupports {
+declare interface nsIApplicationChooserType extends nsISupports {
     /**
      * Initialize the application chooser picker widget.  The application chooser
      * is not valid until this method is called.
@@ -5100,7 +5100,7 @@ export interface nsIApplicationChooserType extends nsISupports {
  * A service for asynchronously querying an application reputation service
  * based on metadata of the downloaded file.
  */
-export interface nsIApplicationReputationServiceType extends nsISupports {
+declare interface nsIApplicationReputationServiceType extends nsISupports {
     /**
      * Start querying the application reputation service.
      *
@@ -5149,7 +5149,7 @@ export interface nsIApplicationReputationServiceType extends nsISupports {
  * downloaded file. nsIApplicationReputationService.Start() may only be called
  * once with a single query.
  */
-export interface nsIApplicationReputationQueryType extends nsISupports {
+declare interface nsIApplicationReputationQueryType extends nsISupports {
     /**
      * The nsIURI from which the file was downloaded. This may not be null.
      */
@@ -5185,7 +5185,7 @@ export interface nsIApplicationReputationQueryType extends nsISupports {
 /**
  *
  */
-export interface nsIApplicationReputationCallbackType extends nsISupports {
+declare interface nsIApplicationReputationCallbackType extends nsISupports {
     /**
      * Callback for the result of the application reputation query.
      * @param aStatus
@@ -5229,7 +5229,7 @@ export interface nsIApplicationReputationCallbackType extends nsISupports {
  * null is a valid entry in the array, and as such any nsISupports
  * parameters may be null, except where noted.
  */
-export interface nsIArrayType extends nsISupports {
+declare interface nsIArrayType extends nsISupports {
     /**
      * length
      *
@@ -5289,7 +5289,7 @@ export interface nsIArrayType extends nsISupports {
  * Provides scriptable methods for initializing a nsIInputStream
  * implementation with an ArrayBuffer.
  */
-export interface nsIArrayBufferInputStreamType extends nsIInputStream {
+declare interface nsIArrayBufferInputStreamType extends nsIInputStream {
     /**
      * SetData - assign an ArrayBuffer to the input stream.
      *
@@ -5319,7 +5319,7 @@ export interface nsIArrayBufferInputStreamType extends nsIInputStream {
  * itself, possibly getting rid of the Count() method, as it duplicates
  * nsIArray functionality.
  */
-export interface nsIArrayExtensionsType extends nsIArray {
+declare interface nsIArrayExtensionsType extends nsIArray {
     /**
      * Count()
      *
@@ -5354,7 +5354,7 @@ export interface nsIArrayExtensionsType extends nsIArray {
  * necessary that a non-blocking nsIInputStream implementation also implement
  * nsIAsyncInputStream.
  */
-export interface nsIAsyncInputStreamType extends nsIInputStream {
+declare interface nsIAsyncInputStreamType extends nsIInputStream {
     /**
      * This method closes the stream and sets its internal status.  If the
      * stream is already closed, then this method is ignored.  Once the stream
@@ -5412,7 +5412,7 @@ export interface nsIAsyncInputStreamType extends nsIInputStream {
 /**
  * This is a companion interface for nsIAsyncInputStream::asyncWait.
  */
-export interface nsIInputStreamCallbackType extends nsISupports {
+declare interface nsIInputStreamCallbackType extends nsISupports {
     /**
      * Called to indicate that the stream is either readable or closed.
      *
@@ -5434,7 +5434,7 @@ export interface nsIInputStreamCallbackType extends nsISupports {
  * necessary that a non-blocking nsIOutputStream implementation also implement
  * nsIAsyncOutputStream.
  */
-export interface nsIAsyncOutputStreamType extends nsIOutputStream {
+declare interface nsIAsyncOutputStreamType extends nsIOutputStream {
     /**
      * This method closes the stream and sets its internal status.  If the
      * stream is already closed, then this method is ignored.  Once the stream
@@ -5491,7 +5491,7 @@ export interface nsIAsyncOutputStreamType extends nsIOutputStream {
 /**
  * This is a companion interface for nsIAsyncOutputStream::asyncWait.
  */
-export interface nsIOutputStreamCallbackType extends nsISupports {
+declare interface nsIOutputStreamCallbackType extends nsISupports {
     /**
      * Called to indicate that the stream is either writable or closed.
      *
@@ -5509,7 +5509,7 @@ export interface nsIOutputStreamCallbackType extends nsISupports {
  * If you wish to use AsyncShutdown, you will need to implement this
  * interface (and only this interface).
  */
-export interface nsIAsyncShutdownBlockerType extends nsISupports {
+declare interface nsIAsyncShutdownBlockerType extends nsISupports {
     /**
      * The *unique* name of the blocker.
      *
@@ -5545,7 +5545,7 @@ export interface nsIAsyncShutdownBlockerType extends nsISupports {
 /**
  * A client for a nsIAsyncShutdownBarrier.
  */
-export interface nsIAsyncShutdownClientType extends nsISupports {
+declare interface nsIAsyncShutdownClientType extends nsISupports {
     /**
      * The name of the barrier.
      */
@@ -5592,7 +5592,7 @@ export interface nsIAsyncShutdownClientType extends nsISupports {
 /**
  * Callback invoked once all blockers of a barrier have been removed.
  */
-export interface nsIAsyncShutdownCompletionCallbackType extends nsISupports {
+declare interface nsIAsyncShutdownCompletionCallbackType extends nsISupports {
     /**
      * The operation has been completed.
      */
@@ -5602,7 +5602,7 @@ export interface nsIAsyncShutdownCompletionCallbackType extends nsISupports {
 /**
  * A stage of shutdown that supports blocker registration.
  */
-export interface nsIAsyncShutdownBarrierType extends nsISupports {
+declare interface nsIAsyncShutdownBarrierType extends nsISupports {
     /**
      * The blocker registration capability.  Most services may wish to
      * publish this capability to let services that depend on it register
@@ -5628,7 +5628,7 @@ export interface nsIAsyncShutdownBarrierType extends nsISupports {
 /**
  * A service that allows registering shutdown-time dependencies.
  */
-export interface nsIAsyncShutdownServiceType extends nsISupports {
+declare interface nsIAsyncShutdownServiceType extends nsISupports {
     /**
      * Create a new barrier.
      *
@@ -5669,7 +5669,7 @@ export interface nsIAsyncShutdownServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIAsyncStreamCopierType extends nsIRequest {
+declare interface nsIAsyncStreamCopierType extends nsIRequest {
     /**
      * Initialize the stream copier.
      *
@@ -5714,7 +5714,7 @@ export interface nsIAsyncStreamCopierType extends nsIRequest {
 /**
  *
  */
-export interface nsIAsyncStreamCopier2Type extends nsIRequest {
+declare interface nsIAsyncStreamCopier2Type extends nsIRequest {
     /**
      * Initialize the stream copier.
      *
@@ -5757,7 +5757,7 @@ export interface nsIAsyncStreamCopier2Type extends nsIRequest {
 /**
  *
  */
-export interface nsIAsyncVerifyRedirectCallbackType extends nsISupports {
+declare interface nsIAsyncVerifyRedirectCallbackType extends nsISupports {
     /**
      * Complement to nsIChannelEventSink asynchronous callback. The result of
      * the redirect decision is passed through this callback.
@@ -5772,13 +5772,13 @@ export interface nsIAsyncVerifyRedirectCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsISuspendedTypesType extends nsISupports {
+declare interface nsISuspendedTypesType extends nsISupports {
 }
 
 /**
  *
  */
-export interface nsIAudioChannelAgentCallbackType extends nsISupports {
+declare interface nsIAudioChannelAgentCallbackType extends nsISupports {
     /**
      * Notified when the window volume/mute is changed
      */
@@ -5802,7 +5802,7 @@ export interface nsIAudioChannelAgentCallbackType extends nsISupports {
  * The agent will invoke a callback to notify Gecko components of
  * 1. Changes to the playable status of this channel.
  */
-export interface nsIAudioChannelAgentType extends nsISupports {
+declare interface nsIAudioChannelAgentType extends nsISupports {
     /**
      * Initialize the agent with a channel type.
      * Note: This function should only be called once.
@@ -5854,7 +5854,7 @@ export interface nsIAudioChannelAgentType extends nsISupports {
 /**
  *
  */
-export interface nsIAudioDeviceInfoType extends nsISupports {
+declare interface nsIAudioDeviceInfoType extends nsISupports {
     /**
      *
      */
@@ -5922,7 +5922,7 @@ export interface nsIAudioDeviceInfoType extends nsISupports {
  * set the attributes of this object to indicate to the caller what was entered
  * by the user.
  */
-export interface nsIAuthInformationType extends nsISupports {
+declare interface nsIAuthInformationType extends nsISupports {
     /**
      * @}
      *
@@ -5977,7 +5977,7 @@ export interface nsIAuthInformationType extends nsISupports {
 /**
  *
  */
-export interface nsIAuthModuleType extends nsISupports {
+declare interface nsIAuthModuleType extends nsISupports {
     /**
      * Other flags may be defined in the future
      *
@@ -6059,7 +6059,7 @@ export interface nsIAuthModuleType extends nsISupports {
 /**
  *
  */
-export interface nsIAuthPromptType extends nsISupports {
+declare interface nsIAuthPromptType extends nsISupports {
     /**
      * Puts up a text input dialog with OK and Cancel buttons.
      * Note: prompt uses separate args for the "in" and "out" values of the
@@ -6115,7 +6115,7 @@ export interface nsIAuthPromptType extends nsISupports {
  * It can be used to prompt users for authentication information, either
  * synchronously or asynchronously.
  */
-export interface nsIAuthPrompt2Type extends nsISupports {
+declare interface nsIAuthPrompt2Type extends nsISupports {
     /**
      * @}
      *
@@ -6183,7 +6183,7 @@ export interface nsIAuthPrompt2Type extends nsISupports {
  * An interface for wrapping nsIAuthPrompt interfaces to make
  * them usable via an nsIAuthPrompt2 interface.
  */
-export interface nsIAuthPromptAdapterFactoryType extends nsISupports {
+declare interface nsIAuthPromptAdapterFactoryType extends nsISupports {
     /**
      * Wrap an object implementing nsIAuthPrompt so that it's usable via
      * nsIAuthPrompt2.
@@ -6197,7 +6197,7 @@ export interface nsIAuthPromptAdapterFactoryType extends nsISupports {
  * returns successfully. They MUST NOT call any method on this interface before
  * promptPasswordAsync returns.
  */
-export interface nsIAuthPromptCallbackType extends nsISupports {
+declare interface nsIAuthPromptCallbackType extends nsISupports {
     /**
      * Authentication information is available.
      *
@@ -6226,7 +6226,7 @@ export interface nsIAuthPromptCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIAuthPromptProviderType extends nsISupports {
+declare interface nsIAuthPromptProviderType extends nsISupports {
     /**
      * Request a prompt interface for the given prompt reason;
      * @throws NS_ERROR_NOT_AVAILABLE if no prompt is allowed or
@@ -6244,7 +6244,7 @@ export interface nsIAuthPromptProviderType extends nsISupports {
 /**
  *
  */
-export interface nsIAutoCompleteControllerType extends nsISupports {
+declare interface nsIAutoCompleteControllerType extends nsISupports {
     /**
      * The input widget that is currently being controlled.
      */
@@ -6387,7 +6387,7 @@ export interface nsIAutoCompleteControllerType extends nsISupports {
 /**
  *
  */
-export interface nsIAutoCompleteInputType extends nsISupports {
+declare interface nsIAutoCompleteInputType extends nsISupports {
     /**
      * The result view that will be used to display results
      */
@@ -6521,7 +6521,7 @@ export interface nsIAutoCompleteInputType extends nsISupports {
 /**
  *
  */
-export interface nsIAutoCompletePopupType extends nsISupports {
+declare interface nsIAutoCompletePopupType extends nsISupports {
     /**
      * The input object that the popup is currently bound to
      */
@@ -6572,7 +6572,7 @@ export interface nsIAutoCompletePopupType extends nsISupports {
 /**
  *
  */
-export interface nsIAutoCompleteResultType extends nsISupports {
+declare interface nsIAutoCompleteResultType extends nsISupports {
     /**
      * indicates success
      * with matches
@@ -6636,7 +6636,7 @@ export interface nsIAutoCompleteResultType extends nsISupports {
 /**
  *
  */
-export interface nsIAutoCompleteSearchType extends nsISupports {
+declare interface nsIAutoCompleteSearchType extends nsISupports {
     /**
      * Search for a given string and notify a listener (either synchronously
      * or asynchronously) of the result
@@ -6658,7 +6658,7 @@ export interface nsIAutoCompleteSearchType extends nsISupports {
 /**
  *
  */
-export interface nsIAutoCompleteObserverType extends nsISupports {
+declare interface nsIAutoCompleteObserverType extends nsISupports {
     /**
      * Called when a search is complete and the results are ready
      *
@@ -6671,7 +6671,7 @@ export interface nsIAutoCompleteObserverType extends nsISupports {
 /**
  *
  */
-export interface nsIAutoCompleteSearchDescriptorType extends nsISupports {
+declare interface nsIAutoCompleteSearchDescriptorType extends nsISupports {
     /**
      * Identifies the search behavior.
      * Should be one of the SEARCH_TYPE_* constants above.
@@ -6691,7 +6691,7 @@ export interface nsIAutoCompleteSearchDescriptorType extends nsISupports {
  * auto complete results are needed that can be pre-generated and filled into
  * an array.
  */
-export interface nsIAutoCompleteSimpleResultType extends nsIAutoCompleteResult {
+declare interface nsIAutoCompleteSimpleResultType extends nsIAutoCompleteResult {
     /**
      * A writer for the readonly attribute 'searchString' which should contain
      * the string that the user typed.
@@ -6765,7 +6765,7 @@ export interface nsIAutoCompleteSimpleResultType extends nsIAutoCompleteResult {
 /**
  *
  */
-export interface nsIAutoCompleteSimpleResultListenerType extends nsISupports {
+declare interface nsIAutoCompleteSimpleResultListenerType extends nsISupports {
     /**
      * Dispatched after a value is removed from the result.
      * @param aResult
@@ -6779,7 +6779,7 @@ export interface nsIAutoCompleteSimpleResultListenerType extends nsISupports {
 /**
  * Simple interface that allows the results of the next search to be overridden.
  */
-export interface nsIAutoCompleteSimpleSearchType extends nsIAutoCompleteSearch {
+declare interface nsIAutoCompleteSimpleSearchType extends nsIAutoCompleteSearch {
     /**
      * Sets the result that should be used next time `startSearch` is called.
      */
@@ -6789,7 +6789,7 @@ export interface nsIAutoCompleteSimpleSearchType extends nsIAutoCompleteSearch {
 /**
  *
  */
-export interface nsIAutoplayType extends nsISupports {
+declare interface nsIAutoplayType extends nsISupports {
 }
 
 /**
@@ -6800,7 +6800,7 @@ export interface nsIAutoplayType extends nsISupports {
  * and high-memory situation.  The logic to detect such a memory situation
  * is defined per platform.
  */
-export interface nsITabUnloaderType extends nsISupports {
+declare interface nsITabUnloaderType extends nsISupports {
     /**
      * Unload the least-recently-used tab.
      * JS implementation of this interface TabUnloader.unloadTabAsync takes
@@ -6815,7 +6815,7 @@ export interface nsITabUnloaderType extends nsISupports {
 /**
  *
  */
-export interface nsIAvailableMemoryWatcherBaseType extends nsISupports {
+declare interface nsIAvailableMemoryWatcherBaseType extends nsISupports {
     /**
      *
      */
@@ -6829,7 +6829,7 @@ export interface nsIAvailableMemoryWatcherBaseType extends nsISupports {
 /**
  * This interface lets you evict a document from the back/forward cache.
  */
-export interface nsIBFCacheEntryType extends nsISupports {
+declare interface nsIBFCacheEntryType extends nsISupports {
     /**
      *
      */
@@ -6846,7 +6846,7 @@ export interface nsIBFCacheEntryType extends nsISupports {
  * HttpBackgroundChannelParent::LinkToChannel will be invoked to notify the
  * existence of associated channel object.
  */
-export interface nsIBackgroundChannelRegistrarType extends nsISupports {
+declare interface nsIBackgroundChannelRegistrarType extends nsISupports {
     /**
      * Link the provided channel parent actor with the given channel Id.
      * callbacks will be invoked immediately when the HttpBackgroundChannelParent
@@ -6906,7 +6906,7 @@ export interface nsIBackgroundChannelRegistrarType extends nsISupports {
  * public methods of the interface may only be called from the main
  * thread.
  */
-export interface nsIBackgroundFileSaverType extends nsISupports {
+declare interface nsIBackgroundFileSaverType extends nsISupports {
     /**
      * This observer receives notifications when the target file name changes and
      * when the operation completes, successfully or not.
@@ -7003,7 +7003,7 @@ export interface nsIBackgroundFileSaverType extends nsISupports {
 /**
  *
  */
-export interface nsIBackgroundFileSaverObserverType extends nsISupports {
+declare interface nsIBackgroundFileSaverObserverType extends nsISupports {
     /**
      * Called when the name of the output file has been determined.  This function
      * may be called more than once if the target file is renamed while saving.
@@ -7032,7 +7032,7 @@ export interface nsIBackgroundFileSaverObserverType extends nsISupports {
  * Determine if this instance is running background task mode and
  * what, if any, task is active.
  */
-export interface nsIBackgroundTasksType extends nsISupports {
+declare interface nsIBackgroundTasksType extends nsISupports {
     /**
      * True if and only if this invocation is running in background task mode.
      */
@@ -7053,7 +7053,7 @@ export interface nsIBackgroundTasksType extends nsISupports {
 /**
  * Import and run named backgroundtask implementations.
  */
-export interface nsIBackgroundTasksManagerType extends nsICommandLineHandler {
+declare interface nsIBackgroundTasksManagerType extends nsICommandLineHandler {
     /**
      * Run the named background task.
      *
@@ -7070,7 +7070,7 @@ export interface nsIBackgroundTasksManagerType extends nsICommandLineHandler {
 /**
  *
  */
-export interface nsIBackgroundTasksRunnerType extends nsISupports {
+declare interface nsIBackgroundTasksRunnerType extends nsISupports {
     /**
      * Runs a background process in an independent detached process. Any process
      * opened by this function can outlive the main process.
@@ -7101,7 +7101,7 @@ export interface nsIBackgroundTasksRunnerType extends nsISupports {
  * can be performed on it.  This is not to be a complete windowing interface
  * but rather a common set that nearly all windowed objects support.
  */
-export interface nsIBaseWindowType extends nsISupports {
+declare interface nsIBaseWindowType extends nsISupports {
     /**
      * Allows a client to initialize an object implementing this interface with
      * the usually required window setup information.
@@ -7269,7 +7269,7 @@ export interface nsIBaseWindowType extends nsISupports {
 /**
  *
  */
-export interface nsIBidiKeyboardType extends nsISupports {
+declare interface nsIBidiKeyboardType extends nsISupports {
     /**
      * Inspects the installed keyboards and resets the bidi keyboard state
      */
@@ -7299,7 +7299,7 @@ export interface nsIBidiKeyboardType extends nsISupports {
  *
  * @See nsIBinaryOutputStream
  */
-export interface nsIBinaryInputStreamType extends nsIInputStream {
+declare interface nsIBinaryInputStreamType extends nsIInputStream {
     /**
      *
      */
@@ -7376,7 +7376,7 @@ export interface nsIBinaryInputStreamType extends nsIInputStream {
  *
  * @See nsIBinaryInputStream
  */
-export interface nsIBinaryOutputStreamType extends nsIOutputStream {
+declare interface nsIBinaryOutputStreamType extends nsIOutputStream {
     /**
      *
      */
@@ -7451,7 +7451,7 @@ export interface nsIBinaryOutputStreamType extends nsIOutputStream {
  * throw errors. All errors will be reported through the callback. The only
  * things that should cause methods to directly throw errors are null arguments.
  */
-export interface nsIBitsType extends nsISupports {
+declare interface nsIBitsType extends nsISupports {
     /**
      * Indicates whether init() has been called.
      */
@@ -7546,7 +7546,7 @@ export interface nsIBitsType extends nsISupports {
  * This callback interface is for use by the nsIBits interface for returning
  * results asynchronously to the caller.
  */
-export interface nsIBitsNewRequestCallbackType extends nsISupports {
+declare interface nsIBitsNewRequestCallbackType extends nsISupports {
     /**
      *
      */
@@ -7593,7 +7593,7 @@ export interface nsIBitsNewRequestCallbackType extends nsISupports {
  * Attributes and nsIRequest::isPending() can still be accessed at any
  * time.
  */
-export interface nsIBitsRequestType extends nsIRequest {
+declare interface nsIBitsRequestType extends nsIRequest {
     /**
      * The BITS id of the download. This will be a string representing a UUID.
      */
@@ -7685,7 +7685,7 @@ export interface nsIBitsRequestType extends nsIRequest {
  * This callback interface is for use by the nsIBitsRequest interface for
  * returning results asynchronously to the caller.
  */
-export interface nsIBitsCallbackType extends nsISupports {
+declare interface nsIBitsCallbackType extends nsISupports {
     /**
      *
      */
@@ -7711,7 +7711,7 @@ export interface nsIBitsCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIBlocklistServiceType extends nsISupports {
+declare interface nsIBlocklistServiceType extends nsISupports {
     /**
      *
      */
@@ -7721,7 +7721,7 @@ export interface nsIBlocklistServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIBrowserType extends nsISupports {
+declare interface nsIBrowserType extends nsISupports {
     /**
      * Called by the child to inform the parent that links are dropped into
      * content area.
@@ -7844,7 +7844,7 @@ export interface nsIBrowserType extends nsISupports {
 /**
  *
  */
-export interface nsIBrowserChildType extends nsISupports {
+declare interface nsIBrowserChildType extends nsISupports {
     /**
      *
      */
@@ -7889,7 +7889,7 @@ export interface nsIBrowserChildType extends nsISupports {
  * <browser> element. It is used to update the commands in the
  * parent process when the set of child command have changed.
  */
-export interface nsIBrowserControllerType extends nsISupports {
+declare interface nsIBrowserControllerType extends nsISupports {
     /**
      *
      */
@@ -7899,7 +7899,7 @@ export interface nsIBrowserControllerType extends nsISupports {
 /**
  *
  */
-export interface nsIOpenURIInFrameParamsType extends nsISupports {
+declare interface nsIOpenURIInFrameParamsType extends nsISupports {
     /**
      *
      */
@@ -7937,7 +7937,7 @@ export interface nsIOpenURIInFrameParamsType extends nsISupports {
  * happen to be a browser chrome window will simply have no access to any such
  * interface.
  */
-export interface nsIBrowserDOMWindowType extends nsISupports {
+declare interface nsIBrowserDOMWindowType extends nsISupports {
     /**
      * Create the content window for the given URI.
      * @param aURI the URI to be opened in the window (can be null).
@@ -8004,7 +8004,7 @@ export interface nsIBrowserDOMWindowType extends nsISupports {
  * Interface to the BrowserElementParent implementation. All methods
  * but setFrameLoader throw when the remote process is dead.
  */
-export interface nsIBrowserElementAPIType extends nsISupports {
+declare interface nsIBrowserElementAPIType extends nsISupports {
     /**
      * Notify frame scripts that support the API to destroy.
      */
@@ -8046,7 +8046,7 @@ export interface nsIBrowserElementAPIType extends nsISupports {
 /**
  *
  */
-export interface nsIBrowserHandlerType extends nsISupports {
+declare interface nsIBrowserHandlerType extends nsISupports {
     /**
      *
      */
@@ -8073,7 +8073,7 @@ export interface nsIBrowserHandlerType extends nsISupports {
 /**
  *
  */
-export interface nsIBrowserUsageType extends nsISupports {
+declare interface nsIBrowserUsageType extends nsISupports {
     /**
      * Returns the number of unique domains (eTLD+1) visited in the past
      * 24 hours by the user.
@@ -8084,7 +8084,7 @@ export interface nsIBrowserUsageType extends nsISupports {
 /**
  *
  */
-export interface nsIVisibleTabType extends nsISupports {
+declare interface nsIVisibleTabType extends nsISupports {
     /**
      *
      */
@@ -8098,7 +8098,7 @@ export interface nsIVisibleTabType extends nsISupports {
 /**
  *
  */
-export interface nsIBrowserWindowTrackerType extends nsISupports {
+declare interface nsIBrowserWindowTrackerType extends nsISupports {
     /**
      * Return browser having given browser id.
      */
@@ -8109,7 +8109,7 @@ export interface nsIBrowserWindowTrackerType extends nsISupports {
  * An input stream that reads ahead and keeps a buffer coming from another input
  * stream so that fewer accesses to the underlying stream are necessary.
  */
-export interface nsIBufferedInputStreamType extends nsIInputStream {
+declare interface nsIBufferedInputStreamType extends nsIInputStream {
     /**
      * @param fillFromStream - add buffering to this stream
      * @param bufferSize     - specifies the maximum buffer size
@@ -8126,7 +8126,7 @@ export interface nsIBufferedInputStreamType extends nsIInputStream {
  * and does the entire write only when the buffer is full, so that fewer writes
  * to the underlying output stream are necessary.
  */
-export interface nsIBufferedOutputStreamType extends nsIOutputStream {
+declare interface nsIBufferedOutputStreamType extends nsIOutputStream {
     /**
      * @param sinkToStream - add buffering to this stream
      * @param bufferSize   - specifies the maximum buffer size
@@ -8141,7 +8141,7 @@ export interface nsIBufferedOutputStreamType extends nsIOutputStream {
 /**
  *
  */
-export interface nsIByteRangeRequestType extends nsISupports {
+declare interface nsIByteRangeRequestType extends nsISupports {
     /**
      * Returns true IFF this request is a byte range request, otherwise it
      * returns false (This is effectively the same as checking to see if
@@ -8161,7 +8161,7 @@ export interface nsIByteRangeRequestType extends nsISupports {
 /**
  *
  */
-export interface nsICacheEntryType extends nsISupports {
+declare interface nsICacheEntryType extends nsISupports {
     /**
      * Get the key identifying the cache entry.
      */
@@ -8457,7 +8457,7 @@ export interface nsICacheEntryType extends nsISupports {
  * Argument for nsICacheEntry.visitMetaData, provides access to all metadata
  * keys and values stored on the entry.
  */
-export interface nsICacheEntryMetaDataVisitorType extends nsISupports {
+declare interface nsICacheEntryMetaDataVisitorType extends nsISupports {
     /**
      * Called over each key / value pair.
      */
@@ -8467,7 +8467,7 @@ export interface nsICacheEntryMetaDataVisitorType extends nsISupports {
 /**
  *
  */
-export interface nsICacheEntryDoomCallbackType extends nsISupports {
+declare interface nsICacheEntryDoomCallbackType extends nsISupports {
     /**
      * Callback invoked after an entry or entries has/have been
      * doomed from the cache.
@@ -8478,7 +8478,7 @@ export interface nsICacheEntryDoomCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsICacheEntryOpenCallbackType extends nsISupports {
+declare interface nsICacheEntryOpenCallbackType extends nsISupports {
     /**
      * Callback to perform any validity checks before the entry should be used.
      * Called before onCacheEntryAvailable callback, depending on the result it
@@ -8527,7 +8527,7 @@ export interface nsICacheEntryOpenCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIInputStreamReceiverType extends nsISupports {
+declare interface nsIInputStreamReceiverType extends nsISupports {
     /**
      *
      */
@@ -8537,7 +8537,7 @@ export interface nsIInputStreamReceiverType extends nsISupports {
 /**
  *
  */
-export interface nsICacheInfoChannelType extends nsISupports {
+declare interface nsICacheInfoChannelType extends nsISupports {
     /**
      * Get the number of times the cache entry has been opened. This attribute is
      * equivalent to nsICachingChannel.cacheToken.fetchCount.
@@ -8679,7 +8679,7 @@ export interface nsICacheInfoChannelType extends nsISupports {
  * It's intended to be used to ensure exclusive access to folders being
  * deleted by the purgeHTTPCache background task.
  */
-export interface nsICachePurgeLockType extends nsISupports {
+declare interface nsICachePurgeLockType extends nsISupports {
     /**
      * Initializes the lock using the profile name and the current process's
      * path.
@@ -8704,7 +8704,7 @@ export interface nsICachePurgeLockType extends nsISupports {
  * in-mem+on-disk, in-mem+on-disk+app-cache or just a specific
  * app-cache storage.
  */
-export interface nsICacheStorageType extends nsISupports {
+declare interface nsICacheStorageType extends nsISupports {
     /**
      * Asynchronously opens a cache entry for the specified URI.
      * Result is fetched asynchronously via the callback.
@@ -8776,7 +8776,7 @@ export interface nsICacheStorageType extends nsISupports {
 /**
  * Provides access to particual cache storages of the network URI cache.
  */
-export interface nsICacheStorageServiceType extends nsISupports {
+declare interface nsICacheStorageServiceType extends nsISupports {
     /**
      * Get storage where entries will only remain in memory, never written
      * to the disk.
@@ -8860,7 +8860,7 @@ export interface nsICacheStorageServiceType extends nsISupports {
 /**
  *
  */
-export interface nsICacheStorageConsumptionObserverType extends nsISupports {
+declare interface nsICacheStorageConsumptionObserverType extends nsISupports {
     /**
      * Callback invoked to answer asyncGetDiskConsumption call. Always triggered
      * on the main thread.
@@ -8875,7 +8875,7 @@ export interface nsICacheStorageConsumptionObserverType extends nsISupports {
 /**
  *
  */
-export interface nsICacheStorageVisitorType extends nsISupports {
+declare interface nsICacheStorageVisitorType extends nsISupports {
     /**
      *
      */
@@ -8895,7 +8895,7 @@ export interface nsICacheStorageVisitorType extends nsISupports {
  *
  * THIS IS NOT AN API TO BE USED BY EXTENSIONS! ONLY USED BY MOZILLA TESTS.
  */
-export interface nsICacheTestingType extends nsISupports {
+declare interface nsICacheTestingType extends nsISupports {
     /**
      *
      */
@@ -8920,7 +8920,7 @@ export interface nsICacheTestingType extends nsISupports {
  * 3) Support for uniquely identifying cached data in cases when the URL
  * is insufficient (e.g., HTTP form submission).
  */
-export interface nsICachingChannelType extends nsICacheInfoChannel {
+declare interface nsICachingChannelType extends nsICacheInfoChannel {
     /**
      * Set/get the cache token... uniquely identifies the data in the cache.
      * Holding a reference to this token prevents the cached data from being
@@ -8958,7 +8958,7 @@ export interface nsICachingChannelType extends nsICacheInfoChannel {
 /**
  * This interface provides a means to cancel an operation that is in progress.
  */
-export interface nsICancelableType extends nsISupports {
+declare interface nsICancelableType extends nsISupports {
     /**
      * Call this method to request that this object abort whatever operation it
      * may be performing.
@@ -8973,7 +8973,7 @@ export interface nsICancelableType extends nsISupports {
 /**
  *
  */
-export interface nsICaptivePortalCallbackType extends nsISupports {
+declare interface nsICaptivePortalCallbackType extends nsISupports {
     /**
      * Preparation for network interface before captive portal detection started.
      */
@@ -8987,7 +8987,7 @@ export interface nsICaptivePortalCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsICaptivePortalDetectorType extends nsISupports {
+declare interface nsICaptivePortalDetectorType extends nsISupports {
     /**
      * Perform captive portal detection on specific network interface.
      * @param ifname The name of network interface, exception will be thrwon
@@ -9017,7 +9017,7 @@ export interface nsICaptivePortalDetectorType extends nsISupports {
 /**
  *
  */
-export interface nsICaptivePortalServiceCallbackType extends nsISupports {
+declare interface nsICaptivePortalServiceCallbackType extends nsISupports {
     /**
      * Invoke callbacks after captive portal detection finished.
      */
@@ -9030,7 +9030,7 @@ export interface nsICaptivePortalServiceCallbackType extends nsISupports {
  * content process, but only to mirror the captive portal state from the main
  * process.
  */
-export interface nsICaptivePortalServiceType extends nsISupports {
+declare interface nsICaptivePortalServiceType extends nsISupports {
     /**
      * Called from XPCOM to trigger a captive portal recheck.
      * A network request will only be performed if no other checks are currently
@@ -9053,7 +9053,7 @@ export interface nsICaptivePortalServiceType extends nsISupports {
  * A consumer of a filter cascade, i.e. a cascaded bloom filter as generated by
  * https://github.com/mozilla/filter-cascade
  */
-export interface nsICascadeFilterType extends nsISupports {
+declare interface nsICascadeFilterType extends nsISupports {
     /**
      * Initialize with the data that represents the filter cascade.
      * This method can be called repeatedly.
@@ -9073,7 +9073,7 @@ export interface nsICascadeFilterType extends nsISupports {
 /**
  * nsICategoryManager
  */
-export interface nsICategoryEntryType extends nsISupportsCString {
+declare interface nsICategoryEntryType extends nsISupportsCString {
     /**
      *
      */
@@ -9087,7 +9087,7 @@ export interface nsICategoryEntryType extends nsISupportsCString {
 /**
  *
  */
-export interface nsICategoryManagerType extends nsISupports {
+declare interface nsICategoryManagerType extends nsISupports {
     /**
      * Get the value for the given category's entry.
      * @param aCategory The name of the category ("protocol")
@@ -9136,7 +9136,7 @@ export interface nsICategoryManagerType extends nsISupports {
 /**
  *
  */
-export interface nsICertOverrideType extends nsISupports {
+declare interface nsICertOverrideType extends nsISupports {
     /**
      * The hostname of the server the override is used for.
      */
@@ -9169,7 +9169,7 @@ export interface nsICertOverrideType extends nsISupports {
 /**
  *
  */
-export interface nsICertOverrideServiceType extends nsISupports {
+declare interface nsICertOverrideServiceType extends nsISupports {
     /**
      * When making a TLS connection to the given hostname and port (in the
      * context of the given origin attributes), if the certificate verifier
@@ -9243,7 +9243,7 @@ export interface nsICertOverrideServiceType extends nsISupports {
  * nsICertStorage has completed. Indicates the result of the requested
  * operation, as well as any data returned by the operation.
  */
-export interface nsICertStorageCallbackType extends nsISupports {
+declare interface nsICertStorageCallbackType extends nsISupports {
     /**
      *
      */
@@ -9258,7 +9258,7 @@ export interface nsICertStorageCallbackType extends nsISupports {
  * Set state to nsICertStorage.STATE_UNSET to mark the certificate as not revoked.
  * Set state to nsICertStorage.STATE_ENFORCE to mark the certificate as revoked.
  */
-export interface nsIRevocationStateType extends nsISupports {
+declare interface nsIRevocationStateType extends nsISupports {
     /**
      *
      */
@@ -9269,7 +9269,7 @@ export interface nsIRevocationStateType extends nsISupports {
  * An interface representing the revocation state of a certificate by issuer
  * and serial number. Both issuer name and serial number are base64-encoded.
  */
-export interface nsIIssuerAndSerialRevocationStateType extends nsIRevocationState {
+declare interface nsIIssuerAndSerialRevocationStateType extends nsIRevocationState {
     /**
      *
      */
@@ -9285,7 +9285,7 @@ export interface nsIIssuerAndSerialRevocationStateType extends nsIRevocationStat
  * and pub key hash (the hash algorithm should be SHA-256). Both subject name
  * and public key hash are base64-encoded.
  */
-export interface nsISubjectAndPubKeyRevocationStateType extends nsIRevocationState {
+declare interface nsISubjectAndPubKeyRevocationStateType extends nsIRevocationState {
     /**
      *
      */
@@ -9306,7 +9306,7 @@ export interface nsISubjectAndPubKeyRevocationStateType extends nsIRevocationSta
  * minTimestamp is the smallest timestamp that the CRLite filter covers.
  * maxTimestamp is the largest timestamp that the CRLite filter covers.
  */
-export interface nsICRLiteCoverageType extends nsISupports {
+declare interface nsICRLiteCoverageType extends nsISupports {
     /**
      *
      */
@@ -9327,7 +9327,7 @@ export interface nsICRLiteCoverageType extends nsISupports {
  * logID is the id field.
  * timestamp is the timestamp field.
  */
-export interface nsICRLiteTimestampType extends nsISupports {
+declare interface nsICRLiteTimestampType extends nsISupports {
     /**
      *
      */
@@ -9343,7 +9343,7 @@ export interface nsICRLiteTimestampType extends nsISupports {
  * actually matches the subject DN of the certificate, nor that the given cert
  * is a valid DER X.509 certificate.)
  */
-export interface nsICertInfoType extends nsISupports {
+declare interface nsICertInfoType extends nsISupports {
     /**
      *
      */
@@ -9361,7 +9361,7 @@ export interface nsICertInfoType extends nsISupports {
 /**
  *
  */
-export interface nsICertStorageType extends nsISupports {
+declare interface nsICertStorageType extends nsISupports {
     /**
      * Asynchronously check if the backing storage has stored data of the given
      * type in the past. This is useful if the backing storage may have had to
@@ -9463,7 +9463,7 @@ export interface nsICertStorageType extends nsISupports {
 /**
  *
  */
-export interface nsICertTreeItemType extends nsISupports {
+declare interface nsICertTreeItemType extends nsISupports {
     /**
      *
      */
@@ -9473,7 +9473,7 @@ export interface nsICertTreeItemType extends nsISupports {
 /**
  *
  */
-export interface nsICertTreeType extends nsITreeView {
+declare interface nsICertTreeType extends nsITreeView {
     /**
      *
      */
@@ -9495,7 +9495,7 @@ export interface nsICertTreeType extends nsITreeView {
 /**
  * Functions that implement user interface dialogs to manage certificates.
  */
-export interface nsICertificateDialogsType extends nsISupports {
+declare interface nsICertificateDialogsType extends nsISupports {
     /**
      * UI shown when a user is asked to download a new CA cert.
      * Provides user with ability to choose trust settings for the cert.
@@ -9551,7 +9551,7 @@ export interface nsICertificateDialogsType extends nsISupports {
  *
  * This interface must be used only from the XPCOM main thread.
  */
-export interface nsIChannelType extends nsIRequest {
+declare interface nsIChannelType extends nsIRequest {
     /**
      * The original URI used to construct the channel. This is used in
      * the case of a redirect or URI "resolution" (e.g. resolving a
@@ -9773,7 +9773,7 @@ export interface nsIChannelType extends nsIRequest {
 /**
  *
  */
-export interface nsIIdentChannelType extends nsIChannel {
+declare interface nsIIdentChannelType extends nsIChannel {
     /**
      * Unique ID of the channel, shared between parent and child. Needed if
      * the channel activity needs to be monitored across process boundaries,
@@ -9785,7 +9785,7 @@ export interface nsIIdentChannelType extends nsIChannel {
 /**
  *
  */
-export interface nsIUrlClassifierBlockedChannelType extends nsISupports {
+declare interface nsIUrlClassifierBlockedChannelType extends nsISupports {
     /**
      *
      */
@@ -9827,7 +9827,7 @@ export interface nsIUrlClassifierBlockedChannelType extends nsISupports {
 /**
  *
  */
-export interface nsIChannelClassifierServiceType extends nsISupports {
+declare interface nsIChannelClassifierServiceType extends nsISupports {
     /**
      *
      */
@@ -9846,7 +9846,7 @@ export interface nsIChannelClassifierServiceType extends nsISupports {
  *
  * These methods are called before onStartRequest.
  */
-export interface nsIChannelEventSinkType extends nsISupports {
+declare interface nsIChannelEventSinkType extends nsISupports {
     /**
      * Called when a redirect occurs. This may happen due to an HTTP 3xx status
      * code. The purpose of this method is to notify the sink that a redirect
@@ -9898,7 +9898,7 @@ export interface nsIChannelEventSinkType extends nsISupports {
 /**
  * Implemented by content side of IPC protocols.
  */
-export interface nsIChildChannelType extends nsISupports {
+declare interface nsIChildChannelType extends nsISupports {
     /**
      * Create the chrome side of the IPC protocol and join an existing 'real'
      * channel on the parent process.  The id is provided by
@@ -9921,7 +9921,7 @@ export interface nsIChildChannelType extends nsISupports {
 /**
  *
  */
-export interface nsIChromeRegistryType extends nsISupports {
+declare interface nsIChromeRegistryType extends nsISupports {
     /**
      * Resolve a chrome URL to an loadable URI using the information in the
      * registry. Does not modify aChromeURL.
@@ -9949,7 +9949,7 @@ export interface nsIChromeRegistryType extends nsISupports {
 /**
  *
  */
-export interface nsIXULChromeRegistryType extends nsIChromeRegistry {
+declare interface nsIXULChromeRegistryType extends nsIChromeRegistry {
     /**
      *
      */
@@ -9986,7 +9986,7 @@ export interface nsIXULChromeRegistryType extends nsIChromeRegistry {
  * your class to implement nsIClassInfo, see nsIClassInfoImpl.h for
  * instructions--you most likely do not want to inherit from nsIClassInfo.
  */
-export interface nsIClassInfoType extends nsISupports {
+declare interface nsIClassInfoType extends nsISupports {
     /**
      * Return an object to assist XPConnect in supplying JavaScript-specific
      * behavior to callers of the instance object, or null if not needed.
@@ -10023,7 +10023,7 @@ export interface nsIClassInfoType extends nsISupports {
 /**
  *
  */
-export interface nsIClassOfServiceType extends nsISupports {
+declare interface nsIClassOfServiceType extends nsISupports {
     /**
      *
      */
@@ -10053,7 +10053,7 @@ export interface nsIClassOfServiceType extends nsISupports {
  * result information of channel classifier. The information contains, for
  * example, the name of matched table and the name of matched provider.
  */
-export interface nsIClassifiedChannelType extends nsISupports {
+declare interface nsIClassifiedChannelType extends nsISupports {
     /**
      * Sets matched info of the classified channel.
      *
@@ -10138,7 +10138,7 @@ export interface nsIClassifiedChannelType extends nsISupports {
  * Provides methods for cleaning data from a nsIPrincipal and/or from a time
  * range.
  */
-export interface nsIClearDataServiceType extends nsISupports {
+declare interface nsIClearDataServiceType extends nsISupports {
     /**
      * Delete data owned by local files or other hostless schemes.
      * @param aIsUserRequest true if this request comes from a user interaction.
@@ -10259,7 +10259,7 @@ export interface nsIClearDataServiceType extends nsISupports {
  * This is a companion interface for
  * nsIClearDataService::deleteDataFromPrincipal().
  */
-export interface nsIClearDataCallbackType extends nsISupports {
+declare interface nsIClearDataCallbackType extends nsISupports {
     /**
      * Called to indicate that the data cleaning is completed.
      * @param aFailedFlags this value contains the flags that failed during the
@@ -10271,7 +10271,7 @@ export interface nsIClearDataCallbackType extends nsISupports {
 /**
  * Rule to specify the CSS selector for detecting and clicking cookie banner.
  */
-export interface nsIClickRuleType extends nsISupports {
+declare interface nsIClickRuleType extends nsISupports {
     /**
      * The CSS selector for detecting the presence of the cookie banner.
      */
@@ -10308,7 +10308,7 @@ export interface nsIClickRuleType extends nsISupports {
 /**
  * Provides UI for SSL client-auth dialogs.
  */
-export interface nsIClientAuthDialogsType extends nsISupports {
+declare interface nsIClientAuthDialogsType extends nsISupports {
     /**
      * Called when a user is asked to choose a certificate for client auth.
      *
@@ -10328,7 +10328,7 @@ export interface nsIClientAuthDialogsType extends nsISupports {
 /**
  *
  */
-export interface nsIClientAuthRememberRecordType extends nsISupports {
+declare interface nsIClientAuthRememberRecordType extends nsISupports {
     /**
      *
      */
@@ -10350,7 +10350,7 @@ export interface nsIClientAuthRememberRecordType extends nsISupports {
 /**
  *
  */
-export interface nsIClientAuthRememberServiceType extends nsISupports {
+declare interface nsIClientAuthRememberServiceType extends nsISupports {
     /**
      *
      */
@@ -10384,7 +10384,7 @@ export interface nsIClientAuthRememberServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIClipboardType extends nsISupports {
+declare interface nsIClipboardType extends nsISupports {
     /**
      * Given a transferable, set the data on the native clipboard
      *
@@ -10465,7 +10465,7 @@ export interface nsIClipboardType extends nsISupports {
 /**
  * helper service for common uses of nsIClipboard.
  */
-export interface nsIClipboardHelperType extends nsISupports {
+declare interface nsIClipboardHelperType extends nsISupports {
     /**
      * copy string to given clipboard
      *
@@ -10487,7 +10487,7 @@ export interface nsIClipboardHelperType extends nsISupports {
 /**
  *
  */
-export interface nsIClipboardOwnerType extends nsISupports {
+declare interface nsIClipboardOwnerType extends nsISupports {
     /**
      * Notifies the owner of the clipboard transferable that the
      * transferable is being removed from the clipboard
@@ -10501,7 +10501,7 @@ export interface nsIClipboardOwnerType extends nsISupports {
 /**
  *
  */
-export interface nsICloneableInputStreamType extends nsISupports {
+declare interface nsICloneableInputStreamType extends nsISupports {
     /**
      *
      */
@@ -10515,7 +10515,7 @@ export interface nsICloneableInputStreamType extends nsISupports {
 /**
  *
  */
-export interface nsICloneableInputStreamWithRangeType extends nsICloneableInputStream {
+declare interface nsICloneableInputStreamWithRangeType extends nsICloneableInputStream {
     /**
      *
      */
@@ -10528,7 +10528,7 @@ export interface nsICloneableInputStreamWithRangeType extends nsICloneableInputS
  * By flushing the counters, one can analyze the coverage information
  * for a subset of the program execution (e.g. startup code coverage).
  */
-export interface nsICodeCoverageType extends nsISupports {
+declare interface nsICodeCoverageType extends nsISupports {
     /**
      * Write the coverage counters to disk, and reset them in memory to 0.
      */
@@ -10542,7 +10542,7 @@ export interface nsICodeCoverageType extends nsISupports {
  * format of the <input type='color'> value as described in the HTML
  * specifications.
  */
-export interface nsIColorPickerShownCallbackType extends nsISupports {
+declare interface nsIColorPickerShownCallbackType extends nsISupports {
     /**
      * Callback called when the color picker requests a color update.
      * This callback can not be called after done() was called.
@@ -10568,7 +10568,7 @@ export interface nsIColorPickerShownCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIColorPickerType extends nsISupports {
+declare interface nsIColorPickerType extends nsISupports {
     /**
      * Initialize the color picker widget. The color picker will not be shown until
      * open() is called.
@@ -10604,7 +10604,7 @@ export interface nsIColorPickerType extends nsISupports {
  * "flags" are switches. In normalized form they are preceded by a single dash.
  * Some flags may take "parameters", e.g. "--url <param>".
  */
-export interface nsICommandLineType extends nsISupports {
+declare interface nsICommandLineType extends nsISupports {
     /**
      * Number of arguments in the command line. The application name is not
      * part of the command line.
@@ -10728,7 +10728,7 @@ export interface nsICommandLineType extends nsISupports {
  * or provide a generic solution of some sort? Don't freeze this interface
  * without thinking about this!
  */
-export interface nsICommandLineHandlerType extends nsISupports {
+declare interface nsICommandLineHandlerType extends nsISupports {
     /**
      * Process a command line. If this handler finds arguments that it
      * understands, it should perform the appropriate actions (such as opening
@@ -10758,7 +10758,7 @@ export interface nsICommandLineHandlerType extends nsISupports {
  * functionality provided by this interface, talk to Benjamin
  * Smedberg <benjamin@smedbergs.us>.
  */
-export interface nsICommandLineRunnerType extends nsICommandLine {
+declare interface nsICommandLineRunnerType extends nsICommandLine {
     /**
      * This method assumes a native character set, and is meant to be called
      * with the argc/argv passed to main(). Talk to bsmedberg if you need to
@@ -10803,7 +10803,7 @@ export interface nsICommandLineRunnerType extends nsICommandLine {
  * command-line-validator m-edit         @mozilla.org/composer/clh;1
  * command-line-validator m-irc          @mozilla.org/chatzilla/clh;1
  */
-export interface nsICommandLineValidatorType extends nsISupports {
+declare interface nsICommandLineValidatorType extends nsISupports {
     /**
      * Process the command-line validators in the proper order, calling
      * "validate()" on each.
@@ -10823,7 +10823,7 @@ export interface nsICommandLineValidatorType extends nsISupports {
  * each command, that are passed in via the nsICommandParams, are
  * also documented elsewhere. (Where? Need a good location for this).
  */
-export interface nsICommandManagerType extends nsISupports {
+declare interface nsICommandManagerType extends nsISupports {
     /**
      * Register an observer on the specified command. The observer's Observe
      * method will get called when the state (enabled/disabled, or toggled etc)
@@ -10882,7 +10882,7 @@ export interface nsICommandManagerType extends nsISupports {
 /**
  *
  */
-export interface nsICommandParamsType extends nsISupports {
+declare interface nsICommandParamsType extends nsISupports {
     /**
      * getValueType
      *
@@ -10965,7 +10965,7 @@ export interface nsICommandParamsType extends nsISupports {
 /**
  *
  */
-export interface nsIComponentManagerType extends nsISupports {
+declare interface nsIComponentManagerType extends nsISupports {
     /**
      * getClassObject
      *
@@ -11042,7 +11042,7 @@ export interface nsIComponentManagerType extends nsISupports {
 /**
  *
  */
-export interface nsIComponentRegistrarType extends nsISupports {
+declare interface nsIComponentRegistrarType extends nsISupports {
     /**
      * autoRegister
      *
@@ -11114,7 +11114,7 @@ export interface nsIComponentRegistrarType extends nsISupports {
  *
  * This interface allows for the observation of decoded resource sizes
  */
-export interface nsICompressConvStatsType extends nsISupports {
+declare interface nsICompressConvStatsType extends nsISupports {
     /**
      *
      */
@@ -11124,7 +11124,7 @@ export interface nsICompressConvStatsType extends nsISupports {
 /**
  *
  */
-export interface nsIConsoleAPIStorageType extends nsISupports {
+declare interface nsIConsoleAPIStorageType extends nsISupports {
     /**
      * Get the events array by inner window ID or all events from all windows.
      *
@@ -11179,7 +11179,7 @@ export interface nsIConsoleAPIStorageType extends nsISupports {
 /**
  *
  */
-export interface nsIConsoleListenerType extends nsISupports {
+declare interface nsIConsoleListenerType extends nsISupports {
     /**
      *
      */
@@ -11191,7 +11191,7 @@ export interface nsIConsoleListenerType extends nsISupports {
  * provide an object that can be qi'ed to provide more specific
  * message information.
  */
-export interface nsIConsoleMessageType extends nsISupports {
+declare interface nsIConsoleMessageType extends nsISupports {
     /**
      * The log level of this message.
      */
@@ -11226,7 +11226,7 @@ export interface nsIConsoleMessageType extends nsISupports {
 /**
  *
  */
-export interface nsIConsoleServiceType extends nsISupports {
+declare interface nsIConsoleServiceType extends nsISupports {
     /**
      *
      */
@@ -11263,7 +11263,7 @@ export interface nsIConsoleServiceType extends nsISupports {
 /**
  * This file contains an interface to the ContentBlockingAllowList.
  */
-export interface nsIContentBlockingAllowListType extends nsISupports {
+declare interface nsIContentBlockingAllowListType extends nsISupports {
     /**
      * Computes a contentBlockingAllowList principal for a given content principal.
      *
@@ -11277,7 +11277,7 @@ export interface nsIContentBlockingAllowListType extends nsISupports {
  * This is used to ask a user what they would like to do with a given piece of
  * content.
  */
-export interface nsIContentDispatchChooserType extends nsISupports {
+declare interface nsIContentDispatchChooserType extends nsISupports {
     /**
      * Opens the handler associated with the given resource.
      * If the caller does not have permission or no handler is set, we ask the
@@ -11301,7 +11301,7 @@ export interface nsIContentDispatchChooserType extends nsISupports {
 /**
  *
  */
-export interface nsIContentHandlerType extends nsISupports {
+declare interface nsIContentHandlerType extends nsISupports {
     /**
      * Tells the content handler to take over handling the content. If this
      * function succeeds, the URI Loader will leave this request alone, ignoring
@@ -11327,7 +11327,7 @@ export interface nsIContentHandlerType extends nsISupports {
 /**
  * Interface provides the request type and its access.
  */
-export interface nsIContentPermissionTypeType extends nsISupports {
+declare interface nsIContentPermissionTypeType extends nsISupports {
     /**
      * The type of the permission request, such as
      * "geolocation".
@@ -11344,7 +11344,7 @@ export interface nsIContentPermissionTypeType extends nsISupports {
  * permission to perform a privileged operation such as
  * geolocation.
  */
-export interface nsIContentPermissionRequestType extends nsISupports {
+declare interface nsIContentPermissionRequestType extends nsISupports {
     /**
      * The array will include the request types. Elements of this array are
      * nsIContentPermissionType object.
@@ -11399,7 +11399,7 @@ export interface nsIContentPermissionRequestType extends nsISupports {
  * Allows to show permission prompts via the UI for different types of requests,
  * e.g. geolocation.
  */
-export interface nsIContentPermissionPromptType extends nsISupports {
+declare interface nsIContentPermissionPromptType extends nsISupports {
     /**
      * Called when a request has been made to access
      * privileged content apis
@@ -11415,7 +11415,7 @@ export interface nsIContentPermissionPromptType extends nsISupports {
  * WARNING: do not block the caller from shouldLoad or shouldProcess (e.g.,
  * by launching a dialog to prompt the user for something).
  */
-export interface nsIContentPolicyType extends nsISupports {
+declare interface nsIContentPolicyType extends nsISupports {
     /**
      * Should the resource at this location be loaded?
      * ShouldLoad will be called before loading the resource at aContentLocation
@@ -11481,7 +11481,7 @@ export interface nsIContentPolicyType extends nsISupports {
 /**
  *
  */
-export interface nsIContentPrefObserverType extends nsISupports {
+declare interface nsIContentPrefObserverType extends nsISupports {
     /**
      * Called when a content pref is set to a different value.
      *
@@ -11561,7 +11561,7 @@ export interface nsIContentPrefObserverType extends nsISupports {
  *
  * See nsIContentPrefCallback2 below for more information about callbacks.
  */
-export interface nsIContentPrefService2Type extends nsISupports {
+declare interface nsIContentPrefService2Type extends nsISupports {
     /**
      * Gets all the preferences with the given name.
      *
@@ -11774,7 +11774,7 @@ export interface nsIContentPrefService2Type extends nsISupports {
 /**
  * The callback used by the above methods.
  */
-export interface nsIContentPrefCallback2Type extends nsISupports {
+declare interface nsIContentPrefCallback2Type extends nsISupports {
     /**
      * For the retrieval methods, this is called once for each retrieved
      * preference.  It is not called for other methods.
@@ -11803,7 +11803,7 @@ export interface nsIContentPrefCallback2Type extends nsISupports {
 /**
  *
  */
-export interface nsIContentPrefType extends nsISupports {
+declare interface nsIContentPrefType extends nsISupports {
     /**
      *
      */
@@ -11821,7 +11821,7 @@ export interface nsIContentPrefType extends nsISupports {
 /**
  *
  */
-export interface nsIContentProcessInfoType extends nsISupports {
+declare interface nsIContentProcessInfoType extends nsISupports {
     /**
      * Is this content process alive?
      */
@@ -11845,7 +11845,7 @@ export interface nsIContentProcessInfoType extends nsISupports {
 /**
  *
  */
-export interface nsIContentProcessProviderType extends nsISupports {
+declare interface nsIContentProcessProviderType extends nsISupports {
     /**
      * Given aAliveProcesses, choose which process of aType to use. Return
      * nsIContentProcessProvider.NEW_PROCESS to ask the caller to create a new
@@ -11858,7 +11858,7 @@ export interface nsIContentProcessProviderType extends nsISupports {
  * nsIContentSecurityManager
  * Describes an XPCOM component used to perform security checks.
  */
-export interface nsIContentSecurityManagerType extends nsISupports {
+declare interface nsIContentSecurityManagerType extends nsISupports {
     /**
      * Checks whether a channel is allowed to access the given URI and
      * whether the channel should be openend or should be blocked consulting
@@ -11887,7 +11887,7 @@ export interface nsIContentSecurityManagerType extends nsISupports {
 /**
  *
  */
-export interface nsIContentSecurityPolicyType extends nsISerializable {
+declare interface nsIContentSecurityPolicyType extends nsISerializable {
     /**
      * Accessor method for a read-only string version of the policy at a given
      * index.
@@ -12131,7 +12131,7 @@ export interface nsIContentSecurityPolicyType extends nsISerializable {
 /**
  * Listener for security policy violation event
  */
-export interface nsICSPEventListenerType extends nsISupports {
+declare interface nsICSPEventListenerType extends nsISupports {
     /**
      *
      */
@@ -12143,7 +12143,7 @@ export interface nsICSPEventListenerType extends nsISupports {
  * https://tools.ietf.org/html/draft-thomson-http-content-signature-00
  * described here https://github.com/franziskuskiefer/content-signature/tree/pki
  */
-export interface nsIContentSignatureVerifierType extends nsISupports {
+declare interface nsIContentSignatureVerifierType extends nsISupports {
     /**
      * Verifies that the data matches the data that was used to generate the
      * signature.
@@ -12170,7 +12170,7 @@ export interface nsIContentSignatureVerifierType extends nsISupports {
  * Content sniffer interface. Components implementing this interface can
  * determine a MIME type from a chunk of bytes.
  */
-export interface nsIContentSnifferType extends nsISupports {
+declare interface nsIContentSnifferType extends nsISupports {
     /**
      * Given a chunk of data, determines a MIME type. Information from the given
      * request may be used in order to make a better decision.
@@ -12193,7 +12193,7 @@ export interface nsIContentSnifferType extends nsISupports {
 /**
  *
  */
-export interface nsIContentViewerType extends nsISupports {
+declare interface nsIContentViewerType extends nsISupports {
     /**
      *
      */
@@ -12427,7 +12427,7 @@ export interface nsIContentViewerType extends nsISupports {
 /**
  *
  */
-export interface nsIContentViewerEditType extends nsISupports {
+declare interface nsIContentViewerEditType extends nsISupports {
     /**
      *
      */
@@ -12477,7 +12477,7 @@ export interface nsIContentViewerEditType extends nsISupports {
 /**
  *
  */
-export interface nsIControllerType extends nsISupports {
+declare interface nsIControllerType extends nsISupports {
     /**
      *
      */
@@ -12499,7 +12499,7 @@ export interface nsIControllerType extends nsISupports {
 /**
  *
  */
-export interface nsICommandControllerType extends nsISupports {
+declare interface nsICommandControllerType extends nsISupports {
     /**
      *
      */
@@ -12516,7 +12516,7 @@ export interface nsICommandControllerType extends nsISupports {
  * A generic command interface. You can register an nsIControllerCommand
  * with the nsIControllerCommandTable.
  */
-export interface nsIControllerCommandType extends nsISupports {
+declare interface nsIControllerCommandType extends nsISupports {
     /**
      * Returns true if the command is currently enabled. An nsIControllerCommand
      * can implement more than one commands; say, a group of related commands
@@ -12560,7 +12560,7 @@ export interface nsIControllerCommandType extends nsISupports {
  * nsIInterfaceRequestor, and be able to return an interface to their
  * controller command table via getInterface().
  */
-export interface nsIControllerCommandTableType extends nsISupports {
+declare interface nsIControllerCommandTableType extends nsISupports {
     /**
      * Make this command table immutable, so that commands cannot
      * be registered or unregistered. Some command tables are made
@@ -12628,7 +12628,7 @@ export interface nsIControllerCommandTableType extends nsISupports {
 /**
  *
  */
-export interface nsIControllerContextType extends nsISupports {
+declare interface nsIControllerContextType extends nsISupports {
     /**
      * Set a context on this controller, which is passed
      * to commands to give them some context when they execute.
@@ -12644,7 +12644,7 @@ export interface nsIControllerContextType extends nsISupports {
 /**
  *
  */
-export interface nsIControllersType extends nsISupports {
+declare interface nsIControllersType extends nsISupports {
     /**
      *
      */
@@ -12689,7 +12689,7 @@ export interface nsIControllersType extends nsISupports {
  * This allows reading unicode strings from a stream, automatically converting
  * the bytes from a selected character encoding.
  */
-export interface nsIConverterInputStreamType extends nsIUnicharInputStream {
+declare interface nsIConverterInputStreamType extends nsIUnicharInputStream {
     /**
      * Initialize this stream.
      * @param aStream
@@ -12712,7 +12712,7 @@ export interface nsIConverterInputStreamType extends nsIUnicharInputStream {
  * This interface allows writing strings to a stream, doing automatic
  * character encoding conversion.
  */
-export interface nsIConverterOutputStreamType extends nsIUnicharOutputStream {
+declare interface nsIConverterOutputStreamType extends nsIUnicharOutputStream {
     /**
      * Initialize this stream. Must be called before any other method on this
      * interface, or you will crash. The output stream passed to this method
@@ -12731,7 +12731,7 @@ export interface nsIConverterOutputStreamType extends nsIUnicharOutputStream {
 /**
  *
  */
-export interface nsICookieType extends nsISupports {
+declare interface nsICookieType extends nsISupports {
     /**
      * the name of the cookie
      */
@@ -12831,7 +12831,7 @@ export interface nsICookieType extends nsISupports {
  * Service singleton for initializing and updating the list of cookie banner
  * handling rules.
  */
-export interface nsICookieBannerListServiceType extends nsISupports {
+declare interface nsICookieBannerListServiceType extends nsISupports {
     /**
      * Initialize the service. This asynchronously imports the initial set of rules.
      */
@@ -12855,7 +12855,7 @@ export interface nsICookieBannerListServiceType extends nsISupports {
  * A rule containing instructions on how to handle a cookie banner for a specific
  * domain.
  */
-export interface nsICookieBannerRuleType extends nsISupports {
+declare interface nsICookieBannerRuleType extends nsISupports {
     /**
      *
      */
@@ -12900,7 +12900,7 @@ export interface nsICookieBannerRuleType extends nsISupports {
  * It initializes both the component for importing rules
  * (nsICookieBannerListService) and injecting cookies (nsICookieInjector).
  */
-export interface nsICookieBannerServiceType extends nsISupports {
+declare interface nsICookieBannerServiceType extends nsISupports {
     /**
      * Whether the feature / service is enabled.
      */
@@ -12952,7 +12952,7 @@ export interface nsICookieBannerServiceType extends nsISupports {
  * Cookie jar settings for top-level documents. Please see CookieJarSettings.h
  * for more details.
  */
-export interface nsICookieJarSettingsType extends nsISerializable {
+declare interface nsICookieJarSettingsType extends nsISerializable {
     /**
      * CookieBehavior at the loading of the document. Any other loadInfo
      * inherits it from its document's loadInfo. If there is not a document
@@ -13019,7 +13019,7 @@ export interface nsICookieJarSettingsType extends nsISerializable {
  * An optional interface for accessing or removing the cookies
  * that are in the cookie list
  */
-export interface nsICookieManagerType extends nsISupports {
+declare interface nsICookieManagerType extends nsISupports {
     /**
      * Called to remove all cookies from the cookie list
      */
@@ -13168,13 +13168,13 @@ export interface nsICookieManagerType extends nsISupports {
 /**
  * An interface to test for cookie permissions
  */
-export interface nsICookiePermissionType extends nsISupports {
+declare interface nsICookiePermissionType extends nsISupports {
 }
 
 /**
  * Rule which specifies a cookie to be set in order to handle a cookie banner.
  */
-export interface nsICookieRuleType extends nsISupports {
+declare interface nsICookieRuleType extends nsISupports {
     /**
      * The cookie to set.
      * When calling this getter creation, expiry and last accessed time are
@@ -13205,7 +13205,7 @@ export interface nsICookieRuleType extends nsISupports {
 /**
  * @see nsICookieService::runInTransaction
  */
-export interface nsICookieTransactionCallbackType extends nsISupports {
+declare interface nsICookieTransactionCallbackType extends nsISupports {
     /**
      *
      */
@@ -13260,7 +13260,7 @@ export interface nsICookieTransactionCallbackType extends nsISupports {
  * to set the cookie.
  * data   : none.
  */
-export interface nsICookieServiceType extends nsISupports {
+declare interface nsICookieServiceType extends nsISupports {
     /**
      * Get the complete cookie string associated with the document's principal.
      * This method is meant to be used for `document.cookie` only. Any security
@@ -13339,7 +13339,7 @@ export interface nsICookieServiceType extends nsISupports {
  * @status UNSTABLE - This interface is not frozen and will probably change in
  * future releases.
  */
-export interface nsICrashReporterType extends nsISupports {
+declare interface nsICrashReporterType extends nsISupports {
     /**
      * Get the enabled status of the crash reporter.
      */
@@ -13484,7 +13484,7 @@ export interface nsICrashReporterType extends nsISupports {
 /**
  *
  */
-export interface nsICrashServiceType extends nsISupports {
+declare interface nsICrashServiceType extends nsISupports {
     /**
      * Records the occurrence of a crash.
      *
@@ -13504,7 +13504,7 @@ export interface nsICrashServiceType extends nsISupports {
  * nsICryptoHash
  * This interface provides crytographic hashing algorithms.
  */
-export interface nsICryptoHashType extends nsISupports {
+declare interface nsICryptoHashType extends nsISupports {
     /**
      * String value: "sha512"
      *
@@ -13598,7 +13598,7 @@ export interface nsICryptoHashType extends nsISupports {
  * neither a root nor garbage. The cycle collector was able to find all of the
  * edges implied by the node's reference count.
  */
-export interface nsICycleCollectorHandlerType extends nsISupports {
+declare interface nsICycleCollectorHandlerType extends nsISupports {
     /**
      *
      */
@@ -13626,7 +13626,7 @@ export interface nsICycleCollectorHandlerType extends nsISupports {
  * nsICycleCollectorListener.  As this interface is also called while
  * the cycle collector is running, it cannot be implemented in JS.
  */
-export interface nsICycleCollectorLogSinkType extends nsISupports {
+declare interface nsICycleCollectorLogSinkType extends nsISupports {
     /**
      *
      */
@@ -13686,7 +13686,7 @@ export interface nsICycleCollectorLogSinkType extends nsISupports {
  * on objects however it pleases: the cycle collector has finished its
  * work, and the JS code is simply consuming recorded data.
  */
-export interface nsICycleCollectorListenerType extends nsISupports {
+declare interface nsICycleCollectorListenerType extends nsISupports {
     /**
      *
      */
@@ -13720,7 +13720,7 @@ export interface nsICycleCollectorListenerType extends nsISupports {
 /**
  *
  */
-export interface nsIDAPTelemetryType extends nsISupports {
+declare interface nsIDAPTelemetryType extends nsISupports {
     /**
      * Split measurement into shares and create a report with encrypted shares.
      *
@@ -13743,7 +13743,7 @@ export interface nsIDAPTelemetryType extends nsISupports {
 /**
  * This interface allows the proxy code to access the DHCP Options in a platform-specific way
  */
-export interface nsIDHCPClientType extends nsISupports {
+declare interface nsIDHCPClientType extends nsISupports {
     /**
      * returns the DHCP Option designated by the option parameter
      */
@@ -13753,7 +13753,7 @@ export interface nsIDHCPClientType extends nsISupports {
 /**
  *
  */
-export interface nsIDNSAdditionalInfoType extends nsISupports {
+declare interface nsIDNSAdditionalInfoType extends nsISupports {
     /**
      *
      */
@@ -13767,7 +13767,7 @@ export interface nsIDNSAdditionalInfoType extends nsISupports {
 /**
  *
  */
-export interface nsIDNSByTypeRecordType extends nsIDNSRecord {
+declare interface nsIDNSByTypeRecordType extends nsIDNSRecord {
     /**
      * Returns DNS request type that was made for this request.
      */
@@ -13781,7 +13781,7 @@ export interface nsIDNSByTypeRecordType extends nsIDNSRecord {
 /**
  *
  */
-export interface nsIDNSTXTRecordType extends nsISupports {
+declare interface nsIDNSTXTRecordType extends nsISupports {
     /**
      *
      */
@@ -13795,7 +13795,7 @@ export interface nsIDNSTXTRecordType extends nsISupports {
 /**
  *
  */
-export interface nsISVCParamType extends nsISupports {
+declare interface nsISVCParamType extends nsISupports {
     /**
      *
      */
@@ -13805,19 +13805,19 @@ export interface nsISVCParamType extends nsISupports {
 /**
  *
  */
-export interface nsISVCParamAlpnType extends nsISupports {
+declare interface nsISVCParamAlpnType extends nsISupports {
 }
 
 /**
  *
  */
-export interface nsISVCParamNoDefaultAlpnType extends nsISupports {
+declare interface nsISVCParamNoDefaultAlpnType extends nsISupports {
 }
 
 /**
  *
  */
-export interface nsISVCParamPortType extends nsISupports {
+declare interface nsISVCParamPortType extends nsISupports {
     /**
      *
      */
@@ -13827,13 +13827,13 @@ export interface nsISVCParamPortType extends nsISupports {
 /**
  *
  */
-export interface nsISVCParamIPv4HintType extends nsISupports {
+declare interface nsISVCParamIPv4HintType extends nsISupports {
 }
 
 /**
  *
  */
-export interface nsISVCParamEchConfigType extends nsISupports {
+declare interface nsISVCParamEchConfigType extends nsISupports {
     /**
      *
      */
@@ -13843,13 +13843,13 @@ export interface nsISVCParamEchConfigType extends nsISupports {
 /**
  *
  */
-export interface nsISVCParamIPv6HintType extends nsISupports {
+declare interface nsISVCParamIPv6HintType extends nsISupports {
 }
 
 /**
  *
  */
-export interface nsISVCParamODoHConfigType extends nsISupports {
+declare interface nsISVCParamODoHConfigType extends nsISupports {
     /**
      *
      */
@@ -13859,7 +13859,7 @@ export interface nsISVCParamODoHConfigType extends nsISupports {
 /**
  *
  */
-export interface nsISVCBRecordType extends nsISupports {
+declare interface nsISVCBRecordType extends nsISupports {
     /**
      *
      */
@@ -13897,7 +13897,7 @@ export interface nsISVCBRecordType extends nsISupports {
 /**
  *
  */
-export interface nsIDNSHTTPSSVCRecordType extends nsISupports {
+declare interface nsIDNSHTTPSSVCRecordType extends nsISupports {
     /**
      *
      */
@@ -13919,7 +13919,7 @@ export interface nsIDNSHTTPSSVCRecordType extends nsISupports {
 /**
  * nsIDNSListener
  */
-export interface nsIDNSListenerType extends nsISupports {
+declare interface nsIDNSListenerType extends nsISupports {
     /**
      * called when an asynchronous host lookup completes.
      *
@@ -13945,13 +13945,13 @@ export interface nsIDNSListenerType extends nsISupports {
  * like an enumerator, allowing the caller to easily step through the
  * list of IP addresses.
  */
-export interface nsIDNSRecordType extends nsISupports {
+declare interface nsIDNSRecordType extends nsISupports {
 }
 
 /**
  *
  */
-export interface nsIDNSAddrRecordType extends nsIDNSRecord {
+declare interface nsIDNSAddrRecordType extends nsIDNSRecord {
     /**
      * @return the canonical hostname for this record.  this value is empty if
      * the record was not fetched with the RESOLVE_CANONICAL_NAME flag.
@@ -14055,7 +14055,7 @@ export interface nsIDNSAddrRecordType extends nsIDNSRecord {
 /**
  * nsIDNSService
  */
-export interface nsIDNSServiceType extends nsISupports {
+declare interface nsIDNSServiceType extends nsISupports {
     /**
      * kicks off an asynchronous host lookup.
      *
@@ -14223,7 +14223,7 @@ export interface nsIDNSServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIDOMChromeWindowType extends nsISupports {
+declare interface nsIDOMChromeWindowType extends nsISupports {
     /**
      * browserDOMWindow provides access to yet another layer of
      * utility functions implemented by chrome script. It will be null
@@ -14239,7 +14239,7 @@ export interface nsIDOMChromeWindowType extends nsISupports {
  * For more information on this interface please see
  * http://www.w3.org/TR/DOM-Level-2-Events/
  */
-export interface nsIDOMEventListenerType extends nsISupports {
+declare interface nsIDOMEventListenerType extends nsISupports {
     /**
      * This method is called whenever an event occurs of the type for which
      * the EventListener interface was registered.
@@ -14255,7 +14255,7 @@ export interface nsIDOMEventListenerType extends nsISupports {
 /**
  *
  */
-export interface nsIDOMGeoPositionType extends nsISupports {
+declare interface nsIDOMGeoPositionType extends nsISupports {
     /**
      *
      */
@@ -14269,7 +14269,7 @@ export interface nsIDOMGeoPositionType extends nsISupports {
 /**
  *
  */
-export interface nsIDOMGeoPositionCallbackType extends nsISupports {
+declare interface nsIDOMGeoPositionCallbackType extends nsISupports {
     /**
      *
      */
@@ -14279,7 +14279,7 @@ export interface nsIDOMGeoPositionCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIDOMGeoPositionCoordsType extends nsISupports {
+declare interface nsIDOMGeoPositionCoordsType extends nsISupports {
     /**
      *
      */
@@ -14313,7 +14313,7 @@ export interface nsIDOMGeoPositionCoordsType extends nsISupports {
 /**
  *
  */
-export interface nsIDOMGeoPositionErrorCallbackType extends nsISupports {
+declare interface nsIDOMGeoPositionErrorCallbackType extends nsISupports {
     /**
      *
      */
@@ -14323,7 +14323,7 @@ export interface nsIDOMGeoPositionErrorCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIDOMGlobalPropertyInitializerType extends nsISupports {
+declare interface nsIDOMGlobalPropertyInitializerType extends nsISupports {
     /**
      * Initialize the global property.
      *
@@ -14337,7 +14337,7 @@ export interface nsIDOMGlobalPropertyInitializerType extends nsISupports {
 /**
  *
  */
-export interface nsIDOMMozBrowserFrameType extends nsISupports {
+declare interface nsIDOMMozBrowserFrameType extends nsISupports {
     /**
      * <iframe> element may have the mozbrowser attribute.
      *
@@ -14359,7 +14359,7 @@ export interface nsIDOMMozBrowserFrameType extends nsISupports {
  * Implemented by either `InProcessChild` for the parent process, or
  * `ContentChild` for a content process.
  */
-export interface nsIDOMProcessChildType extends nsISupports {
+declare interface nsIDOMProcessChildType extends nsISupports {
     /**
      * Internal child process ID. `0` is reserved for the parent process.
      */
@@ -14392,7 +14392,7 @@ export interface nsIDOMProcessChildType extends nsISupports {
  * Implemented by either `InProcessParent` for the parent process, or
  * `ContentParent` for a content process.
  */
-export interface nsIDOMProcessParentType extends nsISupports {
+declare interface nsIDOMProcessParentType extends nsISupports {
     /**
      * Internal child process ID. `0` is reserved for the parent process.
      */
@@ -14430,7 +14430,7 @@ export interface nsIDOMProcessParentType extends nsISupports {
 /**
  *
  */
-export interface nsIDOMRequestServiceType extends nsISupports {
+declare interface nsIDOMRequestServiceType extends nsISupports {
     /**
      *
      */
@@ -14457,7 +14457,7 @@ export interface nsIDOMRequestServiceType extends nsISupports {
  * General purpose interface that has two implementations, for localStorage
  * with "@mozilla.org/dom/localStorage-manager;1".
  */
-export interface nsIDOMStorageManagerType extends nsISupports {
+declare interface nsIDOMStorageManagerType extends nsISupports {
     /**
      * This starts async preloading of a storage cache for scope
      * defined by the principal and storage principal.
@@ -14538,7 +14538,7 @@ export interface nsIDOMStorageManagerType extends nsISupports {
 /**
  *
  */
-export interface nsIDOMSessionStorageManagerType extends nsIDOMStorageManager {
+declare interface nsIDOMSessionStorageManagerType extends nsIDOMStorageManager {
     /**
      * Returns a SessionStorageCache object for the principal scope.
      *
@@ -14553,7 +14553,7 @@ export interface nsIDOMSessionStorageManagerType extends nsIDOMStorageManager {
 /**
  *
  */
-export interface nsIDOMMozWakeLockListenerType extends nsISupports {
+declare interface nsIDOMMozWakeLockListenerType extends nsISupports {
     /**
      * The callback will be called when a lock topic changes its lock
      * state.
@@ -14579,13 +14579,13 @@ export interface nsIDOMMozWakeLockListenerType extends nsISupports {
  * @deprecated Use WebIDL for script visible features,
  * nsPIDOMWindow for C++ callers.
  */
-export interface nsIDOMWindowType extends nsISupports {
+declare interface nsIDOMWindowType extends nsISupports {
 }
 
 /**
  *
  */
-export interface nsIDOMWindowUtilsType extends nsISupports {
+declare interface nsIDOMWindowUtilsType extends nsISupports {
     /**
      * Image animation mode of the window. When this attribute's value
      * is changed, the implementation should set all images in the window
@@ -16091,7 +16091,7 @@ export interface nsIDOMWindowUtilsType extends nsISupports {
 /**
  *
  */
-export interface nsITranslationNodeListType extends nsISupports {
+declare interface nsITranslationNodeListType extends nsISupports {
     /**
      *
      */
@@ -16110,7 +16110,7 @@ export interface nsITranslationNodeListType extends nsISupports {
  * JS doesn't do RAII very well. We can use this interface to make remembering
  * to destruct an object in a finally clause easier.
  */
-export interface nsIJSRAIIHelperType extends nsISupports {
+declare interface nsIJSRAIIHelperType extends nsISupports {
     /**
      *
      */
@@ -16120,7 +16120,7 @@ export interface nsIJSRAIIHelperType extends nsISupports {
 /**
  *
  */
-export interface nsIDOMXULButtonElementType extends nsIDOMXULControlElement {
+declare interface nsIDOMXULButtonElementType extends nsIDOMXULControlElement {
     /**
      *
      */
@@ -16142,7 +16142,7 @@ export interface nsIDOMXULButtonElementType extends nsIDOMXULControlElement {
 /**
  *
  */
-export interface nsIDOMXULCommandDispatcherType extends nsISupports {
+declare interface nsIDOMXULCommandDispatcherType extends nsISupports {
     /**
      *
      */
@@ -16196,7 +16196,7 @@ export interface nsIDOMXULCommandDispatcherType extends nsISupports {
 /**
  *
  */
-export interface nsIDOMXULContainerItemElementType extends nsISupports {
+declare interface nsIDOMXULContainerItemElementType extends nsISupports {
     /**
      * Returns the parent container if any.
      */
@@ -16206,13 +16206,13 @@ export interface nsIDOMXULContainerItemElementType extends nsISupports {
 /**
  *
  */
-export interface nsIDOMXULContainerElementType extends nsIDOMXULContainerItemElement {
+declare interface nsIDOMXULContainerElementType extends nsIDOMXULContainerItemElement {
 }
 
 /**
  *
  */
-export interface nsIDOMXULControlElementType extends nsISupports {
+declare interface nsIDOMXULControlElementType extends nsISupports {
     /**
      *
      */
@@ -16222,7 +16222,7 @@ export interface nsIDOMXULControlElementType extends nsISupports {
 /**
  *
  */
-export interface nsIDOMXULMenuListElementType extends nsIDOMXULSelectControlElement {
+declare interface nsIDOMXULMenuListElementType extends nsIDOMXULSelectControlElement {
     /**
      *
      */
@@ -16252,7 +16252,7 @@ export interface nsIDOMXULMenuListElementType extends nsIDOMXULSelectControlElem
 /**
  *
  */
-export interface nsIDOMXULMultiSelectControlElementType extends nsIDOMXULSelectControlElement {
+declare interface nsIDOMXULMultiSelectControlElementType extends nsIDOMXULSelectControlElement {
     /**
      *
      */
@@ -16310,7 +16310,7 @@ export interface nsIDOMXULMultiSelectControlElementType extends nsIDOMXULSelectC
 /**
  *
  */
-export interface nsIDOMXULRadioGroupElementType extends nsISupports {
+declare interface nsIDOMXULRadioGroupElementType extends nsISupports {
     /**
      *
      */
@@ -16320,7 +16320,7 @@ export interface nsIDOMXULRadioGroupElementType extends nsISupports {
 /**
  *
  */
-export interface nsIDOMXULRelatedElementType extends nsISupports {
+declare interface nsIDOMXULRelatedElementType extends nsISupports {
     /**
      * Retrun an element associated with the given element. It's implemented
      * by container elements having relation between their items. For example,
@@ -16333,7 +16333,7 @@ export interface nsIDOMXULRelatedElementType extends nsISupports {
 /**
  *
  */
-export interface nsIDOMXULSelectControlElementType extends nsIDOMXULControlElement {
+declare interface nsIDOMXULSelectControlElementType extends nsIDOMXULControlElement {
     /**
      *
      */
@@ -16363,7 +16363,7 @@ export interface nsIDOMXULSelectControlElementType extends nsIDOMXULControlEleme
 /**
  *
  */
-export interface nsIDOMXULSelectControlItemElementType extends nsISupports {
+declare interface nsIDOMXULSelectControlItemElementType extends nsISupports {
     /**
      *
      */
@@ -16406,7 +16406,7 @@ export interface nsIDOMXULSelectControlItemElementType extends nsISupports {
  * A JavaScript callback function that takes a JSON as its parameter.
  * The returned JSON contains arrays with data
  */
-export interface nsINetDashboardCallbackType extends nsISupports {
+declare interface nsINetDashboardCallbackType extends nsISupports {
     /**
      *
      */
@@ -16418,7 +16418,7 @@ export interface nsINetDashboardCallbackType extends nsISupports {
  * The async API returns JSONs, which hold arrays with the required info.
  * Only one request of each type may be pending at any time.
  */
-export interface nsIDashboardType extends nsISupports {
+declare interface nsIDashboardType extends nsISupports {
     /**
      * Arrays: host, port, tcp, active, socksent, sockreceived
      * Values: sent, received
@@ -16472,7 +16472,7 @@ export interface nsIDashboardType extends nsISupports {
 /**
  *
  */
-export interface nsIDashboardEventNotifierType extends nsISupports {
+declare interface nsIDashboardEventNotifierType extends nsISupports {
     /**
      * These methods are called to register a websocket event with the dashboard
      *
@@ -16503,7 +16503,7 @@ export interface nsIDashboardEventNotifierType extends nsISupports {
  * the "@mozilla.org/xpcom;1" contract should use NS_DebugBreak from xpcom
  * glue instead.
  */
-export interface nsIDebug2Type extends nsISupports {
+declare interface nsIDebug2Type extends nsISupports {
     /**
      * Whether XPCOM was compiled with DEBUG defined.  This often
      * correlates to whether other code (e.g., Firefox, XULRunner) was
@@ -16572,7 +16572,7 @@ export interface nsIDebug2Type extends nsISupports {
 /**
  *
  */
-export interface nsIDeviceSensorDataType extends nsISupports {
+declare interface nsIDeviceSensorDataType extends nsISupports {
     /**
      *
      */
@@ -16594,7 +16594,7 @@ export interface nsIDeviceSensorDataType extends nsISupports {
 /**
  *
  */
-export interface nsIDeviceSensorsType extends nsISupports {
+declare interface nsIDeviceSensorsType extends nsISupports {
     /**
      * Returns true if the given window has any listeners of the given type
      */
@@ -16616,7 +16616,7 @@ export interface nsIDeviceSensorsType extends nsISupports {
 /**
  * An interface to pass strings, integers and nsISupports to a dialog
  */
-export interface nsIDialogParamBlockType extends nsISupports {
+declare interface nsIDialogParamBlockType extends nsISupports {
     /**
      * Get or set an integer to pass.
      * Index must be in the range 0..7
@@ -16651,7 +16651,7 @@ export interface nsIDialogParamBlockType extends nsISupports {
  * These have no reference back to their original source -
  * changing these attributes won't affect the directory
  */
-export interface nsIDirIndexType extends nsISupports {
+declare interface nsIDirIndexType extends nsISupports {
     /**
      * The type of the entry - one of the constants above
      */
@@ -16690,7 +16690,7 @@ export interface nsIDirIndexType extends nsISupports {
  * from a protocol. They can then be transformed into an output format
  * (such as rdf, html, etc)
  */
-export interface nsIDirIndexListenerType extends nsISupports {
+declare interface nsIDirIndexListenerType extends nsISupports {
     /**
      * Called for each directory entry
      *
@@ -16710,7 +16710,7 @@ export interface nsIDirIndexListenerType extends nsISupports {
 /**
  * A parser for application/http-index-format
  */
-export interface nsIDirIndexParserType extends nsIStreamListener {
+declare interface nsIDirIndexParserType extends nsIStreamListener {
     /**
      * The interface to use as a callback for new entries
      */
@@ -16734,7 +16734,7 @@ export interface nsIDirIndexParserType extends nsIStreamListener {
  * New direct task may be dispatched when a current direct task is running. In
  * which case they will be run in FIFO order.
  */
-export interface nsIDirectTaskDispatcherType extends nsISupports {
+declare interface nsIDirectTaskDispatcherType extends nsISupports {
     /**
      * Dispatch an event for the nsISerialEventTarget, using the direct task
      * queue.
@@ -16762,7 +16762,7 @@ export interface nsIDirectTaskDispatcherType extends nsISupports {
  * to nsIFile, and there is a mechanism for closing the directory when the
  * enumeration is complete.
  */
-export interface nsIDirectoryEnumeratorType extends nsISimpleEnumerator {
+declare interface nsIDirectoryEnumeratorType extends nsISimpleEnumerator {
     /**
      * Retrieves the next file in the sequence. The "nextFile" element is the
      * first element upon the first call. This attribute is null if there is no
@@ -16783,7 +16783,7 @@ export interface nsIDirectoryEnumeratorType extends nsISimpleEnumerator {
  *
  * Used by Directory Service to get file locations.
  */
-export interface nsIDirectoryServiceProviderType extends nsISupports {
+declare interface nsIDirectoryServiceProviderType extends nsISupports {
     /**
      * getFile
      *
@@ -16808,7 +16808,7 @@ export interface nsIDirectoryServiceProviderType extends nsISupports {
  * An extension of nsIDirectoryServiceProvider which allows
  * multiple files to be returned for the given key.
  */
-export interface nsIDirectoryServiceProvider2Type extends nsIDirectoryServiceProvider {
+declare interface nsIDirectoryServiceProvider2Type extends nsIDirectoryServiceProvider {
     /**
      * getFiles
      *
@@ -16828,7 +16828,7 @@ export interface nsIDirectoryServiceProvider2Type extends nsIDirectoryServicePro
 /**
  * nsIDirectoryService
  */
-export interface nsIDirectoryServiceType extends nsISupports {
+declare interface nsIDirectoryServiceType extends nsISupports {
     /**
      * init
      *
@@ -16858,7 +16858,7 @@ export interface nsIDirectoryServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIDisplayInfoType extends nsISupports {
+declare interface nsIDisplayInfoType extends nsISupports {
     /**
      *
      */
@@ -16872,7 +16872,7 @@ export interface nsIDisplayInfoType extends nsISupports {
 /**
  *
  */
-export interface nsIDocShellType extends nsIDocShellTreeItem {
+declare interface nsIDocShellType extends nsIDocShellTreeItem {
     /**
      *
      */
@@ -17480,7 +17480,7 @@ export interface nsIDocShellType extends nsIDocShellTreeItem {
  * that wishes to be able to live within the docshell tree either as a middle
  * node or a leaf.
  */
-export interface nsIDocShellTreeItemType extends nsISupports {
+declare interface nsIDocShellTreeItemType extends nsISupports {
     /**
      * name of the DocShellTreeItem
      */
@@ -17615,7 +17615,7 @@ export interface nsIDocShellTreeItemType extends nsISupports {
 /**
  *
  */
-export interface nsIDocShellTreeOwnerType extends nsISupports {
+declare interface nsIDocShellTreeOwnerType extends nsISupports {
     /**
      * Called when a content shell is added to the docshell tree.  This is
      * _only_ called for "root" content shells (that is, ones whose parent is a
@@ -17702,7 +17702,7 @@ export interface nsIDocShellTreeOwnerType extends nsISupports {
 /**
  *
  */
-export interface nsIDocumentEncoderNodeFixupType extends nsISupports {
+declare interface nsIDocumentEncoderNodeFixupType extends nsISupports {
     /**
      * Create a fixed up version of a node. This method is called before
      * each node in a document is about to be persisted. The implementor
@@ -17720,7 +17720,7 @@ export interface nsIDocumentEncoderNodeFixupType extends nsISupports {
 /**
  *
  */
-export interface nsIDocumentEncoderType extends nsISupports {
+declare interface nsIDocumentEncoderType extends nsISupports {
     /**
      * Initialize with a pointer to the document and the mime type.
      * Resets wrap column to 72 and resets node fixup.
@@ -17836,7 +17836,7 @@ export interface nsIDocumentEncoderType extends nsISupports {
  * nsIWebProgressListener notifications.
  * XXXbz this interface should go away, we think...
  */
-export interface nsIDocumentLoaderType extends nsISupports {
+declare interface nsIDocumentLoaderType extends nsISupports {
     /**
      *
      */
@@ -17862,7 +17862,7 @@ export interface nsIDocumentLoaderType extends nsISupports {
  * The value of the entry is the contractid of the component.
  * The component is a service, so use GetService, not CreateInstance to get it.
  */
-export interface nsIDocumentLoaderFactoryType extends nsISupports {
+declare interface nsIDocumentLoaderFactoryType extends nsISupports {
     /**
      *
      */
@@ -17877,7 +17877,7 @@ export interface nsIDocumentLoaderFactoryType extends nsISupports {
  * Due to the historical reason, this listener interface says "document state",
  * but this listener listens to HTML editor state.
  */
-export interface nsIDocumentStateListenerType extends nsISupports {
+declare interface nsIDocumentStateListenerType extends nsISupports {
     /**
      * NotifyDocumentWillBeDestroyed() is called when HTML editor instance is
      * being destroyed.  Note that related objects may have already gone when
@@ -17906,7 +17906,7 @@ export interface nsIDocumentStateListenerType extends nsISupports {
  * When deactivate() is invoked, the domain sets are emptied, and the
  * nsIDomainPolicy ceases to have any effect on the system.
  */
-export interface nsIDomainPolicyType extends nsISupports {
+declare interface nsIDomainPolicyType extends nsISupports {
     /**
      *
      */
@@ -17940,7 +17940,7 @@ export interface nsIDomainPolicyType extends nsISupports {
 /**
  *
  */
-export interface nsIDomainSetType extends nsISupports {
+declare interface nsIDomainSetType extends nsISupports {
     /**
      * Add a domain to the set. No-op if it already exists.
      */
@@ -17973,7 +17973,7 @@ export interface nsIDomainSetType extends nsISupports {
  * The resulting file is valid from the time the downloader completes until
  * the last reference to the downloader is released.
  */
-export interface nsIDownloaderType extends nsIStreamListener {
+declare interface nsIDownloaderType extends nsIStreamListener {
     /**
      * Initialize this downloader
      *
@@ -17994,7 +17994,7 @@ export interface nsIDownloaderType extends nsIStreamListener {
 /**
  *
  */
-export interface nsIDownloadObserverType extends nsISupports {
+declare interface nsIDownloadObserverType extends nsISupports {
     /**
      * Called to signal a download that has completed.
      */
@@ -18004,7 +18004,7 @@ export interface nsIDownloadObserverType extends nsISupports {
 /**
  *
  */
-export interface nsIDragServiceType extends nsISupports {
+declare interface nsIDragServiceType extends nsISupports {
     /**
      * Starts a modal drag session with an array of transaferables.
      *
@@ -18120,7 +18120,7 @@ export interface nsIDragServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIDragSessionType extends nsISupports {
+declare interface nsIDragSessionType extends nsISupports {
     /**
      * Set the current state of the drag, whether it can be dropped or not.
      * usually the target "frame" sets this so the native system can render the correct feedback
@@ -18233,7 +18233,7 @@ export interface nsIDragSessionType extends nsISupports {
 /**
  *
  */
-export interface nsIDroppedLinkItemType extends nsISupports {
+declare interface nsIDroppedLinkItemType extends nsISupports {
     /**
      * Returns the URL of the link.
      */
@@ -18251,7 +18251,7 @@ export interface nsIDroppedLinkItemType extends nsISupports {
 /**
  *
  */
-export interface nsIDroppedLinkHandlerType extends nsISupports {
+declare interface nsIDroppedLinkHandlerType extends nsISupports {
     /**
      * Determines if a link being dragged can be dropped and returns true if so.
      * aEvent should be a dragenter or dragover event.
@@ -18283,7 +18283,7 @@ export interface nsIDroppedLinkHandlerType extends nsISupports {
  * C++ exposed interface for the `E10SUtils` object from the
  * `resource://gre/modules/E10SUtils.sys.mjs` module.
  */
-export interface nsIE10SUtilsType extends nsISupports {
+declare interface nsIE10SUtilsType extends nsISupports {
     /**
      * Determine what remote type should be used to launch a worker script with
      * the given principal.
@@ -18308,7 +18308,7 @@ export interface nsIE10SUtilsType extends nsISupports {
 /**
  *
  */
-export interface nsIEarlyHintObserverType extends nsISupports {
+declare interface nsIEarlyHintObserverType extends nsISupports {
     /**
      * This method is called when the transaction has early hint (i.e. the
      * '103 Early Hint' informational response) headers.
@@ -18319,7 +18319,7 @@ export interface nsIEarlyHintObserverType extends nsISupports {
 /**
  * Utilities for migrating from legacy (non-Chromimum-based) Edge.
  */
-export interface nsIEdgeMigrationUtilsType extends nsISupports {
+declare interface nsIEdgeMigrationUtilsType extends nsISupports {
     /**
      * Determine if the Edge database is locked for writing.
      *
@@ -18342,7 +18342,7 @@ export interface nsIEdgeMigrationUtilsType extends nsISupports {
  * change notifications.  For generic notifications, you should implement
  * nsIDocumentObserver.
  */
-export interface nsIEditActionListenerType extends nsISupports {
+declare interface nsIEditActionListenerType extends nsISupports {
     /**
      * Called after the editor deletes a node.
      * @param aChild    The node to delete
@@ -18388,7 +18388,7 @@ export interface nsIEditActionListenerType extends nsISupports {
 /**
  *
  */
-export interface nsIEditingSessionType extends nsISupports {
+declare interface nsIEditingSessionType extends nsISupports {
     /**
      * Status after editor creation and document loading
      * Value is one of the above error codes
@@ -18426,7 +18426,7 @@ export interface nsIEditingSessionType extends nsISupports {
 /**
  *
  */
-export interface nsIEditorType extends nsISupports {
+declare interface nsIEditorType extends nsISupports {
     /**
      *
      */
@@ -18868,7 +18868,7 @@ export interface nsIEditorType extends nsISupports {
 /**
  *
  */
-export interface nsIEditorMailSupportType extends nsISupports {
+declare interface nsIEditorMailSupportType extends nsISupports {
     /**
      * Insert a string as quoted text
      * (whose representation is dependant on the editor type),
@@ -18901,7 +18901,7 @@ export interface nsIEditorMailSupportType extends nsISupports {
 /**
  *
  */
-export interface nsIEditorSpellCheckType extends nsISupports {
+declare interface nsIEditorSpellCheckType extends nsISupports {
     /**
      * Returns true if we can enable spellchecking. If there are no available
      * dictionaries, this will return false.
@@ -19014,7 +19014,7 @@ export interface nsIEditorSpellCheckType extends nsISupports {
 /**
  *
  */
-export interface nsIEditorSpellCheckCallbackType extends nsISupports {
+declare interface nsIEditorSpellCheckCallbackType extends nsISupports {
     /**
      *
      */
@@ -19024,7 +19024,7 @@ export interface nsIEditorSpellCheckCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIEffectiveTLDServiceType extends nsISupports {
+declare interface nsIEffectiveTLDServiceType extends nsISupports {
     /**
      * Returns the public suffix of a URI. A public suffix is the highest-level domain
      * under which individual domains may be registered; it may therefore contain one
@@ -19215,7 +19215,7 @@ export interface nsIEffectiveTLDServiceType extends nsISupports {
  * Gecko with the means to call up to the host to resize the window,
  * hide or show it and set/get its title.
  */
-export interface nsIEmbeddingSiteWindowType extends nsISupports {
+declare interface nsIEmbeddingSiteWindowType extends nsISupports {
     /**
      * Sets the dimensions for the window; the position & size. The
      * flags to indicate what the caller wants to set and whether the size
@@ -19289,7 +19289,7 @@ export interface nsIEmbeddingSiteWindowType extends nsISupports {
 /**
  * A channel interface which allows special handling of encoded content
  */
-export interface nsIEncodedChannelType extends nsISupports {
+declare interface nsIEncodedChannelType extends nsISupports {
     /**
      * This attribute holds the MIME types corresponding to the content
      * encodings on the channel.  The enumerator returns nsISupportsCString
@@ -19327,7 +19327,7 @@ export interface nsIEncodedChannelType extends nsISupports {
 /**
  *
  */
-export interface nsIEnterprisePoliciesType extends nsISupports {
+declare interface nsIEnterprisePoliciesType extends nsISupports {
     /**
      *
      */
@@ -19392,7 +19392,7 @@ export interface nsIEnterprisePoliciesType extends nsISupports {
 /**
  * Scriptable access to the current process environment.
  */
-export interface nsIEnvironmentType extends nsISupports {
+declare interface nsIEnvironmentType extends nsISupports {
     /**
      * Set the value of an environment variable.
      *
@@ -19436,7 +19436,7 @@ export interface nsIEnvironmentType extends nsISupports {
  * Contains an event target along with a count of event listener changes
  * affecting accessibility.
  */
-export interface nsIEventListenerChangeType extends nsISupports {
+declare interface nsIEventListenerChangeType extends nsISupports {
     /**
      *
      */
@@ -19450,7 +19450,7 @@ export interface nsIEventListenerChangeType extends nsISupports {
 /**
  *
  */
-export interface nsIListenerChangeListenerType extends nsISupports {
+declare interface nsIListenerChangeListenerType extends nsISupports {
     /**
      *
      */
@@ -19461,7 +19461,7 @@ export interface nsIListenerChangeListenerType extends nsISupports {
  * An instance of this interface describes how an event listener
  * was added to an event target.
  */
-export interface nsIEventListenerInfoType extends nsISupports {
+declare interface nsIEventListenerInfoType extends nsISupports {
     /**
      * The type of the event for which the listener was added.
      * Null if the listener is for all the events.
@@ -19500,7 +19500,7 @@ export interface nsIEventListenerInfoType extends nsISupports {
 /**
  *
  */
-export interface nsIEventListenerServiceType extends nsISupports {
+declare interface nsIEventListenerServiceType extends nsISupports {
     /**
      * Returns true if a event target has any listener for the given type.
      */
@@ -19534,7 +19534,7 @@ export interface nsIEventListenerServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIEventSourceEventListenerType extends nsISupports {
+declare interface nsIEventSourceEventListenerType extends nsISupports {
     /**
      *
      */
@@ -19552,7 +19552,7 @@ export interface nsIEventSourceEventListenerType extends nsISupports {
 /**
  *
  */
-export interface nsIEventSourceEventServiceType extends nsISupports {
+declare interface nsIEventSourceEventServiceType extends nsISupports {
     /**
      *
      */
@@ -19570,7 +19570,7 @@ export interface nsIEventSourceEventServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIEventTargetType extends nsISupports {
+declare interface nsIEventTargetType extends nsISupports {
     /**
      *
      */
@@ -19676,7 +19676,7 @@ export interface nsIEventTargetType extends nsISupports {
 /**
  *
  */
-export interface nsIStackFrameType extends nsISupports {
+declare interface nsIStackFrameType extends nsISupports {
     /**
      *
      */
@@ -19770,7 +19770,7 @@ export interface nsIStackFrameType extends nsISupports {
 /**
  *
  */
-export interface nsIExceptionType extends nsISupports {
+declare interface nsIExceptionType extends nsISupports {
 }
 
 /**
@@ -19778,7 +19778,7 @@ export interface nsIExceptionType extends nsISupports {
  * to get output from expat and do something with it; in other words,
  * by any sink that handles some sort of XML dialect.
  */
-export interface nsIExpatSinkType extends nsISupports {
+declare interface nsIExpatSinkType extends nsISupports {
     /**
      * Called to handle the opening tag of an element.
      * @param aName the fully qualified tagname of the element
@@ -19855,7 +19855,7 @@ export interface nsIExpatSinkType extends nsISupports {
  * The external helper app service is used for finding and launching
  * platform specific external applications for a given mime content type.
  */
-export interface nsIExternalHelperAppServiceType extends nsISupports {
+declare interface nsIExternalHelperAppServiceType extends nsISupports {
     /**
      * Binds an external helper application to a stream listener. The caller
      * should pump data into the returned stream listener. When the OnStopRequest
@@ -19904,7 +19904,7 @@ export interface nsIExternalHelperAppServiceType extends nsISupports {
  * This is a private interface shared between external app handlers and the platform specific
  * external helper app service
  */
-export interface nsPIExternalAppLauncherType extends nsISupports {
+declare interface nsPIExternalAppLauncherType extends nsISupports {
     /**
      * mscott --> eventually I should move this into a new service so other
      * consumers can add temporary files they want deleted on exit.
@@ -19925,7 +19925,7 @@ export interface nsPIExternalAppLauncherType extends nsISupports {
  * Note that cancelling the load via the nsICancelable interface will release
  * the reference to the launcher dialog.
  */
-export interface nsIHelperAppLauncherType extends nsICancelable {
+declare interface nsIHelperAppLauncherType extends nsICancelable {
     /**
      * The mime info object associated with the content type this helper app
      * launcher is currently attempting to load
@@ -19998,7 +19998,7 @@ export interface nsIHelperAppLauncherType extends nsICancelable {
 /**
  *
  */
-export interface nsIExternalProtocolHandlerType extends nsIProtocolHandler {
+declare interface nsIExternalProtocolHandlerType extends nsIProtocolHandler {
     /**
      * This method checks if the external handler exists for a given scheme.
      *
@@ -20017,7 +20017,7 @@ export interface nsIExternalProtocolHandlerType extends nsIProtocolHandler {
  * handler for a given protocol scheme. And you can ask it to load
  * the url using the default handler.
  */
-export interface nsIExternalProtocolServiceType extends nsISupports {
+declare interface nsIExternalProtocolServiceType extends nsISupports {
     /**
      * Check whether a handler for a specific protocol exists.  Specifically,
      * this looks to see whether there are any known possible application handlers
@@ -20135,7 +20135,7 @@ export interface nsIExternalProtocolServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIFOGType extends nsISupports {
+declare interface nsIFOGType extends nsISupports {
     /**
      * Initialize FOG.
      *
@@ -20283,7 +20283,7 @@ export interface nsIFOGType extends nsISupports {
  * A class factory allows the creation of nsISupports derived
  * components without specifying a concrete base class.
  */
-export interface nsIFactoryType extends nsISupports {
+declare interface nsIFactoryType extends nsISupports {
     /**
      * Creates an instance of a component.
      *
@@ -20299,7 +20299,7 @@ export interface nsIFactoryType extends nsISupports {
 /**
  *
  */
-export interface nsIFaviconServiceType extends nsISupports {
+declare interface nsIFaviconServiceType extends nsISupports {
     /**
      * For a given icon URI, this will return a URI that will result in the image.
      * In most cases, this is an annotation URI.  For chrome URIs, this will do
@@ -20529,7 +20529,7 @@ export interface nsIFaviconServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIFaviconDataCallbackType extends nsISupports {
+declare interface nsIFaviconDataCallbackType extends nsISupports {
     /**
      * Called when the required favicon's information is available.
      *
@@ -20590,7 +20590,7 @@ export interface nsIFaviconDataCallbackType extends nsISupports {
  * be safely passed to javascript via xpconnect.  Therefore, the "native
  * methods" are not scriptable.
  */
-export interface nsIFileType extends nsISupports {
+declare interface nsIFileType extends nsISupports {
     /**
      * append[Native]
      *
@@ -21114,7 +21114,7 @@ export interface nsIFileType extends nsISupports {
 /**
  * nsIFileChannel
  */
-export interface nsIFileChannelType extends nsISupports {
+declare interface nsIFileChannelType extends nsISupports {
     /**
      *
      */
@@ -21124,7 +21124,7 @@ export interface nsIFileChannelType extends nsISupports {
 /**
  *
  */
-export interface nsIFilePickerShownCallbackType extends nsISupports {
+declare interface nsIFilePickerShownCallbackType extends nsISupports {
     /**
      * Callback which is called when a filepicker is shown and a result
      * is returned.
@@ -21137,7 +21137,7 @@ export interface nsIFilePickerShownCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIFilePickerType extends nsISupports {
+declare interface nsIFilePickerType extends nsISupports {
     /**
      * Initialize the file picker widget.  The file picker is not valid until this
      * method is called.
@@ -21269,7 +21269,7 @@ export interface nsIFilePickerType extends nsISupports {
 /**
  *
  */
-export interface nsIFileProtocolHandlerType extends nsIProtocolHandler {
+declare interface nsIFileProtocolHandlerType extends nsIProtocolHandler {
     /**
      * This method constructs a new file URI
      *
@@ -21356,7 +21356,7 @@ export interface nsIFileProtocolHandlerType extends nsIProtocolHandler {
 /**
  * An input stream that allows you to read from a file.
  */
-export interface nsIFileInputStreamType extends nsIInputStream {
+declare interface nsIFileInputStreamType extends nsIInputStream {
     /**
      * @param file          file to read from
      * @param ioFlags       file open flags listed in prio.h (see
@@ -21373,7 +21373,7 @@ export interface nsIFileInputStreamType extends nsIInputStream {
 /**
  * An output stream that lets you stream to a file.
  */
-export interface nsIFileOutputStreamType extends nsIOutputStream {
+declare interface nsIFileOutputStreamType extends nsIOutputStream {
     /**
      * @param file          file to write to
      * @param ioFlags       file open flags listed in prio.h (see
@@ -21399,7 +21399,7 @@ export interface nsIFileOutputStreamType extends nsIOutputStream {
 /**
  * A stream that allows you to read from a file or stream to a file.
  */
-export interface nsIFileRandomAccessStreamType extends nsIRandomAccessStream {
+declare interface nsIFileRandomAccessStreamType extends nsIRandomAccessStream {
     /**
      * @param file          file to read from or stream to
      * @param ioFlags       file open flags listed in prio.h (see
@@ -21426,7 +21426,7 @@ export interface nsIFileRandomAccessStreamType extends nsIRandomAccessStream {
  * happen when using RemoteLazyInputStream with an underlying file stream, for
  * example.
  */
-export interface nsIFileMetadataType extends nsISupports {
+declare interface nsIFileMetadataType extends nsISupports {
     /**
      * File size in bytes.
      */
@@ -21447,7 +21447,7 @@ export interface nsIFileMetadataType extends nsISupports {
 /**
  *
  */
-export interface nsIAsyncFileMetadataType extends nsIFileMetadata {
+declare interface nsIAsyncFileMetadataType extends nsIFileMetadata {
     /**
      * Asynchronously wait for the object to be ready.
      *
@@ -21465,7 +21465,7 @@ export interface nsIAsyncFileMetadataType extends nsIFileMetadata {
  * This is a companion interface for
  * nsIAsyncFileMetadata::asyncFileMetadataWait.
  */
-export interface nsIFileMetadataCallbackType extends nsISupports {
+declare interface nsIFileMetadataCallbackType extends nsISupports {
     /**
      * Called to indicate that the nsIFileMetadata object is ready.
      */
@@ -21477,7 +21477,7 @@ export interface nsIFileMetadataCallbackType extends nsISupports {
  * an URL.  The URL scheme need not be file:, since other local protocols may
  * map URLs to files (e.g., resource:).
  */
-export interface nsIFileURLType extends nsIURL {
+declare interface nsIFileURLType extends nsIURL {
     /**
      * Get the nsIFile corresponding to this URL.
      *
@@ -21491,7 +21491,7 @@ export interface nsIFileURLType extends nsIURL {
 /**
  *
  */
-export interface nsIFileURLMutatorType extends nsISupports {
+declare interface nsIFileURLMutatorType extends nsISupports {
     /**
      * - Marks the inner URI implementation as one that supports nsIFileURL.
      */
@@ -21506,7 +21506,7 @@ export interface nsIFileURLMutatorType extends nsISupports {
 /**
  *
  */
-export interface nsIFinalizationWitnessServiceType extends nsISupports {
+declare interface nsIFinalizationWitnessServiceType extends nsISupports {
     /**
      * Create a new Finalization Witness.
      *
@@ -21526,7 +21526,7 @@ export interface nsIFinalizationWitnessServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIFindType extends nsISupports {
+declare interface nsIFindType extends nsISupports {
     /**
      *
      */
@@ -21563,7 +21563,7 @@ export interface nsIFindType extends nsISupports {
 /**
  *
  */
-export interface nsIFindServiceType extends nsISupports {
+declare interface nsIFindServiceType extends nsISupports {
     /**
      * The sole purpose of the Find service is to store globally the
      * last used Find settings
@@ -21623,7 +21623,7 @@ export interface nsIFindServiceType extends nsISupports {
  *
  * Blur and focus events do not bubble as per the W3C DOM Events spec.
  */
-export interface nsIFocusManagerType extends nsISupports {
+declare interface nsIFocusManagerType extends nsISupports {
     /**
      * The most active (frontmost) window, or null if no window that is part of
      * the application is active. Do not use outside the parent process.
@@ -21735,7 +21735,7 @@ export interface nsIFocusManagerType extends nsISupports {
 /**
  *
  */
-export interface nsIFontEnumeratorType extends nsISupports {
+declare interface nsIFontEnumeratorType extends nsISupports {
     /**
      * Return a promise that resolves to a sorted array of the names of all
      * installed fonts.
@@ -21781,7 +21781,7 @@ export interface nsIFontEnumeratorType extends nsISupports {
 /**
  *
  */
-export interface nsIFontLoadCompleteCallbackType extends nsISupports {
+declare interface nsIFontLoadCompleteCallbackType extends nsISupports {
     /**
      *
      */
@@ -21792,7 +21792,7 @@ export interface nsIFontLoadCompleteCallbackType extends nsISupports {
  * nsIForcePending interface exposes a function that enables overwriting of the normal
  * behavior for the channel's IsPending(), forcing 'true' to be returned.
  */
-export interface nsIForcePendingChannelType extends nsISupports {
+declare interface nsIForcePendingChannelType extends nsISupports {
     /**
      * forcePending(true) overrides the normal behavior for the
      * channel's IsPending(), forcing 'true' to be returned. A call to
@@ -21804,7 +21804,7 @@ export interface nsIForcePendingChannelType extends nsISupports {
 /**
  *
  */
-export interface nsIFormAutoCompleteType extends nsISupports {
+declare interface nsIFormAutoCompleteType extends nsISupports {
     /**
      * Generate results for a form input autocomplete menu asynchronously.
      */
@@ -21819,7 +21819,7 @@ export interface nsIFormAutoCompleteType extends nsISupports {
 /**
  *
  */
-export interface nsIFormAutoCompleteObserverType extends nsISupports {
+declare interface nsIFormAutoCompleteObserverType extends nsISupports {
     /**
      * Called when a search is complete and the results are ready even if the
      * result set is empty. If the search is cancelled or a new search is
@@ -21838,7 +21838,7 @@ export interface nsIFormAutoCompleteObserverType extends nsISupports {
  * is focused.  When this happens, the input will be bound to the
  * global nsIAutoCompleteController service.
  */
-export interface nsIFormFillControllerType extends nsISupports {
+declare interface nsIFormFillControllerType extends nsISupports {
     /**
      * The input element the form fill controller is currently bound to.
      */
@@ -21889,13 +21889,13 @@ export interface nsIFormFillControllerType extends nsISupports {
  * Channel classes that want to be allowed for HTML form POST action must
  * implement this interface.
  */
-export interface nsIFormPOSTActionChannelType extends nsIUploadChannel {
+declare interface nsIFormPOSTActionChannelType extends nsIUploadChannel {
 }
 
 /**
  *
  */
-export interface nsIFormatConverterType extends nsISupports {
+declare interface nsIFormatConverterType extends nsISupports {
     /**
      * Determines whether a conversion from one flavor to another is supported
      *
@@ -21916,7 +21916,7 @@ export interface nsIFormatConverterType extends nsISupports {
 /**
  *
  */
-export interface nsIGIOMimeAppType extends nsIHandlerApp {
+declare interface nsIGIOMimeAppType extends nsIHandlerApp {
     /**
      *
      */
@@ -21950,7 +21950,7 @@ export interface nsIGIOMimeAppType extends nsIHandlerApp {
 /**
  *
  */
-export interface nsIGIOServiceType extends nsISupports {
+declare interface nsIGIOServiceType extends nsISupports {
     /**
      * * MIME registry methods **
      *
@@ -22001,7 +22001,7 @@ export interface nsIGIOServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIGNOMEShellServiceType extends nsIShellService {
+declare interface nsIGNOMEShellServiceType extends nsIShellService {
     /**
      * Used to determine whether or not to offer "Set as desktop background"
      * functionality. Even if shell service is available it is not
@@ -22019,7 +22019,7 @@ export interface nsIGNOMEShellServiceType extends nsIShellService {
 /**
  *
  */
-export interface nsIGSettingsCollectionType extends nsISupports {
+declare interface nsIGSettingsCollectionType extends nsISupports {
     /**
      *
      */
@@ -22053,7 +22053,7 @@ export interface nsIGSettingsCollectionType extends nsISupports {
 /**
  *
  */
-export interface nsIGSettingsServiceType extends nsISupports {
+declare interface nsIGSettingsServiceType extends nsISupports {
     /**
      *
      */
@@ -22064,7 +22064,7 @@ export interface nsIGSettingsServiceType extends nsISupports {
  * Interface provides a way for a geolocation provider to
  * notify the system that a new location is available.
  */
-export interface nsIGeolocationUpdateType extends nsISupports {
+declare interface nsIGeolocationUpdateType extends nsISupports {
     /**
      * Notify the geolocation service that a new geolocation
      * has been discovered.
@@ -22090,7 +22090,7 @@ export interface nsIGeolocationUpdateType extends nsISupports {
  * startup is called, any geo location change should call
  * callback.update().
  */
-export interface nsIGeolocationProviderType extends nsISupports {
+declare interface nsIGeolocationProviderType extends nsISupports {
     /**
      * Start up the provider.  This is called before any other
      * method.  may be called multiple times.
@@ -22115,7 +22115,7 @@ export interface nsIGeolocationProviderType extends nsISupports {
 /**
  * NOTE: this interface is completely undesigned, not stable and likely to change
  */
-export interface nsIGfxInfoType extends nsISupports {
+declare interface nsIGfxInfoType extends nsISupports {
     /**
      * These are win32-specific
      */
@@ -22327,7 +22327,7 @@ export interface nsIGfxInfoType extends nsISupports {
 /**
  * NOTE: this interface is only implemented in debug builds
  */
-export interface nsIGfxInfoDebugType extends nsISupports {
+declare interface nsIGfxInfoDebugType extends nsISupports {
     /**
      *
      */
@@ -22355,7 +22355,7 @@ export interface nsIGfxInfoDebugType extends nsISupports {
 /**
  *
  */
-export interface nsIGleanBooleanType extends nsISupports {
+declare interface nsIGleanBooleanType extends nsISupports {
     /**
      * Set to the specified boolean value.
      *
@@ -22385,7 +22385,7 @@ export interface nsIGleanBooleanType extends nsISupports {
 /**
  *
  */
-export interface nsIGleanDatetimeType extends nsISupports {
+declare interface nsIGleanDatetimeType extends nsISupports {
     /**
      * Set the datetime to the provided value, or the local now.
      *
@@ -22415,7 +22415,7 @@ export interface nsIGleanDatetimeType extends nsISupports {
 /**
  *
  */
-export interface nsIGleanCounterType extends nsISupports {
+declare interface nsIGleanCounterType extends nsISupports {
     /**
      * Increases the counter by `amount`.
      *
@@ -22445,7 +22445,7 @@ export interface nsIGleanCounterType extends nsISupports {
 /**
  *
  */
-export interface nsIGleanTimingDistributionType extends nsISupports {
+declare interface nsIGleanTimingDistributionType extends nsISupports {
     /**
      * Starts tracking time for the provided metric.
      *
@@ -22503,7 +22503,7 @@ export interface nsIGleanTimingDistributionType extends nsISupports {
 /**
  *
  */
-export interface nsIGleanMemoryDistributionType extends nsISupports {
+declare interface nsIGleanMemoryDistributionType extends nsISupports {
     /**
      * Accumulates the provided sample in the metric.
      *
@@ -22537,7 +22537,7 @@ export interface nsIGleanMemoryDistributionType extends nsISupports {
 /**
  *
  */
-export interface nsIGleanCustomDistributionType extends nsISupports {
+declare interface nsIGleanCustomDistributionType extends nsISupports {
     /**
      * Accumulates the provided signed samples in the metric.
      *
@@ -22570,7 +22570,7 @@ export interface nsIGleanCustomDistributionType extends nsISupports {
 /**
  *
  */
-export interface nsIGleanPingTestCallbackType extends nsISupports {
+declare interface nsIGleanPingTestCallbackType extends nsISupports {
     /**
      *
      */
@@ -22580,7 +22580,7 @@ export interface nsIGleanPingTestCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIGleanPingType extends nsISupports {
+declare interface nsIGleanPingType extends nsISupports {
     /**
      * Collect and submit the ping for eventual upload.
      *
@@ -22619,7 +22619,7 @@ export interface nsIGleanPingType extends nsISupports {
 /**
  *
  */
-export interface nsIGleanStringType extends nsISupports {
+declare interface nsIGleanStringType extends nsISupports {
     /**
      * Set to the specified value.
      *
@@ -22649,7 +22649,7 @@ export interface nsIGleanStringType extends nsISupports {
 /**
  *
  */
-export interface nsIGleanStringListType extends nsISupports {
+declare interface nsIGleanStringListType extends nsISupports {
     /**
      * Adds a new string to the list.
      *
@@ -22690,7 +22690,7 @@ export interface nsIGleanStringListType extends nsISupports {
 /**
  *
  */
-export interface nsIGleanTimespanType extends nsISupports {
+declare interface nsIGleanTimespanType extends nsISupports {
     /**
      * Start tracking time for the provided metric.
      *
@@ -22747,7 +22747,7 @@ export interface nsIGleanTimespanType extends nsISupports {
 /**
  *
  */
-export interface nsIGleanUuidType extends nsISupports {
+declare interface nsIGleanUuidType extends nsISupports {
     /**
      * Set to the specified value.
      *
@@ -22781,7 +22781,7 @@ export interface nsIGleanUuidType extends nsISupports {
 /**
  *
  */
-export interface nsIGleanEventType extends nsISupports {
+declare interface nsIGleanEventType extends nsISupports {
     /**
      * Record an event.
      *
@@ -22833,7 +22833,7 @@ export interface nsIGleanEventType extends nsISupports {
 /**
  *
  */
-export interface nsIGleanQuantityType extends nsISupports {
+declare interface nsIGleanQuantityType extends nsISupports {
     /**
      * Set to the specified value.
      *
@@ -22863,7 +22863,7 @@ export interface nsIGleanQuantityType extends nsISupports {
 /**
  *
  */
-export interface nsIGleanDenominatorType extends nsISupports {
+declare interface nsIGleanDenominatorType extends nsISupports {
     /**
      * Increases the counter by `amount`.
      *
@@ -22893,7 +22893,7 @@ export interface nsIGleanDenominatorType extends nsISupports {
 /**
  *
  */
-export interface nsIGleanNumeratorType extends nsISupports {
+declare interface nsIGleanNumeratorType extends nsISupports {
     /**
      * Increases the numerator by `amount`.
      *
@@ -22923,7 +22923,7 @@ export interface nsIGleanNumeratorType extends nsISupports {
 /**
  *
  */
-export interface nsIGleanRateType extends nsISupports {
+declare interface nsIGleanRateType extends nsISupports {
     /**
      * Increases the numerator by `amount`.
      *
@@ -22959,7 +22959,7 @@ export interface nsIGleanRateType extends nsISupports {
 /**
  *
  */
-export interface nsIGleanUrlType extends nsISupports {
+declare interface nsIGleanUrlType extends nsISupports {
     /**
      * Sets to the specified stringified URL.
      *
@@ -22989,7 +22989,7 @@ export interface nsIGleanUrlType extends nsISupports {
 /**
  * Allow the TaskbarProgress instance to set a new target window.
  */
-export interface nsIGtkTaskbarProgressType extends nsITaskbarProgress {
+declare interface nsIGtkTaskbarProgressType extends nsITaskbarProgress {
     /**
      * Sets the window that is considered primary for purposes of
      * setting the XApp progress property.
@@ -23000,7 +23000,7 @@ export interface nsIGtkTaskbarProgressType extends nsITaskbarProgress {
 /**
  *
  */
-export interface nsIHTMLAbsPosEditorType extends nsISupports {
+declare interface nsIHTMLAbsPosEditorType extends nsISupports {
     /**
      * true if Absolute Positioning handling is enabled in the editor
      */
@@ -23021,7 +23021,7 @@ export interface nsIHTMLAbsPosEditorType extends nsISupports {
 /**
  *
  */
-export interface nsIHTMLEditorType extends nsISupports {
+declare interface nsIHTMLEditorType extends nsISupports {
     /**
      * ------------ Inline property methods --------------
      *
@@ -23288,7 +23288,7 @@ export interface nsIHTMLEditorType extends nsISupports {
 /**
  *
  */
-export interface nsIHTMLInlineTableEditorType extends nsISupports {
+declare interface nsIHTMLInlineTableEditorType extends nsISupports {
     /**
      * boolean indicating if inline table editing is enabled in the editor.
      * When inline table editing is enabled, and when the selection is
@@ -23301,7 +23301,7 @@ export interface nsIHTMLInlineTableEditorType extends nsISupports {
 /**
  *
  */
-export interface nsIHTMLObjectResizerType extends nsISupports {
+declare interface nsIHTMLObjectResizerType extends nsISupports {
     /**
      * a boolean indicating if object resizing is enabled in the editor
      */
@@ -23316,7 +23316,7 @@ export interface nsIHTMLObjectResizerType extends nsISupports {
 /**
  *
  */
-export interface nsIHandlerServiceType extends nsISupports {
+declare interface nsIHandlerServiceType extends nsISupports {
     /**
      * Asynchronously performs any IO that the nsIHandlerService needs to do
      * before it can be of use.
@@ -23475,7 +23475,7 @@ export interface nsIHandlerServiceType extends nsISupports {
  * A scriptable interface for getting information about a BHR detected hang.
  * This is the type of the subject of the "bhr-thread-hang" observer topic.
  */
-export interface nsIHangDetailsType extends nsISupports {
+declare interface nsIHangDetailsType extends nsISupports {
     /**
      * The hang was persisted to disk as a permahang, so we can clear the
      * permahang file once we submit this.
@@ -23532,7 +23532,7 @@ export interface nsIHangDetailsType extends nsISupports {
  * notified at regular intervals (approximately once per second). The content
  * process will continue to run uninhibitedly during this time.
  */
-export interface nsIHangReportType extends nsISupports {
+declare interface nsIHangReportType extends nsISupports {
     /**
      *
      */
@@ -23578,7 +23578,7 @@ export interface nsIHangReportType extends nsISupports {
 /**
  *
  */
-export interface nsIHapticFeedbackType extends nsISupports {
+declare interface nsIHapticFeedbackType extends nsISupports {
     /**
      * Perform haptic feedback
      *
@@ -23601,7 +23601,7 @@ export interface nsIHapticFeedbackType extends nsISupports {
  * will access methods of the nsIHelperAppLauncher passed in to show()
  * in order to cause a "save to disk" or "open using" action.
  */
-export interface nsIHelperAppLauncherDialogType extends nsISupports {
+declare interface nsIHelperAppLauncherDialogType extends nsISupports {
     /**
      * Show confirmation dialog for launching application (or "save to
      * disk") for content specified by aLauncher.
@@ -23644,7 +23644,7 @@ export interface nsIHelperAppLauncherDialogType extends nsISupports {
  * This interface provides a way for http activities to be reported
  * to observers.
  */
-export interface nsIHttpActivityObserverType extends nsISupports {
+declare interface nsIHttpActivityObserverType extends nsISupports {
     /**
      * observe activity from the http transport
      *
@@ -23714,7 +23714,7 @@ export interface nsIHttpActivityObserverType extends nsISupports {
  * This interface provides a way to register and unregister observers to the
  * http activities.
  */
-export interface nsIHttpActivityDistributorType extends nsIHttpActivityObserver {
+declare interface nsIHttpActivityDistributorType extends nsIHttpActivityObserver {
     /**
      *
      */
@@ -23761,7 +23761,7 @@ export interface nsIHttpActivityDistributorType extends nsIHttpActivityObserver 
  * Java client fetches content from a HTTP site that the user
  * has already logged into.
  */
-export interface nsIHttpAuthManagerType extends nsISupports {
+declare interface nsIHttpAuthManagerType extends nsISupports {
     /**
      * Lookup auth identity.
      *
@@ -23833,7 +23833,7 @@ export interface nsIHttpAuthManagerType extends nsISupports {
 /**
  *
  */
-export interface nsIHttpAuthenticableChannelType extends nsIProxiedChannel {
+declare interface nsIHttpAuthenticableChannelType extends nsIProxiedChannel {
     /**
      * If the channel being authenticated is using SSL.
      */
@@ -23937,7 +23937,7 @@ export interface nsIHttpAuthenticableChannelType extends nsIProxiedChannel {
  * where <auth-scheme> is the lower-cased value of the authentication scheme
  * found in the server challenge per the rules of RFC 2617.
  */
-export interface nsIHttpAuthenticatorType extends nsISupports {
+declare interface nsIHttpAuthenticatorType extends nsISupports {
     /**
      * Upon receipt of a server challenge, this function is called to determine
      * whether or not the current user identity has been rejected.  If true,
@@ -24048,7 +24048,7 @@ export interface nsIHttpAuthenticatorType extends nsISupports {
 /**
  *
  */
-export interface nsIHttpAuthenticatorCallbackType extends nsISupports {
+declare interface nsIHttpAuthenticatorCallbackType extends nsISupports {
     /**
      * Authentication data for a header is available.
      *
@@ -24073,7 +24073,7 @@ export interface nsIHttpAuthenticatorCallbackType extends nsISupports {
  * the inspection of the resulting HTTP response status and headers when they
  * become available.
  */
-export interface nsIHttpChannelType extends nsIIdentChannel {
+declare interface nsIHttpChannelType extends nsIIdentChannel {
     /**
      * ************************************************************************
      * REQUEST CONFIGURATION
@@ -24507,7 +24507,7 @@ export interface nsIHttpChannelType extends nsIIdentChannel {
  * request, checkForSuperfluousAuth MAY be called, and disconnect MUST be
  * called.
  */
-export interface nsIHttpChannelAuthProviderType extends nsICancelable {
+declare interface nsIHttpChannelAuthProviderType extends nsICancelable {
     /**
      * Initializes the http authentication support for the channel.
      * Implementations must hold a weak reference of the channel.
@@ -24562,7 +24562,7 @@ export interface nsIHttpChannelAuthProviderType extends nsICancelable {
 /**
  *
  */
-export interface nsIHttpChannelChildType extends nsISupports {
+declare interface nsIHttpChannelChildType extends nsISupports {
     /**
      *
      */
@@ -24584,7 +24584,7 @@ export interface nsIHttpChannelChildType extends nsISupports {
 /**
  * The callback interface for nsIHttpChannelInternal::HTTPUpgrade()
  */
-export interface nsIHttpUpgradeListenerType extends nsISupports {
+declare interface nsIHttpUpgradeListenerType extends nsISupports {
     /**
      *
      */
@@ -24604,7 +24604,7 @@ export interface nsIHttpUpgradeListenerType extends nsISupports {
  * using any feature exposed by this interface, be aware that this interface
  * will change and you will be broken.  You have been warned.
  */
-export interface nsIHttpChannelInternalType extends nsISupports {
+declare interface nsIHttpChannelInternalType extends nsISupports {
     /**
      * An http channel can own a reference to the document URI
      */
@@ -24954,7 +24954,7 @@ export interface nsIHttpChannelInternalType extends nsISupports {
 /**
  * Implement this interface to visit http headers.
  */
-export interface nsIHttpHeaderVisitorType extends nsISupports {
+declare interface nsIHttpHeaderVisitorType extends nsISupports {
     /**
      * Called by the nsIHttpChannel implementation when visiting request and
      * response headers.
@@ -24972,7 +24972,7 @@ export interface nsIHttpHeaderVisitorType extends nsISupports {
 /**
  *
  */
-export interface nsIHttpProtocolHandlerType extends nsIProxiedProtocolHandler {
+declare interface nsIHttpProtocolHandlerType extends nsIProxiedProtocolHandler {
     /**
      * Get the HTTP advertised user agent string.
      */
@@ -25032,7 +25032,7 @@ export interface nsIHttpProtocolHandlerType extends nsIProxiedProtocolHandler {
  *
  * Used for triggering when a HTTP/2 push is received.
  */
-export interface nsIHttpPushListenerType extends nsISupports {
+declare interface nsIHttpPushListenerType extends nsISupports {
     /**
      * When provided as a notificationCallback to an httpChannel, this.onPush()
      * will be invoked when there is a >= Http2 push to that
@@ -25056,7 +25056,7 @@ export interface nsIHttpPushListenerType extends nsISupports {
 /**
  * An interface which represents an HTTP server.
  */
-export interface nsIHttpServerType extends nsISupports {
+declare interface nsIHttpServerType extends nsISupports {
     /**
      * Starts up this server, listening upon the given port.
      *
@@ -25272,7 +25272,7 @@ export interface nsIHttpServerType extends nsISupports {
  * closure, in-flight requests all fully served and responded to) of an HTTP
  * server may be received.
  */
-export interface nsIHttpServerStoppedCallbackType extends nsISupports {
+declare interface nsIHttpServerStoppedCallbackType extends nsISupports {
     /**
      * Called when the corresponding server has been fully stopped.
      */
@@ -25287,7 +25287,7 @@ export interface nsIHttpServerStoppedCallbackType extends nsISupports {
  * however, except for their being removed when the corresponding server stops
  * they have no special importance.
  */
-export interface nsIHttpServerIdentityType extends nsISupports {
+declare interface nsIHttpServerIdentityType extends nsISupports {
     /**
      * The primary scheme at which the corresponding server is located, defaulting
      * to 'http'.  This name will be the value of nsIHttpRequest.scheme for
@@ -25380,7 +25380,7 @@ export interface nsIHttpServerIdentityType extends nsISupports {
  * method which has a nsIHttpRequestHandler parameter, instead of wrapping
  * it in an otherwise empty object.
  */
-export interface nsIHttpRequestHandlerType extends nsISupports {
+declare interface nsIHttpRequestHandlerType extends nsISupports {
     /**
      * Processes an HTTP request and initializes the passed-in response to reflect
      * the correct HTTP response.
@@ -25410,7 +25410,7 @@ export interface nsIHttpRequestHandlerType extends nsISupports {
 /**
  * A representation of the data included in an HTTP request.
  */
-export interface nsIHttpRequestType extends nsISupports {
+declare interface nsIHttpRequestType extends nsISupports {
     /**
      * The request type for this request (see RFC 2616, section 5.1.1).
      */
@@ -25498,7 +25498,7 @@ export interface nsIHttpRequestType extends nsISupports {
 /**
  * Represents an HTTP response, as described in RFC 2616, section 6.
  */
-export interface nsIHttpResponseType extends nsISupports {
+declare interface nsIHttpResponseType extends nsISupports {
     /**
      * Sets the status line for this.  If this method is never called on this, the
      * status line defaults to "HTTP/", followed by the server's default HTTP
@@ -25633,13 +25633,13 @@ export interface nsIHttpResponseType extends nsISupports {
 /**
  * An interface to test for cookie permissions
  */
-export interface nsIHttpsOnlyModePermissionType extends nsISupports {
+declare interface nsIHttpsOnlyModePermissionType extends nsISupports {
 }
 
 /**
  *
  */
-export interface nsIIDBPermissionsRequestType extends nsISupports {
+declare interface nsIIDBPermissionsRequestType extends nsISupports {
     /**
      *
      */
@@ -25664,7 +25664,7 @@ export interface nsIIDBPermissionsRequestType extends nsISupports {
  * IDNA specification:
  * http://search.ietf.org/internet-drafts/draft-ietf-idn-idna-06.txt
  */
-export interface nsIIDNServiceType extends nsISupports {
+declare interface nsIIDNServiceType extends nsISupports {
     /**
      * Prepares the input hostname according to IDNA ToASCII operation,
      * the input hostname is assumed to be UTF8-encoded.
@@ -25698,7 +25698,7 @@ export interface nsIIDNServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIINIParserType extends nsISupports {
+declare interface nsIINIParserType extends nsISupports {
     /**
      * Initializes an INI file from string data
      */
@@ -25720,7 +25720,7 @@ export interface nsIINIParserType extends nsISupports {
 /**
  *
  */
-export interface nsIINIParserWriterType extends nsISupports {
+declare interface nsIINIParserWriterType extends nsISupports {
     /**
      * Set the value of a string for a particular section and key.
      */
@@ -25738,7 +25738,7 @@ export interface nsIINIParserWriterType extends nsISupports {
 /**
  *
  */
-export interface nsIINIParserFactoryType extends nsISupports {
+declare interface nsIINIParserFactoryType extends nsISupports {
     /**
      * Create an iniparser instance from a local file.
      */
@@ -25754,7 +25754,7 @@ export interface nsIINIParserFactoryType extends nsISupports {
  * as a convenience to the programmer and in some cases to improve performance
  * by eliminating intermediate data structures and interfaces.
  */
-export interface nsIIOServiceType extends nsISupports {
+declare interface nsIIOServiceType extends nsISupports {
     /**
      * Returns a protocol handler for a given URI scheme.
      *
@@ -25974,7 +25974,7 @@ export interface nsIIOServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIIOServiceInternalType extends nsISupports {
+declare interface nsIIOServiceInternalType extends nsISupports {
     /**
      * This is an internal method that should only be called from ContentChild
      * in order to pass the connectivity state from the chrome process to the
@@ -25991,7 +25991,7 @@ export interface nsIIOServiceInternalType extends nsISupports {
 /**
  * nsIIOUtil provdes various xpcom/io-related utility methods.
  */
-export interface nsIIOUtilType extends nsISupports {
+declare interface nsIIOUtilType extends nsISupports {
     /**
      * Test whether an input stream is buffered.  See nsStreamUtils.h
      * documentation for NS_InputStreamIsBuffered for the definition of
@@ -26048,7 +26048,7 @@ export interface nsIIOUtilType extends nsISupports {
  * Description: The mime type we want an icon for. This is ignored by
  * stock images.
  */
-export interface nsIMozIconURIType extends nsIURI {
+declare interface nsIMozIconURIType extends nsIURI {
     /**
      *
      */
@@ -26082,7 +26082,7 @@ export interface nsIMozIconURIType extends nsIURI {
 /**
  *
  */
-export interface nsIIdentityCredentialPromptServiceType extends nsISupports {
+declare interface nsIIdentityCredentialPromptServiceType extends nsISupports {
     /**
      *
      */
@@ -26104,7 +26104,7 @@ export interface nsIIdentityCredentialPromptServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIIdentityCredentialStorageServiceType extends nsISupports {
+declare interface nsIIdentityCredentialStorageServiceType extends nsISupports {
     /**
      *
      */
@@ -26144,7 +26144,7 @@ export interface nsIIdentityCredentialStorageServiceType extends nsISupports {
  * nsIThread to estimate when it is likely that it will receive an
  * event.
  */
-export interface nsIIdlePeriodType extends nsISupports {
+declare interface nsIIdlePeriodType extends nsISupports {
     /**
      * Return an estimate of a point in time in the future when we
      * think that the associated thread will become busy. Should
@@ -26158,7 +26158,7 @@ export interface nsIIdlePeriodType extends nsISupports {
 /**
  *
  */
-export interface nsIImageLoadingContentType extends imgINotificationObserver {
+declare interface nsIImageLoadingContentType extends imgINotificationObserver {
     /**
      * setLoadingEnabled is used to enable and disable loading in
      * situations where loading images is unwanted.  Note that enabling
@@ -26260,7 +26260,7 @@ export interface nsIImageLoadingContentType extends imgINotificationObserver {
  * Canceling a background download does not cause the file on disk to be
  * deleted.
  */
-export interface nsIIncrementalDownloadType extends nsIRequest {
+declare interface nsIIncrementalDownloadType extends nsIRequest {
     /**
      * Initialize the incremental download object.  If the destination file
      * already exists, then only the remaining portion of the file will be
@@ -26344,7 +26344,7 @@ export interface nsIIncrementalDownloadType extends nsIRequest {
 /**
  *
  */
-export interface nsIIncrementalStreamLoaderObserverType extends nsISupports {
+declare interface nsIIncrementalStreamLoaderObserverType extends nsISupports {
     /**
      * Called when new data has arrived on the stream.
      *
@@ -26401,7 +26401,7 @@ export interface nsIIncrementalStreamLoaderObserverType extends nsISupports {
  *
  * XXX define behaviour for sizes >4 GB
  */
-export interface nsIIncrementalStreamLoaderType extends nsIStreamListener {
+declare interface nsIIncrementalStreamLoaderType extends nsIStreamListener {
     /**
      * Initialize this stream loader, and start loading the data.
      *
@@ -26423,7 +26423,7 @@ export interface nsIIncrementalStreamLoaderType extends nsIStreamListener {
 /**
  *
  */
-export interface nsIInlineSpellCheckerType extends nsISupports {
+declare interface nsIInlineSpellCheckerType extends nsISupports {
     /**
      *
      */
@@ -26481,7 +26481,7 @@ export interface nsIInlineSpellCheckerType extends nsISupports {
 /**
  *
  */
-export interface nsIInputListAutoCompleteType extends nsISupports {
+declare interface nsIInputListAutoCompleteType extends nsISupports {
     /**
      * Generate results for a form input autocomplete menu.
      */
@@ -26502,7 +26502,7 @@ export interface nsIInputListAutoCompleteType extends nsISupports {
  * the case that a blocking input stream should be implemented using thread-
  * safe AddRef and Release.
  */
-export interface nsIInputStreamType extends nsISupports {
+declare interface nsIInputStreamType extends nsISupports {
     /**
      * Close the stream.  This method causes subsequent calls to Read and
      * ReadSegments to return 0 bytes read to indicate end-of-file.  Any
@@ -26594,7 +26594,7 @@ export interface nsIInputStreamType extends nsISupports {
  * This interface provides methods to initialize an input stream channel.
  * The input stream channel serves as a data pump for an input stream.
  */
-export interface nsIInputStreamChannelType extends nsISupports {
+declare interface nsIInputStreamChannelType extends nsISupports {
     /**
      * Sets the URI for this channel.  This must be called before the
      * channel is opened, and it may only be called once.
@@ -26642,7 +26642,7 @@ export interface nsIInputStreamChannelType extends nsISupports {
  * Note: Instead of using these interfaces directly, consider to use
  * InputStreamLengthHelper class.
  */
-export interface nsIInputStreamLengthType extends nsISupports {
+declare interface nsIInputStreamLengthType extends nsISupports {
     /**
      * Returns the total length of the stream if known. Otherwise it returns -1.
      * This is different than calling available() which returns the number of
@@ -26667,7 +26667,7 @@ export interface nsIInputStreamLengthType extends nsISupports {
 /**
  *
  */
-export interface nsIAsyncInputStreamLengthType extends nsISupports {
+declare interface nsIAsyncInputStreamLengthType extends nsISupports {
     /**
      * If the stream is non-blocking, nsIInputStreamLength::length() can return
      * NS_BASE_STREAM_WOULD_BLOCK. The caller must then wait for the stream to
@@ -26696,7 +26696,7 @@ export interface nsIAsyncInputStreamLengthType extends nsISupports {
  * This is a companion interface for
  * nsIAsyncInputStreamLength::asyncLengthWait.
  */
-export interface nsIInputStreamLengthCallbackType extends nsISupports {
+declare interface nsIInputStreamLengthCallbackType extends nsISupports {
     /**
      * Called to inform what the total length of the stream is.
      *
@@ -26712,7 +26712,7 @@ export interface nsIInputStreamLengthCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIInputStreamPriorityType extends nsISupports {
+declare interface nsIInputStreamPriorityType extends nsISupports {
     /**
      * An input stream implementing this interface will dispatch runnable
      * events with this priority. See nsIRunnablePriority.
@@ -26735,7 +26735,7 @@ export interface nsIInputStreamPriorityType extends nsISupports {
  * the stream will be read on a background thread utilizing the stream
  * transport service.  More details are provided below.
  */
-export interface nsIInputStreamPumpType extends nsIRequest {
+declare interface nsIInputStreamPumpType extends nsIRequest {
     /**
      * Initialize the input stream pump.
      *
@@ -26775,7 +26775,7 @@ export interface nsIInputStreamPumpType extends nsIRequest {
  * reads the specified amount of data from its |source| and copies that
  * data to its |sink|.  |sink| must be a blocking output stream.
  */
-export interface nsIInputStreamTeeType extends nsIInputStream {
+declare interface nsIInputStreamTeeType extends nsIInputStream {
     /**
      *
      */
@@ -26798,7 +26798,7 @@ export interface nsIInputStreamTeeType extends nsIInputStream {
  * This infomration need to be propagated to the new channel which created by
  * FetchEvent.request or ServiceWorker NavigationPreload.
  */
-export interface nsIInterceptionInfoType extends nsISupports {
+declare interface nsIInterceptionInfoType extends nsISupports {
     /**
      * InterceptedHttpChannel's triggering principal
      */
@@ -26848,7 +26848,7 @@ export interface nsIInterceptionInfoType extends nsISupports {
  * to A.  This interface however allows you to obtain an interface C from A
  * that may or most likely will not have the ability to get back to A.
  */
-export interface nsIInterfaceRequestorType extends nsISupports {
+declare interface nsIInterfaceRequestorType extends nsISupports {
     /**
      * Retrieves the specified interface pointer.
      *
@@ -26864,7 +26864,7 @@ export interface nsIInterfaceRequestorType extends nsISupports {
 /**
  *
  */
-export interface nsIJARChannelType extends nsIChannel {
+declare interface nsIJARChannelType extends nsIChannel {
     /**
      * Returns the JAR file.  May be null if the jar is remote.
      * Setting the JAR file is optional and overrides the JAR
@@ -26898,7 +26898,7 @@ export interface nsIJARChannelType extends nsIChannel {
  *
  * The nsIURL methods operate on the <jar-entry> part of the spec.
  */
-export interface nsIJARURIType extends nsIURL {
+declare interface nsIJARURIType extends nsIURL {
     /**
      * Returns the root URI (the one for the actual JAR file) for this JAR
      * (e.g., http://www.big.com/blue.jar).
@@ -26914,7 +26914,7 @@ export interface nsIJARURIType extends nsIURL {
 /**
  *
  */
-export interface nsIJARURIMutatorType extends nsISupports {
+declare interface nsIJARURIMutatorType extends nsISupports {
     /**
      * Will initialize a URI using the passed spec, baseURI and charset.
      */
@@ -26925,7 +26925,7 @@ export interface nsIJARURIMutatorType extends nsISupports {
  * Utilities for running nested event loops, asking them to return, and
  * keeping track of which ones are still running.
  */
-export interface nsIJSInspectorType extends nsISupports {
+declare interface nsIJSInspectorType extends nsISupports {
     /**
      * Process the current thread's event queue, calling event handlers until
      * a call to exitNestedEventLoop, below, asks us to return.
@@ -26989,7 +26989,7 @@ export interface nsIJSInspectorType extends nsISupports {
 /**
  *
  */
-export interface nsIJumpListCommittedCallbackType extends nsISupports {
+declare interface nsIJumpListCommittedCallbackType extends nsISupports {
     /**
      *
      */
@@ -26999,7 +26999,7 @@ export interface nsIJumpListCommittedCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIJumpListBuilderType extends nsISupports {
+declare interface nsIJumpListBuilderType extends nsISupports {
     /**
      * Indicates whether jump list taskbar features are supported by the current
      * host.
@@ -27082,7 +27082,7 @@ export interface nsIJumpListBuilderType extends nsISupports {
  * create the specific interface here, add an implementation class to WinJumpListItem,
  * and add support to addListBuild & removed items processing.
  */
-export interface nsIJumpListItemType extends nsISupports {
+declare interface nsIJumpListItemType extends nsISupports {
     /**
      * Retrieves the jump list item type.
      */
@@ -27103,7 +27103,7 @@ export interface nsIJumpListItemType extends nsISupports {
 /**
  * A menu separator.
  */
-export interface nsIJumpListSeparatorType extends nsIJumpListItem {
+declare interface nsIJumpListSeparatorType extends nsIJumpListItem {
 }
 
 /**
@@ -27112,7 +27112,7 @@ export interface nsIJumpListSeparatorType extends nsIJumpListItem {
  * Note the application must be the registered protocol
  * handler for the protocol of the link.
  */
-export interface nsIJumpListLinkType extends nsIJumpListItem {
+declare interface nsIJumpListLinkType extends nsIJumpListItem {
     /**
      * Set or get the uri for this link item.
      */
@@ -27140,7 +27140,7 @@ export interface nsIJumpListLinkType extends nsIJumpListItem {
 /**
  * A generic application shortcut with command line support.
  */
-export interface nsIJumpListShortcutType extends nsIJumpListItem {
+declare interface nsIJumpListShortcutType extends nsIJumpListItem {
     /**
      * Set or get the handler app for this shortcut item.
      *
@@ -27178,7 +27178,7 @@ export interface nsIJumpListShortcutType extends nsIJumpListItem {
 /**
  * The key/value service.  Enables retrieval of handles to key/value databases.
  */
-export interface nsIKeyValueServiceType extends nsISupports {
+declare interface nsIKeyValueServiceType extends nsISupports {
     /**
      * Get a handle to an existing database or a newly-created one
      * at the specified path and with the given name.
@@ -27198,7 +27198,7 @@ export interface nsIKeyValueServiceType extends nsISupports {
  * The types of the callbacks vary, but they can all be implemented in JS
  * via an object literal with the relevant methods.
  */
-export interface nsIKeyValueDatabaseType extends nsISupports {
+declare interface nsIKeyValueDatabaseType extends nsISupports {
     /**
      * Write the specified key/value pair to the database.
      */
@@ -27266,7 +27266,7 @@ export interface nsIKeyValueDatabaseType extends nsISupports {
 /**
  * A key/value pair.  Returned by nsIKeyValueEnumerator.getNext().
  */
-export interface nsIKeyValuePairType extends nsISupports {
+declare interface nsIKeyValuePairType extends nsISupports {
     /**
      *
      */
@@ -27286,7 +27286,7 @@ export interface nsIKeyValuePairType extends nsISupports {
  * which is another reason why you should use the kvstore.jsm module from JS
  * instead of accessing this API directly.
  */
-export interface nsIKeyValueEnumeratorType extends nsISupports {
+declare interface nsIKeyValueEnumeratorType extends nsISupports {
     /**
      *
      */
@@ -27302,7 +27302,7 @@ export interface nsIKeyValueEnumeratorType extends nsISupports {
  *
  * The result is an nsIKeyValueDatabase.
  */
-export interface nsIKeyValueDatabaseCallbackType extends nsISupports {
+declare interface nsIKeyValueDatabaseCallbackType extends nsISupports {
     /**
      *
      */
@@ -27318,7 +27318,7 @@ export interface nsIKeyValueDatabaseCallbackType extends nsISupports {
  *
  * The result is an nsIKeyValueEnumerator.
  */
-export interface nsIKeyValueEnumeratorCallbackType extends nsISupports {
+declare interface nsIKeyValueEnumeratorCallbackType extends nsISupports {
     /**
      *
      */
@@ -27335,7 +27335,7 @@ export interface nsIKeyValueEnumeratorCallbackType extends nsISupports {
  * The result is the next key/value pair, expressed as separate key and value
  * parameters.
  */
-export interface nsIKeyValuePairCallbackType extends nsISupports {
+declare interface nsIKeyValuePairCallbackType extends nsISupports {
     /**
      *
      */
@@ -27352,7 +27352,7 @@ export interface nsIKeyValuePairCallbackType extends nsISupports {
  * The result is an nsIVariant, which is always a boolean for the has() method
  * and can be any supported data type for the get() method.
  */
-export interface nsIKeyValueVariantCallbackType extends nsISupports {
+declare interface nsIKeyValueVariantCallbackType extends nsISupports {
     /**
      *
      */
@@ -27369,7 +27369,7 @@ export interface nsIKeyValueVariantCallbackType extends nsISupports {
  * There is no result, but the resolve() method is still called when those
  * async operations complete, to notify consumers of completion.
  */
-export interface nsIKeyValueVoidCallbackType extends nsISupports {
+declare interface nsIKeyValueVoidCallbackType extends nsISupports {
     /**
      *
      */
@@ -27383,7 +27383,7 @@ export interface nsIKeyValueVoidCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIKeychainMigrationUtilsType extends nsISupports {
+declare interface nsIKeychainMigrationUtilsType extends nsISupports {
     /**
      *
      */
@@ -27394,7 +27394,7 @@ export interface nsIKeychainMigrationUtilsType extends nsISupports {
  * A series of hooks into non-IDL-ized layout code to allow all the
  * layout debugging functions to be used from chrome.
  */
-export interface nsILayoutDebuggingToolsType extends nsISupports {
+declare interface nsILayoutDebuggingToolsType extends nsISupports {
     /**
      * Initialize debugger object to act on a docshell.
      */
@@ -27456,7 +27456,7 @@ export interface nsILayoutDebuggingToolsType extends nsISupports {
 /**
  *
  */
-export interface nsILayoutHistoryStateType extends nsISupports {
+declare interface nsILayoutHistoryStateType extends nsISupports {
     /**
      * Whether this LayoutHistoryState contains any PresStates.
      */
@@ -27512,7 +27512,7 @@ export interface nsILayoutHistoryStateType extends nsISupports {
 /**
  *
  */
-export interface nsILineInputStreamType extends nsISupports {
+declare interface nsILineInputStreamType extends nsISupports {
     /**
      * Read a single line from the stream, where a line is a
      * possibly zero length sequence of 8bit chars terminated by a
@@ -27534,7 +27534,7 @@ export interface nsILineInputStreamType extends nsISupports {
  * can be queried for various information about where the load is
  * happening.
  */
-export interface nsILoadContextType extends nsISupports {
+declare interface nsILoadContextType extends nsISupports {
     /**
      * associatedWindow is the window with which the load is associated, if any.
      * Note that the load may be triggered by a document which is different from
@@ -27614,7 +27614,7 @@ export interface nsILoadContextType extends nsISupports {
  * It shall be used where nsILoadContext cannot be used or is not
  * available.
  */
-export interface nsILoadContextInfoType extends nsISupports {
+declare interface nsILoadContextInfoType extends nsISupports {
     /**
      * Whether the context is in a Private Browsing mode
      */
@@ -27639,7 +27639,7 @@ export interface nsILoadContextInfoType extends nsISupports {
  * we need a scriptable factory to create instances of that
  * interface from JS.
  */
-export interface nsILoadContextInfoFactoryType extends nsISupports {
+declare interface nsILoadContextInfoFactoryType extends nsISupports {
     /**
      *
      */
@@ -27673,7 +27673,7 @@ export interface nsILoadContextInfoFactoryType extends nsISupports {
  * made for subdocuments in order to track page load progress and allow all
  * requests made on behalf of the document to be stopped, etc.
  */
-export interface nsILoadGroupType extends nsIRequest {
+declare interface nsILoadGroupType extends nsIRequest {
     /**
      * The group observer is notified when requests are added to and removed
      * from this load group.  The groupObserver is weak referenced.
@@ -27751,7 +27751,7 @@ export interface nsILoadGroupType extends nsIRequest {
  * operations into a logical whole while still leaving them separate
  * for the purposes of cancellation and status events.
  */
-export interface nsILoadGroupChildType extends nsISupports {
+declare interface nsILoadGroupChildType extends nsISupports {
     /**
      * The parent of this load group. It is stored with
      * a nsIWeakReference/nsWeakPtr so there is no requirement for the
@@ -27782,7 +27782,7 @@ export interface nsILoadGroupChildType extends nsISupports {
  * For detailed information about what parts of LoadInfo are updated on
  * redirect, see documentation on individual properties.
  */
-export interface nsILoadInfoType extends nsISupports {
+declare interface nsILoadInfoType extends nsISupports {
     /**
      * This is the principal of the network request's caller/requester where
      * the resulting resource will be used. I.e. it is the principal which
@@ -28691,7 +28691,7 @@ export interface nsILoadInfoType extends nsISupports {
  * Used for delegating URI loads to GeckoView's application, e.g., Custom Tabs
  * or Progressive Web Apps.
  */
-export interface nsILoadURIDelegateType extends nsISupports {
+declare interface nsILoadURIDelegateType extends nsISupports {
     /**
      * Delegates the URI load. This should only be called for top-level loads.
      *
@@ -28719,7 +28719,7 @@ export interface nsILoadURIDelegateType extends nsISupports {
 /**
  *
  */
-export interface nsILocalFileMacType extends nsIFile {
+declare interface nsILocalFileMacType extends nsIFile {
     /**
      * initWithCFURL
      *
@@ -28876,7 +28876,7 @@ export interface nsILocalFileMacType extends nsIFile {
 /**
  *
  */
-export interface nsILocalFileWinType extends nsIFile {
+declare interface nsILocalFileWinType extends nsIFile {
     /**
      * initWithCommandLine
      *
@@ -28955,7 +28955,7 @@ export interface nsILocalFileWinType extends nsIFile {
  * with SessionStorage.  Methods may migrate there as SessionStorage is
  * overhauled.
  */
-export interface nsILocalStorageManagerType extends nsISupports {
+declare interface nsILocalStorageManagerType extends nsISupports {
     /**
      *
      */
@@ -28983,7 +28983,7 @@ export interface nsILocalStorageManagerType extends nsISupports {
 /**
  *
  */
-export interface nsILoginAutoCompleteSearchType extends nsISupports {
+declare interface nsILoginAutoCompleteSearchType extends nsISupports {
     /**
      * Generate results for a login field autocomplete menu.
      *
@@ -29002,7 +29002,7 @@ export interface nsILoginAutoCompleteSearchType extends nsISupports {
 /**
  *
  */
-export interface nsILoginDetectionServiceType extends nsISupports {
+declare interface nsILoginDetectionServiceType extends nsISupports {
     /**
      * called to initialize the login detection service.
      */
@@ -29018,7 +29018,7 @@ export interface nsILoginDetectionServiceType extends nsISupports {
  * An object containing information for a login stored by the
  * password manager.
  */
-export interface nsILoginInfoType extends nsISupports {
+declare interface nsILoginInfoType extends nsISupports {
     /**
      * A string to display to the user for the origin which includes the httpRealm,
      * where applicable.
@@ -29131,7 +29131,7 @@ export interface nsILoginInfoType extends nsISupports {
 /**
  *
  */
-export interface nsILoginSearchCallbackType extends nsISupports {
+declare interface nsILoginSearchCallbackType extends nsISupports {
     /**
      * Called when a search is complete and the results are ready.
      *
@@ -29144,7 +29144,7 @@ export interface nsILoginSearchCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsILoginManagerType extends nsISupports {
+declare interface nsILoginManagerType extends nsISupports {
     /**
      * This promise is resolved when initialization is complete, and is rejected
      * in case initialization failed.  This includes the initial loading of the
@@ -29359,7 +29359,7 @@ export interface nsILoginManagerType extends nsISupports {
 /**
  *
  */
-export interface nsILoginManagerAuthPrompterType extends nsISupports {
+declare interface nsILoginManagerAuthPrompterType extends nsISupports {
     /**
      * Initialize the prompter. Must be called before using other interfaces.
      *
@@ -29388,7 +29388,7 @@ export interface nsILoginManagerAuthPrompterType extends nsISupports {
 /**
  *
  */
-export interface nsILoginManagerCryptoType extends nsISupports {
+declare interface nsILoginManagerCryptoType extends nsISupports {
     /**
      * encrypt
      *
@@ -29463,7 +29463,7 @@ export interface nsILoginManagerCryptoType extends nsISupports {
 /**
  *
  */
-export interface nsILoginManagerPrompterType extends nsISupports {
+declare interface nsILoginManagerPrompterType extends nsISupports {
     /**
      * Ask the user if they want to save a login (Yes, Never, Not Now)
      *
@@ -29535,7 +29535,7 @@ export interface nsILoginManagerPrompterType extends nsISupports {
  * (nsILoginManager), and should not call storage modules
  * directly.
  */
-export interface nsILoginManagerStorageType extends nsISupports {
+declare interface nsILoginManagerStorageType extends nsISupports {
     /**
      * Initialize the component.
      *
@@ -29719,7 +29719,7 @@ export interface nsILoginManagerStorageType extends nsISupports {
  * using modifyLogin() with a nsIPropertyBag]. When deleting a login or
  * comparing logins, these properties are ignored.
  */
-export interface nsILoginMetaInfoType extends nsISupports {
+declare interface nsILoginMetaInfoType extends nsISupports {
     /**
      * The GUID to uniquely identify the login. This can be any arbitrary
      * string, but a format as created by nsIUUIDGenerator is recommended.
@@ -29756,13 +29756,13 @@ export interface nsILoginMetaInfoType extends nsISupports {
 /**
  *
  */
-export interface nsILoginReputationVerdictTypeType extends nsISupports {
+declare interface nsILoginReputationVerdictTypeType extends nsISupports {
 }
 
 /**
  *
  */
-export interface nsILoginReputationQueryType extends nsISupports {
+declare interface nsILoginReputationQueryType extends nsISupports {
     /**
      *
      */
@@ -29772,7 +29772,7 @@ export interface nsILoginReputationQueryType extends nsISupports {
 /**
  *
  */
-export interface nsILoginReputationQueryCallbackType extends nsISupports {
+declare interface nsILoginReputationQueryCallbackType extends nsISupports {
     /**
      *
      */
@@ -29782,7 +29782,7 @@ export interface nsILoginReputationQueryCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsILoginReputationServiceType extends nsISupports {
+declare interface nsILoginReputationServiceType extends nsISupports {
     /**
      *
      */
@@ -29800,7 +29800,7 @@ export interface nsILoginReputationServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIMIMEHeaderParamType extends nsISupports {
+declare interface nsIMIMEHeaderParamType extends nsISupports {
     /**
      * Given the value of a single header field  (such as
      * Content-Disposition and Content-Type) and the name of a parameter
@@ -29972,7 +29972,7 @@ export interface nsIMIMEHeaderParamType extends nsISupports {
  * nsIHandlerInfo gives access to the information about how a given protocol
  * scheme or MIME-type is handled.
  */
-export interface nsIHandlerInfoType extends nsISupports {
+declare interface nsIHandlerInfoType extends nsISupports {
     /**
      * The type of this handler info.  For MIME handlers, this is the MIME type.
      * For protocol handlers, it's the scheme.
@@ -30056,7 +30056,7 @@ export interface nsIHandlerInfoType extends nsISupports {
  * MIMEInfo objects are generally retrieved from the MIME Service
  * @see nsIMIMEService
  */
-export interface nsIMIMEInfoType extends nsIHandlerInfo {
+declare interface nsIMIMEInfoType extends nsIHandlerInfo {
     /**
      * Gives you an array of file types associated with this type.
      *
@@ -30136,7 +30136,7 @@ export interface nsIMIMEInfoType extends nsIHandlerInfo {
  * we should also try to make nsIWebContentHandlerInfo inherit from or possibly
  * be replaced by nsIWebHandlerApp (bug 394710).
  */
-export interface nsIHandlerAppType extends nsISupports {
+declare interface nsIHandlerAppType extends nsISupports {
     /**
      * Human readable name for the handler
      */
@@ -30182,7 +30182,7 @@ export interface nsIHandlerAppType extends nsISupports {
 /**
  * nsILocalHandlerApp is a local OS-level executable
  */
-export interface nsILocalHandlerAppType extends nsIHandlerApp {
+declare interface nsILocalHandlerAppType extends nsIHandlerApp {
     /**
      * Pointer to the executable file used to handle content
      */
@@ -30229,7 +30229,7 @@ export interface nsILocalHandlerAppType extends nsIHandlerApp {
  * we probably want to work with WhatWG to spec out and implement POST-based
  * handlers as well.
  */
-export interface nsIWebHandlerAppType extends nsIHandlerApp {
+declare interface nsIWebHandlerAppType extends nsIHandlerApp {
     /**
      * Template used to construct the URI to GET.  Template is expected to have
      * a %s in it, and the escaped URI to be handled is inserted in place of
@@ -30242,7 +30242,7 @@ export interface nsIWebHandlerAppType extends nsIHandlerApp {
  * nsIDBusHandlerApp represents local applications launched by DBus a message
  * invoking a method taking a single string argument descibing a URI
  */
-export interface nsIDBusHandlerAppType extends nsIHandlerApp {
+declare interface nsIDBusHandlerAppType extends nsIHandlerApp {
     /**
      * Service defines the dbus service that should handle this protocol.
      * If its not set,  NS_ERROR_FAILURE will be returned by LaunchWithURI
@@ -30272,7 +30272,7 @@ export interface nsIDBusHandlerAppType extends nsIHandlerApp {
  * The MIME stream separates headers and a datastream. It also allows
  * automatic creation of the content-length header.
  */
-export interface nsIMIMEInputStreamType extends nsIInputStream {
+declare interface nsIMIMEInputStreamType extends nsIInputStream {
     /**
      * Adds an additional header to the stream on the form "name: value". May
      * not be called once the stream has been started to be read.
@@ -30314,7 +30314,7 @@ export interface nsIMIMEInputStreamType extends nsIInputStream {
  *
  * @see nsIMIMEInfo
  */
-export interface nsIMIMEServiceType extends nsISupports {
+declare interface nsIMIMEServiceType extends nsISupports {
     /**
      * Retrieves an nsIMIMEInfo using both the extension
      * and the type of a file. The type is given preference
@@ -30453,7 +30453,7 @@ export interface nsIMIMEServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIMacAttributionServiceType extends nsISupports {
+declare interface nsIMacAttributionServiceType extends nsISupports {
     /**
      * Set the referrer URL on a given path.
      *
@@ -30472,7 +30472,7 @@ export interface nsIMacAttributionServiceType extends nsISupports {
  * Applications may indicate progress on their Dock icon. Only one such
  * progress indicator is available to the entire application.
  */
-export interface nsIMacDockSupportType extends nsISupports {
+declare interface nsIMacDockSupportType extends nsISupports {
     /**
      * Menu to use for application-specific dock menu items.
      */
@@ -30525,7 +30525,7 @@ export interface nsIMacDockSupportType extends nsISupports {
 /**
  *
  */
-export interface nsIMacFinderProgressCanceledCallbackType extends nsISupports {
+declare interface nsIMacFinderProgressCanceledCallbackType extends nsISupports {
     /**
      *
      */
@@ -30535,7 +30535,7 @@ export interface nsIMacFinderProgressCanceledCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIMacFinderProgressType extends nsISupports {
+declare interface nsIMacFinderProgressType extends nsISupports {
     /**
      * Initialize and display a new Finder progressbar on the given file
      *
@@ -30565,7 +30565,7 @@ export interface nsIMacFinderProgressType extends nsISupports {
  *
  * This interface is highly macOS specific.
  */
-export interface nsIMacPreferencesReaderType extends nsISupports {
+declare interface nsIMacPreferencesReaderType extends nsISupports {
     /**
      * This method checks whether macOS policies are enabled.
      *
@@ -30583,7 +30583,7 @@ export interface nsIMacPreferencesReaderType extends nsISupports {
 /**
  * Allow applications to interface with the Mac OS X Sharing APIs.
  */
-export interface nsIMacSharingServiceType extends nsISupports {
+declare interface nsIMacSharingServiceType extends nsISupports {
     /**
      * Get list of sharing providers
      */
@@ -30601,7 +30601,7 @@ export interface nsIMacSharingServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIMacShellServiceType extends nsIShellService {
+declare interface nsIMacShellServiceType extends nsIShellService {
     /**
      * Opens the desktop preferences, e.g. for after setting the background.
      */
@@ -30624,7 +30624,7 @@ export interface nsIMacShellServiceType extends nsIShellService {
  * can use this information to update NSUserActivity, enabling Handoff
  * functionality.
  */
-export interface nsIMacUserActivityUpdaterType extends nsISupports {
+declare interface nsIMacUserActivityUpdaterType extends nsISupports {
     /**
      * Update active URL and page title for the given window.
      */
@@ -30634,7 +30634,7 @@ export interface nsIMacUserActivityUpdaterType extends nsISupports {
 /**
  *
  */
-export interface nsITrashAppCallbackType extends nsISupports {
+declare interface nsITrashAppCallbackType extends nsISupports {
     /**
      *
      */
@@ -30644,7 +30644,7 @@ export interface nsITrashAppCallbackType extends nsISupports {
 /**
  * Allow MozApps API to locate and manipulate natively installed apps
  */
-export interface nsIMacWebAppUtilsType extends nsISupports {
+declare interface nsIMacWebAppUtilsType extends nsISupports {
     /**
      * Find the path for an app with the given signature.
      */
@@ -30662,7 +30662,7 @@ export interface nsIMacWebAppUtilsType extends nsISupports {
 /**
  * Interface for accessing the Marionette server instance.
  */
-export interface nsIMarionetteType extends nsISupports {
+declare interface nsIMarionetteType extends nsISupports {
     /**
      * Indicates whether Marionette is running.
      */
@@ -30672,7 +30672,7 @@ export interface nsIMarionetteType extends nsISupports {
 /**
  *
  */
-export interface nsIMediaDeviceType extends nsISupports {
+declare interface nsIMediaDeviceType extends nsISupports {
     /**
      *
      */
@@ -30702,7 +30702,7 @@ export interface nsIMediaDeviceType extends nsISupports {
 /**
  *
  */
-export interface nsIMediaManagerServiceType extends nsISupports {
+declare interface nsIMediaManagerServiceType extends nsISupports {
     /**
      * return a array of inner windows that have active captures
      */
@@ -30723,7 +30723,7 @@ export interface nsIMediaManagerServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIFinishDumpingCallbackType extends nsISupports {
+declare interface nsIFinishDumpingCallbackType extends nsISupports {
     /**
      *
      */
@@ -30735,7 +30735,7 @@ export interface nsIFinishDumpingCallbackType extends nsISupports {
  * these method calls can occur before |dumpGCAndCCLogsToFile|
  * returns.
  */
-export interface nsIDumpGCAndCCLogsCallbackType extends nsISupports {
+declare interface nsIDumpGCAndCCLogsCallbackType extends nsISupports {
     /**
      * Called whenever a process has successfully finished dumping its GC/CC logs.
      * Incomplete dumps (e.g., if the child crashes or is killed due to memory
@@ -30758,7 +30758,7 @@ export interface nsIDumpGCAndCCLogsCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIMemoryInfoDumperType extends nsISupports {
+declare interface nsIMemoryInfoDumperType extends nsISupports {
     /**
      * This dumps gzipped memory reports for this process and its child
      * processes.  If a file of the given name exists, it will be overwritten.
@@ -30869,7 +30869,7 @@ export interface nsIMemoryInfoDumperType extends nsISupports {
  * https://developer.mozilla.org/en-US/docs/Mozilla/Performance/Memory_reporting
  * before writing a memory reporter.
  */
-export interface nsIHandleReportCallbackType extends nsISupports {
+declare interface nsIHandleReportCallbackType extends nsISupports {
     /**
      * The arguments to the callback are as follows.
      *
@@ -30995,7 +30995,7 @@ export interface nsIHandleReportCallbackType extends nsISupports {
  * sentences (i.e. start with a capital letter and end with a period, or
  * similar).
  */
-export interface nsIMemoryReporterType extends nsISupports {
+declare interface nsIMemoryReporterType extends nsISupports {
     /**
      * Run the reporter.
      *
@@ -31027,7 +31027,7 @@ export interface nsIMemoryReporterType extends nsISupports {
 /**
  *
  */
-export interface nsIFinishReportingCallbackType extends nsISupports {
+declare interface nsIFinishReportingCallbackType extends nsISupports {
     /**
      *
      */
@@ -31037,7 +31037,7 @@ export interface nsIFinishReportingCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIHeapAllocatedCallbackType extends nsISupports {
+declare interface nsIHeapAllocatedCallbackType extends nsISupports {
     /**
      *
      */
@@ -31047,7 +31047,7 @@ export interface nsIHeapAllocatedCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIMemoryReporterManagerType extends nsISupports {
+declare interface nsIMemoryReporterManagerType extends nsISupports {
     /**
      * Initialize.
      */
@@ -31319,7 +31319,7 @@ export interface nsIMemoryReporterManagerType extends nsISupports {
  *
  * nsIMessageLoop's contractid is "@mozilla.org/message-loop;1".
  */
-export interface nsIMessageLoopType extends nsISupports {
+declare interface nsIMessageLoopType extends nsISupports {
     /**
      * Posts a task to be run when this thread's message loop is idle, or after
      * ensureRunsAfterMS milliseconds have elapsed.  (That is, the task is
@@ -31337,13 +31337,13 @@ export interface nsIMessageLoopType extends nsISupports {
 /**
  *
  */
-export interface nsIMessageSenderType extends nsISupports {
+declare interface nsIMessageSenderType extends nsISupports {
 }
 
 /**
  *
  */
-export interface nsIInProcessContentFrameMessageManagerType extends nsIMessageSender {
+declare interface nsIInProcessContentFrameMessageManagerType extends nsIMessageSender {
     /**
      *
      */
@@ -31353,7 +31353,7 @@ export interface nsIInProcessContentFrameMessageManagerType extends nsIMessageSe
 /**
  *
  */
-export interface nsIMozBrowserFrameType extends nsIDOMMozBrowserFrame {
+declare interface nsIMozBrowserFrameType extends nsIDOMMozBrowserFrame {
     /**
      * Gets whether this frame really is a browser frame.
      *
@@ -31377,7 +31377,7 @@ export interface nsIMozBrowserFrameType extends nsIDOMMozBrowserFrame {
  * An interface to access the the base channel
  * associated with a MultiPartChannel.
  */
-export interface nsIMultiPartChannelType extends nsISupports {
+declare interface nsIMultiPartChannelType extends nsISupports {
     /**
      * readonly attribute to access the underlying channel
      */
@@ -31404,7 +31404,7 @@ export interface nsIMultiPartChannelType extends nsISupports {
  * when the last part of the multi-part channel has finished, and the
  * final OnStopRequest has been sent.
  */
-export interface nsIMultiPartChannelListenerType extends nsISupports {
+declare interface nsIMultiPartChannelListenerType extends nsISupports {
     /**
      * Sent when all parts have finished and sent OnStopRequest.
      */
@@ -31415,7 +31415,7 @@ export interface nsIMultiPartChannelListenerType extends nsISupports {
  * The multiplex stream concatenates a list of input streams into a single
  * stream.
  */
-export interface nsIMultiplexInputStreamType extends nsISupports {
+declare interface nsIMultiplexInputStreamType extends nsISupports {
     /**
      * Number of streams in this multiplex-stream
      */
@@ -31450,7 +31450,7 @@ export interface nsIMultiplexInputStreamType extends nsISupports {
  * Any of these methods may throw NS_ERROR_OUT_OF_MEMORY when the
  * array must grow to complete the call, but the allocation fails.
  */
-export interface nsIMutableArrayType extends nsIArrayExtensions {
+declare interface nsIMutableArrayType extends nsIArrayExtensions {
     /**
      * appendElement()
      *
@@ -31516,7 +31516,7 @@ export interface nsIMutableArrayType extends nsIArrayExtensions {
 /**
  *
  */
-export interface nsINSSComponentType extends nsISupports {
+declare interface nsINSSComponentType extends nsISupports {
     /**
      * When we log out of a PKCS#11 token, any TLS connections that may have
      * involved a client certificate stored on that token must be closed. Since we
@@ -31591,7 +31591,7 @@ export interface nsINSSComponentType extends nsISupports {
 /**
  *
  */
-export interface nsINSSErrorsServiceType extends nsISupports {
+declare interface nsINSSErrorsServiceType extends nsISupports {
     /**
      * @param aNSPRCode An error code obtained using PR_GetError()
      * @return True if it is error code defined by the NSS library
@@ -31621,7 +31621,7 @@ export interface nsINSSErrorsServiceType extends nsISupports {
 /**
  *
  */
-export interface nsINSSVersionType extends nsISupports {
+declare interface nsINSSVersionType extends nsISupports {
     /**
      * Minimal required versions as used at build time
      */
@@ -31667,7 +31667,7 @@ export interface nsINSSVersionType extends nsISupports {
 /**
  * Represents an object with a name, such as a runnable or a timer.
  */
-export interface nsINamedType extends nsISupports {
+declare interface nsINamedType extends nsISupports {
     /**
      * A string describing the purpose of the runnable/timer/whatever. Useful
      * for debugging. This attribute is read-only, but you can change it to a
@@ -31685,7 +31685,7 @@ export interface nsINamedType extends nsISupports {
  * This is the callback interface for nsINamedPipeService.
  * The functions are called by the internal thread in the nsINamedPipeService.
  */
-export interface nsINamedPipeDataObserverType extends nsISupports {
+declare interface nsINamedPipeDataObserverType extends nsISupports {
     /**
      * onDataAvailable
      *
@@ -31709,7 +31709,7 @@ export interface nsINamedPipeDataObserverType extends nsISupports {
 /**
  * nsINamedPipeService
  */
-export interface nsINamedPipeServiceType extends nsISupports {
+declare interface nsINamedPipeServiceType extends nsISupports {
     /**
      * addDataObserver
      *
@@ -31777,7 +31777,7 @@ export interface nsINamedPipeServiceType extends nsISupports {
  * onLastWindowClosing -  Called when the last window is closed. Used as a
  * "soft" shutdown, passwords are flushed.
  */
-export interface nsINativeAppSupportType extends nsISupports {
+declare interface nsINativeAppSupportType extends nsISupports {
     /**
      *
      */
@@ -31799,7 +31799,7 @@ export interface nsINativeAppSupportType extends nsISupports {
 /**
  *
  */
-export interface nsINativeDNSResolverOverrideType extends nsISupports {
+declare interface nsINativeDNSResolverOverrideType extends nsISupports {
     /**
      * Adds an IP override for this specific host.
      */
@@ -31821,7 +31821,7 @@ export interface nsINativeDNSResolverOverrideType extends nsISupports {
 /**
  * The result of a successful asynchronous operation.
  */
-export interface nsINativeOSFileResultType extends nsISupports {
+declare interface nsINativeOSFileResultType extends nsISupports {
     /**
      * The actual value produced by the operation.
      *
@@ -31843,7 +31843,7 @@ export interface nsINativeOSFileResultType extends nsISupports {
 /**
  * A callback invoked in case of success.
  */
-export interface nsINativeOSFileSuccessCallbackType extends nsISupports {
+declare interface nsINativeOSFileSuccessCallbackType extends nsISupports {
     /**
      *
      */
@@ -31853,7 +31853,7 @@ export interface nsINativeOSFileSuccessCallbackType extends nsISupports {
 /**
  * A callback invoked in case of error.
  */
-export interface nsINativeOSFileErrorCallbackType extends nsISupports {
+declare interface nsINativeOSFileErrorCallbackType extends nsISupports {
     /**
      * @param operation The name of the failed operation. Provided to aid
      * debugging only, may change without notice.
@@ -31867,7 +31867,7 @@ export interface nsINativeOSFileErrorCallbackType extends nsISupports {
  * A service providing native implementations of some of the features
  * of OS.File.
  */
-export interface nsINativeOSFileInternalsServiceType extends nsISupports {
+declare interface nsINativeOSFileInternalsServiceType extends nsISupports {
     /**
      * Implementation of OS.File.read
      *
@@ -31908,7 +31908,7 @@ export interface nsINativeOSFileInternalsServiceType extends nsISupports {
 /**
  * Observer for bookmarks changes.
  */
-export interface nsINavBookmarkObserverType extends nsISupports {
+declare interface nsINavBookmarkObserverType extends nsISupports {
     /**
      * This observer should not be called for items that are tags.
      */
@@ -31972,7 +31972,7 @@ export interface nsINavBookmarkObserverType extends nsISupports {
  * history items.  Bookmarks consist of a set of user-customizable
  * folders.  A URI in history can be contained in one or more such folders.
  */
-export interface nsINavBookmarksServiceType extends nsISupports {
+declare interface nsINavBookmarksServiceType extends nsISupports {
     /**
      * The item ID of the Places root.
      */
@@ -32123,7 +32123,7 @@ export interface nsINavBookmarksServiceType extends nsISupports {
 /**
  *
  */
-export interface nsINavHistoryResultNodeType extends nsISupports {
+declare interface nsINavHistoryResultNodeType extends nsISupports {
     /**
      * Indentifies the parent result node in the result set. This is null for
      * top level nodes.
@@ -32254,7 +32254,7 @@ export interface nsINavHistoryResultNodeType extends nsISupports {
  * Bookmark folders and places queries will be QueryResultNodes which extends
  * these items.
  */
-export interface nsINavHistoryContainerResultNodeType extends nsINavHistoryResultNode {
+declare interface nsINavHistoryContainerResultNodeType extends nsINavHistoryResultNode {
     /**
      * Set this to allow descent into the container. When closed, attempting
      * to call getChildren or childCount will result in an error. You should
@@ -32315,7 +32315,7 @@ export interface nsINavHistoryContainerResultNodeType extends nsINavHistoryResul
  * generated this node, this item will report it has no children and never try
  * to populate itself.
  */
-export interface nsINavHistoryQueryResultNodeType extends nsINavHistoryContainerResultNode {
+declare interface nsINavHistoryQueryResultNodeType extends nsINavHistoryContainerResultNode {
     /**
      * Get the query which builds this node's children.
      * Only valid for RESULT_TYPE_QUERY nodes.
@@ -32345,7 +32345,7 @@ export interface nsINavHistoryQueryResultNodeType extends nsINavHistoryContainer
  * according to history and bookmark system events. Register this observer on a
  * result using nsINavHistoryResult::addObserver.
  */
-export interface nsINavHistoryResultObserverType extends nsISupports {
+declare interface nsINavHistoryResultObserverType extends nsISupports {
     /**
      * Whether the observer is interested into history details changes.
      * Those include visits additions and removals. If the observer doesn't
@@ -32504,7 +32504,7 @@ export interface nsINavHistoryResultObserverType extends nsISupports {
 /**
  * The result of a history/bookmark query.
  */
-export interface nsINavHistoryResultType extends nsISupports {
+declare interface nsINavHistoryResultType extends nsISupports {
     /**
      * Sorts all nodes recursively by the given parameter, one of
      * nsINavHistoryQueryOptions.SORT_BY_*  This will update the corresponding
@@ -32575,7 +32575,7 @@ export interface nsINavHistoryResultType extends nsISupports {
  * because, if the user has their profile on a networked drive, query latency
  * can be non-negligible.
  */
-export interface nsINavHistoryQueryType extends nsISupports {
+declare interface nsINavHistoryQueryType extends nsISupports {
     /**
      *
      */
@@ -32726,7 +32726,7 @@ export interface nsINavHistoryQueryType extends nsISupports {
 /**
  * This object represents the global options for executing a query.
  */
-export interface nsINavHistoryQueryOptionsType extends nsISupports {
+declare interface nsINavHistoryQueryOptionsType extends nsISupports {
     /**
      * The sorting mode to be used for this query.
      * mode is one of SORT_BY_*
@@ -32804,7 +32804,7 @@ export interface nsINavHistoryQueryOptionsType extends nsISupports {
 /**
  *
  */
-export interface nsINavHistoryServiceType extends nsISupports {
+declare interface nsINavHistoryServiceType extends nsISupports {
     /**
      * Returns the current database status
      */
@@ -32942,7 +32942,7 @@ export interface nsINavHistoryServiceType extends nsISupports {
  * should implement nsINestedURI and return the http://example.com URI as its
  * inner URI.
  */
-export interface nsINestedURIType extends nsISupports {
+declare interface nsINestedURIType extends nsISupports {
     /**
      * The inner URI for this nested URI.  This must not return null if the
      * getter succeeds; URIs that have no inner must not QI to this interface.
@@ -32966,7 +32966,7 @@ export interface nsINestedURIType extends nsISupports {
 /**
  *
  */
-export interface nsINestedURIMutatorType extends nsISupports {
+declare interface nsINestedURIMutatorType extends nsISupports {
     /**
      * - Creates a new URI with the given innerURI.
      */
@@ -32976,7 +32976,7 @@ export interface nsINestedURIMutatorType extends nsISupports {
 /**
  *
  */
-export interface nsINestedAboutURIMutatorType extends nsISupports {
+declare interface nsINestedAboutURIMutatorType extends nsISupports {
     /**
      * - Creates a new URI with the given innerURI and base.
      */
@@ -32986,7 +32986,7 @@ export interface nsINestedAboutURIMutatorType extends nsISupports {
 /**
  *
  */
-export interface nsIJSURIMutatorType extends nsISupports {
+declare interface nsIJSURIMutatorType extends nsISupports {
     /**
      * - Inits the URI by setting the base URI
      * - It is the caller's responsibility to also call SetSpec afterwards,
@@ -33001,7 +33001,7 @@ export interface nsIJSURIMutatorType extends nsISupports {
  * This interface represents a native NetAddr struct in a readonly
  * interface.
  */
-export interface nsINetAddrType extends nsISupports {
+declare interface nsINetAddrType extends nsISupports {
     /**
      * @return the address family of the network address, which corresponds to
      * one of the FAMILY_ constants.
@@ -33054,7 +33054,7 @@ export interface nsINetAddrType extends nsISupports {
 /**
  * nsINetUtil provides various network-related utility methods.
  */
-export interface nsINetUtilType extends nsISupports {
+declare interface nsINetUtilType extends nsISupports {
     /**
      * Parse a Content-Type header value in strict mode.  This is a more
      * conservative parser that reject things that violate RFC 7231 section
@@ -33169,7 +33169,7 @@ export interface nsINetUtilType extends nsISupports {
 /**
  *
  */
-export interface nsINetworkConnectivityServiceType extends nsISupports {
+declare interface nsINetworkConnectivityServiceType extends nsISupports {
     /**
      * If DNS v4/v6 queries actually work on the current network
      */
@@ -33203,7 +33203,7 @@ export interface nsINetworkConnectivityServiceType extends nsISupports {
 /**
  * Listener for getting list of addresses.
  */
-export interface nsIListNetworkAddressesListenerType extends nsISupports {
+declare interface nsIListNetworkAddressesListenerType extends nsISupports {
     /**
      * Callback function that gets called by nsINetworkInfoService.listNetworkAddresses.
      * Each address in the array is a string IP address in canonical form,
@@ -33219,7 +33219,7 @@ export interface nsIListNetworkAddressesListenerType extends nsISupports {
 /**
  * Listener for getting hostname.
  */
-export interface nsIGetHostnameListenerType extends nsISupports {
+declare interface nsIGetHostnameListenerType extends nsISupports {
     /**
      *
      */
@@ -33233,7 +33233,7 @@ export interface nsIGetHostnameListenerType extends nsISupports {
 /**
  * Service information
  */
-export interface nsINetworkInfoServiceType extends nsISupports {
+declare interface nsINetworkInfoServiceType extends nsISupports {
     /**
      * Obtain a list of local machine network addresses.  The listener object's
      * onListedNetworkAddresses will be called with the obtained addresses.
@@ -33252,7 +33252,7 @@ export interface nsINetworkInfoServiceType extends nsISupports {
  * Interface allowing the nsIInterceptedChannel to callback when it is
  * done reading from the body stream.
  */
-export interface nsIInterceptedBodyCallbackType extends nsISupports {
+declare interface nsIInterceptedBodyCallbackType extends nsISupports {
     /**
      *
      */
@@ -33265,7 +33265,7 @@ export interface nsIInterceptedBodyCallbackType extends nsISupports {
  * the actual channel. nsIInterceptedChannel is expected to be implemented by objects
  * which do not implement nsIChannel.
  */
-export interface nsIInterceptedChannelType extends nsISupports {
+declare interface nsIInterceptedChannelType extends nsISupports {
     /**
      * Instruct a channel that has been intercepted to continue with the original
      * network request.
@@ -33364,7 +33364,7 @@ export interface nsIInterceptedChannelType extends nsISupports {
  * notification callbacks/loadgroup and determine if a given channel
  * request should be intercepted before any network request is initiated.
  */
-export interface nsINetworkInterceptControllerType extends nsISupports {
+declare interface nsINetworkInterceptControllerType extends nsISupports {
     /**
      * Returns true if a channel should avoid initiating any network
      * requests until specifically instructed to do so.
@@ -33387,7 +33387,7 @@ export interface nsINetworkInterceptControllerType extends nsISupports {
 /**
  * Network link status monitoring service.
  */
-export interface nsINetworkLinkServiceType extends nsISupports {
+declare interface nsINetworkLinkServiceType extends nsISupports {
     /**
      * This is set to true when the system is believed to have a usable
      * network connection.
@@ -33426,7 +33426,7 @@ export interface nsINetworkLinkServiceType extends nsISupports {
  * NOTE: nsINetworkPredictor should only
  * be used on the main thread.
  */
-export interface nsINetworkPredictorType extends nsISupports {
+declare interface nsINetworkPredictorType extends nsISupports {
     /**
      * Start taking predictive actions
      *
@@ -33498,7 +33498,7 @@ export interface nsINetworkPredictorType extends nsISupports {
 /**
  *
  */
-export interface nsINetworkPredictorVerifierType extends nsISupports {
+declare interface nsINetworkPredictorVerifierType extends nsISupports {
     /**
      * Callback for when we do a predictive prefetch
      *
@@ -33524,7 +33524,7 @@ export interface nsINetworkPredictorVerifierType extends nsISupports {
 /**
  *
  */
-export interface nsINotificationStorageCallbackType extends nsISupports {
+declare interface nsINotificationStorageCallbackType extends nsISupports {
     /**
      * Callback function used to pass single notification back
      * into C++ land for Notification.get return data.
@@ -33548,7 +33548,7 @@ export interface nsINotificationStorageCallbackType extends nsISupports {
 /**
  * Interface for notification persistence layer.
  */
-export interface nsINotificationStorageType extends nsISupports {
+declare interface nsINotificationStorageType extends nsISupports {
     /**
      * Add/replace a notification to the persistence layer.
      *
@@ -33619,13 +33619,13 @@ export interface nsINotificationStorageType extends nsISupports {
  * For example, a consumer can QI NullHttpChannel to nsINullChannel,
  * to determine if the object is just a dummy implementation of nsIHttpChannel.
  */
-export interface nsINullChannelType extends nsISupports {
+declare interface nsINullChannelType extends nsISupports {
 }
 
 /**
  *
  */
-export interface nsIOSFileConstantsServiceType extends nsISupports {
+declare interface nsIOSFileConstantsServiceType extends nsISupports {
     /**
      * Inject module OS.Constants in the environment.
      *
@@ -33638,7 +33638,7 @@ export interface nsIOSFileConstantsServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIOSKeyStoreType extends nsISupports {
+declare interface nsIOSKeyStoreType extends nsISupports {
     /**
      * This interface provides encryption and decryption operations for data at
      * rest. The key used to encrypt and decrypt the data is stored in the OS
@@ -33758,7 +33758,7 @@ export interface nsIOSKeyStoreType extends nsISupports {
 /**
  *
  */
-export interface nsIOSPermissionRequestType extends nsISupports {
+declare interface nsIOSPermissionRequestType extends nsISupports {
     /**
      * Get the permission state for both audio and video capture
      */
@@ -33803,7 +33803,7 @@ export interface nsIOSPermissionRequestType extends nsISupports {
 /**
  *
  */
-export interface nsIOSReauthenticatorType extends nsISupports {
+declare interface nsIOSReauthenticatorType extends nsISupports {
     /**
      * This interface provides an abstract way to request that the user
      * reauthenticate themselves to the operating system. It may be useful in
@@ -33840,7 +33840,7 @@ export interface nsIOSReauthenticatorType extends nsISupports {
  * @see nsIObjectOutputStream
  * @see nsIBinaryInputStream
  */
-export interface nsIObjectInputStreamType extends nsIBinaryInputStream {
+declare interface nsIObjectInputStreamType extends nsIBinaryInputStream {
     /**
      * Read an object from this stream to satisfy a strong or weak reference
      * to one of its interfaces.  If the interface was not along the primary
@@ -33871,7 +33871,7 @@ export interface nsIObjectInputStreamType extends nsIBinaryInputStream {
  * Please make sure to update the MozObjectLoadingContent WebIDL
  * mixin to mirror this interface when changing it.
  */
-export interface nsIObjectLoadingContentType extends nsISupports {
+declare interface nsIObjectLoadingContentType extends nsISupports {
     /**
      * The actual mime type (the one we got back from the network
      * request) for the element.
@@ -33939,7 +33939,7 @@ export interface nsIObjectLoadingContentType extends nsISupports {
  * @See nsIObjectInputStream
  * @See nsIBinaryOutputStream
  */
-export interface nsIObjectOutputStreamType extends nsIBinaryOutputStream {
+declare interface nsIObjectOutputStreamType extends nsIBinaryOutputStream {
     /**
      * Write the object whose "root" or XPCOM-identity nsISupports is aObject.
      * The cause for writing this object is a strong or weak reference, so the
@@ -33987,13 +33987,13 @@ export interface nsIObjectOutputStreamType extends nsIBinaryOutputStream {
 /**
  *
  */
-export interface nsIObliviousHttpClientResponseType extends nsISupports {
+declare interface nsIObliviousHttpClientResponseType extends nsISupports {
 }
 
 /**
  *
  */
-export interface nsIObliviousHttpClientRequestType extends nsISupports {
+declare interface nsIObliviousHttpClientRequestType extends nsISupports {
     /**
      *
      */
@@ -34003,13 +34003,13 @@ export interface nsIObliviousHttpClientRequestType extends nsISupports {
 /**
  *
  */
-export interface nsIObliviousHttpServerResponseType extends nsISupports {
+declare interface nsIObliviousHttpServerResponseType extends nsISupports {
 }
 
 /**
  *
  */
-export interface nsIObliviousHttpServerType extends nsISupports {
+declare interface nsIObliviousHttpServerType extends nsISupports {
     /**
      *
      */
@@ -34019,7 +34019,7 @@ export interface nsIObliviousHttpServerType extends nsISupports {
 /**
  *
  */
-export interface nsIObliviousHttpType extends nsISupports {
+declare interface nsIObliviousHttpType extends nsISupports {
     /**
      *
      */
@@ -34034,7 +34034,7 @@ export interface nsIObliviousHttpType extends nsISupports {
  * This interface is implemented by an object that wants
  * to observe an event corresponding to a topic.
  */
-export interface nsIObserverType extends nsISupports {
+declare interface nsIObserverType extends nsISupports {
     /**
      * Observe will be called when there is a notification for the
      * topic |aTopic|.  This assumes that the object implementing
@@ -34063,7 +34063,7 @@ export interface nsIObserverType extends nsISupports {
  * way to notify registered listeners and a way to enumerate registered client
  * listeners.
  */
-export interface nsIObserverServiceType extends nsISupports {
+declare interface nsIObserverServiceType extends nsISupports {
     /**
      * AddObserver
      *
@@ -34129,7 +34129,7 @@ export interface nsIObserverServiceType extends nsISupports {
  * nsFrameLoader to indicate that the browsing context for a newly opened
  * window/tab is ready.
  */
-export interface nsIBrowsingContextReadyCallbackType extends nsISupports {
+declare interface nsIBrowsingContextReadyCallbackType extends nsISupports {
     /**
      *
      */
@@ -34141,7 +34141,7 @@ export interface nsIBrowsingContextReadyCallbackType extends nsISupports {
  * new content windows. This object is used to correctly create new initial
  * content documents when creating a new window.
  */
-export interface nsIOpenWindowInfoType extends nsISupports {
+declare interface nsIOpenWindowInfoType extends nsISupports {
     /**
      * BrowsingContext which requested the creation of this new window
      */
@@ -34195,7 +34195,7 @@ export interface nsIOpenWindowInfoType extends nsISupports {
  * generally the case that a blocking output stream should be implemented using
  * thread- safe AddRef and Release.
  */
-export interface nsIOutputStreamType extends nsISupports {
+declare interface nsIOutputStreamType extends nsISupports {
     /**
      * Close the stream. Forces the output stream to flush any buffered data.
      *
@@ -34282,7 +34282,7 @@ export interface nsIOutputStreamType extends nsISupports {
 /**
  *
  */
-export interface nsIPK11TokenType extends nsISupports {
+declare interface nsIPK11TokenType extends nsISupports {
     /**
      * The name of the token
      */
@@ -34363,7 +34363,7 @@ export interface nsIPK11TokenType extends nsISupports {
 /**
  * nsIPK11TokenDB - Manages PK11 Tokens
  */
-export interface nsIPK11TokenDBType extends nsISupports {
+declare interface nsIPK11TokenDBType extends nsISupports {
     /**
      * Get the internal key database token
      */
@@ -34373,7 +34373,7 @@ export interface nsIPK11TokenDBType extends nsISupports {
 /**
  *
  */
-export interface nsIPKCS11ModuleType extends nsISupports {
+declare interface nsIPKCS11ModuleType extends nsISupports {
     /**
      *
      */
@@ -34391,7 +34391,7 @@ export interface nsIPKCS11ModuleType extends nsISupports {
 /**
  *
  */
-export interface nsIPKCS11ModuleDBType extends nsISupports {
+declare interface nsIPKCS11ModuleDBType extends nsISupports {
     /**
      *
      */
@@ -34421,7 +34421,7 @@ export interface nsIPKCS11ModuleDBType extends nsISupports {
 /**
  *
  */
-export interface nsIPKCS11SlotType extends nsISupports {
+declare interface nsIPKCS11SlotType extends nsISupports {
     /**
      *
      */
@@ -34463,7 +34463,7 @@ export interface nsIPKCS11SlotType extends nsISupports {
  * screenshots for URLs are stored. These screenshots are used by the
  * moz-page-thumb protocol
  */
-export interface nsIPageThumbsStorageServiceType extends nsISupports {
+declare interface nsIPageThumbsStorageServiceType extends nsISupports {
     /**
      * Returns the leaf name of the file containing the screenshot for a given URL
      */
@@ -34481,7 +34481,7 @@ export interface nsIPageThumbsStorageServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIPaperType extends nsISupports {
+declare interface nsIPaperType extends nsISupports {
     /**
      * The internal name of the paper (a fixed, non-localized ID).
      * (For CUPS, this is the PWG-standardized name as used internally by CUPS;
@@ -34514,7 +34514,7 @@ export interface nsIPaperType extends nsISupports {
 /**
  *
  */
-export interface nsIPaperMarginType extends nsISupports {
+declare interface nsIPaperMarginType extends nsISupports {
     /**
      *
      */
@@ -34536,7 +34536,7 @@ export interface nsIPaperMarginType extends nsISupports {
 /**
  * Implemented by chrome side of IPC protocols.
  */
-export interface nsIParentChannelType extends nsIStreamListener {
+declare interface nsIParentChannelType extends nsIStreamListener {
     /**
      * Called to set the ParentChannelListener object (optional).
      */
@@ -34582,7 +34582,7 @@ export interface nsIParentChannelType extends nsIStreamListener {
 /**
  *
  */
-export interface nsIAsyncVerifyRedirectReadyCallbackType extends nsISupports {
+declare interface nsIAsyncVerifyRedirectReadyCallbackType extends nsISupports {
     /**
      * Asynchronous callback when redirected channel finishes the preparation for
      * completing the verification procedure.
@@ -34597,7 +34597,7 @@ export interface nsIAsyncVerifyRedirectReadyCallbackType extends nsISupports {
 /**
  * Implemented by chrome side of IPC protocols that support redirect responses.
  */
-export interface nsIParentRedirectingChannelType extends nsIParentChannel {
+declare interface nsIParentRedirectingChannelType extends nsIParentChannel {
     /**
      * Called when the channel got a response that redirects it to a different
      * URI.  The implementation is responsible for calling the redirect observers
@@ -34635,7 +34635,7 @@ export interface nsIParentRedirectingChannelType extends nsIParentChannel {
 /**
  *
  */
-export interface nsIParentalControlsServiceType extends nsISupports {
+declare interface nsIParentalControlsServiceType extends nsISupports {
     /**
      * @returns true if the current user account has parental controls
      * restrictions enabled.
@@ -34681,7 +34681,7 @@ export interface nsIParentalControlsServiceType extends nsISupports {
  * Don't use this from within Gecko--use nsContentUtils, nsTreeSanitizer, etc.
  * directly instead.
  */
-export interface nsIParserUtilsType extends nsISupports {
+declare interface nsIParserUtilsType extends nsISupports {
     /**
      * Parses a string into an HTML document, sanitizes the document and
      * returns the result serialized to a string.
@@ -34744,7 +34744,7 @@ export interface nsIParserUtilsType extends nsISupports {
 /**
  * Observer for exception list updates.
  */
-export interface nsIPartitioningExceptionListObserverType extends nsISupports {
+declare interface nsIPartitioningExceptionListObserverType extends nsISupports {
     /**
      * Called by nsIPartitioningExceptionListService when the exception list
      * changes and when the observer is first registered.
@@ -34759,7 +34759,7 @@ export interface nsIPartitioningExceptionListObserverType extends nsISupports {
  * A service that monitors updates to the exception list of partitioning
  * from sources such as a local pref and remote settings updates.
  */
-export interface nsIPartitioningExceptionListServiceType extends nsISupports {
+declare interface nsIPartitioningExceptionListServiceType extends nsISupports {
     /**
      * Register a new observer to exception list updates. When the observer is
      * registered it is called immediately once. Afterwards it will be called
@@ -34786,7 +34786,7 @@ export interface nsIPartitioningExceptionListServiceType extends nsISupports {
  * The base interface of response data for the specified payment method.
  * The response data is the content of the PaymentResponse's detail attribute.
  */
-export interface nsIPaymentResponseDataType extends nsISupports {
+declare interface nsIPaymentResponseDataType extends nsISupports {
     /**
      * The response data type.
      * Using the above defined consts(GENERAL_RESPONSE or BASICCARD_RESPONSE).
@@ -34802,7 +34802,7 @@ export interface nsIPaymentResponseDataType extends nsISupports {
 /**
  * The general purpose response data.
  */
-export interface nsIGeneralResponseDataType extends nsIPaymentResponseData {
+declare interface nsIGeneralResponseDataType extends nsIPaymentResponseData {
     /**
      * The stringified response data.
      */
@@ -34824,7 +34824,7 @@ export interface nsIGeneralResponseDataType extends nsIPaymentResponseData {
  * To let UI code can create BasicCardResponse easier, nsIBasicCardResponse is
  * provided for UI by passing the raw data of BasicCardResponse,
  */
-export interface nsIBasicCardResponseDataType extends nsIPaymentResponseData {
+declare interface nsIBasicCardResponseDataType extends nsIPaymentResponseData {
     /**
      * The cardholder name.
      */
@@ -34867,7 +34867,7 @@ export interface nsIBasicCardResponseDataType extends nsIPaymentResponseData {
  * according to user's action, and call nsIPaymentRequestService::respondPayment
  * with the created action to inform the merchant.
  */
-export interface nsIPaymentActionResponseType extends nsISupports {
+declare interface nsIPaymentActionResponseType extends nsISupports {
     /**
      * The payment request identity.
      */
@@ -34881,7 +34881,7 @@ export interface nsIPaymentActionResponseType extends nsISupports {
 /**
  * The response for canMakePayment action.
  */
-export interface nsIPaymentCanMakeActionResponseType extends nsIPaymentActionResponse {
+declare interface nsIPaymentCanMakeActionResponseType extends nsIPaymentActionResponse {
     /**
      * The result of canMakePayment action.
      */
@@ -34899,7 +34899,7 @@ export interface nsIPaymentCanMakeActionResponseType extends nsIPaymentActionRes
  * Notice that to represent user's cancel, we should use nsIPaymentShowActionResponse
  * with PAYMENT_REJECTED status, not nsIPaymentAbortActionResponse.
  */
-export interface nsIPaymentShowActionResponseType extends nsIPaymentActionResponse {
+declare interface nsIPaymentShowActionResponseType extends nsIPaymentActionResponse {
     /**
      * Accept status of the payment.
      * Using the defined consts(PAYMENT_XXX) in nsIPaymentActionResponse.
@@ -34941,7 +34941,7 @@ export interface nsIPaymentShowActionResponseType extends nsIPaymentActionRespon
 /**
  * The response for abort action.
  */
-export interface nsIPaymentAbortActionResponseType extends nsIPaymentActionResponse {
+declare interface nsIPaymentAbortActionResponseType extends nsIPaymentActionResponse {
     /**
      * The abort action status.
      * Using the defined consts(ABORT_XXX) in nsIPaymentActionResponse.
@@ -34962,7 +34962,7 @@ export interface nsIPaymentAbortActionResponseType extends nsIPaymentActionRespo
 /**
  *
  */
-export interface nsIPaymentCompleteActionResponseType extends nsIPaymentActionResponse {
+declare interface nsIPaymentCompleteActionResponseType extends nsIPaymentActionResponse {
     /**
      * The complete action status.
      * Using the defined consts(COMPLETE_XXX) in nsIPaymentActionResponse.
@@ -34983,7 +34983,7 @@ export interface nsIPaymentCompleteActionResponseType extends nsIPaymentActionRe
 /**
  *
  */
-export interface nsIMethodChangeDetailsType extends nsISupports {
+declare interface nsIMethodChangeDetailsType extends nsISupports {
     /**
      * The method change details data type.
      * Using the above defined consts(GENERAL_DETAILS or BASICCARD_DETAILS).
@@ -34999,7 +34999,7 @@ export interface nsIMethodChangeDetailsType extends nsISupports {
 /**
  * The general purpose method change details.
  */
-export interface nsIGeneralChangeDetailsType extends nsIMethodChangeDetails {
+declare interface nsIGeneralChangeDetailsType extends nsIMethodChangeDetails {
     /**
      * The stringified change details.
      */
@@ -35021,7 +35021,7 @@ export interface nsIGeneralChangeDetailsType extends nsIMethodChangeDetails {
  * To let UI code can create BasicCardResponse easier, nsIBasicCardResponse is
  * provided for UI by passing the raw data of BasicCardResponse,
  */
-export interface nsIBasicCardChangeDetailsType extends nsIMethodChangeDetails {
+declare interface nsIBasicCardChangeDetailsType extends nsIMethodChangeDetails {
     /**
      * The billing address.
      */
@@ -35036,7 +35036,7 @@ export interface nsIBasicCardChangeDetailsType extends nsIMethodChangeDetails {
 /**
  *
  */
-export interface nsIPaymentAddressType extends nsISupports {
+declare interface nsIPaymentAddressType extends nsISupports {
     /**
      *
      */
@@ -35090,7 +35090,7 @@ export interface nsIPaymentAddressType extends nsISupports {
 /**
  *
  */
-export interface nsIPaymentMethodDataType extends nsISupports {
+declare interface nsIPaymentMethodDataType extends nsISupports {
     /**
      *
      */
@@ -35104,7 +35104,7 @@ export interface nsIPaymentMethodDataType extends nsISupports {
 /**
  *
  */
-export interface nsIPaymentCurrencyAmountType extends nsISupports {
+declare interface nsIPaymentCurrencyAmountType extends nsISupports {
     /**
      *
      */
@@ -35118,7 +35118,7 @@ export interface nsIPaymentCurrencyAmountType extends nsISupports {
 /**
  *
  */
-export interface nsIPaymentItemType extends nsISupports {
+declare interface nsIPaymentItemType extends nsISupports {
     /**
      *
      */
@@ -35136,7 +35136,7 @@ export interface nsIPaymentItemType extends nsISupports {
 /**
  *
  */
-export interface nsIPaymentDetailsModifierType extends nsISupports {
+declare interface nsIPaymentDetailsModifierType extends nsISupports {
     /**
      *
      */
@@ -35158,7 +35158,7 @@ export interface nsIPaymentDetailsModifierType extends nsISupports {
 /**
  *
  */
-export interface nsIPaymentShippingOptionType extends nsISupports {
+declare interface nsIPaymentShippingOptionType extends nsISupports {
     /**
      *
      */
@@ -35180,7 +35180,7 @@ export interface nsIPaymentShippingOptionType extends nsISupports {
 /**
  *
  */
-export interface nsIPaymentDetailsType extends nsISupports {
+declare interface nsIPaymentDetailsType extends nsISupports {
     /**
      *
      */
@@ -35222,7 +35222,7 @@ export interface nsIPaymentDetailsType extends nsISupports {
 /**
  *
  */
-export interface nsIPaymentOptionsType extends nsISupports {
+declare interface nsIPaymentOptionsType extends nsISupports {
     /**
      *
      */
@@ -35252,7 +35252,7 @@ export interface nsIPaymentOptionsType extends nsISupports {
 /**
  *
  */
-export interface nsIPaymentRequestType extends nsISupports {
+declare interface nsIPaymentRequestType extends nsISupports {
     /**
      *
      */
@@ -35292,7 +35292,7 @@ export interface nsIPaymentRequestType extends nsISupports {
  * chrome process. It is also the IPC agent for payment UI to communicate with
  * merchant side.
  */
-export interface nsIPaymentRequestServiceType extends nsISupports {
+declare interface nsIPaymentRequestServiceType extends nsISupports {
     /**
      * Get the nsIPaymentRequest through the given payment request identifier.
      * @param aRequestId - the payment request identifier.
@@ -35360,7 +35360,7 @@ export interface nsIPaymentRequestServiceType extends nsISupports {
  * manages all payment UI components and receives the requested payment actions
  * from Gecko and perform the corresponding UI behavior.
  */
-export interface nsIPaymentUIServiceType extends nsISupports {
+declare interface nsIPaymentUIServiceType extends nsISupports {
     /**
      * Show the payment UI to users.
      * The implementation gets the payment data through nsIPaymentRequestService
@@ -35422,7 +35422,7 @@ export interface nsIPaymentUIServiceType extends nsISupports {
  * used to specify allowed/blocked objects from
  * user-specified sites (cookies, images etc).
  */
-export interface nsIPermissionType extends nsISupports {
+declare interface nsIPermissionType extends nsISupports {
     /**
      * The principal for which this permission applies.
      */
@@ -35481,7 +35481,7 @@ export interface nsIPermissionType extends nsISupports {
 /**
  *
  */
-export interface nsIPermissionDelegateHandlerType extends nsISupports {
+declare interface nsIPermissionDelegateHandlerType extends nsISupports {
     /**
      * Return true if we are delegating permission to a third party which is not
      * explicitly trusted. An orgin is not explicitly trusted means it is not
@@ -35500,7 +35500,7 @@ export interface nsIPermissionDelegateHandlerType extends nsISupports {
 /**
  *
  */
-export interface nsIPermissionManagerType extends nsISupports {
+declare interface nsIPermissionManagerType extends nsISupports {
     /**
      * Add permission information for a given principal.
      * It is internally calling the other add() method using the nsIURI from the
@@ -35607,7 +35607,7 @@ export interface nsIPermissionManagerType extends nsISupports {
 /**
  *
  */
-export interface nsIPropertyElementType extends nsISupports {
+declare interface nsIPropertyElementType extends nsISupports {
     /**
      *
      */
@@ -35621,7 +35621,7 @@ export interface nsIPropertyElementType extends nsISupports {
 /**
  *
  */
-export interface nsIPersistentPropertiesType extends nsIProperties {
+declare interface nsIPersistentPropertiesType extends nsIProperties {
     /**
      * load a set of name/value pairs from the input stream
      * names and values should be in UTF8
@@ -35682,7 +35682,7 @@ export interface nsIPersistentPropertiesType extends nsIProperties {
  * references to the pipe's input and output end.  In which case, the pipe is
  * automatically closed when the respective pipe ends are released.
  */
-export interface nsIPipeType extends nsISupports {
+declare interface nsIPipeType extends nsISupports {
     /**
      * initialize this pipe
      *
@@ -35716,7 +35716,7 @@ export interface nsIPipeType extends nsISupports {
  * XXX this interface doesn't really belong in here.  It is here because
  * currently nsPipeInputStream is the only implementation of this interface.
  */
-export interface nsISearchableInputStreamType extends nsISupports {
+declare interface nsISearchableInputStreamType extends nsISupports {
     /**
      * Searches for a string in the input stream. Since the stream has a notion
      * of EOF, it is possible that the string may at some time be in the
@@ -35735,7 +35735,7 @@ export interface nsISearchableInputStreamType extends nsISupports {
  * previews for URLs are stored. These previews are used by the
  * moz-page-thumb protocol
  */
-export interface nsIPlacesPreviewsHelperServiceType extends nsISupports {
+declare interface nsIPlacesPreviewsHelperServiceType extends nsISupports {
     /**
      * Returns the full file path containing the screenshot for a given URL
      */
@@ -35745,7 +35745,7 @@ export interface nsIPlacesPreviewsHelperServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIPlatformInfoType extends nsISupports {
+declare interface nsIPlatformInfoType extends nsISupports {
     /**
      * The version of the XULRunner platform.
      */
@@ -35759,7 +35759,7 @@ export interface nsIPlatformInfoType extends nsISupports {
 /**
  *
  */
-export interface nsIPluginTagType extends nsISupports {
+declare interface nsIPluginTagType extends nsISupports {
     /**
      *
      */
@@ -35835,7 +35835,7 @@ export interface nsIPluginTagType extends nsISupports {
  * as a NPAPI plug-in.  See nsIPluginHost.registerFakePlugin and the
  * documentation for the FakePluginTagInit dictionary.
  */
-export interface nsIFakePluginTagType extends nsIPluginTag {
+declare interface nsIFakePluginTagType extends nsIPluginTag {
     /**
      * The URI that should be loaded into the tag (as a frame) to handle the
      * plugin. Note that the original data/src value for the plugin is not loaded
@@ -35856,7 +35856,7 @@ export interface nsIFakePluginTagType extends nsIPluginTag {
 /**
  * For use with non-content code.
  */
-export interface nsIPowerManagerServiceType extends nsISupports {
+declare interface nsIPowerManagerServiceType extends nsISupports {
     /**
      *
      */
@@ -35892,7 +35892,7 @@ export interface nsIPowerManagerServiceType extends nsISupports {
  *
  * @see nsIPrefService
  */
-export interface nsIPrefBranchType extends nsISupports {
+declare interface nsIPrefBranchType extends nsISupports {
     /**
      * Called to get the root on which this branch is based, such as
      * "browser.startup."
@@ -36299,14 +36299,14 @@ export interface nsIPrefBranchType extends nsISupports {
  * @see nsIPrefBranch
  * @see nsISupportsString
  */
-export interface nsIPrefLocalizedStringType extends nsISupportsString {
+declare interface nsIPrefLocalizedStringType extends nsISupportsString {
 }
 
 /**
  * A helper function for reading access statistics for preferences.
  * See nsIPrefService.readStats for more details.
  */
-export interface nsIPrefStatsCallbackType extends nsISupports {
+declare interface nsIPrefStatsCallbackType extends nsISupports {
     /**
      *
      */
@@ -36316,7 +36316,7 @@ export interface nsIPrefStatsCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIPrefObserverType extends nsISupports {
+declare interface nsIPrefObserverType extends nsISupports {
     /**
      * Invoked when a string preference is witnessed.  kind will be "Default" or "User".
      */
@@ -36344,7 +36344,7 @@ export interface nsIPrefObserverType extends nsISupports {
  *
  * @see nsIPrefBranch
  */
-export interface nsIPrefServiceType extends nsISupports {
+declare interface nsIPrefServiceType extends nsISupports {
     /**
      * Called to completely flush and re-initialize the preferences system.
      *
@@ -36462,7 +36462,7 @@ export interface nsIPrefServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIPrefetchServiceType extends nsISupports {
+declare interface nsIPrefetchServiceType extends nsISupports {
     /**
      * Enqueue a request to prefetch the specified URI.
      *
@@ -36498,13 +36498,13 @@ export interface nsIPrefetchServiceType extends nsISupports {
  * style sheets returned by nsIStyleSheetService.preloadSheet, and
  * which can be passed to nsIDOMWindowUtils.addSheet.
  */
-export interface nsIPreloadedStyleSheetType extends nsISupports {
+declare interface nsIPreloadedStyleSheetType extends nsISupports {
 }
 
 /**
  *
  */
-export interface nsIPrincipalType extends nsISupports {
+declare interface nsIPrincipalType extends nsISupports {
     /**
      * Returns whether the other principal is equivalent to this principal.
      * Principals are considered equal if they are the same principal, or
@@ -37053,7 +37053,7 @@ export interface nsIPrincipalType extends nsISupports {
  * content and a well defined set of other domains, without the risk of
  * leaking out a system principal to the content. See: Bug 734891
  */
-export interface nsIExpandedPrincipalType extends nsISupports {
+declare interface nsIExpandedPrincipalType extends nsISupports {
     /**
      * An array of principals that the expanded principal subsumes.
      *
@@ -37083,7 +37083,7 @@ export interface nsIExpandedPrincipalType extends nsISupports {
  * Service for opening native print dialogs provided by the operating system.
  * (The widget code may customize the dialog.)
  */
-export interface nsIPrintDialogServiceType extends nsISupports {
+declare interface nsIPrintDialogServiceType extends nsISupports {
     /**
      * Initialize the service.
      */
@@ -37119,7 +37119,7 @@ export interface nsIPrintDialogServiceType extends nsISupports {
 /**
  * The nsIPrintPreviewNavigation
  */
-export interface nsIPrintPreviewNavigationType extends nsISupports {
+declare interface nsIPrintPreviewNavigationType extends nsISupports {
     /**
      *
      */
@@ -37155,7 +37155,7 @@ export interface nsIPrintPreviewNavigationType extends nsISupports {
 /**
  * Simplified graphics interface for JS rendering.
  */
-export interface nsIPrintSettingsType extends nsISupports {
+declare interface nsIPrintSettingsType extends nsISupports {
     /**
      * Get the page size in twips, considering the
      * orientation (portrait or landscape).
@@ -37473,7 +37473,7 @@ export interface nsIPrintSettingsType extends nsISupports {
 /**
  *
  */
-export interface nsIPrintSettingsServiceType extends nsISupports {
+declare interface nsIPrintSettingsServiceType extends nsISupports {
     /**
      * Returns the default print settings as used for printing.
      */
@@ -37577,7 +37577,7 @@ export interface nsIPrintSettingsServiceType extends nsISupports {
 /**
  * Simplified PrintSettings for Windows interface
  */
-export interface nsIPrintSettingsWinType extends nsISupports {
+declare interface nsIPrintSettingsWinType extends nsISupports {
     /**
      * Data Members
      *
@@ -37618,7 +37618,7 @@ export interface nsIPrintSettingsWinType extends nsISupports {
 /**
  *
  */
-export interface nsIPrinterInfoType extends nsISupports {
+declare interface nsIPrinterInfoType extends nsISupports {
     /**
      * nsIPrintSettings object containing the default settings for a printer.
      */
@@ -37628,7 +37628,7 @@ export interface nsIPrinterInfoType extends nsISupports {
 /**
  *
  */
-export interface nsIPrinterType extends nsISupports {
+declare interface nsIPrinterType extends nsISupports {
     /**
      * The name of the printer.
      */
@@ -37678,7 +37678,7 @@ export interface nsIPrinterType extends nsISupports {
 /**
  *
  */
-export interface nsIPrinterListType extends nsISupports {
+declare interface nsIPrinterListType extends nsISupports {
     /**
      * Initializes certain settings from the native printer into the PrintSettings
      * These settings include, but are not limited to:
@@ -37725,7 +37725,7 @@ export interface nsIPrinterListType extends nsISupports {
 /**
  *
  */
-export interface nsIPrivacyTransitionObserverType extends nsISupports {
+declare interface nsIPrivacyTransitionObserverType extends nsISupports {
     /**
      *
      */
@@ -37738,7 +37738,7 @@ export interface nsIPrivacyTransitionObserverType extends nsISupports {
  *
  * This interface must be used only from the XPCOM main thread.
  */
-export interface nsIPrivateBrowsingChannelType extends nsISupports {
+declare interface nsIPrivateBrowsingChannelType extends nsISupports {
     /**
      * Determine whether the channel is tied to a private browsing window.
      *
@@ -37783,7 +37783,7 @@ export interface nsIPrivateBrowsingChannelType extends nsISupports {
 /**
  *
  */
-export interface nsIProcessType extends nsISupports {
+declare interface nsIProcessType extends nsISupports {
     /**
      * Initialises the process with an executable to be run. Call the run method
      * to run the executable.
@@ -37868,7 +37868,7 @@ export interface nsIProcessType extends nsISupports {
 /**
  *
  */
-export interface nsIProcessToolsServiceType extends nsISupports {
+declare interface nsIProcessToolsServiceType extends nsISupports {
     /**
      * Kill a process running on this system.
      *
@@ -37915,7 +37915,7 @@ export interface nsIProcessToolsServiceType extends nsISupports {
  * @client   Application (Profile-migration code)
  * @obtainable nsIProfileMigrator.migrate
  */
-export interface nsIProfileStartupType extends nsISupports {
+declare interface nsIProfileStartupType extends nsISupports {
     /**
      * The root directory of the semi-current profile, during profile migration.
      * After nsIProfileMigrator.migrate has returned, this object will not be
@@ -37936,7 +37936,7 @@ export interface nsIProfileStartupType extends nsISupports {
  * @client   Toolkit (Startup code)
  * @obtainable service, contractid("@mozilla.org/toolkit/profile-migrator;1")
  */
-export interface nsIProfileMigratorType extends nsISupports {
+declare interface nsIProfileMigratorType extends nsISupports {
     /**
      * Migrate data from an outside source, if possible.  Does nothing
      * otherwise.
@@ -37963,7 +37963,7 @@ export interface nsIProfileMigratorType extends nsISupports {
 /**
  *
  */
-export interface nsIProfileUnlockerType extends nsISupports {
+declare interface nsIProfileUnlockerType extends nsISupports {
     /**
      * Try to unlock the specified profile by attempting or forcing the
      * process that currently holds the lock to quit.
@@ -37979,7 +37979,7 @@ export interface nsIProfileUnlockerType extends nsISupports {
  * which, unfortunately, means we need to implement nsISupports in order to
  * go through it.
  */
-export interface nsIProfilerStartParamsType extends nsISupports {
+declare interface nsIProfilerStartParamsType extends nsISupports {
     /**
      *
      */
@@ -38009,7 +38009,7 @@ export interface nsIProfilerStartParamsType extends nsISupports {
 /**
  *
  */
-export interface nsIProfilerType extends nsISupports {
+declare interface nsIProfilerType extends nsISupports {
     /**
      * Control functions return as soon as this process' profiler has done its
      * work. The returned promise gets resolved when sub-processes have completed
@@ -38190,7 +38190,7 @@ export interface nsIProfilerType extends nsISupports {
  * NOTE: This interface is actually not specific to channels and may be used
  * with other implementations of nsIRequest.
  */
-export interface nsIProgressEventSinkType extends nsISupports {
+declare interface nsIProgressEventSinkType extends nsISupports {
     /**
      * Called to notify the event sink that progress has occurred for the
      * given request.
@@ -38229,7 +38229,7 @@ export interface nsIProgressEventSinkType extends nsISupports {
 /**
  *
  */
-export interface nsIPromptType extends nsISupports {
+declare interface nsIPromptType extends nsISupports {
     /**
      *
      */
@@ -38272,7 +38272,7 @@ export interface nsIPromptType extends nsISupports {
  * This interface contains various specialized prompts that the app can
  * implement.
  */
-export interface nsIPromptCollectionType extends nsISupports {
+declare interface nsIPromptCollectionType extends nsISupports {
     /**
      * Puts up a dialog for the before unload prompt.
      *
@@ -38308,7 +38308,7 @@ export interface nsIPromptCollectionType extends nsISupports {
 /**
  * This interface allows creating various prompts that have a specific parent.
  */
-export interface nsIPromptFactoryType extends nsISupports {
+declare interface nsIPromptFactoryType extends nsISupports {
     /**
      * Returns an object implementing the specified interface that creates
      * prompts parented to aParent.
@@ -38319,7 +38319,7 @@ export interface nsIPromptFactoryType extends nsISupports {
 /**
  * An object representing a prompt or doorhanger.
  */
-export interface nsIPromptInstanceType extends nsISupports {
+declare interface nsIPromptInstanceType extends nsISupports {
     /**
      * Dismiss this prompt (e.g. because it's not relevant anymore).
      */
@@ -38356,7 +38356,7 @@ export interface nsIPromptInstanceType extends nsISupports {
  * tell the user to "Press OK to proceed."  Instead, such a prompt might be
  * rewritten to ask the user: "Would you like to proceed?"
  */
-export interface nsIPromptServiceType extends nsISupports {
+declare interface nsIPromptServiceType extends nsISupports {
     /**
      * Puts up an alert dialog with an OK button.
      *
@@ -38719,7 +38719,7 @@ export interface nsIPromptServiceType extends nsISupports {
 /**
  * Simple mapping service interface.
  */
-export interface nsIPropertiesType extends nsISupports {
+declare interface nsIPropertiesType extends nsISupports {
     /**
      * Gets a property with a given name.
      *
@@ -38747,7 +38747,7 @@ export interface nsIPropertiesType extends nsISupports {
 /**
  *
  */
-export interface nsIPropertyType extends nsISupports {
+declare interface nsIPropertyType extends nsISupports {
     /**
      * Get the name of the property.
      */
@@ -38761,7 +38761,7 @@ export interface nsIPropertyType extends nsISupports {
 /**
  *
  */
-export interface nsIPropertyBagType extends nsISupports {
+declare interface nsIPropertyBagType extends nsISupports {
     /**
      * Get a nsISimpleEnumerator whose elements are nsIProperty objects.
      */
@@ -38777,7 +38777,7 @@ export interface nsIPropertyBagType extends nsISupports {
 /**
  *
  */
-export interface nsIPropertyBag2Type extends nsIPropertyBag {
+declare interface nsIPropertyBag2Type extends nsIPropertyBag {
     /**
      *
      */
@@ -38836,7 +38836,7 @@ export interface nsIPropertyBag2Type extends nsIPropertyBag {
  * Used to communicate with the thread for logging on to a token with
  * CKF_PROTECTED_AUTHENTICATION_PATH set.
  */
-export interface nsIProtectedAuthThreadType extends nsISupports {
+declare interface nsIProtectedAuthThreadType extends nsISupports {
     /**
      * login - run the thread
      * A user interface implementing this interface needs to
@@ -38865,7 +38865,7 @@ export interface nsIProtectedAuthThreadType extends nsISupports {
  * Protocols that wish to return different flags depending on the URI should
  * implement this interface.
  */
-export interface nsIProtocolHandlerWithDynamicFlagsType extends nsISupports {
+declare interface nsIProtocolHandlerWithDynamicFlagsType extends nsISupports {
     /**
      * Returns protocol flags for the given URI, which may be different from the
      * flags for another URI of the same scheme.
@@ -38879,7 +38879,7 @@ export interface nsIProtocolHandlerWithDynamicFlagsType extends nsISupports {
 /**
  * nsIProtocolHandler
  */
-export interface nsIProtocolHandlerType extends nsISupports {
+declare interface nsIProtocolHandlerType extends nsISupports {
     /**
      * The scheme of this protocol (e.g., "file").
      */
@@ -38905,7 +38905,7 @@ export interface nsIProtocolHandlerType extends nsISupports {
  * This interface serves as a closure for nsIProtocolProxyService's
  * asyncResolve method.
  */
-export interface nsIProtocolProxyCallbackType extends nsISupports {
+declare interface nsIProtocolProxyCallbackType extends nsISupports {
     /**
      * This method is called when proxy info is available or when an error
      * in the proxy resolution occurs.
@@ -38931,7 +38931,7 @@ export interface nsIProtocolProxyCallbackType extends nsISupports {
  * Recipient of the result of implementers of nsIProtocolProxy(Channel)Filter
  * allowing the proxyinfo be provided asynchronously.
  */
-export interface nsIProxyProtocolFilterResultType extends nsISupports {
+declare interface nsIProxyProtocolFilterResultType extends nsISupports {
     /**
      * It's mandatory to call this method exactly once when the applyFilter()
      * implementation doesn't throw and to not call it when applyFilter() does
@@ -38951,7 +38951,7 @@ export interface nsIProxyProtocolFilterResultType extends nsISupports {
  * URI.  Use nsIProtocolProxyService::registerFilter to hook up instances of
  * this interface. See also nsIProtocolProxyChannelFilter.
  */
-export interface nsIProtocolProxyFilterType extends nsISupports {
+declare interface nsIProtocolProxyFilterType extends nsISupports {
     /**
      * This method is called to apply proxy filter rules for the given URI
      * and proxy object (or list of proxy objects).
@@ -38980,7 +38980,7 @@ export interface nsIProtocolProxyFilterType extends nsISupports {
  * channel.  Use nsIProtocolProxyService::registerChannelFilter to hook up instances of
  * this interface. See also nsIProtocolProxyFilter.
  */
-export interface nsIProtocolProxyChannelFilterType extends nsISupports {
+declare interface nsIProtocolProxyChannelFilterType extends nsISupports {
     /**
      * This method is called to apply proxy filter rules for the given channel
      * and proxy object (or list of proxy objects).
@@ -39007,7 +39007,7 @@ export interface nsIProtocolProxyChannelFilterType extends nsISupports {
 /**
  *
  */
-export interface nsIProxyConfigChangedCallbackType extends nsISupports {
+declare interface nsIProxyConfigChangedCallbackType extends nsISupports {
     /**
      * Called when one of the following conditions are changed.
      * 1. System proxy settings changed.
@@ -39021,7 +39021,7 @@ export interface nsIProxyConfigChangedCallbackType extends nsISupports {
  * nsIProtocolProxyService provides methods to access information about
  * various network proxies.
  */
-export interface nsIProtocolProxyServiceType extends nsISupports {
+declare interface nsIProtocolProxyServiceType extends nsISupports {
     /**
      * This method returns via callback a nsIProxyInfo instance that identifies
      * a proxy to be used for the given channel.  Otherwise, this method returns
@@ -39235,7 +39235,7 @@ export interface nsIProtocolProxyServiceType extends nsISupports {
 /**
  * An extension of nsIProtocolProxyService
  */
-export interface nsIProtocolProxyService2Type extends nsIProtocolProxyService {
+declare interface nsIProtocolProxyService2Type extends nsIProtocolProxyService {
     /**
      * Call this method to cause the PAC file (if any is configured) to be
      * reloaded.  The PAC file is loaded asynchronously.
@@ -39257,7 +39257,7 @@ export interface nsIProtocolProxyService2Type extends nsIProtocolProxyService {
  *
  * @see nsIProxiedProtocolHandler
  */
-export interface nsIProxiedChannelType extends nsISupports {
+declare interface nsIProxiedChannelType extends nsISupports {
     /**
      * Gets the proxy info the channel was constructed with. null or a
      * proxyInfo with type "direct" mean no proxy.
@@ -39280,7 +39280,7 @@ export interface nsIProxiedChannelType extends nsISupports {
 /**
  *
  */
-export interface nsIProxiedProtocolHandlerType extends nsIProtocolHandler {
+declare interface nsIProxiedProtocolHandlerType extends nsIProtocolHandler {
     /**
      * Create a new channel with the given proxyInfo
      *
@@ -39304,7 +39304,7 @@ export interface nsIProxiedProtocolHandlerType extends nsIProtocolHandler {
 /**
  * This interface identifies a proxy server.
  */
-export interface nsIProxyInfoType extends nsISupports {
+declare interface nsIProxyInfoType extends nsISupports {
     /**
      * This attribute specifies the hostname of the proxy server.
      */
@@ -39378,7 +39378,7 @@ export interface nsIProxyInfoType extends nsISupports {
 /**
  *
  */
-export interface nsIPublicKeyPinningServiceType extends nsISupports {
+declare interface nsIPublicKeyPinningServiceType extends nsISupports {
     /**
      * Returns true if the host of the given URI has pinning information, and
      * false otherwise.
@@ -39389,7 +39389,7 @@ export interface nsIPublicKeyPinningServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIPurgeTrackerServiceType extends nsISupports {
+declare interface nsIPurgeTrackerServiceType extends nsISupports {
     /**
      * Purge cookies and associated data of sites which no longer have the user interaction permission.
      */
@@ -39399,7 +39399,7 @@ export interface nsIPurgeTrackerServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIPushErrorReporterType extends nsISupports {
+declare interface nsIPushErrorReporterType extends nsISupports {
     /**
      * Reports a `push` event handler error to the Push service. |messageId| is
      * an opaque string passed to `nsIPushNotifier.notifyPush{WithData}`.
@@ -39412,7 +39412,7 @@ export interface nsIPushErrorReporterType extends nsISupports {
  * Fires XPCOM observer notifications and service worker events for
  * messages sent to push subscriptions.
  */
-export interface nsIPushNotifierType extends nsISupports {
+declare interface nsIPushNotifierType extends nsISupports {
     /**
      * Fires a `push-message` observer notification, and sends a `push` event to
      * the service worker registered for the |scope|. |messageId| is an opaque ID
@@ -39451,7 +39451,7 @@ export interface nsIPushNotifierType extends nsISupports {
  * Provides methods for retrieving push message data in different formats.
  * This interface resembles the `PushMessageData` WebIDL interface.
  */
-export interface nsIPushDataType extends nsISupports {
+declare interface nsIPushDataType extends nsISupports {
     /**
      * Extracts the data as a UTF-8 text string.
      */
@@ -39466,7 +39466,7 @@ export interface nsIPushDataType extends nsISupports {
  * The subject of a `push-message` observer notification. |data| may be |null|
  * for messages without data.
  */
-export interface nsIPushMessageType extends nsISupports {
+declare interface nsIPushMessageType extends nsISupports {
     /**
      *
      */
@@ -39481,7 +39481,7 @@ export interface nsIPushMessageType extends nsISupports {
  * A push subscription, passed as an argument to a subscription callback.
  * Similar to the `PushSubscription` WebIDL interface.
  */
-export interface nsIPushSubscriptionType extends nsISupports {
+declare interface nsIPushSubscriptionType extends nsISupports {
     /**
      *
      */
@@ -39523,7 +39523,7 @@ export interface nsIPushSubscriptionType extends nsISupports {
  * |subscription| will point to a valid push subscription, or |null| if the
  * subscription does not exist.
  */
-export interface nsIPushSubscriptionCallbackType extends nsISupports {
+declare interface nsIPushSubscriptionCallbackType extends nsISupports {
     /**
      *
      */
@@ -39536,7 +39536,7 @@ export interface nsIPushSubscriptionCallbackType extends nsISupports {
  * Otherwise, |success| is true if unsubscribing was successful, and false if
  * the subscription does not exist.
  */
-export interface nsIUnsubscribeResultCallbackType extends nsISupports {
+declare interface nsIUnsubscribeResultCallbackType extends nsISupports {
     /**
      *
      */
@@ -39547,7 +39547,7 @@ export interface nsIUnsubscribeResultCallbackType extends nsISupports {
  * Called by |clearForDomain|. A non-success |status| indicates that there was
  * a problem clearing subscriptions for the given domain.
  */
-export interface nsIPushClearResultCallbackType extends nsISupports {
+declare interface nsIPushClearResultCallbackType extends nsISupports {
     /**
      *
      */
@@ -39561,7 +39561,7 @@ export interface nsIPushClearResultCallbackType extends nsISupports {
  * and allows privileged code to receive messages without migrating to service
  * workers.
  */
-export interface nsIPushServiceType extends nsISupports {
+declare interface nsIPushServiceType extends nsISupports {
     /**
      * Observer topic names, exported for convenience.
      */
@@ -39617,7 +39617,7 @@ export interface nsIPushServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIPushQuotaManagerType extends nsISupports {
+declare interface nsIPushQuotaManagerType extends nsISupports {
     /**
      * Informs the quota manager that a notification
      * for the given origin has been shown. Used to
@@ -39637,7 +39637,7 @@ export interface nsIPushQuotaManagerType extends nsISupports {
  * Whether other properties can be used or not depends on the event.
  * See nsIDOMWindowUtils.idl, which properites can be used was documented.
  */
-export interface nsIQueryContentEventResultType extends nsISupports {
+declare interface nsIQueryContentEventResultType extends nsISupports {
     /**
      *
      */
@@ -39691,7 +39691,7 @@ export interface nsIQueryContentEventResultType extends nsISupports {
 /**
  *
  */
-export interface nsIQuotaUsageCallbackType extends nsISupports {
+declare interface nsIQuotaUsageCallbackType extends nsISupports {
     /**
      *
      */
@@ -39701,7 +39701,7 @@ export interface nsIQuotaUsageCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIQuotaCallbackType extends nsISupports {
+declare interface nsIQuotaCallbackType extends nsISupports {
     /**
      *
      */
@@ -39711,7 +39711,7 @@ export interface nsIQuotaCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIQuotaManagerServiceType extends nsISupports {
+declare interface nsIQuotaManagerServiceType extends nsISupports {
     /**
      * Asynchronously retrieves storage name and returns it as a plain string.
      *
@@ -39948,7 +39948,7 @@ export interface nsIQuotaManagerServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIQuotaRequestBaseType extends nsISupports {
+declare interface nsIQuotaRequestBaseType extends nsISupports {
     /**
      *
      */
@@ -39966,7 +39966,7 @@ export interface nsIQuotaRequestBaseType extends nsISupports {
 /**
  *
  */
-export interface nsIQuotaUsageRequestType extends nsIQuotaRequestBase {
+declare interface nsIQuotaUsageRequestType extends nsIQuotaRequestBase {
     /**
      *
      */
@@ -39984,7 +39984,7 @@ export interface nsIQuotaUsageRequestType extends nsIQuotaRequestBase {
 /**
  *
  */
-export interface nsIQuotaRequestType extends nsIQuotaRequestBase {
+declare interface nsIQuotaRequestType extends nsIQuotaRequestBase {
     /**
      *
      */
@@ -39998,7 +39998,7 @@ export interface nsIQuotaRequestType extends nsIQuotaRequestBase {
 /**
  *
  */
-export interface nsIQuotaFullOriginMetadataResultType extends nsISupports {
+declare interface nsIQuotaFullOriginMetadataResultType extends nsISupports {
     /**
      *
      */
@@ -40028,7 +40028,7 @@ export interface nsIQuotaFullOriginMetadataResultType extends nsISupports {
 /**
  *
  */
-export interface nsIQuotaUsageResultType extends nsISupports {
+declare interface nsIQuotaUsageResultType extends nsISupports {
     /**
      *
      */
@@ -40050,7 +40050,7 @@ export interface nsIQuotaUsageResultType extends nsISupports {
 /**
  *
  */
-export interface nsIQuotaOriginUsageResultType extends nsISupports {
+declare interface nsIQuotaOriginUsageResultType extends nsISupports {
     /**
      *
      */
@@ -40064,7 +40064,7 @@ export interface nsIQuotaOriginUsageResultType extends nsISupports {
 /**
  *
  */
-export interface nsIQuotaEstimateResultType extends nsISupports {
+declare interface nsIQuotaEstimateResultType extends nsISupports {
     /**
      *
      */
@@ -40080,7 +40080,7 @@ export interface nsIQuotaEstimateResultType extends nsISupports {
  * channel. This interface is was designed with nsHttpChannel in mind, and it's
  * expected this will be the only class implementing it.
  */
-export interface nsIRaceCacheWithNetworkType extends nsISupports {
+declare interface nsIRaceCacheWithNetworkType extends nsISupports {
     /**
      * **************************************************************************
      * TEST ONLY: The following methods are for testing purposes only. Do not use
@@ -40132,7 +40132,7 @@ export interface nsIRaceCacheWithNetworkType extends nsISupports {
  * this interface to also implement nsIInputStream and nsIOutputStream, so they
  * can be easilly used with e.g. NS_AsyncCopy.
  */
-export interface nsIRandomAccessStreamType extends nsISeekableStream {
+declare interface nsIRandomAccessStreamType extends nsISeekableStream {
     /**
      * This method always returns the same object.
      */
@@ -40164,7 +40164,7 @@ export interface nsIRandomAccessStreamType extends nsISeekableStream {
  *
  * @threadsafe
  */
-export interface nsIRandomGeneratorType extends nsISupports {
+declare interface nsIRandomGeneratorType extends nsISupports {
     /**
      * Generates the specified amount of random bytes.
      *
@@ -40183,7 +40183,7 @@ export interface nsIRandomGeneratorType extends nsISupports {
  *
  * See also nsIChildChannel and nsIParentChannel.
  */
-export interface nsIRedirectChannelRegistrarType extends nsISupports {
+declare interface nsIRedirectChannelRegistrarType extends nsISupports {
     /**
      * Register the redirect target channel. The passed id needs to be a
      * unique ID for that channel (see `nsContentUtils::GenerateLoadIdentifier`).
@@ -40236,7 +40236,7 @@ export interface nsIRedirectChannelRegistrarType extends nsISupports {
  * This nsIRedirectHistoryEntry defines an interface for specifying channel
  * redirect information
  */
-export interface nsIRedirectHistoryEntryType extends nsISupports {
+declare interface nsIRedirectHistoryEntryType extends nsISupports {
     /**
      * The principal of this redirect entry
      */
@@ -40254,7 +40254,7 @@ export interface nsIRedirectHistoryEntryType extends nsISupports {
 /**
  *
  */
-export interface nsIRedirectResultListenerType extends nsISupports {
+declare interface nsIRedirectResultListenerType extends nsISupports {
     /**
      * When an HTTP redirect has been processed (either successfully or not)
      * nsIHttpChannel will call this function if its callbacks implement this
@@ -40270,7 +40270,7 @@ export interface nsIRedirectResultListenerType extends nsISupports {
 /**
  *
  */
-export interface nsIReferrerInfoType extends nsISerializable {
+declare interface nsIReferrerInfoType extends nsISerializable {
     /**
      * The original referrer URI which indicates the full referrer before applying
      * referrer policy
@@ -40331,7 +40331,7 @@ export interface nsIReferrerInfoType extends nsISerializable {
 /**
  *
  */
-export interface nsIReflowObserverType extends nsISupports {
+declare interface nsIReflowObserverType extends nsISupports {
     /**
      * Called when an uninterruptible reflow has occurred.
      *
@@ -40355,7 +40355,7 @@ export interface nsIReflowObserverType extends nsISupports {
 /**
  *
  */
-export interface nsIRefreshURIType extends nsISupports {
+declare interface nsIRefreshURIType extends nsISupports {
     /**
      * Load a uri after waiting for aMillis milliseconds (as a result of a
      * meta refresh). If the docshell is busy loading a page currently, the
@@ -40393,7 +40393,7 @@ export interface nsIRefreshURIType extends nsISupports {
 /**
  *
  */
-export interface nsIRegionType extends nsISupports {
+declare interface nsIRegionType extends nsISupports {
     /**
      * The users current region.
      */
@@ -40413,7 +40413,7 @@ export interface nsIRegionType extends nsISupports {
  * @see nsIPrefBranch::getComplexValue
  * @see nsIPrefBranch::setComplexValue
  */
-export interface nsIRelativeFilePrefType extends nsISupports {
+declare interface nsIRelativeFilePrefType extends nsISupports {
     /**
      * file
      *
@@ -40439,7 +40439,7 @@ export interface nsIRelativeFilePrefType extends nsISupports {
  * document introspection and script evaluation, to instrumentation,
  * user interaction simulation, and event subscription.
  */
-export interface nsIRemoteAgentType extends nsISupports {
+declare interface nsIRemoteAgentType extends nsISupports {
     /**
      * Address of the HTTP server under which the remote agent is reachable.
      */
@@ -40453,7 +40453,7 @@ export interface nsIRemoteAgentType extends nsISupports {
 /**
  *
  */
-export interface nsIRemoteTabType extends nsISupports {
+declare interface nsIRemoteTabType extends nsISupports {
     /**
      * When set to true, this tells the child to paint and upload layers to
      * the compositor. When set to false, previous layers are cleared from
@@ -40534,7 +40534,7 @@ export interface nsIRemoteTabType extends nsISupports {
 /**
  * nsIRequest
  */
-export interface nsIRequestType extends nsISupports {
+declare interface nsIRequestType extends nsISupports {
     /**
      * The name of the request.  Often this is the URI of the request.
      */
@@ -40651,7 +40651,7 @@ export interface nsIRequestType extends nsISupports {
  * If the request is tail-blocked, it will be held in its request
  * context queue until unblocked.
  */
-export interface nsIRequestTailUnblockCallbackType extends nsISupports {
+declare interface nsIRequestTailUnblockCallbackType extends nsISupports {
     /**
      * Called when the requests is unblocked and proceed.
      * @param result
@@ -40671,7 +40671,7 @@ export interface nsIRequestTailUnblockCallbackType extends nsISupports {
  *
  * This used to be known as nsILoadGroupConnectionInfo and nsISchedulingContext.
  */
-export interface nsIRequestContextType extends nsISupports {
+declare interface nsIRequestContextType extends nsISupports {
     /**
      * A unique identifier for this request context
      */
@@ -40748,7 +40748,7 @@ export interface nsIRequestContextType extends nsISupports {
  * who asks for the same request context while you're holding a reference
  * will get a reference to the same request context you have.
  */
-export interface nsIRequestContextServiceType extends nsISupports {
+declare interface nsIRequestContextServiceType extends nsISupports {
     /**
      * Get an existing request context from its ID
      */
@@ -40770,7 +40770,7 @@ export interface nsIRequestContextServiceType extends nsISupports {
 /**
  * nsIRequestObserver
  */
-export interface nsIRequestObserverType extends nsISupports {
+declare interface nsIRequestObserverType extends nsISupports {
     /**
      * Called to signify the beginning of an asynchronous request.
      *
@@ -40800,7 +40800,7 @@ export interface nsIRequestObserverType extends nsISupports {
  * This interface only provides the initialization needed after construction.
  * Otherwise, these objects are used simply as nsIRequestObserver's.
  */
-export interface nsIRequestObserverProxyType extends nsIRequestObserver {
+declare interface nsIRequestObserverProxyType extends nsIRequestObserver {
     /**
      * Initializes an nsIRequestObserverProxy.
      *
@@ -40816,7 +40816,7 @@ export interface nsIRequestObserverProxyType extends nsIRequestObserver {
 /**
  * Protocol handler interface for the resource:// protocol
  */
-export interface nsIResProtocolHandlerType extends nsISubstitutingProtocolHandler {
+declare interface nsIResProtocolHandlerType extends nsISubstitutingProtocolHandler {
     /**
      *
      */
@@ -40826,7 +40826,7 @@ export interface nsIResProtocolHandlerType extends nsISubstitutingProtocolHandle
 /**
  *
  */
-export interface nsIResumableChannelType extends nsISupports {
+declare interface nsIResumableChannelType extends nsISupports {
     /**
      * Prepare this channel for resuming. The request will not start until
      * asyncOpen or open is called. Calling resumeAt after open or asyncOpen
@@ -40857,7 +40857,7 @@ export interface nsIResumableChannelType extends nsISupports {
 /**
  * Represents a task which can be dispatched to a thread for execution.
  */
-export interface nsIRunnableType extends nsISupports {
+declare interface nsIRunnableType extends nsISupports {
     /**
      * The function implementing the task to be run.
      */
@@ -40867,7 +40867,7 @@ export interface nsIRunnableType extends nsISupports {
 /**
  *
  */
-export interface nsIRunnablePriorityType extends nsISupports {
+declare interface nsIRunnablePriorityType extends nsISupports {
     /**
      *
      */
@@ -40877,7 +40877,7 @@ export interface nsIRunnablePriorityType extends nsISupports {
 /**
  *
  */
-export interface nsIRunnableIPCMessageTypeType extends nsISupports {
+declare interface nsIRunnableIPCMessageTypeType extends nsISupports {
     /**
      *
      */
@@ -40887,7 +40887,7 @@ export interface nsIRunnableIPCMessageTypeType extends nsISupports {
 /**
  *
  */
-export interface nsISDBCallbackType extends nsISupports {
+declare interface nsISDBCallbackType extends nsISupports {
     /**
      *
      */
@@ -40897,7 +40897,7 @@ export interface nsISDBCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsISDBCloseCallbackType extends nsISupports {
+declare interface nsISDBCloseCallbackType extends nsISupports {
     /**
      *
      */
@@ -40907,7 +40907,7 @@ export interface nsISDBCloseCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsISDBConnectionType extends nsISupports {
+declare interface nsISDBConnectionType extends nsISupports {
     /**
      *
      */
@@ -40941,7 +40941,7 @@ export interface nsISDBConnectionType extends nsISupports {
 /**
  *
  */
-export interface nsISDBRequestType extends nsISupports {
+declare interface nsISDBRequestType extends nsISupports {
     /**
      *
      */
@@ -40959,7 +40959,7 @@ export interface nsISDBRequestType extends nsISupports {
 /**
  *
  */
-export interface nsISDBResultType extends nsISupports {
+declare interface nsISDBResultType extends nsISupports {
     /**
      *
      */
@@ -40969,7 +40969,7 @@ export interface nsISDBResultType extends nsISupports {
 /**
  *
  */
-export interface nsISHEntryType extends nsISupports {
+declare interface nsISHEntryType extends nsISupports {
     /**
      * The URI of the current entry.
      */
@@ -41348,7 +41348,7 @@ export interface nsISHEntryType extends nsISupports {
  * it in the nsIWebNavigation object.
  * This interface is accessible from javascript.
  */
-export interface nsISHistoryType extends nsISupports {
+declare interface nsISHistoryType extends nsISupports {
     /**
      * A readonly property of the interface that returns
      * the number of toplevel documents currently available
@@ -41590,7 +41590,7 @@ export interface nsISHistoryType extends nsISupports {
  * Listener methods should not alter the session history. Things are likely to
  * go haywire if they do.
  */
-export interface nsISHistoryListenerType extends nsISupports {
+declare interface nsISHistoryListenerType extends nsISupports {
     /**
      * Called when a new document is added to session history. New documents are
      * added to session history by docshell when new pages are loaded in a frame
@@ -41664,7 +41664,7 @@ export interface nsISHistoryListenerType extends nsISupports {
  *
  * Currently, this interface is implemented only for file output streams.
  */
-export interface nsISafeOutputStreamType extends nsISupports {
+declare interface nsISafeOutputStreamType extends nsISupports {
     /**
      * Call this method to close the stream and cause the original target
      * to be overwritten. Note: if any call to |write| failed to write out
@@ -41679,7 +41679,7 @@ export interface nsISafeOutputStreamType extends nsISupports {
 /**
  *
  */
-export interface nsIScreenType extends nsISupports {
+declare interface nsIScreenType extends nsISupports {
     /**
      * These report screen dimensions in (screen-specific) device pixels
      */
@@ -41743,7 +41743,7 @@ export interface nsIScreenType extends nsISupports {
 /**
  *
  */
-export interface nsIScreenManagerType extends nsISupports {
+declare interface nsIScreenManagerType extends nsISupports {
     /**
      *
      */
@@ -41774,7 +41774,7 @@ export interface nsIScreenManagerType extends nsISupports {
  * principal of the environment in which the program is to be executed the
  * execution will be forced to happen in a sandbox.
  */
-export interface nsIScriptChannelType extends nsISupports {
+declare interface nsIScriptChannelType extends nsISupports {
     /**
      * Whether and how the program represented by this channel is to be executed.
      * The default value if this property has never been set on this channel MUST
@@ -41807,7 +41807,7 @@ export interface nsIScriptChannelType extends nsISupports {
 /**
  *
  */
-export interface nsIScriptErrorNoteType extends nsISupports {
+declare interface nsIScriptErrorNoteType extends nsISupports {
     /**
      *
      */
@@ -41838,7 +41838,7 @@ export interface nsIScriptErrorNoteType extends nsISupports {
 /**
  *
  */
-export interface nsIScriptErrorType extends nsIConsoleMessage {
+declare interface nsIScriptErrorType extends nsIConsoleMessage {
     /**
      * The error message without any context/line number information.
      *
@@ -41975,7 +41975,7 @@ export interface nsIScriptErrorType extends nsIConsoleMessage {
 /**
  *
  */
-export interface nsIScriptLoaderObserverType extends nsISupports {
+declare interface nsIScriptLoaderObserverType extends nsISupports {
     /**
      * The script is available for evaluation. For inline scripts, this
      * method will be called synchronously. For externally loaded scripts,
@@ -42007,7 +42007,7 @@ export interface nsIScriptLoaderObserverType extends nsISupports {
 /**
  *
  */
-export interface nsIScriptSecurityManagerType extends nsISupports {
+declare interface nsIScriptSecurityManagerType extends nsISupports {
     /**
      * For each of these hooks returning NS_OK means 'let the action continue'.
      * Returning an error code means 'veto the action'. XPConnect will return
@@ -42222,7 +42222,7 @@ export interface nsIScriptSecurityManagerType extends nsISupports {
  * If you already have a buffer full of data, you should use
  * btoa instead!
  */
-export interface nsIScriptableBase64EncoderType extends nsISupports {
+declare interface nsIScriptableBase64EncoderType extends nsISupports {
     /**
      * These methods take an nsIInputStream and return a narrow or wide
      * string with the contents of the nsIInputStream base64 encoded.
@@ -42242,7 +42242,7 @@ export interface nsIScriptableBase64EncoderType extends nsISupports {
  * nsIScriptableContentIterator is designed to testing concrete classes of
  * ContentIteratorBase.
  */
-export interface nsIScriptableContentIteratorType extends nsISupports {
+declare interface nsIScriptableContentIteratorType extends nsISupports {
     /**
      * You need to call initWith*() first.  Then, the instance of this interface
      * decides the type of iterator with its aType argument.  You can call
@@ -42293,7 +42293,7 @@ export interface nsIScriptableContentIteratorType extends nsISupports {
  * nsIScriptableInputStream provides scriptable access to an nsIInputStream
  * instance.
  */
-export interface nsIScriptableInputStreamType extends nsISupports {
+declare interface nsIScriptableInputStreamType extends nsISupports {
     /**
      * Closes the stream.
      */
@@ -42356,7 +42356,7 @@ export interface nsIScriptableInputStreamType extends nsISupports {
  * @created         8/Jun/2000
  * @author          Makoto Kato [m_kato@ga2.so-net.ne.jp]
  */
-export interface nsIScriptableUnicodeConverterType extends nsISupports {
+declare interface nsIScriptableUnicodeConverterType extends nsISupports {
     /**
      * Converts the data from Unicode to one Charset.
      * Returns the converted string. After converting, Finish should be called
@@ -42400,7 +42400,7 @@ export interface nsIScriptableUnicodeConverterType extends nsISupports {
 /**
  *
  */
-export interface nsISearchSubmissionType extends nsISupports {
+declare interface nsISearchSubmissionType extends nsISupports {
     /**
      * The POST data associated with a search submission, wrapped in a MIME
      * input stream. May be null.
@@ -42415,7 +42415,7 @@ export interface nsISearchSubmissionType extends nsISupports {
 /**
  *
  */
-export interface nsISearchEngineType extends nsISupports {
+declare interface nsISearchEngineType extends nsISupports {
     /**
      * Gets a nsISearchSubmission object that contains information about what to
      * send to the search engine, including the URI and postData, if applicable.
@@ -42588,7 +42588,7 @@ export interface nsISearchEngineType extends nsISupports {
 /**
  *
  */
-export interface nsISearchParseSubmissionResultType extends nsISupports {
+declare interface nsISearchParseSubmissionResultType extends nsISupports {
     /**
      * The search engine associated with the URL passed in to
      * nsISearchEngine::parseSubmissionURL, or null if the URL does not represent
@@ -42609,7 +42609,7 @@ export interface nsISearchParseSubmissionResultType extends nsISupports {
 /**
  *
  */
-export interface nsISearchServiceType extends nsISupports {
+declare interface nsISearchServiceType extends nsISupports {
     /**
      * Start asynchronous initialization.
      *
@@ -42872,7 +42872,7 @@ export interface nsISearchServiceType extends nsISupports {
  * security checks. Channels wrapped inside this class can use
  * this interface to query the wrapped inner channel.
  */
-export interface nsISecCheckWrapChannelType extends nsISupports {
+declare interface nsISecCheckWrapChannelType extends nsISupports {
     /**
      * Returns the wrapped channel inside this class.
      */
@@ -42882,7 +42882,7 @@ export interface nsISecCheckWrapChannelType extends nsISupports {
 /**
  *
  */
-export interface nsISecretDecoderRingType extends nsISupports {
+declare interface nsISecretDecoderRingType extends nsISupports {
     /**
      * Encrypt to Base64 output.
      * Note that the input must basically be a byte array (i.e. the code points
@@ -42942,7 +42942,7 @@ export interface nsISecretDecoderRingType extends nsISupports {
 /**
  *
  */
-export interface nsISecureBrowserUIType extends nsISupports {
+declare interface nsISecureBrowserUIType extends nsISupports {
     /**
      *
      */
@@ -42961,7 +42961,7 @@ export interface nsISecureBrowserUIType extends nsISupports {
  * Holds localization message tag and message category
  * for security related console messages.
  */
-export interface nsISecurityConsoleMessageType extends nsISupports {
+declare interface nsISecurityConsoleMessageType extends nsISupports {
     /**
      *
      */
@@ -42975,13 +42975,13 @@ export interface nsISecurityConsoleMessageType extends nsISupports {
 /**
  *
  */
-export interface nsISecurityUITelemetryType extends nsISupports {
+declare interface nsISecurityUITelemetryType extends nsISupports {
 }
 
 /**
  *
  */
-export interface nsISeekableStreamType extends nsITellableStream {
+declare interface nsISeekableStreamType extends nsITellableStream {
     /**
      * seek
      *
@@ -43013,7 +43013,7 @@ export interface nsISeekableStreamType extends nsITellableStream {
 /**
  *
  */
-export interface nsISelectionControllerType extends nsISelectionDisplay {
+declare interface nsISelectionControllerType extends nsISelectionDisplay {
     /**
      * SetDisplaySelection will set the display mode for the selection. OFF,ON,DISABLED
      */
@@ -43203,7 +43203,7 @@ export interface nsISelectionControllerType extends nsISelectionDisplay {
 /**
  *
  */
-export interface nsISelectionDisplayType extends nsISupports {
+declare interface nsISelectionDisplayType extends nsISupports {
     /**
      * SetSelectionFlags used to set whether you want to see HRULES/IMAGES with border.
      * also used to tell if the presshell is an editor right now. this should change
@@ -43226,7 +43226,7 @@ export interface nsISelectionDisplayType extends nsISupports {
 /**
  *
  */
-export interface nsISelectionListenerType extends nsISupports {
+declare interface nsISelectionListenerType extends nsISupports {
     /**
      *
      */
@@ -43236,7 +43236,7 @@ export interface nsISelectionListenerType extends nsISupports {
 /**
  *
  */
-export interface nsISensitiveInfoHiddenURIType extends nsISupports {
+declare interface nsISensitiveInfoHiddenURIType extends nsISupports {
     /**
      * Returns the spec attribute with sensitive information hidden. This will
      * only affect uri with password. The password part of uri will be
@@ -43260,13 +43260,13 @@ export interface nsISensitiveInfoHiddenURIType extends nsISupports {
  * - However, one can "convert" a thread pool into an nsISerialEventTarget
  * by putting a TaskQueue in front of it.
  */
-export interface nsISerialEventTargetType extends nsIEventTarget {
+declare interface nsISerialEventTargetType extends nsIEventTarget {
 }
 
 /**
  *
  */
-export interface nsISerializableType extends nsISupports {
+declare interface nsISerializableType extends nsISupports {
     /**
      * Initialize the object implementing nsISerializable, which must have
      * been freshly constructed via CreateInstance.  All data members that
@@ -43289,7 +43289,7 @@ export interface nsISerializableType extends nsISupports {
 /**
  *
  */
-export interface nsISerializationHelperType extends nsISupports {
+declare interface nsISerializationHelperType extends nsISupports {
     /**
      * Serialize the object to a base64 string. This string can be later passed
      * as an input to deserializeObject method.
@@ -43308,7 +43308,7 @@ export interface nsISerializationHelperType extends nsISupports {
  *
  * An interface to a server socket that can accept incoming connections.
  */
-export interface nsIServerSocketType extends nsISupports {
+declare interface nsIServerSocketType extends nsISupports {
     /**
      * @}
      *
@@ -43490,7 +43490,7 @@ export interface nsIServerSocketType extends nsISupports {
  * nsISocketTransport::GetHost, which returns a string representation of the
  * client's IP address (NOTE: this may be an IPv4 or IPv6 string literal).
  */
-export interface nsIServerSocketListenerType extends nsISupports {
+declare interface nsIServerSocketListenerType extends nsISupports {
     /**
      * onSocketAccepted
      *
@@ -43531,7 +43531,7 @@ export interface nsIServerSocketListenerType extends nsISupports {
  * A user of a service may keep references to particular services indefinitely
  * and only must call Release when it shuts down.
  */
-export interface nsIServiceManagerType extends nsISupports {
+declare interface nsIServiceManagerType extends nsISupports {
     /**
      * getServiceByContractID
      *
@@ -43570,7 +43570,7 @@ export interface nsIServiceManagerType extends nsISupports {
 /**
  *
  */
-export interface nsIServiceWorkerUnregisterCallbackType extends nsISupports {
+declare interface nsIServiceWorkerUnregisterCallbackType extends nsISupports {
     /**
      *
      */
@@ -43584,7 +43584,7 @@ export interface nsIServiceWorkerUnregisterCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIServiceWorkerInfoType extends nsISupports {
+declare interface nsIServiceWorkerInfoType extends nsISupports {
     /**
      *
      */
@@ -43642,7 +43642,7 @@ export interface nsIServiceWorkerInfoType extends nsISupports {
 /**
  *
  */
-export interface nsIServiceWorkerRegistrationInfoListenerType extends nsISupports {
+declare interface nsIServiceWorkerRegistrationInfoListenerType extends nsISupports {
     /**
      *
      */
@@ -43652,7 +43652,7 @@ export interface nsIServiceWorkerRegistrationInfoListenerType extends nsISupport
 /**
  *
  */
-export interface nsIServiceWorkerRegistrationInfoType extends nsISupports {
+declare interface nsIServiceWorkerRegistrationInfoType extends nsISupports {
     /**
      *
      */
@@ -43718,7 +43718,7 @@ export interface nsIServiceWorkerRegistrationInfoType extends nsISupports {
 /**
  *
  */
-export interface nsIServiceWorkerManagerListenerType extends nsISupports {
+declare interface nsIServiceWorkerManagerListenerType extends nsISupports {
     /**
      *
      */
@@ -43741,7 +43741,7 @@ export interface nsIServiceWorkerManagerListenerType extends nsISupports {
 /**
  *
  */
-export interface nsIServiceWorkerManagerType extends nsISupports {
+declare interface nsIServiceWorkerManagerType extends nsISupports {
     /**
      * A testing helper that is meant to only be used in xpcshell-test to test behaviors
      * that would need a browser restart to re-initialize the ServiceWorkerManager from
@@ -43851,7 +43851,7 @@ export interface nsIServiceWorkerManagerType extends nsISupports {
 /**
  *
  */
-export interface nsISessionStorageServiceType extends nsISupports {
+declare interface nsISessionStorageServiceType extends nsISupports {
     /**
      * Removes all storages stored for the given principal.
      *
@@ -43864,7 +43864,7 @@ export interface nsISessionStorageServiceType extends nsISupports {
 /**
  *
  */
-export interface nsISessionStoreRestoreDataType extends nsISupports {
+declare interface nsISessionStoreRestoreDataType extends nsISupports {
     /**
      *
      */
@@ -43906,7 +43906,7 @@ export interface nsISessionStoreRestoreDataType extends nsISupports {
 /**
  *
  */
-export interface nsISharePickerType extends nsISupports {
+declare interface nsISharePickerType extends nsISupports {
     /**
      * Initialize the share picker widget.
      * @param nsIDOMWindow openerWindow.
@@ -43926,7 +43926,7 @@ export interface nsISharePickerType extends nsISupports {
 /**
  *
  */
-export interface nsISharingHandlerAppType extends nsIHandlerApp {
+declare interface nsISharingHandlerAppType extends nsIHandlerApp {
     /**
      *
      */
@@ -43936,7 +43936,7 @@ export interface nsISharingHandlerAppType extends nsIHandlerApp {
 /**
  *
  */
-export interface nsIShellServiceType extends nsISupports {
+declare interface nsIShellServiceType extends nsISupports {
     /**
      * Determines whether or not Firefox is the "Default Browser."
      * This is simply whether or not Firefox is registered to handle
@@ -43982,7 +43982,7 @@ export interface nsIShellServiceType extends nsISupports {
  * A wrapper for an nsISimpleEnumerator instance which implements the
  * JavaScript iteration protocol.
  */
-export interface nsIJSEnumeratorType extends nsISupports {
+declare interface nsIJSEnumeratorType extends nsISupports {
     /**
      *
      */
@@ -43996,7 +43996,7 @@ export interface nsIJSEnumeratorType extends nsISupports {
 /**
  *
  */
-export interface nsISimpleEnumeratorBaseType extends nsISupports {
+declare interface nsISimpleEnumeratorBaseType extends nsISupports {
     /**
      * Returns a JavaScript iterator for all remaining entries in the enumerator.
      * Each entry is typically queried to the appropriate interface for the
@@ -44014,7 +44014,7 @@ export interface nsISimpleEnumeratorBaseType extends nsISupports {
 /**
  *
  */
-export interface nsISimpleEnumeratorType extends nsISimpleEnumeratorBase {
+declare interface nsISimpleEnumeratorType extends nsISimpleEnumeratorBase {
     /**
      * Called to determine whether or not the enumerator has
      * any elements that can be returned via getNext(). This method
@@ -44047,7 +44047,7 @@ export interface nsISimpleEnumeratorType extends nsISimpleEnumeratorBase {
  * A simple stream listener can be used with AsyncRead to supply data to
  * a output stream.
  */
-export interface nsISimpleStreamListenerType extends nsIStreamListener {
+declare interface nsISimpleStreamListenerType extends nsIStreamListener {
     /**
      * Initialize the simple stream listener.
      *
@@ -44061,7 +44061,7 @@ export interface nsISimpleStreamListenerType extends nsIStreamListener {
 /**
  *
  */
-export interface nsISimpleURIMutatorType extends nsISupports {
+declare interface nsISimpleURIMutatorType extends nsISupports {
     /**
      * Same behaviour as nsIURISetSpec.setSpec() but filters whitespace.
      */
@@ -44071,7 +44071,7 @@ export interface nsISimpleURIMutatorType extends nsISupports {
 /**
  *
  */
-export interface nsISiteSecurityStateType extends nsISupports {
+declare interface nsISiteSecurityStateType extends nsISupports {
     /**
      *
      */
@@ -44097,13 +44097,13 @@ export interface nsISiteSecurityStateType extends nsISupports {
 /**
  *
  */
-export interface nsISiteHSTSStateType extends nsISiteSecurityState {
+declare interface nsISiteHSTSStateType extends nsISiteSecurityState {
 }
 
 /**
  *
  */
-export interface nsISiteSecurityServiceType extends nsISupports {
+declare interface nsISiteSecurityServiceType extends nsISupports {
     /**
      * Parses a given HTTP header and records the results internally.
      * Currently one header type is supported: HSTS (aka STS).
@@ -44190,7 +44190,7 @@ export interface nsISiteSecurityServiceType extends nsISupports {
 /**
  *
  */
-export interface nsISlowScriptDebugCallbackType extends nsISupports {
+declare interface nsISlowScriptDebugCallbackType extends nsISupports {
     /**
      *
      */
@@ -44200,7 +44200,7 @@ export interface nsISlowScriptDebugCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsISlowScriptDebuggerStartupCallbackType extends nsISupports {
+declare interface nsISlowScriptDebuggerStartupCallbackType extends nsISupports {
     /**
      *
      */
@@ -44210,7 +44210,7 @@ export interface nsISlowScriptDebuggerStartupCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsISlowScriptDebugRemoteCallbackType extends nsISupports {
+declare interface nsISlowScriptDebugRemoteCallbackType extends nsISupports {
     /**
      *
      */
@@ -44220,7 +44220,7 @@ export interface nsISlowScriptDebugRemoteCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsISlowScriptDebugType extends nsISupports {
+declare interface nsISlowScriptDebugType extends nsISupports {
     /**
      *
      */
@@ -44236,7 +44236,7 @@ export interface nsISlowScriptDebugType extends nsISupports {
  * ingoing and outgoing. The child must specify the name of a recognized filter
  * in order to create a socket.
  */
-export interface nsISocketFilterType extends nsISupports {
+declare interface nsISocketFilterType extends nsISupports {
     /**
      *
      */
@@ -44246,7 +44246,7 @@ export interface nsISocketFilterType extends nsISupports {
 /**
  * Factory of a specified filter.
  */
-export interface nsISocketFilterHandlerType extends nsISupports {
+declare interface nsISocketFilterHandlerType extends nsISupports {
     /**
      *
      */
@@ -44256,7 +44256,7 @@ export interface nsISocketFilterHandlerType extends nsISupports {
 /**
  * nsISocketProvider
  */
-export interface nsISocketProviderType extends nsISupports {
+declare interface nsISocketProviderType extends nsISupports {
     /**
      * newSocket
      *
@@ -44302,7 +44302,7 @@ export interface nsISocketProviderType extends nsISupports {
  * Provides a mapping between a socket type and its associated socket provider
  * instance.  One could also use the service manager directly.
  */
-export interface nsISocketProviderServiceType extends nsISupports {
+declare interface nsISocketProviderServiceType extends nsISupports {
     /**
      *
      */
@@ -44319,7 +44319,7 @@ export interface nsISocketProviderServiceType extends nsISupports {
  * NOTE: This is a free-threaded interface, meaning that the methods on
  * this interface may be called from any thread.
  */
-export interface nsISocketTransportType extends nsITransport {
+declare interface nsISocketTransportType extends nsITransport {
     /**
      * Get the peer's host for the underlying socket connection.
      * For Unix domain sockets, this is a pathname, or the empty string for
@@ -44486,7 +44486,7 @@ export interface nsISocketTransportType extends nsITransport {
 /**
  *
  */
-export interface nsISTSShutdownObserverType extends nsISupports {
+declare interface nsISTSShutdownObserverType extends nsISupports {
     /**
      * Observe will be called when the SocketTransportService is shutting down,
      * before threads are stopped.
@@ -44497,7 +44497,7 @@ export interface nsISTSShutdownObserverType extends nsISupports {
 /**
  *
  */
-export interface nsISocketTransportServiceType extends nsISupports {
+declare interface nsISocketTransportServiceType extends nsISupports {
     /**
      * Creates a transport for a specified host and port.
      *
@@ -44611,7 +44611,7 @@ export interface nsISocketTransportServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIRoutedSocketTransportServiceType extends nsISocketTransportService {
+declare interface nsIRoutedSocketTransportServiceType extends nsISocketTransportService {
     /**
      *
      */
@@ -44621,7 +44621,7 @@ export interface nsIRoutedSocketTransportServiceType extends nsISocketTransportS
 /**
  *
  */
-export interface nsISoundType extends nsISupports {
+declare interface nsISoundType extends nsISupports {
     /**
      *
      */
@@ -44644,7 +44644,7 @@ export interface nsISoundType extends nsISupports {
 /**
  *
  */
-export interface nsISpeculativeConnectType extends nsISupports {
+declare interface nsISpeculativeConnectType extends nsISupports {
     /**
      * Called as a hint to indicate a new transaction for the URI is likely coming
      * soon. The implementer may use this information to start a TCP
@@ -44672,7 +44672,7 @@ export interface nsISpeculativeConnectType extends nsISupports {
  * inline) to determine whether or not to actually make a speculative
  * connection.
  */
-export interface nsISpeculativeConnectionOverriderType extends nsISupports {
+declare interface nsISpeculativeConnectionOverriderType extends nsISupports {
     /**
      * Used to determine the maximum number of unused speculative connections
      * we will have open for a host at any one time
@@ -44698,7 +44698,7 @@ export interface nsISpeculativeConnectionOverriderType extends nsISupports {
 /**
  *
  */
-export interface nsISpeechGrammarCompilationCallbackType extends nsISupports {
+declare interface nsISpeechGrammarCompilationCallbackType extends nsISupports {
     /**
      *
      */
@@ -44708,7 +44708,7 @@ export interface nsISpeechGrammarCompilationCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsISpeechRecognitionServiceType extends nsISupports {
+declare interface nsISpeechRecognitionServiceType extends nsISupports {
     /**
      *
      */
@@ -44734,7 +44734,7 @@ export interface nsISpeechRecognitionServiceType extends nsISupports {
 /**
  * A callback is implemented by the service.
  */
-export interface nsISpeechTaskCallbackType extends nsISupports {
+declare interface nsISpeechTaskCallbackType extends nsISupports {
     /**
      * The user or application has paused the speech.
      */
@@ -44757,7 +44757,7 @@ export interface nsISpeechTaskCallbackType extends nsISupports {
  * A task is associated with a single utterance. It is provided by the browser
  * to the service in the speak() method.
  */
-export interface nsISpeechTaskType extends nsISupports {
+declare interface nsISpeechTaskType extends nsISupports {
     /**
      * Prepare browser for speech.
      *
@@ -44824,7 +44824,7 @@ export interface nsISpeechTaskType extends nsISupports {
  * A service must also respond with the currect actions and events in response
  * to implemented callback methods.
  */
-export interface nsISpeechServiceType extends nsISupports {
+declare interface nsISpeechServiceType extends nsISupports {
     /**
      * Speak the given text using the voice identified byu the given uri. See
      * W3C Speech API spec for information about pitch and rate.
@@ -44844,7 +44844,7 @@ export interface nsISpeechServiceType extends nsISupports {
 /**
  * Platform-independent interface to platform native menu objects.
  */
-export interface nsIStandaloneNativeMenuType extends nsISupports {
+declare interface nsIStandaloneNativeMenuType extends nsISupports {
     /**
      * Initialize the native menu using given XUL DOM element.
      *
@@ -44888,13 +44888,13 @@ export interface nsIStandaloneNativeMenuType extends nsISupports {
  * It supports initialization from a relative path and provides
  * some customization on how URLs are normalized.
  */
-export interface nsIStandardURLType extends nsISupports {
+declare interface nsIStandardURLType extends nsISupports {
 }
 
 /**
  *
  */
-export interface nsIStandardURLMutatorType extends nsISupports {
+declare interface nsIStandardURLMutatorType extends nsISupports {
     /**
      * Initialize a standard URL.
      *
@@ -44932,7 +44932,7 @@ export interface nsIStandardURLMutatorType extends nsISupports {
 /**
  * NOTE: this interface is completely undesigned, not stable and likely to change
  */
-export interface nsIStartupCacheInfoType extends nsISupports {
+declare interface nsIStartupCacheInfoType extends nsISupports {
     /**
      * Returns true if the startup cache will not load from the cache from disk.
      * This can happen if the cache file is corrupt or has been invalidated.
@@ -44967,7 +44967,7 @@ export interface nsIStartupCacheInfoType extends nsISupports {
  * StorageActivityService methods in order to inform this service about
  * 'writing' operations executed by origins.
  */
-export interface nsIStorageActivityServiceType extends nsISupports {
+declare interface nsIStorageActivityServiceType extends nsISupports {
     /**
      *
      */
@@ -44987,7 +44987,7 @@ export interface nsIStorageActivityServiceType extends nsISupports {
  * filled using a single output stream.  One or more independent input streams
  * can be created to read the data from the buffer non-destructively.
  */
-export interface nsIStorageStreamType extends nsISupports {
+declare interface nsIStorageStreamType extends nsISupports {
     /**
      * Initialize the stream, setting up the amount of space that will be
      * allocated for the stream's backing-store.
@@ -45038,7 +45038,7 @@ export interface nsIStorageStreamType extends nsISupports {
  * the current architecture (e.g., sizeof(double) for RISCy CPUs).  malloc(3)
  * satisfies this requirement.
  */
-export interface nsIStreamBufferAccessType extends nsISupports {
+declare interface nsIStreamBufferAccessType extends nsISupports {
     /**
      * Get access to a contiguous, aligned run of bytes in the stream's buffer.
      * Exactly one successful getBuffer call must occur before a putBuffer call
@@ -45141,7 +45141,7 @@ export interface nsIStreamBufferAccessType extends nsISupports {
  * @author Jud Valeski
  * @see nsIStreamConverterService
  */
-export interface nsIStreamConverterType extends nsIStreamListener {
+declare interface nsIStreamConverterType extends nsIStreamListener {
     /**
      * **SYNCRONOUS VERSION**
      * Converts a stream of one type, to a stream of another type.
@@ -45201,7 +45201,7 @@ export interface nsIStreamConverterType extends nsIStreamListener {
  * @author Jud Valeski
  * @see nsIStreamConverter
  */
-export interface nsIStreamConverterServiceType extends nsISupports {
+declare interface nsIStreamConverterServiceType extends nsISupports {
     /**
      * Tests whether conversion between the two specified types is possible.
      * This is cheaper than calling convert()/asyncConvertData(); it is not
@@ -45256,7 +45256,7 @@ export interface nsIStreamConverterServiceType extends nsISupports {
 /**
  * nsIStreamListener
  */
-export interface nsIStreamListenerType extends nsIRequestObserver {
+declare interface nsIStreamListenerType extends nsIRequestObserver {
     /**
      * Called when the next chunk of data (corresponding to the request) may
      * be read without blocking the calling thread.  The onDataAvailable impl
@@ -45282,7 +45282,7 @@ export interface nsIStreamListenerType extends nsIRequestObserver {
  * As data "flows" into a stream listener tee, it is copied to the output stream
  * and then forwarded to the real listener.
  */
-export interface nsIStreamListenerTeeType extends nsIStreamListener {
+declare interface nsIStreamListenerTeeType extends nsIStreamListener {
     /**
      * Initalize the tee.
      *
@@ -45313,7 +45313,7 @@ export interface nsIStreamListenerTeeType extends nsIStreamListener {
 /**
  *
  */
-export interface nsIStreamLoaderObserverType extends nsISupports {
+declare interface nsIStreamLoaderObserverType extends nsISupports {
     /**
      * Called when the entire stream has been loaded.
      *
@@ -45348,7 +45348,7 @@ export interface nsIStreamLoaderObserverType extends nsISupports {
  *
  * XXX define behaviour for sizes >4 GB
  */
-export interface nsIStreamLoaderType extends nsIStreamListener {
+declare interface nsIStreamLoaderType extends nsIStreamListener {
     /**
      * Initialize this stream loader, and start loading the data.
      *
@@ -45380,7 +45380,7 @@ export interface nsIStreamLoaderType extends nsIStreamListener {
  * into a fully asynchronous stream that can be read/written without
  * blocking the main thread.
  */
-export interface nsIStreamTransportServiceType extends nsISupports {
+declare interface nsIStreamTransportServiceType extends nsISupports {
     /**
      * CreateInputTransport
      *
@@ -45403,7 +45403,7 @@ export interface nsIStreamTransportServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIInputAvailableCallbackType extends nsISupports {
+declare interface nsIInputAvailableCallbackType extends nsISupports {
     /**
      *
      */
@@ -45413,7 +45413,7 @@ export interface nsIInputAvailableCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIStringBundleType extends nsISupports {
+declare interface nsIStringBundleType extends nsISupports {
     /**
      *
      */
@@ -45459,7 +45459,7 @@ export interface nsIStringBundleType extends nsISupports {
 /**
  *
  */
-export interface nsIStringBundleServiceType extends nsISupports {
+declare interface nsIStringBundleServiceType extends nsISupports {
     /**
      *
      */
@@ -45500,7 +45500,7 @@ export interface nsIStringBundleServiceType extends nsISupports {
  * Base class for C++-implemented string iterators. JS implementors need not
  * be queryable to it.
  */
-export interface nsIStringEnumeratorBaseType extends nsISupports {
+declare interface nsIStringEnumeratorBaseType extends nsISupports {
     /**
      *
      */
@@ -45510,7 +45510,7 @@ export interface nsIStringEnumeratorBaseType extends nsISupports {
 /**
  *
  */
-export interface nsIStringEnumeratorType extends nsIStringEnumeratorBase {
+declare interface nsIStringEnumeratorType extends nsIStringEnumeratorBase {
     /**
      *
      */
@@ -45524,7 +45524,7 @@ export interface nsIStringEnumeratorType extends nsIStringEnumeratorBase {
 /**
  *
  */
-export interface nsIUTF8StringEnumeratorType extends nsIStringEnumeratorBase {
+declare interface nsIUTF8StringEnumeratorType extends nsIStringEnumeratorBase {
     /**
      *
      */
@@ -45541,7 +45541,7 @@ export interface nsIUTF8StringEnumeratorType extends nsIStringEnumeratorBase {
  * Provides scriptable and specialized C++-only methods for initializing a
  * nsIInputStream implementation with a simple character array.
  */
-export interface nsIStringInputStreamType extends nsIInputStream {
+declare interface nsIStringInputStreamType extends nsIInputStream {
     /**
      * SetData - assign data to the input stream (copied on assignment).
      *
@@ -45617,7 +45617,7 @@ export interface nsIStringInputStreamType extends nsIInputStream {
  * string containing a copy of the container's serialized data, using
  * getDataAsBase64.
  */
-export interface nsIStructuredCloneContainerType extends nsISupports {
+declare interface nsIStructuredCloneContainerType extends nsISupports {
     /**
      * Initialize this structured clone container so it contains a clone of the
      * given jsval.
@@ -45655,7 +45655,7 @@ export interface nsIStructuredCloneContainerType extends nsISupports {
  * Each type is represented by its own interface which is used to create
  * a bare item of that type.
  */
-export interface nsISFVBareItemType extends nsISupports {
+declare interface nsISFVBareItemType extends nsISupports {
     /**
      * Returns value associated with type of bare item.
      * Used to identify type of bare item without querying for interface
@@ -45667,7 +45667,7 @@ export interface nsISFVBareItemType extends nsISupports {
 /**
  *
  */
-export interface nsISFVIntegerType extends nsISFVBareItem {
+declare interface nsISFVIntegerType extends nsISFVBareItem {
     /**
      *
      */
@@ -45677,7 +45677,7 @@ export interface nsISFVIntegerType extends nsISFVBareItem {
 /**
  *
  */
-export interface nsISFVStringType extends nsISFVBareItem {
+declare interface nsISFVStringType extends nsISFVBareItem {
     /**
      *
      */
@@ -45687,7 +45687,7 @@ export interface nsISFVStringType extends nsISFVBareItem {
 /**
  *
  */
-export interface nsISFVBoolType extends nsISFVBareItem {
+declare interface nsISFVBoolType extends nsISFVBareItem {
     /**
      *
      */
@@ -45697,7 +45697,7 @@ export interface nsISFVBoolType extends nsISFVBareItem {
 /**
  *
  */
-export interface nsISFVDecimalType extends nsISFVBareItem {
+declare interface nsISFVDecimalType extends nsISFVBareItem {
     /**
      *
      */
@@ -45707,7 +45707,7 @@ export interface nsISFVDecimalType extends nsISFVBareItem {
 /**
  *
  */
-export interface nsISFVTokenType extends nsISFVBareItem {
+declare interface nsISFVTokenType extends nsISFVBareItem {
     /**
      *
      */
@@ -45717,7 +45717,7 @@ export interface nsISFVTokenType extends nsISFVBareItem {
 /**
  *
  */
-export interface nsISFVByteSeqType extends nsISFVBareItem {
+declare interface nsISFVByteSeqType extends nsISFVBareItem {
     /**
      *
      */
@@ -45728,7 +45728,7 @@ export interface nsISFVByteSeqType extends nsISFVBareItem {
  * nsISFVParams represents parameters, key-value pairs of ACString and nsISFVBareItem,
  * which parametrize Item type header or InnerList type withing List type header.
  */
-export interface nsISFVParamsType extends nsISupports {
+declare interface nsISFVParamsType extends nsISupports {
     /**
      * Return value (nsISFVBareItem) stored for key, if it is present
      *
@@ -45755,7 +45755,7 @@ export interface nsISFVParamsType extends nsISupports {
  * nsISFVParametrizable is implemented for types that
  * can be parametrized with nsISFVParams
  */
-export interface nsISFVParametrizableType extends nsISupports {
+declare interface nsISFVParametrizableType extends nsISupports {
     /**
      *
      */
@@ -45769,13 +45769,13 @@ export interface nsISFVParametrizableType extends nsISupports {
  * nsISFVItem or nsISFVInnerList, both of which are used
  * to create nsISFVList and nsISFVDictionary.
  */
-export interface nsISFVItemOrInnerListType extends nsISFVParametrizable {
+declare interface nsISFVItemOrInnerListType extends nsISFVParametrizable {
 }
 
 /**
  * nsISFVSerialize indicates that object can be serialized into ACString.
  */
-export interface nsISFVSerializeType extends nsISupports {
+declare interface nsISFVSerializeType extends nsISupports {
     /**
      *
      */
@@ -45785,7 +45785,7 @@ export interface nsISFVSerializeType extends nsISupports {
 /**
  * nsISFVItem represents Item structured header value.
  */
-export interface nsISFVItemType extends nsISFVItemOrInnerList {
+declare interface nsISFVItemType extends nsISFVItemOrInnerList {
     /**
      *
      */
@@ -45800,13 +45800,13 @@ export interface nsISFVItemType extends nsISFVItemOrInnerList {
  * nsISFVInnerList can be used as a member of nsISFVList
  * or a member-value of nsISFVDictionary.
  */
-export interface nsISFVInnerListType extends nsISFVItemOrInnerList {
+declare interface nsISFVInnerListType extends nsISFVItemOrInnerList {
 }
 
 /**
  * nsISFVList represents List structured header value.
  */
-export interface nsISFVListType extends nsISFVSerialize {
+declare interface nsISFVListType extends nsISFVSerialize {
     /**
      * In case when header value is split across lines, it's possible
      * this method parses supplied line and merges it with members of existing object.
@@ -45817,7 +45817,7 @@ export interface nsISFVListType extends nsISFVSerialize {
 /**
  * nsISFVDictionary represents nsISFVDictionary structured header value.
  */
-export interface nsISFVDictionaryType extends nsISFVSerialize {
+declare interface nsISFVDictionaryType extends nsISFVSerialize {
     /**
      * Return value (nsISFVItemOrInnerList) stored for key, if it is present.
      * QueryInterface can be used on a value to get more specific type.
@@ -45851,7 +45851,7 @@ export interface nsISFVDictionaryType extends nsISFVSerialize {
  * It exposes functions for creating object from string containing header value,
  * as well as individual components for manual structured header object creation.
  */
-export interface nsISFVServiceType extends nsISupports {
+declare interface nsISFVServiceType extends nsISupports {
     /**
      * Parses provided string into Dictionary header value (nsISFVDictionary).
      *
@@ -45921,7 +45921,7 @@ export interface nsISFVServiceType extends nsISupports {
  * nsIStyleSheetService allows extensions or embeddors to add to the
  * built-in list of user or agent style sheets.
  */
-export interface nsIStyleSheetServiceType extends nsISupports {
+declare interface nsIStyleSheetServiceType extends nsISupports {
     /**
      * Synchronously loads a style sheet from |sheetURI| and adds it to the list
      * of user or agent style sheets.
@@ -45968,7 +45968,7 @@ export interface nsIStyleSheetServiceType extends nsISupports {
  * Protocol handler superinterface for a protocol which performs substitutions
  * from URIs of its scheme to URIs of another scheme.
  */
-export interface nsISubstitutingProtocolHandlerType extends nsIProtocolHandler {
+declare interface nsISubstitutingProtocolHandlerType extends nsIProtocolHandler {
     /**
      * Sets the substitution for the root key:
      * resource://root/path ==> baseURI.resolve(path)
@@ -46006,7 +46006,7 @@ export interface nsISubstitutingProtocolHandlerType extends nsIProtocolHandler {
 /**
  * ...
  */
-export interface nsIOutputIteratorType extends nsISupports {
+declare interface nsIOutputIteratorType extends nsISupports {
     /**
      * Put |anElementToPut| into the underlying container or sequence at the position currently pointed to by this iterator.
      * The iterator and the underlying container or sequence cooperate to |Release()|
@@ -46027,7 +46027,7 @@ export interface nsIOutputIteratorType extends nsISupports {
 /**
  * ...
  */
-export interface nsIInputIteratorType extends nsISupports {
+declare interface nsIInputIteratorType extends nsISupports {
     /**
      * Retrieve (and |AddRef()|) the element this iterator currently points to.
      *
@@ -46062,7 +46062,7 @@ export interface nsIInputIteratorType extends nsISupports {
 /**
  * ...
  */
-export interface nsIForwardIteratorType extends nsISupports {
+declare interface nsIForwardIteratorType extends nsISupports {
     /**
      * Retrieve (and |AddRef()|) the element this iterator currently points to.
      *
@@ -46108,7 +46108,7 @@ export interface nsIForwardIteratorType extends nsISupports {
 /**
  * ...
  */
-export interface nsIBidirectionalIteratorType extends nsISupports {
+declare interface nsIBidirectionalIteratorType extends nsISupports {
     /**
      * Retrieve (and |AddRef()|) the element this iterator currently points to.
      *
@@ -46158,7 +46158,7 @@ export interface nsIBidirectionalIteratorType extends nsISupports {
 /**
  * ...
  */
-export interface nsIRandomAccessIteratorType extends nsISupports {
+declare interface nsIRandomAccessIteratorType extends nsISupports {
     /**
      * Retrieve (and |AddRef()|) the element this iterator currently points to.
      *
@@ -46251,7 +46251,7 @@ export interface nsIRandomAccessIteratorType extends nsISupports {
  * These first three are pointer types and do data copying
  * using the nsIMemory. Be careful!
  */
-export interface nsISupportsPrimitiveType extends nsISupports {
+declare interface nsISupportsPrimitiveType extends nsISupports {
     /**
      *
      */
@@ -46261,7 +46261,7 @@ export interface nsISupportsPrimitiveType extends nsISupports {
 /**
  * Scriptable storage for nsID structures
  */
-export interface nsISupportsIDType extends nsISupportsPrimitive {
+declare interface nsISupportsIDType extends nsISupportsPrimitive {
     /**
      *
      */
@@ -46275,7 +46275,7 @@ export interface nsISupportsIDType extends nsISupportsPrimitive {
 /**
  * Scriptable storage for ASCII strings
  */
-export interface nsISupportsCStringType extends nsISupportsPrimitive {
+declare interface nsISupportsCStringType extends nsISupportsPrimitive {
     /**
      *
      */
@@ -46289,7 +46289,7 @@ export interface nsISupportsCStringType extends nsISupportsPrimitive {
 /**
  * Scriptable storage for Unicode strings
  */
-export interface nsISupportsStringType extends nsISupportsPrimitive {
+declare interface nsISupportsStringType extends nsISupportsPrimitive {
     /**
      *
      */
@@ -46303,7 +46303,7 @@ export interface nsISupportsStringType extends nsISupportsPrimitive {
 /**
  * Scriptable storage for booleans
  */
-export interface nsISupportsPRBoolType extends nsISupportsPrimitive {
+declare interface nsISupportsPRBoolType extends nsISupportsPrimitive {
     /**
      *
      */
@@ -46317,7 +46317,7 @@ export interface nsISupportsPRBoolType extends nsISupportsPrimitive {
 /**
  * Scriptable storage for 8-bit integers
  */
-export interface nsISupportsPRUint8Type extends nsISupportsPrimitive {
+declare interface nsISupportsPRUint8Type extends nsISupportsPrimitive {
     /**
      *
      */
@@ -46331,7 +46331,7 @@ export interface nsISupportsPRUint8Type extends nsISupportsPrimitive {
 /**
  * Scriptable storage for unsigned 16-bit integers
  */
-export interface nsISupportsPRUint16Type extends nsISupportsPrimitive {
+declare interface nsISupportsPRUint16Type extends nsISupportsPrimitive {
     /**
      *
      */
@@ -46345,7 +46345,7 @@ export interface nsISupportsPRUint16Type extends nsISupportsPrimitive {
 /**
  * Scriptable storage for unsigned 32-bit integers
  */
-export interface nsISupportsPRUint32Type extends nsISupportsPrimitive {
+declare interface nsISupportsPRUint32Type extends nsISupportsPrimitive {
     /**
      *
      */
@@ -46359,7 +46359,7 @@ export interface nsISupportsPRUint32Type extends nsISupportsPrimitive {
 /**
  * Scriptable storage for 64-bit integers
  */
-export interface nsISupportsPRUint64Type extends nsISupportsPrimitive {
+declare interface nsISupportsPRUint64Type extends nsISupportsPrimitive {
     /**
      *
      */
@@ -46373,7 +46373,7 @@ export interface nsISupportsPRUint64Type extends nsISupportsPrimitive {
 /**
  * Scriptable storage for NSPR date/time values
  */
-export interface nsISupportsPRTimeType extends nsISupportsPrimitive {
+declare interface nsISupportsPRTimeType extends nsISupportsPrimitive {
     /**
      *
      */
@@ -46388,7 +46388,7 @@ export interface nsISupportsPRTimeType extends nsISupportsPrimitive {
  * Scriptable storage for single character values
  * (often used to store an ASCII character)
  */
-export interface nsISupportsCharType extends nsISupportsPrimitive {
+declare interface nsISupportsCharType extends nsISupportsPrimitive {
     /**
      *
      */
@@ -46402,7 +46402,7 @@ export interface nsISupportsCharType extends nsISupportsPrimitive {
 /**
  * Scriptable storage for 16-bit integers
  */
-export interface nsISupportsPRInt16Type extends nsISupportsPrimitive {
+declare interface nsISupportsPRInt16Type extends nsISupportsPrimitive {
     /**
      *
      */
@@ -46416,7 +46416,7 @@ export interface nsISupportsPRInt16Type extends nsISupportsPrimitive {
 /**
  * Scriptable storage for 32-bit integers
  */
-export interface nsISupportsPRInt32Type extends nsISupportsPrimitive {
+declare interface nsISupportsPRInt32Type extends nsISupportsPrimitive {
     /**
      *
      */
@@ -46430,7 +46430,7 @@ export interface nsISupportsPRInt32Type extends nsISupportsPrimitive {
 /**
  * Scriptable storage for 64-bit integers
  */
-export interface nsISupportsPRInt64Type extends nsISupportsPrimitive {
+declare interface nsISupportsPRInt64Type extends nsISupportsPrimitive {
     /**
      *
      */
@@ -46444,7 +46444,7 @@ export interface nsISupportsPRInt64Type extends nsISupportsPrimitive {
 /**
  * Scriptable storage for floating point numbers
  */
-export interface nsISupportsFloatType extends nsISupportsPrimitive {
+declare interface nsISupportsFloatType extends nsISupportsPrimitive {
     /**
      *
      */
@@ -46458,7 +46458,7 @@ export interface nsISupportsFloatType extends nsISupportsPrimitive {
 /**
  * Scriptable storage for doubles
  */
-export interface nsISupportsDoubleType extends nsISupportsPrimitive {
+declare interface nsISupportsDoubleType extends nsISupportsPrimitive {
     /**
      *
      */
@@ -46472,7 +46472,7 @@ export interface nsISupportsDoubleType extends nsISupportsPrimitive {
 /**
  * Scriptable storage for other XPCOM objects
  */
-export interface nsISupportsInterfacePointerType extends nsISupportsPrimitive {
+declare interface nsISupportsInterfacePointerType extends nsISupportsPrimitive {
     /**
      *
      */
@@ -46498,7 +46498,7 @@ export interface nsISupportsInterfacePointerType extends nsISupportsPrimitive {
  * changing the priority of an object may be disallowed (resulting in an
  * exception being thrown) or may simply be ignored.
  */
-export interface nsISupportsPriorityType extends nsISupports {
+declare interface nsISupportsPriorityType extends nsISupports {
     /**
      * This attribute may be modified to change the priority of this object.  The
      * implementation of this interface is free to truncate a given priority
@@ -46518,7 +46518,7 @@ export interface nsISupportsPriorityType extends nsISupports {
 /**
  *
  */
-export interface nsISyncStreamListenerType extends nsIStreamListener {
+declare interface nsISyncStreamListenerType extends nsIStreamListener {
     /**
      * Returns an input stream that when read will fetch data delivered to the
      * sync stream listener.  The nsIInputStream implementation will wait for
@@ -46533,7 +46533,7 @@ export interface nsISyncStreamListenerType extends nsIStreamListener {
 /**
  *
  */
-export interface nsISynthVoiceRegistryType extends nsISupports {
+declare interface nsISynthVoiceRegistryType extends nsISupports {
     /**
      * Register a speech synthesis voice.
      *
@@ -46593,7 +46593,7 @@ export interface nsISynthVoiceRegistryType extends nsISupports {
 /**
  *
  */
-export interface nsISystemInfoType extends nsISupports {
+declare interface nsISystemInfoType extends nsISupports {
     /**
      * Asynchronously get info about what types of disks we're using for the
      * profile and binary.
@@ -46625,7 +46625,7 @@ export interface nsISystemInfoType extends nsISupports {
  * either return the proper proxy data from the autoconfig URL specified in the system proxy,
  * or generate proxy data based on the system's manual proxy settings.
  */
-export interface nsISystemProxySettingsType extends nsISupports {
+declare interface nsISystemProxySettingsType extends nsISupports {
     /**
      * Whether or not it is appropriate to execute getProxyForURI off the main thread.
      * If that method can block (e.g. for WPAD as windows does) then it must be
@@ -46650,7 +46650,7 @@ export interface nsISystemProxySettingsType extends nsISupports {
 /**
  * Allow applications to interface with the Mac OS X system status bar.
  */
-export interface nsISystemStatusBarType extends nsISupports {
+declare interface nsISystemStatusBarType extends nsISupports {
     /**
      * Add an item to the system status bar. Each item can only be present once,
      * subsequent addItem calls with the same element will be ignored.
@@ -46678,7 +46678,7 @@ export interface nsISystemStatusBarType extends nsISupports {
  * Needed to account for multiple possible types that can be provided to
  * the socket callbacks as arguments.
  */
-export interface nsITCPSocketCallbackType extends nsISupports {
+declare interface nsITCPSocketCallbackType extends nsISupports {
     /**
      *
      */
@@ -46708,7 +46708,7 @@ export interface nsITCPSocketCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsITLSServerSocketType extends nsIServerSocket {
+declare interface nsITLSServerSocketType extends nsIServerSocket {
     /**
      * serverCert
      *
@@ -46756,7 +46756,7 @@ export interface nsITLSServerSocketType extends nsIServerSocket {
  * method of the security observer has been called (see
  * |nsITLSServerSecurityObserver| below).
  */
-export interface nsITLSClientStatusType extends nsISupports {
+declare interface nsITLSClientStatusType extends nsISupports {
     /**
      * peerCert
      *
@@ -46802,7 +46802,7 @@ export interface nsITLSClientStatusType extends nsISupports {
  * This interface is available by the time the |onSocketAttached| is called,
  * which is the first time the TLS server consumer is notified of a new client.
  */
-export interface nsITLSServerConnectionInfoType extends nsISupports {
+declare interface nsITLSServerConnectionInfoType extends nsISupports {
     /**
      * setSecurityObserver
      *
@@ -46829,7 +46829,7 @@ export interface nsITLSServerConnectionInfoType extends nsISupports {
 /**
  *
  */
-export interface nsITLSServerSecurityObserverType extends nsISupports {
+declare interface nsITLSServerSecurityObserverType extends nsISupports {
     /**
      * onHandsakeDone
      *
@@ -46845,7 +46845,7 @@ export interface nsITLSServerSecurityObserverType extends nsISupports {
 /**
  *
  */
-export interface nsITLSSocketControlType extends nsISupports {
+declare interface nsITLSSocketControlType extends nsISupports {
     /**
      *
      */
@@ -46986,7 +46986,7 @@ export interface nsITLSSocketControlType extends nsISupports {
 /**
  *
  */
-export interface nsITXTToHTMLConvType extends nsIStreamConverter {
+declare interface nsITXTToHTMLConvType extends nsIStreamConverter {
     /**
      * @param text: Title to set for the HTML document.  Only applicable if
      * preFormatHTML(true) is called.
@@ -47006,7 +47006,7 @@ export interface nsITXTToHTMLConvType extends nsIStreamConverter {
 /**
  *
  */
-export interface nsITableEditorType extends nsISupports {
+declare interface nsITableEditorType extends nsISupports {
     /**
      * insertTableCell() inserts <td> elements before or after a cell element
      * containing first selection range.  I.e., if the cell spans columns and
@@ -47398,7 +47398,7 @@ export interface nsITableEditorType extends nsISupports {
 /**
  *
  */
-export interface nsITaggingServiceType extends nsISupports {
+declare interface nsITaggingServiceType extends nsISupports {
     /**
      * Tags a URL with the given set of tags. Current tags set for the URL
      * persist. Tags in aTags which are already set for the given URL are
@@ -47436,7 +47436,7 @@ export interface nsITaggingServiceType extends nsISupports {
  * Starting in Windows 7, applications can display an overlay on the icon in
  * the taskbar. This class wraps around the native functionality to do this.
  */
-export interface nsITaskbarOverlayIconControllerType extends nsISupports {
+declare interface nsITaskbarOverlayIconControllerType extends nsISupports {
     /**
      * Sets the overlay icon and its corresponding alt text.
      *
@@ -47465,7 +47465,7 @@ export interface nsITaskbarOverlayIconControllerType extends nsISupports {
  * Common interface for both window and tab taskbar previews. This interface
  * cannot be instantiated directly.
  */
-export interface nsITaskbarPreviewType extends nsISupports {
+declare interface nsITaskbarPreviewType extends nsISupports {
     /**
      * The controller for this preview. A controller is required to provide
      * the behavior and appearance of the taskbar previews. It is responsible for
@@ -47516,7 +47516,7 @@ export interface nsITaskbarPreviewType extends nsISupports {
  *
  * Provides access to a window preview's toolbar button's properties.
  */
-export interface nsITaskbarPreviewButtonType extends nsISupports {
+declare interface nsITaskbarPreviewButtonType extends nsISupports {
     /**
      * The button's tooltip.
      *
@@ -47562,7 +47562,7 @@ export interface nsITaskbarPreviewButtonType extends nsISupports {
  * Provides an interface for async image result callbacks. See
  * nsITaskbarPreviewController request apis below.
  */
-export interface nsITaskbarPreviewCallbackType extends nsISupports {
+declare interface nsITaskbarPreviewCallbackType extends nsISupports {
     /**
      *
      */
@@ -47578,7 +47578,7 @@ export interface nsITaskbarPreviewCallbackType extends nsISupports {
  * the interface the controller is attached to, only certain methods/attributes
  * are required to be implemented.
  */
-export interface nsITaskbarPreviewControllerType extends nsISupports {
+declare interface nsITaskbarPreviewControllerType extends nsISupports {
     /**
      * The width of the preview image. This value is allowed to change at any
      * time. See requestPreview for more information.
@@ -47642,7 +47642,7 @@ export interface nsITaskbarPreviewControllerType extends nsISupports {
  * Starting in Windows 7, applications can display a progress notification in
  * the taskbar. This class wraps around the native functionality to do this.
  */
-export interface nsITaskbarProgressType extends nsISupports {
+declare interface nsITaskbarProgressType extends nsISupports {
     /**
      * Sets the taskbar progress state and value for this window. The currentValue
      * and maxValue parameters are optional and should be supplied when |state|
@@ -47666,7 +47666,7 @@ export interface nsITaskbarProgressType extends nsISupports {
  *
  * An application may have as many tab previews per window as memory allows.
  */
-export interface nsITaskbarTabPreviewType extends nsITaskbarPreview {
+declare interface nsITaskbarTabPreviewType extends nsITaskbarPreview {
     /**
      * The title displayed above the thumbnail
      *
@@ -47732,7 +47732,7 @@ export interface nsITaskbarTabPreviewType extends nsITaskbarPreview {
  * Window previews may have a toolbar with up to 7 buttons. See
  * nsITaskbarPreviewButton for more information about button properties.
  */
-export interface nsITaskbarWindowPreviewType extends nsITaskbarPreview {
+declare interface nsITaskbarWindowPreviewType extends nsITaskbarPreview {
     /**
      * Gets the nth button for the preview image. By default, all of the buttons
      * are invisible.
@@ -47754,7 +47754,7 @@ export interface nsITaskbarWindowPreviewType extends nsITaskbarPreview {
 /**
  *
  */
-export interface nsIFetchTelemetryDataCallbackType extends nsISupports {
+declare interface nsIFetchTelemetryDataCallbackType extends nsISupports {
     /**
      *
      */
@@ -47764,7 +47764,7 @@ export interface nsIFetchTelemetryDataCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsITelemetryType extends nsISupports {
+declare interface nsITelemetryType extends nsISupports {
     /**
      * Serializes the histogram labels for categorical hitograms.
      * The returned structure looks like:
@@ -48303,7 +48303,7 @@ export interface nsITelemetryType extends nsISupports {
 /**
  *
  */
-export interface nsITellableStreamType extends nsISupports {
+declare interface nsITellableStreamType extends nsISupports {
     /**
      * tell
      *
@@ -48559,7 +48559,7 @@ export interface nsITellableStreamType extends nsISupports {
  * // This causes inactivating "Shift" state completely.
  * TIP.keyup(leftShift);
  */
-export interface nsITextInputProcessorType extends nsISupports {
+declare interface nsITextInputProcessorType extends nsISupports {
     /**
      * Returns true if this instance was dispatched compositionstart but hasn't
      * dispatched compositionend yet.
@@ -48870,7 +48870,7 @@ export interface nsITextInputProcessorType extends nsISupports {
  * nsITextInputProcessorNotification stores the type of notification to IME and
  * its detail.  See each explanation of attribute for the detail.
  */
-export interface nsITextInputProcessorNotificationType extends nsISupports {
+declare interface nsITextInputProcessorNotificationType extends nsISupports {
     /**
      * type attribute represents what's notified or requested.  Value must be
      * one of following values:
@@ -49043,7 +49043,7 @@ export interface nsITextInputProcessorNotificationType extends nsISupports {
  * notify IME of some other information.  Then, only changing
  * nsITextInputProcessorNotification interface is better for compatibility.
  */
-export interface nsITextInputProcessorCallbackType extends nsISupports {
+declare interface nsITextInputProcessorCallbackType extends nsISupports {
     /**
      * When Gecko notifies IME of something or requests something to IME,
      * this is called.
@@ -49087,7 +49087,7 @@ export interface nsITextInputProcessorCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsITextToSubURIType extends nsISupports {
+declare interface nsITextToSubURIType extends nsISupports {
     /**
      *
      */
@@ -49137,7 +49137,7 @@ export interface nsITextToSubURIType extends nsISupports {
  *
  * See nsIThreadManager for the API used to create and locate threads.
  */
-export interface nsIThreadType extends nsISerialEventTarget {
+declare interface nsIThreadType extends nsISerialEventTarget {
     /**
      * @returns
      * The NSPR thread object corresponding to this nsIThread.
@@ -49312,7 +49312,7 @@ export interface nsIThreadType extends nsISerialEventTarget {
  * The XPCOM thread object implements this interface, which allows a consumer
  * to observe dispatch activity on the thread.
  */
-export interface nsIThreadInternalType extends nsIThread {
+declare interface nsIThreadInternalType extends nsIThread {
     /**
      * Get/set the current thread observer (may be null).  This attribute may be
      * read from any thread, but must only be set on the thread corresponding to
@@ -49366,7 +49366,7 @@ export interface nsIThreadInternalType extends nsIThread {
  * afterProcessNextEvent, then another that inherits the first and adds
  * onDispatchedEvent.
  */
-export interface nsIThreadObserverType extends nsISupports {
+declare interface nsIThreadObserverType extends nsISupports {
     /**
      * This method is called after an event has been dispatched to the thread.
      * This method may be called from any thread.
@@ -49402,7 +49402,7 @@ export interface nsIThreadObserverType extends nsISupports {
 /**
  *
  */
-export interface nsINestedEventLoopConditionType extends nsISupports {
+declare interface nsINestedEventLoopConditionType extends nsISupports {
     /**
      * Returns true if the current nested event loop should stop spinning.
      */
@@ -49412,7 +49412,7 @@ export interface nsINestedEventLoopConditionType extends nsISupports {
 /**
  * An interface for creating and locating nsIThread instances.
  */
-export interface nsIThreadManagerType extends nsISupports {
+declare interface nsIThreadManagerType extends nsISupports {
     /**
      * Create a new thread (a global, user PRThread) with the specified name.
      *
@@ -49496,7 +49496,7 @@ export interface nsIThreadManagerType extends nsISupports {
 /**
  *
  */
-export interface nsIThreadPoolListenerType extends nsISupports {
+declare interface nsIThreadPoolListenerType extends nsISupports {
     /**
      * Called when a new thread is created by the thread pool. The notification
      * happens on the newly-created thread.
@@ -49514,7 +49514,7 @@ export interface nsIThreadPoolListenerType extends nsISupports {
  * anonymous (unnamed) worker threads.  An event dispatched to the thread pool
  * will be run on the next available worker thread.
  */
-export interface nsIThreadPoolType extends nsIEventTarget {
+declare interface nsIThreadPoolType extends nsIEventTarget {
     /**
      * Shutdown the thread pool.  This method may not be executed from any thread
      * in the thread pool.  Instead, it is meant to be executed from another
@@ -49589,7 +49589,7 @@ export interface nsIThreadPoolType extends nsIEventTarget {
  * Should be implemented by requests that support retargeting delivery of
  * data off the main thread.
  */
-export interface nsIThreadRetargetableRequestType extends nsISupports {
+declare interface nsIThreadRetargetableRequestType extends nsISupports {
     /**
      * Called to retarget delivery of OnDataAvailable to another thread. Should
      * only be called before AsyncOpen for nsIWebsocketChannels, or during
@@ -49620,7 +49620,7 @@ export interface nsIThreadRetargetableRequestType extends nsISupports {
  * To be used by classes which implement nsIStreamListener and whose
  * OnDataAvailable callback may be retargeted for delivery off the main thread.
  */
-export interface nsIThreadRetargetableStreamListenerType extends nsISupports {
+declare interface nsIThreadRetargetableStreamListenerType extends nsISupports {
     /**
      * Checks this listener and any next listeners it may have to verify that
      * they can receive OnDataAvailable off the main thread. It is the
@@ -49643,7 +49643,7 @@ export interface nsIThreadRetargetableStreamListenerType extends nsISupports {
  * may generally only be used on the thread which called
  * `nsIThread::beginShutdown`.
  */
-export interface nsIThreadShutdownType extends nsISupports {
+declare interface nsIThreadShutdownType extends nsISupports {
     /**
      * Register a runnable to be executed when the thread has completed shutdown,
      * or shutdown has been cancelled due to `stopWaitingAndLeakThread()`.
@@ -49685,7 +49685,7 @@ export interface nsIThreadShutdownType extends nsISupports {
  * An instance of this interface can be used to throttle the uploads
  * of a group of associated channels.
  */
-export interface nsIInputChannelThrottleQueueType extends nsISupports {
+declare interface nsIInputChannelThrottleQueueType extends nsISupports {
     /**
      * Initialize this object with the mean and maximum bytes per
      * second that will be allowed.  Neither value may be zero, and
@@ -49743,7 +49743,7 @@ export interface nsIInputChannelThrottleQueueType extends nsISupports {
  * nsIInputChannelThrottleQueue to limit how much data is sent during
  * a given time slice.
  */
-export interface nsIThrottledInputChannelType extends nsISupports {
+declare interface nsIThrottledInputChannelType extends nsISupports {
     /**
      * The queue that manages this channel.  Multiple channels can
      * share a single queue.  A null value means that no throttling
@@ -49755,7 +49755,7 @@ export interface nsIThrottledInputChannelType extends nsISupports {
 /**
  *
  */
-export interface nsIServerTimingType extends nsISupports {
+declare interface nsIServerTimingType extends nsISupports {
     /**
      *
      */
@@ -49773,7 +49773,7 @@ export interface nsIServerTimingType extends nsISupports {
 /**
  *
  */
-export interface nsITimedChannelType extends nsISupports {
+declare interface nsITimedChannelType extends nsISupports {
     /**
      *
      */
@@ -49995,7 +49995,7 @@ export interface nsITimedChannelType extends nsISupports {
 /**
  *
  */
-export interface nsITimerCallbackType extends nsISupports {
+declare interface nsITimerCallbackType extends nsISupports {
     /**
      * @param aTimer the timer which has expired
      */
@@ -50015,7 +50015,7 @@ export interface nsITimerCallbackType extends nsISupports {
  * target thread, or races may occur with bad results like timers firing after
  * they've been canceled, and/or not firing after re-initiatization.
  */
-export interface nsITimerType extends nsISupports {
+declare interface nsITimerType extends nsISupports {
     /**
      * Initialize a timer that will fire after the said delay.
      * A user must keep a reference to this timer till it is
@@ -50122,7 +50122,7 @@ export interface nsITimerType extends nsISupports {
 /**
  *
  */
-export interface nsITlsHandshakeCallbackListenerType extends nsISupports {
+declare interface nsITlsHandshakeCallbackListenerType extends nsISupports {
     /**
      *
      */
@@ -50132,7 +50132,7 @@ export interface nsITlsHandshakeCallbackListenerType extends nsISupports {
 /**
  *
  */
-export interface nsITokenDialogsType extends nsISupports {
+declare interface nsITokenDialogsType extends nsISupports {
     /**
      * Displays notification dialog to the user that they are expected to
      * authenticate to the token using its "protected authentication path" feature.
@@ -50144,7 +50144,7 @@ export interface nsITokenDialogsType extends nsISupports {
  * This is the interface for setting and changing password
  * on a PKCS11 token.
  */
-export interface nsITokenPasswordDialogsType extends nsISupports {
+declare interface nsITokenPasswordDialogsType extends nsISupports {
     /**
      * Brings up a dialog to set the password on a token.
      *
@@ -50158,7 +50158,7 @@ export interface nsITokenPasswordDialogsType extends nsISupports {
 /**
  *
  */
-export interface nsIToolkitChromeRegistryType extends nsIXULChromeRegistry {
+declare interface nsIToolkitChromeRegistryType extends nsIXULChromeRegistry {
     /**
      * Get a list of locales available for the specified package.
      */
@@ -50169,7 +50169,7 @@ export interface nsIToolkitChromeRegistryType extends nsIXULChromeRegistry {
  * Hold on to a profile lock. Once you release the last reference to this
  * interface, the profile lock is released.
  */
-export interface nsIProfileLockType extends nsISupports {
+declare interface nsIProfileLockType extends nsISupports {
     /**
      * The main profile directory.
      */
@@ -50198,7 +50198,7 @@ export interface nsIProfileLockType extends nsISupports {
  * @note THIS INTERFACE SHOULD BE IMPLEMENTED BY THE TOOLKIT CODE ONLY! DON'T
  * EVEN THINK ABOUT IMPLEMENTING THIS IN JAVASCRIPT!
  */
-export interface nsIToolkitProfileType extends nsISupports {
+declare interface nsIToolkitProfileType extends nsISupports {
     /**
      * The location of the profile directory.
      */
@@ -50246,7 +50246,7 @@ export interface nsIToolkitProfileType extends nsISupports {
 /**
  *
  */
-export interface nsIToolkitProfileServiceType extends nsISupports {
+declare interface nsIToolkitProfileServiceType extends nsISupports {
     /**
      * Tests whether the profile lists on disk have changed since they were
      * loaded. When this is true attempts to flush changes to disk will fail.
@@ -50346,7 +50346,7 @@ export interface nsIToolkitProfileServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIToolkitShellServiceType extends nsISupports {
+declare interface nsIToolkitShellServiceType extends nsISupports {
     /**
      * Determines whether or not this application is the default for the operating
      * system. It is up to the application to determine how to answer this
@@ -50365,7 +50365,7 @@ export interface nsIToolkitShellServiceType extends nsISupports {
  *
  * @see nsITooltipTextProvider
  */
-export interface nsITooltipListenerType extends nsISupports {
+declare interface nsITooltipListenerType extends nsISupports {
     /**
      * Called when a tooltip should be displayed.
      *
@@ -50409,7 +50409,7 @@ export interface nsITooltipListenerType extends nsISupports {
  * @see nsIComponentManager
  * @see Node
  */
-export interface nsITooltipTextProviderType extends nsISupports {
+declare interface nsITooltipTextProviderType extends nsISupports {
     /**
      * Called to obtain the tooltip text for a node.
      *
@@ -50427,7 +50427,7 @@ export interface nsITooltipTextProviderType extends nsISupports {
 /**
  * Back-to-frontend communication for the Touch Bar
  */
-export interface nsITouchBarHelperType extends nsISupports {
+declare interface nsITouchBarHelperType extends nsISupports {
     /**
      * Returns the active browser's URL.
      */
@@ -50465,7 +50465,7 @@ export interface nsITouchBarHelperType extends nsISupports {
 /**
  *
  */
-export interface nsITouchBarInputCallbackType extends nsISupports {
+declare interface nsITouchBarInputCallbackType extends nsISupports {
     /**
      *
      */
@@ -50475,7 +50475,7 @@ export interface nsITouchBarInputCallbackType extends nsISupports {
 /**
  * Implements an input to be registered on the Mac Touch Bar.
  */
-export interface nsITouchBarInputType extends nsISupports {
+declare interface nsITouchBarInputType extends nsISupports {
     /**
      *
      */
@@ -50533,7 +50533,7 @@ export interface nsITouchBarInputType extends nsISupports {
 /**
  * Front-to-backend communication to keep Touch Bar updated
  */
-export interface nsITouchBarUpdaterType extends nsISupports {
+declare interface nsITouchBarUpdaterType extends nsISupports {
     /**
      * Updates an array of nsITouchBarInputs in the specified window.
      */
@@ -50562,7 +50562,7 @@ export interface nsITouchBarUpdaterType extends nsISupports {
  * A channel implementing this interface allows one to intercept its data by
  * inserting intermediate stream listeners.
  */
-export interface nsITraceableChannelType extends nsISupports {
+declare interface nsITraceableChannelType extends nsISupports {
     /**
      * Replace the channel's listener with a new one, and return the listener
      * the channel used to have. The new listener intercepts OnStartRequest,
@@ -50588,7 +50588,7 @@ export interface nsITraceableChannelType extends nsISupports {
 /**
  *
  */
-export interface nsITrackingDBServiceType extends nsISupports {
+declare interface nsITrackingDBServiceType extends nsISupports {
     /**
      * Record entries from a content blocking log in the tracking database.
      * This function is typically called at the end of the document lifecycle,
@@ -50635,7 +50635,7 @@ export interface nsITrackingDBServiceType extends nsISupports {
  * This interface is implemented by an object that needs to
  * execute some behavior that must be tracked by the transaction manager.
  */
-export interface nsITransactionType extends nsISupports {
+declare interface nsITransactionType extends nsISupports {
     /**
      * Executes the transaction.
      */
@@ -50691,7 +50691,7 @@ export interface nsITransactionType extends nsISupports {
  * This interface is implemented by an object that wants to
  * manage/track transactions.
  */
-export interface nsITransactionManagerType extends nsISupports {
+declare interface nsITransactionManagerType extends nsISupports {
     /**
      * Calls a transaction's doTransaction() method, then pushes it on the
      * undo stack.
@@ -50794,7 +50794,7 @@ export interface nsITransactionManagerType extends nsISupports {
 /**
  *
  */
-export interface nsITransferType extends nsIWebProgressListener2 {
+declare interface nsITransferType extends nsIWebProgressListener2 {
     /**
      * Initializes the transfer with certain properties.  This function must
      * be called prior to accessing any properties on this interface.
@@ -50884,7 +50884,7 @@ export interface nsITransferType extends nsIWebProgressListener2 {
 /**
  *
  */
-export interface nsIFlavorDataProviderType extends nsISupports {
+declare interface nsIFlavorDataProviderType extends nsISupports {
     /**
      * Retrieve the data from this data provider.
      *
@@ -50898,7 +50898,7 @@ export interface nsIFlavorDataProviderType extends nsISupports {
 /**
  *
  */
-export interface nsITransferableType extends nsISupports {
+declare interface nsITransferableType extends nsISupports {
     /**
      * Initializes a transferable object.  This should be called on all
      * transferable objects.  Failure to do so will result in fatal assertions in
@@ -51001,7 +51001,7 @@ export interface nsITransferableType extends nsISupports {
  * socket transport, these events can include status about the connection.
  * See nsISocketTransport for more info about socket transport specifics.
  */
-export interface nsITransportType extends nsISupports {
+declare interface nsITransportType extends nsISupports {
     /**
      * Open an input stream on this transport.
      *
@@ -51089,7 +51089,7 @@ export interface nsITransportType extends nsISupports {
 /**
  *
  */
-export interface nsITransportEventSinkType extends nsISupports {
+declare interface nsITransportEventSinkType extends nsISupports {
     /**
      * Transport status notification.
      *
@@ -51112,7 +51112,7 @@ export interface nsITransportEventSinkType extends nsISupports {
  * An interface which can be used to asynchronously request a nsITransport
  * together with the input and output streams that go together with it.
  */
-export interface nsITransportProviderType extends nsISupports {
+declare interface nsITransportProviderType extends nsISupports {
     /**
      *
      */
@@ -51126,7 +51126,7 @@ export interface nsITransportProviderType extends nsISupports {
 /**
  *
  */
-export interface nsITransportSecurityInfoType extends nsISupports {
+declare interface nsITransportSecurityInfoType extends nsISupports {
     /**
      *
      */
@@ -51234,7 +51234,7 @@ export interface nsITransportSecurityInfoType extends nsISupports {
 /**
  *
  */
-export interface nsITreeSelectionType extends nsISupports {
+declare interface nsITreeSelectionType extends nsISupports {
     /**
      * The tree widget for this selection.
      */
@@ -51324,7 +51324,7 @@ export interface nsITreeSelectionType extends nsISupports {
  * Native treeselections implement it, and we use this to check whether a
  * treeselection is native (and therefore suitable for use by untrusted content).
  */
-export interface nsINativeTreeSelectionType extends nsITreeSelection {
+declare interface nsINativeTreeSelectionType extends nsITreeSelection {
     /**
      *
      */
@@ -51334,7 +51334,7 @@ export interface nsINativeTreeSelectionType extends nsITreeSelection {
 /**
  *
  */
-export interface nsITreeViewType extends nsISupports {
+declare interface nsITreeViewType extends nsISupports {
     /**
      * The total number of rows in the tree (including the offscreen rows).
      */
@@ -51475,7 +51475,7 @@ export interface nsITreeViewType extends nsISupports {
 /**
  * **************************** nsTypeAheadFind *****************************
  */
-export interface nsITypeAheadFindType extends nsISupports {
+declare interface nsITypeAheadFindType extends nsISupports {
     /**
      * **************************** Initializer *****************************
      *
@@ -51561,7 +51561,7 @@ export interface nsITypeAheadFindType extends nsISupports {
  *
  * This should be used only by the WebAuthn browser UI prompts.
  */
-export interface nsIU2FTokenManagerType extends nsISupports {
+declare interface nsIU2FTokenManagerType extends nsISupports {
     /**
      * Resumes the current WebAuthn/U2F transaction if that matches the given
      * transaction ID. This is used only when direct attestation was requested
@@ -51605,7 +51605,7 @@ export interface nsIU2FTokenManagerType extends nsISupports {
  *
  * An interface to a UDP socket that can accept incoming connections.
  */
-export interface nsIUDPSocketType extends nsISupports {
+declare interface nsIUDPSocketType extends nsISupports {
     /**
      * init
      *
@@ -51853,7 +51853,7 @@ export interface nsIUDPSocketType extends nsISupports {
  * nsISocketTransport::GetHost, which returns a string representation of the
  * client's IP address (NOTE: this may be an IPv4 or IPv6 string literal).
  */
-export interface nsIUDPSocketListenerType extends nsISupports {
+declare interface nsIUDPSocketListenerType extends nsISupports {
     /**
      * onPacketReceived
      *
@@ -51886,7 +51886,7 @@ export interface nsIUDPSocketListenerType extends nsISupports {
  *
  * This interface is used to encapsulate an incomming UDP message
  */
-export interface nsIUDPMessageType extends nsISupports {
+declare interface nsIUDPMessageType extends nsISupports {
     /**
      * Address of the source of the message
      */
@@ -51912,7 +51912,7 @@ export interface nsIUDPMessageType extends nsISupports {
 /**
  *
  */
-export interface nsIUDPSocketSyncListenerType extends nsISupports {
+declare interface nsIUDPSocketSyncListenerType extends nsISupports {
     /**
      * onPacketReceived
      *
@@ -51943,7 +51943,7 @@ export interface nsIUDPSocketSyncListenerType extends nsISupports {
 /**
  * Internal interface for callback from chrome process
  */
-export interface nsIUDPSocketInternalType extends nsISupports {
+declare interface nsIUDPSocketInternalType extends nsISupports {
     /**
      *
      */
@@ -51989,7 +51989,7 @@ export interface nsIUDPSocketInternalType extends nsISupports {
  * we will need to add additional checks there for all intermediate IIDs, until
  * ContentPrincipal is fixed to serialize its URIs as nsISupports (bug 662693).
  */
-export interface nsIURIType extends nsISupports {
+declare interface nsIURIType extends nsISupports {
     /**
      * **********************************************************************
      * The URI is broken down into the following principal components:
@@ -52180,7 +52180,7 @@ export interface nsIURIType extends nsISupports {
 /**
  * Callback function for nsIURIClassifier lookups.
  */
-export interface nsIURIClassifierCallbackType extends nsISupports {
+declare interface nsIURIClassifierCallbackType extends nsISupports {
     /**
      * Called by the URI classifier service when it is done checking a URI.
      *
@@ -52204,7 +52204,7 @@ export interface nsIURIClassifierCallbackType extends nsISupports {
  * The URI classifier service checks a URI against lists of phishing
  * and malware sites.
  */
-export interface nsIURIClassifierType extends nsISupports {
+declare interface nsIURIClassifierType extends nsISupports {
     /**
      * Classify a Principal using its URI.
      *
@@ -52257,7 +52257,7 @@ export interface nsIURIClassifierType extends nsISupports {
  * a nsIURIContentListener for each of its content windows with the uri
  * dispatcher service.
  */
-export interface nsIURIContentListenerType extends nsISupports {
+declare interface nsIURIContentListenerType extends nsISupports {
     /**
      * Notifies the content listener to hook up an nsIStreamListener capable of
      * consuming the data stream.
@@ -52355,7 +52355,7 @@ export interface nsIURIContentListenerType extends nsISupports {
 /**
  * Interface indicating what we found/corrected when fixing up a URI
  */
-export interface nsIURIFixupInfoType extends nsISupports {
+declare interface nsIURIFixupInfoType extends nsISupports {
     /**
      * Consumer that asked for fixed up URI.
      */
@@ -52407,7 +52407,7 @@ export interface nsIURIFixupInfoType extends nsISupports {
 /**
  * Interface implemented by objects capable of fixing up strings into URIs
  */
-export interface nsIURIFixupType extends nsISupports {
+declare interface nsIURIFixupType extends nsISupports {
     /**
      * Tries to converts the specified string into a URI, first attempting
      * to correct any errors in the syntax or other vagaries.
@@ -52508,7 +52508,7 @@ export interface nsIURIFixupType extends nsISupports {
  * or helper app. Or it may hand the url off to an OS registered
  * application.
  */
-export interface nsIURILoaderType extends nsISupports {
+declare interface nsIURILoaderType extends nsISupports {
     /**
      * @}
      *
@@ -52593,7 +52593,7 @@ export interface nsIURILoaderType extends nsISupports {
 /**
  *
  */
-export interface nsIURISetSpecType extends nsISupports {
+declare interface nsIURISetSpecType extends nsISupports {
     /**
      * This setter is different from all other setters because it may be used to
      * initialize the object. We define it separately allowing mutator implementors
@@ -52612,7 +52612,7 @@ export interface nsIURISetSpecType extends nsISupports {
  * .setQuery("hello")
  * .finalize();
  */
-export interface nsIURISettersType extends nsIURISetSpec {
+declare interface nsIURISettersType extends nsIURISetSpec {
     /**
      * Setting the scheme outside of a protocol handler implementation is highly
      * discouraged since that will generally lead to incorrect results.
@@ -52670,7 +52670,7 @@ export interface nsIURISettersType extends nsIURISetSpec {
 /**
  *
  */
-export interface nsIURIMutatorType extends nsIURISetters {
+declare interface nsIURIMutatorType extends nsIURISetters {
     /**
      * Initalizes the URI by reading IPC URIParams.
      * See nsIURI.
@@ -52686,7 +52686,7 @@ export interface nsIURIMutatorType extends nsIURISetters {
  * nsIURIWithSpecialOrigin is implemented by URIs need to supply an origin that
  * does not match the spec. This is exclusively used in comm-central's Mailnews module.
  */
-export interface nsIURIWithSpecialOriginType extends nsISupports {
+declare interface nsIURIWithSpecialOriginType extends nsISupports {
     /**
      * Special origin.
      */
@@ -52707,7 +52707,7 @@ export interface nsIURIWithSpecialOriginType extends nsISupports {
  * |
  * filePath
  */
-export interface nsIURLType extends nsIURI {
+declare interface nsIURLType extends nsIURI {
     /**
      * ***********************************************************************
      * The URL path is broken down into the following principal components:
@@ -52800,7 +52800,7 @@ export interface nsIURLType extends nsIURI {
 /**
  *
  */
-export interface nsIURLMutatorType extends nsISupports {
+declare interface nsIURLMutatorType extends nsISupports {
     /**
      *
      */
@@ -52819,7 +52819,7 @@ export interface nsIURLMutatorType extends nsISupports {
  * A service that monitors updates to the anti-tracking URL decoration
  * annotations from remote settings.
  */
-export interface nsIURLDecorationAnnotationsServiceType extends nsISupports {
+declare interface nsIURLDecorationAnnotationsServiceType extends nsISupports {
     /**
      * Ensures that the list is updated and resolves the returned promise when
      * the update is finished.
@@ -52838,7 +52838,7 @@ export interface nsIURLDecorationAnnotationsServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIURLFormatterType extends nsISupports {
+declare interface nsIURLFormatterType extends nsISupports {
     /**
      * formatURL - Formats a string URL
      *
@@ -52871,7 +52871,7 @@ export interface nsIURLFormatterType extends nsISupports {
  * nsIURLParser specifies the interface to an URL parser that attempts to
  * follow the definitions of RFC 2396.
  */
-export interface nsIURLParserType extends nsISupports {
+declare interface nsIURLParserType extends nsISupports {
     /**
      * The string to parse in the following methods may be given as a null
      * terminated string, in which case the length argument should be -1.
@@ -52927,7 +52927,7 @@ export interface nsIURLParserType extends nsISupports {
 /**
  * Observer for query stripping list updates.
  */
-export interface nsIURLQueryStrippingListObserverType extends nsISupports {
+declare interface nsIURLQueryStrippingListObserverType extends nsISupports {
     /**
      * Called by nsIQueryStrippingListService when the list of query stripping
      * changes and when the observer is first registered. Note that the lists
@@ -52947,7 +52947,7 @@ export interface nsIURLQueryStrippingListObserverType extends nsISupports {
  * A service that monitors updates to the query stripping list from sources such
  * as a local pref and remote settings updates.
  */
-export interface nsIURLQueryStrippingListServiceType extends nsISupports {
+declare interface nsIURLQueryStrippingListServiceType extends nsISupports {
     /**
      * Initialize the URL query stripping list service.
      */
@@ -52984,7 +52984,7 @@ export interface nsIURLQueryStrippingListServiceType extends nsISupports {
  * universally unique identifiers, ideally using any platform-native
  * method for generating UUIDs.
  */
-export interface nsIUUIDGeneratorType extends nsISupports {
+declare interface nsIUUIDGeneratorType extends nsISupports {
     /**
      * Obtains a new UUID using appropriate platform-specific methods to
      * obtain a nsID that can be considered to be globally unique.
@@ -53011,7 +53011,7 @@ export interface nsIUUIDGeneratorType extends nsISupports {
  * Abstract UTF-16 input stream
  * @see nsIInputStream
  */
-export interface nsIUnicharInputStreamType extends nsISupports {
+declare interface nsIUnicharInputStreamType extends nsISupports {
     /**
      * Reads into a caller-provided array.
      *
@@ -53061,7 +53061,7 @@ export interface nsIUnicharInputStreamType extends nsISupports {
 /**
  *
  */
-export interface nsIUnicharLineInputStreamType extends nsISupports {
+declare interface nsIUnicharLineInputStreamType extends nsISupports {
     /**
      * Read a single line from the stream, where a line is a
      * possibly zero length sequence of characters terminated by a
@@ -53081,7 +53081,7 @@ export interface nsIUnicharLineInputStreamType extends nsISupports {
 /**
  * An interface that allows writing unicode data.
  */
-export interface nsIUnicharOutputStreamType extends nsISupports {
+declare interface nsIUnicharOutputStreamType extends nsISupports {
     /**
      * Write a single character to the stream. When writing many characters,
      * prefer the string-taking write method.
@@ -53116,7 +53116,7 @@ export interface nsIUnicharOutputStreamType extends nsISupports {
  * be downloaded and applied to a version of this application so that it
  * can be updated.
  */
-export interface nsIUpdatePatchType extends nsISupports {
+declare interface nsIUpdatePatchType extends nsISupports {
     /**
      * The type of this patch:
      * "partial"      A binary difference between two application versions
@@ -53172,7 +53172,7 @@ export interface nsIUpdatePatchType extends nsISupports {
  * that the front end and other application services can use to learn more
  * about what is going on.
  */
-export interface nsIUpdateType extends nsISupports {
+declare interface nsIUpdateType extends nsISupports {
     /**
      * The type of update:
      * "major"  A major new version of the Application
@@ -53295,7 +53295,7 @@ export interface nsIUpdateType extends nsISupports {
 /**
  * An interface describing the result of an update check.
  */
-export interface nsIUpdateCheckResultType extends nsISupports {
+declare interface nsIUpdateCheckResultType extends nsISupports {
     /**
      * True if update checks are allowed. otherwise false.
      */
@@ -53316,7 +53316,7 @@ export interface nsIUpdateCheckResultType extends nsISupports {
  * An interface describing an update check that may still be in-progress or may
  * be completed.
  */
-export interface nsIUpdateCheckType extends nsISupports {
+declare interface nsIUpdateCheckType extends nsISupports {
     /**
      * An id that represents a particular update check. Can be passed to
      * nsIUpdateChecker::stopCheck.
@@ -53340,7 +53340,7 @@ export interface nsIUpdateCheckType extends nsISupports {
  * requests into a single web request, depending on whether the parameters
  * specified for update checking match.
  */
-export interface nsIUpdateCheckerType extends nsISupports {
+declare interface nsIUpdateCheckerType extends nsISupports {
     /**
      * Checks for available updates.
      * @param   checkType
@@ -53404,7 +53404,7 @@ export interface nsIUpdateCheckerType extends nsISupports {
  * background update checks and provides utilities for selecting and
  * downloading update patches.
  */
-export interface nsIApplicationUpdateServiceType extends nsISupports {
+declare interface nsIApplicationUpdateServiceType extends nsISupports {
     /**
      * Checks for available updates in the background using the listener provided
      * by the application update service for background checks.
@@ -53597,7 +53597,7 @@ export interface nsIApplicationUpdateServiceType extends nsISupports {
  * An interface describing a component which handles the job of processing
  * an update after it's been downloaded.
  */
-export interface nsIUpdateProcessorType extends nsISupports {
+declare interface nsIUpdateProcessorType extends nsISupports {
     /**
      * Stages an update while the application is running.
      */
@@ -53630,7 +53630,7 @@ export interface nsIUpdateProcessorType extends nsISupports {
  * informing the user of the need to restart any running instances that have
  * been updated).
  */
-export interface nsIUpdateSyncManagerType extends nsISupports {
+declare interface nsIUpdateSyncManagerType extends nsISupports {
     /**
      * Returns whether another instance of this application is running.
      * @returns true if another instance has the lock open, false if not
@@ -53650,7 +53650,7 @@ export interface nsIUpdateSyncManagerType extends nsISupports {
  * An interface describing a global application service that maintains a list
  * of updates previously performed as well as the current active update.
  */
-export interface nsIUpdateManagerType extends nsISupports {
+declare interface nsIUpdateManagerType extends nsISupports {
     /**
      * Gets the update at the specified index
      * @param   index
@@ -53714,7 +53714,7 @@ export interface nsIUpdateManagerType extends nsISupports {
  * duration (e.g. 1-7 or more days, weeks or months) timers to be registered
  * and then fired.
  */
-export interface nsIUpdateTimerManagerType extends nsISupports {
+declare interface nsIUpdateTimerManagerType extends nsISupports {
     /**
      * Register an interval with the timer manager. The timer manager
      * periodically checks to see if the interval has expired and if it has
@@ -53764,7 +53764,7 @@ export interface nsIUpdateTimerManagerType extends nsISupports {
  * notion of uploading a data stream.  The upload stream may only be set
  * prior to the invocation of asyncOpen on the channel.
  */
-export interface nsIUploadChannelType extends nsISupports {
+declare interface nsIUploadChannelType extends nsISupports {
     /**
      * Sets a stream to be uploaded by this channel.
      *
@@ -53803,7 +53803,7 @@ export interface nsIUploadChannelType extends nsISupports {
 /**
  *
  */
-export interface nsIUploadChannel2Type extends nsISupports {
+declare interface nsIUploadChannel2Type extends nsISupports {
     /**
      * Sets a stream to be uploaded by this channel with the specified
      * Content-Type and Content-Length header values.
@@ -53845,7 +53845,7 @@ export interface nsIUploadChannel2Type extends nsISupports {
 /**
  *
  */
-export interface nsIUrlClassifierCallbackType extends nsISupports {
+declare interface nsIUrlClassifierCallbackType extends nsISupports {
     /**
      *
      */
@@ -53857,7 +53857,7 @@ export interface nsIUrlClassifierCallbackType extends nsISupports {
  * clients streaming updates to the url-classifier (usually
  * nsUrlClassifierStreamUpdater.
  */
-export interface nsIUrlClassifierUpdateObserverType extends nsISupports {
+declare interface nsIUrlClassifierUpdateObserverType extends nsISupports {
     /**
      * The update requested a new URL whose contents should be downloaded
      * and sent to the classifier as a new stream.
@@ -53893,7 +53893,7 @@ export interface nsIUrlClassifierUpdateObserverType extends nsISupports {
  * It provides async methods for querying and updating the database.  As the
  * methods complete, they call the callback function.
  */
-export interface nsIUrlClassifierDBServiceType extends nsISupports {
+declare interface nsIUrlClassifierDBServiceType extends nsISupports {
     /**
      * Looks up a URI in the specified tables.
      *
@@ -53999,7 +53999,7 @@ export interface nsIUrlClassifierDBServiceType extends nsISupports {
  * lookup to provide a set of possible results, which the main thread
  * may need to expand using an nsIUrlClassifierCompleter.
  */
-export interface nsIUrlClassifierLookupCallbackType extends nsISupports {
+declare interface nsIUrlClassifierLookupCallbackType extends nsISupports {
     /**
      * The lookup process is complete.
      *
@@ -54017,7 +54017,7 @@ export interface nsIUrlClassifierLookupCallbackType extends nsISupports {
  * classify completes to provide and handle a set of possible results,
  * which the main thread may need to expand using an nsIURIClassifierCallback.
  */
-export interface nsIUrlClassifierClassifyCallbackType extends nsISupports {
+declare interface nsIUrlClassifierClassifyCallbackType extends nsISupports {
     /**
      * The function is called each time the URL matches a Safe Browsing list
      * The function could be called multiple times if URL matches multiple lists
@@ -54028,7 +54028,7 @@ export interface nsIUrlClassifierClassifyCallbackType extends nsISupports {
 /**
  * Observer for exception list updates.
  */
-export interface nsIUrlClassifierExceptionListObserverType extends nsISupports {
+declare interface nsIUrlClassifierExceptionListObserverType extends nsISupports {
     /**
      * Called by nsIUrlClassifierExceptionListService when the exception list
      * for a designated feature changes and when the observer is first registered.
@@ -54044,7 +54044,7 @@ export interface nsIUrlClassifierExceptionListObserverType extends nsISupports {
  * A service that monitors updates to the exception list of url-classifier
  * feature from sources such as a local pref and remote settings updates.
  */
-export interface nsIUrlClassifierExceptionListServiceType extends nsISupports {
+declare interface nsIUrlClassifierExceptionListServiceType extends nsISupports {
     /**
      * Register a new observer to exception list updates. When the observer is
      * registered it is called immediately once. Afterwards it will be called
@@ -54085,7 +54085,7 @@ export interface nsIUrlClassifierExceptionListServiceType extends nsISupports {
 /**
  * A single URLClassifier feature.
  */
-export interface nsIUrlClassifierFeatureType extends nsISupports {
+declare interface nsIUrlClassifierFeatureType extends nsISupports {
     /**
      * The feature name
      */
@@ -54131,7 +54131,7 @@ export interface nsIUrlClassifierFeatureType extends nsISupports {
  * The result of the classifier operation is this interface.
  * See asyncClassifyLocalWithFeatures() in nsIURIClassifier.idl.
  */
-export interface nsIUrlClassifierFeatureResultType extends nsISupports {
+declare interface nsIUrlClassifierFeatureResultType extends nsISupports {
     /**
      *
      */
@@ -54150,7 +54150,7 @@ export interface nsIUrlClassifierFeatureResultType extends nsISupports {
  * Callback function for nsIURIClassifier lookups.
  * See asyncClassifyLocalWithFeatures() in nsIURIClassifier.idl.
  */
-export interface nsIUrlClassifierFeatureCallbackType extends nsISupports {
+declare interface nsIUrlClassifierFeatureCallbackType extends nsISupports {
     /**
      * Called by the URI classifier service when it is done checking a URI.
      *
@@ -54168,7 +54168,7 @@ export interface nsIUrlClassifierFeatureCallbackType extends nsISupports {
  * Reference from:
  * https://developers.google.com/safe-browsing/v4/update-api#http-post-response_2
  */
-export interface nsIFullHashMatchType extends nsISupports {
+declare interface nsIFullHashMatchType extends nsISupports {
     /**
      *
      */
@@ -54186,7 +54186,7 @@ export interface nsIFullHashMatchType extends nsISupports {
 /**
  * This interface is implemented by nsIUrlClassifierHashCompleter clients.
  */
-export interface nsIUrlClassifierHashCompleterCallbackType extends nsISupports {
+declare interface nsIUrlClassifierHashCompleterCallbackType extends nsISupports {
     /**
      * A complete hash has been found that matches the partial hash.
      * This method may be called 0-n times for a given
@@ -54234,7 +54234,7 @@ export interface nsIUrlClassifierHashCompleterCallbackType extends nsISupports {
  * This is only ever used for testing and should absolutely be deleted (I
  * think).
  */
-export interface nsIUrlClassifierHashCompleterType extends nsISupports {
+declare interface nsIUrlClassifierHashCompleterType extends nsISupports {
     /**
      * Request a completed hash from the given gethash url.
      *
@@ -54253,7 +54253,7 @@ export interface nsIUrlClassifierHashCompleterType extends nsISupports {
 /**
  * nsIUrlClassifierPositiveCacheEntry Represents a positive cache entry.
  */
-export interface nsIUrlClassifierPositiveCacheEntryType extends nsISupports {
+declare interface nsIUrlClassifierPositiveCacheEntryType extends nsISupports {
     /**
      * Fullhash for the positive cache entry.
      */
@@ -54268,7 +54268,7 @@ export interface nsIUrlClassifierPositiveCacheEntryType extends nsISupports {
  * nsIUrlClassifierCacheEntry contains cache information for
  * a given prefix.
  */
-export interface nsIUrlClassifierCacheEntryType extends nsISupports {
+declare interface nsIUrlClassifierCacheEntryType extends nsISupports {
     /**
      * Prefix for this cache entry.
      */
@@ -54287,7 +54287,7 @@ export interface nsIUrlClassifierCacheEntryType extends nsISupports {
 /**
  * Cache information for a given table.
  */
-export interface nsIUrlClassifierCacheInfoType extends nsISupports {
+declare interface nsIUrlClassifierCacheInfoType extends nsISupports {
     /**
      * Table name.
      */
@@ -54301,7 +54301,7 @@ export interface nsIUrlClassifierCacheInfoType extends nsISupports {
 /**
  *
  */
-export interface nsIUrlClassifierGetCacheCallbackType extends nsISupports {
+declare interface nsIUrlClassifierGetCacheCallbackType extends nsISupports {
     /**
      *
      */
@@ -54311,7 +54311,7 @@ export interface nsIUrlClassifierGetCacheCallbackType extends nsISupports {
 /**
  * Interface to query url-classifier information.
  */
-export interface nsIUrlClassifierInfoType extends nsISupports {
+declare interface nsIUrlClassifierInfoType extends nsISupports {
     /**
      * An asynchronous call to return cache information for the table.
      */
@@ -54321,7 +54321,7 @@ export interface nsIUrlClassifierInfoType extends nsISupports {
 /**
  *
  */
-export interface nsIUrlClassifierPrefixSetType extends nsISupports {
+declare interface nsIUrlClassifierPrefixSetType extends nsISupports {
     /**
      *
      */
@@ -54348,7 +54348,7 @@ export interface nsIUrlClassifierPrefixSetType extends nsISupports {
  * A service that serves Safe Browsing list data (V2 protocol) via
  * Remote Settings.
  */
-export interface nsIUrlClassifierRemoteSettingsServiceType extends nsISupports {
+declare interface nsIUrlClassifierRemoteSettingsServiceType extends nsISupports {
     /**
      * Fetch the Safe Browsing list data from the service. The service
      * returns the response data by simulating how the data is sent over a
@@ -54371,7 +54371,7 @@ export interface nsIUrlClassifierRemoteSettingsServiceType extends nsISupports {
  * downloading the whole update and then updating the sqlite database, we
  * update tables as the data is streaming in.
  */
-export interface nsIUrlClassifierStreamUpdaterType extends nsISupports {
+declare interface nsIUrlClassifierStreamUpdaterType extends nsISupports {
     /**
      * Try to download updates from updateUrl. If an update is already in
      * progress, queues the requested update. This is used in nsIUrlListManager
@@ -54393,7 +54393,7 @@ export interface nsIUrlClassifierStreamUpdaterType extends nsISupports {
 /**
  * Interface for parseFindFullHashResponseV4 callback
  */
-export interface nsIUrlClassifierParseFindFullHashCallbackType extends nsISupports {
+declare interface nsIUrlClassifierParseFindFullHashCallbackType extends nsISupports {
     /**
      * Callback when a match is found in full hash response. This callback may be
      * called multiple times when there are more than one matches in response.
@@ -54419,7 +54419,7 @@ export interface nsIUrlClassifierParseFindFullHashCallbackType extends nsISuppor
 /**
  *
  */
-export interface nsIUrlClassifierUtilsType extends nsISupports {
+declare interface nsIUrlClassifierUtilsType extends nsISupports {
     /**
      * Get the lookup string for a given URI.  This normalizes the hostname,
      * url-decodes the string, and strips off the protocol.
@@ -54518,7 +54518,7 @@ export interface nsIUrlClassifierUtilsType extends nsISupports {
 /**
  * Interface for a class that manages updates of the url classifier database.
  */
-export interface nsIUrlListManagerType extends nsISupports {
+declare interface nsIUrlListManagerType extends nsISupports {
     /**
      * Get the gethash url for this table
      */
@@ -54592,7 +54592,7 @@ export interface nsIUrlListManagerType extends nsISupports {
  * for that interval (or longer), and receive an 'active' notification when the
  * user starts using their computer again.
  */
-export interface nsIUserIdleServiceType extends nsISupports {
+declare interface nsIUserIdleServiceType extends nsISupports {
     /**
      * The amount of time in milliseconds that has passed
      * since the last user activity.
@@ -54648,7 +54648,7 @@ export interface nsIUserIdleServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIUserIdleServiceInternalType extends nsIUserIdleService {
+declare interface nsIUserIdleServiceInternalType extends nsIUserIdleService {
     /**
      * "Resets the idle time to the value specified."
      *
@@ -54661,7 +54661,7 @@ export interface nsIUserIdleServiceInternalType extends nsIUserIdleService {
 /**
  *
  */
-export interface nsIUtilityProcessTestType extends nsISupports {
+declare interface nsIUtilityProcessTestType extends nsISupports {
     /**
      * ** Test-only Method **
      *
@@ -54689,7 +54689,7 @@ export interface nsIUtilityProcessTestType extends nsISupports {
  * [noscript] since any nsIVariant object will be automatically converted to a
  * JS type anyway.
  */
-export interface nsIVariantType extends nsISupports {
+declare interface nsIVariantType extends nsISupports {
     /**
      *
      */
@@ -54804,7 +54804,7 @@ export interface nsIVariantType extends nsISupports {
  * methods can be expected to fail. Setting the 'writable' attribute may or
  * may not succeed.
  */
-export interface nsIWritableVariantType extends nsIVariant {
+declare interface nsIWritableVariantType extends nsIVariant {
     /**
      *
      */
@@ -54951,7 +54951,7 @@ export interface nsIWritableVariantType extends nsIVariant {
  * Although not required by this interface, it is recommended that
  * numbers remain within the limits of a signed char, i.e. -127 to 128.
  */
-export interface nsIVersionComparatorType extends nsISupports {
+declare interface nsIVersionComparatorType extends nsISupports {
     /**
      * Compare two version strings
      * @param   A   The first version
@@ -54966,7 +54966,7 @@ export interface nsIVersionComparatorType extends nsISupports {
 /**
  *
  */
-export interface nsIViewSourceChannelType extends nsIChannel {
+declare interface nsIViewSourceChannelType extends nsIChannel {
     /**
      * The actual (MIME) content type of the data.
      *
@@ -54999,7 +54999,7 @@ export interface nsIViewSourceChannelType extends nsIChannel {
 /**
  *
  */
-export interface nsIWakeLockType extends nsISupports {
+declare interface nsIWakeLockType extends nsISupports {
     /**
      *
      */
@@ -55020,7 +55020,7 @@ export interface nsIWakeLockType extends nsISupports {
  * @see nsWeakReference
  * @see nsWeakPtr
  */
-export interface nsIWeakReferenceType extends nsISupports {
+declare interface nsIWeakReferenceType extends nsISupports {
     /**
      * |QueryReferent| queries the referent, if it exists, and like |QueryInterface|, produces
      * an owning reference to the desired interface.  It is designed to look and act exactly
@@ -55043,7 +55043,7 @@ export interface nsIWeakReferenceType extends nsISupports {
  * @see nsIWeakReference
  * @see nsSupportsWeakReference
  */
-export interface nsISupportsWeakReferenceType extends nsISupports {
+declare interface nsISupportsWeakReferenceType extends nsISupports {
     /**
      * |GetWeakReference| produces an appropriate instance of |nsIWeakReference|.
      * As with all good XPCOM `getters', you own the resulting interface and should
@@ -55063,7 +55063,7 @@ export interface nsISupportsWeakReferenceType extends nsISupports {
  * to register any listeners. The interface may also be used at runtime
  * to obtain the content DOM window and from that the rest of the DOM.
  */
-export interface nsIWebBrowserType extends nsISupports {
+declare interface nsIWebBrowserType extends nsISupports {
     /**
      * The chrome object associated with the browser instance. The embedder
      * must create one chrome object for _each_ browser object
@@ -55118,7 +55118,7 @@ export interface nsIWebBrowserType extends nsISupports {
  * nsIWebBrowserChrome corresponds to the top-level, outermost window
  * containing an embedded Gecko web browser.
  */
-export interface nsIWebBrowserChromeType extends nsISupports {
+declare interface nsIWebBrowserChromeType extends nsISupports {
     /**
      * Called when the link hover status is being changed.
      * @param status status string. empty string is an acceptable value
@@ -55147,7 +55147,7 @@ export interface nsIWebBrowserChromeType extends nsISupports {
  * nsIEmbeddingSiteWindow. It represents the focus up-calls from mozilla
  * to the embedding chrome. See mozilla bug #70224 for gratuitous info.
  */
-export interface nsIWebBrowserChromeFocusType extends nsISupports {
+declare interface nsIWebBrowserChromeFocusType extends nsISupports {
     /**
      * Set the focus at the next focusable element in the chrome. If
      * aForDocumentNavigation is true, this was a document navigation, so
@@ -55173,7 +55173,7 @@ export interface nsIWebBrowserChromeFocusType extends nsISupports {
  * behaviour, and to explicitly set the frame to search,
  * QueryInterface to nsIWebBrowserFindInFrames.
  */
-export interface nsIWebBrowserFindType extends nsISupports {
+declare interface nsIWebBrowserFindType extends nsISupports {
     /**
      * findNext
      *
@@ -55244,7 +55244,7 @@ export interface nsIWebBrowserFindType extends nsISupports {
  *
  * Get by doing a QueryInterface from nsIWebBrowserFind.
  */
-export interface nsIWebBrowserFindInFramesType extends nsISupports {
+declare interface nsIWebBrowserFindInFramesType extends nsISupports {
     /**
      * currentSearchFrame
      *
@@ -55283,7 +55283,7 @@ export interface nsIWebBrowserFindInFramesType extends nsISupports {
 /**
  * Interface for persisting DOM documents and URIs to local or remote storage.
  */
-export interface nsIWebBrowserPersistType extends nsICancelable {
+declare interface nsIWebBrowserPersistType extends nsICancelable {
     /**
      * Flags governing how data is fetched and saved from the network.
      * It is best to set this value explicitly unless you are prepared
@@ -55404,7 +55404,7 @@ export interface nsIWebBrowserPersistType extends nsICancelable {
  *
  * @see nsIWebBrowserPersistDocument
  */
-export interface nsIWebBrowserPersistURIMapType extends nsISupports {
+declare interface nsIWebBrowserPersistURIMapType extends nsISupports {
     /**
      * The number of URI mappings.
      */
@@ -55428,7 +55428,7 @@ export interface nsIWebBrowserPersistURIMapType extends nsISupports {
  * changes made to the underlying document; most of these are
  * self-explanatory from their names and types.
  */
-export interface nsIWebBrowserPersistDocumentType extends nsISupports {
+declare interface nsIWebBrowserPersistDocumentType extends nsISupports {
     /**
      *
      */
@@ -55535,7 +55535,7 @@ export interface nsIWebBrowserPersistDocumentType extends nsISupports {
  * nsIWebBrowserPersistDocument and which are needed to render the
  * document.
  */
-export interface nsIWebBrowserPersistResourceVisitorType extends nsISupports {
+declare interface nsIWebBrowserPersistResourceVisitorType extends nsISupports {
     /**
      * Indicates a resource that is not a document; e.g., an image, script,
      * or stylesheet.
@@ -55573,7 +55573,7 @@ export interface nsIWebBrowserPersistResourceVisitorType extends nsISupports {
  * Asynchronous callback for when nsIWebBrowserPersistDocument is finished
  * serializing the document's DOM.
  */
-export interface nsIWebBrowserPersistWriteCompletionType extends nsISupports {
+declare interface nsIWebBrowserPersistWriteCompletionType extends nsISupports {
     /**
      * Indicates that serialization is finished.
      *
@@ -55601,7 +55601,7 @@ export interface nsIWebBrowserPersistWriteCompletionType extends nsISupports {
  *
  * @see WebBrowserPersistable in FrameLoader.webidl.
  */
-export interface nsIWebBrowserPersistDocumentReceiverType extends nsISupports {
+declare interface nsIWebBrowserPersistDocumentReceiverType extends nsISupports {
     /**
      *
      */
@@ -55616,7 +55616,7 @@ export interface nsIWebBrowserPersistDocumentReceiverType extends nsISupports {
  * nsIWebBrowserPrint corresponds to the main interface
  * for printing an embedded Gecko web browser window/document
  */
-export interface nsIWebBrowserPrintType extends nsISupports {
+declare interface nsIWebBrowserPrintType extends nsISupports {
     /**
      * Returns whether it is in Print mode
      */
@@ -55696,7 +55696,7 @@ export interface nsIWebBrowserPrintType extends nsISupports {
  * in RemoteWebNavigation, so if this interface changes, the implementation
  * there may also need to change.
  */
-export interface nsIWebNavigationType extends nsISupports {
+declare interface nsIWebNavigationType extends nsISupports {
     /**
      * Indicates if the object can go back.  If true this indicates that
      * there is back session history available for navigation.
@@ -55835,7 +55835,7 @@ export interface nsIWebNavigationType extends nsISupports {
  * The nsIWebNavigationInfo interface exposes a way to get information
  * on the capabilities of Gecko webnavigation objects.
  */
-export interface nsIWebNavigationInfoType extends nsISupports {
+declare interface nsIWebNavigationInfoType extends nsISupports {
     /**
      * Query whether aType is supported.
      * @param aType the MIME type in question.
@@ -55851,7 +55851,7 @@ export interface nsIWebNavigationInfoType extends nsISupports {
  * window to be loaded into another window without refetching it from the
  * network.
  */
-export interface nsIWebPageDescriptorType extends nsISupports {
+declare interface nsIWebPageDescriptorType extends nsISupports {
     /**
      * Tells the object to load the page that otherDocShell is currently loading,
      * or has loaded already, as view source, with the url being `aURL`.
@@ -55883,7 +55883,7 @@ export interface nsIWebPageDescriptorType extends nsISupports {
  * notifications from any nsIWebProgress instances that are children of that
  * nsIWebProgress instance.
  */
-export interface nsIWebProgressType extends nsISupports {
+declare interface nsIWebProgressType extends nsISupports {
     /**
      * Registers a listener to receive web progress events.
      *
@@ -55965,7 +55965,7 @@ export interface nsIWebProgressType extends nsISupports {
  * nsIWebProgress instances.  nsIWebProgress.idl describes the parent-child
  * relationship of nsIWebProgress instances.
  */
-export interface nsIWebProgressListenerType extends nsISupports {
+declare interface nsIWebProgressListenerType extends nsISupports {
     /**
      * Notification indicating the state has changed for one of the requests
      * associated with aWebProgress.
@@ -56092,7 +56092,7 @@ export interface nsIWebProgressListenerType extends nsISupports {
 /**
  * An extended version of nsIWebProgressListener.
  */
-export interface nsIWebProgressListener2Type extends nsIWebProgressListener {
+declare interface nsIWebProgressListener2Type extends nsIWebProgressListener {
     /**
      * Notification that the progress has changed for one of the requests
      * associated with aWebProgress.  Progress totals are reset to zero when all
@@ -56153,7 +56153,7 @@ export interface nsIWebProgressListener2Type extends nsIWebProgressListener {
  * The component must have the contract id defined below so that the Navigator
  * implementation can invoke it.
  */
-export interface nsIWebProtocolHandlerRegistrarType extends nsISupports {
+declare interface nsIWebProtocolHandlerRegistrarType extends nsISupports {
     /**
      * See documentation in Navigator.webidl
      * The additional contentWindow param for this method represents the dom
@@ -56180,7 +56180,7 @@ export interface nsIWebProtocolHandlerRegistrarType extends nsISupports {
  * We are also making it scriptable for now, but this may change once we have
  * WebSockets for Workers.
  */
-export interface nsIWebSocketChannelType extends nsISupports {
+declare interface nsIWebSocketChannelType extends nsISupports {
     /**
      * The original URI used to construct the protocol connection. This is used
      * in the case of a redirect or URI "resolution" (e.g. resolving a
@@ -56334,7 +56334,7 @@ export interface nsIWebSocketChannelType extends nsISupports {
 /**
  *
  */
-export interface nsIWebSocketFrameType extends nsISupports {
+declare interface nsIWebSocketFrameType extends nsISupports {
     /**
      *
      */
@@ -56376,7 +56376,7 @@ export interface nsIWebSocketFrameType extends nsISupports {
 /**
  *
  */
-export interface nsIWebSocketEventListenerType extends nsISupports {
+declare interface nsIWebSocketEventListenerType extends nsISupports {
     /**
      *
      */
@@ -56406,7 +56406,7 @@ export interface nsIWebSocketEventListenerType extends nsISupports {
 /**
  *
  */
-export interface nsIWebSocketEventServiceType extends nsISupports {
+declare interface nsIWebSocketEventServiceType extends nsISupports {
     /**
      *
      */
@@ -56428,7 +56428,7 @@ export interface nsIWebSocketEventServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIWebSocketImplType extends nsISupports {
+declare interface nsIWebSocketImplType extends nsISupports {
     /**
      * Called to send message of type string through web socket
      *
@@ -56441,7 +56441,7 @@ export interface nsIWebSocketImplType extends nsISupports {
  * nsIWebSocketListener: passed to nsIWebSocketChannel::AsyncOpen. Receives
  * websocket traffic events as they arrive.
  */
-export interface nsIWebSocketListenerType extends nsISupports {
+declare interface nsIWebSocketListenerType extends nsISupports {
     /**
      * Called to signify the establishment of the message stream.
      *
@@ -56513,7 +56513,7 @@ export interface nsIWebSocketListenerType extends nsISupports {
 /**
  *
  */
-export interface nsIWebTransportType extends nsISupports {
+declare interface nsIWebTransportType extends nsISupports {
     /**
      *
      */
@@ -56539,7 +56539,7 @@ export interface nsIWebTransportType extends nsISupports {
 /**
  *
  */
-export interface WebTransportSessionEventListenerType extends nsISupports {
+declare interface WebTransportSessionEventListenerType extends nsISupports {
     /**
      *
      */
@@ -56569,7 +56569,7 @@ export interface WebTransportSessionEventListenerType extends nsISupports {
 /**
  *
  */
-export interface nsIWebTransportStreamCallbackType extends nsISupports {
+declare interface nsIWebTransportStreamCallbackType extends nsISupports {
     /**
      *
      */
@@ -56587,7 +56587,7 @@ export interface nsIWebTransportStreamCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIWebTransportSendStreamStatsType extends nsISupports {
+declare interface nsIWebTransportSendStreamStatsType extends nsISupports {
     /**
      *
      */
@@ -56605,7 +56605,7 @@ export interface nsIWebTransportSendStreamStatsType extends nsISupports {
 /**
  *
  */
-export interface nsIWebTransportReceiveStreamStatsType extends nsISupports {
+declare interface nsIWebTransportReceiveStreamStatsType extends nsISupports {
     /**
      *
      */
@@ -56619,7 +56619,7 @@ export interface nsIWebTransportReceiveStreamStatsType extends nsISupports {
 /**
  *
  */
-export interface nsIWebTransportStreamStatsCallbackType extends nsISupports {
+declare interface nsIWebTransportStreamStatsCallbackType extends nsISupports {
     /**
      *
      */
@@ -56633,7 +56633,7 @@ export interface nsIWebTransportStreamStatsCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIWebTransportReceiveStreamType extends nsISupports {
+declare interface nsIWebTransportReceiveStreamType extends nsISupports {
     /**
      *
      */
@@ -56651,7 +56651,7 @@ export interface nsIWebTransportReceiveStreamType extends nsISupports {
 /**
  *
  */
-export interface nsIWebTransportSendStreamType extends nsISupports {
+declare interface nsIWebTransportSendStreamType extends nsISupports {
     /**
      *
      */
@@ -56669,7 +56669,7 @@ export interface nsIWebTransportSendStreamType extends nsISupports {
 /**
  *
  */
-export interface nsIWebTransportBidirectionalStreamType extends nsISupports {
+declare interface nsIWebTransportBidirectionalStreamType extends nsISupports {
     /**
      *
      */
@@ -56691,7 +56691,7 @@ export interface nsIWebTransportBidirectionalStreamType extends nsISupports {
 /**
  * Listener for a JS WebVTT parser (vtt.js).
  */
-export interface nsIWebVTTListenerType extends nsISupports {
+declare interface nsIWebVTTListenerType extends nsISupports {
     /**
      * Is called when the WebVTTParser successfully parses a WebVTT cue.
      *
@@ -56716,7 +56716,7 @@ export interface nsIWebVTTListenerType extends nsISupports {
 /**
  * Interface for a wrapper of a JS WebVTT parser (vtt.js).
  */
-export interface nsIWebVTTParserWrapperType extends nsISupports {
+declare interface nsIWebVTTParserWrapperType extends nsISupports {
     /**
      * Loads the JS WebVTTParser and sets it to use the passed window to create
      * VTTRegions and VTTCues. This function must be called before calling
@@ -56783,7 +56783,7 @@ export interface nsIWebVTTParserWrapperType extends nsISupports {
 /**
  *
  */
-export interface nsIWellKnownOpportunisticUtilsType extends nsISupports {
+declare interface nsIWellKnownOpportunisticUtilsType extends nsISupports {
     /**
      *
      */
@@ -56797,7 +56797,7 @@ export interface nsIWellKnownOpportunisticUtilsType extends nsISupports {
 /**
  *
  */
-export interface nsIWifiAccessPointType extends nsISupports {
+declare interface nsIWifiAccessPointType extends nsISupports {
     /**
      * The mac address of the WiFi node.  The format of this string is:
      * XX-XX-XX-XX-XX-XX
@@ -56826,7 +56826,7 @@ export interface nsIWifiAccessPointType extends nsISupports {
 /**
  *
  */
-export interface nsIWifiListenerType extends nsISupports {
+declare interface nsIWifiListenerType extends nsISupports {
     /**
      * Called when the list of access points changes.
      *
@@ -56846,7 +56846,7 @@ export interface nsIWifiListenerType extends nsISupports {
 /**
  *
  */
-export interface nsIWifiMonitorType extends nsISupports {
+declare interface nsIWifiMonitorType extends nsISupports {
     /**
      * startWatching
      * aListener will be called once, then each time the list of wifi access points change.
@@ -56866,7 +56866,7 @@ export interface nsIWifiMonitorType extends nsISupports {
  * @status UNSTABLE - This interface is not frozen and will probably change in
  * future releases.
  */
-export interface nsIWinAppHelperType extends nsISupports {
+declare interface nsIWinAppHelperType extends nsISupports {
     /**
      *
      */
@@ -56878,7 +56878,7 @@ export interface nsIWinAppHelperType extends nsISupports {
  * Documentation for the underlying APIs can be found at
  * https://docs.microsoft.com/en-us/windows/win32/taskschd/task-scheduler-start-page
  */
-export interface nsIWinTaskSchedulerServiceType extends nsISupports {
+declare interface nsIWinTaskSchedulerServiceType extends nsISupports {
     /**
      * Register (create) a task from an XML definition.
      * The task will be created so that it only runs as the current user
@@ -56981,7 +56981,7 @@ export interface nsIWinTaskSchedulerServiceType extends nsISupports {
  * Applications may also define custom taskbar jump lists on application shortcuts.
  * See nsIJumpListBuilder for more information.
  */
-export interface nsIWinTaskbarType extends nsISupports {
+declare interface nsIWinTaskbarType extends nsISupports {
     /**
      * Returns true if the operating system supports Win7+ taskbar features.
      * This property acts as a replacement for in-place os version checking.
@@ -57095,7 +57095,7 @@ export interface nsIWinTaskbarType extends nsISupports {
 /**
  *
  */
-export interface nsIWindowCreatorType extends nsISupports {
+declare interface nsIWindowCreatorType extends nsISupports {
     /**
      * Create a new window. Gecko will/may call this method, if made
      * available to it, to create new windows.
@@ -57118,7 +57118,7 @@ export interface nsIWindowCreatorType extends nsISupports {
 /**
  *
  */
-export interface nsIWindowMediatorType extends nsISupports {
+declare interface nsIWindowMediatorType extends nsISupports {
     /**
      * Return an enumerator which iterates over all windows of type aWindowType
      * from the oldest window to the youngest.
@@ -57274,7 +57274,7 @@ export interface nsIWindowMediatorType extends nsISupports {
 /**
  *
  */
-export interface nsIWindowMediatorListenerType extends nsISupports {
+declare interface nsIWindowMediatorListenerType extends nsISupports {
     /**
      *
      */
@@ -57293,7 +57293,7 @@ export interface nsIWindowMediatorListenerType extends nsISupports {
  * or the provider does not provide a window, the window watcher will proceed
  * to actually open a new window.
  */
-export interface nsIWindowProviderType extends nsISupports {
+declare interface nsIWindowProviderType extends nsISupports {
     /**
      * A method to request that this provider provide a window.  The window
      * returned need not to have the right name or parent set on it; setting
@@ -57375,7 +57375,7 @@ export interface nsIWindowProviderType extends nsISupports {
  * This component must be initialized at application startup by calling
  * setWindowCreator.
  */
-export interface nsIWindowWatcherType extends nsISupports {
+declare interface nsIWindowWatcherType extends nsISupports {
     /**
      * Create a new window. It will automatically be added to our list
      * (via addWindow()).
@@ -57492,7 +57492,7 @@ export interface nsIWindowWatcherType extends nsISupports {
  * A strong reference to this object must be held until the window is
  * ready to be destroyed.
  */
-export interface nsIWindowlessBrowserType extends nsIWebNavigation {
+declare interface nsIWindowlessBrowserType extends nsIWebNavigation {
     /**
      * "Closes" the windowless browser and destroys its associated nsIWebBrowser
      * and docshell.
@@ -57516,7 +57516,7 @@ export interface nsIWindowlessBrowserType extends nsIWebNavigation {
 /**
  *
  */
-export interface nsIUnknownWindowsTagListenerType extends nsISupports {
+declare interface nsIUnknownWindowsTagListenerType extends nsISupports {
     /**
      * Handle any launch URL associated to the given Windows-specific tag string.
      * Usually, this will navigate to the launch URL in some manner.
@@ -57532,7 +57532,7 @@ export interface nsIUnknownWindowsTagListenerType extends nsISupports {
 /**
  *
  */
-export interface nsIWindowsAlertsServiceType extends nsIAlertsService {
+declare interface nsIWindowsAlertsServiceType extends nsIAlertsService {
     /**
      * If callbacks for the given Windows-specific tag string will be handled by
      * this Firefox process, set the associated event.
@@ -57564,7 +57564,7 @@ export interface nsIWindowsAlertsServiceType extends nsIAlertsService {
 /**
  *
  */
-export interface nsIWindowsPackageManagerType extends nsISupports {
+declare interface nsIWindowsPackageManagerType extends nsISupports {
     /**
      * When running within a Packaged App environment, returns the
      * InstalledDate of the Package. If called when not running within
@@ -57597,7 +57597,7 @@ export interface nsIWindowsPackageManagerType extends nsISupports {
  *
  * This interface is highly Win32 specific.
  */
-export interface nsIWindowsRegKeyType extends nsISupports {
+declare interface nsIWindowsRegKeyType extends nsISupports {
     /**
      * This attribute exposes the native HKEY and is available to provide C++
      * consumers with the flexibility of making other Windows registry API calls
@@ -57832,7 +57832,7 @@ export interface nsIWindowsRegKeyType extends nsISupports {
 /**
  *
  */
-export interface nsIWindowsShellServiceType extends nsISupports {
+declare interface nsIWindowsShellServiceType extends nsISupports {
     /**
      * Creates a new shortcut (.lnk) file. This shortcut will be recorded in
      * a new shortcuts log file located in %PROGRAMDATA%\Mozilla-1de4eec8-1241-4177-a864-e594e8d1fb38
@@ -58001,7 +58001,7 @@ export interface nsIWindowsShellServiceType extends nsISupports {
 /**
  *
  */
-export interface nsIWindowsUIUtilsType extends nsISupports {
+declare interface nsIWindowsUIUtilsType extends nsISupports {
     /**
      *
      */
@@ -58036,7 +58036,7 @@ export interface nsIWindowsUIUtilsType extends nsISupports {
 /**
  *
  */
-export interface nsIWorkerDebuggerListenerType extends nsISupports {
+declare interface nsIWorkerDebuggerListenerType extends nsISupports {
     /**
      *
      */
@@ -58054,7 +58054,7 @@ export interface nsIWorkerDebuggerListenerType extends nsISupports {
 /**
  *
  */
-export interface nsIWorkerDebuggerType extends nsISupports {
+declare interface nsIWorkerDebuggerType extends nsISupports {
     /**
      *
      */
@@ -58120,7 +58120,7 @@ export interface nsIWorkerDebuggerType extends nsISupports {
 /**
  *
  */
-export interface nsIWorkerDebuggerManagerListenerType extends nsISupports {
+declare interface nsIWorkerDebuggerManagerListenerType extends nsISupports {
     /**
      *
      */
@@ -58134,7 +58134,7 @@ export interface nsIWorkerDebuggerManagerListenerType extends nsISupports {
 /**
  *
  */
-export interface nsIWorkerDebuggerManagerType extends nsISupports {
+declare interface nsIWorkerDebuggerManagerType extends nsISupports {
     /**
      *
      */
@@ -58152,7 +58152,7 @@ export interface nsIWorkerDebuggerManagerType extends nsISupports {
 /**
  *
  */
-export interface nsIWritablePropertyBagType extends nsIPropertyBag {
+declare interface nsIWritablePropertyBagType extends nsIPropertyBag {
     /**
      * Set a property with the given name to the given value.  If
      * a property already exists with the given name, it is
@@ -58170,7 +58170,7 @@ export interface nsIWritablePropertyBagType extends nsIPropertyBag {
 /**
  *
  */
-export interface nsIWritablePropertyBag2Type extends nsIPropertyBag2 {
+declare interface nsIWritablePropertyBag2Type extends nsIPropertyBag2 {
     /**
      *
      */
@@ -58221,7 +58221,7 @@ export interface nsIWritablePropertyBag2Type extends nsIPropertyBag2 {
  * read the old uuid.  If you change the format of the object
  * serialization then more complex changes will be needed.
  */
-export interface nsIX509CertType extends nsISupports {
+declare interface nsIX509CertType extends nsISupports {
     /**
      * The primary email address of the certificate, if present.
      */
@@ -58336,7 +58336,7 @@ export interface nsIX509CertType extends nsISupports {
 /**
  *
  */
-export interface nsIOpenSignedAppFileCallbackType extends nsISupports {
+declare interface nsIOpenSignedAppFileCallbackType extends nsISupports {
     /**
      *
      */
@@ -58346,7 +58346,7 @@ export interface nsIOpenSignedAppFileCallbackType extends nsISupports {
 /**
  *
  */
-export interface nsIAsyncBoolCallbackType extends nsISupports {
+declare interface nsIAsyncBoolCallbackType extends nsISupports {
     /**
      *
      */
@@ -58362,7 +58362,7 @@ export interface nsIAsyncBoolCallbackType extends nsISupports {
  * verification. aVerifiedChain is null in that case and aHasEVPolicy has no
  * meaning.
  */
-export interface nsICertVerificationCallbackType extends nsISupports {
+declare interface nsICertVerificationCallbackType extends nsISupports {
     /**
      *
      */
@@ -58373,7 +58373,7 @@ export interface nsICertVerificationCallbackType extends nsISupports {
  * This represents a service to access and manipulate
  * X.509 certificates stored in a database.
  */
-export interface nsIX509CertDBType extends nsISupports {
+declare interface nsIX509CertDBType extends nsISupports {
     /**
      * Will find a certificate based on its dbkey
      * retrieved by getting the dbKey attribute of
@@ -58564,7 +58564,7 @@ export interface nsIX509CertDBType extends nsISupports {
 /**
  * Information on the validity period of a X.509 certificate.
  */
-export interface nsIX509CertValidityType extends nsISupports {
+declare interface nsIX509CertValidityType extends nsISupports {
     /**
      * The earliest point in time where
      * a certificate is valid.
@@ -58583,7 +58583,7 @@ export interface nsIX509CertValidityType extends nsISupports {
  * boolean to PR_TRUE before making the call.  Implementations may skip writing
  * to *_retval unless they want to return PR_FALSE.
  */
-export interface nsIXPCScriptableType extends nsISupports {
+declare interface nsIXPCScriptableType extends nsISupports {
     /**
      *
      */
@@ -58629,7 +58629,7 @@ export interface nsIXPCScriptableType extends nsISupports {
 /**
  *
  */
-export interface nsIXREDirProviderType extends nsISupports {
+declare interface nsIXREDirProviderType extends nsISupports {
     /**
      * Only intended to be used from xpcshell tests. Allows setting the local
      * and normal profile data directories. Calling this after something using
@@ -58646,7 +58646,7 @@ export interface nsIXREDirProviderType extends nsISupports {
  * A scriptable interface to the nsXULAppAPI structure. See nsXULAppAPI.h for
  * a detailed description of each attribute.
  */
-export interface nsIXULAppInfoType extends nsIPlatformInfo {
+declare interface nsIXULAppInfoType extends nsIPlatformInfo {
     /**
      * @see XREAppData.vendor
      * @returns an empty string if XREAppData.vendor is not set.
@@ -58696,7 +58696,7 @@ export interface nsIXULAppInfoType extends nsIPlatformInfo {
  * internals of the browser area to tell the containing xul window to update
  * its ui.
  */
-export interface nsIXULBrowserWindowType extends nsISupports {
+declare interface nsIXULBrowserWindowType extends nsISupports {
     /**
      * Tells the object implementing this function what link we are currently
      * over.
@@ -58728,7 +58728,7 @@ export interface nsIXULBrowserWindowType extends nsISupports {
  * future releases. If you need this functionality to be
  * stable/frozen, please contact Benjamin Smedberg.
  */
-export interface nsIXULRuntimeType extends nsISupports {
+declare interface nsIXULRuntimeType extends nsISupports {
     /**
      * Whether the application was launched in safe mode.
      */
@@ -58961,7 +58961,7 @@ export interface nsIXULRuntimeType extends nsISupports {
  * If MOZ_NEW_XULSTORE is disabled:
  * The data is serialized to [profile directory]/xulstore.json
  */
-export interface nsIXULStoreType extends nsISupports {
+declare interface nsIXULStoreType extends nsISupports {
     /**
      * Sets a value for a specified node's attribute, except in
      * the case below:
@@ -59034,7 +59034,7 @@ export interface nsIXULStoreType extends nsISupports {
 /**
  *
  */
-export interface nsIZipEntryType extends nsISupports {
+declare interface nsIZipEntryType extends nsISupports {
     /**
      * The type of compression used for the item.  The possible values and
      * their meanings are defined in the zip file specification at
@@ -59081,7 +59081,7 @@ export interface nsIZipEntryType extends nsISupports {
 /**
  *
  */
-export interface nsIZipReaderType extends nsISupports {
+declare interface nsIZipReaderType extends nsISupports {
     /**
      * Opens a zip file for reading.
      * It is allowed to open with another file,
@@ -59192,7 +59192,7 @@ export interface nsIZipReaderType extends nsISupports {
 /**
  *
  */
-export interface nsIZipReaderCacheType extends nsISupports {
+declare interface nsIZipReaderCacheType extends nsISupports {
     /**
      * Initializes a new zip reader cache.
      * @param cacheSize - the number of released entries to maintain before
@@ -59265,7 +59265,7 @@ export interface nsIZipReaderCacheType extends nsISupports {
  * entries within them, however it is possible that some zip programs may
  * experience problems what that.
  */
-export interface nsIZipWriterType extends nsISupports {
+declare interface nsIZipWriterType extends nsISupports {
     /**
      * Gets or sets the comment associated with the open zip file.
      *
@@ -59425,7 +59425,7 @@ export interface nsIZipWriterType extends nsISupports {
  * This is a private interface used by the internals of the networking library.
  * It will never be frozen.  Do not use it in external code.
  */
-export interface nsPIDNSServiceType extends nsIDNSService {
+declare interface nsPIDNSServiceType extends nsIDNSService {
     /**
      * called to initialize the DNS service.
      */
@@ -59447,7 +59447,7 @@ export interface nsPIDNSServiceType extends nsIDNSService {
 /**
  *
  */
-export interface nsPIPromptServiceType extends nsISupports {
+declare interface nsPIPromptServiceType extends nsISupports {
     /**
      *
      */
@@ -59458,7 +59458,7 @@ export interface nsPIPromptServiceType extends nsISupports {
  * This is a private interface used by the internals of the networking library.
  * It will never be frozen.  Do not use it in external code.
  */
-export interface nsPISocketTransportServiceType extends nsIRoutedSocketTransportService {
+declare interface nsPISocketTransportServiceType extends nsIRoutedSocketTransportService {
     /**
      * init/shutdown routines.
      */
@@ -59493,7 +59493,7 @@ export interface nsPISocketTransportServiceType extends nsIRoutedSocketTransport
 /**
  *
  */
-export interface nsPIWidgetCocoaType extends nsISupports {
+declare interface nsPIWidgetCocoaType extends nsISupports {
     /**
      *
      */
@@ -59519,7 +59519,7 @@ export interface nsPIWidgetCocoaType extends nsISupports {
 /**
  *
  */
-export interface nsPIWindowWatcherType extends nsISupports {
+declare interface nsPIWindowWatcherType extends nsISupports {
     /**
      * A window has been created. Add it to our list.
      * @param aWindow the window to add
@@ -59603,7 +59603,7 @@ export interface nsPIWindowWatcherType extends nsISupports {
 /**
  *
  */
-export interface txIEXSLTFunctionsType extends nsISupports {
+declare interface txIEXSLTFunctionsType extends nsISupports {
     /**
      *
      */
@@ -59621,7 +59621,7 @@ export interface txIEXSLTFunctionsType extends nsISupports {
 /**
  *
  */
-export interface xpcIJSWeakReferenceType extends nsISupports {
+declare interface xpcIJSWeakReferenceType extends nsISupports {
     /**
      * To be called from JS only.
      *
@@ -59635,54 +59635,54 @@ export interface xpcIJSWeakReferenceType extends nsISupports {
  * interface of Components.interfaces
  * (interesting stuff only reflected into JavaScript)
  */
-export interface nsIXPCComponents_InterfacesType extends nsISupports {
+declare interface nsIXPCComponents_InterfacesType extends nsISupports {
 }
 
 /**
  * interface of Components.classes
  * (interesting stuff only reflected into JavaScript)
  */
-export interface nsIXPCComponents_ClassesType extends nsISupports {
+declare interface nsIXPCComponents_ClassesType extends nsISupports {
 }
 
 /**
  * interface of Components.results
  * (interesting stuff only reflected into JavaScript)
  */
-export interface nsIXPCComponents_ResultsType extends nsISupports {
+declare interface nsIXPCComponents_ResultsType extends nsISupports {
 }
 
 /**
  * interface of Components.ID
  * (interesting stuff only reflected into JavaScript)
  */
-export interface nsIXPCComponents_IDType extends nsISupports {
+declare interface nsIXPCComponents_IDType extends nsISupports {
 }
 
 /**
  * interface of Components.Exception
  * (interesting stuff only reflected into JavaScript)
  */
-export interface nsIXPCComponents_ExceptionType extends nsISupports {
+declare interface nsIXPCComponents_ExceptionType extends nsISupports {
 }
 
 /**
  * interface of Components.Constructor
  * (interesting stuff only reflected into JavaScript)
  */
-export interface nsIXPCComponents_ConstructorType extends nsISupports {
+declare interface nsIXPCComponents_ConstructorType extends nsISupports {
 }
 
 /**
  * interface of object returned by Components.utils.Sandbox.
  */
-export interface nsIXPCComponents_utils_SandboxType extends nsISupports {
+declare interface nsIXPCComponents_utils_SandboxType extends nsISupports {
 }
 
 /**
  * interface for callback to be passed to Cu.schedulePreciseGC
  */
-export interface nsIScheduledGCCallbackType extends nsISupports {
+declare interface nsIScheduledGCCallbackType extends nsISupports {
     /**
      *
      */
@@ -59692,7 +59692,7 @@ export interface nsIScheduledGCCallbackType extends nsISupports {
 /**
  * interface of Components.utils
  */
-export interface nsIXPCComponents_UtilsType extends nsISupports {
+declare interface nsIXPCComponents_UtilsType extends nsISupports {
     /**
      * Prints the provided message to stderr.
      */
@@ -60357,7 +60357,7 @@ export interface nsIXPCComponents_UtilsType extends nsISupports {
 /**
  * Interface for the 'Components' object.
  */
-export interface nsIXPCComponentsType extends nsISupports {
+declare interface nsIXPCComponentsType extends nsISupports {
     /**
      *
      */
@@ -60407,7 +60407,7 @@ export interface nsIXPCComponentsType extends nsISupports {
 /**
  * This defines the interface for a test object.
  */
-export interface nsIXPCTestObjectReadOnlyType extends nsISupports {
+declare interface nsIXPCTestObjectReadOnlyType extends nsISupports {
     /**
      *
      */
@@ -60441,7 +60441,7 @@ export interface nsIXPCTestObjectReadOnlyType extends nsISupports {
 /**
  *
  */
-export interface nsIXPCTestObjectReadWriteType extends nsISupports {
+declare interface nsIXPCTestObjectReadWriteType extends nsISupports {
     /**
      *
      */
@@ -60481,7 +60481,7 @@ export interface nsIXPCTestObjectReadWriteType extends nsISupports {
  * It also makes sure [optional_argc] is not supported on JS-implemented
  * methods.
  */
-export interface nsIXPCTestBug809674Type extends nsISupports {
+declare interface nsIXPCTestBug809674Type extends nsISupports {
     /**
      *
      */
@@ -60523,7 +60523,7 @@ export interface nsIXPCTestBug809674Type extends nsISupports {
 /**
  * This defines the interface for a test object.
  */
-export interface nsIXPCTestCEnumsType extends nsISupports {
+declare interface nsIXPCTestCEnumsType extends nsISupports {
     /**
      *
      */
@@ -60537,7 +60537,7 @@ export interface nsIXPCTestCEnumsType extends nsISupports {
 /**
  *
  */
-export interface nsIXPCTestESMReturnCodeParentType extends nsISupports {
+declare interface nsIXPCTestESMReturnCodeParentType extends nsISupports {
     /**
      *
      */
@@ -60547,7 +60547,7 @@ export interface nsIXPCTestESMReturnCodeParentType extends nsISupports {
 /**
  *
  */
-export interface nsIXPCTestESMReturnCodeChildType extends nsISupports {
+declare interface nsIXPCTestESMReturnCodeChildType extends nsISupports {
     /**
      *
      */
@@ -60557,7 +60557,7 @@ export interface nsIXPCTestESMReturnCodeChildType extends nsISupports {
 /**
  *
  */
-export interface nsIXPCTestInterfaceAType extends nsISupports {
+declare interface nsIXPCTestInterfaceAType extends nsISupports {
     /**
      *
      */
@@ -60567,7 +60567,7 @@ export interface nsIXPCTestInterfaceAType extends nsISupports {
 /**
  *
  */
-export interface nsIXPCTestInterfaceBType extends nsISupports {
+declare interface nsIXPCTestInterfaceBType extends nsISupports {
     /**
      *
      */
@@ -60577,7 +60577,7 @@ export interface nsIXPCTestInterfaceBType extends nsISupports {
 /**
  *
  */
-export interface nsIXPCTestInterfaceCType extends nsISupports {
+declare interface nsIXPCTestInterfaceCType extends nsISupports {
     /**
      *
      */
@@ -60587,7 +60587,7 @@ export interface nsIXPCTestInterfaceCType extends nsISupports {
 /**
  *
  */
-export interface nsIXPCTestParamsType extends nsISupports {
+declare interface nsIXPCTestParamsType extends nsISupports {
     /**
      *
      */
@@ -60725,7 +60725,7 @@ export interface nsIXPCTestParamsType extends nsISupports {
 /**
  *
  */
-export interface nsIXPCTestReturnCodeParentType extends nsISupports {
+declare interface nsIXPCTestReturnCodeParentType extends nsISupports {
     /**
      *
      */
@@ -60735,7 +60735,7 @@ export interface nsIXPCTestReturnCodeParentType extends nsISupports {
 /**
  *
  */
-export interface nsIXPCTestReturnCodeChildType extends nsISupports {
+declare interface nsIXPCTestReturnCodeChildType extends nsISupports {
     /**
      *
      */
@@ -60745,7 +60745,7 @@ export interface nsIXPCTestReturnCodeChildType extends nsISupports {
 /**
  *
  */
-export interface nsIXPCTestFunctionInterfaceType extends nsISupports {
+declare interface nsIXPCTestFunctionInterfaceType extends nsISupports {
     /**
      *
      */
@@ -60755,7 +60755,7 @@ export interface nsIXPCTestFunctionInterfaceType extends nsISupports {
 /**
  *
  */
-export interface nsIXPCTestUtilsType extends nsISupports {
+declare interface nsIXPCTestUtilsType extends nsISupports {
     /**
      *
      */

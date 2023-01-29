@@ -2,12 +2,15 @@ import { writeFile } from 'fs/promises'
 import { getAllInterfaces } from 'gecko-index'
 import { member_$0_$0 } from 'gecko-index/lib/parser.js'
 import ts from 'typescript'
+import {
+  cleanUpComment,
+  DECLARE_MODIFIER,
+  printNode,
+  READ_ONLY_MODIFIER,
+} from './shared.js'
 
 const interfaceFiles = await getAllInterfaces()
-
-const READ_ONLY_MODIFIER = ts.factory.createModifier(
-  ts.SyntaxKind.ReadonlyKeyword
-)
+export const idlTypes = new Set<string>()
 
 let idlDefFile = ''
 const idlDefFileBuilder = ts.createSourceFile(
@@ -37,6 +40,8 @@ for (const file in interfaceFiles) {
 
     if (node.kind == 'interface_main') {
       const name = `${node.name}Type`
+      const rawName = node.name.toString()
+
       let parentInterface: ts.Identifier | undefined
       const members: ts.TypeElement[] = []
       let docComments = []
@@ -163,10 +168,11 @@ for (const file in interfaceFiles) {
         docComments.push(node.doc_comment)
       }
 
+      idlTypes.add(rawName)
       idlDefFile += printNode(
         ts.addSyntheticLeadingComment(
           ts.factory.createInterfaceDeclaration(
-            [ts.factory.createModifier(ts.SyntaxKind.ExportKeyword)],
+            [DECLARE_MODIFIER],
             name,
             undefined,
             [
@@ -187,7 +193,8 @@ for (const file in interfaceFiles) {
           ts.SyntaxKind.MultiLineCommentTrivia,
           generateDocCommentType(docComments),
           true
-        )
+        ),
+        idlDefFileBuilder
       )
       idlDefFile += '\n\n'
 
@@ -199,11 +206,6 @@ for (const file in interfaceFiles) {
 }
 
 await writeFile('./types/gen/idls.d.ts', idlDefFile)
-
-function printNode(node: ts.Node): string {
-  const printer = ts.createPrinter()
-  return printer.printNode(ts.EmitHint.Unspecified, node, idlDefFileBuilder)
-}
 
 function generateDocCommentType(comments: member_$0_$0[]): string {
   let docCommentString = ''
@@ -218,41 +220,4 @@ function generateDocCommentType(comments: member_$0_$0[]): string {
   }
 
   return `*\n * ${docCommentString.trim().split('\n').join('\n * ')}\n `
-}
-
-export function cleanUpComment(comment: string): string {
-  comment = comment
-    .split('\n')
-    .filter((line) => !line.includes('//#')) // Ignore preprocessor lines
-    .join('\n')
-    .trim()
-
-  if (comment.startsWith('/*')) {
-    comment = comment.replace('/**', '').replace('/*', '').replace('*/', '')
-    comment = comment.replace(/\n\s*\*/gm, '\n')
-  }
-
-  if (comment.startsWith('//')) {
-    comment = comment.replace(/\n\s*\/\//gm, '\n').replace('//', '')
-  }
-
-  // Comment formatting
-  comment = comment
-    .replace(/<I>/gi, '_')
-    .replace(/<\/I>/gi, '_')
-    .replace(/(<CODE>)|(<pre>)/gi, '`')
-    .replace(/(<\/CODE>)|(<\/pre>)/gi, '`')
-    .replace(/(<em>)|(<b>)|(<strong>)/gi, '**')
-    .replace(/(<\/em>)|(<\/b>)|(<\/strong>)/gi, '**')
-    .replace(/<p>/gi, '\n')
-    .replace(/(<ul>)|(<ol>)/gi, '')
-    .replace(/(<\/ul>)|(<\/ol>)/gi, '')
-    .replace(/<li>/gi, '- ')
-    .replace(/<\/li>/gi, '')
-
-  return comment
-    .split('\n')
-    .map((line) => line.trim())
-    .join('\n')
-    .trim()
 }
