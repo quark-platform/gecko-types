@@ -206,6 +206,44 @@ for (const file in interfaceFiles) {
   }
 }
 
+// Ci namespace
+{
+  const statements: ts.Statement[] = []
+
+  for (const iface of idlTypes) {
+    statements.push(
+      ts.factory.createVariableStatement(undefined, [
+        ts.factory.createVariableDeclaration(iface),
+      ])
+    )
+  }
+
+  idlDefFile += printNode(
+    ts.factory.createModuleDeclaration(
+      undefined,
+      ts.factory.createIdentifier('CiType'),
+      ts.factory.createModuleBlock(statements)
+    ),
+    idlDefFileBuilder
+  )
+  idlDefFile += '\n'
+  idlDefFile += printNode(
+    ts.factory.createVariableStatement(
+      [DECLARE_MODIFIER],
+      [
+        ts.factory.createVariableDeclaration(
+          'Ci',
+          undefined,
+          ts.factory.createTypeReferenceNode('CiType')
+        ),
+      ]
+    ),
+    idlDefFileBuilder
+  )
+
+  idlDefFile += '\n\n'
+}
+
 await writeFile('./types/gen/idls.d.ts', idlDefFile)
 
 function generateDocCommentType(comments: member_$0_$0[]): string {
