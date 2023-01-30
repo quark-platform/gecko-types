@@ -208,21 +208,21 @@ for (const file in interfaceFiles) {
 
 // Ci namespace
 {
-  const statements: ts.Statement[] = []
+  const members: ts.TypeElement[] = []
 
   for (const iface of idlTypes) {
-    statements.push(
-      ts.factory.createVariableStatement(undefined, [
-        ts.factory.createVariableDeclaration(iface),
-      ])
+    members.push(
+      ts.factory.createPropertySignature(undefined, iface, undefined, undefined)
     )
   }
 
   idlDefFile += printNode(
-    ts.factory.createModuleDeclaration(
+    ts.factory.createInterfaceDeclaration(
       undefined,
       ts.factory.createIdentifier('CiType'),
-      ts.factory.createModuleBlock(statements)
+      undefined,
+      undefined,
+      members
     ),
     idlDefFileBuilder
   )
