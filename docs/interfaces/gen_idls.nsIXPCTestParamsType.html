@@ -1,0 +1,741 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>nsIXPCTestParamsType | gecko-types</title><meta name="description" content="Documentation for gecko-types"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script async src="../assets/search.js" id="search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container">
+<div class="table-cell" id="tsd-search" data-base="..">
+<div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
+<div class="field">
+<div id="tsd-toolbar-links"></div></div>
+<ul class="results">
+<li class="state loading">Preparing search index...</li>
+<li class="state failure">The search index is not available</li></ul><a href="../index.html" class="title">gecko-types</a></div>
+<div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="7" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="11" width="14" height="2" fill="var(--color-text)"></rect></svg></a></div></div></header>
+<div class="container container-main">
+<div class="col-8 col-content">
+<div class="tsd-page-title">
+<ul class="tsd-breadcrumb">
+<li><a href="../modules.html">gecko-types</a></li>
+<li><a href="../modules/gen_idls.html">gen/idls</a></li>
+<li><a href="gen_idls.nsIXPCTestParamsType.html">nsIXPCTestParamsType</a></li></ul>
+<h1>Interface nsIXPCTestParamsType</h1></div>
+<section class="tsd-panel tsd-hierarchy">
+<h4>Hierarchy</h4>
+<ul class="tsd-hierarchy">
+<li><span class="tsd-signature-type">nsISupports</span>
+<ul class="tsd-hierarchy">
+<li><span class="target">nsIXPCTestParamsType</span></li></ul></li></ul></section><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60590">types/gen/idls.d.ts:60590</a></li></ul></aside>
+<section class="tsd-panel-group tsd-index-group">
+<section class="tsd-panel tsd-index-panel">
+<details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
+<h5 class="tsd-index-heading uppercase" role="button" aria-expanded="false" tabIndex=0><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1.5 5.50969L8 11.6609L14.5 5.50969L12.5466 3.66086L8 7.96494L3.45341 3.66086L1.5 5.50969Z" fill="var(--color-text)"></path></svg> Index</h5></summary>
+<div class="tsd-accordion-details">
+<section class="tsd-index-section">
+<h3 class="tsd-index-heading">Methods</h3>
+<div class="tsd-index-list"><a href="gen_idls.nsIXPCTestParamsType.html#testACString" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF4DB8" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-2048-path"></rect><path d="M9.162 16V7.24H10.578L11.514 10.072C11.602 10.328 11.674 10.584 11.73 10.84C11.794 11.088 11.842 11.28 11.874 11.416C11.906 11.28 11.954 11.088 12.018 10.84C12.082 10.584 12.154 10.324 12.234 10.06L13.122 7.24H14.538V16H13.482V12.82C13.482 12.468 13.49 12.068 13.506 11.62C13.53 11.172 13.558 10.716 13.59 10.252C13.622 9.78 13.654 9.332 13.686 8.908C13.726 8.476 13.762 8.1 13.794 7.78L12.366 12.16H11.334L9.894 7.78C9.934 8.092 9.97 8.456 10.002 8.872C10.042 9.28 10.078 9.716 10.11 10.18C10.142 10.636 10.166 11.092 10.182 11.548C10.206 12.004 10.218 12.428 10.218 12.82V16H9.162Z" fill="var(--color-text)" id="icon-2048-text"></path></svg><span>testACString</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testAString" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>testAString</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testAUTF8String" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>testAUTF8<wbr/>String</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testBoolean" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Boolean</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testByteArrayOptionalLength" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Byte<wbr/>Array<wbr/>Optional<wbr/>Length</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testChar" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Char</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testDouble" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Double</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testDoubleArray" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Double<wbr/>Array</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testFloat" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Float</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testInterfaceArray" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Interface<wbr/>Array</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testInterfaceIs" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Interface<wbr/>Is</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testInterfaceIsArray" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Interface<wbr/>Is<wbr/>Array</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testInterfaceIsSequence" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Interface<wbr/>Is<wbr/>Sequence</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testJsval" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Jsval</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testJsvalArray" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Jsval<wbr/>Array</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testLong" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Long</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testLongLong" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Long<wbr/>Long</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testOctet" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Octet</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testOmittedOptionalOut" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Omitted<wbr/>Optional<wbr/>Out</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testOutAString" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>OutAString</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testShort" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Short</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testShortArray" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Short<wbr/>Array</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testSizedString" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Sized<wbr/>String</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testSizedWstring" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Sized<wbr/>Wstring</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testString" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>String</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testStringArray" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>String<wbr/>Array</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testStringArrayOptionalSize" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>String<wbr/>Array<wbr/>Optional<wbr/>Size</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testUnsignedLong" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Unsigned<wbr/>Long</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testUnsignedLongLong" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Unsigned<wbr/>Long<wbr/>Long</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testUnsignedShort" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Unsigned<wbr/>Short</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testWchar" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Wchar</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testWstring" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Wstring</span></a>
+<a href="gen_idls.nsIXPCTestParamsType.html#testWstringArray" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>test<wbr/>Wstring<wbr/>Array</span></a>
+</div></section></div></details></section></section>
+<section class="tsd-panel-group tsd-member-group">
+<h2>Methods</h2>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testACString" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>testACString</span><a href="#testACString" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" id="icon-anchor-a"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" id="icon-anchor-b"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" id="icon-anchor-c"></path></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testACString.testACString-1">testACString<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><a href="#testACString.testACString-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">string</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60658">types/gen/idls.d.ts:60658</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testAString" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>testAString</span><a href="#testAString" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testAString.testAString-1">testAString<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><a href="#testAString.testAString-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">string</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60650">types/gen/idls.d.ts:60650</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testAUTF8String" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>testAUTF8<wbr/>String</span><a href="#testAUTF8String" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testAUTF8String.testAUTF8String-1">testAUTF8<wbr/>String<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><a href="#testAUTF8String.testAUTF8String-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">string</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60654">types/gen/idls.d.ts:60654</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testBoolean" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Boolean</span><a href="#testBoolean" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testBoolean.testBoolean-1">test<wbr/>Boolean<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><a href="#testBoolean.testBoolean-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">boolean</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">boolean</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60594">types/gen/idls.d.ts:60594</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testByteArrayOptionalLength" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Byte<wbr/>Array<wbr/>Optional<wbr/>Length</span><a href="#testByteArrayOptionalLength" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testByteArrayOptionalLength.testByteArrayOptionalLength-1">test<wbr/>Byte<wbr/>Array<wbr/>Optional<wbr/>Length<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">uint8_t</span>, aLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#testByteArrayOptionalLength.testByteArrayOptionalLength-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">uint8_t</span></h5></li>
+<li>
+<h5>aLength: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60690">types/gen/idls.d.ts:60690</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testChar" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Char</span><a href="#testChar" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testChar.testChar-1">test<wbr/>Char<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#testChar.testChar-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60634">types/gen/idls.d.ts:60634</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testDouble" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Double</span><a href="#testDouble" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testDouble.testDouble-1">test<wbr/>Double<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#testDouble.testDouble-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60630">types/gen/idls.d.ts:60630</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testDoubleArray" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Double<wbr/>Array</span><a href="#testDoubleArray" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testDoubleArray.testDoubleArray-1">test<wbr/>Double<wbr/>Array<span class="tsd-signature-symbol">(</span>aLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, bLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, rvLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, rv<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#testDoubleArray.testDoubleArray-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>a: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>bLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>rvLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>rv: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60674">types/gen/idls.d.ts:60674</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testFloat" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Float</span><a href="#testFloat" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testFloat.testFloat-1">test<wbr/>Float<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#testFloat.testFloat-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60626">types/gen/idls.d.ts:60626</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testInterfaceArray" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Interface<wbr/>Array</span><a href="#testInterfaceArray" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testInterfaceArray.testInterfaceArray-1">test<wbr/>Interface<wbr/>Array<span class="tsd-signature-symbol">(</span>aLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIXPCTestInterfaceA</span>, bLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIXPCTestInterfaceA</span>, rvLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, rv<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIXPCTestInterfaceA</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#testInterfaceArray.testInterfaceArray-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>a: <span class="tsd-signature-type">nsIXPCTestInterfaceA</span></h5></li>
+<li>
+<h5>bLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">nsIXPCTestInterfaceA</span></h5></li>
+<li>
+<h5>rvLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>rv: <span class="tsd-signature-type">nsIXPCTestInterfaceA</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60686">types/gen/idls.d.ts:60686</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testInterfaceIs" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Interface<wbr/>Is</span><a href="#testInterfaceIs" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testInterfaceIs.testInterfaceIs-1">test<wbr/>Interface<wbr/>Is<span class="tsd-signature-symbol">(</span>aIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, bIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, rvIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, rv<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#testInterfaceIs.testInterfaceIs-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aIID: <span class="tsd-signature-type">object</span></h5></li>
+<li>
+<h5>a: <span class="tsd-signature-type">object</span></h5></li>
+<li>
+<h5>bIID: <span class="tsd-signature-type">object</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">object</span></h5></li>
+<li>
+<h5>rvIID: <span class="tsd-signature-type">object</span></h5></li>
+<li>
+<h5>rv: <span class="tsd-signature-type">object</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60702">types/gen/idls.d.ts:60702</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testInterfaceIsArray" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Interface<wbr/>Is<wbr/>Array</span><a href="#testInterfaceIsArray" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testInterfaceIsArray.testInterfaceIsArray-1">test<wbr/>Interface<wbr/>Is<wbr/>Array<span class="tsd-signature-symbol">(</span>aLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, aIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, bLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, bIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, rvLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, rvIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, rv<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#testInterfaceIsArray.testInterfaceIsArray-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>aIID: <span class="tsd-signature-type">object</span></h5></li>
+<li>
+<h5>a: <span class="tsd-signature-type">object</span></h5></li>
+<li>
+<h5>bLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>bIID: <span class="tsd-signature-type">object</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">object</span></h5></li>
+<li>
+<h5>rvLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>rvIID: <span class="tsd-signature-type">object</span></h5></li>
+<li>
+<h5>rv: <span class="tsd-signature-type">object</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60706">types/gen/idls.d.ts:60706</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testInterfaceIsSequence" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Interface<wbr/>Is<wbr/>Sequence</span><a href="#testInterfaceIsSequence" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testInterfaceIsSequence.testInterfaceIsSequence-1">test<wbr/>Interface<wbr/>Is<wbr/>Sequence<span class="tsd-signature-symbol">(</span>aIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">invalid</span>, bIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">invalid</span>, rvIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, rv<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">invalid</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#testInterfaceIsSequence.testInterfaceIsSequence-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aIID: <span class="tsd-signature-type">object</span></h5></li>
+<li>
+<h5>a: <span class="tsd-signature-type">invalid</span></h5></li>
+<li>
+<h5>bIID: <span class="tsd-signature-type">object</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">invalid</span></h5></li>
+<li>
+<h5>rvIID: <span class="tsd-signature-type">object</span></h5></li>
+<li>
+<h5>rv: <span class="tsd-signature-type">invalid</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60666">types/gen/idls.d.ts:60666</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testJsval" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Jsval</span><a href="#testJsval" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testJsval.testJsval-1">test<wbr/>Jsval<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><a href="#testJsval.testJsval-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">any</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">any</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60662">types/gen/idls.d.ts:60662</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testJsvalArray" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Jsval<wbr/>Array</span><a href="#testJsvalArray" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testJsvalArray.testJsvalArray-1">test<wbr/>Jsval<wbr/>Array<span class="tsd-signature-symbol">(</span>aLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, bLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, rvLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, rv<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#testJsvalArray.testJsvalArray-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>a: <span class="tsd-signature-type">any</span></h5></li>
+<li>
+<h5>bLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">any</span></h5></li>
+<li>
+<h5>rvLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>rv: <span class="tsd-signature-type">any</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60710">types/gen/idls.d.ts:60710</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testLong" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Long</span><a href="#testLong" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testLong.testLong-1">test<wbr/>Long<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#testLong.testLong-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60606">types/gen/idls.d.ts:60606</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testLongLong" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Long<wbr/>Long</span><a href="#testLongLong" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testLongLong.testLongLong-1">test<wbr/>Long<wbr/>Long<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#testLongLong.testLongLong-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60610">types/gen/idls.d.ts:60610</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testOctet" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Octet</span><a href="#testOctet" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testOctet.testOctet-1">test<wbr/>Octet<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#testOctet.testOctet-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60598">types/gen/idls.d.ts:60598</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testOmittedOptionalOut" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Omitted<wbr/>Optional<wbr/>Out</span><a href="#testOmittedOptionalOut" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testOmittedOptionalOut.testOmittedOptionalOut-1">test<wbr/>Omitted<wbr/>Optional<wbr/>Out<span class="tsd-signature-symbol">(</span>aJSObj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIXPCTestParams</span>, aOut<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIURI</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#testOmittedOptionalOut.testOmittedOptionalOut-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aJSObj: <span class="tsd-signature-type">nsIXPCTestParams</span></h5></li>
+<li>
+<h5>aOut: <span class="tsd-signature-type">nsIURI</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60722">types/gen/idls.d.ts:60722</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testOutAString" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>OutAString</span><a href="#testOutAString" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testOutAString.testOutAString-1">test<wbr/>OutAString<span class="tsd-signature-symbol">(</span>o<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#testOutAString.testOutAString-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>o: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60714">types/gen/idls.d.ts:60714</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testShort" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Short</span><a href="#testShort" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testShort.testShort-1">test<wbr/>Short<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#testShort.testShort-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60602">types/gen/idls.d.ts:60602</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testShortArray" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Short<wbr/>Array</span><a href="#testShortArray" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testShortArray.testShortArray-1">test<wbr/>Short<wbr/>Array<span class="tsd-signature-symbol">(</span>aLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, bLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, rvLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, rv<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#testShortArray.testShortArray-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>a: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>bLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>rvLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>rv: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60670">types/gen/idls.d.ts:60670</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testSizedString" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Sized<wbr/>String</span><a href="#testSizedString" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testSizedString.testSizedString-1">test<wbr/>Sized<wbr/>String<span class="tsd-signature-symbol">(</span>aLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, bLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, rvLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, rv<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#testSizedString.testSizedString-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>a: <span class="tsd-signature-type">string</span></h5></li>
+<li>
+<h5>bLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">string</span></h5></li>
+<li>
+<h5>rvLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>rv: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60694">types/gen/idls.d.ts:60694</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testSizedWstring" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Sized<wbr/>Wstring</span><a href="#testSizedWstring" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testSizedWstring.testSizedWstring-1">test<wbr/>Sized<wbr/>Wstring<span class="tsd-signature-symbol">(</span>aLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">wstring</span>, bLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">wstring</span>, rvLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, rv<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">wstring</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#testSizedWstring.testSizedWstring-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>a: <span class="tsd-signature-type">wstring</span></h5></li>
+<li>
+<h5>bLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">wstring</span></h5></li>
+<li>
+<h5>rvLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>rv: <span class="tsd-signature-type">wstring</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60698">types/gen/idls.d.ts:60698</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testString" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>String</span><a href="#testString" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testString.testString-1">test<wbr/>String<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><a href="#testString.testString-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">string</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60638">types/gen/idls.d.ts:60638</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testStringArray" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>String<wbr/>Array</span><a href="#testStringArray" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testStringArray.testStringArray-1">test<wbr/>String<wbr/>Array<span class="tsd-signature-symbol">(</span>aLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, bLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, rvLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, rv<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#testStringArray.testStringArray-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>a: <span class="tsd-signature-type">string</span></h5></li>
+<li>
+<h5>bLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">string</span></h5></li>
+<li>
+<h5>rvLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>rv: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60678">types/gen/idls.d.ts:60678</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testStringArrayOptionalSize" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>String<wbr/>Array<wbr/>Optional<wbr/>Size</span><a href="#testStringArrayOptionalSize" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testStringArrayOptionalSize.testStringArrayOptionalSize-1">test<wbr/>String<wbr/>Array<wbr/>Optional<wbr/>Size<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><a href="#testStringArrayOptionalSize.testStringArrayOptionalSize-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">string</span></h5></li>
+<li>
+<h5>aLength: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60718">types/gen/idls.d.ts:60718</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testUnsignedLong" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Unsigned<wbr/>Long</span><a href="#testUnsignedLong" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testUnsignedLong.testUnsignedLong-1">test<wbr/>Unsigned<wbr/>Long<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#testUnsignedLong.testUnsignedLong-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60618">types/gen/idls.d.ts:60618</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testUnsignedLongLong" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Unsigned<wbr/>Long<wbr/>Long</span><a href="#testUnsignedLongLong" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testUnsignedLongLong.testUnsignedLongLong-1">test<wbr/>Unsigned<wbr/>Long<wbr/>Long<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#testUnsignedLongLong.testUnsignedLongLong-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60622">types/gen/idls.d.ts:60622</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testUnsignedShort" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Unsigned<wbr/>Short</span><a href="#testUnsignedShort" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testUnsignedShort.testUnsignedShort-1">test<wbr/>Unsigned<wbr/>Short<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#testUnsignedShort.testUnsignedShort-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60614">types/gen/idls.d.ts:60614</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testWchar" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Wchar</span><a href="#testWchar" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testWchar.testWchar-1">test<wbr/>Wchar<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><a href="#testWchar.testWchar-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">string</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60642">types/gen/idls.d.ts:60642</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testWstring" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Wstring</span><a href="#testWstring" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testWstring.testWstring-1">test<wbr/>Wstring<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">wstring</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">wstring</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">wstring</span><a href="#testWstring.testWstring-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>a: <span class="tsd-signature-type">wstring</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">wstring</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">wstring</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60646">types/gen/idls.d.ts:60646</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testWstringArray" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>test<wbr/>Wstring<wbr/>Array</span><a href="#testWstringArray" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="testWstringArray.testWstringArray-1">test<wbr/>Wstring<wbr/>Array<span class="tsd-signature-symbol">(</span>aLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">wstring</span>, bLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">wstring</span>, rvLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, rv<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">wstring</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#testWstringArray.testWstringArray-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>a: <span class="tsd-signature-type">wstring</span></h5></li>
+<li>
+<h5>bLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>b: <span class="tsd-signature-type">wstring</span></h5></li>
+<li>
+<h5>rvLength: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>rv: <span class="tsd-signature-type">wstring</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L60682">types/gen/idls.d.ts:60682</a></li></ul></aside></li></ul></section></section></div>
+<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+<div class="tsd-navigation settings">
+<details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility">
+<h4 class="uppercase">Member Visibility</h4><form>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div>
+<div class="tsd-theme-toggle">
+<h4 class="uppercase">Theme</h4><select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<nav class="tsd-navigation primary">
+<details class="tsd-index-accordion" open><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Modules</h3></summary>
+<div class="tsd-accordion-details">
+<ul>
+<li class="current"><a href="../modules.html">gecko-<wbr/>types</a>
+<ul>
+<li class="tsd-kind-module"><a href="../modules/custom_idlTypes.html">custom/idl<wbr/>Types</a></li>
+<li class="tsd-kind-module"><a href="../modules/custom_webidlTypes.html">custom/webidl<wbr/>Types</a></li>
+<li class="current tsd-kind-module"><a href="../modules/gen_idls.html">gen/idls</a></li>
+<li class="tsd-kind-module"><a href="../modules/gen_namespaces.html">gen/namespaces</a>
+<ul>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.APZHitResultFlags.html">APZHit<wbr/>Result<wbr/>Flags</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.AddonManagerPermissions.html">Addon<wbr/>Manager<wbr/>Permissions</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module tsd-is-external"><a href="../modules/gen_namespaces.CSS.html">CSS</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.ChromeUtils.html">Chrome<wbr/>Utils</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.IOUtils.html">IOUtils</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.InspectorUtils.html">Inspector<wbr/>Utils</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.L10nOverlays.html">L10n<wbr/>Overlays</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.MediaControlService.html">Media<wbr/>Control<wbr/>Service</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PathUtils.html">Path<wbr/>Utils</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PlacesObservers.html">Places<wbr/>Observers</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PrioEncoder.html">Prio<wbr/>Encoder</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PromiseDebugging.html">Promise<wbr/>Debugging</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.SessionStoreUtils.html">Session<wbr/>Store<wbr/>Utils</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TelemetryStopwatch.html">Telemetry<wbr/>Stopwatch</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TestUtils.html">Test<wbr/>Utils</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.UniFFIScaffolding.html">UniFFIScaffolding</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.UserInteraction.html">User<wbr/>Interaction</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.WebrtcGlobalInformation.html">Webrtc<wbr/>Global<wbr/>Information</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.WorkerTestUtils.html">Worker<wbr/>Test<wbr/>Utils</a></li></ul></li></ul></li></ul></div></details></nav>
+<nav class="tsd-navigation secondary menu-sticky">
+<ul>
+<li class="current tsd-kind-interface tsd-parent-kind-module"><a href="gen_idls.nsIXPCTestParamsType.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-interface)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-256-path"></rect><path d="M9.51 16V15.016H11.298V8.224H9.51V7.24H14.19V8.224H12.402V15.016H14.19V16H9.51Z" fill="var(--color-text)" id="icon-256-text"></path></svg><span>nsIXPCTest<wbr/>Params<wbr/>Type</span></a>
+<ul>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testACString" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>testACString</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testAString" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>testAString</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testAUTF8String" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>testAUTF8<wbr/>String</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testBoolean" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Boolean</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testByteArrayOptionalLength" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Byte<wbr/>Array<wbr/>Optional<wbr/>Length</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testChar" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Char</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testDouble" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Double</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testDoubleArray" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Double<wbr/>Array</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testFloat" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Float</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testInterfaceArray" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Interface<wbr/>Array</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testInterfaceIs" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Interface<wbr/>Is</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testInterfaceIsArray" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Interface<wbr/>Is<wbr/>Array</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testInterfaceIsSequence" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Interface<wbr/>Is<wbr/>Sequence</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testJsval" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Jsval</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testJsvalArray" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Jsval<wbr/>Array</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testLong" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Long</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testLongLong" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Long<wbr/>Long</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testOctet" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Octet</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testOmittedOptionalOut" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Omitted<wbr/>Optional<wbr/>Out</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testOutAString" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>OutAString</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testShort" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Short</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testShortArray" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Short<wbr/>Array</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testSizedString" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Sized<wbr/>String</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testSizedWstring" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Sized<wbr/>Wstring</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testString" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>String</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testStringArray" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>String<wbr/>Array</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testStringArrayOptionalSize" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>String<wbr/>Array<wbr/>Optional<wbr/>Size</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testUnsignedLong" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Unsigned<wbr/>Long</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testUnsignedLongLong" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Unsigned<wbr/>Long<wbr/>Long</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testUnsignedShort" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Unsigned<wbr/>Short</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testWchar" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Wchar</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testWstring" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Wstring</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIXPCTestParamsType.html#testWstringArray" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>test<wbr/>Wstring<wbr/>Array</a></li></ul></li></ul></nav></div></div>
+<div class="container tsd-generator">
+<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
+<div class="overlay"></div><script src="../assets/main.js"></script></body></html>

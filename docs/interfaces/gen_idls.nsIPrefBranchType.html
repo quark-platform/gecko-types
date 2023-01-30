@@ -1,0 +1,892 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>nsIPrefBranchType | gecko-types</title><meta name="description" content="Documentation for gecko-types"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script async src="../assets/search.js" id="search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container">
+<div class="table-cell" id="tsd-search" data-base="..">
+<div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
+<div class="field">
+<div id="tsd-toolbar-links"></div></div>
+<ul class="results">
+<li class="state loading">Preparing search index...</li>
+<li class="state failure">The search index is not available</li></ul><a href="../index.html" class="title">gecko-types</a></div>
+<div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="7" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="11" width="14" height="2" fill="var(--color-text)"></rect></svg></a></div></div></header>
+<div class="container container-main">
+<div class="col-8 col-content">
+<div class="tsd-page-title">
+<ul class="tsd-breadcrumb">
+<li><a href="../modules.html">gecko-types</a></li>
+<li><a href="../modules/gen_idls.html">gen/idls</a></li>
+<li><a href="gen_idls.nsIPrefBranchType.html">nsIPrefBranchType</a></li></ul>
+<h1>Interface nsIPrefBranchType</h1></div>
+<section class="tsd-panel tsd-comment">
+<div class="tsd-comment tsd-typography"><p>The nsIPrefBranch interface is used to manipulate the preferences data. This
+object may be obtained from the preferences service (nsIPrefService) and
+used to get and set default and/or user preferences across the application.</p>
+<p>This object is created with a &quot;root&quot; value which describes the base point in
+the preferences &quot;tree&quot; from which this &quot;branch&quot; stems. Preferences are
+accessed off of this root by using just the final portion of the preference.
+For example, if this object is created with the root &quot;browser.startup.&quot;,
+the preferences &quot;browser.startup.page&quot;, &quot;browser.startup.homepage&quot;,
+and &quot;browser.startup.homepage_override&quot; can be accessed by simply passing
+&quot;page&quot;, &quot;homepage&quot;, or &quot;homepage_override&quot; to the various Get/Set methods.</p>
+
+<h3>See</h3><p>nsIPrefService</p>
+</div></section>
+<section class="tsd-panel tsd-hierarchy">
+<h4>Hierarchy</h4>
+<ul class="tsd-hierarchy">
+<li><span class="tsd-signature-type">nsISupports</span>
+<ul class="tsd-hierarchy">
+<li><span class="target">nsIPrefBranchType</span></li></ul></li></ul></section><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L35895">types/gen/idls.d.ts:35895</a></li></ul></aside>
+<section class="tsd-panel-group tsd-index-group">
+<section class="tsd-panel tsd-index-panel">
+<details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
+<h5 class="tsd-index-heading uppercase" role="button" aria-expanded="false" tabIndex=0><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1.5 5.50969L8 11.6609L14.5 5.50969L12.5466 3.66086L8 7.96494L3.45341 3.66086L1.5 5.50969Z" fill="var(--color-text)"></path></svg> Index</h5></summary>
+<div class="tsd-accordion-details">
+<section class="tsd-index-section">
+<h3 class="tsd-index-heading">Properties</h3>
+<div class="tsd-index-list"><a href="gen_idls.nsIPrefBranchType.html#root" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF984D" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-1024-path"></rect><path d="M9.354 16V7.24H12.174C12.99 7.24 13.638 7.476 14.118 7.948C14.606 8.412 14.85 9.036 14.85 9.82C14.85 10.604 14.606 11.232 14.118 11.704C13.638 12.168 12.99 12.4 12.174 12.4H10.434V16H9.354ZM10.434 11.428H12.174C12.646 11.428 13.022 11.284 13.302 10.996C13.59 10.7 13.734 10.308 13.734 9.82C13.734 9.324 13.59 8.932 13.302 8.644C13.022 8.356 12.646 8.212 12.174 8.212H10.434V11.428Z" fill="var(--color-text)" id="icon-1024-text"></path></svg><span>root</span></a>
+</div></section>
+<section class="tsd-index-section">
+<h3 class="tsd-index-heading">Methods</h3>
+<div class="tsd-index-list"><a href="gen_idls.nsIPrefBranchType.html#addObserver" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF4DB8" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-2048-path"></rect><path d="M9.162 16V7.24H10.578L11.514 10.072C11.602 10.328 11.674 10.584 11.73 10.84C11.794 11.088 11.842 11.28 11.874 11.416C11.906 11.28 11.954 11.088 12.018 10.84C12.082 10.584 12.154 10.324 12.234 10.06L13.122 7.24H14.538V16H13.482V12.82C13.482 12.468 13.49 12.068 13.506 11.62C13.53 11.172 13.558 10.716 13.59 10.252C13.622 9.78 13.654 9.332 13.686 8.908C13.726 8.476 13.762 8.1 13.794 7.78L12.366 12.16H11.334L9.894 7.78C9.934 8.092 9.97 8.456 10.002 8.872C10.042 9.28 10.078 9.716 10.11 10.18C10.142 10.636 10.166 11.092 10.182 11.548C10.206 12.004 10.218 12.428 10.218 12.82V16H9.162Z" fill="var(--color-text)" id="icon-2048-text"></path></svg><span>add<wbr/>Observer</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#clearUserPref" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>clear<wbr/>User<wbr/>Pref</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#deleteBranch" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>delete<wbr/>Branch</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#getBoolPref" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Bool<wbr/>Pref</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#getBoolPrefXPCOM" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Bool<wbr/>PrefXPCOM</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#getCharPref" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Char<wbr/>Pref</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#getCharPrefXPCOM" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Char<wbr/>PrefXPCOM</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#getComplexValue" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Complex<wbr/>Value</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#getFloatPref" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Float<wbr/>Pref</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#getFloatPrefXPCOM" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Float<wbr/>PrefXPCOM</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#getIntPref" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Int<wbr/>Pref</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#getIntPrefXPCOM" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Int<wbr/>PrefXPCOM</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#getPrefType" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Pref<wbr/>Type</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#getStringPref" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>String<wbr/>Pref</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#lockPref" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>lock<wbr/>Pref</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#prefHasDefaultValue" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>pref<wbr/>Has<wbr/>Default<wbr/>Value</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#prefHasUserValue" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>pref<wbr/>Has<wbr/>User<wbr/>Value</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#prefIsLocked" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>pref<wbr/>Is<wbr/>Locked</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#prefIsSanitized" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>pref<wbr/>Is<wbr/>Sanitized</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#removeObserver" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>remove<wbr/>Observer</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#resetBranch" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>reset<wbr/>Branch</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#setBoolPref" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>Bool<wbr/>Pref</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#setCharPref" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>Char<wbr/>Pref</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#setComplexValue" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>Complex<wbr/>Value</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#setIntPref" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>Int<wbr/>Pref</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#setStringPref" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>String<wbr/>Pref</span></a>
+<a href="gen_idls.nsIPrefBranchType.html#unlockPref" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>unlock<wbr/>Pref</span></a>
+</div></section></div></details></section></section>
+<section class="tsd-panel-group tsd-member-group">
+<h2>Properties</h2>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="root" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>root</span><a href="#root" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" id="icon-anchor-a"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" id="icon-anchor-b"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" id="icon-anchor-c"></path></svg></a></h3>
+<div class="tsd-signature">root<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+<div class="tsd-comment tsd-typography"><p>Called to get the root on which this branch is based, such as
+&quot;browser.startup.&quot;</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L35900">types/gen/idls.d.ts:35900</a></li></ul></aside></section></section>
+<section class="tsd-panel-group tsd-member-group">
+<h2>Methods</h2>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="addObserver" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>add<wbr/>Observer</span><a href="#addObserver" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="addObserver.addObserver-1">add<wbr/>Observer<span class="tsd-signature-symbol">(</span>aDomain<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aObserver<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIObserver</span>, aHoldWeak<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#addObserver.addObserver-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Add a preference change observer. On preference changes, the following
+arguments will be passed to the nsIObserver.observe() method:
+aSubject - The nsIPrefBranch object (this)
+aTopic   - The string defined by NS_PREFBRANCH_PREFCHANGE_TOPIC_ID
+aData    - The name of the preference which has changed, relative to
+the |root| of the aSubject branch.</p>
+<p>aSubject.get*Pref(aData) will get the new value of the modified
+preference. For example, if your observer is registered with
+addObserver(&quot;bar.&quot;, ...) on a branch with root &quot;foo.&quot;, modifying
+the preference &quot;foo.bar.baz&quot; will trigger the observer, and aData
+parameter will be &quot;bar.baz&quot;.</p>
+
+<h3>Note</h3><p>Registering as a preference observer can open an object to potential
+cyclical references which will cause memory leaks. These cycles generally
+occur because an object both registers itself as an observer (causing the
+branch to hold a reference to the observer) and holds a reference to the
+branch object for the purpose of getting/setting preference values. There
+are 3 approaches which have been implemented in an attempt to avoid these
+situations.</p>
+<ol>
+<li>The nsPrefBranch object supports nsISupportsWeakReference. Any consumer
+may hold a weak reference to it instead of a strong one.</li>
+<li>The nsPrefBranch object listens for xpcom-shutdown and frees all of the
+objects currently in its observer list. This ensures that long lived
+objects (services for example) will be freed correctly.</li>
+<li>The observer can request to be held as a weak reference when it is
+registered. This insures that shorter lived objects (say one tied to an
+open window) will not fall into the cyclical reference trap.</li>
+</ol>
+
+<h3>Note</h3><p>The list of registered observers may be changed during the dispatch of
+nsPref:changed notification. However, the observers are not guaranteed
+to be notified in any particular order, so you can&#39;t be sure whether the
+added/removed observer will be called during the notification when it
+is added/removed.</p>
+
+<h3>Note</h3><p>It is possible to change preferences during the notification.</p>
+
+<h3>Note</h3><p>It is not safe to change observers during this callback in Gecko
+releases before 1.9. If you want a safe way to remove a pref observer,
+please use an nsITimer.</p>
+
+<h3>See</h3><ul>
+<li>nsIObserver</li>
+<li>removeObserver</li>
+</ul>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aDomain: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The preference on which to listen for changes. This can
+be the name of an entire branch to observe.
+e.g. Holding the &quot;root&quot; prefbranch and calling
+addObserver(&quot;foo.bar.&quot;, ...) will observe changes to
+foo.bar.baz and foo.bar.bzip</p>
+</div></li>
+<li>
+<h5>aObserver: <span class="tsd-signature-type">nsIObserver</span></h5>
+<div class="tsd-comment tsd-typography"><p>The object to be notified if the preference changes.</p>
+</div></li>
+<li>
+<h5>aHoldWeak: <span class="tsd-signature-type">boolean</span></h5>
+<div class="tsd-comment tsd-typography"><p>true  Hold a weak reference to |aObserver|. The object
+must implement the nsISupportsWeakReference
+interface or this will fail.
+false Hold a strong reference to |aObserver|.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L36274">types/gen/idls.d.ts:36274</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="clearUserPref" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>clear<wbr/>User<wbr/>Pref</span><a href="#clearUserPref" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="clearUserPref.clearUserPref-1">clear<wbr/>User<wbr/>Pref<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#clearUserPref.clearUserPref-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to clear a user set value from a specific preference. This will, in
+effect, reset the value to the default value. If no default value exists
+the preference will cease to exist.</p>
+
+<h3>Note</h3><p>This method does nothing if this object is a default branch.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The preference to be cleared.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L36079">types/gen/idls.d.ts:36079</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="deleteBranch" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>delete<wbr/>Branch</span><a href="#deleteBranch" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="deleteBranch.deleteBranch-1">delete<wbr/>Branch<span class="tsd-signature-symbol">(</span>aStartingAt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#deleteBranch.deleteBranch-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to remove all of the preferences referenced by this branch.</p>
+
+<h3>Note</h3><p>This method can be called on either a default or user branch but, in
+effect, always operates on both.</p>
+
+<h3>Throws</h3><p>Error The preference(s) do not exist or an error occurred.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aStartingAt: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The point on the branch at which to start the deleting
+preferences. Pass in &quot;&quot; to remove all preferences
+referenced by this branch.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L36198">types/gen/idls.d.ts:36198</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getBoolPref" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Bool<wbr/>Pref</span><a href="#getBoolPref" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="getBoolPref.getBoolPref-1">get<wbr/>Bool<wbr/>Pref<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aDefaultValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><a href="#getBoolPref.getBoolPref-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to get the state of an individual boolean preference.</p>
+
+<h3>Returns</h3><p>boolean  The value of the requested boolean preference.</p>
+
+<h3>See</h3><p>setBoolPref</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The boolean preference to get the state of.</p>
+</div></li>
+<li>
+<h5>aDefaultValue: <span class="tsd-signature-type">boolean</span></h5>
+<div class="tsd-comment tsd-typography"><p>The value to return if the preference is not set.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L35920">types/gen/idls.d.ts:35920</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getBoolPrefXPCOM" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Bool<wbr/>PrefXPCOM</span><a href="#getBoolPrefXPCOM" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="getBoolPrefXPCOM.getBoolPrefXPCOM-1">get<wbr/>Bool<wbr/>PrefXPCOM<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><a href="#getBoolPrefXPCOM.getBoolPrefXPCOM-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L35924">types/gen/idls.d.ts:35924</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getCharPref" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Char<wbr/>Pref</span><a href="#getCharPref" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="getCharPref.getCharPref-1">get<wbr/>Char<wbr/>Pref<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aDefaultValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><a href="#getCharPref.getCharPref-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to get the state of an individual ascii string preference.</p>
+
+<h3>Returns</h3><p>ACString   The value of the requested string preference.</p>
+
+<h3>See</h3><p>setCharPref</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The string preference to retrieve.</p>
+</div></li>
+<li>
+<h5>aDefaultValue: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The string to return if the preference is not set.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L35964">types/gen/idls.d.ts:35964</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getCharPrefXPCOM" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Char<wbr/>PrefXPCOM</span><a href="#getCharPrefXPCOM" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="getCharPrefXPCOM.getCharPrefXPCOM-1">get<wbr/>Char<wbr/>PrefXPCOM<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><a href="#getCharPrefXPCOM.getCharPrefXPCOM-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L35968">types/gen/idls.d.ts:35968</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getComplexValue" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Complex<wbr/>Value</span><a href="#getComplexValue" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="getComplexValue.getComplexValue-1">get<wbr/>Complex<wbr/>Value<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, aValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#getComplexValue.getComplexValue-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to get the state of an individual complex preference. A complex
+preference is a preference which represents an XPCOM object that can not
+be easily represented using a standard boolean, integer or string value.</p>
+
+<h3>Throws</h3><p>Error The value does not exist or is the wrong type.</p>
+
+<h3>See</h3><p>setComplexValue</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The complex preference to get the value of.</p>
+</div></li>
+<li>
+<h5>aType: <span class="tsd-signature-type">object</span></h5>
+<div class="tsd-comment tsd-typography"><p>The XPCOM interface that this complex preference
+represents. Interfaces currently supported are:</p>
+<ul>
+<li>nsIFile</li>
+<li>nsIPrefLocalizedString (Localized UniChar)</li>
+</ul>
+</div></li>
+<li>
+<h5>aValue: <span class="tsd-signature-type">object</span></h5>
+<div class="tsd-comment tsd-typography"><p>The XPCOM object into which to the complex preference
+value should be retrieved.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L36048">types/gen/idls.d.ts:36048</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getFloatPref" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Float<wbr/>Pref</span><a href="#getFloatPref" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="getFloatPref.getFloatPref-1">get<wbr/>Float<wbr/>Pref<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aDefaultValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#getFloatPref.getFloatPref-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to get the state of an individual floating-point preference.
+&quot;Floating point&quot; preferences are really string preferences that
+are converted to floating point numbers.</p>
+
+<h3>Returns</h3><p>float  The value of the requested floating point preference.</p>
+
+<h3>See</h3><p>setCharPref</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The floating point preference to get the state of.</p>
+</div></li>
+<li>
+<h5>aDefaultValue: <span class="tsd-signature-type">number</span></h5>
+<div class="tsd-comment tsd-typography"><p>The value to return if the preference is not set.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L35949">types/gen/idls.d.ts:35949</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getFloatPrefXPCOM" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Float<wbr/>PrefXPCOM</span><a href="#getFloatPrefXPCOM" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="getFloatPrefXPCOM.getFloatPrefXPCOM-1">get<wbr/>Float<wbr/>PrefXPCOM<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#getFloatPrefXPCOM.getFloatPrefXPCOM-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L35953">types/gen/idls.d.ts:35953</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getIntPref" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Int<wbr/>Pref</span><a href="#getIntPref" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="getIntPref.getIntPref-1">get<wbr/>Int<wbr/>Pref<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aDefaultValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#getIntPref.getIntPref-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to get the state of an individual integer preference.</p>
+
+<h3>Returns</h3><p>long     The value of the requested integer preference.</p>
+
+<h3>See</h3><p>setIntPref</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The integer preference to get the value of.</p>
+</div></li>
+<li>
+<h5>aDefaultValue: <span class="tsd-signature-type">number</span></h5>
+<div class="tsd-comment tsd-typography"><p>The value to return if the preference is not set.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L36014">types/gen/idls.d.ts:36014</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getIntPrefXPCOM" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Int<wbr/>PrefXPCOM</span><a href="#getIntPrefXPCOM" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="getIntPrefXPCOM.getIntPrefXPCOM-1">get<wbr/>Int<wbr/>PrefXPCOM<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#getIntPrefXPCOM.getIntPrefXPCOM-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L36018">types/gen/idls.d.ts:36018</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getPrefType" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Pref<wbr/>Type</span><a href="#getPrefType" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="getPrefType.getPrefType-1">get<wbr/>Pref<wbr/>Type<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#getPrefType.getPrefType-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to determine the type of a specific preference.</p>
+
+<h3>Returns</h3><p>long     A value representing the type of the preference. This
+value will be PREF_STRING, PREF_INT, or PREF_BOOL.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The preference to get the type of.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L35909">types/gen/idls.d.ts:35909</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getStringPref" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>String<wbr/>Pref</span><a href="#getStringPref" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="getStringPref.getStringPref-1">get<wbr/>String<wbr/>Pref<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aDefaultValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><a href="#getStringPref.getStringPref-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to get the state of an individual unicode string preference.</p>
+
+<h3>Returns</h3><p>AUTF8String   The value of the requested string preference.</p>
+
+<h3>See</h3><p>setStringPref</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The string preference to retrieve.</p>
+</div></li>
+<li>
+<h5>aDefaultValue: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The string to return if the preference is not set.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L35991">types/gen/idls.d.ts:35991</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="lockPref" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>lock<wbr/>Pref</span><a href="#lockPref" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="lockPref.lockPref-1">lock<wbr/>Pref<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#lockPref.lockPref-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to lock a specific preference. Locking a preference will cause the
+preference service to always return the default value regardless of
+whether there is a user set value or not.</p>
+
+<h3>Note</h3><p>This method can be called on either a default or user branch but, in
+effect, always operates on the default branch.</p>
+
+<h3>Throws</h3><p>Error The preference does not exist or an error occurred.</p>
+
+<h3>See</h3><p>unlockPref</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The preference to be locked.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L36095">types/gen/idls.d.ts:36095</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="prefHasDefaultValue" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>pref<wbr/>Has<wbr/>Default<wbr/>Value</span><a href="#prefHasDefaultValue" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="prefHasDefaultValue.prefHasDefaultValue-1">pref<wbr/>Has<wbr/>Default<wbr/>Value<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><a href="#prefHasDefaultValue.prefHasDefaultValue-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to check if a specific preference has a default value associated to
+it.</p>
+
+<h3>Note</h3><p>This method can be called on either a default or user branch but, in
+effect, always operates on the user branch.</p>
+
+<h3>Note</h3><p>This method can be used to distinguish between a built-in preference and a
+user-added preference.</p>
+
+<h3>Returns</h3><p>boolean  true  The preference has a default value.
+false The preference only has a user value.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The preference to be tested.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L36134">types/gen/idls.d.ts:36134</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="prefHasUserValue" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>pref<wbr/>Has<wbr/>User<wbr/>Value</span><a href="#prefHasUserValue" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="prefHasUserValue.prefHasUserValue-1">pref<wbr/>Has<wbr/>User<wbr/>Value<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><a href="#prefHasUserValue.prefHasUserValue-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to check if a specific preference has a user value associated to
+it.</p>
+
+<h3>Note</h3><p>This method can be called on either a default or user branch but, in
+effect, always operates on the user branch.</p>
+
+<h3>Note</h3><p>If a preference was manually set to a value that equals the default value,
+then the preference no longer has a user set value, i.e. it is
+considered reset to its default value.
+In particular, this method will return false for such a preference and
+the preference will not be saved to a file by nsIPrefService.savePrefFile.</p>
+
+<h3>Returns</h3><p>boolean  true  The preference has a user set value.
+false The preference only has a default value.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The preference to be tested.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L36116">types/gen/idls.d.ts:36116</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="prefIsLocked" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>pref<wbr/>Is<wbr/>Locked</span><a href="#prefIsLocked" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="prefIsLocked.prefIsLocked-1">pref<wbr/>Is<wbr/>Locked<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><a href="#prefIsLocked.prefIsLocked-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to check if a specific preference is locked. If a preference is
+locked calling its Get method will always return the default value.</p>
+
+<h3>Note</h3><p>This method can be called on either a default or user branch but, in
+effect, always operates on the default branch.</p>
+
+<h3>Returns</h3><p>boolean  true  The preference is locked.
+false The preference is not locked.</p>
+
+<h3>See</h3><ul>
+<li>lockPref</li>
+<li>unlockPref</li>
+</ul>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The preference to be tested.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L36151">types/gen/idls.d.ts:36151</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="prefIsSanitized" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>pref<wbr/>Is<wbr/>Sanitized</span><a href="#prefIsSanitized" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="prefIsSanitized.prefIsSanitized-1">pref<wbr/>Is<wbr/>Sanitized<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><a href="#prefIsSanitized.prefIsSanitized-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to check if a specific preference has been sanitized. If a
+preference is sanitized, any user value the preference may have will not
+be present in a sub-process.  A preference is never sanitized in the
+parent process; it is only marked as sanitized when it is converted
+to a dom::Pref for serialization to a child process.</p>
+
+<h3>Note</h3><p>This method can be called on either a default or user branch but it
+makes no difference.</p>
+
+<h3>Returns</h3><p>boolean  true  The preference is sanitized.
+false The preference is not sanitized.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The preference to be tested.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L36168">types/gen/idls.d.ts:36168</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="removeObserver" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>remove<wbr/>Observer</span><a href="#removeObserver" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="removeObserver.removeObserver-1">remove<wbr/>Observer<span class="tsd-signature-symbol">(</span>aDomain<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aObserver<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIObserver</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#removeObserver.removeObserver-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Remove a preference change observer.</p>
+
+<h3>Note</h3><p>Note that you must call removeObserver() on the same nsIPrefBranch
+instance on which you called addObserver() in order to remove aObserver;
+otherwise, the observer will not be removed.</p>
+
+<h3>See</h3><ul>
+<li>nsIObserver</li>
+<li>addObserver</li>
+</ul>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aDomain: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The preference which is being observed for changes.</p>
+</div></li>
+<li>
+<h5>aObserver: <span class="tsd-signature-type">nsIObserver</span></h5>
+<div class="tsd-comment tsd-typography"><p>An observer previously registered with addObserver().</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L36289">types/gen/idls.d.ts:36289</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="resetBranch" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>reset<wbr/>Branch</span><a href="#resetBranch" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="resetBranch.resetBranch-1">reset<wbr/>Branch<span class="tsd-signature-symbol">(</span>aStartingAt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#resetBranch.resetBranch-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to reset all of the preferences referenced by this branch to their
+default values.</p>
+
+<h3>Note</h3><p>This method can be called on either a default or user branch but, in
+effect, always operates on the user branch.</p>
+
+<h3>Throws</h3><p>Error The preference(s) do not exist or an error occurred.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aStartingAt: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The point on the branch at which to start the resetting
+preferences to their default values. Pass in &quot;&quot; to
+reset all preferences referenced by this branch.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L36213">types/gen/idls.d.ts:36213</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="setBoolPref" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>Bool<wbr/>Pref</span><a href="#setBoolPref" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="setBoolPref.setBoolPref-1">set<wbr/>Bool<wbr/>Pref<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#setBoolPref.setBoolPref-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to set the state of an individual boolean preference.</p>
+
+<h3>Throws</h3><p>Error if setting failed or the preference has a default
+value of a type other than boolean.</p>
+
+<h3>See</h3><p>getBoolPref</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The boolean preference to set the state of.</p>
+</div></li>
+<li>
+<h5>aValue: <span class="tsd-signature-type">boolean</span></h5>
+<div class="tsd-comment tsd-typography"><p>The boolean value to set the preference to.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L35936">types/gen/idls.d.ts:35936</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="setCharPref" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>Char<wbr/>Pref</span><a href="#setCharPref" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="setCharPref.setCharPref-1">set<wbr/>Char<wbr/>Pref<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#setCharPref.setCharPref-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to set the state of an individual ascii string preference.</p>
+
+<h3>Throws</h3><p>Error if setting failed or the preference has a default
+value of a type other than string.</p>
+
+<h3>See</h3><p>getCharPref</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The string preference to set.</p>
+</div></li>
+<li>
+<h5>aValue: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The string value to set the preference to.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L35980">types/gen/idls.d.ts:35980</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="setComplexValue" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>Complex<wbr/>Value</span><a href="#setComplexValue" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="setComplexValue.setComplexValue-1">set<wbr/>Complex<wbr/>Value<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, aValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsISupports</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#setComplexValue.setComplexValue-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to set the state of an individual complex preference. A complex
+preference is a preference which represents an XPCOM object that can not
+be easily represented using a standard boolean, integer or string value.</p>
+
+<h3>Throws</h3><p>Error if setting failed or the value is the wrong type.</p>
+
+<h3>See</h3><p>getComplexValue</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The complex preference to set the value of.</p>
+</div></li>
+<li>
+<h5>aType: <span class="tsd-signature-type">object</span></h5>
+<div class="tsd-comment tsd-typography"><p>The XPCOM interface that this complex preference
+represents. Interfaces currently supported are:</p>
+<ul>
+<li>nsIFile</li>
+<li>nsISupportsString (UniChar)
+(deprecated; see setStringPref)</li>
+<li>nsIPrefLocalizedString (Localized UniChar)</li>
+</ul>
+</div></li>
+<li>
+<h5>aValue: <span class="tsd-signature-type">nsISupports</span></h5>
+<div class="tsd-comment tsd-typography"><p>The XPCOM object from which to set the complex preference
+value.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L36068">types/gen/idls.d.ts:36068</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="setIntPref" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>Int<wbr/>Pref</span><a href="#setIntPref" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="setIntPref.setIntPref-1">set<wbr/>Int<wbr/>Pref<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#setIntPref.setIntPref-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to set the state of an individual integer preference.</p>
+
+<h3>Throws</h3><p>Error if setting failed or the preference has a default
+value of a type other than integer.</p>
+
+<h3>See</h3><p>getIntPref</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The integer preference to set the value of.</p>
+</div></li>
+<li>
+<h5>aValue: <span class="tsd-signature-type">number</span></h5>
+<div class="tsd-comment tsd-typography"><p>The integer value to set the preference to.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L36030">types/gen/idls.d.ts:36030</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="setStringPref" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>String<wbr/>Pref</span><a href="#setStringPref" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="setStringPref.setStringPref-1">set<wbr/>String<wbr/>Pref<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#setStringPref.setStringPref-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to set the state of an individual unicode string preference.</p>
+
+<h3>Throws</h3><p>Error if setting failed or the preference has a default
+value of a type other than string.</p>
+
+<h3>See</h3><p>getStringPref</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The string preference to set.</p>
+</div></li>
+<li>
+<h5>aValue: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The string value to set the preference to.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L36003">types/gen/idls.d.ts:36003</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="unlockPref" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>unlock<wbr/>Pref</span><a href="#unlockPref" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="unlockPref.unlockPref-1">unlock<wbr/>Pref<span class="tsd-signature-symbol">(</span>aPrefName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#unlockPref.unlockPref-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to unlock a specific preference. Unlocking a previously locked
+preference allows the preference service to once again return the user set
+value of the preference.</p>
+
+<h3>Note</h3><p>This method can be called on either a default or user branch but, in
+effect, always operates on the default branch.</p>
+
+<h3>Throws</h3><p>Error The preference does not exist or an error occurred.</p>
+
+<h3>See</h3><p>lockPref</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPrefName: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>The preference to be unlocked.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L36184">types/gen/idls.d.ts:36184</a></li></ul></aside></li></ul></section></section></div>
+<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+<div class="tsd-navigation settings">
+<details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility">
+<h4 class="uppercase">Member Visibility</h4><form>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div>
+<div class="tsd-theme-toggle">
+<h4 class="uppercase">Theme</h4><select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<nav class="tsd-navigation primary">
+<details class="tsd-index-accordion" open><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Modules</h3></summary>
+<div class="tsd-accordion-details">
+<ul>
+<li class="current"><a href="../modules.html">gecko-<wbr/>types</a>
+<ul>
+<li class="tsd-kind-module"><a href="../modules/custom_idlTypes.html">custom/idl<wbr/>Types</a></li>
+<li class="tsd-kind-module"><a href="../modules/custom_webidlTypes.html">custom/webidl<wbr/>Types</a></li>
+<li class="current tsd-kind-module"><a href="../modules/gen_idls.html">gen/idls</a></li>
+<li class="tsd-kind-module"><a href="../modules/gen_namespaces.html">gen/namespaces</a>
+<ul>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.APZHitResultFlags.html">APZHit<wbr/>Result<wbr/>Flags</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.AddonManagerPermissions.html">Addon<wbr/>Manager<wbr/>Permissions</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module tsd-is-external"><a href="../modules/gen_namespaces.CSS.html">CSS</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.ChromeUtils.html">Chrome<wbr/>Utils</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.IOUtils.html">IOUtils</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.InspectorUtils.html">Inspector<wbr/>Utils</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.L10nOverlays.html">L10n<wbr/>Overlays</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.MediaControlService.html">Media<wbr/>Control<wbr/>Service</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PathUtils.html">Path<wbr/>Utils</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PlacesObservers.html">Places<wbr/>Observers</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PrioEncoder.html">Prio<wbr/>Encoder</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PromiseDebugging.html">Promise<wbr/>Debugging</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.SessionStoreUtils.html">Session<wbr/>Store<wbr/>Utils</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TelemetryStopwatch.html">Telemetry<wbr/>Stopwatch</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TestUtils.html">Test<wbr/>Utils</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.UniFFIScaffolding.html">UniFFIScaffolding</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.UserInteraction.html">User<wbr/>Interaction</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.WebrtcGlobalInformation.html">Webrtc<wbr/>Global<wbr/>Information</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.WorkerTestUtils.html">Worker<wbr/>Test<wbr/>Utils</a></li></ul></li></ul></li></ul></div></details></nav>
+<nav class="tsd-navigation secondary menu-sticky">
+<ul>
+<li class="current tsd-kind-interface tsd-parent-kind-module"><a href="gen_idls.nsIPrefBranchType.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-interface)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-256-path"></rect><path d="M9.51 16V15.016H11.298V8.224H9.51V7.24H14.19V8.224H12.402V15.016H14.19V16H9.51Z" fill="var(--color-text)" id="icon-256-text"></path></svg><span>nsIPref<wbr/>Branch<wbr/>Type</span></a>
+<ul>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#root" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>root</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#addObserver" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>add<wbr/>Observer</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#clearUserPref" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>clear<wbr/>User<wbr/>Pref</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#deleteBranch" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>delete<wbr/>Branch</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#getBoolPref" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Bool<wbr/>Pref</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#getBoolPrefXPCOM" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Bool<wbr/>PrefXPCOM</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#getCharPref" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Char<wbr/>Pref</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#getCharPrefXPCOM" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Char<wbr/>PrefXPCOM</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#getComplexValue" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Complex<wbr/>Value</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#getFloatPref" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Float<wbr/>Pref</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#getFloatPrefXPCOM" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Float<wbr/>PrefXPCOM</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#getIntPref" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Int<wbr/>Pref</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#getIntPrefXPCOM" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Int<wbr/>PrefXPCOM</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#getPrefType" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Pref<wbr/>Type</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#getStringPref" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>String<wbr/>Pref</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#lockPref" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>lock<wbr/>Pref</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#prefHasDefaultValue" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>pref<wbr/>Has<wbr/>Default<wbr/>Value</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#prefHasUserValue" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>pref<wbr/>Has<wbr/>User<wbr/>Value</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#prefIsLocked" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>pref<wbr/>Is<wbr/>Locked</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#prefIsSanitized" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>pref<wbr/>Is<wbr/>Sanitized</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#removeObserver" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>remove<wbr/>Observer</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#resetBranch" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>reset<wbr/>Branch</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#setBoolPref" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>Bool<wbr/>Pref</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#setCharPref" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>Char<wbr/>Pref</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#setComplexValue" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>Complex<wbr/>Value</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#setIntPref" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>Int<wbr/>Pref</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#setStringPref" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>String<wbr/>Pref</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPrefBranchType.html#unlockPref" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>unlock<wbr/>Pref</a></li></ul></li></ul></nav></div></div>
+<div class="container tsd-generator">
+<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
+<div class="overlay"></div><script src="../assets/main.js"></script></body></html>

@@ -1,0 +1,505 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>nsISocketTransportType | gecko-types</title><meta name="description" content="Documentation for gecko-types"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script async src="../assets/search.js" id="search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container">
+<div class="table-cell" id="tsd-search" data-base="..">
+<div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
+<div class="field">
+<div id="tsd-toolbar-links"></div></div>
+<ul class="results">
+<li class="state loading">Preparing search index...</li>
+<li class="state failure">The search index is not available</li></ul><a href="../index.html" class="title">gecko-types</a></div>
+<div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="7" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="11" width="14" height="2" fill="var(--color-text)"></rect></svg></a></div></div></header>
+<div class="container container-main">
+<div class="col-8 col-content">
+<div class="tsd-page-title">
+<ul class="tsd-breadcrumb">
+<li><a href="../modules.html">gecko-types</a></li>
+<li><a href="../modules/gen_idls.html">gen/idls</a></li>
+<li><a href="gen_idls.nsISocketTransportType.html">nsISocketTransportType</a></li></ul>
+<h1>Interface nsISocketTransportType</h1></div>
+<section class="tsd-panel tsd-comment">
+<div class="tsd-comment tsd-typography"><p>nsISocketTransport</p>
+<p>NOTE: Connection setup is triggered by opening an input or output stream,
+it does not start on its own. Completion of the connection setup is
+indicated by a STATUS_CONNECTED_TO notification to the event sink (if set).</p>
+<p>NOTE: This is a free-threaded interface, meaning that the methods on
+this interface may be called from any thread.</p>
+</div></section>
+<section class="tsd-panel tsd-hierarchy">
+<h4>Hierarchy</h4>
+<ul class="tsd-hierarchy">
+<li><span class="tsd-signature-type">nsITransport</span>
+<ul class="tsd-hierarchy">
+<li><span class="target">nsISocketTransportType</span></li></ul></li></ul></section><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44322">types/gen/idls.d.ts:44322</a></li></ul></aside>
+<section class="tsd-panel-group tsd-index-group">
+<section class="tsd-panel tsd-index-panel">
+<details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
+<h5 class="tsd-index-heading uppercase" role="button" aria-expanded="false" tabIndex=0><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1.5 5.50969L8 11.6609L14.5 5.50969L12.5466 3.66086L8 7.96494L3.45341 3.66086L1.5 5.50969Z" fill="var(--color-text)"></path></svg> Index</h5></summary>
+<div class="tsd-accordion-details">
+<section class="tsd-index-section">
+<h3 class="tsd-index-heading">Properties</h3>
+<div class="tsd-index-list"><a href="gen_idls.nsISocketTransportType.html#QoSBits" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF984D" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-1024-path"></rect><path d="M9.354 16V7.24H12.174C12.99 7.24 13.638 7.476 14.118 7.948C14.606 8.412 14.85 9.036 14.85 9.82C14.85 10.604 14.606 11.232 14.118 11.704C13.638 12.168 12.99 12.4 12.174 12.4H10.434V16H9.354ZM10.434 11.428H12.174C12.646 11.428 13.022 11.284 13.302 10.996C13.59 10.7 13.734 10.308 13.734 9.82C13.734 9.324 13.59 8.932 13.302 8.644C13.022 8.356 12.646 8.212 12.174 8.212H10.434V11.428Z" fill="var(--color-text)" id="icon-1024-text"></path></svg><span>QoSBits</span></a>
+<a href="gen_idls.nsISocketTransportType.html#connectionFlags" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>connection<wbr/>Flags</span></a>
+<a href="gen_idls.nsISocketTransportType.html#echConfigUsed" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>ech<wbr/>Config<wbr/>Used</span></a>
+<a href="gen_idls.nsISocketTransportType.html#host" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>host</span></a>
+<a href="gen_idls.nsISocketTransportType.html#keepaliveEnabled" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>keepalive<wbr/>Enabled</span></a>
+<a href="gen_idls.nsISocketTransportType.html#originAttributes" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>origin<wbr/>Attributes</span></a>
+<a href="gen_idls.nsISocketTransportType.html#port" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>port</span></a>
+<a href="gen_idls.nsISocketTransportType.html#recvBufferSize" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>recv<wbr/>Buffer<wbr/>Size</span></a>
+<a href="gen_idls.nsISocketTransportType.html#resetIPFamilyPreference" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>resetIPFamily<wbr/>Preference</span></a>
+<a href="gen_idls.nsISocketTransportType.html#retryDnsIfPossible" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>retry<wbr/>Dns<wbr/>If<wbr/>Possible</span></a>
+<a href="gen_idls.nsISocketTransportType.html#securityCallbacks" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>security<wbr/>Callbacks</span></a>
+<a href="gen_idls.nsISocketTransportType.html#sendBufferSize" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>send<wbr/>Buffer<wbr/>Size</span></a>
+<a href="gen_idls.nsISocketTransportType.html#status" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>status</span></a>
+<a href="gen_idls.nsISocketTransportType.html#tlsFlags" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>tls<wbr/>Flags</span></a>
+<a href="gen_idls.nsISocketTransportType.html#tlsSocketControl" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>tls<wbr/>Socket<wbr/>Control</span></a>
+</div></section>
+<section class="tsd-index-section">
+<h3 class="tsd-index-heading">Methods</h3>
+<div class="tsd-index-list"><a href="gen_idls.nsISocketTransportType.html#binaryGetOriginAttributes" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF4DB8" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-2048-path"></rect><path d="M9.162 16V7.24H10.578L11.514 10.072C11.602 10.328 11.674 10.584 11.73 10.84C11.794 11.088 11.842 11.28 11.874 11.416C11.906 11.28 11.954 11.088 12.018 10.84C12.082 10.584 12.154 10.324 12.234 10.06L13.122 7.24H14.538V16H13.482V12.82C13.482 12.468 13.49 12.068 13.506 11.62C13.53 11.172 13.558 10.716 13.59 10.252C13.622 9.78 13.654 9.332 13.686 8.908C13.726 8.476 13.762 8.1 13.794 7.78L12.366 12.16H11.334L9.894 7.78C9.934 8.092 9.97 8.456 10.002 8.872C10.042 9.28 10.078 9.716 10.11 10.18C10.142 10.636 10.166 11.092 10.182 11.548C10.206 12.004 10.218 12.428 10.218 12.82V16H9.162Z" fill="var(--color-text)" id="icon-2048-text"></path></svg><span>binary<wbr/>Get<wbr/>Origin<wbr/>Attributes</span></a>
+<a href="gen_idls.nsISocketTransportType.html#binarySetOriginAttributes" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>binary<wbr/>Set<wbr/>Origin<wbr/>Attributes</span></a>
+<a href="gen_idls.nsISocketTransportType.html#bind" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>bind</span></a>
+<a href="gen_idls.nsISocketTransportType.html#getPeerAddr" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Peer<wbr/>Addr</span></a>
+<a href="gen_idls.nsISocketTransportType.html#getScriptablePeerAddr" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Scriptable<wbr/>Peer<wbr/>Addr</span></a>
+<a href="gen_idls.nsISocketTransportType.html#getScriptableSelfAddr" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Scriptable<wbr/>Self<wbr/>Addr</span></a>
+<a href="gen_idls.nsISocketTransportType.html#getSelfAddr" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Self<wbr/>Addr</span></a>
+<a href="gen_idls.nsISocketTransportType.html#getTimeout" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Timeout</span></a>
+<a href="gen_idls.nsISocketTransportType.html#isAlive" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>is<wbr/>Alive</span></a>
+<a href="gen_idls.nsISocketTransportType.html#resolvedByTRR" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>resolved<wbr/>ByTRR</span></a>
+<a href="gen_idls.nsISocketTransportType.html#setEchConfig" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>Ech<wbr/>Config</span></a>
+<a href="gen_idls.nsISocketTransportType.html#setIsPrivate" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>Is<wbr/>Private</span></a>
+<a href="gen_idls.nsISocketTransportType.html#setKeepaliveVals" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>Keepalive<wbr/>Vals</span></a>
+<a href="gen_idls.nsISocketTransportType.html#setLinger" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>Linger</span></a>
+<a href="gen_idls.nsISocketTransportType.html#setReuseAddrPort" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>Reuse<wbr/>Addr<wbr/>Port</span></a>
+<a href="gen_idls.nsISocketTransportType.html#setTimeout" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>Timeout</span></a>
+</div></section></div></details></section></section>
+<section class="tsd-panel-group tsd-member-group">
+<h2>Properties</h2>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="QoSBits" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>QoSBits</span><a href="#QoSBits" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" id="icon-anchor-a"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" id="icon-anchor-b"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" id="icon-anchor-c"></path></svg></a></h3>
+<div class="tsd-signature">QoSBits<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+<div class="tsd-comment tsd-typography"><p>Socket QoS/ToS markings. Valid values are IPTOS_DSCP_AFxx or
+IPTOS_CLASS_CSx (or IPTOS_DSCP_EF, but currently no supported
+services require expedited-forwarding).
+Not setting this value will leave the socket with the default
+ToS value, which on most systems if IPTOS_CLASS_CS0 (formerly
+IPTOS_PREC_ROUTINE).</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44429">types/gen/idls.d.ts:44429</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="connectionFlags" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>connection<wbr/>Flags</span><a href="#connectionFlags" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">connection<wbr/>Flags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+<div class="tsd-comment tsd-typography"><p>connectionFlags is a bitmask that can be used to modify underlying
+behavior of the socket connection. See the flags below.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44414">types/gen/idls.d.ts:44414</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="echConfigUsed" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>ech<wbr/>Config<wbr/>Used</span><a href="#echConfigUsed" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">ech<wbr/>Config<wbr/>Used<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+<div class="tsd-comment tsd-typography"><p>This attribute holds information whether echConfig has been used.
+The value is set after PR_Connect is called.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44459">types/gen/idls.d.ts:44459</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="host" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>host</span><a href="#host" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">host<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+<div class="tsd-comment tsd-typography"><p>Get the peer&#39;s host for the underlying socket connection.
+For Unix domain sockets, this is a pathname, or the empty string for
+unnamed and abstract socket addresses.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44328">types/gen/idls.d.ts:44328</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="keepaliveEnabled" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>keepalive<wbr/>Enabled</span><a href="#keepaliveEnabled" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">keepalive<wbr/>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+<div class="tsd-comment tsd-typography"><p>TCP keepalive configuration (support varies by platform).
+Note that the attribute as well as the setter can only accessed
+in the socket thread.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44444">types/gen/idls.d.ts:44444</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="originAttributes" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>origin<wbr/>Attributes</span><a href="#originAttributes" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">origin<wbr/>Attributes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+<div class="tsd-comment tsd-typography"><p>The origin attributes are used to create sockets.  The first party domain
+will eventually be used to isolate OCSP cache and is only non-empty when
+&quot;privacy.firstparty.isolate&quot; is enabled.  Setting this is the only way to
+carry origin attributes down to NSPR layers which are final consumers.
+It must be set before the socket transport is built.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44341">types/gen/idls.d.ts:44341</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="port" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>port</span><a href="#port" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">port<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+<div class="tsd-comment tsd-typography"><p>Get the port for the underlying socket connection.
+For Unix domain sockets, this is zero.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44333">types/gen/idls.d.ts:44333</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="recvBufferSize" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>recv<wbr/>Buffer<wbr/>Size</span><a href="#recvBufferSize" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">recv<wbr/>Buffer<wbr/>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+<div class="tsd-comment tsd-typography"><p>TCP send and receive buffer sizes. A value of 0 means OS level
+auto-tuning is in effect.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44434">types/gen/idls.d.ts:44434</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="resetIPFamilyPreference" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>resetIPFamily<wbr/>Preference</span><a href="#resetIPFamilyPreference" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">resetIPFamily<wbr/>Preference<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+<div class="tsd-comment tsd-typography"><p>If true, this socket transport has found out the prefered family
+according it&#39;s connection flags could not be used to establish
+connections any more.  Hence, the preference should be reset.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44454">types/gen/idls.d.ts:44454</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="retryDnsIfPossible" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>retry<wbr/>Dns<wbr/>If<wbr/>Possible</span><a href="#retryDnsIfPossible" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">retry<wbr/>Dns<wbr/>If<wbr/>Possible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+<div class="tsd-comment tsd-typography"><p>If DNS is performed externally, this flag informs the caller that it may
+retry connecting with a different DNS configuration (e.g. different IP
+family preference). The flag is set only if a network error is encounder,
+e.g. NS_ERROR_CONNECTION_REFUSED, NS_ERROR_RESET, etc.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44479">types/gen/idls.d.ts:44479</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="securityCallbacks" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>security<wbr/>Callbacks</span><a href="#securityCallbacks" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">security<wbr/>Callbacks<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIInterfaceRequestor</span></div>
+<div class="tsd-comment tsd-typography"><p>Security notification callbacks passed to the secure socket provider
+via nsITLSSocketControl at socket creation time.</p>
+<p>NOTE: this attribute cannot be changed once a stream has been opened.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44385">types/gen/idls.d.ts:44385</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="sendBufferSize" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>send<wbr/>Buffer<wbr/>Size</span><a href="#sendBufferSize" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">send<wbr/>Buffer<wbr/>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44438">types/gen/idls.d.ts:44438</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="status" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>status</span><a href="#status" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+<div class="tsd-comment tsd-typography"><p>Return the current status of the socket.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44483">types/gen/idls.d.ts:44483</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="tlsFlags" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>tls<wbr/>Flags</span><a href="#tlsFlags" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">tls<wbr/>Flags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+<div class="tsd-comment tsd-typography"><p>An opaque flags for non-standard behavior of the TLS system.
+It is unlikely this will need to be set outside of telemetry studies
+relating to the TLS implementation.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44420">types/gen/idls.d.ts:44420</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="tlsSocketControl" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>tls<wbr/>Socket<wbr/>Control</span><a href="#tlsSocketControl" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">tls<wbr/>Socket<wbr/>Control<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsITLSSocketControl</span></div>
+<div class="tsd-comment tsd-typography"><p>TLS socket control object. This attribute is only available once the
+socket is connected.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44378">types/gen/idls.d.ts:44378</a></li></ul></aside></section></section>
+<section class="tsd-panel-group tsd-member-group">
+<h2>Methods</h2>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="binaryGetOriginAttributes" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>binary<wbr/>Get<wbr/>Origin<wbr/>Attributes</span><a href="#binaryGetOriginAttributes" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="binaryGetOriginAttributes.binaryGetOriginAttributes-1">binary<wbr/>Get<wbr/>Origin<wbr/>Attributes<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">OriginAttributes</span><a href="#binaryGetOriginAttributes.binaryGetOriginAttributes-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">OriginAttributes</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44345">types/gen/idls.d.ts:44345</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="binarySetOriginAttributes" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>binary<wbr/>Set<wbr/>Origin<wbr/>Attributes</span><a href="#binarySetOriginAttributes" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="binarySetOriginAttributes.binarySetOriginAttributes-1">binary<wbr/>Set<wbr/>Origin<wbr/>Attributes<span class="tsd-signature-symbol">(</span>aOriginAttrs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">const_OriginAttributesRef</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#binarySetOriginAttributes.binarySetOriginAttributes-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aOriginAttrs: <span class="tsd-signature-type">const_OriginAttributesRef</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44349">types/gen/idls.d.ts:44349</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="bind" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>bind</span><a href="#bind" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="bind.bind-1">bind<span class="tsd-signature-symbol">(</span>aLocalAddr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NetAddrPtr</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#bind.bind-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Bind to a specific local address.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aLocalAddr: <span class="tsd-signature-type">NetAddrPtr</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44363">types/gen/idls.d.ts:44363</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getPeerAddr" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Peer<wbr/>Addr</span><a href="#getPeerAddr" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="getPeerAddr.getPeerAddr-1">get<wbr/>Peer<wbr/>Addr<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NetAddr</span><a href="#getPeerAddr.getPeerAddr-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns the IP address of the socket connection peer. This
+attribute is defined only once a connection has been established.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">NetAddr</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44354">types/gen/idls.d.ts:44354</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getScriptablePeerAddr" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Scriptable<wbr/>Peer<wbr/>Addr</span><a href="#getScriptablePeerAddr" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="getScriptablePeerAddr.getScriptablePeerAddr-1">get<wbr/>Scriptable<wbr/>Peer<wbr/>Addr<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsINetAddr</span><a href="#getScriptablePeerAddr.getScriptablePeerAddr-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns a scriptable version of getPeerAddr. This attribute is defined
+only once a connection has been established.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsINetAddr</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44368">types/gen/idls.d.ts:44368</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getScriptableSelfAddr" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Scriptable<wbr/>Self<wbr/>Addr</span><a href="#getScriptableSelfAddr" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="getScriptableSelfAddr.getScriptableSelfAddr-1">get<wbr/>Scriptable<wbr/>Self<wbr/>Addr<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsINetAddr</span><a href="#getScriptableSelfAddr.getScriptableSelfAddr-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns a scriptable version of getSelfAddr. This attribute is defined
+only once a connection has been established.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsINetAddr</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44373">types/gen/idls.d.ts:44373</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getSelfAddr" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Self<wbr/>Addr</span><a href="#getSelfAddr" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="getSelfAddr.getSelfAddr-1">get<wbr/>Self<wbr/>Addr<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NetAddr</span><a href="#getSelfAddr.getSelfAddr-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns the IP address of the initiating end. This attribute
+is defined only once a connection has been established.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">NetAddr</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44359">types/gen/idls.d.ts:44359</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getTimeout" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Timeout</span><a href="#getTimeout" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="getTimeout.getTimeout-1">get<wbr/>Timeout<span class="tsd-signature-symbol">(</span>aType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#getTimeout.getTimeout-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Socket timeouts in seconds.  To specify no timeout, pass UINT32_MAX
+as aValue to setTimeout.  The implementation may truncate timeout values
+to a smaller range of values (e.g., 0 to 0xFFFF).</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aType: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44395">types/gen/idls.d.ts:44395</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="isAlive" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>is<wbr/>Alive</span><a href="#isAlive" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="isAlive.isAlive-1">is<wbr/>Alive<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><a href="#isAlive.isAlive-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Test if this socket transport is (still) connected.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44389">types/gen/idls.d.ts:44389</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="resolvedByTRR" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>resolved<wbr/>ByTRR</span><a href="#resolvedByTRR" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="resolvedByTRR.resolvedByTRR-1">resolved<wbr/>ByTRR<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bool</span><a href="#resolvedByTRR.resolvedByTRR-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>IP address resolved using TRR.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">bool</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44467">types/gen/idls.d.ts:44467</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="setEchConfig" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>Ech<wbr/>Config</span><a href="#setEchConfig" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="setEchConfig.setEchConfig-1">set<wbr/>Ech<wbr/>Config<span class="tsd-signature-symbol">(</span>echConfig<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#setEchConfig.setEchConfig-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called to set the echConfig to the securityInfo object.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>echConfig: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44463">types/gen/idls.d.ts:44463</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="setIsPrivate" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>Is<wbr/>Private</span><a href="#setIsPrivate" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="setIsPrivate.setIsPrivate-1">set<wbr/>Is<wbr/>Private<span class="tsd-signature-symbol">(</span>isPrivate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#setIsPrivate.setIsPrivate-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Indicate whether this socket is created from a private window. If yes,
+this socket will be closed when the last private window is closed.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>isPrivate: <span class="tsd-signature-type">boolean</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44472">types/gen/idls.d.ts:44472</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="setKeepaliveVals" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>Keepalive<wbr/>Vals</span><a href="#setKeepaliveVals" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="setKeepaliveVals.setKeepaliveVals-1">set<wbr/>Keepalive<wbr/>Vals<span class="tsd-signature-symbol">(</span>keepaliveIdleTime<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, keepaliveRetryInterval<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#setKeepaliveVals.setKeepaliveVals-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>keepaliveIdleTime: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>keepaliveRetryInterval: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44448">types/gen/idls.d.ts:44448</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="setLinger" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>Linger</span><a href="#setLinger" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="setLinger.setLinger-1">set<wbr/>Linger<span class="tsd-signature-symbol">(</span>aPolarity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, aTimeout<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#setLinger.setLinger-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Sets the SO_LINGER option with the specified values for the l_onoff and
+l_linger parameters. This applies PR_SockOpt_Linger before PR_Close and
+can be used with a timeout of zero to send an RST packet when closing.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPolarity: <span class="tsd-signature-type">boolean</span></h5></li>
+<li>
+<h5>aTimeout: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44405">types/gen/idls.d.ts:44405</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="setReuseAddrPort" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>Reuse<wbr/>Addr<wbr/>Port</span><a href="#setReuseAddrPort" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="setReuseAddrPort.setReuseAddrPort-1">set<wbr/>Reuse<wbr/>Addr<wbr/>Port<span class="tsd-signature-symbol">(</span>reuseAddrPort<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bool</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#setReuseAddrPort.setReuseAddrPort-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>True to set addr and port reuse socket options.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>reuseAddrPort: <span class="tsd-signature-type">bool</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44409">types/gen/idls.d.ts:44409</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="setTimeout" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>Timeout</span><a href="#setTimeout" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="setTimeout.setTimeout-1">set<wbr/>Timeout<span class="tsd-signature-symbol">(</span>aType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, aValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#setTimeout.setTimeout-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aType: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>aValue: <span class="tsd-signature-type">number</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/92ca110/types/gen/idls.d.ts#L44399">types/gen/idls.d.ts:44399</a></li></ul></aside></li></ul></section></section></div>
+<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+<div class="tsd-navigation settings">
+<details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility">
+<h4 class="uppercase">Member Visibility</h4><form>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div>
+<div class="tsd-theme-toggle">
+<h4 class="uppercase">Theme</h4><select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<nav class="tsd-navigation primary">
+<details class="tsd-index-accordion" open><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Modules</h3></summary>
+<div class="tsd-accordion-details">
+<ul>
+<li class="current"><a href="../modules.html">gecko-<wbr/>types</a>
+<ul>
+<li class="tsd-kind-module"><a href="../modules/custom_idlTypes.html">custom/idl<wbr/>Types</a></li>
+<li class="tsd-kind-module"><a href="../modules/custom_webidlTypes.html">custom/webidl<wbr/>Types</a></li>
+<li class="current tsd-kind-module"><a href="../modules/gen_idls.html">gen/idls</a></li>
+<li class="tsd-kind-module"><a href="../modules/gen_namespaces.html">gen/namespaces</a>
+<ul>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.APZHitResultFlags.html">APZHit<wbr/>Result<wbr/>Flags</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.AddonManagerPermissions.html">Addon<wbr/>Manager<wbr/>Permissions</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module tsd-is-external"><a href="../modules/gen_namespaces.CSS.html">CSS</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.ChromeUtils.html">Chrome<wbr/>Utils</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.IOUtils.html">IOUtils</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.InspectorUtils.html">Inspector<wbr/>Utils</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.L10nOverlays.html">L10n<wbr/>Overlays</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.MediaControlService.html">Media<wbr/>Control<wbr/>Service</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PathUtils.html">Path<wbr/>Utils</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PlacesObservers.html">Places<wbr/>Observers</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PrioEncoder.html">Prio<wbr/>Encoder</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PromiseDebugging.html">Promise<wbr/>Debugging</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.SessionStoreUtils.html">Session<wbr/>Store<wbr/>Utils</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TelemetryStopwatch.html">Telemetry<wbr/>Stopwatch</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TestUtils.html">Test<wbr/>Utils</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.UniFFIScaffolding.html">UniFFIScaffolding</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.UserInteraction.html">User<wbr/>Interaction</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.WebrtcGlobalInformation.html">Webrtc<wbr/>Global<wbr/>Information</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.WorkerTestUtils.html">Worker<wbr/>Test<wbr/>Utils</a></li></ul></li></ul></li></ul></div></details></nav>
+<nav class="tsd-navigation secondary menu-sticky">
+<ul>
+<li class="current tsd-kind-interface tsd-parent-kind-module"><a href="gen_idls.nsISocketTransportType.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-interface)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-256-path"></rect><path d="M9.51 16V15.016H11.298V8.224H9.51V7.24H14.19V8.224H12.402V15.016H14.19V16H9.51Z" fill="var(--color-text)" id="icon-256-text"></path></svg><span>nsISocket<wbr/>Transport<wbr/>Type</span></a>
+<ul>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#QoSBits" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>QoSBits</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#connectionFlags" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>connection<wbr/>Flags</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#echConfigUsed" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>ech<wbr/>Config<wbr/>Used</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#host" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>host</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#keepaliveEnabled" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>keepalive<wbr/>Enabled</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#originAttributes" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>origin<wbr/>Attributes</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#port" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>port</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#recvBufferSize" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>recv<wbr/>Buffer<wbr/>Size</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#resetIPFamilyPreference" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>resetIPFamily<wbr/>Preference</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#retryDnsIfPossible" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>retry<wbr/>Dns<wbr/>If<wbr/>Possible</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#securityCallbacks" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>security<wbr/>Callbacks</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#sendBufferSize" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>send<wbr/>Buffer<wbr/>Size</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#status" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>status</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#tlsFlags" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>tls<wbr/>Flags</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#tlsSocketControl" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>tls<wbr/>Socket<wbr/>Control</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#binaryGetOriginAttributes" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>binary<wbr/>Get<wbr/>Origin<wbr/>Attributes</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#binarySetOriginAttributes" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>binary<wbr/>Set<wbr/>Origin<wbr/>Attributes</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#bind" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>bind</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#getPeerAddr" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Peer<wbr/>Addr</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#getScriptablePeerAddr" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Scriptable<wbr/>Peer<wbr/>Addr</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#getScriptableSelfAddr" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Scriptable<wbr/>Self<wbr/>Addr</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#getSelfAddr" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Self<wbr/>Addr</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#getTimeout" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Timeout</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#isAlive" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>is<wbr/>Alive</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#resolvedByTRR" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>resolved<wbr/>ByTRR</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#setEchConfig" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>Ech<wbr/>Config</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#setIsPrivate" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>Is<wbr/>Private</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#setKeepaliveVals" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>Keepalive<wbr/>Vals</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#setLinger" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>Linger</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#setReuseAddrPort" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>Reuse<wbr/>Addr<wbr/>Port</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsISocketTransportType.html#setTimeout" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>Timeout</a></li></ul></li></ul></nav></div></div>
+<div class="container tsd-generator">
+<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
+<div class="overlay"></div><script src="../assets/main.js"></script></body></html>
