@@ -3,20 +3,20 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "index.js",
+  "types": "./types/gecko-types.d.ts",
   "scripts": {
     "gen": "node --loader ts-node/esm ./scripts/gen.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "doc": "typedoc types/gecko-types.d.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "gecko-index": "github:quark-platform/gecko-index#132a033"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^18.11.18",
     "ts-node": "^10.9.1",
+    "typedoc": "^0.23.24",
+    "gecko-index": "github:quark-platform/gecko-index#132a033",
     "typescript": "^4.9.4"
   }
 }
