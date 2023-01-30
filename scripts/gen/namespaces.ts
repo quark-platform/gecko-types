@@ -3,7 +3,14 @@ import { writeFile } from 'node:fs/promises'
 import ts from 'typescript'
 import { idlTypes } from './idls.js'
 
-import { cleanUpComment, DECLARE_MODIFIER, printNode } from './shared.js'
+import {
+  cleanUpComment,
+  convertIdlType,
+  DECLARE_MODIFIER,
+  formatDocCommentString,
+  invalidNames,
+  printNode,
+} from './shared.js'
 
 let namespaceDefFile = ''
 const namespaceDefFileBuilder = ts.createSourceFile(
@@ -21,14 +28,12 @@ for (const namespaceKey in namespaces) {
   const attributes: ts.Statement[] = []
   for (const attribute of namespace.attributes) {
     const modifiers: ts.Modifier[] = []
-    let {
-      name,
-      trivia: docComment,
-      readonly,
-      valueType: { idlType, nullable },
-    } = attribute
+    let { name, trivia: docComment, readonly, valueType } = attribute
 
-    if (idlTypes.has(idlType)) idlType = `${idlType}Type`
+    if (invalidNames.includes(name)) continue
+
+    const { nullable } = valueType
+    const idlType = convertIdlType(valueType)
 
     attributes.push(
       ts.addSyntheticLeadingComment(
@@ -42,7 +47,37 @@ for (const namespaceKey in namespaces) {
           ),
         ]),
         ts.SyntaxKind.MultiLineCommentTrivia,
-        cleanUpComment(docComment),
+        formatDocCommentString(cleanUpComment(docComment)),
+        true
+      )
+    )
+  }
+
+  const methods: ts.Statement[] = []
+  for (const method of namespace.methods) {
+    const modifiers: ts.Modifier[] = []
+    let { name, trivia: docComment, return: returnType } = method
+
+    if (invalidNames.includes(name)) continue
+
+    const { nullable } = returnType
+    const idlType = convertIdlType(returnType)
+
+    attributes.push(
+      ts.addSyntheticLeadingComment(
+        ts.factory.createFunctionDeclaration(
+          modifiers,
+          undefined,
+          name,
+          undefined,
+          [],
+          ts.factory.createTypeReferenceNode(
+            `${idlType} ${nullable ? '?' : ''}`
+          ),
+          undefined
+        ),
+        ts.SyntaxKind.MultiLineCommentTrivia,
+        formatDocCommentString(cleanUpComment(docComment)),
         true
       )
     )
@@ -52,7 +87,7 @@ for (const namespaceKey in namespaces) {
     ts.factory.createModuleDeclaration(
       [DECLARE_MODIFIER],
       ts.factory.createIdentifier(namespaceKey),
-      ts.factory.createModuleBlock([...attributes])
+      ts.factory.createModuleBlock([...attributes, ...methods])
     ),
     namespaceDefFileBuilder
   )

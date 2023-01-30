@@ -5,6 +5,7 @@ import ts from 'typescript'
 import {
   cleanUpComment,
   DECLARE_MODIFIER,
+  formatDocCommentString,
   printNode,
   READ_ONLY_MODIFIER,
 } from './shared.js'
@@ -219,5 +220,5 @@ function generateDocCommentType(comments: member_$0_$0[]): string {
     console.log('Invalid comment kind', comment.kind)
   }
 
-  return `*\n * ${docCommentString.trim().split('\n').join('\n * ')}\n `
+  return formatDocCommentString(docCommentString)
 }

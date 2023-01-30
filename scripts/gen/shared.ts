@@ -1,4 +1,6 @@
+import { IdlType } from 'gecko-index'
 import ts from 'typescript'
+import { idlTypes } from './idls.js'
 
 export const READ_ONLY_MODIFIER = ts.factory.createModifier(
   ts.SyntaxKind.ReadonlyKeyword
@@ -11,6 +13,8 @@ export const QUESTION_TOKEN = ts.factory.createToken(
 export const DECLARE_MODIFIER = ts.factory.createModifier(
   ts.SyntaxKind.DeclareKeyword
 )
+
+export const invalidNames = ['import']
 
 export function cleanUpComment(comment: string): string {
   comment = comment
@@ -53,3 +57,24 @@ export function printNode(node: ts.Node, builder: ts.SourceFile): string {
   const printer = ts.createPrinter()
   return printer.printNode(ts.EmitHint.Unspecified, node, builder)
 }
+
+export function convertIdlType(type: IdlType): string {
+  if (typeof type == 'string') {
+    if (idlTypes.has(type)) type += 'Type'
+    return type.replaceAll(' ', '_')
+  }
+
+  if (!Array.isArray(type)) {
+    if (typeof type.idlType == 'string') return convertIdlType(type.idlType)
+
+    // Object or array
+    const { generic } = type
+    return `${generic}<${convertIdlType(type.idlType)}>`
+  }
+
+  // Array
+  return type.map((type) => convertIdlType(type)).join(', ')
+}
+
+export const formatDocCommentString = (comment: string) =>
+  `*\n * ${comment.trim().split('\n').join('\n * ')}\n `
