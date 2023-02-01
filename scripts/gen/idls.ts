@@ -1,5 +1,5 @@
 import { writeFile } from 'fs/promises'
-import { getAllInterfaces } from 'gecko-index'
+import { getAllInterfaces, getXPCOMClasses } from 'gecko-index'
 import { member_$0_$0 } from 'gecko-index/lib/parser.js'
 import ts from 'typescript'
 import {
@@ -242,6 +242,38 @@ for (const file in interfaceFiles) {
   )
 
   idlDefFile += '\n\n'
+}
+
+// Services namespace
+{
+  const members: ts.Statement[] = []
+  const { classes } = await getXPCOMClasses()
+
+  for (const c of classes)
+    if (c.js_name && c.interfaces)
+      members.push(
+        ts.factory.createVariableStatement(
+          [DECLARE_MODIFIER],
+          [
+            ts.factory.createVariableDeclaration(
+              c.js_name,
+              undefined,
+              ts.factory.createTypeReferenceNode(
+                c.interfaces.map((int) => `${int}Type`).join(' & ')
+              )
+            ),
+          ]
+        )
+      )
+
+  idlDefFile += printNode(
+    ts.factory.createModuleDeclaration(
+      [DECLARE_MODIFIER],
+      ts.factory.createIdentifier('Services'),
+      ts.factory.createModuleBlock(members)
+    ),
+    idlDefFileBuilder
+  )
 }
 
 await writeFile('./types/gen/idls.d.ts', idlDefFile)
