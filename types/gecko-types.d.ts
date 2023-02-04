@@ -1,3 +1,5 @@
+///<reference path="./custom/ChromeUtils.d.ts" />
+///<reference path="./custom/Components.d.ts" />
 ///<reference path="./custom/idlTypes.d.ts" />
 ///<reference path="./custom/webidlTypes.d.ts" />
 ///<reference path="./custom/xulElements.d.ts" />
