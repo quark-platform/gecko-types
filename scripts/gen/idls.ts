@@ -51,6 +51,9 @@ for (const file in interfaceFiles) {
         parentInterface = ts.factory.createIdentifier(
           `${node.base.extends}Type`
         )
+      else if (node.name === 'nsISupports') {
+        /* The one class allowed not to extend something */
+      }
       // All XPCOM interfaces that aren't import interfaces must extend something
       else continue
 
@@ -178,19 +181,19 @@ for (const file in interfaceFiles) {
             [DECLARE_MODIFIER],
             name,
             undefined,
-            [
-              ts.factory.createHeritageClause(
-                ts.SyntaxKind.ExtendsKeyword,
-                !parentInterface
-                  ? []
-                  : [
+            parentInterface
+              ? [
+                  ts.factory.createHeritageClause(
+                    ts.SyntaxKind.ExtendsKeyword,
+                    [
                       ts.factory.createExpressionWithTypeArguments(
                         parentInterface,
                         undefined
                       ),
                     ]
-              ),
-            ],
+                  ),
+                ]
+              : [],
             members
           ),
           ts.SyntaxKind.MultiLineCommentTrivia,

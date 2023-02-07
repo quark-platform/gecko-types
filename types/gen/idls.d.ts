@@ -19287,6 +19287,12 @@ declare interface nsIEmbeddingSiteWindowType extends nsISupportsType {
 }
 
 /**
+ *
+ */
+declare interface nsISupportsType {
+}
+
+/**
  * A channel interface which allows special handling of encoded content
  */
 declare interface nsIEncodedChannelType extends nsISupportsType {
@@ -46004,6 +46010,47 @@ declare interface nsISubstitutingProtocolHandlerType extends nsIProtocolHandlerT
 }
 
 /**
+ * Basic component object model interface. Objects which implement
+ * this interface support runtime interface discovery (QueryInterface)
+ * and a reference counted memory model (AddRef/Release). This is
+ * modelled after the win32 IUnknown API.
+ *
+ * Historically, nsISupports needed to be binary compatible with COM's
+ * IUnknown, so the IID of nsISupports is the same as it. That is no
+ * longer a goal, and hopefully nobody depends on it. We may break
+ * this compatibility at any time.
+ */
+declare interface nsISupportsType {
+    /**
+     * A run time mechanism for interface discovery.
+     * @param aIID [in] A requested interface IID
+     * @param aInstancePtr [out] A pointer to an interface pointer to
+     * receive the result.
+     * @return **NS_OK** if the interface is supported by the associated
+     * instance, **NS_NOINTERFACE** if it is not.
+     *
+     * aInstancePtr must not be null.
+     */
+    QueryInterface(aIID: nsIIDRef, aInstancePtr: nsQIResult): void;
+    /**
+     * Increases the reference count for this interface.
+     * The associated instance will not be deleted unless
+     * the reference count is returned to zero.
+     *
+     * @return The resulting reference count.
+     */
+    AddRef(): MozExternalRefCountType;
+    /**
+     * Decreases the reference count for this interface.
+     * Generally, if the reference count returns to zero,
+     * the associated instance is deleted.
+     *
+     * @return The resulting reference count.
+     */
+    Release(): MozExternalRefCountType;
+}
+
+/**
  * ...
  */
 declare interface nsIOutputIteratorType extends nsISupportsType {
@@ -61156,6 +61203,7 @@ interface CiType {
     nsIEditorSpellCheckCallback;
     nsIEffectiveTLDService;
     nsIEmbeddingSiteWindow;
+    nsISupports;
     nsIEncodedChannel;
     nsIEnterprisePolicies;
     nsIEnvironment;

@@ -1137,7 +1137,7 @@ declare module SessionStoreUtils {
      * This is implemented as a native filter, rather than a JS-based one, for
      * performance reasons.
      */
-    function addDynamicFrameFilteredListener(): nsISupports ?;
+    function addDynamicFrameFilteredListener(): nsISupportsType ?;
     /**
      * Remove the passed-in filtered listener from the given event target, if it's
      * currently a listener for the given event type there.  The 'listener'
