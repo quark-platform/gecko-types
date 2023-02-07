@@ -24,3 +24,18 @@ declare type AUTF8String = string
 declare type ACString = string
 declare type AString = string
 declare type jsval = any
+
+// Correct override for sometimes in js
+declare interface nsISupportsType {
+  /**
+   * A run time mechanism for interface discovery.
+   * @param aIID [in] A requested interface IID
+   * @param aInstancePtr [out] A pointer to an interface pointer to
+   * receive the result.
+   * @return **NS_OK** if the interface is supported by the associated
+   * instance, **NS_NOINTERFACE** if it is not.
+   *
+   * aInstancePtr must not be null.
+   */
+  QueryInterface(aIID: nsIIDRef, aInstancePtr?: nsQIResult): any
+}
