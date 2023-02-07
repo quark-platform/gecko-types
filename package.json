@@ -6,7 +6,7 @@
   "types": "./types/gecko-types.d.ts",
   "scripts": {
     "gen": "node --loader ts-node/esm ./scripts/gen.ts",
-    "doc": "typedoc types/**/*.d.ts --disableSources"
+    "doc": "typedoc types/**/*.d.ts --disableSources && cp static/* docs/"
   },
   "keywords": [],
   "author": "",
