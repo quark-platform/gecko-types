@@ -2,10 +2,14 @@ import { writeFile } from 'fs/promises'
 import { getAllInterfaces, getXPCOMClasses } from 'gecko-index'
 import { member_$0_$0 } from 'gecko-index/lib/parser.js'
 import ts from 'typescript'
+import { parse as jsdocParse } from 'comment-parser'
+import type { Block } from 'comment-parser/primitives'
 import {
   cleanUpComment,
   DECLARE_MODIFIER,
   formatDocCommentString,
+  getJSDocNamedSpec,
+  idlDocToJSDocParam,
   printNode,
   READ_ONLY_MODIFIER,
 } from './shared.js'
@@ -108,12 +112,15 @@ for (const file in interfaceFiles) {
           continue
         }
         if (contents.code.kind == 'func') {
-          const { docComment } = contents
           const {
             return_type: returnType,
             name,
             params: rawParams,
           } = contents.code
+          const docComment = generateDocCommentType(contents.docComment)
+          const parsed: Block[] = jsdocParse(
+            `/*${idlDocToJSDocParam(docComment)}*/`
+          )
 
           // TODO: Array<...> support
           if (typeof returnType != 'string') continue
@@ -136,6 +143,11 @@ for (const file in interfaceFiles) {
                   type = val.type.replaceAll(' ', '_')
 
                 if (name == 'debugger' || name == 'function') name = `_${name}`
+
+                const matchingDocSpec = getJSDocNamedSpec(parsed, name)
+                if (matchingDocSpec) {
+                  if (matchingDocSpec.optional) type += '?'
+                }
 
                 return ts.factory.createParameterDeclaration(
                   undefined,
@@ -161,7 +173,7 @@ for (const file in interfaceFiles) {
                 )
               ),
               ts.SyntaxKind.MultiLineCommentTrivia,
-              generateDocCommentType(contents.docComment),
+              docComment,
               true
             )
           )

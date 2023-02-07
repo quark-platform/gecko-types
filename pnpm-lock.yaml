@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/node': ^18.11.18
+  comment-parser: ^1.3.1
   gecko-index: github:quark-platform/gecko-index
   ts-node: ^10.9.1
   typedoc: ^0.23.24
@@ -9,6 +10,7 @@ specifiers:
 
 devDependencies:
   '@types/node': 18.11.18
+  comment-parser: 1.3.1
   gecko-index: github.com/quark-platform/gecko-index/c160a98c0fcaca8c315c836a699129b0c054c49f
   ts-node: 10.9.1_bdgp3l2zgaopogaavxusmetvge
   typedoc: 0.23.24_typescript@4.9.5
@@ -82,6 +84,11 @@ packages:
     resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}
     dependencies:
       balanced-match: 1.0.2
+    dev: true
+
+  /comment-parser/1.3.1:
+    resolution: {integrity: sha512-B52sN2VNghyq5ofvUsqZjmk6YkihBX5vMSChmSK9v4ShjKf3Vk5Xcmgpw4o+iIgtrnM/u5FiMpz9VKb8lpBveA==}
+    engines: {node: '>= 12.0.0'}
     dev: true
 
   /create-require/1.1.1:

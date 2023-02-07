@@ -1,5 +1,6 @@
 import { IdlType } from 'gecko-index'
 import ts from 'typescript'
+import type { Block } from 'comment-parser/primitives'
 import { idlTypes } from './idls.js'
 
 export const READ_ONLY_MODIFIER = ts.factory.createModifier(
@@ -78,3 +79,14 @@ export function convertIdlType(type: IdlType): string {
 
 export const formatDocCommentString = (comment: string) =>
   `*\n * ${comment.trim().split('\n').join('\n * ')}\n `
+
+const idlDocParamRegex = /@param (?<type>\w*) (?<name>[\w\[\]]*)/gm
+export const idlDocToJSDocParam = (idlDoc: string) =>
+  idlDoc.replace(idlDocParamRegex, '@param {$<type>} $<name>')
+
+export const getJSDocNamedSpec = (blocks: Block[], name: string) => {
+  for (const block of blocks) {
+    const spec = block.tags.find((spec) => spec.name == name)
+    if (spec) return spec
+  }
+}

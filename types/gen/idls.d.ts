@@ -11136,7 +11136,7 @@ declare interface nsIConsoleAPIStorageType extends nsISupportsType {
      * given this function returns all of the cached events, from any
      * window.
      */
-    getEvents(aId: AString): jsval;
+    getEvents(aId: AString?): jsval;
     /**
      * Adds a listener to be notified of log events.
      *
@@ -11147,14 +11147,14 @@ declare interface nsIConsoleAPIStorageType extends nsISupportsType {
      * The principal of the listener - used to determine if we need to
      * clone the message before forwarding it.
      */
-    addLogEventListener(aListener: jsval, aPrincipal: nsIPrincipal): void;
+    addLogEventListener(aListener: jsval?, aPrincipal: nsIPrincipal?): void;
     /**
      * Removes a listener added with `addLogEventListener`.
      *
      * @param jsval [aListener]
      * A JS listener which was added with `addLogEventListener`.
      */
-    removeLogEventListener(aListener: jsval): void;
+    removeLogEventListener(aListener: jsval?): void;
     /**
      * Record an event associated with the given window ID.
      *
@@ -11173,7 +11173,7 @@ declare interface nsIConsoleAPIStorageType extends nsISupportsType {
      * messages. If this is not specified all of the cached messages are
      * cleared, from all window objects.
      */
-    clearEvents(aId: AString): void;
+    clearEvents(aId: AString?): void;
 }
 
 /**
@@ -48216,7 +48216,7 @@ declare interface nsITelemetryType extends nsISupportsType {
      * @param aEventLimit How many events per process to limit the snapshot to contain, all if unspecified.
      * Even if aClear, the leftover event records are not cleared.
      */
-    snapshotEvents(aDataset: uint32_t, aClear: boolean, aEventLimit: uint32_t): jsval;
+    snapshotEvents(aDataset: uint32_t, aClear: boolean?, aEventLimit: uint32_t): jsval;
     /**
      * Register new events to record them from addons. This allows registering multiple
      * events for a category. They will be valid only for the current Firefox session.
