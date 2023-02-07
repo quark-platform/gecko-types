@@ -1,3 +1,5 @@
 export declare global {
-  const docShell: nsIDocShellType
+  interface Window {
+    docShell: nsIDocShellType
+  }
 }
