@@ -24,11 +24,11 @@ with PAYMENT_REJECTED status, not nsIPaymentAbortActionResponse.</p>
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
-<li><span class="tsd-signature-type">nsIPaymentActionResponse</span>
+<li><a href="gen_idls.nsIPaymentActionResponseType.html" class="tsd-signature-type" data-tsd-kind="Interface">nsIPaymentActionResponseType</a>
 <ul class="tsd-hierarchy">
 <li><span class="target">nsIPaymentShowActionResponseType</span></li></ul></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/8363d09/types/gen/idls.d.ts#L34902">types/gen/idls.d.ts:34902</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/a30828c/types/gen/idls.d.ts#L34902">types/gen/idls.d.ts:34902</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -42,6 +42,8 @@ with PAYMENT_REJECTED status, not nsIPaymentAbortActionResponse.</p>
 <a href="gen_idls.nsIPaymentShowActionResponseType.html#payerEmail" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>payer<wbr/>Email</span></a>
 <a href="gen_idls.nsIPaymentShowActionResponseType.html#payerName" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>payer<wbr/>Name</span></a>
 <a href="gen_idls.nsIPaymentShowActionResponseType.html#payerPhone" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>payer<wbr/>Phone</span></a>
+<a href="gen_idls.nsIPaymentShowActionResponseType.html#requestId" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>request<wbr/>Id</span></a>
+<a href="gen_idls.nsIPaymentShowActionResponseType.html#type" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>type</span></a>
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading">Methods</h3>
@@ -56,42 +58,58 @@ with PAYMENT_REJECTED status, not nsIPaymentAbortActionResponse.</p>
 Using the defined consts(PAYMENT_XXX) in nsIPaymentActionResponse.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/8363d09/types/gen/idls.d.ts#L34907">types/gen/idls.d.ts:34907</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/a30828c/types/gen/idls.d.ts#L34907">types/gen/idls.d.ts:34907</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="data" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>data</span><a href="#data" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIPaymentResponseData</span></div>
 <div class="tsd-comment tsd-typography"><p>The data needed by the payment method. (it must be serializable)</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/8363d09/types/gen/idls.d.ts#L34915">types/gen/idls.d.ts:34915</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/a30828c/types/gen/idls.d.ts#L34915">types/gen/idls.d.ts:34915</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="methodName" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>method<wbr/>Name</span><a href="#methodName" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">method<wbr/>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The decided payment method name. i.e. &quot;basic-card&quot;.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/8363d09/types/gen/idls.d.ts#L34911">types/gen/idls.d.ts:34911</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/a30828c/types/gen/idls.d.ts#L34911">types/gen/idls.d.ts:34911</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="payerEmail" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>payer<wbr/>Email</span><a href="#payerEmail" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">payer<wbr/>Email<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The payer email information.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/8363d09/types/gen/idls.d.ts#L34923">types/gen/idls.d.ts:34923</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/a30828c/types/gen/idls.d.ts#L34923">types/gen/idls.d.ts:34923</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="payerName" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>payer<wbr/>Name</span><a href="#payerName" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">payer<wbr/>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The payer name information.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/8363d09/types/gen/idls.d.ts#L34919">types/gen/idls.d.ts:34919</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/a30828c/types/gen/idls.d.ts#L34919">types/gen/idls.d.ts:34919</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="payerPhone" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>payer<wbr/>Phone</span><a href="#payerPhone" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">payer<wbr/>Phone<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The payer phone information.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/8363d09/types/gen/idls.d.ts#L34927">types/gen/idls.d.ts:34927</a></li></ul></aside></section></section>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/a30828c/types/gen/idls.d.ts#L34927">types/gen/idls.d.ts:34927</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a id="requestId" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>request<wbr/>Id</span><a href="#requestId" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">request<wbr/>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+<div class="tsd-comment tsd-typography"><p>The payment request identity.</p>
+</div><aside class="tsd-sources">
+<p>Inherited from <a href="gen_idls.nsIPaymentActionResponseType.html">nsIPaymentActionResponseType</a>.<a href="gen_idls.nsIPaymentActionResponseType.html#requestId">requestId</a></p>
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/a30828c/types/gen/idls.d.ts#L34874">types/gen/idls.d.ts:34874</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a id="type" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>type</span><a href="#type" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">uint32_t</span></div>
+<div class="tsd-comment tsd-typography"><p>The response type.</p>
+</div><aside class="tsd-sources">
+<p>Inherited from <a href="gen_idls.nsIPaymentActionResponseType.html">nsIPaymentActionResponseType</a>.<a href="gen_idls.nsIPaymentActionResponseType.html#type">type</a></p>
+<ul>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/a30828c/types/gen/idls.d.ts#L34878">types/gen/idls.d.ts:34878</a></li></ul></aside></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="init" class="tsd-anchor"></a>
@@ -134,7 +152,7 @@ Using the defined consts(PAYMENT_XXX) in nsIPaymentActionResponse.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/8363d09/types/gen/idls.d.ts#L34938">types/gen/idls.d.ts:34938</a></li></ul></aside></li></ul></section></section></div>
+<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/a30828c/types/gen/idls.d.ts#L34938">types/gen/idls.d.ts:34938</a></li></ul></aside></li></ul></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
@@ -163,6 +181,7 @@ Using the defined consts(PAYMENT_XXX) in nsIPaymentActionResponse.</p>
 <ul>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/custom_Components.Components.html">Components</a></li></ul></li>
 <li class="tsd-kind-module"><a href="../modules/custom_idlTypes.html">custom/idl<wbr/>Types</a></li>
+<li class="tsd-kind-module"><a href="../modules/custom_other.html">custom/other</a></li>
 <li class="tsd-kind-module"><a href="../modules/custom_webidlTypes.html">custom/webidl<wbr/>Types</a></li>
 <li class="tsd-kind-module"><a href="../modules/custom_xulElements.html">custom/xul<wbr/>Elements</a></li>
 <li class="current tsd-kind-module"><a href="../modules/gen_idls.html">gen/idls</a>
@@ -199,6 +218,8 @@ Using the defined consts(PAYMENT_XXX) in nsIPaymentActionResponse.</p>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIPaymentShowActionResponseType.html#payerEmail" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>payer<wbr/>Email</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIPaymentShowActionResponseType.html#payerName" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>payer<wbr/>Name</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIPaymentShowActionResponseType.html#payerPhone" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>payer<wbr/>Phone</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.nsIPaymentShowActionResponseType.html#requestId" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>request<wbr/>Id</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.nsIPaymentShowActionResponseType.html#type" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>type</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIPaymentShowActionResponseType.html#init" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>init</a></li></ul></li></ul></nav></div></div>
 <div class="container tsd-generator">
 <p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
