@@ -48,7 +48,9 @@ for (const file in interfaceFiles) {
       let docComments = []
 
       if (node.base && typeof node.base.extends == 'string')
-        parentInterface = ts.factory.createIdentifier(node.base.extends)
+        parentInterface = ts.factory.createIdentifier(
+          `${node.base.extends}Type`
+        )
       // All XPCOM interfaces that aren't import interfaces must extend something
       else continue
 
