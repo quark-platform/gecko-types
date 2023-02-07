@@ -19,11 +19,9 @@
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
-<li><a href="gen_idls.nsISupportsType.html" class="tsd-signature-type" data-tsd-kind="Interface">nsISupportsType</a>
+<li><a href="custom_idlTypes.nsISupportsType.html" class="tsd-signature-type" data-tsd-kind="Interface">nsISupportsType</a>
 <ul class="tsd-hierarchy">
-<li><span class="target">nsISHEntryType</span></li></ul></li></ul></section><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L40978">types/gen/idls.d.ts:40978</a></li></ul></aside>
+<li><span class="target">nsISHEntryType</span></li></ul></li></ul></section>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -116,16 +114,12 @@
 <div class="tsd-signature">ID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 <div class="tsd-comment tsd-typography"><p>An ID to help identify this entry from others during
 subframe navigation</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41074">types/gen/idls.d.ts:41074</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="URI" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>URI</span><a href="#URI" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">URI<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIURI</span></div>
 <div class="tsd-comment tsd-typography"><p>The URI of the current entry.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L40982">types/gen/idls.d.ts:40982</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="URIWasModified" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>URIWas<wbr/>Modified</span><a href="#URIWasModified" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">URIWas<wbr/>Modified<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
@@ -136,78 +130,58 @@ old URI by more than just the hash, then we set this field to true.</p>
 <p>Additionally, if this SHEntry was created by calling pushState from a
 SHEntry whose URI was modified, this SHEntry&#39;s URIWasModified field is
 true.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41098">types/gen/idls.d.ts:41098</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="baseURI" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>baseURI</span><a href="#baseURI" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">baseURI<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIURI</span></div>
 <div class="tsd-comment tsd-typography"><p>When isSrcdocEntry is true, this contains the baseURI of the srcdoc
 document for use in situations where it cannot otherwise be determined,
 for example with view-source.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41147">types/gen/idls.d.ts:41147</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="bfcacheID" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>bfcacheID</span><a href="#bfcacheID" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">bfcacheID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41327">types/gen/idls.d.ts:41327</a></li></ul></aside></section>
+<div class="tsd-signature">bfcacheID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="cacheKey" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>cache<wbr/>Key</span><a href="#cacheKey" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">cache<wbr/>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 <div class="tsd-comment tsd-typography"><p>The cache key for the entry</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41078">types/gen/idls.d.ts:41078</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="childCount" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>child<wbr/>Count</span><a href="#childCount" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">child<wbr/>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 <div class="tsd-comment tsd-typography"><p>The current number of nsISHEntries which are immediate children of this
 SHEntry.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41170">types/gen/idls.d.ts:41170</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="contentType" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>content<wbr/>Type</span><a href="#contentType" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">content<wbr/>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>attribute to indicate the content-type of the document that this
 is a session history entry for</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41087">types/gen/idls.d.ts:41087</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="contentViewer" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>content<wbr/>Viewer</span><a href="#contentViewer" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">content<wbr/>Viewer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIContentViewer</span></div>
 <div class="tsd-comment tsd-typography"><p>Content viewer, for fast restoration of presentation</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41036">types/gen/idls.d.ts:41036</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="csp" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>csp</span><a href="#csp" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">csp<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIContentSecurityPolicy</span></div>
 <div class="tsd-comment tsd-typography"><p>Get the csp, if any, that was used for this document load. That
 is not the CSP that was applied to subresource loads within the
 document, but the CSP that was applied to this document load.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41120">types/gen/idls.d.ts:41120</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="docshellID" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>docshellID</span><a href="#docshellID" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">docshellID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 <div class="tsd-comment tsd-typography"><p>The history ID of the docshell.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41129">types/gen/idls.d.ts:41129</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="hasUserActivation" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>has<wbr/>User<wbr/>Activation</span><a href="#hasUserActivation" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">has<wbr/>User<wbr/>Activation<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>Whether the load that created this entry was triggered by user activation.
 (e.g.: The user clicked a link)
 Remembering this flag enables replaying the sec-fetch-* headers.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41028">types/gen/idls.d.ts:41028</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="hasUserInteraction" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>has<wbr/>User<wbr/>Interaction</span><a href="#hasUserInteraction" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">has<wbr/>User<wbr/>Interaction<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
@@ -215,22 +189,16 @@ Remembering this flag enables replaying the sec-fetch-* headers.</p>
 This includes interactions with subframe documents associated with
 child entries that are rooted at this entry.
 This field will only be set on top-level entries.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41022">types/gen/idls.d.ts:41022</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="isInBFCache" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>is<wbr/>InBFCache</span><a href="#isInBFCache" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">is<wbr/>InBFCache<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41040">types/gen/idls.d.ts:41040</a></li></ul></aside></section>
+<div class="tsd-signature">is<wbr/>InBFCache<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="isSrcdocEntry" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>is<wbr/>Srcdoc<wbr/>Entry</span><a href="#isSrcdocEntry" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">is<wbr/>Srcdoc<wbr/>Entry<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>True if this SHEntry corresponds to a document created by a srcdoc
 iframe. Set when a value is assigned to srcdocData.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41134">types/gen/idls.d.ts:41134</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="isSubFrame" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>is<wbr/>Sub<wbr/>Frame</span><a href="#isSubFrame" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">is<wbr/>Sub<wbr/>Frame<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
@@ -240,144 +208,106 @@ iframe. Set when a value is assigned to srcdocData.</p>
 <li>Will be &#39;true&#39; for all history entries created as a result of a
 subframe navigation.</li>
 </ul>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41015">types/gen/idls.d.ts:41015</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="lastTouched" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>last<wbr/>Touched</span><a href="#lastTouched" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">last<wbr/>Touched<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 <div class="tsd-comment tsd-typography"><p>A number that is assigned by the sHistory when the entry is activated</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41165">types/gen/idls.d.ts:41165</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="layoutHistoryState" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>layout<wbr/>History<wbr/>State</span><a href="#layoutHistoryState" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">layout<wbr/>History<wbr/>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsILayoutHistoryState</span></div>
 <div class="tsd-comment tsd-typography"><p>LayoutHistoryState for scroll position and form values</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41060">types/gen/idls.d.ts:41060</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="loadReplace" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>load<wbr/>Replace</span><a href="#loadReplace" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">load<wbr/>Replace<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>This flag remembers whether channel has LOAD_REPLACE set.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41000">types/gen/idls.d.ts:41000</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="loadType" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>load<wbr/>Type</span><a href="#loadType" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">load<wbr/>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 <div class="tsd-comment tsd-typography"><p>The loadType for this entry. This is typically loadHistory except
 when reload is pressed, it has the appropriate reload flag</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41069">types/gen/idls.d.ts:41069</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="loadedInThisProcess" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>loaded<wbr/>In<wbr/>This<wbr/>Process</span><a href="#loadedInThisProcess" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">loaded<wbr/>In<wbr/>This<wbr/>Process<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>Flag to indicate that the history entry was originally loaded in the
 current process. This flag does not survive a browser process switch.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41157">types/gen/idls.d.ts:41157</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="name" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>name</span><a href="#name" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The name of the browsing context.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41008">types/gen/idls.d.ts:41008</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="originalURI" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>originalURI</span><a href="#originalURI" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">originalURI<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIURI</span></div>
 <div class="tsd-comment tsd-typography"><p>The original URI of the current entry. If an entry is the result of a
 redirect this attribute holds the original URI.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L40987">types/gen/idls.d.ts:40987</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="parent" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>parent</span><a href="#parent" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">parent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsISHEntry</span></div>
 <div class="tsd-comment tsd-typography"><p>parent of this entry</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41064">types/gen/idls.d.ts:41064</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="partitionedPrincipalToInherit" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>partitioned<wbr/>Principal<wbr/>To<wbr/>Inherit</span><a href="#partitionedPrincipalToInherit" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">partitioned<wbr/>Principal<wbr/>To<wbr/>Inherit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIPrincipal</span></div>
 <div class="tsd-comment tsd-typography"><p>Get the storage principal, if any, that is used when the inherit flag is
 set.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41114">types/gen/idls.d.ts:41114</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="persist" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>persist</span><a href="#persist" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">persist<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>When an entry is serving is within nsISHistory&#39;s array of entries, this
 property specifies if it should persist. If not it will be replaced by
 new additions to the list.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41176">types/gen/idls.d.ts:41176</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="postData" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>post<wbr/>Data</span><a href="#postData" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">post<wbr/>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIInputStream</span></div>
 <div class="tsd-comment tsd-typography"><p>Post Data for the document</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41056">types/gen/idls.d.ts:41056</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="principalToInherit" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>principal<wbr/>To<wbr/>Inherit</span><a href="#principalToInherit" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">principal<wbr/>To<wbr/>Inherit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIPrincipal</span></div>
 <div class="tsd-comment tsd-typography"><p>Get the principal, if any, that is used when the inherit flag
 is set.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41109">types/gen/idls.d.ts:41109</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="referrerInfo" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>referrer<wbr/>Info</span><a href="#referrerInfo" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">referrer<wbr/>Info<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIReferrerInfo</span></div>
 <div class="tsd-comment tsd-typography"><p>Referrer Info</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41032">types/gen/idls.d.ts:41032</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="refreshURIList" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>refreshURIList</span><a href="#refreshURIList" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">refreshURIList<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIMutableArray</span></div>
 <div class="tsd-comment tsd-typography"><p>Saved refresh URI list for the content viewer</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41052">types/gen/idls.d.ts:41052</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="resultPrincipalURI" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>result<wbr/>PrincipalURI</span><a href="#resultPrincipalURI" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">result<wbr/>PrincipalURI<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIURI</span></div>
 <div class="tsd-comment tsd-typography"><p>URL as stored from nsILoadInfo.resultPrincipalURI.  See nsILoadInfo
 for more details.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L40992">types/gen/idls.d.ts:40992</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="saveLayoutStateFlag" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>save<wbr/>Layout<wbr/>State<wbr/>Flag</span><a href="#saveLayoutStateFlag" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">save<wbr/>Layout<wbr/>State<wbr/>Flag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>Should the layoutHistoryState be saved?</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41082">types/gen/idls.d.ts:41082</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="scrollRestorationIsManual" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>scroll<wbr/>Restoration<wbr/>Is<wbr/>Manual</span><a href="#scrollRestorationIsManual" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">scroll<wbr/>Restoration<wbr/>Is<wbr/>Manual<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>Sets/gets the current scroll restoration state,
 if true == &quot;manual&quot;, false == &quot;auto&quot;.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41152">types/gen/idls.d.ts:41152</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="shistory" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>shistory</span><a href="#shistory" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">shistory<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsISHistory</span></div>
 <div class="tsd-comment tsd-typography"><p>The session history it belongs to. This is set only on the root entries.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41161">types/gen/idls.d.ts:41161</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="srcdocData" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>srcdoc<wbr/>Data</span><a href="#srcdocData" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">srcdoc<wbr/>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
@@ -385,54 +315,40 @@ if true == &quot;manual&quot;, false == &quot;auto&quot;.</p>
 of the URI.  Similar to a Data URI, this information is needed to
 recreate the document at a later stage.
 Setting this sets isSrcdocEntry to true</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41141">types/gen/idls.d.ts:41141</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="stateData" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>state<wbr/>Data</span><a href="#stateData" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">state<wbr/>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIStructuredCloneContainer</span></div>
 <div class="tsd-comment tsd-typography"><p>Get/set data associated with this history state via a pushState() call,
 serialized using structured clone.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41125">types/gen/idls.d.ts:41125</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="sticky" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>sticky</span><a href="#sticky" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">sticky<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>Whether the content viewer is marked &quot;sticky&quot;</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41044">types/gen/idls.d.ts:41044</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="title" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>title</span><a href="#title" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The title of the current entry.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41004">types/gen/idls.d.ts:41004</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="triggeringPrincipal" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>triggering<wbr/>Principal</span><a href="#triggeringPrincipal" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">triggering<wbr/>Principal<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIPrincipal</span></div>
 <div class="tsd-comment tsd-typography"><p>Get the principal, if any, that was associated with the channel
 that the document that was loaded to create this history entry
 came from.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41104">types/gen/idls.d.ts:41104</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="unstrippedURI" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>unstrippedURI</span><a href="#unstrippedURI" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">unstrippedURI<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIURI</span></div>
 <div class="tsd-comment tsd-typography"><p>If non-null, the URI as it was before query stripping was performed.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L40996">types/gen/idls.d.ts:40996</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="windowState" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>window<wbr/>State</span><a href="#windowState" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">window<wbr/>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsISupports</span></div>
 <div class="tsd-comment tsd-typography"><p>Saved state of the global window object</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41048">types/gen/idls.d.ts:41048</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="wireframe" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>wireframe</span><a href="#wireframe" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">wireframe<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
@@ -441,9 +357,7 @@ with a Wireframe upon document navigation / pushState. This will only
 be set for nsISHEntry&#39;s accessed in the parent process with
 sessionHistoryInParent enabled. See Document.webidl for more details on
 what a Wireframe is.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41344">types/gen/idls.d.ts:41344</a></li></ul></aside></section></section>
+</div></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="AddChild" class="tsd-anchor"></a>
@@ -462,9 +376,7 @@ what a Wireframe is.</p>
 <h5>aOffset: <span class="tsd-signature-type">number</span></h5></li>
 <li>
 <h5>aUseRemoteSubframes: <span class="tsd-signature-type">bool</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41294">types/gen/idls.d.ts:41294</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="AddRef" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Add<wbr/>Ref</span><a href="#AddRef" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
@@ -477,9 +389,7 @@ the reference count is returned to zero.</p>
 <h3>Returns</h3><p>The resulting reference count.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISupportsType.html">nsISupportsType</a>.<a href="gen_idls.nsISupportsType.html#AddRef">AddRef</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L46042">types/gen/idls.d.ts:46042</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="custom_idlTypes.nsISupportsType.html">nsISupportsType</a>.<a href="custom_idlTypes.nsISupportsType.html#AddRef">AddRef</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="ClearEntry" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Clear<wbr/>Entry</span><a href="#ClearEntry" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -487,9 +397,7 @@ the reference count is returned to zero.</p>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Remove all children of this entry and call abandonBFCacheEntry.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41318">types/gen/idls.d.ts:41318</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="CreateLoadInfo" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Create<wbr/>Load<wbr/>Info</span><a href="#CreateLoadInfo" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -498,9 +406,7 @@ the reference count is returned to zero.</p>
 <div class="tsd-comment tsd-typography"><p>Create nsDocShellLoadState and fill it with information.
 Don&#39;t set nsSHEntry here to avoid serializing it.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsDocShellLoadStatePtr</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41323">types/gen/idls.d.ts:41323</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsDocShellLoadStatePtr</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="GetChildAt" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Get<wbr/>Child<wbr/>At</span><a href="#GetChildAt" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -513,9 +419,7 @@ Don&#39;t set nsSHEntry here to avoid serializing it.</p>
 <ul class="tsd-parameter-list">
 <li>
 <h5>aIndex: <span class="tsd-signature-type">number</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsISHEntry</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41302">types/gen/idls.d.ts:41302</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsISHEntry</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="GetChildSHEntryIfHasNoDynamicallyAddedChild" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Get<wbr/>ChildSHEntry<wbr/>If<wbr/>Has<wbr/>No<wbr/>Dynamically<wbr/>Added<wbr/>Child</span><a href="#GetChildSHEntryIfHasNoDynamicallyAddedChild" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -532,13 +436,22 @@ to its parent&#39;s loadtype.</p>
 <h5>aChildOffset: <span class="tsd-signature-type">number</span></h5></li>
 <li>
 <h5>aChild: <span class="tsd-signature-type">nsISHEntry</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41308">types/gen/idls.d.ts:41308</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="QueryInterface" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Query<wbr/>Interface</span><a href="#QueryInterface" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
-<li class="tsd-signature tsd-anchor-link" id="QueryInterface.QueryInterface-1">Query<wbr/>Interface<span class="tsd-signature-symbol">(</span>aIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, aInstancePtr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#QueryInterface.QueryInterface-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="QueryInterface.QueryInterface-1">Query<wbr/>Interface<span class="tsd-signature-symbol">(</span>aIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, aInstancePtr<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><a href="#QueryInterface.QueryInterface-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aIID: <span class="tsd-signature-type">object</span></h5></li>
+<li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> aInstancePtr: <span class="tsd-signature-type">object</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4><aside class="tsd-sources">
+<p>Inherited from <a href="custom_idlTypes.nsISupportsType.html">nsISupportsType</a>.<a href="custom_idlTypes.nsISupportsType.html#QueryInterface">QueryInterface</a></p></aside></li>
+<li class="tsd-signature tsd-anchor-link" id="QueryInterface.QueryInterface-2">Query<wbr/>Interface<span class="tsd-signature-symbol">(</span>aIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, aInstancePtr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#QueryInterface.QueryInterface-2" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>A run time mechanism for interface discovery.</p>
 
@@ -559,9 +472,7 @@ instance, <strong>NS_NOINTERFACE</strong> if it is not.</p>
 receive the result.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISupportsType.html">nsISupportsType</a>.<a href="gen_idls.nsISupportsType.html#QueryInterface">QueryInterface</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L46034">types/gen/idls.d.ts:46034</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="custom_idlTypes.nsISupportsType.html">nsISupportsType</a>.<a href="custom_idlTypes.nsISupportsType.html#QueryInterface">QueryInterface</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="Release" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Release</span><a href="#Release" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
@@ -574,9 +485,7 @@ the associated instance is deleted.</p>
 <h3>Returns</h3><p>The resulting reference count.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISupportsType.html">nsISupportsType</a>.<a href="gen_idls.nsISupportsType.html#Release">Release</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L46050">types/gen/idls.d.ts:46050</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="custom_idlTypes.nsISupportsType.html">nsISupportsType</a>.<a href="custom_idlTypes.nsISupportsType.html#Release">Release</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="RemoveChild" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Remove<wbr/>Child</span><a href="#RemoveChild" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -589,9 +498,7 @@ the associated instance is deleted.</p>
 <ul class="tsd-parameter-list">
 <li>
 <h5>aChild: <span class="tsd-signature-type">nsISHEntry</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41298">types/gen/idls.d.ts:41298</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="ReplaceChild" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Replace<wbr/>Child</span><a href="#ReplaceChild" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -607,9 +514,7 @@ with aNewChild.</p>
 <ul class="tsd-parameter-list">
 <li>
 <h5>aNewChild: <span class="tsd-signature-type">nsISHEntry</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41314">types/gen/idls.d.ts:41314</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="SyncTreesForSubframeNavigation" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Sync<wbr/>Trees<wbr/>For<wbr/>Subframe<wbr/>Navigation</span><a href="#SyncTreesForSubframeNavigation" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -633,9 +538,7 @@ of the docshell that called this method</p>
 <h5>aIgnoreBC: <span class="tsd-signature-type">BrowsingContext</span></h5>
 <div class="tsd-comment tsd-typography"><p>current BC</p>
 </div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41336">types/gen/idls.d.ts:41336</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="abandonBFCacheEntry" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>abandonBFCache<wbr/>Entry</span><a href="#abandonBFCacheEntry" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -644,9 +547,7 @@ of the docshell that called this method</p>
 <div class="tsd-comment tsd-typography"><p>Create a new BFCache entry and drop our reference to our old one. This
 call unlinks this SHEntry from any other SHEntries for its document.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41274">types/gen/idls.d.ts:41274</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="addChildShell" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>add<wbr/>Child<wbr/>Shell</span><a href="#addChildShell" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -662,9 +563,7 @@ parent docshell restores a saved presentation.</p>
 <ul class="tsd-parameter-list">
 <li>
 <h5>shell: <span class="tsd-signature-type">nsIDocShellTreeItem</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41203">types/gen/idls.d.ts:41203</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="adoptBFCacheEntry" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>adoptBFCache<wbr/>Entry</span><a href="#adoptBFCacheEntry" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -678,9 +577,7 @@ aEntry&#39;s BFCacheEntry.</p>
 <ul class="tsd-parameter-list">
 <li>
 <h5>aEntry: <span class="tsd-signature-type">nsISHEntry</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41269">types/gen/idls.d.ts:41269</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="childShellAt" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>child<wbr/>Shell<wbr/>At</span><a href="#childShellAt" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -693,9 +590,7 @@ aEntry&#39;s BFCacheEntry.</p>
 <ul class="tsd-parameter-list">
 <li>
 <h5>index: <span class="tsd-signature-type">number</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsIDocShellTreeItem</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41207">types/gen/idls.d.ts:41207</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsIDocShellTreeItem</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="clearChildShells" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>clear<wbr/>Child<wbr/>Shells</span><a href="#clearChildShells" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -703,17 +598,13 @@ aEntry&#39;s BFCacheEntry.</p>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Clear the child shell list.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41211">types/gen/idls.d.ts:41211</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="clone" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>clone</span><a href="#clone" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
 <li class="tsd-signature tsd-anchor-link" id="clone.clone-1">clone<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsISHEntry</span><a href="#clone.clone-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsISHEntry</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41232">types/gen/idls.d.ts:41232</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsISHEntry</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="create" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>create</span><a href="#create" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -768,9 +659,7 @@ aEntry&#39;s BFCacheEntry.</p>
 <h5>expired: <span class="tsd-signature-type">bool</span></h5></li>
 <li>
 <h5>userActivation: <span class="tsd-signature-type">bool</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41228">types/gen/idls.d.ts:41228</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="forgetEditorData" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>forget<wbr/>Editor<wbr/>Data</span><a href="#forgetEditorData" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -780,9 +669,7 @@ aEntry&#39;s BFCacheEntry.</p>
 this shistory entry. This forgets its pointer, so free it when
 you&#39;re done.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsDocShellEditorDataPtr</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41238">types/gen/idls.d.ts:41238</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsDocShellEditorDataPtr</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getScrollPosition" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Scroll<wbr/>Position</span><a href="#getScrollPosition" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -795,9 +682,7 @@ you&#39;re done.</p>
 <h5>x: <span class="tsd-signature-type">number</span></h5></li>
 <li>
 <h5>y: <span class="tsd-signature-type">number</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41185">types/gen/idls.d.ts:41185</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getViewerBounds" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Viewer<wbr/>Bounds</span><a href="#getViewerBounds" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -812,9 +697,7 @@ is restored.</p>
 <ul class="tsd-parameter-list">
 <li>
 <h5>bounds: <span class="tsd-signature-type">nsIntRect</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41191">types/gen/idls.d.ts:41191</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="hasBFCacheEntry" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>hasBFCache<wbr/>Entry</span><a href="#hasBFCacheEntry" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -829,9 +712,7 @@ correspond to the same document.</p>
 <ul class="tsd-parameter-list">
 <li>
 <h5>aEntry: <span class="tsd-signature-type">SHEntrySharedParentStatePtr</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41264">types/gen/idls.d.ts:41264</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="hasDetachedEditor" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>has<wbr/>Detached<wbr/>Editor</span><a href="#hasDetachedEditor" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -839,9 +720,7 @@ correspond to the same document.</p>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Returns true if this shistory entry is storing a detached editor.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41248">types/gen/idls.d.ts:41248</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="hasDynamicallyAddedChild" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>has<wbr/>Dynamically<wbr/>Added<wbr/>Child</span><a href="#hasDynamicallyAddedChild" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -850,9 +729,7 @@ correspond to the same document.</p>
 <div class="tsd-comment tsd-typography"><p>Returns true if any of the child entries returns true
 when isDynamicallyAdded is called on it.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41258">types/gen/idls.d.ts:41258</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="initLayoutHistoryState" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>init<wbr/>Layout<wbr/>History<wbr/>State</span><a href="#initLayoutHistoryState" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -861,9 +738,7 @@ when isDynamicallyAdded is called on it.</p>
 <div class="tsd-comment tsd-typography"><p>Initialises <code>layoutHistoryState</code> if it doesn&#39;t already exist
 and returns a reference to it.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsILayoutHistoryState</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41224">types/gen/idls.d.ts:41224</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsILayoutHistoryState</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="isDynamicallyAdded" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>is<wbr/>Dynamically<wbr/>Added</span><a href="#isDynamicallyAdded" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -872,9 +747,7 @@ and returns a reference to it.</p>
 <div class="tsd-comment tsd-typography"><p>Returns true if the related docshell was added because of
 dynamic addition of an iframe/frame.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41253">types/gen/idls.d.ts:41253</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="setEditorData" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>set<wbr/>Editor<wbr/>Data</span><a href="#setEditorData" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -889,9 +762,7 @@ shentry will destroy the editor data when it&#39;s destroyed.</p>
 <ul class="tsd-parameter-list">
 <li>
 <h5>aData: <span class="tsd-signature-type">nsDocShellEditorDataPtr</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41244">types/gen/idls.d.ts:41244</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="setLoadTypeAsHistory" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>set<wbr/>Load<wbr/>Type<wbr/>As<wbr/>History</span><a href="#setLoadTypeAsHistory" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -902,9 +773,7 @@ equivalent to doing</p>
 <p>shEntry.loadType = 4;</p>
 <p>in js, but is easier to maintain and less opaque.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41290">types/gen/idls.d.ts:41290</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="setScrollPosition" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>set<wbr/>Scroll<wbr/>Position</span><a href="#setScrollPosition" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -920,9 +789,7 @@ changed through anchor navigation or pushState.</p>
 <h5>x: <span class="tsd-signature-type">number</span></h5></li>
 <li>
 <h5>y: <span class="tsd-signature-type">number</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41181">types/gen/idls.d.ts:41181</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="setViewerBounds" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>set<wbr/>Viewer<wbr/>Bounds</span><a href="#setViewerBounds" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -933,9 +800,7 @@ changed through anchor navigation or pushState.</p>
 <ul class="tsd-parameter-list">
 <li>
 <h5>bounds: <span class="tsd-signature-type">nsIntRect</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41195">types/gen/idls.d.ts:41195</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="sharesDocumentWith" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>shares<wbr/>Document<wbr/>With</span><a href="#sharesDocumentWith" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -951,9 +816,7 @@ preceded by a call to adoptBFCacheEntry(aEntry).</p>
 <ul class="tsd-parameter-list">
 <li>
 <h5>aEntry: <span class="tsd-signature-type">nsISHEntry</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41281">types/gen/idls.d.ts:41281</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="syncPresentationState" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>sync<wbr/>Presentation<wbr/>State</span><a href="#syncPresentationState" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -965,9 +828,7 @@ following members are cleared/reset:
 contentViewer, sticky, windowState, viewerBounds, childShells,
 refreshURIList.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L41219">types/gen/idls.d.ts:41219</a></li></ul></aside></li></ul></section></section></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">

@@ -24,11 +24,9 @@ manage/track transactions.</p>
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
-<li><a href="gen_idls.nsISupportsType.html" class="tsd-signature-type" data-tsd-kind="Interface">nsISupportsType</a>
+<li><a href="custom_idlTypes.nsISupportsType.html" class="tsd-signature-type" data-tsd-kind="Interface">nsISupportsType</a>
 <ul class="tsd-hierarchy">
-<li><span class="target">nsITransactionManagerType</span></li></ul></li></ul></section><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L50741">types/gen/idls.d.ts:50741</a></li></ul></aside>
+<li><span class="target">nsITransactionManagerType</span></li></ul></li></ul></section>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -75,23 +73,17 @@ that can exist at any time on both the undo and redo stacks. This method
 will prune the necessary number of transactions on the undo and redo
 stacks if the value specified is less than the number of items that exist
 on both the undo and redo stacks.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L50813">types/gen/idls.d.ts:50813</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="numberOfRedoItems" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>number<wbr/>Of<wbr/>Redo<wbr/>Items</span><a href="#numberOfRedoItems" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">number<wbr/>Of<wbr/>Redo<wbr/>Items<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 <div class="tsd-comment tsd-typography"><p>The number of items on the redo stack.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L50799">types/gen/idls.d.ts:50799</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="numberOfUndoItems" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>number<wbr/>Of<wbr/>Undo<wbr/>Items</span><a href="#numberOfUndoItems" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">number<wbr/>Of<wbr/>Undo<wbr/>Items<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 <div class="tsd-comment tsd-typography"><p>The number of items on the undo stack.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L50795">types/gen/idls.d.ts:50795</a></li></ul></aside></section></section>
+</div></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="AddRef" class="tsd-anchor"></a>
@@ -106,13 +98,22 @@ the reference count is returned to zero.</p>
 <h3>Returns</h3><p>The resulting reference count.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISupportsType.html">nsISupportsType</a>.<a href="gen_idls.nsISupportsType.html#AddRef">AddRef</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L46042">types/gen/idls.d.ts:46042</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="custom_idlTypes.nsISupportsType.html">nsISupportsType</a>.<a href="custom_idlTypes.nsISupportsType.html#AddRef">AddRef</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="QueryInterface" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Query<wbr/>Interface</span><a href="#QueryInterface" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
-<li class="tsd-signature tsd-anchor-link" id="QueryInterface.QueryInterface-1">Query<wbr/>Interface<span class="tsd-signature-symbol">(</span>aIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, aInstancePtr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#QueryInterface.QueryInterface-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="QueryInterface.QueryInterface-1">Query<wbr/>Interface<span class="tsd-signature-symbol">(</span>aIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, aInstancePtr<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><a href="#QueryInterface.QueryInterface-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aIID: <span class="tsd-signature-type">object</span></h5></li>
+<li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> aInstancePtr: <span class="tsd-signature-type">object</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4><aside class="tsd-sources">
+<p>Inherited from <a href="custom_idlTypes.nsISupportsType.html">nsISupportsType</a>.<a href="custom_idlTypes.nsISupportsType.html#QueryInterface">QueryInterface</a></p></aside></li>
+<li class="tsd-signature tsd-anchor-link" id="QueryInterface.QueryInterface-2">Query<wbr/>Interface<span class="tsd-signature-symbol">(</span>aIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, aInstancePtr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#QueryInterface.QueryInterface-2" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>A run time mechanism for interface discovery.</p>
 
@@ -133,9 +134,7 @@ instance, <strong>NS_NOINTERFACE</strong> if it is not.</p>
 receive the result.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISupportsType.html">nsISupportsType</a>.<a href="gen_idls.nsISupportsType.html#QueryInterface">QueryInterface</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L46034">types/gen/idls.d.ts:46034</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="custom_idlTypes.nsISupportsType.html">nsISupportsType</a>.<a href="custom_idlTypes.nsISupportsType.html#QueryInterface">QueryInterface</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="Release" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Release</span><a href="#Release" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
@@ -148,9 +147,7 @@ the associated instance is deleted.</p>
 <h3>Returns</h3><p>The resulting reference count.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISupportsType.html">nsISupportsType</a>.<a href="gen_idls.nsISupportsType.html#Release">Release</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L46050">types/gen/idls.d.ts:46050</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="custom_idlTypes.nsISupportsType.html">nsISupportsType</a>.<a href="custom_idlTypes.nsISupportsType.html#Release">Release</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="batchTopUndo" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>batch<wbr/>Top<wbr/>Undo</span><a href="#batchTopUndo" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -160,9 +157,7 @@ the associated instance is deleted.</p>
 preceding undo transaction (if any) into a batch transaction. Thus,
 a call to undoTransaction() will undo both transactions.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L50819">types/gen/idls.d.ts:50819</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="beginBatch" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>begin<wbr/>Batch</span><a href="#beginBatch" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -182,9 +177,7 @@ so they can be undone with a single call to undoTransaction().</p>
 <div class="tsd-comment tsd-typography"><p>An arbitrary nsISupports object that is associated with the
 batch. Can be retrieved from the undo or redo stacks.</p>
 </div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L50784">types/gen/idls.d.ts:50784</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="clear" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>clear</span><a href="#clear" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -192,9 +185,7 @@ batch. Can be retrieved from the undo or redo stacks.</p>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Clears the undo and redo stacks.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L50766">types/gen/idls.d.ts:50766</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="clearRedoStack" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>clear<wbr/>Redo<wbr/>Stack</span><a href="#clearRedoStack" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -202,9 +193,7 @@ batch. Can be retrieved from the undo or redo stacks.</p>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Clears the redo stack only.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L50774">types/gen/idls.d.ts:50774</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="clearUndoStack" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>clear<wbr/>Undo<wbr/>Stack</span><a href="#clearUndoStack" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -212,9 +201,7 @@ batch. Can be retrieved from the undo or redo stacks.</p>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Clears the undo stack only.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L50770">types/gen/idls.d.ts:50770</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="doTransaction" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>do<wbr/>Transaction</span><a href="#doTransaction" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -233,9 +220,7 @@ stack is pruned or when the transaction manager is destroyed.</p>
 <h5>aTransaction: <span class="tsd-signature-type">nsITransaction</span></h5>
 <div class="tsd-comment tsd-typography"><p>the transaction to do.</p>
 </div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L50752">types/gen/idls.d.ts:50752</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="endBatch" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>end<wbr/>Batch</span><a href="#endBatch" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -252,9 +237,7 @@ stack is pruned or when the transaction manager is destroyed.</p>
 pushed onto the undo stack. Otherwise, ending a batch with no
 children will result in no transactions being pushed on the undo stack.</p>
 </div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L50791">types/gen/idls.d.ts:50791</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="peekRedoStack" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>peek<wbr/>Redo<wbr/>Stack</span><a href="#peekRedoStack" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -265,9 +248,7 @@ redo stack. Callers should be aware that this method could return
 return a null in some implementations if there is a batch at the top
 of the redo stack.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsITransaction</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L50838">types/gen/idls.d.ts:50838</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsITransaction</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="peekUndoStack" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>peek<wbr/>Undo<wbr/>Stack</span><a href="#peekUndoStack" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -278,9 +259,7 @@ undo stack. Callers should be aware that this method could return
 return a null in some implementations if there is a batch at the top
 of the undo stack.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsITransaction</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L50831">types/gen/idls.d.ts:50831</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsITransaction</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="redoTransaction" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>redo<wbr/>Transaction</span><a href="#redoTransaction" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -289,9 +268,7 @@ of the undo stack.</p>
 <div class="tsd-comment tsd-typography"><p>Pops the topmost transaction on the redo stack, calls its
 redoTransaction() method, then pushes it on the undo stack.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L50762">types/gen/idls.d.ts:50762</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="removeTopUndo" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>remove<wbr/>Top<wbr/>Undo</span><a href="#removeTopUndo" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -300,9 +277,7 @@ redoTransaction() method, then pushes it on the undo stack.</p>
 <div class="tsd-comment tsd-typography"><p>Removes the transaction at the top of the undo stack (if any) without
 transacting.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L50824">types/gen/idls.d.ts:50824</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="undoTransaction" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>undo<wbr/>Transaction</span><a href="#undoTransaction" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -311,9 +286,7 @@ transacting.</p>
 <div class="tsd-comment tsd-typography"><p>Pops the topmost transaction on the undo stack, calls its
 undoTransaction() method, then pushes it on the redo stack.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L50757">types/gen/idls.d.ts:50757</a></li></ul></aside></li></ul></section></section></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">

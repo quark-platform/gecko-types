@@ -19,11 +19,9 @@
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
-<li><a href="gen_idls.nsISupportsType.html" class="tsd-signature-type" data-tsd-kind="Interface">nsISupportsType</a>
+<li><a href="custom_idlTypes.nsISupportsType.html" class="tsd-signature-type" data-tsd-kind="Interface">nsISupportsType</a>
 <ul class="tsd-hierarchy">
-<li><span class="target">nsIAlertNotificationType</span></li></ul></li></ul></section><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4331">types/gen/idls.d.ts:4331</a></li></ul></aside>
+<li><span class="target">nsIAlertNotificationType</span></li></ul></li></ul></section>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -64,138 +62,104 @@
 <div class="tsd-signature">URI<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIURI</span></div>
 <div class="tsd-comment tsd-typography"><p>The URI of the page that created the alert. |null| if the alert is not
 actionable.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4391">types/gen/idls.d.ts:4391</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="actionable" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>actionable</span><a href="#actionable" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">actionable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>Indicates whether this alert should show the source string and action
 buttons. False for system alerts (which can omit the principal), or
 expanded, system, and null principals.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4411">types/gen/idls.d.ts:4411</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="cookie" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>cookie</span><a href="#cookie" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">cookie<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>An opaque cookie that will be passed to the alert listener for each
 callback.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4365">types/gen/idls.d.ts:4365</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="data" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>data</span><a href="#data" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>A Base64-encoded structured clone buffer containing data associated with
 this alert. Only used for web notifications. Chrome callers should use a
 cookie instead.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4381">types/gen/idls.d.ts:4381</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="dir" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>dir</span><a href="#dir" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">dir<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>Bidi override for the title and contents. Valid values are &quot;auto&quot;, &quot;ltr&quot;,
 or &quot;rtl&quot;. Ignored if the backend doesn&#39;t support localization.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4370">types/gen/idls.d.ts:4370</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="imageURL" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>imageURL</span><a href="#imageURL" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">imageURL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>A URL identifying the image to put in the alert. The OS X backend limits
 the amount of time it will wait for the image to load to six seconds. After
 that time, the alert will show without an image.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4347">types/gen/idls.d.ts:4347</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="inPrivateBrowsing" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>in<wbr/>Private<wbr/>Browsing</span><a href="#inPrivateBrowsing" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">in<wbr/>Private<wbr/>Browsing<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>Controls the image loading behavior. If true, the image request will be
 loaded anonymously (without cookies or authorization tokens).</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4396">types/gen/idls.d.ts:4396</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="lang" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>lang</span><a href="#lang" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">lang<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>Language of the title and text. Ignored if the backend doesn&#39;t support
 localization.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4375">types/gen/idls.d.ts:4375</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="launchURL" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>launchURL</span><a href="#launchURL" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">launchURL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>A URL to navigate to if the application is relaunched in to complete
 interaction with this alert.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4421">types/gen/idls.d.ts:4421</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="name" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>name</span><a href="#name" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The name of the notification. On Windows and Android, the name is hashed
 and used as a notification ID. Notifications will replace previous
 notifications with the same name.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4341">types/gen/idls.d.ts:4341</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="principal" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>principal</span><a href="#principal" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">principal<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIPrincipal</span></div>
 <div class="tsd-comment tsd-typography"><p>The principal of the page that created the alert. Used for IPC security
 checks, and to determine whether the alert is actionable.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4386">types/gen/idls.d.ts:4386</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="requireInteraction" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>require<wbr/>Interaction</span><a href="#requireInteraction" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">require<wbr/>Interaction<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>Indicates that the notification should remain readily available until
 the user activates or dismisses the notification.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4401">types/gen/idls.d.ts:4401</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="silent" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>silent</span><a href="#silent" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">silent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>When set, indicates that no sounds or vibrations should be made.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4405">types/gen/idls.d.ts:4405</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="source" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>source</span><a href="#source" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">source<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The host and port of the originating page, or an empty string if the alert
 is not actionable.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4416">types/gen/idls.d.ts:4416</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="text" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>text</span><a href="#text" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">text<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The contents of the alert.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4355">types/gen/idls.d.ts:4355</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="textClickable" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>text<wbr/>Clickable</span><a href="#textClickable" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">text<wbr/>Clickable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>Controls the click behavior. If true, the alert listener will be notified
 when the user clicks on the alert.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4360">types/gen/idls.d.ts:4360</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="title" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>title</span><a href="#title" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The title for the alert.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4351">types/gen/idls.d.ts:4351</a></li></ul></aside></section></section>
+</div></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="AddRef" class="tsd-anchor"></a>
@@ -210,13 +174,22 @@ the reference count is returned to zero.</p>
 <h3>Returns</h3><p>The resulting reference count.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISupportsType.html">nsISupportsType</a>.<a href="gen_idls.nsISupportsType.html#AddRef">AddRef</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L46042">types/gen/idls.d.ts:46042</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="custom_idlTypes.nsISupportsType.html">nsISupportsType</a>.<a href="custom_idlTypes.nsISupportsType.html#AddRef">AddRef</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="QueryInterface" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Query<wbr/>Interface</span><a href="#QueryInterface" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
-<li class="tsd-signature tsd-anchor-link" id="QueryInterface.QueryInterface-1">Query<wbr/>Interface<span class="tsd-signature-symbol">(</span>aIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, aInstancePtr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#QueryInterface.QueryInterface-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="QueryInterface.QueryInterface-1">Query<wbr/>Interface<span class="tsd-signature-symbol">(</span>aIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, aInstancePtr<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><a href="#QueryInterface.QueryInterface-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aIID: <span class="tsd-signature-type">object</span></h5></li>
+<li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> aInstancePtr: <span class="tsd-signature-type">object</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4><aside class="tsd-sources">
+<p>Inherited from <a href="custom_idlTypes.nsISupportsType.html">nsISupportsType</a>.<a href="custom_idlTypes.nsISupportsType.html#QueryInterface">QueryInterface</a></p></aside></li>
+<li class="tsd-signature tsd-anchor-link" id="QueryInterface.QueryInterface-2">Query<wbr/>Interface<span class="tsd-signature-symbol">(</span>aIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, aInstancePtr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#QueryInterface.QueryInterface-2" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>A run time mechanism for interface discovery.</p>
 
@@ -237,9 +210,7 @@ instance, <strong>NS_NOINTERFACE</strong> if it is not.</p>
 receive the result.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISupportsType.html">nsISupportsType</a>.<a href="gen_idls.nsISupportsType.html#QueryInterface">QueryInterface</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L46034">types/gen/idls.d.ts:46034</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="custom_idlTypes.nsISupportsType.html">nsISupportsType</a>.<a href="custom_idlTypes.nsISupportsType.html#QueryInterface">QueryInterface</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="Release" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Release</span><a href="#Release" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
@@ -252,9 +223,7 @@ the associated instance is deleted.</p>
 <h3>Returns</h3><p>The resulting reference count.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISupportsType.html">nsISupportsType</a>.<a href="gen_idls.nsISupportsType.html#Release">Release</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L46050">types/gen/idls.d.ts:46050</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="custom_idlTypes.nsISupportsType.html">nsISupportsType</a>.<a href="custom_idlTypes.nsISupportsType.html#Release">Release</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="init" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>init</span><a href="#init" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -293,9 +262,7 @@ the associated instance is deleted.</p>
 <h5>aSilent: <span class="tsd-signature-type">boolean</span></h5></li>
 <li>
 <h5>aVibrate: <span class="tsd-signature-type">invalid</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4335">types/gen/idls.d.ts:4335</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="loadImage" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>load<wbr/>Image</span><a href="#loadImage" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -323,9 +290,7 @@ until the request completes.</p>
 Not used by the libnotify backend, but the OS X backend
 passes the pending notification.</p>
 </div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsICancelable</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L4434">types/gen/idls.d.ts:4434</a></li></ul></aside></li></ul></section></section></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsICancelable</span></h4></li></ul></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">

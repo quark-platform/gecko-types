@@ -22,11 +22,9 @@
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
-<li><a href="gen_idls.nsISupportsType.html" class="tsd-signature-type" data-tsd-kind="Interface">nsISupportsType</a>
+<li><a href="custom_idlTypes.nsISupportsType.html" class="tsd-signature-type" data-tsd-kind="Interface">nsISupportsType</a>
 <ul class="tsd-hierarchy">
-<li><span class="target">nsIURIFixupInfoType</span></li></ul></li></ul></section><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L52405">types/gen/idls.d.ts:52405</a></li></ul></aside>
+<li><span class="target">nsIURIFixupInfoType</span></li></ul></li></ul></section>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -56,25 +54,19 @@
 <h3 class="tsd-anchor-link"><span>consumer</span><a href="#consumer" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" id="icon-anchor-a"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" id="icon-anchor-b"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" id="icon-anchor-c"></path></svg></a></h3>
 <div class="tsd-signature">consumer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">BrowsingContext</span></div>
 <div class="tsd-comment tsd-typography"><p>Consumer that asked for fixed up URI.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L52409">types/gen/idls.d.ts:52409</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="fixedURI" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>fixedURI</span><a href="#fixedURI" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">fixedURI<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIURI</span></div>
 <div class="tsd-comment tsd-typography"><p>The fixed-up original input, <em>never</em> using a keyword search.
 (might be null if the original input was not recoverable as
 a URL, e.g. &quot;foo bar&quot;!)</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L52422">types/gen/idls.d.ts:52422</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="fixupChangedProtocol" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>fixup<wbr/>Changed<wbr/>Protocol</span><a href="#fixupChangedProtocol" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">fixup<wbr/>Changed<wbr/>Protocol<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>Whether we changed the protocol instead of using one from the input as-is.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L52436">types/gen/idls.d.ts:52436</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="fixupCreatedAlternateURI" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>fixup<wbr/>Created<wbr/>AlternateURI</span><a href="#fixupCreatedAlternateURI" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">fixup<wbr/>Created<wbr/>AlternateURI<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
@@ -82,39 +74,29 @@ a URL, e.g. &quot;foo bar&quot;!)</p>
 suffix, the contents of which are controlled by the
 browser.fixup.alternate.prefix and .suffix prefs, with the defaults being
 &quot;www.&quot; and &quot;.com&quot;, respectively.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L52443">types/gen/idls.d.ts:52443</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="keywordAsSent" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>keyword<wbr/>As<wbr/>Sent</span><a href="#keywordAsSent" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">keyword<wbr/>As<wbr/>Sent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The keyword as used for the search (post trimming etc.)
 empty string if no keyword search was done.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L52432">types/gen/idls.d.ts:52432</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="keywordProviderName" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>keyword<wbr/>Provider<wbr/>Name</span><a href="#keywordProviderName" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">keyword<wbr/>Provider<wbr/>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The name of the keyword search provider used to provide a keyword search;
 empty string if no keyword search was done.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L52427">types/gen/idls.d.ts:52427</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="originalInput" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>original<wbr/>Input</span><a href="#originalInput" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">original<wbr/>Input<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The original input</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L52447">types/gen/idls.d.ts:52447</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="postData" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>post<wbr/>Data</span><a href="#postData" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">post<wbr/>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIInputStream</span></div>
 <div class="tsd-comment tsd-typography"><p>The POST data to submit with the returned URI (see nsISearchSubmission).</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L52451">types/gen/idls.d.ts:52451</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="preferredURI" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>preferredURI</span><a href="#preferredURI" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">preferredURI<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIURI</span></div>
@@ -122,9 +104,7 @@ empty string if no keyword search was done.</p>
 be null if we couldn&#39;t salvage anything (for instance, because
 the input was invalid as a URI and FIXUP_FLAG_ALLOW_KEYWORD_LOOKUP
 was not passed)</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L52416">types/gen/idls.d.ts:52416</a></li></ul></aside></section></section>
+</div></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="AddRef" class="tsd-anchor"></a>
@@ -139,13 +119,22 @@ the reference count is returned to zero.</p>
 <h3>Returns</h3><p>The resulting reference count.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISupportsType.html">nsISupportsType</a>.<a href="gen_idls.nsISupportsType.html#AddRef">AddRef</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L46042">types/gen/idls.d.ts:46042</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="custom_idlTypes.nsISupportsType.html">nsISupportsType</a>.<a href="custom_idlTypes.nsISupportsType.html#AddRef">AddRef</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="QueryInterface" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Query<wbr/>Interface</span><a href="#QueryInterface" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
-<li class="tsd-signature tsd-anchor-link" id="QueryInterface.QueryInterface-1">Query<wbr/>Interface<span class="tsd-signature-symbol">(</span>aIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, aInstancePtr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#QueryInterface.QueryInterface-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="QueryInterface.QueryInterface-1">Query<wbr/>Interface<span class="tsd-signature-symbol">(</span>aIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, aInstancePtr<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><a href="#QueryInterface.QueryInterface-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aIID: <span class="tsd-signature-type">object</span></h5></li>
+<li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> aInstancePtr: <span class="tsd-signature-type">object</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4><aside class="tsd-sources">
+<p>Inherited from <a href="custom_idlTypes.nsISupportsType.html">nsISupportsType</a>.<a href="custom_idlTypes.nsISupportsType.html#QueryInterface">QueryInterface</a></p></aside></li>
+<li class="tsd-signature tsd-anchor-link" id="QueryInterface.QueryInterface-2">Query<wbr/>Interface<span class="tsd-signature-symbol">(</span>aIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, aInstancePtr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#QueryInterface.QueryInterface-2" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>A run time mechanism for interface discovery.</p>
 
@@ -166,9 +155,7 @@ instance, <strong>NS_NOINTERFACE</strong> if it is not.</p>
 receive the result.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISupportsType.html">nsISupportsType</a>.<a href="gen_idls.nsISupportsType.html#QueryInterface">QueryInterface</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L46034">types/gen/idls.d.ts:46034</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="custom_idlTypes.nsISupportsType.html">nsISupportsType</a>.<a href="custom_idlTypes.nsISupportsType.html#QueryInterface">QueryInterface</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="Release" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Release</span><a href="#Release" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
@@ -181,9 +168,7 @@ the associated instance is deleted.</p>
 <h3>Returns</h3><p>The resulting reference count.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISupportsType.html">nsISupportsType</a>.<a href="gen_idls.nsISupportsType.html#Release">Release</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L46050">types/gen/idls.d.ts:46050</a></li></ul></aside></li></ul></section></section></div>
+<p>Inherited from <a href="custom_idlTypes.nsISupportsType.html">nsISupportsType</a>.<a href="custom_idlTypes.nsISupportsType.html#Release">Release</a></p></aside></li></ul></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">

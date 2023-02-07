@@ -30,9 +30,7 @@ can receive nsIRunnable objects (events) to be processed on the thread.</p>
 <ul class="tsd-hierarchy">
 <li><span class="target">nsIThreadType</span>
 <ul class="tsd-hierarchy">
-<li><a href="gen_idls.nsIThreadInternalType.html" class="tsd-signature-type" data-tsd-kind="Interface">nsIThreadInternalType</a></li></ul></li></ul></li></ul></section><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L49187">types/gen/idls.d.ts:49187</a></li></ul></aside>
+<li><a href="gen_idls.nsIThreadInternalType.html" class="tsd-signature-type" data-tsd-kind="Interface">nsIThreadInternalType</a></li></ul></li></ul></li></ul></section>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -79,39 +77,29 @@ can receive nsIRunnable objects (events) to be processed on the thread.</p>
 <div class="tsd-comment tsd-typography">
 <h3>Returns</h3><p>Whether or not this thread may call into JS. Used in the profiler
 to avoid some unnecessary locking.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L49198">types/gen/idls.d.ts:49198</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="PRThread" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>PRThread</span><a href="#PRThread" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">PRThread<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PRThread</span></div>
 <div class="tsd-comment tsd-typography">
 <h3>Returns</h3><p>The NSPR thread object corresponding to this nsIThread.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L49192">types/gen/idls.d.ts:49192</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="eventTarget" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>event<wbr/>Target</span><a href="#eventTarget" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">event<wbr/>Target<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIEventTarget</span></div>
 <div class="tsd-comment tsd-typography"><p>Use this attribute to dispatch runnables to the thread. Eventually, the
 eventTarget attribute will be the only way to dispatch events to a
 thread--nsIThread will no longer inherit from nsIEventTarget.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L49307">types/gen/idls.d.ts:49307</a></li></ul></aside></section>
+</div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="lastLongNonIdleTaskEnd" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>last<wbr/>Long<wbr/>Non<wbr/>Idle<wbr/>Task<wbr/>End</span><a href="#lastLongNonIdleTaskEnd" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">last<wbr/>Long<wbr/>Non<wbr/>Idle<wbr/>Task<wbr/>End<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">TimeStamp</span></div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L49325">types/gen/idls.d.ts:49325</a></li></ul></aside></section>
+<div class="tsd-signature">last<wbr/>Long<wbr/>Non<wbr/>Idle<wbr/>Task<wbr/>End<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">TimeStamp</span></div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="lastLongTaskEnd" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>last<wbr/>Long<wbr/>Task<wbr/>End</span><a href="#lastLongTaskEnd" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">last<wbr/>Long<wbr/>Task<wbr/>End<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">TimeStamp</span></div>
 <div class="tsd-comment tsd-typography"><p>This is set to the end of the last 50+ms event that was executed on
 this thread (for MainThread only).  Otherwise returns a null TimeStamp.</p>
-</div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L49321">types/gen/idls.d.ts:49321</a></li></ul></aside></section></section>
+</div></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="AddRef" class="tsd-anchor"></a>
@@ -126,9 +114,7 @@ the reference count is returned to zero.</p>
 <h3>Returns</h3><p>The resulting reference count.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#AddRef">AddRef</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L46042">types/gen/idls.d.ts:46042</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#AddRef">AddRef</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="EventTarget-1" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Event<wbr/>Target</span><a href="#EventTarget-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -136,13 +122,22 @@ the reference count is returned to zero.</p>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>A fast C++ getter for the eventTarget.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsIEventTargetPtr</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L49311">types/gen/idls.d.ts:49311</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsIEventTargetPtr</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="QueryInterface" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Query<wbr/>Interface</span><a href="#QueryInterface" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
-<li class="tsd-signature tsd-anchor-link" id="QueryInterface.QueryInterface-1">Query<wbr/>Interface<span class="tsd-signature-symbol">(</span>aIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, aInstancePtr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#QueryInterface.QueryInterface-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="QueryInterface.QueryInterface-1">Query<wbr/>Interface<span class="tsd-signature-symbol">(</span>aIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, aInstancePtr<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><a href="#QueryInterface.QueryInterface-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aIID: <span class="tsd-signature-type">object</span></h5></li>
+<li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> aInstancePtr: <span class="tsd-signature-type">object</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4><aside class="tsd-sources">
+<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#QueryInterface">QueryInterface</a></p></aside></li>
+<li class="tsd-signature tsd-anchor-link" id="QueryInterface.QueryInterface-2">Query<wbr/>Interface<span class="tsd-signature-symbol">(</span>aIID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, aInstancePtr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#QueryInterface.QueryInterface-2" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>A run time mechanism for interface discovery.</p>
 
@@ -163,9 +158,7 @@ instance, <strong>NS_NOINTERFACE</strong> if it is not.</p>
 receive the result.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#QueryInterface">QueryInterface</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L46034">types/gen/idls.d.ts:46034</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#QueryInterface">QueryInterface</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="Release" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Release</span><a href="#Release" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
@@ -178,9 +171,7 @@ the associated instance is deleted.</p>
 <h3>Returns</h3><p>The resulting reference count.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#Release">Release</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L46050">types/gen/idls.d.ts:46050</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#Release">Release</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="SerialEventTarget" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>Serial<wbr/>Event<wbr/>Target</span><a href="#SerialEventTarget" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -189,9 +180,7 @@ the associated instance is deleted.</p>
 <div class="tsd-comment tsd-typography"><p>A fast C++ getter for the eventTarget. It asserts that the thread&#39;s event
 target is an nsISerialEventTarget and then returns it.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsISerialEventTargetPtr</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L49316">types/gen/idls.d.ts:49316</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsISerialEventTargetPtr</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="asyncShutdown" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>async<wbr/>Shutdown</span><a href="#asyncShutdown" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -214,9 +203,7 @@ the current thread, that this thread was not created with a call to
 nsIThreadManager::NewNamedThread, or that this method was called more
 than once on the thread object.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L49277">types/gen/idls.d.ts:49277</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="beginShutdown" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>begin<wbr/>Shutdown</span><a href="#beginShutdown" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -225,9 +212,7 @@ than once on the thread object.</p>
 <div class="tsd-comment tsd-typography"><p>Like <code>asyncShutdown</code>, but also returns a nsIThreadShutdown instance to
 allow observing and controlling the thread&#39;s async shutdown progress.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsIThreadShutdown</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L49282">types/gen/idls.d.ts:49282</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">nsIThreadShutdown</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="delayedDispatch" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>delayed<wbr/>Dispatch</span><a href="#delayedDispatch" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
@@ -259,9 +244,7 @@ aside to execute once the delay has passed.  Otherwise, it will be
 executed immediately.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#delayedDispatch">delayedDispatch</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L19642">types/gen/idls.d.ts:19642</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#delayedDispatch">delayedDispatch</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="dispatch" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>dispatch</span><a href="#dispatch" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
@@ -290,9 +273,7 @@ events, so this event would never run and has not been dispatched.</p>
 below.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#dispatch">dispatch</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L19622">types/gen/idls.d.ts:19622</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#dispatch">dispatch</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="dispatchFromC" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>dispatch<wbr/>FromC</span><a href="#dispatchFromC" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
@@ -322,9 +303,7 @@ NOTE that the event will be leaked if it fails to dispatch.</p>
 below.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#dispatchFromC">dispatchFromC</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L19605">types/gen/idls.d.ts:19605</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#dispatchFromC">dispatchFromC</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="dispatchToQueue" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>dispatch<wbr/>To<wbr/>Queue</span><a href="#dispatchToQueue" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -354,9 +333,7 @@ NOTE that the event will be leaked if it fails to dispatch.</p>
 <h5>queue: <span class="tsd-signature-type">EventQueuePriority</span></h5>
 <div class="tsd-comment tsd-typography"><p>Which event priority queue this should be added to</p>
 </div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L49301">types/gen/idls.d.ts:49301</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getRunningEventDelay" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Running<wbr/>Event<wbr/>Delay</span><a href="#getRunningEventDelay" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -380,9 +357,7 @@ and the event priority is below Input.</p>
 <div class="tsd-comment tsd-typography"><p>The time the currently running event began to run, or TimeStamp() if no
 event is running.</p>
 </div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L49339">types/gen/idls.d.ts:49339</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="hasPendingEvents" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>has<wbr/>Pending<wbr/>Events</span><a href="#hasPendingEvents" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -401,9 +376,7 @@ more pending events.</p>
 Indicates that this method was erroneously called when this thread was
 not the current thread.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L49234">types/gen/idls.d.ts:49234</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="hasPendingHighPriorityEvents" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>has<wbr/>Pending<wbr/>High<wbr/>Priority<wbr/>Events</span><a href="#hasPendingHighPriorityEvents" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -411,27 +384,21 @@ not the current thread.</p>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Similar to above, but checks only possible high priority queue.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L49238">types/gen/idls.d.ts:49238</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="isOnCurrentThread" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>is<wbr/>On<wbr/>Current<wbr/>Thread</span><a href="#isOnCurrentThread" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
 <li class="tsd-signature tsd-anchor-link" id="isOnCurrentThread.isOnCurrentThread-1">is<wbr/>On<wbr/>Current<wbr/>Thread<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><a href="#isOnCurrentThread.isOnCurrentThread-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#isOnCurrentThread">isOnCurrentThread</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L19587">types/gen/idls.d.ts:19587</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#isOnCurrentThread">isOnCurrentThread</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="isOnCurrentThreadInfallible" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>is<wbr/>On<wbr/>Current<wbr/>Thread<wbr/>Infallible</span><a href="#isOnCurrentThreadInfallible" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
 <li class="tsd-signature tsd-anchor-link" id="isOnCurrentThreadInfallible.isOnCurrentThreadInfallible-1">is<wbr/>On<wbr/>Current<wbr/>Thread<wbr/>Infallible<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><a href="#isOnCurrentThreadInfallible.isOnCurrentThreadInfallible-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#isOnCurrentThreadInfallible">isOnCurrentThreadInfallible</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L19583">types/gen/idls.d.ts:19583</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#isOnCurrentThreadInfallible">isOnCurrentThreadInfallible</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="processNextEvent" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>process<wbr/>Next<wbr/>Event</span><a href="#processNextEvent" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -456,9 +423,7 @@ not the current thread.</p>
 <div class="tsd-comment tsd-typography"><p>A boolean parameter that if &quot;true&quot; indicates that the method may block
 the calling thread to wait for a pending event.</p>
 </div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L49256">types/gen/idls.d.ts:49256</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="registerShutdownTask" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>register<wbr/>Shutdown<wbr/>Task</span><a href="#registerShutdownTask" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
@@ -489,9 +454,7 @@ accepting events.</p>
 NOTE that unlike <code>dispatch</code>, this will not leak the task if it fails.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#registerShutdownTask">registerShutdownTask</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L19663">types/gen/idls.d.ts:19663</a></li></ul></aside></li></ul></section>
+<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#registerShutdownTask">registerShutdownTask</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="setNameForWakeupTelemetry" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>set<wbr/>Name<wbr/>For<wbr/>Wakeup<wbr/>Telemetry</span><a href="#setNameForWakeupTelemetry" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -502,9 +465,7 @@ NOTE that unlike <code>dispatch</code>, this will not leak the task if it fails.
 <ul class="tsd-parameter-list">
 <li>
 <h5>name: <span class="tsd-signature-type">string</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L49355">types/gen/idls.d.ts:49355</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="setRunningEventDelay" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>set<wbr/>Running<wbr/>Event<wbr/>Delay</span><a href="#setRunningEventDelay" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -526,9 +487,7 @@ there&#39;s no running event.</p>
 <div class="tsd-comment tsd-typography"><p>The time the currently running event began to run, or TimeStamp() if no
 event is running.</p>
 </div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L49351">types/gen/idls.d.ts:49351</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="shutdown" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>shutdown</span><a href="#shutdown" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -550,9 +509,7 @@ the current thread, that this thread was not created with a call to
 nsIThreadManager::NewThread, or if this method was called more than once
 on the thread object.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L49217">types/gen/idls.d.ts:49217</a></li></ul></aside></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="unregisterShutdownTask" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>unregister<wbr/>Shutdown<wbr/>Task</span><a href="#unregisterShutdownTask" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
@@ -579,9 +536,7 @@ accepting events, or that the shutdown task cannot be found.</p>
 <div class="tsd-comment tsd-typography"><p>The task previously registered with registerShutdownTask</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
-<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#unregisterShutdownTask">unregisterShutdownTask</a></p>
-<ul>
-<li>Defined in <a href="https://github.com/quark-platform/gecko-types/blob/1e105a5/types/gen/idls.d.ts#L19679">types/gen/idls.d.ts:19679</a></li></ul></aside></li></ul></section></section></div>
+<p>Inherited from <a href="gen_idls.nsISerialEventTargetType.html">nsISerialEventTargetType</a>.<a href="gen_idls.nsISerialEventTargetType.html#unregisterShutdownTask">unregisterShutdownTask</a></p></aside></li></ul></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
