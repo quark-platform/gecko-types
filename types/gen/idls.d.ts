@@ -4783,7 +4783,6 @@ declare interface nsIAppStartupType extends nsISupportsType {
      * determine whether the application is crashing on startup.
      * When the number of crashes crosses the acceptable threshold, safe mode
      * or other repair procedures are performed.
-     *
      * Whether automatic safe mode is necessary at this time.  This gets set
      * in trackStartupCrashBegin.
      *
@@ -5925,7 +5924,6 @@ declare interface nsIAudioDeviceInfoType extends nsISupportsType {
 declare interface nsIAuthInformationType extends nsISupportsType {
     /**
      * @}
-     *
      * Flags describing this dialog. A bitwise OR of the flag values
      * above.
      *
@@ -6578,7 +6576,6 @@ declare interface nsIAutoCompleteResultType extends nsISupportsType {
      * with matches
      * and that the search
      * is still ongoing
-     *
      * The original search string
      */
     readonly searchString: AString;
@@ -18481,7 +18478,6 @@ declare interface nsIEditorType extends nsISupportsType {
     deleteSelection(action: short, stripWrappers: short): void;
     /**
      * ------------ Document info and file methods --------------
-     *
      * Returns true if the document has no *meaningful* content
      */
     readonly documentIsEmpty: boolean;
@@ -23013,7 +23009,6 @@ declare interface nsIHTMLAbsPosEditorType extends nsISupportsType {
     absolutePositioningEnabled: boolean;
     /**
      * Utility methods
-     *
      * true if Snap To Grid is enabled in the editor.
      */
     snapToGridEnabled: boolean;
@@ -24085,7 +24080,6 @@ declare interface nsIHttpChannelType extends nsIIdentChannelType {
      * REQUEST CONFIGURATION
      *
      * Modifying request parameters after asyncOpen has been called is an error.
-     *
      * Set/get the HTTP request method (default is "GET").  Both setter and
      * getter are case sensitive.
      *
@@ -24270,7 +24264,6 @@ declare interface nsIHttpChannelType extends nsIIdentChannelType {
      * RESPONSE INFO
      *
      * Accessing response info before the onStartRequest event is an error.
-     *
      * Get the HTTP response code (e.g., 200).
      *
      * @throws NS_ERROR_NOT_AVAILABLE if called before the response
@@ -27016,7 +27009,6 @@ declare interface nsIJumpListBuilderType extends nsISupportsType {
      *
      * @throw NS_ERROR_NOT_AVAILABLE on all calls if taskbar functionality
      * is not supported by the operating system.
-     *
      * Indicates if a commit has already occurred in this session.
      */
     readonly isListCommitted: boolean;
@@ -37280,7 +37272,6 @@ declare interface nsIPrintSettingsType extends nsISupportsType {
     printBGImages: boolean;
     /**
      * Print Background Images
-     *
      * Whether @page rule margins should be honored or not. If the @page
      * rule sets its margins to zero, we automatically ignore unwriteable
      * margins, but nonzero values will be clamped to unwriteable margins.
@@ -37344,7 +37335,6 @@ declare interface nsIPrintSettingsType extends nsISupportsType {
     shrinkToFit: boolean;
     /**
      * shrinks content to fit on page
-     *
      * Additional XP Related
      */
     paperId: AString;
@@ -37423,9 +37413,7 @@ declare interface nsIPrintSettingsType extends nsISupportsType {
     duplex: long;
     /**
      * duplex mode
-     *
      * initialize helpers
-     *
      * This attribute tracks whether the PS has been initialized
      * from a printer specified by the "printerName" attr.
      * If a different name is set into the "printerName"
@@ -48982,7 +48970,6 @@ declare interface nsITextInputProcessorNotificationType extends nsISupportsType 
      * others, it is "\n" (LF).  If you want TextInputProcessor to treat line
      * breakers on Windows as XP line breakers (LF), please file a bug with
      * the reason why you need the behavior.
-     *
      * This attribute has a valid value when type is "notify-text-change", or
      * is "notify-selection-change" and hasRange is true.
      * This is offset of the start of modified text range if type is
@@ -52040,7 +52027,6 @@ declare interface nsIURIType extends nsISupportsType {
     /**
      * **********************************************************************
      * The URI is broken down into the following principal components:
-     *
      * Returns a string representation of the URI.
      *
      * Some characters may be escaped.
@@ -52125,7 +52111,6 @@ declare interface nsIURIType extends nsISupportsType {
     /**
      * **********************************************************************
      * Additional attributes:
-     *
      * The URI spec with an ASCII compatible encoding.  Host portion follows
      * the IDNA draft spec.  Other parts are URL-escaped per the rules of
      * RFC2396.  The result is strictly ASCII.
@@ -52146,7 +52131,6 @@ declare interface nsIURIType extends nsISupportsType {
     /**
      * **********************************************************************
      * Additional attribute & methods added for .ref support:
-     *
      * Returns the reference portion (the part after the "#") of the URI.
      * If there isn't one, an empty string is returned.
      *
@@ -52172,7 +52156,6 @@ declare interface nsIURIType extends nsISupportsType {
     /**
      * **********************************************************************
      * Additional attributes added for .query support:
-     *
      * Returns a path including the directory and file portions of a
      * URL.  For example, the filePath of "http://host/foo/bar.html#baz"
      * is "/foo/bar.html".
@@ -52763,10 +52746,8 @@ declare interface nsIURLType extends nsIURIType {
      * attribute AUTF8String query;
      *
      * These are inherited from nsIURI.
-     *
      * ***********************************************************************
      * The URL filepath is broken down into the following sub-components:
-     *
      * Returns the directory portion of a URL.  If the URL denotes a path to a
      * directory and not a file, e.g. http://host/foo/bar/, then the Directory
      * attribute accesses the complete /foo/bar/ portion, and the FileName is
@@ -52792,7 +52773,6 @@ declare interface nsIURLType extends nsIURIType {
     /**
      * ***********************************************************************
      * The URL filename is broken down even further:
-     *
      * Returns the file basename portion of a filename in a url.
      *
      * Some characters may be escaped.
@@ -60810,1219 +60790,6514 @@ declare interface nsIXPCTestUtilsType extends nsISupportsType {
 }
 
 interface CiType {
-    IJSDebugger;
-    IPeerConnectionObserver;
-    IPeerConnection;
-    IUrlClassifierUITelemetry;
-    nsIScriptableOK;
-    nsIScriptableWithNotXPCOM;
-    nsISessionStoreFunctions;
-    amIAddonManagerStartup;
-    amIWebInstallPrompt;
-    extIWebNavigation;
-    imgICache;
-    imgIContainer;
-    imgIContainerDebug;
-    imgIEncoder;
-    imgILoader;
-    imgINotificationObserver;
-    imgIRequest;
-    imgIScriptedNotificationObserver;
-    imgITools;
-    imgIContainerCallback;
-    inIDeepTreeWalker;
-    mozIAppServicesLogger;
-    mozIVisitInfo;
-    mozIPlaceInfo;
-    mozIVisitInfoCallback;
-    mozIVisitedStatusCallback;
-    mozIAsyncHistory;
-    mozIBridgedSyncEngineCallback;
-    mozIBridgedSyncEngineApplyCallback;
-    mozIBridgedSyncEngine;
-    mozIDOMWindow;
-    mozIDOMWindowProxy;
-    mozIDownloadPlatform;
-    mozIExtensionServiceWorkerInfo;
-    mozIExtensionListenerCallOptions;
-    mozIExtensionEventListener;
-    mozIExtensionAPIRequest;
-    mozIExtensionAPIRequestResult;
-    mozIExtensionAPIRequestHandler;
-    mozIExtensionProcessScript;
-    mozIExtensionStorageArea;
-    mozIConfigurableExtensionStorageArea;
-    mozISyncedExtensionStorageArea;
-    mozIExtensionStorageListener;
-    mozIExtensionStorageCallback;
-    mozIGeckoMediaPluginChromeService;
-    mozIGeckoMediaPluginService;
-    mozIInterruptible;
-    mozIJSSubScriptLoader;
-    mozILocaleService;
-    mozIMozIntl;
-    mozIMozIntlHelper;
-    mozIOSPreferences;
-    mozIPersonalDictionary;
-    mozIPlacesAutoComplete;
-    mozIPlacesPendingOperation;
-    mozIRemoteLazyInputStream;
-    mozISandboxReport;
-    mozISandboxReportArray;
-    mozISandboxReporter;
-    mozISandboxSettings;
-    mozISandboxTest;
-    mozIServicesLogSink;
-    mozISpellCheckingEngine;
-    mozIStorageAsyncConnection;
-    mozIStorageAsyncStatement;
-    mozIStorageBaseStatement;
-    mozIStorageBindingParams;
-    mozIStorageBindingParamsArray;
-    mozIStorageCompletionCallback;
-    mozIStorageConnection;
-    mozIStorageError;
-    mozIStorageFunction;
-    mozIStoragePendingStatement;
-    mozIStorageProgressHandler;
-    mozIStorageResultSet;
-    mozIStorageRow;
-    mozIStorageService;
-    mozIStorageStatement;
-    mozIStorageStatementCallback;
-    mozIStorageVacuumParticipant;
-    mozIStorageValueArray;
-    mozISyncedBookmarksMirrorProgressListener;
-    mozISyncedBookmarksMirrorCallback;
-    mozISyncedBookmarksMirrorLogger;
-    mozISyncedBookmarksMerger;
-    mozITXTToHTMLConv;
-    mozITestInterfaceJS;
-    mozIThirdPartyUtil;
-    nsIASN1Tree;
-    nsIAboutModule;
-    nsIAboutNewTabService;
-    nsIInstalledApplication;
-    nsIAboutThirdParty;
-    nsIAddonPolicyService;
-    nsIAddonContentPolicy;
-    nsIAlertNotificationImageListener;
-    nsIAlertAction;
-    nsIAlertNotification;
-    nsIAlertsService;
-    nsIAlertsDoNotDisturb;
-    nsIAlertsIconData;
-    nsIAlertsIconURI;
-    nsIAndroidEventCallback;
-    nsIAndroidEventFinalizer;
-    nsIAndroidEventListener;
-    nsIAndroidEventDispatcher;
-    nsIAndroidView;
-    nsIAndroidBridge;
-    nsIAppShell;
-    nsIAppShellService;
-    nsIAppStartup;
-    nsIAppWindow;
-    nsIApplicationChooserFinishedCallback;
-    nsIApplicationChooser;
-    nsIApplicationReputationService;
-    nsIApplicationReputationQuery;
-    nsIApplicationReputationCallback;
-    nsIArray;
-    nsIArrayBufferInputStream;
-    nsIArrayExtensions;
-    nsIAsyncInputStream;
-    nsIInputStreamCallback;
-    nsIAsyncOutputStream;
-    nsIOutputStreamCallback;
-    nsIAsyncShutdownBlocker;
-    nsIAsyncShutdownClient;
-    nsIAsyncShutdownCompletionCallback;
-    nsIAsyncShutdownBarrier;
-    nsIAsyncShutdownService;
-    nsIAsyncStreamCopier;
-    nsIAsyncStreamCopier2;
-    nsIAsyncVerifyRedirectCallback;
-    nsISuspendedTypes;
-    nsIAudioChannelAgentCallback;
-    nsIAudioChannelAgent;
-    nsIAudioDeviceInfo;
-    nsIAuthInformation;
-    nsIAuthModule;
-    nsIAuthPrompt;
-    nsIAuthPrompt2;
-    nsIAuthPromptAdapterFactory;
-    nsIAuthPromptCallback;
-    nsIAuthPromptProvider;
-    nsIAutoCompleteController;
-    nsIAutoCompleteInput;
-    nsIAutoCompletePopup;
-    nsIAutoCompleteResult;
-    nsIAutoCompleteSearch;
-    nsIAutoCompleteObserver;
-    nsIAutoCompleteSearchDescriptor;
-    nsIAutoCompleteSimpleResult;
-    nsIAutoCompleteSimpleResultListener;
-    nsIAutoCompleteSimpleSearch;
-    nsIAutoplay;
-    nsITabUnloader;
-    nsIAvailableMemoryWatcherBase;
-    nsIBFCacheEntry;
-    nsIBackgroundChannelRegistrar;
-    nsIBackgroundFileSaver;
-    nsIBackgroundFileSaverObserver;
-    nsIBackgroundTasks;
-    nsIBackgroundTasksManager;
-    nsIBackgroundTasksRunner;
-    nsIBaseWindow;
-    nsIBidiKeyboard;
-    nsIBinaryInputStream;
-    nsIBinaryOutputStream;
-    nsIBits;
-    nsIBitsNewRequestCallback;
-    nsIBitsRequest;
-    nsIBitsCallback;
-    nsIBlocklistService;
-    nsIBrowser;
-    nsIBrowserChild;
-    nsIBrowserController;
-    nsIOpenURIInFrameParams;
-    nsIBrowserDOMWindow;
-    nsIBrowserElementAPI;
-    nsIBrowserHandler;
-    nsIBrowserUsage;
-    nsIVisibleTab;
-    nsIBrowserWindowTracker;
-    nsIBufferedInputStream;
-    nsIBufferedOutputStream;
-    nsIByteRangeRequest;
-    nsICacheEntry;
-    nsICacheEntryMetaDataVisitor;
-    nsICacheEntryDoomCallback;
-    nsICacheEntryOpenCallback;
-    nsIInputStreamReceiver;
-    nsICacheInfoChannel;
-    nsICachePurgeLock;
-    nsICacheStorage;
-    nsICacheStorageService;
-    nsICacheStorageConsumptionObserver;
-    nsICacheStorageVisitor;
-    nsICacheTesting;
-    nsICachingChannel;
-    nsICancelable;
-    nsICaptivePortalCallback;
-    nsICaptivePortalDetector;
-    nsICaptivePortalServiceCallback;
-    nsICaptivePortalService;
-    nsICascadeFilter;
-    nsICategoryEntry;
-    nsICategoryManager;
-    nsICertOverride;
-    nsICertOverrideService;
-    nsICertStorageCallback;
-    nsIRevocationState;
-    nsIIssuerAndSerialRevocationState;
-    nsISubjectAndPubKeyRevocationState;
-    nsICRLiteCoverage;
-    nsICRLiteTimestamp;
-    nsICertInfo;
-    nsICertStorage;
-    nsICertTreeItem;
-    nsICertTree;
-    nsICertificateDialogs;
-    nsIChannel;
-    nsIIdentChannel;
-    nsIUrlClassifierBlockedChannel;
-    nsIChannelClassifierService;
-    nsIChannelEventSink;
-    nsIChildChannel;
-    nsIChromeRegistry;
-    nsIXULChromeRegistry;
-    nsIClassInfo;
-    nsIClassOfService;
-    nsIClassifiedChannel;
-    nsIClearDataService;
-    nsIClearDataCallback;
-    nsIClickRule;
-    nsIClientAuthDialogs;
-    nsIClientAuthRememberRecord;
-    nsIClientAuthRememberService;
-    nsIClipboard;
-    nsIClipboardHelper;
-    nsIClipboardOwner;
-    nsICloneableInputStream;
-    nsICloneableInputStreamWithRange;
-    nsICodeCoverage;
-    nsIColorPickerShownCallback;
-    nsIColorPicker;
-    nsICommandLine;
-    nsICommandLineHandler;
-    nsICommandLineRunner;
-    nsICommandLineValidator;
-    nsICommandManager;
-    nsICommandParams;
-    nsIComponentManager;
-    nsIComponentRegistrar;
-    nsICompressConvStats;
-    nsIConsoleAPIStorage;
-    nsIConsoleListener;
-    nsIConsoleMessage;
-    nsIConsoleService;
-    nsIContentBlockingAllowList;
-    nsIContentDispatchChooser;
-    nsIContentHandler;
-    nsIContentPermissionType;
-    nsIContentPermissionRequest;
-    nsIContentPermissionPrompt;
-    nsIContentPolicy;
-    nsIContentPrefObserver;
-    nsIContentPrefService2;
-    nsIContentPrefCallback2;
-    nsIContentPref;
-    nsIContentProcessInfo;
-    nsIContentProcessProvider;
-    nsIContentSecurityManager;
-    nsIContentSecurityPolicy;
-    nsICSPEventListener;
-    nsIContentSignatureVerifier;
-    nsIContentSniffer;
-    nsIContentViewer;
-    nsIContentViewerEdit;
-    nsIController;
-    nsICommandController;
-    nsIControllerCommand;
-    nsIControllerCommandTable;
-    nsIControllerContext;
-    nsIControllers;
-    nsIConverterInputStream;
-    nsIConverterOutputStream;
-    nsICookie;
-    nsICookieBannerListService;
-    nsICookieBannerRule;
-    nsICookieBannerService;
-    nsICookieJarSettings;
-    nsICookieManager;
-    nsICookiePermission;
-    nsICookieRule;
-    nsICookieTransactionCallback;
-    nsICookieService;
-    nsICrashReporter;
-    nsICrashService;
-    nsICryptoHash;
-    nsICycleCollectorHandler;
-    nsICycleCollectorLogSink;
-    nsICycleCollectorListener;
-    nsIDAPTelemetry;
-    nsIDHCPClient;
-    nsIDNSAdditionalInfo;
-    nsIDNSByTypeRecord;
-    nsIDNSTXTRecord;
-    nsISVCParam;
-    nsISVCParamAlpn;
-    nsISVCParamNoDefaultAlpn;
-    nsISVCParamPort;
-    nsISVCParamIPv4Hint;
-    nsISVCParamEchConfig;
-    nsISVCParamIPv6Hint;
-    nsISVCParamODoHConfig;
-    nsISVCBRecord;
-    nsIDNSHTTPSSVCRecord;
-    nsIDNSListener;
-    nsIDNSRecord;
-    nsIDNSAddrRecord;
-    nsIDNSService;
-    nsIDOMChromeWindow;
-    nsIDOMEventListener;
-    nsIDOMGeoPosition;
-    nsIDOMGeoPositionCallback;
-    nsIDOMGeoPositionCoords;
-    nsIDOMGeoPositionErrorCallback;
-    nsIDOMGlobalPropertyInitializer;
-    nsIDOMMozBrowserFrame;
-    nsIDOMProcessChild;
-    nsIDOMProcessParent;
-    nsIDOMRequestService;
-    nsIDOMStorageManager;
-    nsIDOMSessionStorageManager;
-    nsIDOMMozWakeLockListener;
-    nsIDOMWindow;
-    nsIDOMWindowUtils;
-    nsITranslationNodeList;
-    nsIJSRAIIHelper;
-    nsIDOMXULButtonElement;
-    nsIDOMXULCommandDispatcher;
-    nsIDOMXULContainerItemElement;
-    nsIDOMXULContainerElement;
-    nsIDOMXULControlElement;
-    nsIDOMXULMenuListElement;
-    nsIDOMXULMultiSelectControlElement;
-    nsIDOMXULRadioGroupElement;
-    nsIDOMXULRelatedElement;
-    nsIDOMXULSelectControlElement;
-    nsIDOMXULSelectControlItemElement;
-    nsINetDashboardCallback;
-    nsIDashboard;
-    nsIDashboardEventNotifier;
-    nsIDebug2;
-    nsIDeviceSensorData;
-    nsIDeviceSensors;
-    nsIDialogParamBlock;
-    nsIDirIndex;
-    nsIDirIndexListener;
-    nsIDirIndexParser;
-    nsIDirectTaskDispatcher;
-    nsIDirectoryEnumerator;
-    nsIDirectoryServiceProvider;
-    nsIDirectoryServiceProvider2;
-    nsIDirectoryService;
-    nsIDisplayInfo;
-    nsIDocShell;
-    nsIDocShellTreeItem;
-    nsIDocShellTreeOwner;
-    nsIDocumentEncoderNodeFixup;
-    nsIDocumentEncoder;
-    nsIDocumentLoader;
-    nsIDocumentLoaderFactory;
-    nsIDocumentStateListener;
-    nsIDomainPolicy;
-    nsIDomainSet;
-    nsIDownloader;
-    nsIDownloadObserver;
-    nsIDragService;
-    nsIDragSession;
-    nsIDroppedLinkItem;
-    nsIDroppedLinkHandler;
-    nsIE10SUtils;
-    nsIEarlyHintObserver;
-    nsIEdgeMigrationUtils;
-    nsIEditActionListener;
-    nsIEditingSession;
-    nsIEditor;
-    nsIEditorMailSupport;
-    nsIEditorSpellCheck;
-    nsIEditorSpellCheckCallback;
-    nsIEffectiveTLDService;
-    nsIEmbeddingSiteWindow;
-    nsISupports;
-    nsIEncodedChannel;
-    nsIEnterprisePolicies;
-    nsIEnvironment;
-    nsIEventListenerChange;
-    nsIListenerChangeListener;
-    nsIEventListenerInfo;
-    nsIEventListenerService;
-    nsIEventSourceEventListener;
-    nsIEventSourceEventService;
-    nsIEventTarget;
-    nsIStackFrame;
-    nsIException;
-    nsIExpatSink;
-    nsIExternalHelperAppService;
-    nsPIExternalAppLauncher;
-    nsIHelperAppLauncher;
-    nsIExternalProtocolHandler;
-    nsIExternalProtocolService;
-    nsIFOG;
-    nsIFactory;
-    nsIFaviconService;
-    nsIFaviconDataCallback;
-    nsIFile;
-    nsIFileChannel;
-    nsIFilePickerShownCallback;
-    nsIFilePicker;
-    nsIFileProtocolHandler;
-    nsIFileInputStream;
-    nsIFileOutputStream;
-    nsIFileRandomAccessStream;
-    nsIFileMetadata;
-    nsIAsyncFileMetadata;
-    nsIFileMetadataCallback;
-    nsIFileURL;
-    nsIFileURLMutator;
-    nsIFinalizationWitnessService;
-    nsIFind;
-    nsIFindService;
-    nsIFocusManager;
-    nsIFontEnumerator;
-    nsIFontLoadCompleteCallback;
-    nsIForcePendingChannel;
-    nsIFormAutoComplete;
-    nsIFormAutoCompleteObserver;
-    nsIFormFillController;
-    nsIFormPOSTActionChannel;
-    nsIFormatConverter;
-    nsIGIOMimeApp;
-    nsIGIOService;
-    nsIGNOMEShellService;
-    nsIGSettingsCollection;
-    nsIGSettingsService;
-    nsIGeolocationUpdate;
-    nsIGeolocationProvider;
-    nsIGfxInfo;
-    nsIGfxInfoDebug;
-    nsIGleanBoolean;
-    nsIGleanDatetime;
-    nsIGleanCounter;
-    nsIGleanTimingDistribution;
-    nsIGleanMemoryDistribution;
-    nsIGleanCustomDistribution;
-    nsIGleanPingTestCallback;
-    nsIGleanPing;
-    nsIGleanString;
-    nsIGleanStringList;
-    nsIGleanTimespan;
-    nsIGleanUuid;
-    nsIGleanEvent;
-    nsIGleanQuantity;
-    nsIGleanDenominator;
-    nsIGleanNumerator;
-    nsIGleanRate;
-    nsIGleanUrl;
-    nsIGtkTaskbarProgress;
-    nsIHTMLAbsPosEditor;
-    nsIHTMLEditor;
-    nsIHTMLInlineTableEditor;
-    nsIHTMLObjectResizer;
-    nsIHandlerService;
-    nsIHangDetails;
-    nsIHangReport;
-    nsIHapticFeedback;
-    nsIHelperAppLauncherDialog;
-    nsIHttpActivityObserver;
-    nsIHttpActivityDistributor;
-    nsIHttpAuthManager;
-    nsIHttpAuthenticableChannel;
-    nsIHttpAuthenticator;
-    nsIHttpAuthenticatorCallback;
-    nsIHttpChannel;
-    nsIHttpChannelAuthProvider;
-    nsIHttpChannelChild;
-    nsIHttpUpgradeListener;
-    nsIHttpChannelInternal;
-    nsIHttpHeaderVisitor;
-    nsIHttpProtocolHandler;
-    nsIHttpPushListener;
-    nsIHttpServer;
-    nsIHttpServerStoppedCallback;
-    nsIHttpServerIdentity;
-    nsIHttpRequestHandler;
-    nsIHttpRequest;
-    nsIHttpResponse;
-    nsIHttpsOnlyModePermission;
-    nsIIDBPermissionsRequest;
-    nsIIDNService;
-    nsIINIParser;
-    nsIINIParserWriter;
-    nsIINIParserFactory;
-    nsIIOService;
-    nsIIOServiceInternal;
-    nsIIOUtil;
-    nsIMozIconURI;
-    nsIIdentityCredentialPromptService;
-    nsIIdentityCredentialStorageService;
-    nsIIdlePeriod;
-    nsIImageLoadingContent;
-    nsIIncrementalDownload;
-    nsIIncrementalStreamLoaderObserver;
-    nsIIncrementalStreamLoader;
-    nsIInlineSpellChecker;
-    nsIInputListAutoComplete;
-    nsIInputStream;
-    nsIInputStreamChannel;
-    nsIInputStreamLength;
-    nsIAsyncInputStreamLength;
-    nsIInputStreamLengthCallback;
-    nsIInputStreamPriority;
-    nsIInputStreamPump;
-    nsIInputStreamTee;
-    nsIInterceptionInfo;
-    nsIInterfaceRequestor;
-    nsIJARChannel;
-    nsIJARURI;
-    nsIJARURIMutator;
-    nsIJSInspector;
-    nsIJumpListCommittedCallback;
-    nsIJumpListBuilder;
-    nsIJumpListItem;
-    nsIJumpListSeparator;
-    nsIJumpListLink;
-    nsIJumpListShortcut;
-    nsIKeyValueService;
-    nsIKeyValueDatabase;
-    nsIKeyValuePair;
-    nsIKeyValueEnumerator;
-    nsIKeyValueDatabaseCallback;
-    nsIKeyValueEnumeratorCallback;
-    nsIKeyValuePairCallback;
-    nsIKeyValueVariantCallback;
-    nsIKeyValueVoidCallback;
-    nsIKeychainMigrationUtils;
-    nsILayoutDebuggingTools;
-    nsILayoutHistoryState;
-    nsILineInputStream;
-    nsILoadContext;
-    nsILoadContextInfo;
-    nsILoadContextInfoFactory;
-    nsILoadGroup;
-    nsILoadGroupChild;
-    nsILoadInfo;
-    nsILoadURIDelegate;
-    nsILocalFileMac;
-    nsILocalFileWin;
-    nsILocalStorageManager;
-    nsILoginAutoCompleteSearch;
-    nsILoginDetectionService;
-    nsILoginInfo;
-    nsILoginSearchCallback;
-    nsILoginManager;
-    nsILoginManagerAuthPrompter;
-    nsILoginManagerCrypto;
-    nsILoginManagerPrompter;
-    nsILoginManagerStorage;
-    nsILoginMetaInfo;
-    nsILoginReputationVerdictType;
-    nsILoginReputationQuery;
-    nsILoginReputationQueryCallback;
-    nsILoginReputationService;
-    nsIMIMEHeaderParam;
-    nsIHandlerInfo;
-    nsIMIMEInfo;
-    nsIHandlerApp;
-    nsILocalHandlerApp;
-    nsIWebHandlerApp;
-    nsIDBusHandlerApp;
-    nsIMIMEInputStream;
-    nsIMIMEService;
-    nsIMacAttributionService;
-    nsIMacDockSupport;
-    nsIMacFinderProgressCanceledCallback;
-    nsIMacFinderProgress;
-    nsIMacPreferencesReader;
-    nsIMacSharingService;
-    nsIMacShellService;
-    nsIMacUserActivityUpdater;
-    nsITrashAppCallback;
-    nsIMacWebAppUtils;
-    nsIMarionette;
-    nsIMediaDevice;
-    nsIMediaManagerService;
-    nsIFinishDumpingCallback;
-    nsIDumpGCAndCCLogsCallback;
-    nsIMemoryInfoDumper;
-    nsIHandleReportCallback;
-    nsIMemoryReporter;
-    nsIFinishReportingCallback;
-    nsIHeapAllocatedCallback;
-    nsIMemoryReporterManager;
-    nsIMessageLoop;
-    nsIMessageSender;
-    nsIInProcessContentFrameMessageManager;
-    nsIMozBrowserFrame;
-    nsIMultiPartChannel;
-    nsIMultiPartChannelListener;
-    nsIMultiplexInputStream;
-    nsIMutableArray;
-    nsINSSComponent;
-    nsINSSErrorsService;
-    nsINSSVersion;
-    nsINamed;
-    nsINamedPipeDataObserver;
-    nsINamedPipeService;
-    nsINativeAppSupport;
-    nsINativeDNSResolverOverride;
-    nsINativeOSFileResult;
-    nsINativeOSFileSuccessCallback;
-    nsINativeOSFileErrorCallback;
-    nsINativeOSFileInternalsService;
-    nsINavBookmarkObserver;
-    nsINavBookmarksService;
-    nsINavHistoryResultNode;
-    nsINavHistoryContainerResultNode;
-    nsINavHistoryQueryResultNode;
-    nsINavHistoryResultObserver;
-    nsINavHistoryResult;
-    nsINavHistoryQuery;
-    nsINavHistoryQueryOptions;
-    nsINavHistoryService;
-    nsINestedURI;
-    nsINestedURIMutator;
-    nsINestedAboutURIMutator;
-    nsIJSURIMutator;
-    nsINetAddr;
-    nsINetUtil;
-    nsINetworkConnectivityService;
-    nsIListNetworkAddressesListener;
-    nsIGetHostnameListener;
-    nsINetworkInfoService;
-    nsIInterceptedBodyCallback;
-    nsIInterceptedChannel;
-    nsINetworkInterceptController;
-    nsINetworkLinkService;
-    nsINetworkPredictor;
-    nsINetworkPredictorVerifier;
-    nsINotificationStorageCallback;
-    nsINotificationStorage;
-    nsINullChannel;
-    nsIOSFileConstantsService;
-    nsIOSKeyStore;
-    nsIOSPermissionRequest;
-    nsIOSReauthenticator;
-    nsIObjectInputStream;
-    nsIObjectLoadingContent;
-    nsIObjectOutputStream;
-    nsIObliviousHttpClientResponse;
-    nsIObliviousHttpClientRequest;
-    nsIObliviousHttpServerResponse;
-    nsIObliviousHttpServer;
-    nsIObliviousHttp;
-    nsIObserver;
-    nsIObserverService;
-    nsIBrowsingContextReadyCallback;
-    nsIOpenWindowInfo;
-    nsIOutputStream;
-    nsIPK11Token;
-    nsIPK11TokenDB;
-    nsIPKCS11Module;
-    nsIPKCS11ModuleDB;
-    nsIPKCS11Slot;
-    nsIPageThumbsStorageService;
-    nsIPaper;
-    nsIPaperMargin;
-    nsIParentChannel;
-    nsIAsyncVerifyRedirectReadyCallback;
-    nsIParentRedirectingChannel;
-    nsIParentalControlsService;
-    nsIParserUtils;
-    nsIPartitioningExceptionListObserver;
-    nsIPartitioningExceptionListService;
-    nsIPaymentResponseData;
-    nsIGeneralResponseData;
-    nsIBasicCardResponseData;
-    nsIPaymentActionResponse;
-    nsIPaymentCanMakeActionResponse;
-    nsIPaymentShowActionResponse;
-    nsIPaymentAbortActionResponse;
-    nsIPaymentCompleteActionResponse;
-    nsIMethodChangeDetails;
-    nsIGeneralChangeDetails;
-    nsIBasicCardChangeDetails;
-    nsIPaymentAddress;
-    nsIPaymentMethodData;
-    nsIPaymentCurrencyAmount;
-    nsIPaymentItem;
-    nsIPaymentDetailsModifier;
-    nsIPaymentShippingOption;
-    nsIPaymentDetails;
-    nsIPaymentOptions;
-    nsIPaymentRequest;
-    nsIPaymentRequestService;
-    nsIPaymentUIService;
-    nsIPermission;
-    nsIPermissionDelegateHandler;
-    nsIPermissionManager;
-    nsIPropertyElement;
-    nsIPersistentProperties;
-    nsIPipe;
-    nsISearchableInputStream;
-    nsIPlacesPreviewsHelperService;
-    nsIPlatformInfo;
-    nsIPluginTag;
-    nsIFakePluginTag;
-    nsIPowerManagerService;
-    nsIPrefBranch;
-    nsIPrefLocalizedString;
-    nsIPrefStatsCallback;
-    nsIPrefObserver;
-    nsIPrefService;
-    nsIPrefetchService;
-    nsIPreloadedStyleSheet;
-    nsIPrincipal;
-    nsIExpandedPrincipal;
-    nsIPrintDialogService;
-    nsIPrintPreviewNavigation;
-    nsIPrintSettings;
-    nsIPrintSettingsService;
-    nsIPrintSettingsWin;
-    nsIPrinterInfo;
-    nsIPrinter;
-    nsIPrinterList;
-    nsIPrivacyTransitionObserver;
-    nsIPrivateBrowsingChannel;
-    nsIProcess;
-    nsIProcessToolsService;
-    nsIProfileStartup;
-    nsIProfileMigrator;
-    nsIProfileUnlocker;
-    nsIProfilerStartParams;
-    nsIProfiler;
-    nsIProgressEventSink;
-    nsIPrompt;
-    nsIPromptCollection;
-    nsIPromptFactory;
-    nsIPromptInstance;
-    nsIPromptService;
-    nsIProperties;
-    nsIProperty;
-    nsIPropertyBag;
-    nsIPropertyBag2;
-    nsIProtectedAuthThread;
-    nsIProtocolHandlerWithDynamicFlags;
-    nsIProtocolHandler;
-    nsIProtocolProxyCallback;
-    nsIProxyProtocolFilterResult;
-    nsIProtocolProxyFilter;
-    nsIProtocolProxyChannelFilter;
-    nsIProxyConfigChangedCallback;
-    nsIProtocolProxyService;
-    nsIProtocolProxyService2;
-    nsIProxiedChannel;
-    nsIProxiedProtocolHandler;
-    nsIProxyInfo;
-    nsIPublicKeyPinningService;
-    nsIPurgeTrackerService;
-    nsIPushErrorReporter;
-    nsIPushNotifier;
-    nsIPushData;
-    nsIPushMessage;
-    nsIPushSubscription;
-    nsIPushSubscriptionCallback;
-    nsIUnsubscribeResultCallback;
-    nsIPushClearResultCallback;
-    nsIPushService;
-    nsIPushQuotaManager;
-    nsIQueryContentEventResult;
-    nsIQuotaUsageCallback;
-    nsIQuotaCallback;
-    nsIQuotaManagerService;
-    nsIQuotaRequestBase;
-    nsIQuotaUsageRequest;
-    nsIQuotaRequest;
-    nsIQuotaFullOriginMetadataResult;
-    nsIQuotaUsageResult;
-    nsIQuotaOriginUsageResult;
-    nsIQuotaEstimateResult;
-    nsIRaceCacheWithNetwork;
-    nsIRandomAccessStream;
-    nsIRandomGenerator;
-    nsIRedirectChannelRegistrar;
-    nsIRedirectHistoryEntry;
-    nsIRedirectResultListener;
-    nsIReferrerInfo;
-    nsIReflowObserver;
-    nsIRefreshURI;
-    nsIRegion;
-    nsIRelativeFilePref;
-    nsIRemoteAgent;
-    nsIRemoteTab;
-    nsIRequest;
-    nsIRequestTailUnblockCallback;
-    nsIRequestContext;
-    nsIRequestContextService;
-    nsIRequestObserver;
-    nsIRequestObserverProxy;
-    nsIResProtocolHandler;
-    nsIResumableChannel;
-    nsIRunnable;
-    nsIRunnablePriority;
-    nsIRunnableIPCMessageType;
-    nsISDBCallback;
-    nsISDBCloseCallback;
-    nsISDBConnection;
-    nsISDBRequest;
-    nsISDBResult;
-    nsISHEntry;
-    nsISHistory;
-    nsISHistoryListener;
-    nsISafeOutputStream;
-    nsIScreen;
-    nsIScreenManager;
-    nsIScriptChannel;
-    nsIScriptErrorNote;
-    nsIScriptError;
-    nsIScriptLoaderObserver;
-    nsIScriptSecurityManager;
-    nsIScriptableBase64Encoder;
-    nsIScriptableContentIterator;
-    nsIScriptableInputStream;
-    nsIScriptableUnicodeConverter;
-    nsISearchSubmission;
-    nsISearchEngine;
-    nsISearchParseSubmissionResult;
-    nsISearchService;
-    nsISecCheckWrapChannel;
-    nsISecretDecoderRing;
-    nsISecureBrowserUI;
-    nsISecurityConsoleMessage;
-    nsISecurityUITelemetry;
-    nsISeekableStream;
-    nsISelectionController;
-    nsISelectionDisplay;
-    nsISelectionListener;
-    nsISensitiveInfoHiddenURI;
-    nsISerialEventTarget;
-    nsISerializable;
-    nsISerializationHelper;
-    nsIServerSocket;
-    nsIServerSocketListener;
-    nsIServiceManager;
-    nsIServiceWorkerUnregisterCallback;
-    nsIServiceWorkerInfo;
-    nsIServiceWorkerRegistrationInfoListener;
-    nsIServiceWorkerRegistrationInfo;
-    nsIServiceWorkerManagerListener;
-    nsIServiceWorkerManager;
-    nsISessionStorageService;
-    nsISessionStoreRestoreData;
-    nsISharePicker;
-    nsISharingHandlerApp;
-    nsIShellService;
-    nsIJSEnumerator;
-    nsISimpleEnumeratorBase;
-    nsISimpleEnumerator;
-    nsISimpleStreamListener;
-    nsISimpleURIMutator;
-    nsISiteSecurityState;
-    nsISiteHSTSState;
-    nsISiteSecurityService;
-    nsISlowScriptDebugCallback;
-    nsISlowScriptDebuggerStartupCallback;
-    nsISlowScriptDebugRemoteCallback;
-    nsISlowScriptDebug;
-    nsISocketFilter;
-    nsISocketFilterHandler;
-    nsISocketProvider;
-    nsISocketProviderService;
-    nsISocketTransport;
-    nsISTSShutdownObserver;
-    nsISocketTransportService;
-    nsIRoutedSocketTransportService;
-    nsISound;
-    nsISpeculativeConnect;
-    nsISpeculativeConnectionOverrider;
-    nsISpeechGrammarCompilationCallback;
-    nsISpeechRecognitionService;
-    nsISpeechTaskCallback;
-    nsISpeechTask;
-    nsISpeechService;
-    nsIStandaloneNativeMenu;
-    nsIStandardURL;
-    nsIStandardURLMutator;
-    nsIStartupCacheInfo;
-    nsIStorageActivityService;
-    nsIStorageStream;
-    nsIStreamBufferAccess;
-    nsIStreamConverter;
-    nsIStreamConverterService;
-    nsIStreamListener;
-    nsIStreamListenerTee;
-    nsIStreamLoaderObserver;
-    nsIStreamLoader;
-    nsIStreamTransportService;
-    nsIInputAvailableCallback;
-    nsIStringBundle;
-    nsIStringBundleService;
-    nsIStringEnumeratorBase;
-    nsIStringEnumerator;
-    nsIUTF8StringEnumerator;
-    nsIStringInputStream;
-    nsIStructuredCloneContainer;
-    nsISFVBareItem;
-    nsISFVInteger;
-    nsISFVString;
-    nsISFVBool;
-    nsISFVDecimal;
-    nsISFVToken;
-    nsISFVByteSeq;
-    nsISFVParams;
-    nsISFVParametrizable;
-    nsISFVItemOrInnerList;
-    nsISFVSerialize;
-    nsISFVItem;
-    nsISFVInnerList;
-    nsISFVList;
-    nsISFVDictionary;
-    nsISFVService;
-    nsIStyleSheetService;
-    nsISubstitutingProtocolHandler;
-    nsIOutputIterator;
-    nsIInputIterator;
-    nsIForwardIterator;
-    nsIBidirectionalIterator;
-    nsIRandomAccessIterator;
-    nsISupportsPrimitive;
-    nsISupportsID;
-    nsISupportsCString;
-    nsISupportsString;
-    nsISupportsPRBool;
-    nsISupportsPRUint8;
-    nsISupportsPRUint16;
-    nsISupportsPRUint32;
-    nsISupportsPRUint64;
-    nsISupportsPRTime;
-    nsISupportsChar;
-    nsISupportsPRInt16;
-    nsISupportsPRInt32;
-    nsISupportsPRInt64;
-    nsISupportsFloat;
-    nsISupportsDouble;
-    nsISupportsInterfacePointer;
-    nsISupportsPriority;
-    nsISyncStreamListener;
-    nsISynthVoiceRegistry;
-    nsISystemInfo;
-    nsISystemProxySettings;
-    nsISystemStatusBar;
-    nsITCPSocketCallback;
-    nsITLSServerSocket;
-    nsITLSClientStatus;
-    nsITLSServerConnectionInfo;
-    nsITLSServerSecurityObserver;
-    nsITLSSocketControl;
-    nsITXTToHTMLConv;
-    nsITableEditor;
-    nsITaggingService;
-    nsITaskbarOverlayIconController;
-    nsITaskbarPreview;
-    nsITaskbarPreviewButton;
-    nsITaskbarPreviewCallback;
-    nsITaskbarPreviewController;
-    nsITaskbarProgress;
-    nsITaskbarTabPreview;
-    nsITaskbarWindowPreview;
-    nsIFetchTelemetryDataCallback;
-    nsITelemetry;
-    nsITellableStream;
-    nsITextInputProcessor;
-    nsITextInputProcessorNotification;
-    nsITextInputProcessorCallback;
-    nsITextToSubURI;
-    nsIThread;
-    nsIThreadInternal;
-    nsIThreadObserver;
-    nsINestedEventLoopCondition;
-    nsIThreadManager;
-    nsIThreadPoolListener;
-    nsIThreadPool;
-    nsIThreadRetargetableRequest;
-    nsIThreadRetargetableStreamListener;
-    nsIThreadShutdown;
-    nsIInputChannelThrottleQueue;
-    nsIThrottledInputChannel;
-    nsIServerTiming;
-    nsITimedChannel;
-    nsITimerCallback;
-    nsITimer;
-    nsITlsHandshakeCallbackListener;
-    nsITokenDialogs;
-    nsITokenPasswordDialogs;
-    nsIToolkitChromeRegistry;
-    nsIProfileLock;
-    nsIToolkitProfile;
-    nsIToolkitProfileService;
-    nsIToolkitShellService;
-    nsITooltipListener;
-    nsITooltipTextProvider;
-    nsITouchBarHelper;
-    nsITouchBarInputCallback;
-    nsITouchBarInput;
-    nsITouchBarUpdater;
-    nsITraceableChannel;
-    nsITrackingDBService;
-    nsITransaction;
-    nsITransactionManager;
-    nsITransfer;
-    nsIFlavorDataProvider;
-    nsITransferable;
-    nsITransport;
-    nsITransportEventSink;
-    nsITransportProvider;
-    nsITransportSecurityInfo;
-    nsITreeSelection;
-    nsINativeTreeSelection;
-    nsITreeView;
-    nsITypeAheadFind;
-    nsIU2FTokenManager;
-    nsIUDPSocket;
-    nsIUDPSocketListener;
-    nsIUDPMessage;
-    nsIUDPSocketSyncListener;
-    nsIUDPSocketInternal;
-    nsIURI;
-    nsIURIClassifierCallback;
-    nsIURIClassifier;
-    nsIURIContentListener;
-    nsIURIFixupInfo;
-    nsIURIFixup;
-    nsIURILoader;
-    nsIURISetSpec;
-    nsIURISetters;
-    nsIURIMutator;
-    nsIURIWithSpecialOrigin;
-    nsIURL;
-    nsIURLMutator;
-    nsIURLDecorationAnnotationsService;
-    nsIURLFormatter;
-    nsIURLParser;
-    nsIURLQueryStrippingListObserver;
-    nsIURLQueryStrippingListService;
-    nsIUUIDGenerator;
-    nsIUnicharInputStream;
-    nsIUnicharLineInputStream;
-    nsIUnicharOutputStream;
-    nsIUpdatePatch;
-    nsIUpdate;
-    nsIUpdateCheckResult;
-    nsIUpdateCheck;
-    nsIUpdateChecker;
-    nsIApplicationUpdateService;
-    nsIUpdateProcessor;
-    nsIUpdateSyncManager;
-    nsIUpdateManager;
-    nsIUpdateTimerManager;
-    nsIUploadChannel;
-    nsIUploadChannel2;
-    nsIUrlClassifierCallback;
-    nsIUrlClassifierUpdateObserver;
-    nsIUrlClassifierDBService;
-    nsIUrlClassifierLookupCallback;
-    nsIUrlClassifierClassifyCallback;
-    nsIUrlClassifierExceptionListObserver;
-    nsIUrlClassifierExceptionListService;
-    nsIUrlClassifierFeature;
-    nsIUrlClassifierFeatureResult;
-    nsIUrlClassifierFeatureCallback;
-    nsIFullHashMatch;
-    nsIUrlClassifierHashCompleterCallback;
-    nsIUrlClassifierHashCompleter;
-    nsIUrlClassifierPositiveCacheEntry;
-    nsIUrlClassifierCacheEntry;
-    nsIUrlClassifierCacheInfo;
-    nsIUrlClassifierGetCacheCallback;
-    nsIUrlClassifierInfo;
-    nsIUrlClassifierPrefixSet;
-    nsIUrlClassifierRemoteSettingsService;
-    nsIUrlClassifierStreamUpdater;
-    nsIUrlClassifierParseFindFullHashCallback;
-    nsIUrlClassifierUtils;
-    nsIUrlListManager;
-    nsIUserIdleService;
-    nsIUserIdleServiceInternal;
-    nsIUtilityProcessTest;
-    nsIVariant;
-    nsIWritableVariant;
-    nsIVersionComparator;
-    nsIViewSourceChannel;
-    nsIWakeLock;
-    nsIWeakReference;
-    nsISupportsWeakReference;
-    nsIWebBrowser;
-    nsIWebBrowserChrome;
-    nsIWebBrowserChromeFocus;
-    nsIWebBrowserFind;
-    nsIWebBrowserFindInFrames;
-    nsIWebBrowserPersist;
-    nsIWebBrowserPersistURIMap;
-    nsIWebBrowserPersistDocument;
-    nsIWebBrowserPersistResourceVisitor;
-    nsIWebBrowserPersistWriteCompletion;
-    nsIWebBrowserPersistDocumentReceiver;
-    nsIWebBrowserPrint;
-    nsIWebNavigation;
-    nsIWebNavigationInfo;
-    nsIWebPageDescriptor;
-    nsIWebProgress;
-    nsIWebProgressListener;
-    nsIWebProgressListener2;
-    nsIWebProtocolHandlerRegistrar;
-    nsIWebSocketChannel;
-    nsIWebSocketFrame;
-    nsIWebSocketEventListener;
-    nsIWebSocketEventService;
-    nsIWebSocketImpl;
-    nsIWebSocketListener;
-    nsIWebTransport;
-    WebTransportSessionEventListener;
-    nsIWebTransportStreamCallback;
-    nsIWebTransportSendStreamStats;
-    nsIWebTransportReceiveStreamStats;
-    nsIWebTransportStreamStatsCallback;
-    nsIWebTransportReceiveStream;
-    nsIWebTransportSendStream;
-    nsIWebTransportBidirectionalStream;
-    nsIWebVTTListener;
-    nsIWebVTTParserWrapper;
-    nsIWellKnownOpportunisticUtils;
-    nsIWifiAccessPoint;
-    nsIWifiListener;
-    nsIWifiMonitor;
-    nsIWinAppHelper;
-    nsIWinTaskSchedulerService;
-    nsIWinTaskbar;
-    nsIWindowCreator;
-    nsIWindowMediator;
-    nsIWindowMediatorListener;
-    nsIWindowProvider;
-    nsIWindowWatcher;
-    nsIWindowlessBrowser;
-    nsIUnknownWindowsTagListener;
-    nsIWindowsAlertsService;
-    nsIWindowsPackageManager;
-    nsIWindowsRegKey;
-    nsIWindowsShellService;
-    nsIWindowsUIUtils;
-    nsIWorkerDebuggerListener;
-    nsIWorkerDebugger;
-    nsIWorkerDebuggerManagerListener;
-    nsIWorkerDebuggerManager;
-    nsIWritablePropertyBag;
-    nsIWritablePropertyBag2;
-    nsIX509Cert;
-    nsIOpenSignedAppFileCallback;
-    nsIAsyncBoolCallback;
-    nsICertVerificationCallback;
-    nsIX509CertDB;
-    nsIX509CertValidity;
-    nsIXPCScriptable;
-    nsIXREDirProvider;
-    nsIXULAppInfo;
-    nsIXULBrowserWindow;
-    nsIXULRuntime;
-    nsIXULStore;
-    nsIZipEntry;
-    nsIZipReader;
-    nsIZipReaderCache;
-    nsIZipWriter;
-    nsPIDNSService;
-    nsPIPromptService;
-    nsPISocketTransportService;
-    nsPIWidgetCocoa;
-    nsPIWindowWatcher;
-    txIEXSLTFunctions;
-    xpcIJSWeakReference;
-    nsIXPCComponents_Interfaces;
-    nsIXPCComponents_Classes;
-    nsIXPCComponents_Results;
-    nsIXPCComponents_ID;
-    nsIXPCComponents_Exception;
-    nsIXPCComponents_Constructor;
-    nsIXPCComponents_utils_Sandbox;
-    nsIScheduledGCCallback;
-    nsIXPCComponents_Utils;
-    nsIXPCComponents;
-    nsIXPCTestObjectReadOnly;
-    nsIXPCTestObjectReadWrite;
-    nsIXPCTestBug809674;
-    nsIXPCTestCEnums;
-    nsIXPCTestESMReturnCodeParent;
-    nsIXPCTestESMReturnCodeChild;
-    nsIXPCTestInterfaceA;
-    nsIXPCTestInterfaceB;
-    nsIXPCTestInterfaceC;
-    nsIXPCTestParams;
-    nsIXPCTestReturnCodeParent;
-    nsIXPCTestReturnCodeChild;
-    nsIXPCTestFunctionInterface;
-    nsIXPCTestUtils;
+    IJSDebugger: {
+        readonly name: 'IJSDebugger';
+        readonly number: 'a36fa816-31da-4b23-bc97-6412771f0867';
+    };
+    IPeerConnectionObserver: {
+        readonly name: 'IPeerConnectionObserver';
+        readonly number: 'd7dfe148-0416-446b-a128-66a7c71ae8d3';
+    };
+    IPeerConnection: {
+        readonly name: 'IPeerConnection';
+        readonly number: '14afc8e7-e421-4d0c-99a5-69308d871481';
+        readonly kHintAudio: 0x00000001;
+        readonly kHintVideo: 0x00000002;
+        readonly kActionOffer: 0;
+        readonly kActionAnswer: 1;
+        readonly kActionPRAnswer: 2;
+        readonly kActionRollback: 3;
+        readonly kIceGathering: 0;
+        readonly kIceWaiting: 1;
+        readonly kIceChecking: 2;
+        readonly kIceConnected: 3;
+        readonly kIceFailed: 4;
+        readonly kNew: 0;
+        readonly kNegotiating: 1;
+        readonly kActive: 2;
+        readonly kClosing: 3;
+        readonly kClosed: 4;
+        readonly kDataChannelReliable: 0;
+        readonly kDataChannelPartialReliableRexmit: 1;
+        readonly kDataChannelPartialReliableTimed: 2;
+        readonly kNoError: 0;
+        readonly kInvalidCandidate: 2;
+        readonly kInvalidMediastreamTrack: 3;
+        readonly kInvalidState: 4;
+        readonly kInvalidSessionDescription: 5;
+        readonly kIncompatibleSessionDescription: 6;
+        readonly kIncompatibleMediaStreamTrack: 8;
+        readonly kInternalError: 9;
+        readonly kTypeError: 10;
+        readonly kOperationError: 11;
+        readonly kMaxErrorType: 11;
+    };
+    IUrlClassifierUITelemetry: {
+        readonly name: 'IUrlClassifierUITelemetry';
+        readonly number: 'a6c62ce5-3a95-41bb-b0f1-8cd4f4ca00e3';
+        readonly WARNING_MALWARE_PAGE_TOP: 1;
+        readonly WARNING_MALWARE_PAGE_TOP_WHY_BLOCKED: 2;
+        readonly WARNING_MALWARE_PAGE_TOP_GET_ME_OUT_OF_HERE: 3;
+        readonly WARNING_MALWARE_PAGE_TOP_IGNORE_WARNING: 4;
+        readonly WARNING_MALWARE_PAGE_FRAME: 5;
+        readonly WARNING_MALWARE_PAGE_FRAME_WHY_BLOCKED: 6;
+        readonly WARNING_MALWARE_PAGE_FRAME_GET_ME_OUT_OF_HERE: 7;
+        readonly WARNING_MALWARE_PAGE_FRAME_IGNORE_WARNING: 8;
+        readonly WARNING_PHISHING_PAGE_TOP: 9;
+        readonly WARNING_PHISHING_PAGE_TOP_WHY_BLOCKED: 10;
+        readonly WARNING_PHISHING_PAGE_TOP_GET_ME_OUT_OF_HERE: 11;
+        readonly WARNING_PHISHING_PAGE_TOP_IGNORE_WARNING: 12;
+        readonly WARNING_PHISHING_PAGE_FRAME: 13;
+        readonly WARNING_PHISHING_PAGE_FRAME_WHY_BLOCKED: 14;
+        readonly WARNING_PHISHING_PAGE_FRAME_GET_ME_OUT_OF_HERE: 15;
+        readonly WARNING_PHISHING_PAGE_FRAME_IGNORE_WARNING: 16;
+        readonly WARNING_UNWANTED_PAGE_TOP: 17;
+        readonly WARNING_UNWANTED_PAGE_TOP_WHY_BLOCKED: 18;
+        readonly WARNING_UNWANTED_PAGE_TOP_GET_ME_OUT_OF_HERE: 19;
+        readonly WARNING_UNWANTED_PAGE_TOP_IGNORE_WARNING: 20;
+        readonly WARNING_UNWANTED_PAGE_FRAME: 21;
+        readonly WARNING_UNWANTED_PAGE_FRAME_WHY_BLOCKED: 22;
+        readonly WARNING_UNWANTED_PAGE_FRAME_GET_ME_OUT_OF_HERE: 23;
+        readonly WARNING_UNWANTED_PAGE_FRAME_IGNORE_WARNING: 24;
+        readonly WARNING_HARMFUL_PAGE_TOP: 25;
+        readonly WARNING_HARMFUL_PAGE_TOP_WHY_BLOCKED: 26;
+        readonly WARNING_HARMFUL_PAGE_TOP_GET_ME_OUT_OF_HERE: 27;
+        readonly WARNING_HARMFUL_PAGE_TOP_IGNORE_WARNING: 28;
+        readonly WARNING_HARMFUL_PAGE_FRAME: 29;
+        readonly WARNING_HARMFUL_PAGE_FRAME_WHY_BLOCKED: 30;
+        readonly WARNING_HARMFUL_PAGE_FRAME_GET_ME_OUT_OF_HERE: 31;
+        readonly WARNING_HARMFUL_PAGE_FRAME_IGNORE_WARNING: 32;
+    };
+    nsIScriptableOK: {
+        readonly name: 'nsIScriptableOK';
+        readonly number: '93142a4f-e4cf-424a-b833-e638f87d2607';
+    };
+    nsIScriptableWithNotXPCOM: {
+        readonly name: 'nsIScriptableWithNotXPCOM';
+        readonly number: '237d01a3-771e-4c6e-adf9-c97f9aab2950';
+    };
+    nsISessionStoreFunctions: {
+        readonly name: 'nsISessionStoreFunctions';
+        readonly number: '1A060FBA-A19D-11E9-B7EB-580D0EDD8E6F';
+    };
+    amIAddonManagerStartup: {
+        readonly name: 'amIAddonManagerStartup';
+        readonly number: '01dfa47b-87e4-4135-877b-586d033e1b5d';
+    };
+    amIWebInstallPrompt: {
+        readonly name: 'amIWebInstallPrompt';
+        readonly number: '386906f1-4d18-45bf-bc81-5dcd68e42c3b';
+    };
+    extIWebNavigation: {
+        readonly name: 'extIWebNavigation';
+        readonly number: '5cc10dac-cab3-41dd-b4ce-55e27c43cc40';
+    };
+    imgICache: {
+        readonly name: 'imgICache';
+        readonly number: '';
+    };
+    imgIContainer: {
+        readonly name: 'imgIContainer';
+        readonly number: '';
+        readonly TYPE_RASTER: 0;
+        readonly TYPE_VECTOR: 1;
+        readonly TYPE_REQUEST: 2;
+        readonly FLAG_NONE: 0x0;
+        readonly FLAG_SYNC_DECODE: 0x1;
+        readonly FLAG_SYNC_DECODE_IF_FAST: 0x2;
+        readonly FLAG_ASYNC_NOTIFY: 0x4;
+        readonly FLAG_DECODE_NO_PREMULTIPLY_ALPHA: 0x8;
+        readonly FLAG_DECODE_NO_COLORSPACE_CONVERSION: 0x10;
+        readonly FLAG_CLAMP: 0x20;
+        readonly FLAG_HIGH_QUALITY_SCALING: 0x40;
+        readonly FLAG_BYPASS_SURFACE_CACHE: 0x80;
+        readonly FLAG_FORCE_PRESERVEASPECTRATIO_NONE: 0x100;
+        readonly FLAG_FORCE_UNIFORM_SCALING: 0x200;
+        readonly FLAG_AVOID_REDECODE_FOR_SIZE: 0x400;
+        readonly FLAG_DECODE_TO_SRGB_COLORSPACE: 0x800;
+        readonly FLAG_RECORD_BLOB: 0x1000;
+        readonly DECODE_FLAGS_DEFAULT: 0;
+        readonly FRAME_FIRST: 0;
+        readonly FRAME_CURRENT: 1;
+        readonly FRAME_MAX_VALUE: 1;
+        readonly kNormalAnimMode: 0;
+        readonly kDontAnimMode: 1;
+        readonly kLoopOnceAnimMode: 2;
+    };
+    imgIContainerDebug: {
+        readonly name: 'imgIContainerDebug';
+        readonly number: '52cbb839-6e63-4a70-b21a-1db4ca706c49';
+    };
+    imgIEncoder: {
+        readonly name: 'imgIEncoder';
+        readonly number: '4baa2d6e-fee7-42df-ae3f-5fbebc0c267c';
+        readonly INPUT_FORMAT_RGB: 0;
+        readonly INPUT_FORMAT_RGBA: 1;
+        readonly INPUT_FORMAT_HOSTARGB: 2;
+    };
+    imgILoader: {
+        readonly name: 'imgILoader';
+        readonly number: '';
+    };
+    imgINotificationObserver: {
+        readonly name: 'imgINotificationObserver';
+        readonly number: '';
+        readonly SIZE_AVAILABLE: 1;
+        readonly FRAME_UPDATE: 2;
+        readonly FRAME_COMPLETE: 3;
+        readonly LOAD_COMPLETE: 4;
+        readonly DECODE_COMPLETE: 5;
+        readonly DISCARD: 6;
+        readonly UNLOCKED_DRAW: 7;
+        readonly IS_ANIMATED: 8;
+        readonly HAS_TRANSPARENCY: 9;
+    };
+    imgIRequest: {
+        readonly name: 'imgIRequest';
+        readonly number: '';
+        readonly STATUS_NONE: 0x0;
+        readonly STATUS_SIZE_AVAILABLE: 0x1;
+        readonly STATUS_LOAD_COMPLETE: 0x2;
+        readonly STATUS_ERROR: 0x4;
+        readonly STATUS_FRAME_COMPLETE: 0x8;
+        readonly STATUS_DECODE_COMPLETE: 0x10;
+        readonly STATUS_IS_ANIMATED: 0x20;
+        readonly STATUS_HAS_TRANSPARENCY: 0x40;
+    };
+    imgIScriptedNotificationObserver: {
+        readonly name: 'imgIScriptedNotificationObserver';
+        readonly number: '';
+    };
+    imgITools: {
+        readonly name: 'imgITools';
+        readonly number: '4c2383a4-931c-484d-8c4a-973590f66e3f';
+    };
+    imgIContainerCallback: {
+        readonly name: 'imgIContainerCallback';
+        readonly number: 'f195772c-a4c0-47ae-80ca-211e001c67be';
+    };
+    inIDeepTreeWalker: {
+        readonly name: 'inIDeepTreeWalker';
+        readonly number: '6657e8eb-b646-48e7-993e-cfa6e96415b4';
+    };
+    mozIAppServicesLogger: {
+        readonly name: 'mozIAppServicesLogger';
+        readonly number: '446dd837-fbb0-41e4-8221-f740f672b20d';
+    };
+    mozIVisitInfo: {
+        readonly name: 'mozIVisitInfo';
+        readonly number: '41e4ccc9-f0c8-4cd7-9753-7a38514b8488';
+    };
+    mozIPlaceInfo: {
+        readonly name: 'mozIPlaceInfo';
+        readonly number: 'ad83e137-c92a-4b7b-b67e-0a318811f91e';
+    };
+    mozIVisitInfoCallback: {
+        readonly name: 'mozIVisitInfoCallback';
+        readonly number: '1f266877-2859-418b-a11b-ec3ae4f4f93d';
+    };
+    mozIVisitedStatusCallback: {
+        readonly name: 'mozIVisitedStatusCallback';
+        readonly number: '994092bf-936f-449b-8dd6-0941e024360d';
+    };
+    mozIAsyncHistory: {
+        readonly name: 'mozIAsyncHistory';
+        readonly number: '1643EFD2-A329-4733-A39D-17069C8D3B2D';
+    };
+    mozIBridgedSyncEngineCallback: {
+        readonly name: 'mozIBridgedSyncEngineCallback';
+        readonly number: '9b7dd2a3-df99-4469-9ea9-61b222098695';
+    };
+    mozIBridgedSyncEngineApplyCallback: {
+        readonly name: 'mozIBridgedSyncEngineApplyCallback';
+        readonly number: '2776cdd5-799a-4009-b2f3-356d940a5244';
+    };
+    mozIBridgedSyncEngine: {
+        readonly name: 'mozIBridgedSyncEngine';
+        readonly number: '3b2b80be-c30e-4498-8065-01809cfe8d47';
+    };
+    mozIDOMWindow: {
+        readonly name: 'mozIDOMWindow';
+        readonly number: '';
+    };
+    mozIDOMWindowProxy: {
+        readonly name: 'mozIDOMWindowProxy';
+        readonly number: '';
+    };
+    mozIDownloadPlatform: {
+        readonly name: 'mozIDownloadPlatform';
+        readonly number: '9f556e4a-d9b3-46c3-9f8f-d0db1ac6c8c1';
+        readonly ZONE_MY_COMPUTER: 0;
+        readonly ZONE_INTRANET: 1;
+        readonly ZONE_TRUSTED: 2;
+        readonly ZONE_INTERNET: 3;
+        readonly ZONE_RESTRICTED: 4;
+    };
+    mozIExtensionServiceWorkerInfo: {
+        readonly name: 'mozIExtensionServiceWorkerInfo';
+        readonly number: 'e6862533-8844-4207-a6ab-04748a29d859';
+    };
+    mozIExtensionListenerCallOptions: {
+        readonly name: 'mozIExtensionListenerCallOptions';
+        readonly number: '876d45db-5c1b-4c9b-9148-1c86b33d120b';
+    };
+    mozIExtensionEventListener: {
+        readonly name: 'mozIExtensionEventListener';
+        readonly number: 'e68e3c19-1b35-4112-8faa-5c5b84086a5b';
+    };
+    mozIExtensionAPIRequest: {
+        readonly name: 'mozIExtensionAPIRequest';
+        readonly number: '0fee1c8f-e363-46a6-bd0c-d3c3338e2534';
+    };
+    mozIExtensionAPIRequestResult: {
+        readonly name: 'mozIExtensionAPIRequestResult';
+        readonly number: '59fd4097-d88e-40fd-8664-fedd8ab67ab6';
+    };
+    mozIExtensionAPIRequestHandler: {
+        readonly name: 'mozIExtensionAPIRequestHandler';
+        readonly number: '0c61bd33-0557-43a2-9497-96c449f39e33';
+    };
+    mozIExtensionProcessScript: {
+        readonly name: 'mozIExtensionProcessScript';
+        readonly number: '6b09dc51-6caa-4ca7-9d6d-30c87258a630';
+    };
+    mozIExtensionStorageArea: {
+        readonly name: 'mozIExtensionStorageArea';
+        readonly number: 'd8eb3ff1-9b4b-435a-99ca-5b8cbaba2420';
+        readonly SYNC_QUOTA_BYTES: 102400;
+        readonly SYNC_QUOTA_BYTES_PER_ITEM: 8192;
+        readonly SYNC_MAX_ITEMS: 512;
+    };
+    mozIConfigurableExtensionStorageArea: {
+        readonly name: 'mozIConfigurableExtensionStorageArea';
+        readonly number: '2b008295-1bcc-4610-84f1-ad4cab2fa9ee';
+    };
+    mozISyncedExtensionStorageArea: {
+        readonly name: 'mozISyncedExtensionStorageArea';
+        readonly number: '6dac82c9-1d8a-4893-8c0f-6e626aef802c';
+    };
+    mozIExtensionStorageListener: {
+        readonly name: 'mozIExtensionStorageListener';
+        readonly number: '8cb3c7e4-d0ca-4353-bccd-2673b4e11510';
+    };
+    mozIExtensionStorageCallback: {
+        readonly name: 'mozIExtensionStorageCallback';
+        readonly number: '870dca40-6602-4748-8493-c4253eb7f322';
+    };
+    mozIGeckoMediaPluginChromeService: {
+        readonly name: 'mozIGeckoMediaPluginChromeService';
+        readonly number: '32d35d21-181f-4630-8caa-a431e2ebad72';
+    };
+    mozIGeckoMediaPluginService: {
+        readonly name: 'mozIGeckoMediaPluginService';
+        readonly number: '44d362ae-937a-4803-bee6-f2512a0149d1';
+    };
+    mozIInterruptible: {
+        readonly name: 'mozIInterruptible';
+        readonly number: '1c06bfd3-76b1-46fa-a64a-db682d478374';
+    };
+    mozIJSSubScriptLoader: {
+        readonly name: 'mozIJSSubScriptLoader';
+        readonly number: '19533e7b-f321-4ef1-bc59-6e812dc2a733';
+    };
+    mozILocaleService: {
+        readonly name: 'mozILocaleService';
+        readonly number: 'C27F8983-B48B-4D1A-92D7-FEB8106F212D';
+        readonly langNegStrategyFiltering: 0;
+        readonly langNegStrategyMatching: 1;
+        readonly langNegStrategyLookup: 2;
+    };
+    mozIMozIntl: {
+        readonly name: 'mozIMozIntl';
+        readonly number: '7f63279a-1a29-4ae6-9e7a-dc9684a23530';
+    };
+    mozIMozIntlHelper: {
+        readonly name: 'mozIMozIntlHelper';
+        readonly number: '189eaa7d-b29a-43a9-b1fb-7658990df940';
+    };
+    mozIOSPreferences: {
+        readonly name: 'mozIOSPreferences';
+        readonly number: '65944815-e9ae-48bd-a2bf-f1108720950c';
+        readonly dateTimeFormatStyleNone: 0;
+        readonly dateTimeFormatStyleShort: 1;
+        readonly dateTimeFormatStyleMedium: 2;
+        readonly dateTimeFormatStyleLong: 3;
+        readonly dateTimeFormatStyleFull: 4;
+    };
+    mozIPersonalDictionary: {
+        readonly name: 'mozIPersonalDictionary';
+        readonly number: '';
+    };
+    mozIPlacesAutoComplete: {
+        readonly name: 'mozIPlacesAutoComplete';
+        readonly number: '61b6348a-09e1-4810-8057-f8cb3cec6ef8';
+        readonly MATCH_ANYWHERE: 0;
+        readonly MATCH_BOUNDARY_ANYWHERE: 1;
+        readonly MATCH_BOUNDARY: 2;
+        readonly MATCH_BEGINNING: 3;
+        readonly MATCH_ANYWHERE_UNMODIFIED: 4;
+        readonly MATCH_BEGINNING_CASE_SENSITIVE: 5;
+    };
+    mozIPlacesPendingOperation: {
+        readonly name: 'mozIPlacesPendingOperation';
+        readonly number: '';
+    };
+    mozIRemoteLazyInputStream: {
+        readonly name: 'mozIRemoteLazyInputStream';
+        readonly number: '4125585f-b0c2-4964-a83c-4b0d99f26d49';
+    };
+    mozISandboxReport: {
+        readonly name: 'mozISandboxReport';
+        readonly number: 'ed1e84d3-3346-42e1-b28c-e76a77f549f0';
+    };
+    mozISandboxReportArray: {
+        readonly name: 'mozISandboxReportArray';
+        readonly number: '6e8ff6e5-05c9-42d3-853d-40523fd86a50';
+    };
+    mozISandboxReporter: {
+        readonly name: 'mozISandboxReporter';
+        readonly number: '8535bdf7-6d9e-4853-acf9-a146449c4a3b';
+    };
+    mozISandboxSettings: {
+        readonly name: 'mozISandboxSettings';
+        readonly number: '5516303d-9007-45a0-94b9-940ef134a6e2';
+    };
+    mozISandboxTest: {
+        readonly name: 'mozISandboxTest';
+        readonly number: '2306c118-3544-4674-9222-670b88dc07a9';
+    };
+    mozIServicesLogSink: {
+        readonly name: 'mozIServicesLogSink';
+        readonly number: 'c92bfe0d-50b7-4a7f-9686-fe5335a696b9';
+        readonly LEVEL_OFF: 0;
+        readonly LEVEL_ERROR: 1;
+        readonly LEVEL_WARN: 2;
+        readonly LEVEL_INFO: 3;
+        readonly LEVEL_DEBUG: 4;
+        readonly LEVEL_TRACE: 5;
+    };
+    mozISpellCheckingEngine: {
+        readonly name: 'mozISpellCheckingEngine';
+        readonly number: '8ba643a4-7ddc-4662-b976-7ec123843f10';
+    };
+    mozIStorageAsyncConnection: {
+        readonly name: 'mozIStorageAsyncConnection';
+        readonly number: '8bfd34d5-4ddf-4e4b-89dd-9b14f33534c6';
+        readonly TRANSACTION_DEFERRED: 0;
+        readonly TRANSACTION_IMMEDIATE: 1;
+        readonly TRANSACTION_EXCLUSIVE: 2;
+    };
+    mozIStorageAsyncStatement: {
+        readonly name: 'mozIStorageAsyncStatement';
+        readonly number: '';
+    };
+    mozIStorageBaseStatement: {
+        readonly name: 'mozIStorageBaseStatement';
+        readonly number: '';
+        readonly MOZ_STORAGE_STATEMENT_INVALID: 0;
+        readonly MOZ_STORAGE_STATEMENT_READY: 1;
+        readonly MOZ_STORAGE_STATEMENT_EXECUTING: 2;
+    };
+    mozIStorageBindingParams: {
+        readonly name: 'mozIStorageBindingParams';
+        readonly number: '';
+    };
+    mozIStorageBindingParamsArray: {
+        readonly name: 'mozIStorageBindingParamsArray';
+        readonly number: '67eea5c3-4881-41ff-b0fe-09f2356aeadb';
+    };
+    mozIStorageCompletionCallback: {
+        readonly name: 'mozIStorageCompletionCallback';
+        readonly number: '';
+    };
+    mozIStorageConnection: {
+        readonly name: 'mozIStorageConnection';
+        readonly number: '';
+    };
+    mozIStorageError: {
+        readonly name: 'mozIStorageError';
+        readonly number: '';
+        readonly ERROR: 1;
+        readonly INTERNAL: 2;
+        readonly PERM: 3;
+        readonly ABORT: 4;
+        readonly BUSY: 5;
+        readonly LOCKED: 6;
+        readonly NOMEM: 7;
+        readonly READONLY: 8;
+        readonly INTERRUPT: 9;
+        readonly IOERR: 10;
+        readonly CORRUPT: 11;
+        readonly FULL: 13;
+        readonly CANTOPEN: 14;
+        readonly EMPTY: 16;
+        readonly SCHEMA: 17;
+        readonly TOOBIG: 18;
+        readonly CONSTRAINT: 19;
+        readonly MISMATCH: 20;
+        readonly MISUSE: 21;
+        readonly NOLFS: 22;
+        readonly AUTH: 23;
+        readonly FORMAT: 24;
+        readonly RANGE: 25;
+        readonly NOTADB: 26;
+    };
+    mozIStorageFunction: {
+        readonly name: 'mozIStorageFunction';
+        readonly number: '9ff02465-21cb-49f3-b975-7d5b38ceec73';
+    };
+    mozIStoragePendingStatement: {
+        readonly name: 'mozIStoragePendingStatement';
+        readonly number: '';
+    };
+    mozIStorageProgressHandler: {
+        readonly name: 'mozIStorageProgressHandler';
+        readonly number: 'a3a6fcd4-bf89-4208-a837-bf2a73afd30c';
+    };
+    mozIStorageResultSet: {
+        readonly name: 'mozIStorageResultSet';
+        readonly number: '';
+    };
+    mozIStorageRow: {
+        readonly name: 'mozIStorageRow';
+        readonly number: '62d1b6bd-cbfe-4f9b-aee1-0ead4af4e6dc';
+    };
+    mozIStorageService: {
+        readonly name: 'mozIStorageService';
+        readonly number: '07b6b2f5-6d97-47b4-9584-e65bc467fe9e';
+        readonly OPEN_DEFAULT: 0;
+        readonly CONNECTION_DEFAULT: 0;
+    };
+    mozIStorageStatement: {
+        readonly name: 'mozIStorageStatement';
+        readonly number: '5f567c35-6c32-4140-828c-683ea49cfd3a';
+        readonly VALUE_TYPE_NULL: 0;
+        readonly VALUE_TYPE_INTEGER: 1;
+        readonly VALUE_TYPE_FLOAT: 2;
+        readonly VALUE_TYPE_TEXT: 3;
+        readonly VALUE_TYPE_BLOB: 4;
+    };
+    mozIStorageStatementCallback: {
+        readonly name: 'mozIStorageStatementCallback';
+        readonly number: '';
+        readonly REASON_FINISHED: 0;
+        readonly REASON_CANCELED: 1;
+        readonly REASON_ERROR: 2;
+    };
+    mozIStorageVacuumParticipant: {
+        readonly name: 'mozIStorageVacuumParticipant';
+        readonly number: '8f367508-1d9a-4d3f-be0c-ac11b6dd7dbf';
+    };
+    mozIStorageValueArray: {
+        readonly name: 'mozIStorageValueArray';
+        readonly number: '6e6306f4-ffa7-40f5-96ca-36159ce8f431';
+        readonly VALUE_TYPE_NULL: 0;
+        readonly VALUE_TYPE_INTEGER: 1;
+        readonly VALUE_TYPE_FLOAT: 2;
+        readonly VALUE_TYPE_TEXT: 3;
+        readonly VALUE_TYPE_BLOB: 4;
+    };
+    mozISyncedBookmarksMirrorProgressListener: {
+        readonly name: 'mozISyncedBookmarksMirrorProgressListener';
+        readonly number: '6239ffe3-6ffd-49ac-8b1d-958407395bf9';
+    };
+    mozISyncedBookmarksMirrorCallback: {
+        readonly name: 'mozISyncedBookmarksMirrorCallback';
+        readonly number: 'd23fdfea-92c8-409d-a516-08ae395d578f';
+    };
+    mozISyncedBookmarksMirrorLogger: {
+        readonly name: 'mozISyncedBookmarksMirrorLogger';
+        readonly number: '37485984-a6ab-46e3-9b0c-e8b613413ef3';
+        readonly LEVEL_OFF: 0;
+        readonly LEVEL_ERROR: 1;
+        readonly LEVEL_WARN: 2;
+        readonly LEVEL_DEBUG: 3;
+        readonly LEVEL_TRACE: 4;
+    };
+    mozISyncedBookmarksMerger: {
+        readonly name: 'mozISyncedBookmarksMerger';
+        readonly number: 'f0a6217d-8344-4e68-9995-bbf5554be86e';
+        readonly KIND_BOOKMARK: 1;
+        readonly KIND_QUERY: 2;
+        readonly KIND_FOLDER: 3;
+        readonly KIND_LIVEMARK: 4;
+        readonly KIND_SEPARATOR: 5;
+        readonly VALIDITY_VALID: 1;
+        readonly VALIDITY_REUPLOAD: 2;
+        readonly VALIDITY_REPLACE: 3;
+    };
+    mozITXTToHTMLConv: {
+        readonly name: 'mozITXTToHTMLConv';
+        readonly number: '77c0e42a-1dd2-11b2-8ebf-edc6606f2f4b';
+        readonly kEntities: 0;
+    };
+    mozITestInterfaceJS: {
+        readonly name: 'mozITestInterfaceJS';
+        readonly number: '9eeb2c12-ddd9-4734-8cfb-c0cdfb136e07';
+    };
+    mozIThirdPartyUtil: {
+        readonly name: 'mozIThirdPartyUtil';
+        readonly number: 'fd82700e-ffb4-4932-b7d6-08f0b5697dda';
+    };
+    nsIASN1Tree: {
+        readonly name: 'nsIASN1Tree';
+        readonly number: 'de142307-7b88-4e0a-b232-250f310e25d8';
+    };
+    nsIAboutModule: {
+        readonly name: 'nsIAboutModule';
+        readonly number: 'c0c19db9-1b5a-4ac5-b656-ed6f8149fa48';
+    };
+    nsIAboutNewTabService: {
+        readonly name: 'nsIAboutNewTabService';
+        readonly number: 'dfcd2adc-7867-4d3a-ba70-17501f208142';
+    };
+    nsIInstalledApplication: {
+        readonly name: 'nsIInstalledApplication';
+        readonly number: '063813a0-85d8-4e77-80ea-b61292c0493d';
+    };
+    nsIAboutThirdParty: {
+        readonly name: 'nsIAboutThirdParty';
+        readonly number: 'd33ff086-b328-4ae6-aaf5-52d41aa5df38';
+    };
+    nsIAddonPolicyService: {
+        readonly name: 'nsIAddonPolicyService';
+        readonly number: '8a034ef9-9d14-4c5d-8319-06c1ab574baa';
+    };
+    nsIAddonContentPolicy: {
+        readonly name: 'nsIAddonContentPolicy';
+        readonly number: '7a4fe60b-9131-45f5-83f3-dc63b5d71a5d';
+        readonly CSP_ALLOW_ANY: 0xFFFF;
+    };
+    nsIAlertNotificationImageListener: {
+        readonly name: 'nsIAlertNotificationImageListener';
+        readonly number: 'a71a637d-de1d-47c6-a8d2-c60b2596f471';
+    };
+    nsIAlertAction: {
+        readonly name: 'nsIAlertAction';
+        readonly number: 'a054c2c9-2787-4686-859c-45609d790056';
+    };
+    nsIAlertNotification: {
+        readonly name: 'nsIAlertNotification';
+        readonly number: 'cf2e4cb6-4b8f-4eca-aea9-d51a8f9f7a50';
+    };
+    nsIAlertsService: {
+        readonly name: 'nsIAlertsService';
+        readonly number: 'f7a36392-d98b-4141-a7d7-4e46642684e3';
+    };
+    nsIAlertsDoNotDisturb: {
+        readonly name: 'nsIAlertsDoNotDisturb';
+        readonly number: 'c5d63e3a-259d-45a8-b964-8377967cb4d2';
+    };
+    nsIAlertsIconData: {
+        readonly name: 'nsIAlertsIconData';
+        readonly number: 'fc6d7f0a-0cf6-4268-8c71-ab640842b9b1';
+    };
+    nsIAlertsIconURI: {
+        readonly name: 'nsIAlertsIconURI';
+        readonly number: 'f3c82915-bf60-41ea-91ce-6c46b22e381a';
+    };
+    nsIAndroidEventCallback: {
+        readonly name: 'nsIAndroidEventCallback';
+        readonly number: 'e64c39b8-b8ec-477d-aef5-89d517ff9219';
+    };
+    nsIAndroidEventFinalizer: {
+        readonly name: 'nsIAndroidEventFinalizer';
+        readonly number: '819ee2db-d3b8-46dd-a476-40f89c49133c';
+    };
+    nsIAndroidEventListener: {
+        readonly name: 'nsIAndroidEventListener';
+        readonly number: '73569a75-78eb-4c7f-82b9-2d4f5ccf44c3';
+    };
+    nsIAndroidEventDispatcher: {
+        readonly name: 'nsIAndroidEventDispatcher';
+        readonly number: 'e98bf792-4145-411e-b298-8219d9b03817';
+    };
+    nsIAndroidView: {
+        readonly name: 'nsIAndroidView';
+        readonly number: '60a78a94-6117-432f-9d49-304913a931c5';
+    };
+    nsIAndroidBridge: {
+        readonly name: 'nsIAndroidBridge';
+        readonly number: '1beb70d3-70f3-4742-98cc-a3d301b26c0c';
+    };
+    nsIAppShell: {
+        readonly name: 'nsIAppShell';
+        readonly number: '';
+    };
+    nsIAppShellService: {
+        readonly name: 'nsIAppShellService';
+        readonly number: '19266025-354c-4bb9-986b-3483b2b1cdef';
+    };
+    nsIAppStartup: {
+        readonly name: 'nsIAppStartup';
+        readonly number: '6621f6d5-6c04-4a0e-9e74-447db221484e';
+        readonly eConsiderQuit: 0x01;
+        readonly eAttemptQuit: 0x02;
+        readonly eForceQuit: 0x03;
+        readonly eRestart: 0x10;
+        readonly eSilently: 0x100;
+    };
+    nsIAppWindow: {
+        readonly name: 'nsIAppWindow';
+        readonly number: '';
+        readonly lowestZ: 0;
+        readonly loweredZ: 4;
+        readonly normalZ: 5;
+        readonly raisedZ: 6;
+        readonly highestZ: 9;
+    };
+    nsIApplicationChooserFinishedCallback: {
+        readonly name: 'nsIApplicationChooserFinishedCallback';
+        readonly number: '8144404d-e6c7-4861-bcca-47de912ee811';
+    };
+    nsIApplicationChooser: {
+        readonly name: 'nsIApplicationChooser';
+        readonly number: 'f7a149da-612a-46ba-8a2f-54786fc28791';
+    };
+    nsIApplicationReputationService: {
+        readonly name: 'nsIApplicationReputationService';
+        readonly number: 'c9f03479-fd68-4393-acb2-c88d4f563174';
+        readonly VERDICT_SAFE: 0;
+        readonly VERDICT_DANGEROUS: 1;
+        readonly VERDICT_UNCOMMON: 2;
+        readonly VERDICT_POTENTIALLY_UNWANTED: 3;
+        readonly VERDICT_DANGEROUS_HOST: 4;
+    };
+    nsIApplicationReputationQuery: {
+        readonly name: 'nsIApplicationReputationQuery';
+        readonly number: '812d7509-a9a3-446e-a66f-3ed8cc91ebd0';
+    };
+    nsIApplicationReputationCallback: {
+        readonly name: 'nsIApplicationReputationCallback';
+        readonly number: '9a228470-cfe5-11e2-8b8b-0800200c9a66';
+    };
+    nsIArray: {
+        readonly name: 'nsIArray';
+        readonly number: '';
+    };
+    nsIArrayBufferInputStream: {
+        readonly name: 'nsIArrayBufferInputStream';
+        readonly number: '3014dde6-aa1c-41db-87d0-48764a3710f6';
+    };
+    nsIArrayExtensions: {
+        readonly name: 'nsIArrayExtensions';
+        readonly number: '261d442e-050c-453d-8aaa-b3f23bcc528b';
+    };
+    nsIAsyncInputStream: {
+        readonly name: 'nsIAsyncInputStream';
+        readonly number: '';
+    };
+    nsIInputStreamCallback: {
+        readonly name: 'nsIInputStreamCallback';
+        readonly number: '';
+    };
+    nsIAsyncOutputStream: {
+        readonly name: 'nsIAsyncOutputStream';
+        readonly number: '';
+    };
+    nsIOutputStreamCallback: {
+        readonly name: 'nsIOutputStreamCallback';
+        readonly number: '40dbcdff-9053-42c5-a57c-3ec910d0f148';
+    };
+    nsIAsyncShutdownBlocker: {
+        readonly name: 'nsIAsyncShutdownBlocker';
+        readonly number: '4ef43f29-6715-4b57-a750-2ff83695ddce';
+    };
+    nsIAsyncShutdownClient: {
+        readonly name: 'nsIAsyncShutdownClient';
+        readonly number: '';
+    };
+    nsIAsyncShutdownCompletionCallback: {
+        readonly name: 'nsIAsyncShutdownCompletionCallback';
+        readonly number: '910c9309-1da0-4dd0-8bdb-a325a38c604e';
+    };
+    nsIAsyncShutdownBarrier: {
+        readonly name: 'nsIAsyncShutdownBarrier';
+        readonly number: '50fa8a86-9c91-4256-8389-17d310adec90';
+    };
+    nsIAsyncShutdownService: {
+        readonly name: 'nsIAsyncShutdownService';
+        readonly number: 'db365c78-c860-4e64-9a63-25b73f89a016';
+    };
+    nsIAsyncStreamCopier: {
+        readonly name: 'nsIAsyncStreamCopier';
+        readonly number: '5a19ca27-e041-4aca-8287-eb248d4c50c0';
+    };
+    nsIAsyncStreamCopier2: {
+        readonly name: 'nsIAsyncStreamCopier2';
+        readonly number: 'a5b2decf-4ede-4801-8b38-e5fe5db46bf2';
+    };
+    nsIAsyncVerifyRedirectCallback: {
+        readonly name: 'nsIAsyncVerifyRedirectCallback';
+        readonly number: '';
+    };
+    nsISuspendedTypes: {
+        readonly name: 'nsISuspendedTypes';
+        readonly number: '2822a840-f009-11e5-a837-0800200c9a66';
+        readonly NONE_SUSPENDED: 0;
+        readonly SUSPENDED_BLOCK: 1;
+    };
+    nsIAudioChannelAgentCallback: {
+        readonly name: 'nsIAudioChannelAgentCallback';
+        readonly number: '15c05894-408e-4798-b527-a8c32d9c5f8c';
+    };
+    nsIAudioChannelAgent: {
+        readonly name: 'nsIAudioChannelAgent';
+        readonly number: '4d212770-5d7b-446f-9394-632e351d96ee';
+        readonly AUDIO_AGENT_STATE_NORMAL: 0;
+        readonly AUDIO_AGENT_STATE_MUTED: 1;
+        readonly AUDIO_AGENT_STATE_FADED: 2;
+    };
+    nsIAudioDeviceInfo: {
+        readonly name: 'nsIAudioDeviceInfo';
+        readonly number: 'feb979a8-f8cc-4522-9dff-6c055ca50762';
+        readonly TYPE_UNKNOWN: 0;
+        readonly TYPE_INPUT: 1;
+        readonly TYPE_OUTPUT: 2;
+        readonly STATE_DISABLED: 0;
+        readonly STATE_UNPLUGGED: 1;
+        readonly STATE_ENABLED: 2;
+        readonly PREF_NONE: 0x00;
+        readonly PREF_MULTIMEDIA: 0x01;
+        readonly PREF_VOICE: 0x02;
+        readonly PREF_NOTIFICATION: 0x04;
+        readonly PREF_ALL: 0x0F;
+        readonly FMT_S16LE: 0x0010;
+        readonly FMT_S16BE: 0x0020;
+        readonly FMT_F32LE: 0x1000;
+        readonly FMT_F32BE: 0x2000;
+    };
+    nsIAuthInformation: {
+        readonly name: 'nsIAuthInformation';
+        readonly number: '';
+        readonly AUTH_HOST: 1;
+        readonly AUTH_PROXY: 2;
+        readonly NEED_DOMAIN: 4;
+        readonly ONLY_PASSWORD: 8;
+        readonly PREVIOUS_FAILED: 16;
+        readonly CROSS_ORIGIN_SUB_RESOURCE: 32;
+    };
+    nsIAuthModule: {
+        readonly name: 'nsIAuthModule';
+        readonly number: '6e35dbc0-49ef-4e2c-b1ea-b72ec64450a2';
+        readonly REQ_DEFAULT: 0;
+        readonly NTLM_MODULE_SAMBA_AUTH_PROXY: 0;
+        readonly NTLM_MODULE_SAMBA_AUTH_DIRECT: 1;
+        readonly NTLM_MODULE_WIN_API_PROXY: 2;
+        readonly NTLM_MODULE_WIN_API_DIRECT: 3;
+        readonly NTLM_MODULE_GENERIC_PROXY: 4;
+        readonly NTLM_MODULE_GENERIC_DIRECT: 5;
+        readonly NTLM_MODULE_KERBEROS_PROXY: 6;
+        readonly NTLM_MODULE_KERBEROS_DIRECT: 7;
+    };
+    nsIAuthPrompt: {
+        readonly name: 'nsIAuthPrompt';
+        readonly number: '';
+        readonly SAVE_PASSWORD_NEVER: 0;
+        readonly SAVE_PASSWORD_FOR_SESSION: 1;
+        readonly SAVE_PASSWORD_PERMANENTLY: 2;
+    };
+    nsIAuthPrompt2: {
+        readonly name: 'nsIAuthPrompt2';
+        readonly number: '';
+        readonly LEVEL_NONE: 0;
+        readonly LEVEL_PW_ENCRYPTED: 1;
+        readonly LEVEL_SECURE: 2;
+    };
+    nsIAuthPromptAdapterFactory: {
+        readonly name: 'nsIAuthPromptAdapterFactory';
+        readonly number: '60e46383-bb9a-4860-8962-80d9c5c05ddc';
+    };
+    nsIAuthPromptCallback: {
+        readonly name: 'nsIAuthPromptCallback';
+        readonly number: '';
+    };
+    nsIAuthPromptProvider: {
+        readonly name: 'nsIAuthPromptProvider';
+        readonly number: 'bd9dc0fa-68ce-47d0-8859-6418c2ae8576';
+        readonly PROMPT_NORMAL: 0;
+        readonly PROMPT_PROXY: 1;
+    };
+    nsIAutoCompleteController: {
+        readonly name: 'nsIAutoCompleteController';
+        readonly number: 'ff9f8465-204a-47a6-b3c9-0628b3856684';
+        readonly STATUS_NONE: 1;
+        readonly STATUS_SEARCHING: 2;
+        readonly STATUS_COMPLETE_NO_MATCH: 3;
+        readonly STATUS_COMPLETE_MATCH: 4;
+    };
+    nsIAutoCompleteInput: {
+        readonly name: 'nsIAutoCompleteInput';
+        readonly number: '';
+    };
+    nsIAutoCompletePopup: {
+        readonly name: 'nsIAutoCompletePopup';
+        readonly number: '';
+        readonly INVALIDATE_REASON_NEW_RESULT: 0;
+        readonly INVALIDATE_REASON_DELETE: 1;
+    };
+    nsIAutoCompleteResult: {
+        readonly name: 'nsIAutoCompleteResult';
+        readonly number: '';
+        readonly RESULT_IGNORED: 1;
+        readonly RESULT_FAILURE: 2;
+        readonly RESULT_NOMATCH: 3;
+        readonly RESULT_SUCCESS: 4;
+        readonly RESULT_NOMATCH_ONGOING: 5;
+        readonly RESULT_SUCCESS_ONGOING: 6;
+    };
+    nsIAutoCompleteSearch: {
+        readonly name: 'nsIAutoCompleteSearch';
+        readonly number: 'DE8DB85F-C1DE-4d87-94BA-7844890F91FE';
+    };
+    nsIAutoCompleteObserver: {
+        readonly name: 'nsIAutoCompleteObserver';
+        readonly number: '8bd1dbbc-dcce-4007-9afa-b551eb687b61';
+    };
+    nsIAutoCompleteSearchDescriptor: {
+        readonly name: 'nsIAutoCompleteSearchDescriptor';
+        readonly number: '4c3e7462-fbfb-4310-8f4b-239238392b75';
+        readonly SEARCH_TYPE_DELAYED: 0;
+        readonly SEARCH_TYPE_IMMEDIATE: 1;
+    };
+    nsIAutoCompleteSimpleResult: {
+        readonly name: 'nsIAutoCompleteSimpleResult';
+        readonly number: '23de9c96-becb-4d0d-a9bb-1d131ce361b5';
+    };
+    nsIAutoCompleteSimpleResultListener: {
+        readonly name: 'nsIAutoCompleteSimpleResultListener';
+        readonly number: '004efdc5-1989-4874-8a7a-345bf2fa33af';
+    };
+    nsIAutoCompleteSimpleSearch: {
+        readonly name: 'nsIAutoCompleteSimpleSearch';
+        readonly number: 'dc185a77-ba88-4caa-8f16-465253f7599a';
+    };
+    nsIAutoplay: {
+        readonly name: 'nsIAutoplay';
+        readonly number: '048a24f6-c4d6-47bc-bea2-f6038d1db80a';
+        readonly ALLOWED: 0;
+        readonly BLOCKED: 1;
+        readonly BLOCKED_ALL: 5;
+    };
+    nsITabUnloader: {
+        readonly name: 'nsITabUnloader';
+        readonly number: '2e530956-6054-464f-9f4c-0ae6f8de5523';
+    };
+    nsIAvailableMemoryWatcherBase: {
+        readonly name: 'nsIAvailableMemoryWatcherBase';
+        readonly number: 'b0b5701e-239d-49db-9009-37e89f86441c';
+    };
+    nsIBFCacheEntry: {
+        readonly name: 'nsIBFCacheEntry';
+        readonly number: '';
+    };
+    nsIBackgroundChannelRegistrar: {
+        readonly name: 'nsIBackgroundChannelRegistrar';
+        readonly number: '8acaa9b1-f0c4-4ade-baeb-39b0d4b96e5b';
+    };
+    nsIBackgroundFileSaver: {
+        readonly name: 'nsIBackgroundFileSaver';
+        readonly number: 'c43544a4-682c-4262-b407-2453d26e660d';
+    };
+    nsIBackgroundFileSaverObserver: {
+        readonly name: 'nsIBackgroundFileSaverObserver';
+        readonly number: 'ee7058c3-6e54-4411-b76b-3ce87b76fcb6';
+    };
+    nsIBackgroundTasks: {
+        readonly name: 'nsIBackgroundTasks';
+        readonly number: '353dccb8-a863-49e4-941b-007382eac168';
+    };
+    nsIBackgroundTasksManager: {
+        readonly name: 'nsIBackgroundTasksManager';
+        readonly number: '4d48c536-e16f-4699-8f9c-add4f28f92f0';
+    };
+    nsIBackgroundTasksRunner: {
+        readonly name: 'nsIBackgroundTasksRunner';
+        readonly number: '8cd92fce-1ec3-470a-ad09-c0de9d98497e';
+    };
+    nsIBaseWindow: {
+        readonly name: 'nsIBaseWindow';
+        readonly number: '';
+        readonly eRepaint: 1;
+        readonly eDelayResize: 2;
+    };
+    nsIBidiKeyboard: {
+        readonly name: 'nsIBidiKeyboard';
+        readonly number: '288dae24-76e2-43a3-befe-9d9fabe8014e';
+    };
+    nsIBinaryInputStream: {
+        readonly name: 'nsIBinaryInputStream';
+        readonly number: '899b826b-2eb3-469c-8b31-4c29f5d341a6';
+    };
+    nsIBinaryOutputStream: {
+        readonly name: 'nsIBinaryOutputStream';
+        readonly number: '204ee610-8765-11d3-90cf-0040056a906e';
+    };
+    nsIBits: {
+        readonly name: 'nsIBits';
+        readonly number: '495d6f3d-9748-4d30-8ce5-0290c0001edf';
+        readonly ERROR_TYPE_SUCCESS: 0;
+        readonly ERROR_TYPE_UNKNOWN: 1;
+        readonly ERROR_TYPE_METHOD_THREW: 2;
+        readonly ERROR_TYPE_METHOD_TIMEOUT: 3;
+        readonly ERROR_TYPE_NULL_ARGUMENT: 4;
+        readonly ERROR_TYPE_INVALID_ARGUMENT: 5;
+        readonly ERROR_TYPE_NOT_INITIALIZED: 6;
+        readonly ERROR_TYPE_NO_UTF8_CONVERSION: 7;
+        readonly ERROR_TYPE_INVALID_GUID: 8;
+        readonly ERROR_TYPE_PIPE_NOT_CONNECTED: 9;
+        readonly ERROR_TYPE_PIPE_TIMEOUT: 10;
+        readonly ERROR_TYPE_PIPE_BAD_WRITE_COUNT: 11;
+        readonly ERROR_TYPE_PIPE_API_ERROR: 12;
+        readonly ERROR_TYPE_FAILED_TO_CREATE_BITS_JOB: 13;
+        readonly ERROR_TYPE_FAILED_TO_ADD_FILE_TO_JOB: 14;
+        readonly ERROR_TYPE_FAILED_TO_APPLY_BITS_JOB_SETTINGS: 15;
+        readonly ERROR_TYPE_FAILED_TO_RESUME_BITS_JOB: 16;
+        readonly ERROR_TYPE_OTHER_BITS_ERROR: 17;
+        readonly ERROR_TYPE_OTHER_BITS_CLIENT_ERROR: 18;
+        readonly ERROR_TYPE_BITS_JOB_NOT_FOUND: 19;
+        readonly ERROR_TYPE_FAILED_TO_GET_BITS_JOB: 20;
+        readonly ERROR_TYPE_FAILED_TO_SUSPEND_BITS_JOB: 21;
+        readonly ERROR_TYPE_FAILED_TO_COMPLETE_BITS_JOB: 22;
+        readonly ERROR_TYPE_PARTIALLY_COMPLETED_BITS_JOB: 23;
+        readonly ERROR_TYPE_FAILED_TO_CANCEL_BITS_JOB: 24;
+        readonly ERROR_TYPE_MISSING_RESULT_DATA: 25;
+        readonly ERROR_TYPE_MISSING_CALLBACK: 26;
+        readonly ERROR_TYPE_CALLBACK_ON_WRONG_THREAD: 27;
+        readonly ERROR_TYPE_MISSING_BITS_SERVICE: 28;
+        readonly ERROR_TYPE_BITS_SERVICE_ON_WRONG_THREAD: 29;
+        readonly ERROR_TYPE_MISSING_BITS_REQUEST: 30;
+        readonly ERROR_TYPE_BITS_REQUEST_ON_WRONG_THREAD: 31;
+        readonly ERROR_TYPE_MISSING_OBSERVER: 32;
+        readonly ERROR_TYPE_OBSERVER_ON_WRONG_THREAD: 33;
+        readonly ERROR_TYPE_MISSING_CONTEXT: 34;
+        readonly ERROR_TYPE_CONTEXT_ON_WRONG_THREAD: 35;
+        readonly ERROR_TYPE_FAILED_TO_START_THREAD: 36;
+        readonly ERROR_TYPE_FAILED_TO_CONSTRUCT_TASK_RUNNABLE: 37;
+        readonly ERROR_TYPE_FAILED_TO_DISPATCH_RUNNABLE: 38;
+        readonly ERROR_TYPE_TRANSFER_ALREADY_COMPLETE: 39;
+        readonly ERROR_TYPE_OPERATION_ALREADY_IN_PROGRESS: 40;
+        readonly ERROR_TYPE_MISSING_BITS_CLIENT: 41;
+        readonly ERROR_TYPE_FAILED_TO_GET_JOB_STATUS: 42;
+        readonly ERROR_TYPE_BITS_STATE_ERROR: 43;
+        readonly ERROR_TYPE_BITS_STATE_TRANSIENT_ERROR: 44;
+        readonly ERROR_TYPE_BITS_STATE_CANCELLED: 45;
+        readonly ERROR_TYPE_BITS_STATE_UNEXPECTED: 46;
+        readonly ERROR_TYPE_VERIFICATION_FAILURE: 47;
+        readonly ERROR_TYPE_ACCESS_DENIED_EXPECTED: 48;
+        readonly ERROR_TYPE_FAILED_TO_CONNECT_TO_BCM: 49;
+        readonly ERROR_TYPE_USE_AFTER_REQUEST_SHUTDOWN: 50;
+        readonly ERROR_ACTION_UNKNOWN: 1;
+        readonly ERROR_ACTION_NONE: 2;
+        readonly ERROR_ACTION_START_DOWNLOAD: 3;
+        readonly ERROR_ACTION_MONITOR_DOWNLOAD: 4;
+        readonly ERROR_ACTION_CHANGE_MONITOR_INTERVAL: 5;
+        readonly ERROR_ACTION_CANCEL: 6;
+        readonly ERROR_ACTION_SET_PRIORITY: 7;
+        readonly ERROR_ACTION_COMPLETE: 8;
+        readonly ERROR_ACTION_SUSPEND: 9;
+        readonly ERROR_ACTION_RESUME: 10;
+        readonly ERROR_ACTION_SET_NO_PROGRESS_TIMEOUT: 11;
+        readonly ERROR_STAGE_UNKNOWN: 1;
+        readonly ERROR_STAGE_PRETASK: 2;
+        readonly ERROR_STAGE_COMMAND_THREAD: 3;
+        readonly ERROR_STAGE_AGENT_COMMUNICATION: 4;
+        readonly ERROR_STAGE_BITS_CLIENT: 5;
+        readonly ERROR_STAGE_MAIN_THREAD: 6;
+        readonly ERROR_STAGE_MONITOR: 7;
+        readonly ERROR_STAGE_VERIFICATION: 8;
+        readonly ERROR_CODE_TYPE_NONE: 1;
+        readonly ERROR_CODE_TYPE_NSRESULT: 2;
+        readonly ERROR_CODE_TYPE_HRESULT: 3;
+        readonly ERROR_CODE_TYPE_STRING: 4;
+        readonly ERROR_CODE_TYPE_EXCEPTION: 5;
+        readonly PROXY_NONE: 1;
+        readonly PROXY_PRECONFIG: 2;
+        readonly PROXY_AUTODETECT: 3;
+    };
+    nsIBitsNewRequestCallback: {
+        readonly name: 'nsIBitsNewRequestCallback';
+        readonly number: 'aa12e433-5b9f-452d-b5c9-840a9541328b';
+    };
+    nsIBitsRequest: {
+        readonly name: 'nsIBitsRequest';
+        readonly number: 'ab9da0e9-06bf-4e73-bb1b-c0f2ea9ecc3e';
+    };
+    nsIBitsCallback: {
+        readonly name: 'nsIBitsCallback';
+        readonly number: 'ea657e66-6bad-4e41-84d9-c6d107e9799d';
+    };
+    nsIBlocklistService: {
+        readonly name: 'nsIBlocklistService';
+        readonly number: 'a6dcc76e-9f62-4cc1-a470-b483a1a6f096';
+        readonly STATE_NOT_BLOCKED: 0;
+        readonly STATE_SOFTBLOCKED: 1;
+        readonly STATE_BLOCKED: 2;
+        readonly STATE_MAX: 3;
+    };
+    nsIBrowser: {
+        readonly name: 'nsIBrowser';
+        readonly number: '';
+    };
+    nsIBrowserChild: {
+        readonly name: 'nsIBrowserChild';
+        readonly number: '';
+    };
+    nsIBrowserController: {
+        readonly name: 'nsIBrowserController';
+        readonly number: '5bb3d56b-e733-4a2c-8a53-058123df65e2';
+    };
+    nsIOpenURIInFrameParams: {
+        readonly name: 'nsIOpenURIInFrameParams';
+        readonly number: 'e774db14-79ac-4156-a7a3-aa3fd0a22c10';
+    };
+    nsIBrowserDOMWindow: {
+        readonly name: 'nsIBrowserDOMWindow';
+        readonly number: '';
+        readonly OPEN_DEFAULTWINDOW: 0;
+        readonly OPEN_CURRENTWINDOW: 1;
+        readonly OPEN_NEWWINDOW: 2;
+        readonly OPEN_NEWTAB: 3;
+        readonly OPEN_PRINT_BROWSER: 4;
+        readonly OPEN_NEW: 0x0;
+        readonly OPEN_EXTERNAL: 0x1;
+        readonly OPEN_NO_OPENER: 0x4;
+        readonly OPEN_NO_REFERRER: 0x8;
+    };
+    nsIBrowserElementAPI: {
+        readonly name: 'nsIBrowserElementAPI';
+        readonly number: '57758c10-6036-11e5-a837-0800200c9a66';
+    };
+    nsIBrowserHandler: {
+        readonly name: 'nsIBrowserHandler';
+        readonly number: '8D3F5A9D-118D-4548-A137-CF7718679069';
+    };
+    nsIBrowserUsage: {
+        readonly name: 'nsIBrowserUsage';
+        readonly number: '2703b5ed-a41f-42be-8764-b795eb67ed25';
+    };
+    nsIVisibleTab: {
+        readonly name: 'nsIVisibleTab';
+        readonly number: 'f6190951-69d0-4ce5-b503-d2535d9de98c';
+    };
+    nsIBrowserWindowTracker: {
+        readonly name: 'nsIBrowserWindowTracker';
+        readonly number: '846ff245-ccbf-4c7a-807e-060f02927651';
+    };
+    nsIBufferedInputStream: {
+        readonly name: 'nsIBufferedInputStream';
+        readonly number: '616f5b48-da09-11d3-8cda-0060b0fc14a3';
+    };
+    nsIBufferedOutputStream: {
+        readonly name: 'nsIBufferedOutputStream';
+        readonly number: '6476378a-da09-11d3-8cda-0060b0fc14a3';
+    };
+    nsIByteRangeRequest: {
+        readonly name: 'nsIByteRangeRequest';
+        readonly number: 'C1B1F426-7E83-4759-9F88-0E1B17F49366';
+    };
+    nsICacheEntry: {
+        readonly name: 'nsICacheEntry';
+        readonly number: '';
+        readonly CONTENT_TYPE_UNKNOWN: 0;
+        readonly CONTENT_TYPE_OTHER: 1;
+        readonly CONTENT_TYPE_JAVASCRIPT: 2;
+        readonly CONTENT_TYPE_IMAGE: 3;
+        readonly CONTENT_TYPE_MEDIA: 4;
+        readonly CONTENT_TYPE_STYLESHEET: 5;
+        readonly CONTENT_TYPE_WASM: 6;
+        readonly CONTENT_TYPE_LAST: 7;
+        readonly NO_EXPIRATION_TIME: 0xFFFFFFFF;
+    };
+    nsICacheEntryMetaDataVisitor: {
+        readonly name: 'nsICacheEntryMetaDataVisitor';
+        readonly number: 'fea3e276-6ba5-4ceb-a581-807d1f43f6d0';
+    };
+    nsICacheEntryDoomCallback: {
+        readonly name: 'nsICacheEntryDoomCallback';
+        readonly number: '';
+    };
+    nsICacheEntryOpenCallback: {
+        readonly name: 'nsICacheEntryOpenCallback';
+        readonly number: '';
+        readonly ENTRY_WANTED: 0;
+        readonly RECHECK_AFTER_WRITE_FINISHED: 1;
+        readonly ENTRY_NEEDS_REVALIDATION: 2;
+        readonly ENTRY_NOT_WANTED: 3;
+    };
+    nsIInputStreamReceiver: {
+        readonly name: 'nsIInputStreamReceiver';
+        readonly number: '1fb8ccf2-5fa5-45ec-bc57-8c8022a5d0d3';
+    };
+    nsICacheInfoChannel: {
+        readonly name: 'nsICacheInfoChannel';
+        readonly number: '';
+    };
+    nsICachePurgeLock: {
+        readonly name: 'nsICachePurgeLock';
+        readonly number: '8abb21e3-c6a0-4b4d-9333-cc0d72f2c23b';
+    };
+    nsICacheStorage: {
+        readonly name: 'nsICacheStorage';
+        readonly number: '';
+        readonly OPEN_NORMALLY: 0;
+    };
+    nsICacheStorageService: {
+        readonly name: 'nsICacheStorageService';
+        readonly number: 'ae29c44b-fbc3-4552-afaf-0a157ce771e7';
+        readonly PURGE_DISK_DATA_ONLY: 1;
+        readonly PURGE_DISK_ALL: 2;
+        readonly PURGE_EVERYTHING: 3;
+    };
+    nsICacheStorageConsumptionObserver: {
+        readonly name: 'nsICacheStorageConsumptionObserver';
+        readonly number: '7728ab5b-4c01-4483-a606-32bf5b8136cb';
+    };
+    nsICacheStorageVisitor: {
+        readonly name: 'nsICacheStorageVisitor';
+        readonly number: '6cc7c253-93b6-482b-8e9d-1e04d8e9d655';
+    };
+    nsICacheTesting: {
+        readonly name: 'nsICacheTesting';
+        readonly number: '4e8ba935-92e1-4a74-944b-b1a2f02a7480';
+    };
+    nsICachingChannel: {
+        readonly name: 'nsICachingChannel';
+        readonly number: 'dd1d6122-5ecf-4fe4-8f0f-995e7ab3121a';
+    };
+    nsICancelable: {
+        readonly name: 'nsICancelable';
+        readonly number: '';
+    };
+    nsICaptivePortalCallback: {
+        readonly name: 'nsICaptivePortalCallback';
+        readonly number: '593fdeec-6284-4de8-b416-8e63cbdc695e';
+    };
+    nsICaptivePortalDetector: {
+        readonly name: 'nsICaptivePortalDetector';
+        readonly number: '2f827c5a-f551-477f-af09-71adbfbd854a';
+    };
+    nsICaptivePortalServiceCallback: {
+        readonly name: 'nsICaptivePortalServiceCallback';
+        readonly number: 'b5fd5629-d04c-4138-9529-9311f291ecd4';
+    };
+    nsICaptivePortalService: {
+        readonly name: 'nsICaptivePortalService';
+        readonly number: 'bdbe0555-fc3d-4f7b-9205-c309ceb2d641';
+        readonly UNKNOWN: 0;
+        readonly NOT_CAPTIVE: 1;
+        readonly UNLOCKED_PORTAL: 2;
+        readonly LOCKED_PORTAL: 3;
+    };
+    nsICascadeFilter: {
+        readonly name: 'nsICascadeFilter';
+        readonly number: 'c8d0b0b3-17f8-458b-9264-7b67b288fe79';
+    };
+    nsICategoryEntry: {
+        readonly name: 'nsICategoryEntry';
+        readonly number: 'de021d54-57a3-4025-ae63-4c8eedbe74c0';
+    };
+    nsICategoryManager: {
+        readonly name: 'nsICategoryManager';
+        readonly number: '3275b2cd-af6d-429a-80d7-f0c5120342ac';
+    };
+    nsICertOverride: {
+        readonly name: 'nsICertOverride';
+        readonly number: 'ed735e24-fa55-4163-906d-17fb78851fe1';
+    };
+    nsICertOverrideService: {
+        readonly name: 'nsICertOverrideService';
+        readonly number: 'be019e47-22fc-4355-9f16-9ab047d6742d';
+    };
+    nsICertStorageCallback: {
+        readonly name: 'nsICertStorageCallback';
+        readonly number: '3f8fe26a-a436-4ad4-9c1c-a53c60973c31';
+    };
+    nsIRevocationState: {
+        readonly name: 'nsIRevocationState';
+        readonly number: '96db6fd7-6b64-4a5a-955d-310bd9ca4234';
+    };
+    nsIIssuerAndSerialRevocationState: {
+        readonly name: 'nsIIssuerAndSerialRevocationState';
+        readonly number: '23ce3546-f1b9-46f6-8de3-77704da5702f';
+    };
+    nsISubjectAndPubKeyRevocationState: {
+        readonly name: 'nsISubjectAndPubKeyRevocationState';
+        readonly number: 'e78b51b4-6fa4-41e2-92ce-e9404f541e96';
+    };
+    nsICRLiteCoverage: {
+        readonly name: 'nsICRLiteCoverage';
+        readonly number: '416453f7-29bd-4820-a039-9c2e055d3715';
+    };
+    nsICRLiteTimestamp: {
+        readonly name: 'nsICRLiteTimestamp';
+        readonly number: '9676cfc4-6e84-11ec-a30d-d3cd0af86e01';
+    };
+    nsICertInfo: {
+        readonly name: 'nsICertInfo';
+        readonly number: '27b66f5e-0faf-403b-95b4-bc11691ac50d';
+    };
+    nsICertStorage: {
+        readonly name: 'nsICertStorage';
+        readonly number: '327100a7-3401-45ef-b160-bf880f1016fd';
+        readonly DATA_TYPE_REVOCATION: 1;
+        readonly DATA_TYPE_CERTIFICATE: 2;
+        readonly DATA_TYPE_CRLITE: 3;
+        readonly DATA_TYPE_CRLITE_FILTER_FULL: 4;
+        readonly DATA_TYPE_CRLITE_FILTER_INCREMENTAL: 5;
+        readonly STATE_UNSET: 0;
+        readonly STATE_ENFORCE: 1;
+        readonly STATE_NOT_ENROLLED: 2;
+        readonly STATE_NOT_COVERED: 3;
+        readonly STATE_NO_FILTER: 4;
+        readonly TRUST_INHERIT: 0;
+        readonly TRUST_ANCHOR: 1;
+    };
+    nsICertTreeItem: {
+        readonly name: 'nsICertTreeItem';
+        readonly number: 'd0180863-606e-49e6-8324-cf45ed4dd891';
+    };
+    nsICertTree: {
+        readonly name: 'nsICertTree';
+        readonly number: '55d5ad6b-5572-47fe-941c-f01fe723659e';
+    };
+    nsICertificateDialogs: {
+        readonly name: 'nsICertificateDialogs';
+        readonly number: 'da871dab-f69e-4173-ab26-99fcd47b0e85';
+    };
+    nsIChannel: {
+        readonly name: 'nsIChannel';
+        readonly number: '';
+        readonly DISPOSITION_INLINE: 0;
+        readonly DISPOSITION_ATTACHMENT: 1;
+        readonly DISPOSITION_FORCE_INLINE: 2;
+    };
+    nsIIdentChannel: {
+        readonly name: 'nsIIdentChannel';
+        readonly number: '1ebbff64-d742-4f4a-aad5-4df2d1eb937a';
+    };
+    nsIUrlClassifierBlockedChannel: {
+        readonly name: 'nsIUrlClassifierBlockedChannel';
+        readonly number: '9b0353a7-ab46-4914-9178-2215ee221e4e';
+        readonly TRACKING_PROTECTION: 0;
+        readonly SOCIAL_TRACKING_PROTECTION: 1;
+        readonly FINGERPRINTING_PROTECTION: 2;
+        readonly CRYPTOMINING_PROTECTION: 3;
+    };
+    nsIChannelClassifierService: {
+        readonly name: 'nsIChannelClassifierService';
+        readonly number: '9411409c-5dac-40b9-ba36-2738a7237a4c';
+    };
+    nsIChannelEventSink: {
+        readonly name: 'nsIChannelEventSink';
+        readonly number: '0197720d-37ed-4e75-8956-d0d296e4d8a6';
+    };
+    nsIChildChannel: {
+        readonly name: 'nsIChildChannel';
+        readonly number: 'c45b92ae-4f07-41dd-b0ef-aa044eeabb1e';
+    };
+    nsIChromeRegistry: {
+        readonly name: 'nsIChromeRegistry';
+        readonly number: '249fb5ad-ae29-4e2c-a728-ba5cf464d188';
+        readonly NONE: 0;
+        readonly PARTIAL: 1;
+        readonly FULL: 2;
+    };
+    nsIXULChromeRegistry: {
+        readonly name: 'nsIXULChromeRegistry';
+        readonly number: '93251ddf-5e85-4172-ac2a-31780562974f';
+    };
+    nsIClassInfo: {
+        readonly name: 'nsIClassInfo';
+        readonly number: '';
+    };
+    nsIClassOfService: {
+        readonly name: 'nsIClassOfService';
+        readonly number: '1ccb58ec-5e07-4cf9-a30d-ac5490d23b41';
+    };
+    nsIClassifiedChannel: {
+        readonly name: 'nsIClassifiedChannel';
+        readonly number: '70cf6091-a1de-4aa8-8224-058f8964be31';
+    };
+    nsIClearDataService: {
+        readonly name: 'nsIClearDataService';
+        readonly number: '6ef3ef16-a502-4576-9fb4-919f1c40bf61';
+        readonly CLEAR_ALL: 0xFFFFFFFF;
+    };
+    nsIClearDataCallback: {
+        readonly name: 'nsIClearDataCallback';
+        readonly number: 'e225517b-24c5-498a-b9fb-9993e341a398';
+    };
+    nsIClickRule: {
+        readonly name: 'nsIClickRule';
+        readonly number: '7e104b32-b6db-43f3-b887-573c01acef39';
+    };
+    nsIClientAuthDialogs: {
+        readonly name: 'nsIClientAuthDialogs';
+        readonly number: 'fa4c7520-1433-11d5-ba24-00108303b117';
+    };
+    nsIClientAuthRememberRecord: {
+        readonly name: 'nsIClientAuthRememberRecord';
+        readonly number: 'e92825af-7e81-4b5c-b412-8e1dd36d14fe';
+    };
+    nsIClientAuthRememberService: {
+        readonly name: 'nsIClientAuthRememberService';
+        readonly number: '1dbc6eb6-0972-4bdb-9dc4-acd0abf72369';
+    };
+    nsIClipboard: {
+        readonly name: 'nsIClipboard';
+        readonly number: 'ceaa0047-647f-4b8e-ad1c-aff9fa62aa51';
+        readonly kSelectionClipboard: 0;
+        readonly kGlobalClipboard: 1;
+        readonly kFindClipboard: 2;
+        readonly kSelectionCache: 3;
+    };
+    nsIClipboardHelper: {
+        readonly name: 'nsIClipboardHelper';
+        readonly number: '438307fd-0c68-4d79-922a-f6cc9550cd02';
+    };
+    nsIClipboardOwner: {
+        readonly name: 'nsIClipboardOwner';
+        readonly number: '5A31C7A1-E122-11d2-9A57-000064657374';
+    };
+    nsICloneableInputStream: {
+        readonly name: 'nsICloneableInputStream';
+        readonly number: '8149be1f-44d3-4f14-8b65-a57a5fbbeb97';
+    };
+    nsICloneableInputStreamWithRange: {
+        readonly name: 'nsICloneableInputStreamWithRange';
+        readonly number: 'ece853c3-aded-4cef-8f51-0d1493d60bd5';
+    };
+    nsICodeCoverage: {
+        readonly name: 'nsICodeCoverage';
+        readonly number: '57d92056-37b4-4d0a-a52f-deb8f6dac8bc';
+    };
+    nsIColorPickerShownCallback: {
+        readonly name: 'nsIColorPickerShownCallback';
+        readonly number: 'd2ce78d1-40b5-49d1-b66d-5801fcb9a385';
+    };
+    nsIColorPicker: {
+        readonly name: 'nsIColorPicker';
+        readonly number: 'de229d37-a8a6-46f1-969a-0c1de33d0ad7';
+    };
+    nsICommandLine: {
+        readonly name: 'nsICommandLine';
+        readonly number: '';
+        readonly STATE_INITIAL_LAUNCH: 0;
+        readonly STATE_REMOTE_AUTO: 1;
+        readonly STATE_REMOTE_EXPLICIT: 2;
+    };
+    nsICommandLineHandler: {
+        readonly name: 'nsICommandLineHandler';
+        readonly number: 'd4b123df-51ee-48b1-a663-002180e60d3b';
+    };
+    nsICommandLineRunner: {
+        readonly name: 'nsICommandLineRunner';
+        readonly number: 'c9f2996c-b25a-4d3d-821f-4cd0c4bc8afb';
+    };
+    nsICommandLineValidator: {
+        readonly name: 'nsICommandLineValidator';
+        readonly number: '5ecaa593-7660-4a3a-957a-92d5770671c7';
+    };
+    nsICommandManager: {
+        readonly name: 'nsICommandManager';
+        readonly number: 'bb5a1730-d83b-4fa2-831b-35b9d5842e84';
+    };
+    nsICommandParams: {
+        readonly name: 'nsICommandParams';
+        readonly number: '';
+        readonly eNoType: 0;
+        readonly eBooleanType: 1;
+        readonly eLongType: 2;
+        readonly eDoubleType: 3;
+        readonly eWStringType: 4;
+        readonly eISupportsType: 5;
+        readonly eStringType: 6;
+    };
+    nsIComponentManager: {
+        readonly name: 'nsIComponentManager';
+        readonly number: '';
+    };
+    nsIComponentRegistrar: {
+        readonly name: 'nsIComponentRegistrar';
+        readonly number: '2417cbfe-65ad-48a6-b4b6-eb84db174392';
+    };
+    nsICompressConvStats: {
+        readonly name: 'nsICompressConvStats';
+        readonly number: '58172ad0-46a9-4893-8fde-cd909c10792a';
+    };
+    nsIConsoleAPIStorage: {
+        readonly name: 'nsIConsoleAPIStorage';
+        readonly number: '9e32a7b6-c4d1-4d9a-87b9-1ef6b75c27a9';
+    };
+    nsIConsoleListener: {
+        readonly name: 'nsIConsoleListener';
+        readonly number: '';
+    };
+    nsIConsoleMessage: {
+        readonly name: 'nsIConsoleMessage';
+        readonly number: '';
+        readonly debug: 0;
+        readonly info: 1;
+        readonly warn: 2;
+        readonly error: 3;
+    };
+    nsIConsoleService: {
+        readonly name: 'nsIConsoleService';
+        readonly number: '0eb81d20-c37e-42d4-82a8-ca9ae96bdf52';
+    };
+    nsIContentBlockingAllowList: {
+        readonly name: 'nsIContentBlockingAllowList';
+        readonly number: '00ed5d73-9de5-42cf-868c-e739a94f6b37';
+    };
+    nsIContentDispatchChooser: {
+        readonly name: 'nsIContentDispatchChooser';
+        readonly number: '456ca3b2-02be-4f97-89a2-08c08d3ad88f';
+    };
+    nsIContentHandler: {
+        readonly name: 'nsIContentHandler';
+        readonly number: '49439df2-b3d2-441c-bf62-866bdaf56fd2';
+    };
+    nsIContentPermissionType: {
+        readonly name: 'nsIContentPermissionType';
+        readonly number: 'ef4db3b8-ca9c-4b1d-8f81-fd88ec32af13';
+    };
+    nsIContentPermissionRequest: {
+        readonly name: 'nsIContentPermissionRequest';
+        readonly number: '';
+    };
+    nsIContentPermissionPrompt: {
+        readonly name: 'nsIContentPermissionPrompt';
+        readonly number: 'F72DE90D-E954-4E69-9A61-917303029301';
+    };
+    nsIContentPolicy: {
+        readonly name: 'nsIContentPolicy';
+        readonly number: 'caad4f1f-d047-46ac-ae9d-dc598e4fb91b';
+        readonly ACCEPT: 1;
+    };
+    nsIContentPrefObserver: {
+        readonly name: 'nsIContentPrefObserver';
+        readonly number: '43635c53-b445-4c4e-8cc5-562697299b55';
+    };
+    nsIContentPrefService2: {
+        readonly name: 'nsIContentPrefService2';
+        readonly number: 'bed98666-d995-470f-bebd-62476d318576';
+    };
+    nsIContentPrefCallback2: {
+        readonly name: 'nsIContentPrefCallback2';
+        readonly number: '1a12cf41-79e8-4d0f-9899-2f7b27c5d9a1';
+        readonly COMPLETE_OK: 0;
+        readonly COMPLETE_ERROR: 1;
+    };
+    nsIContentPref: {
+        readonly name: 'nsIContentPref';
+        readonly number: '9f24948d-24b5-4b1b-b554-7dbd58c1d792';
+    };
+    nsIContentProcessInfo: {
+        readonly name: 'nsIContentProcessInfo';
+        readonly number: '456f58be-29dd-4973-885b-95aece1c9a8a';
+    };
+    nsIContentProcessProvider: {
+        readonly name: 'nsIContentProcessProvider';
+        readonly number: '83ffb063-5f65-4c45-ae07-3f553e0809bb';
+    };
+    nsIContentSecurityManager: {
+        readonly name: 'nsIContentSecurityManager';
+        readonly number: '3a9a1818-2ae8-4ec5-a340-8b29d31fca3b';
+    };
+    nsIContentSecurityPolicy: {
+        readonly name: 'nsIContentSecurityPolicy';
+        readonly number: '';
+        readonly VIOLATION_TYPE_EVAL: 1;
+        readonly VIOLATION_TYPE_WASM_EVAL: 2;
+    };
+    nsICSPEventListener: {
+        readonly name: 'nsICSPEventListener';
+        readonly number: '';
+    };
+    nsIContentSignatureVerifier: {
+        readonly name: 'nsIContentSignatureVerifier';
+        readonly number: '45a5fe2f-c350-4b86-962d-02d5aaaa955a';
+        readonly ContentSignatureProdRoot: 1;
+        readonly ContentSignatureStageRoot: 2;
+        readonly ContentSignatureDevRoot: 3;
+        readonly ContentSignatureLocalRoot: 4;
+    };
+    nsIContentSniffer: {
+        readonly name: 'nsIContentSniffer';
+        readonly number: 'a5772d1b-fc63-495e-a169-96e8d3311af0';
+    };
+    nsIContentViewer: {
+        readonly name: 'nsIContentViewer';
+        readonly number: '';
+        readonly eDelayResize: 1;
+    };
+    nsIContentViewerEdit: {
+        readonly name: 'nsIContentViewerEdit';
+        readonly number: '35BE2D7E-F29B-48EC-BF7E-80A30A724DE3';
+        readonly COPY_IMAGE_TEXT: 0x0001;
+        readonly COPY_IMAGE_HTML: 0x0002;
+        readonly COPY_IMAGE_DATA: 0x0004;
+    };
+    nsIController: {
+        readonly name: 'nsIController';
+        readonly number: '';
+    };
+    nsICommandController: {
+        readonly name: 'nsICommandController';
+        readonly number: 'EEC0B435-7F53-44FE-B00A-CF3EED65C01A';
+    };
+    nsIControllerCommand: {
+        readonly name: 'nsIControllerCommand';
+        readonly number: '0eae9a46-1dd2-11b2-aca0-9176f05fe9db';
+    };
+    nsIControllerCommandTable: {
+        readonly name: 'nsIControllerCommandTable';
+        readonly number: 'c847f90e-b8f3-49db-a4df-8867831f2800';
+    };
+    nsIControllerContext: {
+        readonly name: 'nsIControllerContext';
+        readonly number: '47B82B60-A36F-4167-8072-6F421151ED50';
+    };
+    nsIControllers: {
+        readonly name: 'nsIControllers';
+        readonly number: '';
+    };
+    nsIConverterInputStream: {
+        readonly name: 'nsIConverterInputStream';
+        readonly number: 'FC66FFB6-5404-4908-A4A3-27F92FA0579D';
+        readonly DEFAULT_REPLACEMENT_CHARACTER: 0xFFFD;
+        readonly ERRORS_ARE_FATAL: 0;
+    };
+    nsIConverterOutputStream: {
+        readonly name: 'nsIConverterOutputStream';
+        readonly number: '4b71113a-cb0d-479f-8ed5-01daeba2e8d4';
+    };
+    nsICookie: {
+        readonly name: 'nsICookie';
+        readonly number: 'adf0db5e-211e-45a3-be14-4486ac430a58';
+        readonly SAMESITE_NONE: 0;
+        readonly SAMESITE_LAX: 1;
+        readonly SAMESITE_STRICT: 2;
+    };
+    nsICookieBannerListService: {
+        readonly name: 'nsICookieBannerListService';
+        readonly number: '1d8d9470-97d3-4885-a108-44a5c4fb36e2';
+    };
+    nsICookieBannerRule: {
+        readonly name: 'nsICookieBannerRule';
+        readonly number: 'eb1904db-e0d1-4760-a721-db76b1ca3e94';
+    };
+    nsICookieBannerService: {
+        readonly name: 'nsICookieBannerService';
+        readonly number: 'eac9cdc4-ecee-49f2-91da-7627e15c1f3c';
+    };
+    nsICookieJarSettings: {
+        readonly name: 'nsICookieJarSettings';
+        readonly number: '';
+    };
+    nsICookieManager: {
+        readonly name: 'nsICookieManager';
+        readonly number: 'AAAB6710-0F2C-11d5-A53B-0010A401EB10';
+    };
+    nsICookiePermission: {
+        readonly name: 'nsICookiePermission';
+        readonly number: '11ddd4ed-8f5b-40b3-b2a0-27c20ea1c88d';
+        readonly ACCESS_DEFAULT: 0;
+        readonly ACCESS_ALLOW: 1;
+        readonly ACCESS_DENY: 2;
+        readonly ACCESS_SESSION: 8;
+    };
+    nsICookieRule: {
+        readonly name: 'nsICookieRule';
+        readonly number: 'bf049b1e-8a05-481f-a120-332ea1bd65ef';
+    };
+    nsICookieTransactionCallback: {
+        readonly name: 'nsICookieTransactionCallback';
+        readonly number: '0fc41ffb-f1b7-42d9-9a42-8dc420c158c1';
+    };
+    nsICookieService: {
+        readonly name: 'nsICookieService';
+        readonly number: '1e94e283-2811-4f43-b947-d22b1549d824';
+        readonly BEHAVIOR_ACCEPT: 0;
+        readonly BEHAVIOR_REJECT_FOREIGN: 1;
+        readonly BEHAVIOR_REJECT: 2;
+        readonly BEHAVIOR_LIMIT_FOREIGN: 3;
+        readonly BEHAVIOR_REJECT_TRACKER: 4;
+        readonly BEHAVIOR_REJECT_TRACKER_AND_PARTITION_FOREIGN: 5;
+        readonly BEHAVIOR_LAST: 5;
+    };
+    nsICrashReporter: {
+        readonly name: 'nsICrashReporter';
+        readonly number: '4b74c39a-cf69-4a8a-8e63-169d81ad1ecf';
+    };
+    nsICrashService: {
+        readonly name: 'nsICrashService';
+        readonly number: '70bd93ff-88fa-4600-8af8-57c8d002dbac';
+        readonly CRASH_TYPE_CRASH: 0;
+        readonly CRASH_TYPE_HANG: 1;
+    };
+    nsICryptoHash: {
+        readonly name: 'nsICryptoHash';
+        readonly number: '1e5b7c43-4688-45ce-92e1-77ed931e3bbe';
+        readonly MD5: 2;
+        readonly SHA1: 3;
+        readonly SHA256: 4;
+        readonly SHA384: 5;
+        readonly SHA512: 6;
+    };
+    nsICycleCollectorHandler: {
+        readonly name: 'nsICycleCollectorHandler';
+        readonly number: '7f093367-1492-4b89-87af-c01dbc831246';
+    };
+    nsICycleCollectorLogSink: {
+        readonly name: 'nsICycleCollectorLogSink';
+        readonly number: '';
+    };
+    nsICycleCollectorListener: {
+        readonly name: 'nsICycleCollectorListener';
+        readonly number: '';
+    };
+    nsIDAPTelemetry: {
+        readonly name: 'nsIDAPTelemetry';
+        readonly number: '58a4c579-d2dd-46b7-9c3b-6881a1c36c6a';
+    };
+    nsIDHCPClient: {
+        readonly name: 'nsIDHCPClient';
+        readonly number: 'aee75dc0-be1a-46b9-9e0c-31a6899c175c';
+    };
+    nsIDNSAdditionalInfo: {
+        readonly name: 'nsIDNSAdditionalInfo';
+        readonly number: '';
+    };
+    nsIDNSByTypeRecord: {
+        readonly name: 'nsIDNSByTypeRecord';
+        readonly number: '';
+    };
+    nsIDNSTXTRecord: {
+        readonly name: 'nsIDNSTXTRecord';
+        readonly number: '2a71750d-cb21-45f1-9e1c-666d18dd7645';
+    };
+    nsISVCParam: {
+        readonly name: 'nsISVCParam';
+        readonly number: '2979ceaa-9c7e-49de-84b8-ea81c16aebf1';
+    };
+    nsISVCParamAlpn: {
+        readonly name: 'nsISVCParamAlpn';
+        readonly number: '0dc58309-4d67-4fc4-a4e3-38dbde9d9f4c';
+    };
+    nsISVCParamNoDefaultAlpn: {
+        readonly name: 'nsISVCParamNoDefaultAlpn';
+        readonly number: 'b3ed89c3-2ae6-4c92-8176-b76bc2437fcb';
+    };
+    nsISVCParamPort: {
+        readonly name: 'nsISVCParamPort';
+        readonly number: 'a37c7bcb-bfcd-4ab4-b826-cc583859ba73';
+    };
+    nsISVCParamIPv4Hint: {
+        readonly name: 'nsISVCParamIPv4Hint';
+        readonly number: 'd3163d2f-0bbe-47d4-bcac-db3fb1433b39';
+    };
+    nsISVCParamEchConfig: {
+        readonly name: 'nsISVCParamEchConfig';
+        readonly number: '1f31e41d-b6d8-4796-b12a-82ef8d2b0e43';
+    };
+    nsISVCParamIPv6Hint: {
+        readonly name: 'nsISVCParamIPv6Hint';
+        readonly number: '5100bce4-9d3b-42e1-a3c9-0f386bbc9dad';
+    };
+    nsISVCParamODoHConfig: {
+        readonly name: 'nsISVCParamODoHConfig';
+        readonly number: 'bdcef040-452e-11eb-b378-0242ac130002';
+    };
+    nsISVCBRecord: {
+        readonly name: 'nsISVCBRecord';
+        readonly number: 'a4da5645-2160-4439-bd11-540a2d26c989';
+    };
+    nsIDNSHTTPSSVCRecord: {
+        readonly name: 'nsIDNSHTTPSSVCRecord';
+        readonly number: '5b649e95-e0d3-422b-99a6-79d70a041387';
+    };
+    nsIDNSListener: {
+        readonly name: 'nsIDNSListener';
+        readonly number: '';
+    };
+    nsIDNSRecord: {
+        readonly name: 'nsIDNSRecord';
+        readonly number: '';
+    };
+    nsIDNSAddrRecord: {
+        readonly name: 'nsIDNSAddrRecord';
+        readonly number: 'cb260e20-943f-4309-953b-78c90d3a7638';
+    };
+    nsIDNSService: {
+        readonly name: 'nsIDNSService';
+        readonly number: 'de5642c6-61fc-4fcf-9a47-03226b0d4e21';
+    };
+    nsIDOMChromeWindow: {
+        readonly name: 'nsIDOMChromeWindow';
+        readonly number: '78bdcb41-1efa-409f-aaba-70842213f80f';
+    };
+    nsIDOMEventListener: {
+        readonly name: 'nsIDOMEventListener';
+        readonly number: 'df31c120-ded6-11d1-bd85-00805f8ae3f4';
+    };
+    nsIDOMGeoPosition: {
+        readonly name: 'nsIDOMGeoPosition';
+        readonly number: '';
+    };
+    nsIDOMGeoPositionCallback: {
+        readonly name: 'nsIDOMGeoPositionCallback';
+        readonly number: '527E8B53-6F29-4B6A-8D04-5C1666A4C4C1';
+    };
+    nsIDOMGeoPositionCoords: {
+        readonly name: 'nsIDOMGeoPositionCoords';
+        readonly number: 'B31702D0-6DAC-4FA0-B93B-F043E71C8F9A';
+    };
+    nsIDOMGeoPositionErrorCallback: {
+        readonly name: 'nsIDOMGeoPositionErrorCallback';
+        readonly number: '7D9B09D9-4843-43EB-A7A7-67F7DDA6B3C4';
+    };
+    nsIDOMGlobalPropertyInitializer: {
+        readonly name: 'nsIDOMGlobalPropertyInitializer';
+        readonly number: '5842e275-797f-4afb-b7e0-e29f0cb312ae';
+    };
+    nsIDOMMozBrowserFrame: {
+        readonly name: 'nsIDOMMozBrowserFrame';
+        readonly number: '4CAFE116-581B-4194-B0DE-7F02378FC51D';
+    };
+    nsIDOMProcessChild: {
+        readonly name: 'nsIDOMProcessChild';
+        readonly number: 'b0c6e5f3-02f1-4f11-a0af-336fc231f3bf';
+    };
+    nsIDOMProcessParent: {
+        readonly name: 'nsIDOMProcessParent';
+        readonly number: '81fc08b9-c901-471f-ab0d-876362eba770';
+    };
+    nsIDOMRequestService: {
+        readonly name: 'nsIDOMRequestService';
+        readonly number: '9a57e5de-ce93-45fa-8145-755722834f7c';
+    };
+    nsIDOMStorageManager: {
+        readonly name: 'nsIDOMStorageManager';
+        readonly number: 'a20c742e-3ed1-44fb-b897-4080a75b1662';
+    };
+    nsIDOMSessionStorageManager: {
+        readonly name: 'nsIDOMSessionStorageManager';
+        readonly number: 'b3bfbbd0-e738-4cbf-b0f0-b65f25265e82';
+    };
+    nsIDOMMozWakeLockListener: {
+        readonly name: 'nsIDOMMozWakeLockListener';
+        readonly number: '';
+    };
+    nsIDOMWindow: {
+        readonly name: 'nsIDOMWindow';
+        readonly number: '';
+    };
+    nsIDOMWindowUtils: {
+        readonly name: 'nsIDOMWindowUtils';
+        readonly number: '4d6732ca-9da7-4176-b8a1-8dde15cd0bf9';
+        readonly MODIFIER_ALT: 0x0001;
+        readonly MODIFIER_CONTROL: 0x0002;
+        readonly MODIFIER_SHIFT: 0x0004;
+        readonly MODIFIER_META: 0x0008;
+        readonly MODIFIER_ALTGRAPH: 0x0010;
+        readonly MODIFIER_CAPSLOCK: 0x0020;
+        readonly MODIFIER_FN: 0x0040;
+        readonly MODIFIER_FNLOCK: 0x0080;
+        readonly MODIFIER_NUMLOCK: 0x0100;
+        readonly MODIFIER_SCROLLLOCK: 0x0200;
+        readonly MODIFIER_SYMBOL: 0x0400;
+        readonly MODIFIER_SYMBOLLOCK: 0x0800;
+        readonly MODIFIER_OS: 0x1000;
+        readonly WHEEL_EVENT_CAUSED_BY_NO_LINE_OR_PAGE_DELTA_DEVICE: 0x0001;
+        readonly WHEEL_EVENT_CAUSED_BY_MOMENTUM: 0x0002;
+        readonly WHEEL_EVENT_CUSTOMIZED_BY_USER_PREFS: 0x0004;
+        readonly WHEEL_EVENT_EXPECTED_OVERFLOW_DELTA_X_ZERO: 0x0010;
+        readonly WHEEL_EVENT_EXPECTED_OVERFLOW_DELTA_X_POSITIVE: 0x0020;
+        readonly WHEEL_EVENT_EXPECTED_OVERFLOW_DELTA_X_NEGATIVE: 0x0040;
+        readonly WHEEL_EVENT_EXPECTED_OVERFLOW_DELTA_Y_ZERO: 0x0100;
+        readonly WHEEL_EVENT_EXPECTED_OVERFLOW_DELTA_Y_POSITIVE: 0x0200;
+        readonly WHEEL_EVENT_EXPECTED_OVERFLOW_DELTA_Y_NEGATIVE: 0x0400;
+        readonly NATIVE_MODIFIER_CAPS_LOCK: 0x00000001;
+        readonly NATIVE_MODIFIER_NUM_LOCK: 0x00000002;
+        readonly NATIVE_MODIFIER_SHIFT_LEFT: 0x00000100;
+        readonly NATIVE_MODIFIER_SHIFT_RIGHT: 0x00000200;
+        readonly NATIVE_MODIFIER_CONTROL_LEFT: 0x00000400;
+        readonly NATIVE_MODIFIER_CONTROL_RIGHT: 0x00000800;
+        readonly NATIVE_MODIFIER_ALT_LEFT: 0x00001000;
+        readonly NATIVE_MODIFIER_ALT_RIGHT: 0x00002000;
+        readonly NATIVE_MODIFIER_COMMAND_LEFT: 0x00004000;
+        readonly NATIVE_MODIFIER_COMMAND_RIGHT: 0x00008000;
+        readonly NATIVE_MODIFIER_HELP: 0x00010000;
+        readonly NATIVE_MODIFIER_ALT_GRAPH: 0x00020000;
+        readonly NATIVE_MODIFIER_FUNCTION: 0x00100000;
+        readonly NATIVE_MODIFIER_NUMERIC_KEY_PAD: 0x01000000;
+        readonly NATIVE_MOUSE_MESSAGE_BUTTON_DOWN: 0x00000001;
+        readonly NATIVE_MOUSE_MESSAGE_BUTTON_UP: 0x00000002;
+        readonly NATIVE_MOUSE_MESSAGE_MOVE: 0x00000003;
+        readonly NATIVE_MOUSE_MESSAGE_ENTER_WINDOW: 0x00000004;
+        readonly NATIVE_MOUSE_MESSAGE_LEAVE_WINDOW: 0x00000005;
+        readonly MOUSESCROLL_PREFER_WIDGET_AT_POINT: 0x00000001;
+        readonly MOUSESCROLL_SCROLL_LINES: 0x00000002;
+        readonly MOUSESCROLL_WIN_SCROLL_LPARAM_NOT_NULL: 0x00010000;
+        readonly TOUCH_HOVER: 0x01;
+        readonly TOUCH_CONTACT: 0x02;
+        readonly TOUCH_REMOVE: 0x04;
+        readonly TOUCH_CANCEL: 0x08;
+        readonly PHASE_BEGIN: 0;
+        readonly PHASE_UPDATE: 1;
+        readonly PHASE_END: 2;
+        readonly UPDATE_TYPE_RESTORE: 0;
+        readonly UPDATE_TYPE_MAIN_THREAD: 1;
+        readonly SCROLL_MODE_INSTANT: 0;
+        readonly SCROLL_MODE_SMOOTH: 1;
+        readonly FLUSH_STYLE: 0;
+        readonly FLUSH_LAYOUT: 1;
+        readonly FLUSH_DISPLAY: 2;
+        readonly IME_STATUS_DISABLED: 0;
+        readonly IME_STATUS_ENABLED: 1;
+        readonly IME_STATUS_PASSWORD: 2;
+        readonly INPUT_CONTEXT_ORIGIN_MAIN: 0;
+        readonly INPUT_CONTEXT_ORIGIN_CONTENT: 1;
+        readonly QUERY_CONTENT_FLAG_USE_NATIVE_LINE_BREAK: 0x0000;
+        readonly QUERY_CONTENT_FLAG_USE_XP_LINE_BREAK: 0x0001;
+        readonly QUERY_CONTENT_FLAG_SELECTION_SPELLCHECK: 0x0002;
+        readonly QUERY_CONTENT_FLAG_SELECTION_IME_RAWINPUT: 0x0004;
+        readonly QUERY_CONTENT_FLAG_SELECTION_IME_SELECTEDRAWTEXT: 0x0008;
+        readonly QUERY_CONTENT_FLAG_SELECTION_IME_CONVERTEDTEXT: 0x0010;
+        readonly QUERY_CONTENT_FLAG_SELECTION_IME_SELECTEDCONVERTEDTEXT: 0x0020;
+        readonly QUERY_CONTENT_FLAG_SELECTION_ACCESSIBILITY: 0x0040;
+        readonly QUERY_CONTENT_FLAG_SELECTION_FIND: 0x0080;
+        readonly QUERY_CONTENT_FLAG_SELECTION_URLSECONDARY: 0x0100;
+        readonly QUERY_CONTENT_FLAG_SELECTION_URLSTRIKEOUT: 0x0200;
+        readonly QUERY_CONTENT_FLAG_OFFSET_RELATIVE_TO_INSERTION_POINT: 0x0400;
+        readonly QUERY_SELECTED_TEXT: 3200;
+        readonly QUERY_TEXT_CONTENT: 3201;
+        readonly QUERY_CARET_RECT: 3203;
+        readonly QUERY_TEXT_RECT: 3204;
+        readonly QUERY_EDITOR_RECT: 3205;
+        readonly QUERY_CHARACTER_AT_POINT: 3208;
+        readonly QUERY_TEXT_RECT_ARRAY: 3209;
+        readonly SELECTION_SET_FLAG_USE_NATIVE_LINE_BREAK: 0x0000;
+        readonly SELECTION_SET_FLAG_USE_XP_LINE_BREAK: 0x0001;
+        readonly SELECTION_SET_FLAG_REVERSE: 0x0002;
+        readonly SELECT_CHARACTER: 0;
+        readonly SELECT_CLUSTER: 1;
+        readonly SELECT_WORD: 2;
+        readonly SELECT_LINE: 3;
+        readonly SELECT_BEGINLINE: 4;
+        readonly SELECT_ENDLINE: 5;
+        readonly SELECT_PARAGRAPH: 6;
+        readonly SELECT_WORDNOSPACE: 7;
+        readonly AUDIO_INPUT: 0;
+        readonly AUDIO_OUTPUT: 1;
+        readonly AGENT_SHEET: 0;
+        readonly USER_SHEET: 1;
+        readonly AUTHOR_SHEET: 2;
+        readonly WR_CAPTURE_SCENE: 0x1;
+        readonly WR_CAPTURE_FRAME: 0x2;
+        readonly WR_CAPTURE_TILE_CACHE: 0x4;
+        readonly WR_CAPTURE_EXTERNAL_RESOURCES: 0x8;
+        readonly DEFAULT_MOUSE_POINTER_ID: 0;
+        readonly DEFAULT_PEN_POINTER_ID: 1;
+        readonly DEFAULT_TOUCH_POINTER_ID: 2;
+        readonly MOUSE_BUTTON_LEFT_BUTTON: 0;
+        readonly MOUSE_BUTTON_MIDDLE_BUTTON: 1;
+        readonly MOUSE_BUTTON_RIGHT_BUTTON: 2;
+        readonly MOUSE_BUTTONS_NO_BUTTON: 0x00;
+        readonly MOUSE_BUTTONS_LEFT_BUTTON: 0x01;
+        readonly MOUSE_BUTTONS_RIGHT_BUTTON: 0x02;
+        readonly MOUSE_BUTTONS_MIDDLE_BUTTON: 0x04;
+        readonly MOUSE_BUTTONS_4TH_BUTTON: 0x08;
+        readonly MOUSE_BUTTONS_5TH_BUTTON: 0x10;
+        readonly DIRECTION_LTR: 0;
+        readonly DIRECTION_RTL: 1;
+        readonly DIRECTION_NOT_SET: 2;
+    };
+    nsITranslationNodeList: {
+        readonly name: 'nsITranslationNodeList';
+        readonly number: 'c694e359-7227-4392-a138-33c0cc1f15a6';
+    };
+    nsIJSRAIIHelper: {
+        readonly name: 'nsIJSRAIIHelper';
+        readonly number: '52e5a996-d0a9-4efc-a6fa-24489c532b19';
+    };
+    nsIDOMXULButtonElement: {
+        readonly name: 'nsIDOMXULButtonElement';
+        readonly number: '6ed53cfb-9e59-424c-af8d-e74582381951';
+    };
+    nsIDOMXULCommandDispatcher: {
+        readonly name: 'nsIDOMXULCommandDispatcher';
+        readonly number: 'a9fa9fd3-8d62-4f94-9ed8-3ea9c3cf0773';
+    };
+    nsIDOMXULContainerItemElement: {
+        readonly name: 'nsIDOMXULContainerItemElement';
+        readonly number: '800a68c7-b854-4597-a436-3055ce5c5c96';
+    };
+    nsIDOMXULContainerElement: {
+        readonly name: 'nsIDOMXULContainerElement';
+        readonly number: 'b2bc96b8-31fc-42f4-937a-bd27291af40b';
+    };
+    nsIDOMXULControlElement: {
+        readonly name: 'nsIDOMXULControlElement';
+        readonly number: 'bdc1d047-6d22-4813-bc50-638ccb349c7d';
+    };
+    nsIDOMXULMenuListElement: {
+        readonly name: 'nsIDOMXULMenuListElement';
+        readonly number: '36c16a17-c0e9-4b35-951b-81a147314ef1';
+    };
+    nsIDOMXULMultiSelectControlElement: {
+        readonly name: 'nsIDOMXULMultiSelectControlElement';
+        readonly number: '40654a10-8204-4f06-9f21-7baa31c7b1dd';
+    };
+    nsIDOMXULRadioGroupElement: {
+        readonly name: 'nsIDOMXULRadioGroupElement';
+        readonly number: '2cc1d24b-ec9f-4e18-aa34-a298a9007f23';
+    };
+    nsIDOMXULRelatedElement: {
+        readonly name: 'nsIDOMXULRelatedElement';
+        readonly number: '9fbac05a-fb27-470d-8e5f-028b2dc54ad0';
+    };
+    nsIDOMXULSelectControlElement: {
+        readonly name: 'nsIDOMXULSelectControlElement';
+        readonly number: '';
+    };
+    nsIDOMXULSelectControlItemElement: {
+        readonly name: 'nsIDOMXULSelectControlItemElement';
+        readonly number: '5c6be58f-17df-4750-88a5-4a59ac28adc9';
+    };
+    nsINetDashboardCallback: {
+        readonly name: 'nsINetDashboardCallback';
+        readonly number: '19d7f24f-a95a-4fd9-87e2-d96e9e4b1f6d';
+    };
+    nsIDashboard: {
+        readonly name: 'nsIDashboard';
+        readonly number: 'c79eb3c6-091a-45a6-8544-5a8d1ab79537';
+    };
+    nsIDashboardEventNotifier: {
+        readonly name: 'nsIDashboardEventNotifier';
+        readonly number: '24fdfcbe-54cb-4997-8392-3c476126ea3b';
+    };
+    nsIDebug2: {
+        readonly name: 'nsIDebug2';
+        readonly number: '9641dc15-10fb-42e3-a285-18be90a5c10b';
+    };
+    nsIDeviceSensorData: {
+        readonly name: 'nsIDeviceSensorData';
+        readonly number: '0462247e-fe8c-4aa5-b675-3752547e485f';
+        readonly TYPE_ORIENTATION: 0;
+        readonly TYPE_ACCELERATION: 1;
+        readonly TYPE_PROXIMITY: 2;
+        readonly TYPE_LINEAR_ACCELERATION: 3;
+        readonly TYPE_GYROSCOPE: 4;
+        readonly TYPE_LIGHT: 5;
+        readonly TYPE_ROTATION_VECTOR: 6;
+        readonly TYPE_GAME_ROTATION_VECTOR: 7;
+    };
+    nsIDeviceSensors: {
+        readonly name: 'nsIDeviceSensors';
+        readonly number: 'e46e47c7-55ff-44c4-abce-21b14ba07f86';
+    };
+    nsIDialogParamBlock: {
+        readonly name: 'nsIDialogParamBlock';
+        readonly number: '';
+    };
+    nsIDirIndex: {
+        readonly name: 'nsIDirIndex';
+        readonly number: '';
+        readonly TYPE_UNKNOWN: 0;
+        readonly TYPE_DIRECTORY: 1;
+        readonly TYPE_FILE: 2;
+        readonly TYPE_SYMLINK: 3;
+    };
+    nsIDirIndexListener: {
+        readonly name: 'nsIDirIndexListener';
+        readonly number: 'fae4e9a8-1dd1-11b2-b53c-8f3aa1bbf8f5';
+    };
+    nsIDirIndexParser: {
+        readonly name: 'nsIDirIndexParser';
+        readonly number: '38e3066c-1dd2-11b2-9b59-8be515c1ee3f';
+    };
+    nsIDirectTaskDispatcher: {
+        readonly name: 'nsIDirectTaskDispatcher';
+        readonly number: 'e05bf0fe-94b7-4e28-8462-a8368da9c136';
+    };
+    nsIDirectoryEnumerator: {
+        readonly name: 'nsIDirectoryEnumerator';
+        readonly number: '31f7f4ae-6916-4f2d-a81e-926a4e3022ee';
+    };
+    nsIDirectoryServiceProvider: {
+        readonly name: 'nsIDirectoryServiceProvider';
+        readonly number: 'bbf8cab0-d43a-11d3-8cc2-00609792278c';
+    };
+    nsIDirectoryServiceProvider2: {
+        readonly name: 'nsIDirectoryServiceProvider2';
+        readonly number: '2f977d4b-5485-11d4-87e2-0010a4e75ef2';
+    };
+    nsIDirectoryService: {
+        readonly name: 'nsIDirectoryService';
+        readonly number: '57a66a60-d43a-11d3-8cc2-00609792278c';
+    };
+    nsIDisplayInfo: {
+        readonly name: 'nsIDisplayInfo';
+        readonly number: '615bc23d-6346-4b15-9c10-add002f140b6';
+    };
+    nsIDocShell: {
+        readonly name: 'nsIDocShell';
+        readonly number: '';
+    };
+    nsIDocShellTreeItem: {
+        readonly name: 'nsIDocShellTreeItem';
+        readonly number: '';
+        readonly typeChrome: 0;
+        readonly typeContent: 1;
+        readonly typeContentWrapper: 2;
+        readonly typeChromeWrapper: 3;
+        readonly typeAll: 0x7FFFFFFF;
+    };
+    nsIDocShellTreeOwner: {
+        readonly name: 'nsIDocShellTreeOwner';
+        readonly number: '0e3dc4b1-4cea-4a37-af71-79f0afd07574';
+    };
+    nsIDocumentEncoderNodeFixup: {
+        readonly name: 'nsIDocumentEncoderNodeFixup';
+        readonly number: '3d9371d8-a2ad-403e-8b0e-8885ad3562e3';
+    };
+    nsIDocumentEncoder: {
+        readonly name: 'nsIDocumentEncoder';
+        readonly number: '';
+    };
+    nsIDocumentLoader: {
+        readonly name: 'nsIDocumentLoader';
+        readonly number: 'bbe961ee-59e9-42bb-be50-0331979bb79f';
+    };
+    nsIDocumentLoaderFactory: {
+        readonly name: 'nsIDocumentLoaderFactory';
+        readonly number: 'e795239e-9d3c-47c4-b063-9e600fb3b287';
+    };
+    nsIDocumentStateListener: {
+        readonly name: 'nsIDocumentStateListener';
+        readonly number: '';
+    };
+    nsIDomainPolicy: {
+        readonly name: 'nsIDomainPolicy';
+        readonly number: '';
+    };
+    nsIDomainSet: {
+        readonly name: 'nsIDomainSet';
+        readonly number: '665c981b-0a0f-4229-ac06-a826e02d4f69';
+    };
+    nsIDownloader: {
+        readonly name: 'nsIDownloader';
+        readonly number: 'fafe41a9-a531-4d6d-89bc-588a6522fb4e';
+    };
+    nsIDownloadObserver: {
+        readonly name: 'nsIDownloadObserver';
+        readonly number: '44b3153e-a54e-4077-a527-b0325e40924e';
+    };
+    nsIDragService: {
+        readonly name: 'nsIDragService';
+        readonly number: 'ebd6b3a2-af16-43af-a698-3091a087dd62';
+        readonly DRAGDROP_ACTION_NONE: 0;
+        readonly DRAGDROP_ACTION_COPY: 1;
+        readonly DRAGDROP_ACTION_MOVE: 2;
+        readonly DRAGDROP_ACTION_LINK: 4;
+        readonly DRAGDROP_ACTION_UNINITIALIZED: 64;
+    };
+    nsIDragSession: {
+        readonly name: 'nsIDragSession';
+        readonly number: '25bce737-73f0-43c7-bc20-c71044a73c5a';
+    };
+    nsIDroppedLinkItem: {
+        readonly name: 'nsIDroppedLinkItem';
+        readonly number: '69E14F91-2E09-4CA6-A511-A715C99A2804';
+    };
+    nsIDroppedLinkHandler: {
+        readonly name: 'nsIDroppedLinkHandler';
+        readonly number: '21B5C25A-28A9-47BD-8431-FA9116305DED';
+    };
+    nsIE10SUtils: {
+        readonly name: 'nsIE10SUtils';
+        readonly number: '1e18680e-052d-4509-a17e-678f5c495e02';
+    };
+    nsIEarlyHintObserver: {
+        readonly name: 'nsIEarlyHintObserver';
+        readonly number: '';
+    };
+    nsIEdgeMigrationUtils: {
+        readonly name: 'nsIEdgeMigrationUtils';
+        readonly number: '9c7b7436-a17c-4c03-ba66-aeb5ae070126';
+    };
+    nsIEditActionListener: {
+        readonly name: 'nsIEditActionListener';
+        readonly number: '';
+    };
+    nsIEditingSession: {
+        readonly name: 'nsIEditingSession';
+        readonly number: '24f963d1-e6fc-43ea-a206-99ac5fcc5265';
+        readonly eEditorOK: 0;
+        readonly eEditorCreationInProgress: 1;
+        readonly eEditorErrorCantEditMimeType: 2;
+        readonly eEditorErrorFileNotFound: 3;
+        readonly eEditorErrorCantEditFramesets: 8;
+        readonly eEditorErrorUnknown: 9;
+    };
+    nsIEditor: {
+        readonly name: 'nsIEditor';
+        readonly number: '';
+        readonly eNone: 0;
+        readonly eNext: 1;
+        readonly ePrevious: 2;
+        readonly eNextWord: 3;
+        readonly ePreviousWord: 4;
+        readonly eToBeginningOfLine: 5;
+        readonly eToEndOfLine: 6;
+        readonly eStrip: 0;
+        readonly eNoStrip: 1;
+        readonly eEditorPlaintextMask: 0x0001;
+        readonly eEditorSingleLineMask: 0x0002;
+        readonly eEditorPasswordMask: 0x0004;
+        readonly eEditorReadonlyMask: 0x0008;
+        readonly eEditorMailMask: 0x0020;
+        readonly eEditorEnableWrapHackMask: 0x0040;
+        readonly eEditorAllowInteraction: 0x0200;
+        readonly eEditorRightToLeft: 0x0800;
+        readonly eEditorLeftToRight: 0x1000;
+        readonly eEditorSkipSpellCheck: 0x2000;
+        readonly eNewlinesPasteIntact: 0;
+        readonly eNewlinesPasteToFirst: 1;
+        readonly eNewlinesReplaceWithSpaces: 2;
+        readonly eNewlinesStrip: 3;
+        readonly eNewlinesReplaceWithCommas: 4;
+        readonly eNewlinesStripSurroundingWhitespace: 5;
+    };
+    nsIEditorMailSupport: {
+        readonly name: 'nsIEditorMailSupport';
+        readonly number: 'fdf23301-4a94-11d3-9ce4-9960496c41bc';
+    };
+    nsIEditorSpellCheck: {
+        readonly name: 'nsIEditorSpellCheck';
+        readonly number: '';
+        readonly FILTERTYPE_NORMAL: 1;
+        readonly FILTERTYPE_MAIL: 2;
+    };
+    nsIEditorSpellCheckCallback: {
+        readonly name: 'nsIEditorSpellCheckCallback';
+        readonly number: '5f0a4bab-8538-4074-89d3-2f0e866a1c0b';
+    };
+    nsIEffectiveTLDService: {
+        readonly name: 'nsIEffectiveTLDService';
+        readonly number: '68067eb5-ad8d-43cb-a043-1cc85ebe06e7';
+    };
+    nsIEmbeddingSiteWindow: {
+        readonly name: 'nsIEmbeddingSiteWindow';
+        readonly number: '0b976267-4aaa-4f36-a2d4-27b5ca8d73bb';
+        readonly DIM_FLAGS_POSITION: 1;
+        readonly DIM_FLAGS_SIZE_INNER: 2;
+        readonly DIM_FLAGS_SIZE_OUTER: 4;
+        readonly DIM_FLAGS_IGNORE_X: 8;
+        readonly DIM_FLAGS_IGNORE_Y: 16;
+        readonly DIM_FLAGS_IGNORE_CX: 32;
+        readonly DIM_FLAGS_IGNORE_CY: 64;
+    };
+    nsISupports: {
+        readonly name: 'nsISupports';
+        readonly number: '00000000-0000-0000-c000-000000000046';
+    };
+    nsIEncodedChannel: {
+        readonly name: 'nsIEncodedChannel';
+        readonly number: '29c29ce6-8ce4-45e6-8d60-36c8fa3e255b';
+    };
+    nsIEnterprisePolicies: {
+        readonly name: 'nsIEnterprisePolicies';
+        readonly number: '6a568972-cc91-4bf5-963e-3768f3319b8a';
+        readonly INACTIVE: 0;
+        readonly ACTIVE: 1;
+        readonly FAILED: 2;
+    };
+    nsIEnvironment: {
+        readonly name: 'nsIEnvironment';
+        readonly number: '101d5941-d820-4e85-a266-9a3469940807';
+    };
+    nsIEventListenerChange: {
+        readonly name: 'nsIEventListenerChange';
+        readonly number: '07222b02-da12-4cf4-b2f7-761da007a8d8';
+    };
+    nsIListenerChangeListener: {
+        readonly name: 'nsIListenerChangeListener';
+        readonly number: 'aa7c95f6-d3b5-44b3-9597-1d9f19b9c5f2';
+    };
+    nsIEventListenerInfo: {
+        readonly name: 'nsIEventListenerInfo';
+        readonly number: '11ba5fd7-8db2-4b1a-9f67-342cfa11afad';
+    };
+    nsIEventListenerService: {
+        readonly name: 'nsIEventListenerService';
+        readonly number: '77aab5f7-213d-4db4-9f22-e46dfb774f15';
+    };
+    nsIEventSourceEventListener: {
+        readonly name: 'nsIEventSourceEventListener';
+        readonly number: 'd2cc6222-b7f2-490d-adc2-497d89878fa2';
+    };
+    nsIEventSourceEventService: {
+        readonly name: 'nsIEventSourceEventService';
+        readonly number: 'c0378840-8a74-4b0a-9225-c3a0ac1fac41';
+    };
+    nsIEventTarget: {
+        readonly name: 'nsIEventTarget';
+        readonly number: '';
+        readonly DISPATCH_NORMAL: 0;
+        readonly DISPATCH_SYNC: 1;
+        readonly DISPATCH_AT_END: 2;
+        readonly DISPATCH_EVENT_MAY_BLOCK: 4;
+    };
+    nsIStackFrame: {
+        readonly name: 'nsIStackFrame';
+        readonly number: '';
+    };
+    nsIException: {
+        readonly name: 'nsIException';
+        readonly number: '4371b5bf-6845-487f-8d9d-3f1e4a9badd2';
+    };
+    nsIExpatSink: {
+        readonly name: 'nsIExpatSink';
+        readonly number: '01f681af-0f22-4725-a914-0d396114daf0';
+    };
+    nsIExternalHelperAppService: {
+        readonly name: 'nsIExternalHelperAppService';
+        readonly number: '1E4F3AE1-B737-431F-A95D-31FA8DA70199';
+    };
+    nsPIExternalAppLauncher: {
+        readonly name: 'nsPIExternalAppLauncher';
+        readonly number: '6613e2e7-feab-4e3a-bb1f-b03200d544ec';
+    };
+    nsIHelperAppLauncher: {
+        readonly name: 'nsIHelperAppLauncher';
+        readonly number: '';
+    };
+    nsIExternalProtocolHandler: {
+        readonly name: 'nsIExternalProtocolHandler';
+        readonly number: '0e61f3b2-34d7-4c79-bfdc-4860bc7341b7';
+    };
+    nsIExternalProtocolService: {
+        readonly name: 'nsIExternalProtocolService';
+        readonly number: '70f93b7a-3ec6-4bcb-b093-92d9984c9f83';
+    };
+    nsIFOG: {
+        readonly name: 'nsIFOG';
+        readonly number: '98d0e975-9cad-4ce3-ae2f-f878b8be6307';
+    };
+    nsIFactory: {
+        readonly name: 'nsIFactory';
+        readonly number: '1bb40a56-9223-41e6-97d4-da97bdeb6a4d';
+    };
+    nsIFaviconService: {
+        readonly name: 'nsIFaviconService';
+        readonly number: 'e81e0b0c-b9f1-4c2e-8f3c-b809933cf73c';
+        readonly FAVICON_LOAD_PRIVATE: 1;
+        readonly FAVICON_LOAD_NON_PRIVATE: 2;
+        readonly MAX_FAVICON_BUFFER_SIZE: 65536;
+    };
+    nsIFaviconDataCallback: {
+        readonly name: 'nsIFaviconDataCallback';
+        readonly number: 'c85e5c82-b70f-4621-9528-beb2aa47fb44';
+    };
+    nsIFile: {
+        readonly name: 'nsIFile';
+        readonly number: '';
+        readonly NORMAL_FILE_TYPE: 0;
+        readonly DIRECTORY_TYPE: 1;
+        readonly OS_READAHEAD: 0x40000000;
+        readonly DELETE_ON_CLOSE: 0x80000000;
+    };
+    nsIFileChannel: {
+        readonly name: 'nsIFileChannel';
+        readonly number: '06169120-136d-45a5-b535-498f1f755ab7';
+    };
+    nsIFilePickerShownCallback: {
+        readonly name: 'nsIFilePickerShownCallback';
+        readonly number: '0d79adad-b244-49A5-9997-2a8cad93fc44';
+    };
+    nsIFilePicker: {
+        readonly name: 'nsIFilePicker';
+        readonly number: '9285b984-02d3-46b4-9514-7da8c471a747';
+        readonly modeOpen: 0;
+        readonly modeSave: 1;
+        readonly modeGetFolder: 2;
+        readonly modeOpenMultiple: 3;
+        readonly returnOK: 0;
+        readonly returnCancel: 1;
+        readonly returnReplace: 2;
+        readonly filterAll: 0x001;
+        readonly filterHTML: 0x002;
+        readonly filterText: 0x004;
+        readonly filterImages: 0x008;
+        readonly filterXML: 0x010;
+        readonly filterXUL: 0x020;
+        readonly filterApps: 0x040;
+        readonly filterAllowURLs: 0x080;
+        readonly filterAudio: 0x100;
+        readonly filterVideo: 0x200;
+        readonly captureNone: 0;
+        readonly captureDefault: 1;
+        readonly captureUser: 2;
+        readonly captureEnv: 3;
+    };
+    nsIFileProtocolHandler: {
+        readonly name: 'nsIFileProtocolHandler';
+        readonly number: '1fb25bd5-4354-4dcd-8d97-621b7b3ed2e4';
+    };
+    nsIFileInputStream: {
+        readonly name: 'nsIFileInputStream';
+        readonly number: 'e3d56a20-c7ec-11d3-8cda-0060b0fc14a3';
+    };
+    nsIFileOutputStream: {
+        readonly name: 'nsIFileOutputStream';
+        readonly number: 'e734cac9-1295-4e6f-9684-3ac4e1f91063';
+    };
+    nsIFileRandomAccessStream: {
+        readonly name: 'nsIFileRandomAccessStream';
+        readonly number: '82cf605a-8393-4550-83ab-43cd5578e006';
+    };
+    nsIFileMetadata: {
+        readonly name: 'nsIFileMetadata';
+        readonly number: '07f679e4-9601-4bd1-b510-cd3852edb881';
+    };
+    nsIAsyncFileMetadata: {
+        readonly name: 'nsIAsyncFileMetadata';
+        readonly number: 'de15b80b-29ba-4b7f-9220-a3d75b17ae8c';
+    };
+    nsIFileMetadataCallback: {
+        readonly name: 'nsIFileMetadataCallback';
+        readonly number: 'd01c7ead-7ba3-4726-b399-618ec8ec7057';
+    };
+    nsIFileURL: {
+        readonly name: 'nsIFileURL';
+        readonly number: 'e91ac988-27c2-448b-b1a1-3822e1ef1987';
+    };
+    nsIFileURLMutator: {
+        readonly name: 'nsIFileURLMutator';
+        readonly number: 'a588b6f2-d2b9-4024-84c7-be3368546b57';
+    };
+    nsIFinalizationWitnessService: {
+        readonly name: 'nsIFinalizationWitnessService';
+        readonly number: '15686f9d-483e-4361-98cd-37f1e8f1e61d';
+    };
+    nsIFind: {
+        readonly name: 'nsIFind';
+        readonly number: '40aba110-2a56-4678-be90-e2c17a9ae7d7';
+    };
+    nsIFindService: {
+        readonly name: 'nsIFindService';
+        readonly number: '5060b801-340e-11d5-be5b-b3e063ec6a3c';
+    };
+    nsIFocusManager: {
+        readonly name: 'nsIFocusManager';
+        readonly number: '86e1f1e1-365d-493b-b52a-a649f3f311dc';
+        readonly FLAG_RAISE: 1;
+        readonly FLAG_NOSCROLL: 2;
+        readonly FLAG_NOSWITCHFRAME: 4;
+        readonly FLAG_NOPARENTFRAME: 8;
+        readonly FLAG_NONSYSTEMCALLER: 16;
+        readonly FLAG_BYMOUSE: 0x1000;
+        readonly FLAG_BYKEY: 0x2000;
+        readonly FLAG_BYMOVEFOCUS: 0x4000;
+        readonly FLAG_NOSHOWRING: 0x8000;
+        readonly FLAG_SHOWRING: 0x100000;
+        readonly FLAG_BYTOUCH: 0x200000;
+        readonly FLAG_BYJS: 0x400000;
+        readonly FLAG_BYLONGPRESS: 0x800000;
+        readonly MOVEFOCUS_FORWARD: 1;
+        readonly MOVEFOCUS_BACKWARD: 2;
+        readonly MOVEFOCUS_FORWARDDOC: 3;
+        readonly MOVEFOCUS_BACKWARDDOC: 4;
+        readonly MOVEFOCUS_FIRST: 5;
+        readonly MOVEFOCUS_LAST: 6;
+        readonly MOVEFOCUS_ROOT: 7;
+        readonly MOVEFOCUS_CARET: 8;
+        readonly MOVEFOCUS_FIRSTDOC: 9;
+        readonly MOVEFOCUS_LASTDOC: 10;
+    };
+    nsIFontEnumerator: {
+        readonly name: 'nsIFontEnumerator';
+        readonly number: '924d98d9-3518-4cb4-8708-c74fe8e3ec3c';
+    };
+    nsIFontLoadCompleteCallback: {
+        readonly name: 'nsIFontLoadCompleteCallback';
+        readonly number: '302dbf09-079b-4648-8a06-a0486c1749c0';
+    };
+    nsIForcePendingChannel: {
+        readonly name: 'nsIForcePendingChannel';
+        readonly number: '2ac3e1ca-049f-44c3-a519-f0681f51e9b1';
+    };
+    nsIFormAutoComplete: {
+        readonly name: 'nsIFormAutoComplete';
+        readonly number: 'bfd9b82b-0ab3-4b6b-9e54-aa961ff4b732';
+    };
+    nsIFormAutoCompleteObserver: {
+        readonly name: 'nsIFormAutoCompleteObserver';
+        readonly number: '';
+    };
+    nsIFormFillController: {
+        readonly name: 'nsIFormFillController';
+        readonly number: '07f0a0dc-f6e9-4cdd-a55f-56d770523a4c';
+    };
+    nsIFormPOSTActionChannel: {
+        readonly name: 'nsIFormPOSTActionChannel';
+        readonly number: 'fc826b53-0db8-42b4-aa6a-5dd2cfca52a4';
+    };
+    nsIFormatConverter: {
+        readonly name: 'nsIFormatConverter';
+        readonly number: '948A0023-E3A7-11d2-96CF-0060B0FB9956';
+    };
+    nsIGIOMimeApp: {
+        readonly name: 'nsIGIOMimeApp';
+        readonly number: 'ca6bad0c-8a48-48ac-82c7-27bb8f510fbe';
+        readonly EXPECTS_URIS: 0;
+        readonly EXPECTS_PATHS: 1;
+        readonly EXPECTS_URIS_FOR_NON_FILES: 2;
+    };
+    nsIGIOService: {
+        readonly name: 'nsIGIOService';
+        readonly number: 'eda22a30-84e1-4e16-9ca0-cd1553c2b34a';
+    };
+    nsIGNOMEShellService: {
+        readonly name: 'nsIGNOMEShellService';
+        readonly number: '2ce5c803-edcd-443d-98eb-ceba86d02d13';
+    };
+    nsIGSettingsCollection: {
+        readonly name: 'nsIGSettingsCollection';
+        readonly number: '16d5b0ed-e756-4f1b-a8ce-9132e869acd8';
+    };
+    nsIGSettingsService: {
+        readonly name: 'nsIGSettingsService';
+        readonly number: '849c088b-57d1-4f24-b7b2-3dc4acb04c0a';
+    };
+    nsIGeolocationUpdate: {
+        readonly name: 'nsIGeolocationUpdate';
+        readonly number: '643dc5e9-b911-4b2c-8d44-603162696baf';
+    };
+    nsIGeolocationProvider: {
+        readonly name: 'nsIGeolocationProvider';
+        readonly number: 'AC4A133B-9F92-4F7C-B369-D40CB6B17650';
+    };
+    nsIGfxInfo: {
+        readonly name: 'nsIGfxInfo';
+        readonly number: '1accd618-4c80-4703-9d29-ecf257d397c8';
+        readonly FEATURE_DIRECT2D: 1;
+        readonly FEATURE_DIRECT3D_9_LAYERS: 2;
+        readonly FEATURE_DIRECT3D_10_LAYERS: 3;
+        readonly FEATURE_DIRECT3D_10_1_LAYERS: 4;
+        readonly FEATURE_OPENGL_LAYERS: 5;
+        readonly FEATURE_WEBGL_OPENGL: 6;
+        readonly FEATURE_WEBGL_ANGLE: 7;
+        readonly UNUSED_FEATURE_WEBGL_MSAA: 8;
+        readonly FEATURE_STAGEFRIGHT: 9;
+        readonly FEATURE_WEBRTC_HW_ACCELERATION_H264: 10;
+        readonly FEATURE_DIRECT3D_11_LAYERS: 11;
+        readonly FEATURE_HARDWARE_VIDEO_DECODING: 12;
+        readonly FEATURE_DIRECT3D_11_ANGLE: 13;
+        readonly FEATURE_WEBRTC_HW_ACCELERATION_ENCODE: 14;
+        readonly FEATURE_WEBRTC_HW_ACCELERATION_DECODE: 15;
+        readonly FEATURE_CANVAS2D_ACCELERATION: 16;
+        readonly FEATURE_VP8_HW_DECODE: 17;
+        readonly FEATURE_VP9_HW_DECODE: 18;
+        readonly FEATURE_DX_INTEROP2: 19;
+        readonly FEATURE_GPU_PROCESS: 20;
+        readonly FEATURE_WEBGL2: 21;
+        readonly FEATURE_D3D11_KEYED_MUTEX: 22;
+        readonly FEATURE_WEBRENDER: 23;
+        readonly FEATURE_DX_NV12: 24;
+        readonly FEATURE_DX_P010: 25;
+        readonly FEATURE_DX_P016: 26;
+        readonly FEATURE_GL_SWIZZLE: 27;
+        readonly FEATURE_WEBRENDER_COMPOSITOR: 28;
+        readonly FEATURE_WEBRENDER_SCISSORED_CACHE_CLEARS: 29;
+        readonly FEATURE_ALLOW_WEBGL_OUT_OF_PROCESS: 30;
+        readonly FEATURE_THREADSAFE_GL: 31;
+        readonly FEATURE_WEBRENDER_OPTIMIZED_SHADERS: 32;
+        readonly FEATURE_X11_EGL: 33;
+        readonly FEATURE_DMABUF: 34;
+        readonly FEATURE_WEBRENDER_SHADER_CACHE: 35;
+        readonly FEATURE_WEBRENDER_PARTIAL_PRESENT: 36;
+        readonly FEATURE_WEBGPU: 37;
+        readonly FEATURE_VIDEO_OVERLAY: 38;
+        readonly FEATURE_HW_DECODED_VIDEO_ZERO_COPY: 39;
+        readonly FEATURE_DMABUF_SURFACE_EXPORT: 40;
+        readonly FEATURE_REUSE_DECODER_DEVICE: 41;
+        readonly FEATURE_BACKDROP_FILTER: 42;
+        readonly FEATURE_MAX_VALUE: "FEATURE_BACKDROP_FILTER";
+        readonly FEATURE_STATUS_OK: 1;
+        readonly FEATURE_STATUS_UNKNOWN: 2;
+        readonly FEATURE_BLOCKED_DRIVER_VERSION: 3;
+        readonly FEATURE_BLOCKED_DEVICE: 4;
+        readonly FEATURE_DISCOURAGED: 5;
+        readonly FEATURE_BLOCKED_OS_VERSION: 6;
+        readonly FEATURE_BLOCKED_MISMATCHED_VERSION: 7;
+        readonly FEATURE_DENIED: 8;
+        readonly FEATURE_ALLOW_ALWAYS: 9;
+        readonly FEATURE_ALLOW_QUALIFIED: 10;
+        readonly FEATURE_BLOCKED_PLATFORM_TEST: 11;
+    };
+    nsIGfxInfoDebug: {
+        readonly name: 'nsIGfxInfoDebug';
+        readonly number: 'ca7b0bc7-c67c-4b79-8270-ed7ba002af08';
+    };
+    nsIGleanBoolean: {
+        readonly name: 'nsIGleanBoolean';
+        readonly number: 'd3180fe0-19fa-11eb-8b6f-0800200c9a66';
+    };
+    nsIGleanDatetime: {
+        readonly name: 'nsIGleanDatetime';
+        readonly number: 'aa15fd20-1e8a-11eb-9bec-0800200c9a66';
+    };
+    nsIGleanCounter: {
+        readonly name: 'nsIGleanCounter';
+        readonly number: '05b89d2a-d57c-11ea-82da-3f63399a6f5a';
+    };
+    nsIGleanTimingDistribution: {
+        readonly name: 'nsIGleanTimingDistribution';
+        readonly number: '92e14730-9b5f-45a1-b018-f588d0b964d8';
+    };
+    nsIGleanMemoryDistribution: {
+        readonly name: 'nsIGleanMemoryDistribution';
+        readonly number: 'eea5ed46-16ba-46cd-bb1f-504581987fe1';
+    };
+    nsIGleanCustomDistribution: {
+        readonly name: 'nsIGleanCustomDistribution';
+        readonly number: '45cc016f-c1d5-4d54-aaa5-a802cf65f23b';
+    };
+    nsIGleanPingTestCallback: {
+        readonly name: 'nsIGleanPingTestCallback';
+        readonly number: 'e5447f62-4b03-497c-81e9-6ab683d20380';
+    };
+    nsIGleanPing: {
+        readonly name: 'nsIGleanPing';
+        readonly number: '5223a48b-687d-47ff-a629-fd4a72d1ecfa';
+    };
+    nsIGleanString: {
+        readonly name: 'nsIGleanString';
+        readonly number: 'd84a3555-46f1-48c1-9122-e8e88b069d2b';
+    };
+    nsIGleanStringList: {
+        readonly name: 'nsIGleanStringList';
+        readonly number: '46751205-2ac7-47dc-91d2-ef4a95ef2af9';
+    };
+    nsIGleanTimespan: {
+        readonly name: 'nsIGleanTimespan';
+        readonly number: '2586530c-030f-11eb-93cb-cbf30d25225a';
+    };
+    nsIGleanUuid: {
+        readonly name: 'nsIGleanUuid';
+        readonly number: '395700e7-06f6-46be-adcc-ea58977fda6d';
+    };
+    nsIGleanEvent: {
+        readonly name: 'nsIGleanEvent';
+        readonly number: '1b01424a-1f55-11eb-92a5-0754f6c3f240';
+    };
+    nsIGleanQuantity: {
+        readonly name: 'nsIGleanQuantity';
+        readonly number: '0558c1b2-2cb1-4e21-a0a0-6a91a35ef219';
+    };
+    nsIGleanDenominator: {
+        readonly name: 'nsIGleanDenominator';
+        readonly number: '394d9d3b-9e7e-48cc-b76c-a89a51830da3';
+    };
+    nsIGleanNumerator: {
+        readonly name: 'nsIGleanNumerator';
+        readonly number: '153fff71-7edd-49b4-a166-4697aa89c7a1';
+    };
+    nsIGleanRate: {
+        readonly name: 'nsIGleanRate';
+        readonly number: '920cf631-2b1e-4efe-ae2e-f03277c3112a';
+    };
+    nsIGleanUrl: {
+        readonly name: 'nsIGleanUrl';
+        readonly number: 'a59672c4-bc48-4bfe-8f9c-6f408a59d819';
+    };
+    nsIGtkTaskbarProgress: {
+        readonly name: 'nsIGtkTaskbarProgress';
+        readonly number: '39f6fc5a-2386-4bc6-941c-d7479253bc3f';
+    };
+    nsIHTMLAbsPosEditor: {
+        readonly name: 'nsIHTMLAbsPosEditor';
+        readonly number: '91375f52-20e6-4757-9835-eb04fabe5498';
+    };
+    nsIHTMLEditor: {
+        readonly name: 'nsIHTMLEditor';
+        readonly number: '87ee993e-985f-4a43-a974-0d9512da2fb0';
+        readonly eLeft: 0;
+        readonly eCenter: 1;
+        readonly eRight: 2;
+        readonly eJustify: 3;
+    };
+    nsIHTMLInlineTableEditor: {
+        readonly name: 'nsIHTMLInlineTableEditor';
+        readonly number: 'eda2e65c-a758-451f-9b05-77cb8de74ed2';
+    };
+    nsIHTMLObjectResizer: {
+        readonly name: 'nsIHTMLObjectResizer';
+        readonly number: '8b396020-69d3-451f-80c1-1a96a7da25a9';
+        readonly eTopLeft: 0;
+        readonly eTop: 1;
+        readonly eTopRight: 2;
+        readonly eLeft: 3;
+        readonly eRight: 4;
+        readonly eBottomLeft: 5;
+        readonly eBottom: 6;
+        readonly eBottomRight: 7;
+    };
+    nsIHandlerService: {
+        readonly name: 'nsIHandlerService';
+        readonly number: '53f0ad17-ec62-46a1-adbc-efccc06babcd';
+    };
+    nsIHangDetails: {
+        readonly name: 'nsIHangDetails';
+        readonly number: '23d63fff-38d6-4003-9c57-2c90aca1180a';
+    };
+    nsIHangReport: {
+        readonly name: 'nsIHangReport';
+        readonly number: '5fcffbb9-be62-49b1-b8a1-36e820787a74';
+    };
+    nsIHapticFeedback: {
+        readonly name: 'nsIHapticFeedback';
+        readonly number: '91917c98-a8f3-4c98-8f10-4afb872f54c7';
+        readonly ShortPress: 0;
+        readonly LongPress: 1;
+    };
+    nsIHelperAppLauncherDialog: {
+        readonly name: 'nsIHelperAppLauncherDialog';
+        readonly number: 'bfc739f3-8d75-4034-a6f8-1039a5996bad';
+        readonly REASON_CANTHANDLE: 0;
+        readonly REASON_SERVERREQUEST: 1;
+        readonly REASON_TYPESNIFFED: 2;
+    };
+    nsIHttpActivityObserver: {
+        readonly name: 'nsIHttpActivityObserver';
+        readonly number: '412880C8-6C36-48d8-BF8F-84F91F892503';
+        readonly ACTIVITY_TYPE_SOCKET_TRANSPORT: 0x0001;
+        readonly ACTIVITY_TYPE_HTTP_TRANSACTION: 0x0002;
+        readonly ACTIVITY_TYPE_HTTP_CONNECTION: 0x0003;
+        readonly ACTIVITY_SUBTYPE_REQUEST_HEADER: 0x5001;
+        readonly ACTIVITY_SUBTYPE_REQUEST_BODY_SENT: 0x5002;
+        readonly ACTIVITY_SUBTYPE_RESPONSE_START: 0x5003;
+        readonly ACTIVITY_SUBTYPE_RESPONSE_HEADER: 0x5004;
+        readonly ACTIVITY_SUBTYPE_RESPONSE_COMPLETE: 0x5005;
+        readonly ACTIVITY_SUBTYPE_TRANSACTION_CLOSE: 0x5006;
+        readonly ACTIVITY_SUBTYPE_PROXY_RESPONSE_HEADER: 0x5007;
+        readonly ACTIVITY_SUBTYPE_DNSANDSOCKET_CREATED: 0x5008;
+        readonly ACTIVITY_SUBTYPE_SPECULATIVE_DNSANDSOCKET_CREATED: 0x5009;
+        readonly ACTIVITY_SUBTYPE_ECH_SET: 0x500A;
+        readonly ACTIVITY_SUBTYPE_CONNECTION_CREATED: 0x500B;
+    };
+    nsIHttpActivityDistributor: {
+        readonly name: 'nsIHttpActivityDistributor';
+        readonly number: '7C512CB8-582A-4625-B5B6-8639755271B5';
+    };
+    nsIHttpAuthManager: {
+        readonly name: 'nsIHttpAuthManager';
+        readonly number: '54f90444-c52b-4d2d-8916-c59a2bb25938';
+    };
+    nsIHttpAuthenticableChannel: {
+        readonly name: 'nsIHttpAuthenticableChannel';
+        readonly number: '';
+    };
+    nsIHttpAuthenticator: {
+        readonly name: 'nsIHttpAuthenticator';
+        readonly number: 'fef7db8a-a4e2-49d1-9685-19ed7e309b7d';
+    };
+    nsIHttpAuthenticatorCallback: {
+        readonly name: 'nsIHttpAuthenticatorCallback';
+        readonly number: 'd989cb03-e446-4086-b9e6-46842cb97bd5';
+    };
+    nsIHttpChannel: {
+        readonly name: 'nsIHttpChannel';
+        readonly number: '';
+    };
+    nsIHttpChannelAuthProvider: {
+        readonly name: 'nsIHttpChannelAuthProvider';
+        readonly number: '788f331b-2e1f-436c-b405-4f88a31a105b';
+    };
+    nsIHttpChannelChild: {
+        readonly name: 'nsIHttpChannelChild';
+        readonly number: 'd02b96ed-2789-4f42-a25c-7abe63de7c18';
+    };
+    nsIHttpUpgradeListener: {
+        readonly name: 'nsIHttpUpgradeListener';
+        readonly number: '';
+    };
+    nsIHttpChannelInternal: {
+        readonly name: 'nsIHttpChannelInternal';
+        readonly number: '4e28263d-1e03-46f4-aa5c-9512f91957f9';
+        readonly REDIRECT_MODE_FOLLOW: 0;
+        readonly REDIRECT_MODE_ERROR: 1;
+        readonly REDIRECT_MODE_MANUAL: 2;
+        readonly FETCH_CACHE_MODE_DEFAULT: 0;
+        readonly FETCH_CACHE_MODE_NO_STORE: 1;
+        readonly FETCH_CACHE_MODE_RELOAD: 2;
+        readonly FETCH_CACHE_MODE_NO_CACHE: 3;
+        readonly FETCH_CACHE_MODE_FORCE_CACHE: 4;
+        readonly FETCH_CACHE_MODE_ONLY_IF_CACHED: 5;
+    };
+    nsIHttpHeaderVisitor: {
+        readonly name: 'nsIHttpHeaderVisitor';
+        readonly number: '35412859-b9d9-423c-8866-2d4559fdd2be';
+    };
+    nsIHttpProtocolHandler: {
+        readonly name: 'nsIHttpProtocolHandler';
+        readonly number: 'c48126d9-2ddd-485b-a51a-378e917e75f8';
+    };
+    nsIHttpPushListener: {
+        readonly name: 'nsIHttpPushListener';
+        readonly number: '0d6ce59c-ad5d-4520-b4d3-09664868f279';
+    };
+    nsIHttpServer: {
+        readonly name: 'nsIHttpServer';
+        readonly number: 'cea8812e-faa6-4013-9396-f9936cbb74ec';
+    };
+    nsIHttpServerStoppedCallback: {
+        readonly name: 'nsIHttpServerStoppedCallback';
+        readonly number: '925a6d33-9937-4c63-abe1-a1c56a986455';
+    };
+    nsIHttpServerIdentity: {
+        readonly name: 'nsIHttpServerIdentity';
+        readonly number: 'a89de175-ae8e-4c46-91a5-0dba99bbd284';
+    };
+    nsIHttpRequestHandler: {
+        readonly name: 'nsIHttpRequestHandler';
+        readonly number: '2bbb4db7-d285-42b3-a3ce-142b8cc7e139';
+    };
+    nsIHttpRequest: {
+        readonly name: 'nsIHttpRequest';
+        readonly number: '978cf30e-ad73-42ee-8f22-fe0aaf1bf5d2';
+    };
+    nsIHttpResponse: {
+        readonly name: 'nsIHttpResponse';
+        readonly number: '1acd16c2-dc59-42fa-9160-4f26c43c1c21';
+    };
+    nsIHttpsOnlyModePermission: {
+        readonly name: 'nsIHttpsOnlyModePermission';
+        readonly number: '73f4f039-d6ff-41a7-9eb3-00db57b0b7f4';
+        readonly LOAD_INSECURE_DEFAULT: 0;
+        readonly LOAD_INSECURE_ALLOW: 1;
+        readonly LOAD_INSECURE_BLOCK: 2;
+        readonly LOAD_INSECURE_ALLOW_SESSION: 9;
+    };
+    nsIIDBPermissionsRequest: {
+        readonly name: 'nsIIDBPermissionsRequest';
+        readonly number: 'c3493c65-0530-496e-995c-bcd38dbfce21';
+    };
+    nsIIDNService: {
+        readonly name: 'nsIIDNService';
+        readonly number: 'a592a60e-3621-4f19-a318-2bf233cfad3e';
+    };
+    nsIINIParser: {
+        readonly name: 'nsIINIParser';
+        readonly number: '7eb955f6-3e78-4d39-b72f-c1bf12a94bce';
+    };
+    nsIINIParserWriter: {
+        readonly name: 'nsIINIParserWriter';
+        readonly number: 'b67bb24b-31a3-4a6a-a5d9-0485c9af5a04';
+    };
+    nsIINIParserFactory: {
+        readonly name: 'nsIINIParserFactory';
+        readonly number: 'ccae7ea5-1218-4b51-aecb-c2d8ecd46af9';
+    };
+    nsIIOService: {
+        readonly name: 'nsIIOService';
+        readonly number: '4286de5a-b2ea-446f-8f70-e2a461f42694';
+    };
+    nsIIOServiceInternal: {
+        readonly name: 'nsIIOServiceInternal';
+        readonly number: '6633c0bf-d97a-428f-8ece-cb6a655fb95a';
+    };
+    nsIIOUtil: {
+        readonly name: 'nsIIOUtil';
+        readonly number: 'e8152f7f-4209-4c63-ad23-c3d2aa0c5a49';
+    };
+    nsIMozIconURI: {
+        readonly name: 'nsIMozIconURI';
+        readonly number: 'f8fe5ef2-5f2b-43f3-857d-5b64d192c427';
+    };
+    nsIIdentityCredentialPromptService: {
+        readonly name: 'nsIIdentityCredentialPromptService';
+        readonly number: '936007db-a957-4f1d-a23d-f7d9403223e6';
+    };
+    nsIIdentityCredentialStorageService: {
+        readonly name: 'nsIIdentityCredentialStorageService';
+        readonly number: '029823d0-0448-46c5-af1f-25cd4501d0d7';
+    };
+    nsIIdlePeriod: {
+        readonly name: 'nsIIdlePeriod';
+        readonly number: '21dd35a2-eae9-4bd8-b470-0dfa35a0e3b9';
+    };
+    nsIImageLoadingContent: {
+        readonly name: 'nsIImageLoadingContent';
+        readonly number: '0357123d-9224-4d12-a47e-868c32689777';
+        readonly CURRENT_REQUEST: 0;
+        readonly PENDING_REQUEST: 1;
+    };
+    nsIIncrementalDownload: {
+        readonly name: 'nsIIncrementalDownload';
+        readonly number: '6687823f-56c4-461d-93a1-7f6cb7dfbfba';
+    };
+    nsIIncrementalStreamLoaderObserver: {
+        readonly name: 'nsIIncrementalStreamLoaderObserver';
+        readonly number: '07c3d2cc-5454-4618-9f4f-cd93de9504a4';
+    };
+    nsIIncrementalStreamLoader: {
+        readonly name: 'nsIIncrementalStreamLoader';
+        readonly number: 'a023b060-ba23-431a-b449-2dd63e220554';
+    };
+    nsIInlineSpellChecker: {
+        readonly name: 'nsIInlineSpellChecker';
+        readonly number: 'b7b7a77c-40c4-4196-b0b7-b0338243b3fe';
+    };
+    nsIInputListAutoComplete: {
+        readonly name: 'nsIInputListAutoComplete';
+        readonly number: '0e33de3e-4faf-4a1a-b96e-24115b8bfd45';
+    };
+    nsIInputStream: {
+        readonly name: 'nsIInputStream';
+        readonly number: '';
+    };
+    nsIInputStreamChannel: {
+        readonly name: 'nsIInputStreamChannel';
+        readonly number: 'ea730238-4bfd-4015-8489-8f264d05b343';
+    };
+    nsIInputStreamLength: {
+        readonly name: 'nsIInputStreamLength';
+        readonly number: '452d059f-9a9c-4434-8839-e10d1405647c';
+    };
+    nsIAsyncInputStreamLength: {
+        readonly name: 'nsIAsyncInputStreamLength';
+        readonly number: 'b63f9ecf-4668-44a3-93bd-72dbc65a6125';
+    };
+    nsIInputStreamLengthCallback: {
+        readonly name: 'nsIInputStreamLengthCallback';
+        readonly number: '9c0c13b9-1b33-445d-8adb-a8a7866a6c06';
+    };
+    nsIInputStreamPriority: {
+        readonly name: 'nsIInputStreamPriority';
+        readonly number: 'daa45b24-98ee-4eb2-9cec-aad0bc023e9d';
+    };
+    nsIInputStreamPump: {
+        readonly name: 'nsIInputStreamPump';
+        readonly number: '400F5468-97E7-4d2b-9C65-A82AECC7AE82';
+    };
+    nsIInputStreamTee: {
+        readonly name: 'nsIInputStreamTee';
+        readonly number: '90a9d790-3bca-421e-a73b-98f68e13c917';
+    };
+    nsIInterceptionInfo: {
+        readonly name: 'nsIInterceptionInfo';
+        readonly number: '8b9cd81f-3cd1-4f6a-9086-92a9bbf055f4';
+    };
+    nsIInterfaceRequestor: {
+        readonly name: 'nsIInterfaceRequestor';
+        readonly number: '';
+    };
+    nsIJARChannel: {
+        readonly name: 'nsIJARChannel';
+        readonly number: 'e72b179b-d5df-4d87-b5de-fd73a65c60f6';
+    };
+    nsIJARURI: {
+        readonly name: 'nsIJARURI';
+        readonly number: '646a508c-f786-4e14-be6d-8dda2a633c60';
+    };
+    nsIJARURIMutator: {
+        readonly name: 'nsIJARURIMutator';
+        readonly number: 'd66df117-eda7-4324-b4e4-1f670ff6718e';
+    };
+    nsIJSInspector: {
+        readonly name: 'nsIJSInspector';
+        readonly number: '6758d0d7-e96a-4c5c-bca8-3bcbe5a15943';
+    };
+    nsIJumpListCommittedCallback: {
+        readonly name: 'nsIJumpListCommittedCallback';
+        readonly number: '5131a62a-e99f-4631-9138-751f8aad1ae4';
+    };
+    nsIJumpListBuilder: {
+        readonly name: 'nsIJumpListBuilder';
+        readonly number: '';
+        readonly JUMPLIST_CATEGORY_TASKS: 0;
+        readonly JUMPLIST_CATEGORY_RECENT: 1;
+        readonly JUMPLIST_CATEGORY_FREQUENT: 2;
+        readonly JUMPLIST_CATEGORY_CUSTOMLIST: 3;
+    };
+    nsIJumpListItem: {
+        readonly name: 'nsIJumpListItem';
+        readonly number: 'ACB8FB3C-E1B0-4044-8A50-E52C3E7C1057';
+        readonly JUMPLIST_ITEM_EMPTY: 0;
+        readonly JUMPLIST_ITEM_SEPARATOR: 1;
+        readonly JUMPLIST_ITEM_LINK: 2;
+        readonly JUMPLIST_ITEM_SHORTCUT: 3;
+    };
+    nsIJumpListSeparator: {
+        readonly name: 'nsIJumpListSeparator';
+        readonly number: '69A2D5C5-14DC-47da-925D-869E0BD64D27';
+    };
+    nsIJumpListLink: {
+        readonly name: 'nsIJumpListLink';
+        readonly number: '76EA47B1-C797-49b3-9F18-5E740A688524';
+    };
+    nsIJumpListShortcut: {
+        readonly name: 'nsIJumpListShortcut';
+        readonly number: 'CBE3A37C-BCE1-4fec-80A5-5FFBC7F33EEA';
+    };
+    nsIKeyValueService: {
+        readonly name: 'nsIKeyValueService';
+        readonly number: '46c893dd-4c14-4de0-b33d-a1be18c6d062';
+    };
+    nsIKeyValueDatabase: {
+        readonly name: 'nsIKeyValueDatabase';
+        readonly number: 'c449398e-174c-425b-8195-da6aa0ccd9a5';
+    };
+    nsIKeyValuePair: {
+        readonly name: 'nsIKeyValuePair';
+        readonly number: 'bc37b06a-23b5-4b32-8281-4b8479601c7e';
+    };
+    nsIKeyValueEnumerator: {
+        readonly name: 'nsIKeyValueEnumerator';
+        readonly number: 'b9ba7116-b7ff-4717-9a28-a08e6879b199';
+    };
+    nsIKeyValueDatabaseCallback: {
+        readonly name: 'nsIKeyValueDatabaseCallback';
+        readonly number: '2becc1f8-2d80-4b63-92a8-24ee8f79ee45';
+    };
+    nsIKeyValueEnumeratorCallback: {
+        readonly name: 'nsIKeyValueEnumeratorCallback';
+        readonly number: 'b7ea2183-880b-4424-ab24-5aa1555b775d';
+    };
+    nsIKeyValuePairCallback: {
+        readonly name: 'nsIKeyValuePairCallback';
+        readonly number: '50f65485-ec1e-4307-812b-b8a15e1f382e';
+    };
+    nsIKeyValueVariantCallback: {
+        readonly name: 'nsIKeyValueVariantCallback';
+        readonly number: '174ebfa1-74ea-42a7-aa90-85bbaf1da4bf';
+    };
+    nsIKeyValueVoidCallback: {
+        readonly name: 'nsIKeyValueVoidCallback';
+        readonly number: '0c17497a-ccf8-451a-838d-9dfa7f846379';
+    };
+    nsIKeychainMigrationUtils: {
+        readonly name: 'nsIKeychainMigrationUtils';
+        readonly number: '647bf80c-cd35-4ce6-b904-fd586b97ae48';
+    };
+    nsILayoutDebuggingTools: {
+        readonly name: 'nsILayoutDebuggingTools';
+        readonly number: 'f336d8d3-9721-4ad3-85d0-a7018c0a3383';
+    };
+    nsILayoutHistoryState: {
+        readonly name: 'nsILayoutHistoryState';
+        readonly number: '';
+    };
+    nsILineInputStream: {
+        readonly name: 'nsILineInputStream';
+        readonly number: 'c97b466c-1e6e-4773-a4ab-2b2b3190a7a6';
+    };
+    nsILoadContext: {
+        readonly name: 'nsILoadContext';
+        readonly number: '';
+    };
+    nsILoadContextInfo: {
+        readonly name: 'nsILoadContextInfo';
+        readonly number: '555e2f8a-a1f6-41dd-88ca-ed4ed6b98a22';
+    };
+    nsILoadContextInfoFactory: {
+        readonly name: 'nsILoadContextInfoFactory';
+        readonly number: 'c1c7023d-4318-4f99-8307-b5ccf0558793';
+    };
+    nsILoadGroup: {
+        readonly name: 'nsILoadGroup';
+        readonly number: '';
+    };
+    nsILoadGroupChild: {
+        readonly name: 'nsILoadGroupChild';
+        readonly number: '02efe8e2-fbbc-4718-a299-b8a09c60bf6b';
+    };
+    nsILoadInfo: {
+        readonly name: 'nsILoadInfo';
+        readonly number: '';
+        readonly SEC_ONLY_FOR_EXPLICIT_CONTENTSEC_CHECK: 0;
+        readonly TAINTING_BASIC: 0;
+        readonly TAINTING_CORS: 1;
+        readonly TAINTING_OPAQUE: 2;
+        readonly BLOCKING_REASON_NONE: 0;
+        readonly BLOCKING_REASON_CORSDISABLED: 1001;
+        readonly BLOCKING_REASON_CORSDIDNOTSUCCEED: 1002;
+        readonly BLOCKING_REASON_CORSREQUESTNOTHTTP: 1003;
+        readonly BLOCKING_REASON_CORSMULTIPLEALLOWORIGINNOTALLOWED: 1004;
+        readonly BLOCKING_REASON_CORSMISSINGALLOWORIGIN: 1005;
+        readonly BLOCKING_REASON_CORSNOTSUPPORTINGCREDENTIALS: 1006;
+        readonly BLOCKING_REASON_CORSALLOWORIGINNOTMATCHINGORIGIN: 1007;
+        readonly BLOCKING_REASON_CORSMISSINGALLOWCREDENTIALS: 1008;
+        readonly BLOCKING_REASON_CORSORIGINHEADERNOTADDED: 1009;
+        readonly BLOCKING_REASON_CORSEXTERNALREDIRECTNOTALLOWED: 1010;
+        readonly BLOCKING_REASON_CORSPREFLIGHTDIDNOTSUCCEED: 1011;
+        readonly BLOCKING_REASON_CORSINVALIDALLOWMETHOD: 1012;
+        readonly BLOCKING_REASON_CORSMETHODNOTFOUND: 1013;
+        readonly BLOCKING_REASON_CORSINVALIDALLOWHEADER: 1014;
+        readonly BLOCKING_REASON_CORSMISSINGALLOWHEADERFROMPREFLIGHT: 1015;
+        readonly BLOCKING_REASON_CLASSIFY_MALWARE_URI: 2001;
+        readonly BLOCKING_REASON_CLASSIFY_PHISHING_URI: 2002;
+        readonly BLOCKING_REASON_CLASSIFY_UNWANTED_URI: 2003;
+        readonly BLOCKING_REASON_CLASSIFY_TRACKING_URI: 2004;
+        readonly BLOCKING_REASON_CLASSIFY_BLOCKED_URI: 2005;
+        readonly BLOCKING_REASON_CLASSIFY_HARMFUL_URI: 2006;
+        readonly BLOCKING_REASON_CLASSIFY_CRYPTOMINING_URI: 2007;
+        readonly BLOCKING_REASON_CLASSIFY_FINGERPRINTING_URI: 2008;
+        readonly BLOCKING_REASON_CLASSIFY_SOCIALTRACKING_URI: 2009;
+        readonly BLOCKING_REASON_CLASSIFY_EMAILTRACKING_URI: 2010;
+        readonly BLOCKING_REASON_MIXED_BLOCKED: 3001;
+        readonly BLOCKING_REASON_CONTENT_POLICY_GENERAL: 4000;
+        readonly BLOCKING_REASON_CONTENT_POLICY_NO_DATA_PROTOCOL: 4001;
+        readonly BLOCKING_REASON_CONTENT_POLICY_WEBEXT: 4002;
+        readonly BLOCKING_REASON_CONTENT_POLICY_CONTENT_BLOCKED: 4003;
+        readonly BLOCKING_REASON_CONTENT_POLICY_DATA_DOCUMENT: 4004;
+        readonly BLOCKING_REASON_CONTENT_POLICY_WEB_BROWSER: 4005;
+        readonly BLOCKING_REASON_CONTENT_POLICY_PRELOAD: 4006;
+        readonly BLOCKING_REASON_NOT_SAME_ORIGIN: 5000;
+        readonly BLOCKING_REASON_EXTENSION_WEBREQUEST: 6000;
+    };
+    nsILoadURIDelegate: {
+        readonly name: 'nsILoadURIDelegate';
+        readonly number: '78e42d37-a34c-4d96-b901-25385669aba4';
+    };
+    nsILocalFileMac: {
+        readonly name: 'nsILocalFileMac';
+        readonly number: '623eca5b-c25d-4e27-be5a-789a66c4b2f7';
+    };
+    nsILocalFileWin: {
+        readonly name: 'nsILocalFileWin';
+        readonly number: 'e7a3a954-384b-4aeb-a5f7-55626b0de9be';
+    };
+    nsILocalStorageManager: {
+        readonly name: 'nsILocalStorageManager';
+        readonly number: 'd4f534da-2744-4db3-8774-8b187c64ade9';
+    };
+    nsILoginAutoCompleteSearch: {
+        readonly name: 'nsILoginAutoCompleteSearch';
+        readonly number: '2bdac17c-53f1-4896-a521-682ccdeef3a8';
+    };
+    nsILoginDetectionService: {
+        readonly name: 'nsILoginDetectionService';
+        readonly number: '4c3c9a82-722a-4b0b-9c7d-36ef90135537';
+    };
+    nsILoginInfo: {
+        readonly name: 'nsILoginInfo';
+        readonly number: '';
+    };
+    nsILoginSearchCallback: {
+        readonly name: 'nsILoginSearchCallback';
+        readonly number: '43429075-ede6-41eb-ac69-a8cd4376b041';
+    };
+    nsILoginManager: {
+        readonly name: 'nsILoginManager';
+        readonly number: '38c7f6af-7df9-49c7-b558-2776b24e6cc1';
+    };
+    nsILoginManagerAuthPrompter: {
+        readonly name: 'nsILoginManagerAuthPrompter';
+        readonly number: '425f73b9-b2db-4e8a-88c5-9ac2512934ce';
+    };
+    nsILoginManagerCrypto: {
+        readonly name: 'nsILoginManagerCrypto';
+        readonly number: '2030770e-542e-40cd-8061-cd9d4ad4227f';
+        readonly ENCTYPE_BASE64: 0;
+        readonly ENCTYPE_SDR: 1;
+    };
+    nsILoginManagerPrompter: {
+        readonly name: 'nsILoginManagerPrompter';
+        readonly number: 'c47ff942-9678-44a5-bc9b-05e0d676c79c';
+    };
+    nsILoginManagerStorage: {
+        readonly name: 'nsILoginManagerStorage';
+        readonly number: '5df81a93-25e6-4b45-a696-089479e15c7d';
+    };
+    nsILoginMetaInfo: {
+        readonly name: 'nsILoginMetaInfo';
+        readonly number: '20d8eb40-c494-497f-b2a6-aaa32f807ebd';
+    };
+    nsILoginReputationVerdictType: {
+        readonly name: 'nsILoginReputationVerdictType';
+        readonly number: '6219f9da-297e-446d-8d47-ccdd8e72a1d5';
+        readonly UNSPECIFIED: 0;
+        readonly SAFE: 1;
+        readonly LOW_REPUTATION: 2;
+        readonly PHISHING: 3;
+    };
+    nsILoginReputationQuery: {
+        readonly name: 'nsILoginReputationQuery';
+        readonly number: 'c21ffe59-595f-46c8-9052-fefb639e196e';
+    };
+    nsILoginReputationQueryCallback: {
+        readonly name: 'nsILoginReputationQueryCallback';
+        readonly number: 'b527be1e-8fbb-41d9-bee4-267a71236368';
+    };
+    nsILoginReputationService: {
+        readonly name: 'nsILoginReputationService';
+        readonly number: '1b3f1dfe-ce3a-486b-953e-ce5ac863eff9';
+    };
+    nsIMIMEHeaderParam: {
+        readonly name: 'nsIMIMEHeaderParam';
+        readonly number: '9c9252a1-fdaf-40a2-9c2b-a3dc45e28dde';
+    };
+    nsIHandlerInfo: {
+        readonly name: 'nsIHandlerInfo';
+        readonly number: '325e56a7-3762-4312-aec7-f1fcf84b4145';
+        readonly saveToDisk: 0;
+        readonly alwaysAsk: 1;
+        readonly useHelperApp: 2;
+        readonly handleInternally: 3;
+        readonly useSystemDefault: 4;
+    };
+    nsIMIMEInfo: {
+        readonly name: 'nsIMIMEInfo';
+        readonly number: '';
+    };
+    nsIHandlerApp: {
+        readonly name: 'nsIHandlerApp';
+        readonly number: '8BDF20A4-9170-4548-AF52-78311A44F920';
+    };
+    nsILocalHandlerApp: {
+        readonly name: 'nsILocalHandlerApp';
+        readonly number: 'D36B6329-52AE-4f45-80F4-B2536AE5F8B2';
+    };
+    nsIWebHandlerApp: {
+        readonly name: 'nsIWebHandlerApp';
+        readonly number: '7521a093-c498-45ce-b462-df7ba0d882f6';
+    };
+    nsIDBusHandlerApp: {
+        readonly name: 'nsIDBusHandlerApp';
+        readonly number: '1ffc274b-4cbf-4bb5-a635-05ad2cbb6534';
+    };
+    nsIMIMEInputStream: {
+        readonly name: 'nsIMIMEInputStream';
+        readonly number: 'dcbce63c-1dd1-11b2-b94d-91f6d49a3161';
+    };
+    nsIMIMEService: {
+        readonly name: 'nsIMIMEService';
+        readonly number: '5b3675a1-02db-4f8f-a560-b34736635f47';
+        readonly VALIDATE_DEFAULT: 0;
+        readonly VALIDATE_SANITIZE_ONLY: 1;
+        readonly VALIDATE_DONT_COLLAPSE_WHITESPACE: 2;
+        readonly VALIDATE_DONT_TRUNCATE: 4;
+        readonly VALIDATE_GUESS_FROM_EXTENSION: 8;
+        readonly VALIDATE_ALLOW_EMPTY: 16;
+        readonly VALIDATE_NO_DEFAULT_FILENAME: 32;
+        readonly VALIDATE_FORCE_APPEND_EXTENSION: 64;
+    };
+    nsIMacAttributionService: {
+        readonly name: 'nsIMacAttributionService';
+        readonly number: '6FC66A78-6CBC-4B3F-B7BA-379289B29276';
+    };
+    nsIMacDockSupport: {
+        readonly name: 'nsIMacDockSupport';
+        readonly number: '8BE66B0C-5F71-4B74-98CF-6C2551B999B1';
+    };
+    nsIMacFinderProgressCanceledCallback: {
+        readonly name: 'nsIMacFinderProgressCanceledCallback';
+        readonly number: '6BAE6D1C-7FFD-4354-8D7B-64697E98A801';
+    };
+    nsIMacFinderProgress: {
+        readonly name: 'nsIMacFinderProgress';
+        readonly number: '25A0B01F-54D4-4AEF-B2BF-C5764CDC68A8';
+    };
+    nsIMacPreferencesReader: {
+        readonly name: 'nsIMacPreferencesReader';
+        readonly number: 'b0f20595-88ce-4738-a1a4-24de78eb8051';
+    };
+    nsIMacSharingService: {
+        readonly name: 'nsIMacSharingService';
+        readonly number: 'de59fe1a-46c8-490f-b04d-34545acb06c9';
+    };
+    nsIMacShellService: {
+        readonly name: 'nsIMacShellService';
+        readonly number: '387fdc80-0077-4b60-a0d9-d9e80a83ba64';
+    };
+    nsIMacUserActivityUpdater: {
+        readonly name: 'nsIMacUserActivityUpdater';
+        readonly number: '29046c8f-cba6-4ffa-9141-1685e96c4ea0';
+    };
+    nsITrashAppCallback: {
+        readonly name: 'nsITrashAppCallback';
+        readonly number: '8c899c4f-58c1-4b74-9034-3bb64e484b68';
+    };
+    nsIMacWebAppUtils: {
+        readonly name: 'nsIMacWebAppUtils';
+        readonly number: 'c69cf343-ea41-428b-b161-4655fd54d8e7';
+    };
+    nsIMarionette: {
+        readonly name: 'nsIMarionette';
+        readonly number: '13fa7d76-f976-4711-a00c-29ac9c1881e1';
+    };
+    nsIMediaDevice: {
+        readonly name: 'nsIMediaDevice';
+        readonly number: '';
+    };
+    nsIMediaManagerService: {
+        readonly name: 'nsIMediaManagerService';
+        readonly number: '24b23e01-33fd-401f-ba25-6e52658750b0';
+        readonly STATE_NOCAPTURE: 0;
+        readonly STATE_CAPTURE_ENABLED: 1;
+        readonly STATE_CAPTURE_DISABLED: 2;
+    };
+    nsIFinishDumpingCallback: {
+        readonly name: 'nsIFinishDumpingCallback';
+        readonly number: '2dea18fc-fbfa-4bf7-ad45-0efaf5495f5e';
+    };
+    nsIDumpGCAndCCLogsCallback: {
+        readonly name: 'nsIDumpGCAndCCLogsCallback';
+        readonly number: 'dc1b2b24-65bd-441b-b6bd-cb5825a7ed14';
+    };
+    nsIMemoryInfoDumper: {
+        readonly name: 'nsIMemoryInfoDumper';
+        readonly number: '48541b74-47ee-4a62-9557-7f4b809bda5c';
+    };
+    nsIHandleReportCallback: {
+        readonly name: 'nsIHandleReportCallback';
+        readonly number: '62ef0e1c-dbd6-11e3-aa75-3c970e9f4238';
+    };
+    nsIMemoryReporter: {
+        readonly name: 'nsIMemoryReporter';
+        readonly number: '92a36db1-46bd-4fe6-988e-47db47236d8b';
+        readonly KIND_NONHEAP: 0;
+        readonly KIND_HEAP: 1;
+        readonly KIND_OTHER: 2;
+        readonly UNITS_BYTES: 0;
+        readonly UNITS_COUNT: 1;
+        readonly UNITS_COUNT_CUMULATIVE: 2;
+        readonly UNITS_PERCENTAGE: 3;
+    };
+    nsIFinishReportingCallback: {
+        readonly name: 'nsIFinishReportingCallback';
+        readonly number: '548b3909-c04d-4ca6-8466-b8bee3837457';
+    };
+    nsIHeapAllocatedCallback: {
+        readonly name: 'nsIHeapAllocatedCallback';
+        readonly number: '1a80cd0f-0d9e-4397-be69-68ad28fe5175';
+    };
+    nsIMemoryReporterManager: {
+        readonly name: 'nsIMemoryReporterManager';
+        readonly number: '2998574d-8993-407a-b1a5-8ad7417653e1';
+    };
+    nsIMessageLoop: {
+        readonly name: 'nsIMessageLoop';
+        readonly number: '3E8C58E8-E52C-43E0-8E66-669CA788FF5F';
+    };
+    nsIMessageSender: {
+        readonly name: 'nsIMessageSender';
+        readonly number: 'bb5d79e4-e73c-45e7-9651-4d718f4b994c';
+    };
+    nsIInProcessContentFrameMessageManager: {
+        readonly name: 'nsIInProcessContentFrameMessageManager';
+        readonly number: 'b39a3324-b574-4f85-8cdb-274d04f807ef';
+    };
+    nsIMozBrowserFrame: {
+        readonly name: 'nsIMozBrowserFrame';
+        readonly number: '0c0a862c-1a47-43c0-ae9e-d51835e3e1a6';
+    };
+    nsIMultiPartChannel: {
+        readonly name: 'nsIMultiPartChannel';
+        readonly number: '4fefb490-5567-11e5-a837-0800200c9a66';
+    };
+    nsIMultiPartChannelListener: {
+        readonly name: 'nsIMultiPartChannelListener';
+        readonly number: 'b084959a-4fb9-41a5-88a0-d0f045ce75cf';
+    };
+    nsIMultiplexInputStream: {
+        readonly name: 'nsIMultiplexInputStream';
+        readonly number: 'a076fd12-1dd1-11b2-b19a-d53b5dffaade';
+    };
+    nsIMutableArray: {
+        readonly name: 'nsIMutableArray';
+        readonly number: '';
+    };
+    nsINSSComponent: {
+        readonly name: 'nsINSSComponent';
+        readonly number: 'a0a8f52b-ea18-4abc-a3ca-eccf704ffe63';
+    };
+    nsINSSErrorsService: {
+        readonly name: 'nsINSSErrorsService';
+        readonly number: '12f60021-e14b-4020-99d1-ed2c795be66a';
+        readonly ERROR_CLASS_SSL_PROTOCOL: 1;
+        readonly ERROR_CLASS_BAD_CERT: 2;
+    };
+    nsINSSVersion: {
+        readonly name: 'nsINSSVersion';
+        readonly number: 'a8a53a2b-75cc-4c68-a9bb-9791dbddaa00';
+    };
+    nsINamed: {
+        readonly name: 'nsINamed';
+        readonly number: '0c5fe7de-7e83-4d0d-a8a6-4a6518b9a7b3';
+    };
+    nsINamedPipeDataObserver: {
+        readonly name: 'nsINamedPipeDataObserver';
+        readonly number: 'de4f460b-94fd-442c-9002-1637beb2185a';
+    };
+    nsINamedPipeService: {
+        readonly name: 'nsINamedPipeService';
+        readonly number: '1bf19133-5625-4ac8-836a-80b1c215f72b';
+    };
+    nsINativeAppSupport: {
+        readonly name: 'nsINativeAppSupport';
+        readonly number: '5fdf8480-1f98-11d4-8077-00600811a9c3';
+    };
+    nsINativeDNSResolverOverride: {
+        readonly name: 'nsINativeDNSResolverOverride';
+        readonly number: '8e38d536-5501-48c0-a412-6c450040c8c8';
+    };
+    nsINativeOSFileResult: {
+        readonly name: 'nsINativeOSFileResult';
+        readonly number: '08B4CF29-3D65-4E79-B522-A694C322ED07';
+    };
+    nsINativeOSFileSuccessCallback: {
+        readonly name: 'nsINativeOSFileSuccessCallback';
+        readonly number: '2C1922CA-CA1B-4099-8B61-EC23CFF49412';
+    };
+    nsINativeOSFileErrorCallback: {
+        readonly name: 'nsINativeOSFileErrorCallback';
+        readonly number: 'F612E0FC-6736-4D24-AA50-FD661B3B40B6';
+    };
+    nsINativeOSFileInternalsService: {
+        readonly name: 'nsINativeOSFileInternalsService';
+        readonly number: '913362AD-1526-4623-9E6B-A2EB08AFBBB9';
+    };
+    nsINavBookmarkObserver: {
+        readonly name: 'nsINavBookmarkObserver';
+        readonly number: '4d00c221-2c4a-47ab-a617-abb324110492';
+    };
+    nsINavBookmarksService: {
+        readonly name: 'nsINavBookmarksService';
+        readonly number: '24533891-afa6-4663-b72d-3143d03f1b04';
+        readonly TYPE_BOOKMARK: 1;
+        readonly TYPE_FOLDER: 2;
+        readonly TYPE_SEPARATOR: 3;
+        readonly TYPE_DYNAMIC_CONTAINER: 4;
+        readonly SOURCE_DEFAULT: 0;
+        readonly SOURCE_SYNC: 1;
+        readonly SOURCE_IMPORT: 2;
+        readonly SOURCE_SYNC_REPARENT_REMOVED_FOLDER_CHILDREN: 4;
+        readonly SOURCE_RESTORE: 5;
+        readonly SOURCE_RESTORE_ON_STARTUP: 6;
+        readonly SYNC_STATUS_UNKNOWN: 0;
+        readonly SYNC_STATUS_NEW: 1;
+        readonly SYNC_STATUS_NORMAL: 2;
+    };
+    nsINavHistoryResultNode: {
+        readonly name: 'nsINavHistoryResultNode';
+        readonly number: '91d104bb-17ef-404b-9f9a-d9ed8de6824c';
+        readonly RESULT_TYPE_URI: 0;
+        readonly RESULT_TYPE_QUERY: 5;
+        readonly RESULT_TYPE_FOLDER: 6;
+        readonly RESULT_TYPE_SEPARATOR: 7;
+        readonly RESULT_TYPE_FOLDER_SHORTCUT: 9;
+    };
+    nsINavHistoryContainerResultNode: {
+        readonly name: 'nsINavHistoryContainerResultNode';
+        readonly number: '3E9CC95F-0D93-45F1-894F-908EEB9866D7';
+        readonly STATE_CLOSED: 0;
+        readonly STATE_LOADING: 1;
+        readonly STATE_OPENED: 2;
+    };
+    nsINavHistoryQueryResultNode: {
+        readonly name: 'nsINavHistoryQueryResultNode';
+        readonly number: '62817759-4FEE-44A3-B58C-3E2F5AFC9D0A';
+    };
+    nsINavHistoryResultObserver: {
+        readonly name: 'nsINavHistoryResultObserver';
+        readonly number: 'f62d8b6b-3c4e-4a9f-a897-db605d0b7a0f';
+    };
+    nsINavHistoryResult: {
+        readonly name: 'nsINavHistoryResult';
+        readonly number: 'c2229ce3-2159-4001-859c-7013c52f7619';
+    };
+    nsINavHistoryQuery: {
+        readonly name: 'nsINavHistoryQuery';
+        readonly number: 'dc87ae79-22f1-4dcf-975b-852b01d210cb';
+        readonly TIME_RELATIVE_EPOCH: 0;
+        readonly TIME_RELATIVE_TODAY: 1;
+        readonly TIME_RELATIVE_NOW: 2;
+    };
+    nsINavHistoryQueryOptions: {
+        readonly name: 'nsINavHistoryQueryOptions';
+        readonly number: '8198dfa7-8061-4766-95cb-fa86b3c00a47';
+        readonly SORT_BY_NONE: 0;
+        readonly SORT_BY_TITLE_ASCENDING: 1;
+        readonly SORT_BY_TITLE_DESCENDING: 2;
+        readonly SORT_BY_DATE_ASCENDING: 3;
+        readonly SORT_BY_DATE_DESCENDING: 4;
+        readonly SORT_BY_URI_ASCENDING: 5;
+        readonly SORT_BY_URI_DESCENDING: 6;
+        readonly SORT_BY_VISITCOUNT_ASCENDING: 7;
+        readonly SORT_BY_VISITCOUNT_DESCENDING: 8;
+        readonly SORT_BY_DATEADDED_ASCENDING: 11;
+        readonly SORT_BY_DATEADDED_DESCENDING: 12;
+        readonly SORT_BY_LASTMODIFIED_ASCENDING: 13;
+        readonly SORT_BY_LASTMODIFIED_DESCENDING: 14;
+        readonly SORT_BY_TAGS_ASCENDING: 17;
+        readonly SORT_BY_TAGS_DESCENDING: 18;
+        readonly SORT_BY_FRECENCY_ASCENDING: 21;
+        readonly SORT_BY_FRECENCY_DESCENDING: 22;
+        readonly RESULTS_AS_URI: 0;
+        readonly RESULTS_AS_VISIT: 1;
+        readonly RESULTS_AS_DATE_QUERY: 3;
+        readonly RESULTS_AS_SITE_QUERY: 4;
+        readonly RESULTS_AS_DATE_SITE_QUERY: 5;
+        readonly RESULTS_AS_TAGS_ROOT: 6;
+        readonly RESULTS_AS_TAG_CONTENTS: 7;
+        readonly RESULTS_AS_ROOTS_QUERY: 8;
+        readonly RESULTS_AS_LEFT_PANE_QUERY: 9;
+        readonly QUERY_TYPE_HISTORY: 0;
+        readonly QUERY_TYPE_BOOKMARKS: 1;
+        readonly QUERY_TYPE_UNIFIED: 2;
+    };
+    nsINavHistoryService: {
+        readonly name: 'nsINavHistoryService';
+        readonly number: '20c974ff-ee16-4828-9326-1b7c9e036622';
+        readonly TRANSITION_LINK: 1;
+        readonly TRANSITION_TYPED: 2;
+        readonly TRANSITION_BOOKMARK: 3;
+        readonly TRANSITION_EMBED: 4;
+        readonly TRANSITION_REDIRECT_PERMANENT: 5;
+        readonly TRANSITION_REDIRECT_TEMPORARY: 6;
+        readonly TRANSITION_DOWNLOAD: 7;
+        readonly TRANSITION_FRAMED_LINK: 8;
+        readonly TRANSITION_RELOAD: 9;
+        readonly DATABASE_STATUS_OK: 0;
+        readonly DATABASE_STATUS_CREATE: 1;
+        readonly DATABASE_STATUS_CORRUPT: 2;
+        readonly DATABASE_STATUS_UPGRADED: 3;
+        readonly DATABASE_STATUS_LOCKED: 4;
+        readonly VISIT_SOURCE_ORGANIC: 0;
+        readonly VISIT_SOURCE_SPONSORED: 1;
+        readonly VISIT_SOURCE_BOOKMARKED: 2;
+        readonly VISIT_SOURCE_SEARCHED: 3;
+    };
+    nsINestedURI: {
+        readonly name: 'nsINestedURI';
+        readonly number: '6de2c874-796c-46bf-b57f-0d7bd7d6cab0';
+    };
+    nsINestedURIMutator: {
+        readonly name: 'nsINestedURIMutator';
+        readonly number: 'ca3d6c03-4eee-4271-a97a-d16c0a0b2c5c';
+    };
+    nsINestedAboutURIMutator: {
+        readonly name: 'nsINestedAboutURIMutator';
+        readonly number: 'c6357a3b-c2bb-4b4b-9278-513377398a38';
+    };
+    nsIJSURIMutator: {
+        readonly name: 'nsIJSURIMutator';
+        readonly number: '3bd44535-08ea-478f-99b9-85fa1084e820';
+    };
+    nsINetAddr: {
+        readonly name: 'nsINetAddr';
+        readonly number: '';
+        readonly FAMILY_INET: 1;
+        readonly FAMILY_INET6: 2;
+        readonly FAMILY_LOCAL: 3;
+    };
+    nsINetUtil: {
+        readonly name: 'nsINetUtil';
+        readonly number: 'fe2625ec-b884-4df1-b39c-9e830e47aa94';
+        readonly ESCAPE_ALL: 0;
+        readonly ESCAPE_XALPHAS: 1;
+        readonly ESCAPE_XPALPHAS: 2;
+        readonly ESCAPE_URL_PATH: 4;
+        readonly ESCAPE_URL_APPLE_EXTRA: 8;
+        readonly ESCAPE_URL_SCHEME: 1;
+    };
+    nsINetworkConnectivityService: {
+        readonly name: 'nsINetworkConnectivityService';
+        readonly number: '2693457e-3ba5-4455-991f-5350946adb12';
+    };
+    nsIListNetworkAddressesListener: {
+        readonly name: 'nsIListNetworkAddressesListener';
+        readonly number: 'c4bdaac1-3ab1-4fdb-9a16-17cbed794603';
+    };
+    nsIGetHostnameListener: {
+        readonly name: 'nsIGetHostnameListener';
+        readonly number: '3ebdcb62-2df4-4042-8864-3fa81abd4693';
+    };
+    nsINetworkInfoService: {
+        readonly name: 'nsINetworkInfoService';
+        readonly number: '55fc8dae-4a58-4e0f-a49b-901cbabae809';
+    };
+    nsIInterceptedBodyCallback: {
+        readonly name: 'nsIInterceptedBodyCallback';
+        readonly number: '51039eb6-bea0-40c7-b523-ccab56cc4fde';
+    };
+    nsIInterceptedChannel: {
+        readonly name: 'nsIInterceptedChannel';
+        readonly number: '';
+    };
+    nsINetworkInterceptController: {
+        readonly name: 'nsINetworkInterceptController';
+        readonly number: '70d2b4fe-a552-48cd-8d93-1d8437a56b53';
+    };
+    nsINetworkLinkService: {
+        readonly name: 'nsINetworkLinkService';
+        readonly number: '103e5293-77b3-4b70-af59-6e9e4a1f994a';
+        readonly LINK_TYPE_UNKNOWN: 0;
+        readonly LINK_TYPE_ETHERNET: 1;
+        readonly LINK_TYPE_USB: 2;
+        readonly LINK_TYPE_WIFI: 3;
+        readonly LINK_TYPE_WIMAX: 4;
+        readonly LINK_TYPE_MOBILE: 9;
+        readonly NONE_DETECTED: 0;
+    };
+    nsINetworkPredictor: {
+        readonly name: 'nsINetworkPredictor';
+        readonly number: 'acc88e7c-3f39-42c7-ac31-6377c2c3d73e';
+        readonly PREDICT_LINK: 0;
+        readonly PREDICT_LOAD: 1;
+        readonly PREDICT_STARTUP: 2;
+        readonly LEARN_LOAD_TOPLEVEL: 0;
+        readonly LEARN_LOAD_SUBRESOURCE: 1;
+        readonly LEARN_LOAD_REDIRECT: 2;
+        readonly LEARN_STARTUP: 3;
+    };
+    nsINetworkPredictorVerifier: {
+        readonly name: 'nsINetworkPredictorVerifier';
+        readonly number: '2e43bb32-dabf-4494-9f90-2b3195b1c73d';
+    };
+    nsINotificationStorageCallback: {
+        readonly name: 'nsINotificationStorageCallback';
+        readonly number: 'c1622232-259c-43b0-b52e-89c39dcd9796';
+    };
+    nsINotificationStorage: {
+        readonly name: 'nsINotificationStorage';
+        readonly number: '17f85e52-fe57-440e-9ba1-5c312ca02b95';
+    };
+    nsINullChannel: {
+        readonly name: 'nsINullChannel';
+        readonly number: '4610b901-df41-4bb4-bd3f-fd4d6b6d8d68';
+    };
+    nsIOSFileConstantsService: {
+        readonly name: 'nsIOSFileConstantsService';
+        readonly number: 'd6dd239f-34d6-4b34-baa1-f69ab4a20bc4';
+    };
+    nsIOSKeyStore: {
+        readonly name: 'nsIOSKeyStore';
+        readonly number: '57972956-5718-42d2-8070-b3fc72212eaf';
+    };
+    nsIOSPermissionRequest: {
+        readonly name: 'nsIOSPermissionRequest';
+        readonly number: '95790842-75a0-430d-98bf-f5ce3788ea6d';
+        readonly PERMISSION_STATE_NOTDETERMINED: 0;
+        readonly PERMISSION_STATE_RESTRICTED: 1;
+        readonly PERMISSION_STATE_DENIED: 2;
+        readonly PERMISSION_STATE_AUTHORIZED: 3;
+    };
+    nsIOSReauthenticator: {
+        readonly name: 'nsIOSReauthenticator';
+        readonly number: '4fe082ae-6ff0-4b41-b24f-eaa664f6e46a';
+    };
+    nsIObjectInputStream: {
+        readonly name: 'nsIObjectInputStream';
+        readonly number: '';
+    };
+    nsIObjectLoadingContent: {
+        readonly name: 'nsIObjectLoadingContent';
+        readonly number: '2eb3195e-3eea-4083-bb1d-d2d70fa35ccb';
+        readonly TYPE_LOADING: 0;
+        readonly TYPE_IMAGE: 1;
+        readonly TYPE_FALLBACK: 2;
+        readonly TYPE_FAKE_PLUGIN: 3;
+        readonly TYPE_DOCUMENT: 4;
+        readonly TYPE_NULL: 5;
+        readonly PLUGIN_ACTIVE: 0xFF;
+        readonly PLUGIN_PERMISSION_PROMPT_ACTION_QUIET: 8;
+    };
+    nsIObjectOutputStream: {
+        readonly name: 'nsIObjectOutputStream';
+        readonly number: '';
+    };
+    nsIObliviousHttpClientResponse: {
+        readonly name: 'nsIObliviousHttpClientResponse';
+        readonly number: 'f2a4aaa4-046a-439e-beef-893b15a90cff';
+    };
+    nsIObliviousHttpClientRequest: {
+        readonly name: 'nsIObliviousHttpClientRequest';
+        readonly number: '403af7f9-4a76-49fc-a622-38d6ba3ee496';
+    };
+    nsIObliviousHttpServerResponse: {
+        readonly name: 'nsIObliviousHttpServerResponse';
+        readonly number: '105deb62-45b4-407a-b330-550433279111';
+    };
+    nsIObliviousHttpServer: {
+        readonly name: 'nsIObliviousHttpServer';
+        readonly number: 'fb1abc56-b525-4e1a-a4c6-341a9b32084e';
+    };
+    nsIObliviousHttp: {
+        readonly name: 'nsIObliviousHttp';
+        readonly number: 'd581149e-3319-4563-b95e-46c64af5c4e8';
+    };
+    nsIObserver: {
+        readonly name: 'nsIObserver';
+        readonly number: '';
+    };
+    nsIObserverService: {
+        readonly name: 'nsIObserverService';
+        readonly number: 'D07F5192-E3D1-11d2-8ACD-00105A1B8860';
+    };
+    nsIBrowsingContextReadyCallback: {
+        readonly name: 'nsIBrowsingContextReadyCallback';
+        readonly number: '0524ee06-7f4c-4cd3-ab80-084562745cad';
+    };
+    nsIOpenWindowInfo: {
+        readonly name: 'nsIOpenWindowInfo';
+        readonly number: '';
+    };
+    nsIOutputStream: {
+        readonly name: 'nsIOutputStream';
+        readonly number: '';
+    };
+    nsIPK11Token: {
+        readonly name: 'nsIPK11Token';
+        readonly number: '';
+    };
+    nsIPK11TokenDB: {
+        readonly name: 'nsIPK11TokenDB';
+        readonly number: '4ee28c82-1dd2-11b2-aabf-bb4017abe395';
+    };
+    nsIPKCS11Module: {
+        readonly name: 'nsIPKCS11Module';
+        readonly number: '';
+    };
+    nsIPKCS11ModuleDB: {
+        readonly name: 'nsIPKCS11ModuleDB';
+        readonly number: 'ff9fbcd7-9517-4334-b97a-ceed78909974';
+    };
+    nsIPKCS11Slot: {
+        readonly name: 'nsIPKCS11Slot';
+        readonly number: 'c2d4f296-ee60-11d4-998b-00b0d02354a0';
+        readonly SLOT_DISABLED: 0;
+        readonly SLOT_NOT_PRESENT: 1;
+        readonly SLOT_UNINITIALIZED: 2;
+        readonly SLOT_NOT_LOGGED_IN: 3;
+        readonly SLOT_LOGGED_IN: 4;
+        readonly SLOT_READY: 5;
+    };
+    nsIPageThumbsStorageService: {
+        readonly name: 'nsIPageThumbsStorageService';
+        readonly number: '97943eec-0e48-49ef-b7b7-cf4aa0109bb6';
+    };
+    nsIPaper: {
+        readonly name: 'nsIPaper';
+        readonly number: 'a4dd9675-6311-45a9-a547-44e0127304a6';
+    };
+    nsIPaperMargin: {
+        readonly name: 'nsIPaperMargin';
+        readonly number: '0858d1a7-b646-4b15-a1e8-7eb5ab572d0a';
+    };
+    nsIParentChannel: {
+        readonly name: 'nsIParentChannel';
+        readonly number: '';
+    };
+    nsIAsyncVerifyRedirectReadyCallback: {
+        readonly name: 'nsIAsyncVerifyRedirectReadyCallback';
+        readonly number: '01987690-48cf-45de-bae3-e143c2adc2a8';
+    };
+    nsIParentRedirectingChannel: {
+        readonly name: 'nsIParentRedirectingChannel';
+        readonly number: '3ed1d288-5324-46ee-8a98-33ac37d1080b';
+    };
+    nsIParentalControlsService: {
+        readonly name: 'nsIParentalControlsService';
+        readonly number: '2e97e5dd-467b-4aea-a1bb-6773c0f2beb0';
+        readonly DOWNLOAD: 1;
+        readonly INSTALL_EXTENSION: 2;
+        readonly INSTALL_APP: 3;
+        readonly BROWSE: 4;
+        readonly SHARE: 5;
+        readonly BOOKMARK: 6;
+        readonly ADD_CONTACT: 7;
+        readonly SET_IMAGE: 8;
+        readonly MODIFY_ACCOUNTS: 9;
+        readonly REMOTE_DEBUGGING: 10;
+        readonly IMPORT_SETTINGS: 11;
+        readonly PRIVATE_BROWSING: 12;
+        readonly DATA_CHOICES: 13;
+        readonly CLEAR_HISTORY: 14;
+        readonly MASTER_PASSWORD: 15;
+        readonly GUEST_BROWSING: 16;
+        readonly ADVANCED_SETTINGS: 17;
+        readonly CAMERA_MICROPHONE: 18;
+        readonly BLOCK_LIST: 19;
+        readonly TELEMETRY: 20;
+        readonly HEALTH_REPORT: 21;
+        readonly DEFAULT_THEME: 22;
+        readonly ePCLog_URIVisit: 1;
+        readonly ePCLog_FileDownload: 2;
+    };
+    nsIParserUtils: {
+        readonly name: 'nsIParserUtils';
+        readonly number: 'a1101145-0025-411e-8873-fdf57bf28128';
+    };
+    nsIPartitioningExceptionListObserver: {
+        readonly name: 'nsIPartitioningExceptionListObserver';
+        readonly number: 'd8db1086-7b59-44d3-9f88-f31a7e642637';
+    };
+    nsIPartitioningExceptionListService: {
+        readonly name: 'nsIPartitioningExceptionListService';
+        readonly number: 'cf83a9af-dd3f-43a2-88bb-489a22bca124';
+    };
+    nsIPaymentResponseData: {
+        readonly name: 'nsIPaymentResponseData';
+        readonly number: '2a338575-c688-40ee-a157-7488ab292ef2';
+        readonly GENERAL_RESPONSE: 0;
+        readonly BASICCARD_RESPONSE: 1;
+    };
+    nsIGeneralResponseData: {
+        readonly name: 'nsIGeneralResponseData';
+        readonly number: 'b986773e-2b30-4ed2-b8fe-6a96631c8000';
+    };
+    nsIBasicCardResponseData: {
+        readonly name: 'nsIBasicCardResponseData';
+        readonly number: '0d55a5e6-d185-44f0-b992-a8e1321e4bce';
+    };
+    nsIPaymentActionResponse: {
+        readonly name: 'nsIPaymentActionResponse';
+        readonly number: 'a607c095-ef60-4a9b-a3d0-0506c60728b3';
+        readonly NO_TYPE: 0;
+        readonly CANMAKE_ACTION: 2;
+        readonly SHOW_ACTION: 3;
+        readonly ABORT_ACTION: 4;
+        readonly COMPLETE_ACTION: 5;
+        readonly ABORT_SUCCEEDED: 1;
+        readonly ABORT_FAILED: 0;
+        readonly PAYMENT_REJECTED: 0;
+        readonly PAYMENT_ACCEPTED: 1;
+        readonly PAYMENT_NOTSUPPORTED: 2;
+        readonly COMPLETE_SUCCEEDED: 1;
+        readonly COMPLETE_FAILED: 0;
+    };
+    nsIPaymentCanMakeActionResponse: {
+        readonly name: 'nsIPaymentCanMakeActionResponse';
+        readonly number: '52fc3f9f-c0cb-4874-b3d4-ee4b6e9cbe9c';
+    };
+    nsIPaymentShowActionResponse: {
+        readonly name: 'nsIPaymentShowActionResponse';
+        readonly number: '184385cb-2d35-4b99-a9a3-7c780bf66b9b';
+    };
+    nsIPaymentAbortActionResponse: {
+        readonly name: 'nsIPaymentAbortActionResponse';
+        readonly number: '8c72bcdb-0c37-4786-a9e5-510afa2f8ede';
+    };
+    nsIPaymentCompleteActionResponse: {
+        readonly name: 'nsIPaymentCompleteActionResponse';
+        readonly number: '62c01e69-9ca4-4060-99e4-b95f628c8e6d';
+    };
+    nsIMethodChangeDetails: {
+        readonly name: 'nsIMethodChangeDetails';
+        readonly number: '2035e0a9-c9ab-4c9f-b8e9-28b2ed61548c';
+        readonly GENERAL_DETAILS: 0;
+        readonly BASICCARD_DETAILS: 1;
+    };
+    nsIGeneralChangeDetails: {
+        readonly name: 'nsIGeneralChangeDetails';
+        readonly number: 'e031267e-bec8-4f3c-b0b1-396b77ca260c';
+    };
+    nsIBasicCardChangeDetails: {
+        readonly name: 'nsIBasicCardChangeDetails';
+        readonly number: '5296f79e-15ea-40c3-8196-19cfa64d328c';
+    };
+    nsIPaymentAddress: {
+        readonly name: 'nsIPaymentAddress';
+        readonly number: '49a02241-7e48-477a-9345-9f246925dcb3';
+    };
+    nsIPaymentMethodData: {
+        readonly name: 'nsIPaymentMethodData';
+        readonly number: '2fe296cc-d917-4820-b492-aa42df23f9b4';
+    };
+    nsIPaymentCurrencyAmount: {
+        readonly name: 'nsIPaymentCurrencyAmount';
+        readonly number: 'd22a6f5f-767b-4fea-bf92-68b0b8003eba';
+    };
+    nsIPaymentItem: {
+        readonly name: 'nsIPaymentItem';
+        readonly number: '4f78a59f-b5ff-4fb5-ab48-3b37d0101b02';
+    };
+    nsIPaymentDetailsModifier: {
+        readonly name: 'nsIPaymentDetailsModifier';
+        readonly number: '74259861-c318-40e8-b3d5-518e701bed80';
+    };
+    nsIPaymentShippingOption: {
+        readonly name: 'nsIPaymentShippingOption';
+        readonly number: '68341551-3605-4381-b936-41e830aa88fb';
+    };
+    nsIPaymentDetails: {
+        readonly name: 'nsIPaymentDetails';
+        readonly number: '73a5a3f1-45b9-4605-a6e6-7aa60daa9039';
+    };
+    nsIPaymentOptions: {
+        readonly name: 'nsIPaymentOptions';
+        readonly number: 'd53f9f20-138e-47cc-9fd5-db16a3f6d301';
+    };
+    nsIPaymentRequest: {
+        readonly name: 'nsIPaymentRequest';
+        readonly number: '2fa36783-d684-4487-b7a8-9def6ae3128f';
+    };
+    nsIPaymentRequestService: {
+        readonly name: 'nsIPaymentRequestService';
+        readonly number: 'cccd665f-edf3-41fc-ab9b-fc55b37340aa';
+    };
+    nsIPaymentUIService: {
+        readonly name: 'nsIPaymentUIService';
+        readonly number: '01f8bd55-9017-438b-85ec-7c15d2b35cdc';
+    };
+    nsIPermission: {
+        readonly name: 'nsIPermission';
+        readonly number: '';
+    };
+    nsIPermissionDelegateHandler: {
+        readonly name: 'nsIPermissionDelegateHandler';
+        readonly number: '07611dc6-bf4d-4d8a-a64b-f3a5904dddc7';
+    };
+    nsIPermissionManager: {
+        readonly name: 'nsIPermissionManager';
+        readonly number: '4dcb3851-eba2-4e42-b236-82d2596fca22';
+        readonly UNKNOWN_ACTION: 0;
+        readonly ALLOW_ACTION: 1;
+        readonly DENY_ACTION: 2;
+        readonly PROMPT_ACTION: 3;
+        readonly EXPIRE_NEVER: 0;
+        readonly EXPIRE_SESSION: 1;
+        readonly EXPIRE_TIME: 2;
+        readonly EXPIRE_POLICY: 3;
+    };
+    nsIPropertyElement: {
+        readonly name: 'nsIPropertyElement';
+        readonly number: '283EE646-1AEF-11D4-98B3-00C04fA0CE9A';
+    };
+    nsIPersistentProperties: {
+        readonly name: 'nsIPersistentProperties';
+        readonly number: '';
+    };
+    nsIPipe: {
+        readonly name: 'nsIPipe';
+        readonly number: '25d0de93-685e-4ea4-95d3-d884e31df63c';
+    };
+    nsISearchableInputStream: {
+        readonly name: 'nsISearchableInputStream';
+        readonly number: '8C39EF62-F7C9-11d4-98F5-001083010E9B';
+    };
+    nsIPlacesPreviewsHelperService: {
+        readonly name: 'nsIPlacesPreviewsHelperService';
+        readonly number: 'bd0a4d3b-ff26-4d4d-9a62-a513e1c1bf92';
+    };
+    nsIPlatformInfo: {
+        readonly name: 'nsIPlatformInfo';
+        readonly number: 'ab6650cf-0806-4aea-b8f2-40fdae74f1cc';
+    };
+    nsIPluginTag: {
+        readonly name: 'nsIPluginTag';
+        readonly number: '5daa99d5-265a-4397-b429-c943803e2619';
+        readonly STATE_DISABLED: 0;
+        readonly STATE_CLICKTOPLAY: 1;
+        readonly STATE_ENABLED: 2;
+    };
+    nsIFakePluginTag: {
+        readonly name: 'nsIFakePluginTag';
+        readonly number: '6d22c968-226d-4156-b230-da6ad6bbf6e8';
+    };
+    nsIPowerManagerService: {
+        readonly name: 'nsIPowerManagerService';
+        readonly number: 'ba7ca4c1-9d92-4425-a83b-85dd7fa953f7';
+    };
+    nsIPrefBranch: {
+        readonly name: 'nsIPrefBranch';
+        readonly number: '55d25e49-793f-4727-a69f-de8b15f4b985';
+        readonly PREF_INVALID: 0;
+        readonly PREF_STRING: 32;
+        readonly PREF_INT: 64;
+        readonly PREF_BOOL: 128;
+    };
+    nsIPrefLocalizedString: {
+        readonly name: 'nsIPrefLocalizedString';
+        readonly number: 'ae419e24-1dd1-11b2-b39a-d3e5e7073802';
+    };
+    nsIPrefStatsCallback: {
+        readonly name: 'nsIPrefStatsCallback';
+        readonly number: 'c3f0cedc-e244-4316-b33a-80306a1c35a1';
+    };
+    nsIPrefObserver: {
+        readonly name: 'nsIPrefObserver';
+        readonly number: '0a2dbc02-2218-4687-b151-33d890676e00';
+    };
+    nsIPrefService: {
+        readonly name: 'nsIPrefService';
+        readonly number: '1f84fd56-3956-40df-b86a-1ea01402ee96';
+    };
+    nsIPrefetchService: {
+        readonly name: 'nsIPrefetchService';
+        readonly number: '422a1807-4e7f-463d-b8d7-ca2ceb9b5d53';
+    };
+    nsIPreloadedStyleSheet: {
+        readonly name: 'nsIPreloadedStyleSheet';
+        readonly number: '';
+    };
+    nsIPrincipal: {
+        readonly name: 'nsIPrincipal';
+        readonly number: '';
+    };
+    nsIExpandedPrincipal: {
+        readonly name: 'nsIExpandedPrincipal';
+        readonly number: 'f3e177Df-6a5e-489f-80a7-2dd1481471d8';
+    };
+    nsIPrintDialogService: {
+        readonly name: 'nsIPrintDialogService';
+        readonly number: '88af6712-a9fd-4393-9af3-3ffbb1f2caaf';
+    };
+    nsIPrintPreviewNavigation: {
+        readonly name: 'nsIPrintPreviewNavigation';
+        readonly number: '8148E3F1-2E8B-11d5-A86C-00105A183419';
+    };
+    nsIPrintSettings: {
+        readonly name: 'nsIPrintSettings';
+        readonly number: '';
+        readonly kInitSaveHeaderLeft: 0x00000002;
+        readonly kInitSaveHeaderCenter: 0x00000004;
+        readonly kInitSaveHeaderRight: 0x00000008;
+        readonly kInitSaveFooterLeft: 0x00000010;
+        readonly kInitSaveFooterCenter: 0x00000020;
+        readonly kInitSaveFooterRight: 0x00000040;
+        readonly kInitSaveBGColors: 0x00000080;
+        readonly kInitSaveBGImages: 0x00000100;
+        readonly kInitSavePaperSize: 0x00000200;
+        readonly kInitSaveDuplex: 0x00000800;
+        readonly kInitSaveUnwriteableMargins: 0x00004000;
+        readonly kInitSaveEdges: 0x00008000;
+        readonly kInitSaveReversed: 0x00010000;
+        readonly kInitSaveInColor: 0x00020000;
+        readonly kInitSaveOrientation: 0x00040000;
+        readonly kInitSavePrinterName: 0x00100000;
+        readonly kInitSavePrintToFile: 0x00200000;
+        readonly kInitSaveToFileName: 0x00400000;
+        readonly kInitSavePageDelay: 0x00800000;
+        readonly kInitSaveMargins: 0x01000000;
+        readonly kInitSaveShrinkToFit: 0x08000000;
+        readonly kInitSaveScaling: 0x10000000;
+        readonly kInitSaveAll: 0xFFFFFFFF;
+        readonly kJustLeft: 0;
+        readonly kJustCenter: 1;
+        readonly kJustRight: 2;
+        readonly kPaperSizeInches: 0;
+        readonly kPaperSizeMillimeters: 1;
+        readonly kPortraitOrientation: 0;
+        readonly kLandscapeOrientation: 1;
+        readonly kOutputFormatNative: 0;
+        readonly kOutputFormatPDF: 2;
+        readonly kDuplexNone: 0;
+        readonly kDuplexFlipOnLongEdge: 1;
+        readonly kDuplexFlipOnShortEdge: 2;
+    };
+    nsIPrintSettingsService: {
+        readonly name: 'nsIPrintSettingsService';
+        readonly number: '841387C8-72E6-484b-9296-BF6EEA80D58A';
+    };
+    nsIPrintSettingsWin: {
+        readonly name: 'nsIPrintSettingsWin';
+        readonly number: 'c63eed41-6ac5-459e-8a64-033eb9ad770a';
+    };
+    nsIPrinterInfo: {
+        readonly name: 'nsIPrinterInfo';
+        readonly number: '855ae9dd-62a4-64aa-9c60-b1078ff028f1';
+    };
+    nsIPrinter: {
+        readonly name: 'nsIPrinter';
+        readonly number: 'd2dde9bb-df86-469c-bfcc-fd95a44b1db8';
+    };
+    nsIPrinterList: {
+        readonly name: 'nsIPrinterList';
+        readonly number: '5e738fff-404c-4c94-9189-e8f2cce93e94';
+    };
+    nsIPrivacyTransitionObserver: {
+        readonly name: 'nsIPrivacyTransitionObserver';
+        readonly number: 'b4b1449d-0ef0-47f5-b62e-adc57fd49702';
+    };
+    nsIPrivateBrowsingChannel: {
+        readonly name: 'nsIPrivateBrowsingChannel';
+        readonly number: 'df702bb0-55b8-11e2-bcfd-0800200c9a66';
+    };
+    nsIProcess: {
+        readonly name: 'nsIProcess';
+        readonly number: '609610de-9954-4a63-8a7c-346350a86403';
+    };
+    nsIProcessToolsService: {
+        readonly name: 'nsIProcessToolsService';
+        readonly number: '1341f571-ebed-4305-b264-4d8fc3b6b11c';
+    };
+    nsIProfileStartup: {
+        readonly name: 'nsIProfileStartup';
+        readonly number: '048e5ca1-0eb7-4bb1-a9a2-a36f7d4e0e3c';
+    };
+    nsIProfileMigrator: {
+        readonly name: 'nsIProfileMigrator';
+        readonly number: '3df284a5-2258-4d46-a664-761ecdc04c22';
+    };
+    nsIProfileUnlocker: {
+        readonly name: 'nsIProfileUnlocker';
+        readonly number: '';
+        readonly ATTEMPT_QUIT: 0;
+        readonly FORCE_QUIT: 1;
+    };
+    nsIProfilerStartParams: {
+        readonly name: 'nsIProfilerStartParams';
+        readonly number: '0a175ba7-8fcf-4ce9-9c4b-ccc6272f4425';
+    };
+    nsIProfiler: {
+        readonly name: 'nsIProfiler';
+        readonly number: 'ead3f75c-0e0e-4fbb-901c-1e5392ef5b2a';
+    };
+    nsIProgressEventSink: {
+        readonly name: 'nsIProgressEventSink';
+        readonly number: '';
+    };
+    nsIPrompt: {
+        readonly name: 'nsIPrompt';
+        readonly number: '';
+        readonly BUTTON_POS_0: 1;
+        readonly BUTTON_TITLE_OK: 1;
+        readonly BUTTON_TITLE_CANCEL: 2;
+        readonly BUTTON_TITLE_YES: 3;
+        readonly BUTTON_TITLE_NO: 4;
+        readonly BUTTON_TITLE_SAVE: 5;
+        readonly BUTTON_TITLE_DONT_SAVE: 6;
+        readonly BUTTON_TITLE_REVERT: 7;
+        readonly BUTTON_TITLE_IS_STRING: 127;
+        readonly MODAL_TYPE_CONTENT: 1;
+        readonly MODAL_TYPE_TAB: 2;
+        readonly MODAL_TYPE_WINDOW: 3;
+        readonly MODAL_TYPE_INTERNAL_WINDOW: 4;
+    };
+    nsIPromptCollection: {
+        readonly name: 'nsIPromptCollection';
+        readonly number: '7913837c-9623-11ea-bb37-0242ac130002';
+    };
+    nsIPromptFactory: {
+        readonly name: 'nsIPromptFactory';
+        readonly number: '2803541c-c96a-4ff1-bd7c-9cb566d46aeb';
+    };
+    nsIPromptInstance: {
+        readonly name: 'nsIPromptInstance';
+        readonly number: '889842e9-052c-46c9-99f3-f4a426571e38';
+    };
+    nsIPromptService: {
+        readonly name: 'nsIPromptService';
+        readonly number: '404ebfa2-d8f4-4c94-8416-e65a55f9df5a';
+        readonly BUTTON_POS_0: 1;
+        readonly BUTTON_TITLE_OK: 1;
+        readonly BUTTON_TITLE_CANCEL: 2;
+        readonly BUTTON_TITLE_YES: 3;
+        readonly BUTTON_TITLE_NO: 4;
+        readonly BUTTON_TITLE_SAVE: 5;
+        readonly BUTTON_TITLE_DONT_SAVE: 6;
+        readonly BUTTON_TITLE_REVERT: 7;
+        readonly BUTTON_TITLE_IS_STRING: 127;
+        readonly BUTTON_POS_0_DEFAULT: 0;
+        readonly MODAL_TYPE_CONTENT: 1;
+        readonly MODAL_TYPE_TAB: 2;
+        readonly MODAL_TYPE_WINDOW: 3;
+        readonly MODAL_TYPE_INTERNAL_WINDOW: 4;
+    };
+    nsIProperties: {
+        readonly name: 'nsIProperties';
+        readonly number: '78650582-4e93-4b60-8e85-26ebd3eb14ca';
+    };
+    nsIProperty: {
+        readonly name: 'nsIProperty';
+        readonly number: '6dcf9030-a49f-11d5-910d-0010a4e73d9a';
+    };
+    nsIPropertyBag: {
+        readonly name: 'nsIPropertyBag';
+        readonly number: 'bfcd37b0-a49f-11d5-910d-0010a4e73d9a';
+    };
+    nsIPropertyBag2: {
+        readonly name: 'nsIPropertyBag2';
+        readonly number: '625cfd1e-da1e-4417-9ee9-dbc8e0b3fd79';
+    };
+    nsIProtectedAuthThread: {
+        readonly name: 'nsIProtectedAuthThread';
+        readonly number: '';
+    };
+    nsIProtocolHandlerWithDynamicFlags: {
+        readonly name: 'nsIProtocolHandlerWithDynamicFlags';
+        readonly number: '65a8e823-0591-4fc0-a56a-03265e0a4ce8';
+    };
+    nsIProtocolHandler: {
+        readonly name: 'nsIProtocolHandler';
+        readonly number: 'a87210e6-7c8c-41f7-864d-df809015193e';
+        readonly URI_STD: 0;
+    };
+    nsIProtocolProxyCallback: {
+        readonly name: 'nsIProtocolProxyCallback';
+        readonly number: '';
+    };
+    nsIProxyProtocolFilterResult: {
+        readonly name: 'nsIProxyProtocolFilterResult';
+        readonly number: '009E6C3F-FB64-40C5-8093-F1495C64773E';
+    };
+    nsIProtocolProxyFilter: {
+        readonly name: 'nsIProtocolProxyFilter';
+        readonly number: '';
+    };
+    nsIProtocolProxyChannelFilter: {
+        readonly name: 'nsIProtocolProxyChannelFilter';
+        readonly number: '';
+    };
+    nsIProxyConfigChangedCallback: {
+        readonly name: 'nsIProxyConfigChangedCallback';
+        readonly number: '77984234-aad5-47fc-a412-03398c2134a5';
+    };
+    nsIProtocolProxyService: {
+        readonly name: 'nsIProtocolProxyService';
+        readonly number: 'ef57c8b6-e09d-4cd4-9222-2a5d2402e15d';
+        readonly PROXYCONFIG_DIRECT: 0;
+        readonly PROXYCONFIG_MANUAL: 1;
+        readonly PROXYCONFIG_PAC: 2;
+        readonly PROXYCONFIG_WPAD: 4;
+        readonly PROXYCONFIG_SYSTEM: 5;
+    };
+    nsIProtocolProxyService2: {
+        readonly name: 'nsIProtocolProxyService2';
+        readonly number: 'b2e5b2c0-e21e-4845-b336-be6d60a38951';
+    };
+    nsIProxiedChannel: {
+        readonly name: 'nsIProxiedChannel';
+        readonly number: '6238f134-8c3f-4354-958f-dfd9d54a4446';
+    };
+    nsIProxiedProtocolHandler: {
+        readonly name: 'nsIProxiedProtocolHandler';
+        readonly number: '3756047a-fa2b-4b45-9948-3b5f8fc375e7';
+    };
+    nsIProxyInfo: {
+        readonly name: 'nsIProxyInfo';
+        readonly number: '';
+    };
+    nsIPublicKeyPinningService: {
+        readonly name: 'nsIPublicKeyPinningService';
+        readonly number: 'f64432b9-e8c6-41b4-b2da-8eb004344bba';
+    };
+    nsIPurgeTrackerService: {
+        readonly name: 'nsIPurgeTrackerService';
+        readonly number: 'cd68d61e-9a44-402d-9671-838ac0872176';
+    };
+    nsIPushErrorReporter: {
+        readonly name: 'nsIPushErrorReporter';
+        readonly number: 'b58249f9-1a04-48cc-bc20-2c992d64c73e';
+        readonly ACK_DELIVERED: 0;
+        readonly ACK_DECRYPTION_ERROR: 1;
+        readonly ACK_NOT_DELIVERED: 2;
+        readonly UNSUBSCRIBE_MANUAL: 3;
+        readonly UNSUBSCRIBE_QUOTA_EXCEEDED: 4;
+        readonly UNSUBSCRIBE_PERMISSION_REVOKED: 5;
+        readonly DELIVERY_UNCAUGHT_EXCEPTION: 6;
+        readonly DELIVERY_UNHANDLED_REJECTION: 7;
+        readonly DELIVERY_INTERNAL_ERROR: 8;
+    };
+    nsIPushNotifier: {
+        readonly name: 'nsIPushNotifier';
+        readonly number: 'b00dfdeb-14e5-425b-adc7-b531442e3216';
+    };
+    nsIPushData: {
+        readonly name: 'nsIPushData';
+        readonly number: 'dfc4f151-cead-40df-8eb7-7a7a67c54b16';
+    };
+    nsIPushMessage: {
+        readonly name: 'nsIPushMessage';
+        readonly number: 'b9d063ca-0e3f-4fee-be4b-ea9103263433';
+    };
+    nsIPushSubscription: {
+        readonly name: 'nsIPushSubscription';
+        readonly number: '1de32d5c-ea88-4c9e-9626-b032bd87f415';
+    };
+    nsIPushSubscriptionCallback: {
+        readonly name: 'nsIPushSubscriptionCallback';
+        readonly number: '1799c074-9d52-46b0-ab3c-c09790732f6f';
+    };
+    nsIUnsubscribeResultCallback: {
+        readonly name: 'nsIUnsubscribeResultCallback';
+        readonly number: 'd574118f-61a9-4270-b1f6-4461aa85c4f5';
+    };
+    nsIPushClearResultCallback: {
+        readonly name: 'nsIPushClearResultCallback';
+        readonly number: 'bd47b38e-8bfa-4f92-834e-832a4431e05e';
+    };
+    nsIPushService: {
+        readonly name: 'nsIPushService';
+        readonly number: '678ef584-bf25-47aa-ac84-03efc0865b68';
+    };
+    nsIPushQuotaManager: {
+        readonly name: 'nsIPushQuotaManager';
+        readonly number: 'a2555e70-46f8-4b52-bf02-d978b979d143';
+    };
+    nsIQueryContentEventResult: {
+        readonly name: 'nsIQueryContentEventResult';
+        readonly number: 'e2c39e0e-345f-451a-a7b2-e0230d555847';
+    };
+    nsIQuotaUsageCallback: {
+        readonly name: 'nsIQuotaUsageCallback';
+        readonly number: '';
+    };
+    nsIQuotaCallback: {
+        readonly name: 'nsIQuotaCallback';
+        readonly number: '';
+    };
+    nsIQuotaManagerService: {
+        readonly name: 'nsIQuotaManagerService';
+        readonly number: '1b3d0a38-8151-4cf9-89fa-4f92c2ef0e7e';
+    };
+    nsIQuotaRequestBase: {
+        readonly name: 'nsIQuotaRequestBase';
+        readonly number: '9af54222-0407-48fd-a4ab-9457c986fc49';
+    };
+    nsIQuotaUsageRequest: {
+        readonly name: 'nsIQuotaUsageRequest';
+        readonly number: '166e28e6-cf6d-4927-a6d7-b51bca9d3469';
+    };
+    nsIQuotaRequest: {
+        readonly name: 'nsIQuotaRequest';
+        readonly number: '22890e3e-ff25-4372-9684-d901060e2f6c';
+    };
+    nsIQuotaFullOriginMetadataResult: {
+        readonly name: 'nsIQuotaFullOriginMetadataResult';
+        readonly number: '4d8def75-014e-404d-bf30-e2f0Bfcf4d89';
+    };
+    nsIQuotaUsageResult: {
+        readonly name: 'nsIQuotaUsageResult';
+        readonly number: 'd8c9328b-9aa8-4f5d-90e6-482de4a6d5b8';
+    };
+    nsIQuotaOriginUsageResult: {
+        readonly name: 'nsIQuotaOriginUsageResult';
+        readonly number: '96df03d2-116a-493f-bb0b-118c212a6b32';
+    };
+    nsIQuotaEstimateResult: {
+        readonly name: 'nsIQuotaEstimateResult';
+        readonly number: '9827fc69-7ea9-48ef-b30d-2e2ae0451ec0';
+    };
+    nsIRaceCacheWithNetwork: {
+        readonly name: 'nsIRaceCacheWithNetwork';
+        readonly number: '4d963475-8b16-4c58-b804-8a23d49436c5';
+    };
+    nsIRandomAccessStream: {
+        readonly name: 'nsIRandomAccessStream';
+        readonly number: '9b5904a8-886a-420f-a1d8-847de8ffc133';
+    };
+    nsIRandomGenerator: {
+        readonly name: 'nsIRandomGenerator';
+        readonly number: '2362d97a-747a-4576-8863-697667309209';
+    };
+    nsIRedirectChannelRegistrar: {
+        readonly name: 'nsIRedirectChannelRegistrar';
+        readonly number: 'efa36ea2-5b07-46fc-9534-a5acb8b77b72';
+    };
+    nsIRedirectHistoryEntry: {
+        readonly name: 'nsIRedirectHistoryEntry';
+        readonly number: '133b2905-0eba-411c-a8bb-f59787142aa2';
+    };
+    nsIRedirectResultListener: {
+        readonly name: 'nsIRedirectResultListener';
+        readonly number: '85cd2640-e91e-41ac-bdca-1dbf10dc131e';
+    };
+    nsIReferrerInfo: {
+        readonly name: 'nsIReferrerInfo';
+        readonly number: '';
+    };
+    nsIReflowObserver: {
+        readonly name: 'nsIReflowObserver';
+        readonly number: '832e692c-c4a6-11e2-8fd1-dce678957a39';
+    };
+    nsIRefreshURI: {
+        readonly name: 'nsIRefreshURI';
+        readonly number: 'a5e61a3c-51bd-45be-ac0c-e87b71860656';
+    };
+    nsIRegion: {
+        readonly name: 'nsIRegion';
+        readonly number: '21e6d094-e016-41a4-80cd-76d2e20871aa';
+    };
+    nsIRelativeFilePref: {
+        readonly name: 'nsIRelativeFilePref';
+        readonly number: '2f977d4e-5485-11d4-87e2-0010a4e75ef2';
+    };
+    nsIRemoteAgent: {
+        readonly name: 'nsIRemoteAgent';
+        readonly number: '8f685a9d-8181-46d6-a71d-869289099c6d';
+    };
+    nsIRemoteTab: {
+        readonly name: 'nsIRemoteTab';
+        readonly number: '';
+    };
+    nsIRequest: {
+        readonly name: 'nsIRequest';
+        readonly number: '';
+        readonly LOAD_REQUESTMASK: 0xFFFF;
+        readonly LOAD_NORMAL: 0;
+    };
+    nsIRequestTailUnblockCallback: {
+        readonly name: 'nsIRequestTailUnblockCallback';
+        readonly number: '7EB361D4-37A5-42C9-AFAE-F6C88FE7C394';
+    };
+    nsIRequestContext: {
+        readonly name: 'nsIRequestContext';
+        readonly number: '658e3e6e-8633-4b1a-8d66-fa9f72293e63';
+    };
+    nsIRequestContextService: {
+        readonly name: 'nsIRequestContextService';
+        readonly number: '7fcbf4da-d828-4acc-b144-e5435198f727';
+    };
+    nsIRequestObserver: {
+        readonly name: 'nsIRequestObserver';
+        readonly number: '';
+    };
+    nsIRequestObserverProxy: {
+        readonly name: 'nsIRequestObserverProxy';
+        readonly number: 'c2b06151-1bf8-4eef-aea9-1532f12f5a10';
+    };
+    nsIResProtocolHandler: {
+        readonly name: 'nsIResProtocolHandler';
+        readonly number: '241d34ac-9ed5-46d7-910c-7a9d914aa0c5';
+    };
+    nsIResumableChannel: {
+        readonly name: 'nsIResumableChannel';
+        readonly number: '4ad136fa-83af-4a22-a76e-503642c0f4a8';
+    };
+    nsIRunnable: {
+        readonly name: 'nsIRunnable';
+        readonly number: '';
+    };
+    nsIRunnablePriority: {
+        readonly name: 'nsIRunnablePriority';
+        readonly number: 'e75aa42a-80a9-11e6-afb5-e89d87348e2c';
+        readonly PRIORITY_IDLE: 0;
+        readonly PRIORITY_DEFERRED_TIMERS: 1;
+        readonly PRIORITY_LOW: 2;
+        readonly PRIORITY_NORMAL: 4;
+        readonly PRIORITY_MEDIUMHIGH: 5;
+        readonly PRIORITY_INPUT_HIGH: 6;
+        readonly PRIORITY_VSYNC: 7;
+        readonly PRIORITY_RENDER_BLOCKING: 9;
+        readonly PRIORITY_CONTROL: 10;
+    };
+    nsIRunnableIPCMessageType: {
+        readonly name: 'nsIRunnableIPCMessageType';
+        readonly number: '3114c36c-a482-4c6e-9523-1dcfc6f605b9';
+    };
+    nsISDBCallback: {
+        readonly name: 'nsISDBCallback';
+        readonly number: '';
+    };
+    nsISDBCloseCallback: {
+        readonly name: 'nsISDBCloseCallback';
+        readonly number: '';
+    };
+    nsISDBConnection: {
+        readonly name: 'nsISDBConnection';
+        readonly number: 'ea420fdd-548f-44f9-9286-59aad6a40f01';
+    };
+    nsISDBRequest: {
+        readonly name: 'nsISDBRequest';
+        readonly number: '13f05bcf-715c-427e-aac8-df9b2c1ec1e3';
+    };
+    nsISDBResult: {
+        readonly name: 'nsISDBResult';
+        readonly number: 'bca19e01-b34e-4a48-8875-2f4cb871febf';
+    };
+    nsISHEntry: {
+        readonly name: 'nsISHEntry';
+        readonly number: '';
+    };
+    nsISHistory: {
+        readonly name: 'nsISHistory';
+        readonly number: '';
+    };
+    nsISHistoryListener: {
+        readonly name: 'nsISHistoryListener';
+        readonly number: '125c0833-746a-400e-9b89-d2d18545c08a';
+    };
+    nsISafeOutputStream: {
+        readonly name: 'nsISafeOutputStream';
+        readonly number: '5f914307-5c34-4e1f-8e32-ec749d25b27a';
+    };
+    nsIScreen: {
+        readonly name: 'nsIScreen';
+        readonly number: '826e80c8-d70f-42e2-8aa9-82c05f2a370a';
+    };
+    nsIScreenManager: {
+        readonly name: 'nsIScreenManager';
+        readonly number: 'e8a96e60-6b61-4a14-bacc-53891604b502';
+    };
+    nsIScriptChannel: {
+        readonly name: 'nsIScriptChannel';
+        readonly number: '33234b99-9588-4c7d-9da6-86b8b7cba565';
+        readonly NO_EXECUTION: 0;
+        readonly EXECUTE_NORMAL: 2;
+    };
+    nsIScriptErrorNote: {
+        readonly name: 'nsIScriptErrorNote';
+        readonly number: 'e8933fc9-c302-4e12-a55b-4f88611d9c6c';
+    };
+    nsIScriptError: {
+        readonly name: 'nsIScriptError';
+        readonly number: '63eb4d3e-7d99-4150-b4f3-11314f9d82a9';
+        readonly errorFlag: 0x0;
+        readonly warningFlag: 0x1;
+        readonly infoFlag: 0x8;
+    };
+    nsIScriptLoaderObserver: {
+        readonly name: 'nsIScriptLoaderObserver';
+        readonly number: '7b787204-76fb-4764-96f1-fb7a666db4f4';
+    };
+    nsIScriptSecurityManager: {
+        readonly name: 'nsIScriptSecurityManager';
+        readonly number: '51daad87-3a0c-44cc-b620-7356801c9022';
+        readonly STANDARD: 0;
+        readonly DISALLOW_SCRIPT_OR_DATA: "DISALLOW_INHERIT_PRINCIPAL";
+        readonly DEFAULT_USER_CONTEXT_ID: 0;
+        readonly DEFAULT_PRIVATE_BROWSING_ID: 0;
+    };
+    nsIScriptableBase64Encoder: {
+        readonly name: 'nsIScriptableBase64Encoder';
+        readonly number: '9479c864-d1f9-45ab-b7b9-28b907bd2ba9';
+    };
+    nsIScriptableContentIterator: {
+        readonly name: 'nsIScriptableContentIterator';
+        readonly number: '9f25fb2a-265f-44f9-a122-62bbf443239e';
+    };
+    nsIScriptableInputStream: {
+        readonly name: 'nsIScriptableInputStream';
+        readonly number: '3fce9015-472a-4080-ac3e-cd875dbe361e';
+    };
+    nsIScriptableUnicodeConverter: {
+        readonly name: 'nsIScriptableUnicodeConverter';
+        readonly number: 'f36ee324-5c1c-437f-ba10-2b4db7a18031';
+    };
+    nsISearchSubmission: {
+        readonly name: 'nsISearchSubmission';
+        readonly number: '5799251f-5b55-4df7-a9e7-0c27812c469a';
+    };
+    nsISearchEngine: {
+        readonly name: 'nsISearchEngine';
+        readonly number: '620bd920-0491-48c8-99a8-d6047e64802d';
+    };
+    nsISearchParseSubmissionResult: {
+        readonly name: 'nsISearchParseSubmissionResult';
+        readonly number: '0dc93e51-a7bf-4a16-862d-4b3469ff6206';
+    };
+    nsISearchService: {
+        readonly name: 'nsISearchService';
+        readonly number: '0301834b-2630-440e-8b98-db8dc55f34b9';
+        readonly ERROR_DOWNLOAD_FAILURE: 0x1;
+        readonly ERROR_DUPLICATE_ENGINE: 0x2;
+        readonly ERROR_ENGINE_CORRUPTED: 0x3;
+        readonly CHANGE_REASON_UNKNOWN: 0x0;
+        readonly CHANGE_REASON_USER: 0x1;
+        readonly CHANGE_REASON_USER_PRIVATE_SPLIT: 0x2;
+        readonly CHANGE_REASON_USER_SEARCHBAR: 0x3;
+        readonly CHANGE_REASON_USER_SEARCHBAR_CONTEXT: 0x4;
+        readonly CHANGE_REASON_ADDON_INSTALL: 0x5;
+        readonly CHANGE_REASON_ADDON_UNINSTALL: 0x6;
+        readonly CHANGE_REASON_CONFIG: 0x7;
+        readonly CHANGE_REASON_LOCALE: 0x8;
+        readonly CHANGE_REASON_REGION: 0x9;
+        readonly CHANGE_REASON_EXPERIMENT: 0xA;
+        readonly CHANGE_REASON_ENTERPRISE: 0xB;
+        readonly CHANGE_REASON_UITOUR: 0xC;
+    };
+    nsISecCheckWrapChannel: {
+        readonly name: 'nsISecCheckWrapChannel';
+        readonly number: '9446c5d5-c9fb-4a6e-acf9-ca4fc666efe0';
+    };
+    nsISecretDecoderRing: {
+        readonly name: 'nsISecretDecoderRing';
+        readonly number: '0EC80360-075C-11d4-9FD4-00C04F1B83D8';
+    };
+    nsISecureBrowserUI: {
+        readonly name: 'nsISecureBrowserUI';
+        readonly number: '718c662a-f810-4a80-a6c9-0b1810ecade2';
+    };
+    nsISecurityConsoleMessage: {
+        readonly name: 'nsISecurityConsoleMessage';
+        readonly number: 'FE9FC9B6-DDE2-11E2-A8F1-0A326188709B';
+    };
+    nsISecurityUITelemetry: {
+        readonly name: 'nsISecurityUITelemetry';
+        readonly number: '5d1acf82-223a-46fb-a8f3-a1b16e2ceb04';
+        readonly WARNING_ADDON_ASKING_PREVENTED: 1;
+        readonly WARNING_ADDON_ASKING_PREVENTED_CLICK_THROUGH: 2;
+        readonly WARNING_CONFIRM_ADDON_INSTALL: 3;
+        readonly WARNING_CONFIRM_ADDON_INSTALL_CLICK_THROUGH: 4;
+        readonly WARNING_CONFIRM_POST_TO_INSECURE_FROM_SECURE: 9;
+        readonly WARNING_CONFIRM_POST_TO_INSECURE_FROM_SECURE_CLICK_THROUGH: 10;
+    };
+    nsISeekableStream: {
+        readonly name: 'nsISeekableStream';
+        readonly number: '8429d350-1040-4661-8b71-f2a6ba455980';
+        readonly NS_SEEK_SET: 0;
+        readonly NS_SEEK_CUR: 1;
+        readonly NS_SEEK_END: 2;
+    };
+    nsISelectionController: {
+        readonly name: 'nsISelectionController';
+        readonly number: '3801c9d4-8e69-4bfc-9edb-b58278621f8f';
+        readonly SELECTION_NONE: 0;
+        readonly SELECTION_NORMAL: 1;
+        readonly SELECTION_SPELLCHECK: 2;
+        readonly SELECTION_IME_RAWINPUT: 3;
+        readonly SELECTION_IME_SELECTEDRAWTEXT: 4;
+        readonly SELECTION_IME_CONVERTEDTEXT: 5;
+        readonly SELECTION_IME_SELECTEDCONVERTEDTEXT: 6;
+        readonly SELECTION_ACCESSIBILITY: 7;
+        readonly SELECTION_FIND: 8;
+        readonly SELECTION_URLSECONDARY: 9;
+        readonly SELECTION_URLSTRIKEOUT: 10;
+        readonly NUM_SELECTIONTYPES: 11;
+        readonly SELECTION_ANCHOR_REGION: 0;
+        readonly SELECTION_FOCUS_REGION: 1;
+        readonly SELECTION_WHOLE_SELECTION: 2;
+        readonly NUM_SELECTION_REGIONS: 3;
+        readonly SELECTION_OFF: 0;
+        readonly SELECTION_HIDDEN: 1;
+        readonly SELECTION_ON: 2;
+        readonly SELECTION_DISABLED: 3;
+        readonly SELECTION_ATTENTION: 4;
+        readonly MOVE_LEFT: 0;
+        readonly MOVE_RIGHT: 1;
+        readonly MOVE_UP: 2;
+        readonly MOVE_DOWN: 3;
+    };
+    nsISelectionDisplay: {
+        readonly name: 'nsISelectionDisplay';
+        readonly number: '0DDF9E1C-1DD2-11B2-A183-908A08AA75AE';
+        readonly DISPLAY_TEXT: 1;
+        readonly DISPLAY_IMAGES: 2;
+        readonly DISPLAY_FRAMES: 4;
+        readonly DISPLAY_ALL: 7;
+    };
+    nsISelectionListener: {
+        readonly name: 'nsISelectionListener';
+        readonly number: '45686299-ae2b-46bc-9502-c56c35691ab9';
+        readonly NO_REASON: 0;
+        readonly DRAG_REASON: 1;
+        readonly MOUSEDOWN_REASON: 2;
+        readonly MOUSEUP_REASON: 4;
+        readonly KEYPRESS_REASON: 8;
+        readonly SELECTALL_REASON: 16;
+        readonly COLLAPSETOSTART_REASON: 32;
+        readonly COLLAPSETOEND_REASON: 64;
+        readonly IME_REASON: 128;
+        readonly JS_REASON: 256;
+        readonly CHARACTER_AMOUNT: 0;
+        readonly CLUSTER_AMOUNT: 1;
+        readonly WORD_AMOUNT: 2;
+        readonly WORDNOSPACE_AMOUNT: 3;
+        readonly LINE_AMOUNT: 4;
+        readonly BEGINLINE_AMOUNT: 5;
+        readonly ENDLINE_AMOUNT: 6;
+        readonly NO_AMOUNT: 7;
+        readonly PARAGRAPH_AMOUNT: 8;
+    };
+    nsISensitiveInfoHiddenURI: {
+        readonly name: 'nsISensitiveInfoHiddenURI';
+        readonly number: 'a5761968-6e1a-4f2d-8191-ec749602b178';
+    };
+    nsISerialEventTarget: {
+        readonly name: 'nsISerialEventTarget';
+        readonly number: '';
+    };
+    nsISerializable: {
+        readonly name: 'nsISerializable';
+        readonly number: '';
+    };
+    nsISerializationHelper: {
+        readonly name: 'nsISerializationHelper';
+        readonly number: '31654c0f-35f3-44c6-b31e-37a11516e6bc';
+    };
+    nsIServerSocket: {
+        readonly name: 'nsIServerSocket';
+        readonly number: '7a9c39cb-a13f-4eef-9bdf-a74301628742';
+        readonly LoopbackOnly: 0x00000001;
+        readonly KeepWhenOffline: 0x00000002;
+    };
+    nsIServerSocketListener: {
+        readonly name: 'nsIServerSocketListener';
+        readonly number: '836d98ec-fee2-4bde-b609-abd5e966eabd';
+    };
+    nsIServiceManager: {
+        readonly name: 'nsIServiceManager';
+        readonly number: '8bb35ed9-e332-462d-9155-4a002ab5c958';
+    };
+    nsIServiceWorkerUnregisterCallback: {
+        readonly name: 'nsIServiceWorkerUnregisterCallback';
+        readonly number: '52ee2c9d-ee87-4caf-9588-23ae77ff8798';
+    };
+    nsIServiceWorkerInfo: {
+        readonly name: 'nsIServiceWorkerInfo';
+        readonly number: '76e357ed-208d-4e4c-9165-1c4059707879';
+        readonly STATE_PARSED: 0;
+        readonly STATE_INSTALLING: 1;
+        readonly STATE_INSTALLED: 2;
+        readonly STATE_ACTIVATING: 3;
+        readonly STATE_ACTIVATED: 4;
+        readonly STATE_REDUNDANT: 5;
+        readonly STATE_UNKNOWN: 6;
+    };
+    nsIServiceWorkerRegistrationInfoListener: {
+        readonly name: 'nsIServiceWorkerRegistrationInfoListener';
+        readonly number: '87e63548-d440-4b8a-b158-65ad1de0211E';
+    };
+    nsIServiceWorkerRegistrationInfo: {
+        readonly name: 'nsIServiceWorkerRegistrationInfo';
+        readonly number: 'ddbc1fd4-2f2e-4fca-a395-6e010bbedfe3';
+        readonly UPDATE_VIA_CACHE_IMPORTS: 0;
+        readonly UPDATE_VIA_CACHE_ALL: 1;
+        readonly UPDATE_VIA_CACHE_NONE: 2;
+    };
+    nsIServiceWorkerManagerListener: {
+        readonly name: 'nsIServiceWorkerManagerListener';
+        readonly number: '9e523e7c-ad6f-4df0-8077-c74aebbc679d';
+    };
+    nsIServiceWorkerManager: {
+        readonly name: 'nsIServiceWorkerManager';
+        readonly number: '7404c8e8-4d47-4449-8ed1-47d1261d4e33';
+    };
+    nsISessionStorageService: {
+        readonly name: 'nsISessionStorageService';
+        readonly number: '3b95dd6c-0293-4e06-baeb-2affaefc9e74';
+    };
+    nsISessionStoreRestoreData: {
+        readonly name: 'nsISessionStoreRestoreData';
+        readonly number: 'cd9f33c5-460d-4bbf-a459-f375ca9566d8';
+    };
+    nsISharePicker: {
+        readonly name: 'nsISharePicker';
+        readonly number: '1201d357-8417-4926-a694-e6408fbedcf8';
+    };
+    nsISharingHandlerApp: {
+        readonly name: 'nsISharingHandlerApp';
+        readonly number: '7111f769-53ec-41fd-b314-613661d5b6ba';
+    };
+    nsIShellService: {
+        readonly name: 'nsIShellService';
+        readonly number: '2d1a95e4-5bd8-4eeb-b0a8-c1455fd2a357';
+        readonly BACKGROUND_TILE: 1;
+        readonly BACKGROUND_STRETCH: 2;
+        readonly BACKGROUND_CENTER: 3;
+        readonly BACKGROUND_FILL: 4;
+        readonly BACKGROUND_FIT: 5;
+        readonly BACKGROUND_SPAN: 6;
+    };
+    nsIJSEnumerator: {
+        readonly name: 'nsIJSEnumerator';
+        readonly number: '';
+    };
+    nsISimpleEnumeratorBase: {
+        readonly name: 'nsISimpleEnumeratorBase';
+        readonly number: '796f340d-0a2a-490b-9c60-640765e99782';
+    };
+    nsISimpleEnumerator: {
+        readonly name: 'nsISimpleEnumerator';
+        readonly number: '';
+    };
+    nsISimpleStreamListener: {
+        readonly name: 'nsISimpleStreamListener';
+        readonly number: 'a9b84f6a-0824-4278-bae6-bfca0570a26e';
+    };
+    nsISimpleURIMutator: {
+        readonly name: 'nsISimpleURIMutator';
+        readonly number: 'e055bddd-f3c2-404b-adec-db9304e93be2';
+    };
+    nsISiteSecurityState: {
+        readonly name: 'nsISiteSecurityState';
+        readonly number: '31313372-842c-4110-bdf1-6aea17c845ad';
+        readonly SECURITY_PROPERTY_UNSET: 0;
+        readonly SECURITY_PROPERTY_SET: 1;
+        readonly SECURITY_PROPERTY_KNOCKOUT: 2;
+    };
+    nsISiteHSTSState: {
+        readonly name: 'nsISiteHSTSState';
+        readonly number: '9ff16e40-1029-496c-95c2-bc819872b216';
+    };
+    nsISiteSecurityService: {
+        readonly name: 'nsISiteSecurityService';
+        readonly number: '275127f8-dbd7-4681-afbf-6df0c6587a01';
+        readonly Success: 0;
+        readonly ERROR_UNKNOWN: 1;
+        readonly ERROR_COULD_NOT_PARSE_HEADER: 3;
+        readonly ERROR_NO_MAX_AGE: 4;
+        readonly ERROR_MULTIPLE_MAX_AGES: 5;
+        readonly ERROR_INVALID_MAX_AGE: 6;
+        readonly ERROR_MULTIPLE_INCLUDE_SUBDOMAINS: 7;
+        readonly ERROR_INVALID_INCLUDE_SUBDOMAINS: 8;
+        readonly ERROR_COULD_NOT_SAVE_STATE: 13;
+    };
+    nsISlowScriptDebugCallback: {
+        readonly name: 'nsISlowScriptDebugCallback';
+        readonly number: 'f7dbb80c-5d1e-4fd9-b55c-a9ffda4a75b1';
+    };
+    nsISlowScriptDebuggerStartupCallback: {
+        readonly name: 'nsISlowScriptDebuggerStartupCallback';
+        readonly number: 'b1c6ecd0-8fa4-11e4-b4a9-0800200c9a66';
+    };
+    nsISlowScriptDebugRemoteCallback: {
+        readonly name: 'nsISlowScriptDebugRemoteCallback';
+        readonly number: 'dbee14b0-8fa0-11e4-b4a9-0800200c9a66';
+    };
+    nsISlowScriptDebug: {
+        readonly name: 'nsISlowScriptDebug';
+        readonly number: 'f75d4164-3aa7-4395-ba44-a5f95b2e8427';
+    };
+    nsISocketFilter: {
+        readonly name: 'nsISocketFilter';
+        readonly number: 'afe2c40c-b9b9-4207-b898-e5cde18c6139';
+        readonly SF_INCOMING: 0;
+        readonly SF_OUTGOING: 1;
+    };
+    nsISocketFilterHandler: {
+        readonly name: 'nsISocketFilterHandler';
+        readonly number: '81ee76c6-4753-4125-9c8c-290ed9ba62fb';
+    };
+    nsISocketProvider: {
+        readonly name: 'nsISocketProvider';
+        readonly number: '';
+    };
+    nsISocketProviderService: {
+        readonly name: 'nsISocketProviderService';
+        readonly number: '8f8a23d0-5472-11d3-bbc8-0000861d1237';
+    };
+    nsISocketTransport: {
+        readonly name: 'nsISocketTransport';
+        readonly number: '';
+        readonly TIMEOUT_CONNECT: 0;
+        readonly TIMEOUT_READ_WRITE: 1;
+        readonly STATUS_RESOLVING: 0x804b0003;
+        readonly STATUS_RESOLVED: 0x804b000b;
+        readonly STATUS_CONNECTING_TO: 0x804b0007;
+        readonly STATUS_CONNECTED_TO: 0x804b0004;
+        readonly STATUS_SENDING_TO: 0x804b0005;
+        readonly STATUS_WAITING_FOR: 0x804b000a;
+        readonly STATUS_RECEIVING_FROM: 0x804b0006;
+        readonly STATUS_TLS_HANDSHAKE_STARTING: 0x804b000c;
+        readonly STATUS_TLS_HANDSHAKE_ENDED: 0x804b000d;
+    };
+    nsISTSShutdownObserver: {
+        readonly name: 'nsISTSShutdownObserver';
+        readonly number: '338947df-2f3b-4d24-9ce4-ecf161c1b7df';
+    };
+    nsISocketTransportService: {
+        readonly name: 'nsISocketTransportService';
+        readonly number: 'ad56b25f-e6bb-4db3-9f7b-5b7db33fd2b1';
+    };
+    nsIRoutedSocketTransportService: {
+        readonly name: 'nsIRoutedSocketTransportService';
+        readonly number: 'c5204623-5b58-4a16-8b2e-67c34dd02e3f';
+    };
+    nsISound: {
+        readonly name: 'nsISound';
+        readonly number: 'C3C28D92-A17F-43DF-976D-4EEAE6F995FC';
+        readonly EVENT_NEW_MAIL_RECEIVED: 0;
+        readonly EVENT_ALERT_DIALOG_OPEN: 1;
+        readonly EVENT_CONFIRM_DIALOG_OPEN: 2;
+        readonly EVENT_PROMPT_DIALOG_OPEN: 3;
+        readonly EVENT_SELECT_DIALOG_OPEN: 4;
+        readonly EVENT_MENU_EXECUTE: 5;
+        readonly EVENT_MENU_POPUP: 6;
+        readonly EVENT_EDITOR_MAX_LEN: 7;
+    };
+    nsISpeculativeConnect: {
+        readonly name: 'nsISpeculativeConnect';
+        readonly number: 'd74a17ac-5b8a-4824-a309-b1f04a3c4aed';
+    };
+    nsISpeculativeConnectionOverrider: {
+        readonly name: 'nsISpeculativeConnectionOverrider';
+        readonly number: '1040ebe3-6ed1-45a6-8587-995e082518d7';
+    };
+    nsISpeechGrammarCompilationCallback: {
+        readonly name: 'nsISpeechGrammarCompilationCallback';
+        readonly number: '6fcb6ee8-a6db-49ba-9f06-355d7ee18ea7';
+    };
+    nsISpeechRecognitionService: {
+        readonly name: 'nsISpeechRecognitionService';
+        readonly number: '8e97f287-f322-44e8-8888-8344fa408ef8';
+    };
+    nsISpeechTaskCallback: {
+        readonly name: 'nsISpeechTaskCallback';
+        readonly number: 'c576de0c-8a3d-4570-be7e-9876d3e5bed2';
+    };
+    nsISpeechTask: {
+        readonly name: 'nsISpeechTask';
+        readonly number: 'ad59949c-2437-4b35-8eeb-d760caab75c5';
+    };
+    nsISpeechService: {
+        readonly name: 'nsISpeechService';
+        readonly number: '';
+    };
+    nsIStandaloneNativeMenu: {
+        readonly name: 'nsIStandaloneNativeMenu';
+        readonly number: '7F7201EB-510C-4CEF-BDF0-04A15A7A4A8C';
+    };
+    nsIStandardURL: {
+        readonly name: 'nsIStandardURL';
+        readonly number: 'babd6cca-ebe7-4329-967c-d6b9e33caa81';
+        readonly URLTYPE_STANDARD: 1;
+        readonly URLTYPE_AUTHORITY: 2;
+        readonly URLTYPE_NO_AUTHORITY: 3;
+    };
+    nsIStandardURLMutator: {
+        readonly name: 'nsIStandardURLMutator';
+        readonly number: 'fc894e98-23a1-43cd-a7fe-72876f8ea2ee';
+    };
+    nsIStartupCacheInfo: {
+        readonly name: 'nsIStartupCacheInfo';
+        readonly number: 'a6b2f8b0-7438-11ea-bc55-0242ac130003';
+    };
+    nsIStorageActivityService: {
+        readonly name: 'nsIStorageActivityService';
+        readonly number: 'fd1310ba-d1be-4327-988e-92b39fcff6f4';
+    };
+    nsIStorageStream: {
+        readonly name: 'nsIStorageStream';
+        readonly number: '44a200fe-6c2b-4b41-b4e3-63e8c14e7c0d';
+    };
+    nsIStreamBufferAccess: {
+        readonly name: 'nsIStreamBufferAccess';
+        readonly number: 'ac923b72-ac87-4892-ac7a-ca385d429435';
+    };
+    nsIStreamConverter: {
+        readonly name: 'nsIStreamConverter';
+        readonly number: '0b6e2c69-5cf5-48b0-9dfd-c95950e2cc7b';
+    };
+    nsIStreamConverterService: {
+        readonly name: 'nsIStreamConverterService';
+        readonly number: 'f2b1ab53-f0bd-4adb-9365-e59b1701a258';
+    };
+    nsIStreamListener: {
+        readonly name: 'nsIStreamListener';
+        readonly number: '';
+    };
+    nsIStreamListenerTee: {
+        readonly name: 'nsIStreamListenerTee';
+        readonly number: '62b27fc1-6e8c-4225-8ad0-b9d44252973a';
+    };
+    nsIStreamLoaderObserver: {
+        readonly name: 'nsIStreamLoaderObserver';
+        readonly number: '359F7990-D4E9-11d3-A1A5-0050041CAF44';
+    };
+    nsIStreamLoader: {
+        readonly name: 'nsIStreamLoader';
+        readonly number: '323bcff1-7513-4e1f-a541-1c9213c2ed1b';
+    };
+    nsIStreamTransportService: {
+        readonly name: 'nsIStreamTransportService';
+        readonly number: '5e0adf7d-9785-45c3-a193-04f25a75da8f';
+    };
+    nsIInputAvailableCallback: {
+        readonly name: 'nsIInputAvailableCallback';
+        readonly number: 'ff2da731-44d0-4dd9-8236-c99387fec721';
+    };
+    nsIStringBundle: {
+        readonly name: 'nsIStringBundle';
+        readonly number: 'D85A17C2-AA7C-11d2-9B8C-00805F8A16D9';
+    };
+    nsIStringBundleService: {
+        readonly name: 'nsIStringBundleService';
+        readonly number: 'D85A17C0-AA7C-11d2-9B8C-00805F8A16D9';
+    };
+    nsIStringEnumeratorBase: {
+        readonly name: 'nsIStringEnumeratorBase';
+        readonly number: 'f5213d15-a4d1-4fb7-8a48-d69ccb7fb0eb';
+    };
+    nsIStringEnumerator: {
+        readonly name: 'nsIStringEnumerator';
+        readonly number: '';
+    };
+    nsIUTF8StringEnumerator: {
+        readonly name: 'nsIUTF8StringEnumerator';
+        readonly number: '';
+    };
+    nsIStringInputStream: {
+        readonly name: 'nsIStringInputStream';
+        readonly number: '450cd2d4-f0fd-424d-b365-b1251f80fd53';
+    };
+    nsIStructuredCloneContainer: {
+        readonly name: 'nsIStructuredCloneContainer';
+        readonly number: 'c664aae7-0d67-4155-a2dd-a3861778626f';
+    };
+    nsISFVBareItem: {
+        readonly name: 'nsISFVBareItem';
+        readonly number: '7072853f-215b-4a8a-92e5-9732bccc377b';
+        readonly BOOL: 1;
+        readonly STRING: 2;
+        readonly DECIMAL: 3;
+        readonly INTEGER: 4;
+        readonly TOKEN: 5;
+        readonly BYTE_SEQUENCE: 6;
+    };
+    nsISFVInteger: {
+        readonly name: 'nsISFVInteger';
+        readonly number: '843eea44-990a-422c-bbf2-2aa4ba9ee4d2';
+    };
+    nsISFVString: {
+        readonly name: 'nsISFVString';
+        readonly number: 'df6a0787-7caa-4fef-b145-08c1104c2fde';
+    };
+    nsISFVBool: {
+        readonly name: 'nsISFVBool';
+        readonly number: 'd263c6d7-4123-4c39-a121-ccf874a19012';
+    };
+    nsISFVDecimal: {
+        readonly name: 'nsISFVDecimal';
+        readonly number: '1098da8b-b4df-4526-b985-53dbd4160ad2';
+    };
+    nsISFVToken: {
+        readonly name: 'nsISFVToken';
+        readonly number: '8ad33d52-b9b2-4a17-8aa8-991250fc1214';
+    };
+    nsISFVByteSeq: {
+        readonly name: 'nsISFVByteSeq';
+        readonly number: '887eaef0-19fe-42bc-9a42-9ff773aa8fea';
+    };
+    nsISFVParams: {
+        readonly name: 'nsISFVParams';
+        readonly number: 'b1a397d7-3333-43e7-993a-fbe8ab90ee96';
+    };
+    nsISFVParametrizable: {
+        readonly name: 'nsISFVParametrizable';
+        readonly number: '6c0399f8-01de-4b25-b339-68e35e8d2e49';
+    };
+    nsISFVItemOrInnerList: {
+        readonly name: 'nsISFVItemOrInnerList';
+        readonly number: '99ac1b56-b5b3-44e7-ad96-db7444aae4b2';
+    };
+    nsISFVSerialize: {
+        readonly name: 'nsISFVSerialize';
+        readonly number: '28b9215d-c131-413c-9482-0004a371a5ec';
+    };
+    nsISFVItem: {
+        readonly name: 'nsISFVItem';
+        readonly number: 'abe8826b-6af7-4e54-bd2c-46ab231700ce';
+    };
+    nsISFVInnerList: {
+        readonly name: 'nsISFVInnerList';
+        readonly number: 'b2e52be2-8488-41b2-9ee2-3c48d92d095c';
+    };
+    nsISFVList: {
+        readonly name: 'nsISFVList';
+        readonly number: '02bb92a6-d1de-449c-b54f-d137f30c613d';
+    };
+    nsISFVDictionary: {
+        readonly name: 'nsISFVDictionary';
+        readonly number: '6642a7fe-7026-4eba-b730-05e230ee3437';
+    };
+    nsISFVService: {
+        readonly name: 'nsISFVService';
+        readonly number: '049f4be1-2f22-4438-a8da-518552ed390c';
+    };
+    nsIStyleSheetService: {
+        readonly name: 'nsIStyleSheetService';
+        readonly number: '4de68896-e8eb-41de-8237-a797b570ac4a';
+        readonly AGENT_SHEET: 0;
+        readonly USER_SHEET: 1;
+        readonly AUTHOR_SHEET: 2;
+    };
+    nsISubstitutingProtocolHandler: {
+        readonly name: 'nsISubstitutingProtocolHandler';
+        readonly number: '154c64fd-a69e-4105-89f8-bd7dfe621372';
+    };
+    nsIOutputIterator: {
+        readonly name: 'nsIOutputIterator';
+        readonly number: '7330650e-1dd2-11b2-a0c2-9ff86ee97bed';
+    };
+    nsIInputIterator: {
+        readonly name: 'nsIInputIterator';
+        readonly number: '85585e12-1dd2-11b2-a930-f6929058269a';
+    };
+    nsIForwardIterator: {
+        readonly name: 'nsIForwardIterator';
+        readonly number: '8da01646-1dd2-11b2-98a7-c7009045be7e';
+    };
+    nsIBidirectionalIterator: {
+        readonly name: 'nsIBidirectionalIterator';
+        readonly number: '948defaa-1dd1-11b2-89f6-8ce81f5ebda9';
+    };
+    nsIRandomAccessIterator: {
+        readonly name: 'nsIRandomAccessIterator';
+        readonly number: '9bd6fdb0-1dd1-11b2-9101-d15375968230';
+    };
+    nsISupportsPrimitive: {
+        readonly name: 'nsISupportsPrimitive';
+        readonly number: 'd0d4b136-1dd1-11b2-9371-f0727ef827c0';
+        readonly TYPE_ID: 1;
+        readonly TYPE_CSTRING: 2;
+        readonly TYPE_STRING: 3;
+        readonly TYPE_PRBOOL: 4;
+        readonly TYPE_PRUINT8: 5;
+        readonly TYPE_PRUINT16: 6;
+        readonly TYPE_PRUINT32: 7;
+        readonly TYPE_PRUINT64: 8;
+        readonly TYPE_PRTIME: 9;
+        readonly TYPE_CHAR: 10;
+        readonly TYPE_PRINT16: 11;
+        readonly TYPE_PRINT32: 12;
+        readonly TYPE_PRINT64: 13;
+        readonly TYPE_FLOAT: 14;
+        readonly TYPE_DOUBLE: 15;
+        readonly TYPE_INTERFACE_POINTER: 17;
+    };
+    nsISupportsID: {
+        readonly name: 'nsISupportsID';
+        readonly number: 'd18290a0-4a1c-11d3-9890-006008962422';
+    };
+    nsISupportsCString: {
+        readonly name: 'nsISupportsCString';
+        readonly number: 'd65ff270-4a1c-11d3-9890-006008962422';
+    };
+    nsISupportsString: {
+        readonly name: 'nsISupportsString';
+        readonly number: 'd79dc970-4a1c-11d3-9890-006008962422';
+    };
+    nsISupportsPRBool: {
+        readonly name: 'nsISupportsPRBool';
+        readonly number: 'ddc3b490-4a1c-11d3-9890-006008962422';
+    };
+    nsISupportsPRUint8: {
+        readonly name: 'nsISupportsPRUint8';
+        readonly number: 'dec2e4e0-4a1c-11d3-9890-006008962422';
+    };
+    nsISupportsPRUint16: {
+        readonly name: 'nsISupportsPRUint16';
+        readonly number: 'dfacb090-4a1c-11d3-9890-006008962422';
+    };
+    nsISupportsPRUint32: {
+        readonly name: 'nsISupportsPRUint32';
+        readonly number: 'e01dc470-4a1c-11d3-9890-006008962422';
+    };
+    nsISupportsPRUint64: {
+        readonly name: 'nsISupportsPRUint64';
+        readonly number: 'e13567c0-4a1c-11d3-9890-006008962422';
+    };
+    nsISupportsPRTime: {
+        readonly name: 'nsISupportsPRTime';
+        readonly number: 'e2563630-4a1c-11d3-9890-006008962422';
+    };
+    nsISupportsChar: {
+        readonly name: 'nsISupportsChar';
+        readonly number: 'e2b05e40-4a1c-11d3-9890-006008962422';
+    };
+    nsISupportsPRInt16: {
+        readonly name: 'nsISupportsPRInt16';
+        readonly number: 'e30d94b0-4a1c-11d3-9890-006008962422';
+    };
+    nsISupportsPRInt32: {
+        readonly name: 'nsISupportsPRInt32';
+        readonly number: 'e36c5250-4a1c-11d3-9890-006008962422';
+    };
+    nsISupportsPRInt64: {
+        readonly name: 'nsISupportsPRInt64';
+        readonly number: 'e3cb0ff0-4a1c-11d3-9890-006008962422';
+    };
+    nsISupportsFloat: {
+        readonly name: 'nsISupportsFloat';
+        readonly number: 'abeaa390-4ac0-11d3-baea-00805f8a5dd7';
+    };
+    nsISupportsDouble: {
+        readonly name: 'nsISupportsDouble';
+        readonly number: 'b32523a0-4ac0-11d3-baea-00805f8a5dd7';
+    };
+    nsISupportsInterfacePointer: {
+        readonly name: 'nsISupportsInterfacePointer';
+        readonly number: '995ea724-1dd1-11b2-9211-c21bdd3e7ed0';
+    };
+    nsISupportsPriority: {
+        readonly name: 'nsISupportsPriority';
+        readonly number: 'aa578b44-abd5-4c19-8b14-36d4de6fdc36';
+        readonly PRIORITY_NORMAL: 0;
+        readonly PRIORITY_LOW: 10;
+        readonly PRIORITY_LOWEST: 20;
+    };
+    nsISyncStreamListener: {
+        readonly name: 'nsISyncStreamListener';
+        readonly number: '7e1aa658-6e3f-4521-9946-9685a169f764';
+    };
+    nsISynthVoiceRegistry: {
+        readonly name: 'nsISynthVoiceRegistry';
+        readonly number: '5d7a0b38-77e5-4ee5-897c-ce5db9b85d44';
+    };
+    nsISystemInfo: {
+        readonly name: 'nsISystemInfo';
+        readonly number: '09a0502b-cedc-4cae-bf7c-35662dbd1249';
+    };
+    nsISystemProxySettings: {
+        readonly name: 'nsISystemProxySettings';
+        readonly number: '971591cd-277e-409a-bbf6-0a79879cd307';
+    };
+    nsISystemStatusBar: {
+        readonly name: 'nsISystemStatusBar';
+        readonly number: '24493180-ee81-4b7c-8b17-9e69480b7b8a';
+    };
+    nsITCPSocketCallback: {
+        readonly name: 'nsITCPSocketCallback';
+        readonly number: 'ac2c4b69-cb79-4767-b1ce-bcf62945cd39';
+        readonly BUFFER_SIZE: 65536;
+    };
+    nsITLSServerSocket: {
+        readonly name: 'nsITLSServerSocket';
+        readonly number: 'cc2c30f9-cfaa-4b8a-bd44-c24881981b74';
+        readonly REQUEST_NEVER: 0;
+        readonly REQUEST_FIRST_HANDSHAKE: 1;
+        readonly REQUEST_ALWAYS: 2;
+        readonly REQUIRE_FIRST_HANDSHAKE: 3;
+        readonly REQUIRE_ALWAYS: 4;
+    };
+    nsITLSClientStatus: {
+        readonly name: 'nsITLSClientStatus';
+        readonly number: '19668ea4-e5ad-4182-9698-7e890d48f327';
+        readonly SSL_VERSION_3: 0x0300;
+        readonly TLS_VERSION_1: 0x0301;
+        readonly TLS_VERSION_1_1: 0x0302;
+        readonly TLS_VERSION_1_2: 0x0303;
+        readonly TLS_VERSION_1_3: 0x0304;
+    };
+    nsITLSServerConnectionInfo: {
+        readonly name: 'nsITLSServerConnectionInfo';
+        readonly number: '8a93f5d5-eddd-4c62-a4bd-bfd297653184';
+    };
+    nsITLSServerSecurityObserver: {
+        readonly name: 'nsITLSServerSecurityObserver';
+        readonly number: '1f62e1ae-e546-4a38-8917-d428472ed736';
+    };
+    nsITLSSocketControl: {
+        readonly name: 'nsITLSSocketControl';
+        readonly number: '418265c8-654e-4fbb-ba62-4eed27de1f03';
+        readonly SSL_VERSION_3: 0x0300;
+        readonly TLS_VERSION_1: 0x0301;
+        readonly TLS_VERSION_1_1: 0x0302;
+        readonly TLS_VERSION_1_2: 0x0303;
+        readonly TLS_VERSION_1_3: 0x0304;
+        readonly SSL_MAC_NULL: 0;
+        readonly SSL_MAC_MD5: 1;
+        readonly SSL_MAC_SHA: 2;
+        readonly SSL_HMAC_MD5: 3;
+        readonly SSL_HMAC_SHA: 4;
+        readonly SSL_HMAC_SHA256: 5;
+        readonly SSL_MAC_AEAD: 6;
+    };
+    nsITXTToHTMLConv: {
+        readonly name: 'nsITXTToHTMLConv';
+        readonly number: '933355f6-1dd2-11b2-a9b0-d335b9e35983';
+    };
+    nsITableEditor: {
+        readonly name: 'nsITableEditor';
+        readonly number: '4805e684-49b9-11d3-9ce4-ed60bd6cb5bc';
+        readonly eNoSearch: 0;
+        readonly ePreviousColumn: 1;
+        readonly ePreviousRow: 2;
+    };
+    nsITaggingService: {
+        readonly name: 'nsITaggingService';
+        readonly number: '9759bd0e-78e2-4421-9ed1-c676e1af3513';
+    };
+    nsITaskbarOverlayIconController: {
+        readonly name: 'nsITaskbarOverlayIconController';
+        readonly number: '';
+    };
+    nsITaskbarPreview: {
+        readonly name: 'nsITaskbarPreview';
+        readonly number: '';
+    };
+    nsITaskbarPreviewButton: {
+        readonly name: 'nsITaskbarPreviewButton';
+        readonly number: '';
+    };
+    nsITaskbarPreviewCallback: {
+        readonly name: 'nsITaskbarPreviewCallback';
+        readonly number: 'f3744696-320d-4804-9c27-6a84c29acaa6';
+    };
+    nsITaskbarPreviewController: {
+        readonly name: 'nsITaskbarPreviewController';
+        readonly number: '';
+    };
+    nsITaskbarProgress: {
+        readonly name: 'nsITaskbarProgress';
+        readonly number: '';
+        readonly STATE_NO_PROGRESS: 0;
+        readonly STATE_INDETERMINATE: 1;
+        readonly STATE_NORMAL: 2;
+        readonly STATE_ERROR: 3;
+        readonly STATE_PAUSED: 4;
+    };
+    nsITaskbarTabPreview: {
+        readonly name: 'nsITaskbarTabPreview';
+        readonly number: '';
+    };
+    nsITaskbarWindowPreview: {
+        readonly name: 'nsITaskbarWindowPreview';
+        readonly number: '';
+        readonly NUM_TOOLBAR_BUTTONS: 7;
+    };
+    nsIFetchTelemetryDataCallback: {
+        readonly name: 'nsIFetchTelemetryDataCallback';
+        readonly number: '3d3b9075-5549-4244-9c08-b64fefa1dd60';
+    };
+    nsITelemetry: {
+        readonly name: 'nsITelemetry';
+        readonly number: '273d2dd0-6c63-475a-b864-cb65160a1909';
+        readonly HISTOGRAM_EXPONENTIAL: 0;
+        readonly HISTOGRAM_LINEAR: 1;
+        readonly HISTOGRAM_BOOLEAN: 2;
+        readonly HISTOGRAM_FLAG: 3;
+        readonly HISTOGRAM_COUNT: 4;
+        readonly HISTOGRAM_CATEGORICAL: 5;
+        readonly SCALAR_TYPE_COUNT: 0;
+        readonly SCALAR_TYPE_STRING: 1;
+        readonly SCALAR_TYPE_BOOLEAN: 2;
+        readonly DATASET_ALL_CHANNELS: 0;
+        readonly DATASET_PRERELEASE_CHANNELS: 1;
+    };
+    nsITellableStream: {
+        readonly name: 'nsITellableStream';
+        readonly number: 'ee942946-4538-45d2-bf05-ffdbf5932621';
+    };
+    nsITextInputProcessor: {
+        readonly name: 'nsITextInputProcessor';
+        readonly number: '';
+        readonly ATTR_RAW_CLAUSE: 0x02;
+        readonly ATTR_SELECTED_RAW_CLAUSE: 0x03;
+        readonly ATTR_CONVERTED_CLAUSE: 0x04;
+        readonly ATTR_SELECTED_CLAUSE: 0x05;
+        readonly KEY_DEFAULT_PREVENTED: 0x00000001;
+        readonly KEY_NON_PRINTABLE_KEY: 0x00000002;
+        readonly KEY_FORCE_PRINTABLE_KEY: 0x00000004;
+        readonly KEY_KEEP_KEY_LOCATION_STANDARD: 0x00000008;
+        readonly KEY_KEEP_KEYCODE_ZERO: 0x00000010;
+        readonly KEY_DONT_DISPATCH_MODIFIER_KEY_EVENT: 0x00000020;
+        readonly KEY_DONT_MARK_KEYDOWN_AS_PROCESSED: 0x00000040;
+        readonly KEY_MARK_KEYUP_AS_PROCESSED: 0x00000080;
+        readonly KEYEVENT_NOT_CONSUMED: 0x00000000;
+        readonly KEYDOWN_IS_CONSUMED: 0x00000001;
+        readonly KEYPRESS_IS_CONSUMED: 0x00000002;
+    };
+    nsITextInputProcessorNotification: {
+        readonly name: 'nsITextInputProcessorNotification';
+        readonly number: 'c0ce1add-82bb-45ab-b99a-42cfba7fd5d7';
+    };
+    nsITextInputProcessorCallback: {
+        readonly name: 'nsITextInputProcessorCallback';
+        readonly number: '23d5f242-adb5-46f1-8766-90d1bf0383df';
+    };
+    nsITextToSubURI: {
+        readonly name: 'nsITextToSubURI';
+        readonly number: '8B042E24-6F87-11d3-B3C8-00805F8A6670';
+    };
+    nsIThread: {
+        readonly name: 'nsIThread';
+        readonly number: '';
+    };
+    nsIThreadInternal: {
+        readonly name: 'nsIThreadInternal';
+        readonly number: 'a3a72e5f-71d9-4add-8f30-59a78fb6d5eb';
+    };
+    nsIThreadObserver: {
+        readonly name: 'nsIThreadObserver';
+        readonly number: 'cc8da053-1776-44c2-9199-b5a629d0a19d';
+    };
+    nsINestedEventLoopCondition: {
+        readonly name: 'nsINestedEventLoopCondition';
+        readonly number: '039a227d-0cb7-44a5-a8f9-dbb7071979f2';
+    };
+    nsIThreadManager: {
+        readonly name: 'nsIThreadManager';
+        readonly number: '1be89eca-e2f7-453b-8d38-c11ba247f6f3';
+    };
+    nsIThreadPoolListener: {
+        readonly name: 'nsIThreadPoolListener';
+        readonly number: 'ef194cab-3f86-4b61-b132-e5e96a79e5d1';
+    };
+    nsIThreadPool: {
+        readonly name: 'nsIThreadPool';
+        readonly number: '76ce99c9-8e43-489a-9789-f27cc4424965';
+    };
+    nsIThreadRetargetableRequest: {
+        readonly name: 'nsIThreadRetargetableRequest';
+        readonly number: '27b84c48-5a73-4ba4-a8a4-8b5e649a145e';
+    };
+    nsIThreadRetargetableStreamListener: {
+        readonly name: 'nsIThreadRetargetableStreamListener';
+        readonly number: 'fb2304b8-f82f-4433-af68-d874a2ebbdc1';
+    };
+    nsIThreadShutdown: {
+        readonly name: 'nsIThreadShutdown';
+        readonly number: '70a43748-6130-4ea6-a440-7c74e1b7dd7c';
+    };
+    nsIInputChannelThrottleQueue: {
+        readonly name: 'nsIInputChannelThrottleQueue';
+        readonly number: '6b4b96fe-3c67-4587-af7b-58b6b17da411';
+    };
+    nsIThrottledInputChannel: {
+        readonly name: 'nsIThrottledInputChannel';
+        readonly number: '0a32a100-c031-45b6-9e8b-0444c7d4a143';
+    };
+    nsIServerTiming: {
+        readonly name: 'nsIServerTiming';
+        readonly number: 'c2d9e95b-9cc9-4f47-9ef6-1de0cf7ebc75';
+    };
+    nsITimedChannel: {
+        readonly name: 'nsITimedChannel';
+        readonly number: 'ca63784d-959c-4c3a-9a59-234a2a520de0';
+    };
+    nsITimerCallback: {
+        readonly name: 'nsITimerCallback';
+        readonly number: '';
+    };
+    nsITimer: {
+        readonly name: 'nsITimer';
+        readonly number: '3de4b105-363c-482c-a409-baac83a01bfc';
+        readonly TYPE_ONE_SHOT: 0;
+        readonly TYPE_REPEATING_SLACK: 1;
+        readonly TYPE_REPEATING_PRECISE: 2;
+        readonly TYPE_REPEATING_PRECISE_CAN_SKIP: 3;
+        readonly TYPE_REPEATING_SLACK_LOW_PRIORITY: 4;
+        readonly TYPE_ONE_SHOT_LOW_PRIORITY: 5;
+    };
+    nsITlsHandshakeCallbackListener: {
+        readonly name: 'nsITlsHandshakeCallbackListener';
+        readonly number: 'b4bbe824-ec4c-48be-9a40-6a7339347f40';
+    };
+    nsITokenDialogs: {
+        readonly name: 'nsITokenDialogs';
+        readonly number: 'a1cbc159-468c-495d-8068-61dd538cbcca';
+    };
+    nsITokenPasswordDialogs: {
+        readonly name: 'nsITokenPasswordDialogs';
+        readonly number: '87dbd64a-4466-474e-95f5-1ad1cee5702c';
+    };
+    nsIToolkitChromeRegistry: {
+        readonly name: 'nsIToolkitChromeRegistry';
+        readonly number: '8727651c-9530-45a0-b81e-0e0690c30c50';
+    };
+    nsIProfileLock: {
+        readonly name: 'nsIProfileLock';
+        readonly number: '';
+    };
+    nsIToolkitProfile: {
+        readonly name: 'nsIToolkitProfile';
+        readonly number: '';
+    };
+    nsIToolkitProfileService: {
+        readonly name: 'nsIToolkitProfileService';
+        readonly number: '1947899b-f369-48fa-89da-f7c37bb1e6bc';
+    };
+    nsIToolkitShellService: {
+        readonly name: 'nsIToolkitShellService';
+        readonly number: '9246cad6-926a-4c17-88b0-ecba8078d143';
+    };
+    nsITooltipListener: {
+        readonly name: 'nsITooltipListener';
+        readonly number: '44b78386-1dd2-11b2-9ad2-e4eee2ca1916';
+    };
+    nsITooltipTextProvider: {
+        readonly name: 'nsITooltipTextProvider';
+        readonly number: 'b128a1e6-44f3-4331-8fbe-5af360ff21ee';
+    };
+    nsITouchBarHelper: {
+        readonly name: 'nsITouchBarHelper';
+        readonly number: 'ea109912-3acc-48de-b679-c23b6a122da5';
+    };
+    nsITouchBarInputCallback: {
+        readonly name: 'nsITouchBarInputCallback';
+        readonly number: '001ab07c-1b3a-4dbf-a657-fada0065ff55';
+    };
+    nsITouchBarInput: {
+        readonly name: 'nsITouchBarInput';
+        readonly number: '77441d17-f29c-49d7-982f-f20a5ab5a900';
+    };
+    nsITouchBarUpdater: {
+        readonly name: 'nsITouchBarUpdater';
+        readonly number: '38f396e2-93c9-4a77-aaf7-2d50b9962186';
+    };
+    nsITraceableChannel: {
+        readonly name: 'nsITraceableChannel';
+        readonly number: '68167b0b-ef34-4d79-a09a-8045f7c5140e';
+    };
+    nsITrackingDBService: {
+        readonly name: 'nsITrackingDBService';
+        readonly number: '650934db-1939-4424-be26-6ffb0375424d';
+        readonly OTHER_COOKIES_BLOCKED_ID: 0;
+        readonly TRACKERS_ID: 1;
+        readonly TRACKING_COOKIES_ID: 2;
+        readonly CRYPTOMINERS_ID: 3;
+        readonly FINGERPRINTERS_ID: 4;
+        readonly SOCIAL_ID: 5;
+    };
+    nsITransaction: {
+        readonly name: 'nsITransaction';
+        readonly number: '58e330c1-7b48-11d2-98b9-00805f297d89';
+    };
+    nsITransactionManager: {
+        readonly name: 'nsITransactionManager';
+        readonly number: 'c77763df-0fb9-41a8-8074-8e882f605755';
+    };
+    nsITransfer: {
+        readonly name: 'nsITransfer';
+        readonly number: '37ec75d3-97ad-4da8-afaa-eabe5b4afd73';
+        readonly DOWNLOAD_ACCEPTABLE: 0;
+        readonly DOWNLOAD_FORBIDDEN: 1;
+        readonly DOWNLOAD_POTENTIALLY_UNSAFE: 2;
+    };
+    nsIFlavorDataProvider: {
+        readonly name: 'nsIFlavorDataProvider';
+        readonly number: '7E225E5F-711C-11D7-9FAE-000393636592';
+    };
+    nsITransferable: {
+        readonly name: 'nsITransferable';
+        readonly number: '97e0c418-1c1e-4106-bad1-9fcb11dff2fe';
+    };
+    nsITransport: {
+        readonly name: 'nsITransport';
+        readonly number: '2a8c6334-a5e6-4ec3-9865-1256541446fb';
+        readonly STATUS_READING: 0x804b0008;
+        readonly STATUS_WRITING: 0x804b0009;
+    };
+    nsITransportEventSink: {
+        readonly name: 'nsITransportEventSink';
+        readonly number: 'EDA4F520-67F7-484b-A691-8C3226A5B0A6';
+    };
+    nsITransportProvider: {
+        readonly name: 'nsITransportProvider';
+        readonly number: '';
+    };
+    nsITransportSecurityInfo: {
+        readonly name: 'nsITransportSecurityInfo';
+        readonly number: '';
+        readonly SSL_VERSION_3: 0;
+        readonly TLS_VERSION_1: 1;
+        readonly TLS_VERSION_1_1: 2;
+        readonly TLS_VERSION_1_2: 3;
+        readonly TLS_VERSION_1_3: 4;
+        readonly CERTIFICATE_TRANSPARENCY_NOT_APPLICABLE: 0;
+        readonly CERTIFICATE_TRANSPARENCY_POLICY_COMPLIANT: 5;
+        readonly CERTIFICATE_TRANSPARENCY_POLICY_NOT_ENOUGH_SCTS: 6;
+        readonly CERTIFICATE_TRANSPARENCY_POLICY_NOT_DIVERSE_SCTS: 7;
+    };
+    nsITreeSelection: {
+        readonly name: 'nsITreeSelection';
+        readonly number: '';
+    };
+    nsINativeTreeSelection: {
+        readonly name: 'nsINativeTreeSelection';
+        readonly number: '1bd59678-5cb3-4316-b246-31a91b19aabe';
+    };
+    nsITreeView: {
+        readonly name: 'nsITreeView';
+        readonly number: '091116f0-0bdc-4b32-b9c8-c8d5a37cb088';
+        readonly DROP_ON: 0;
+        readonly DROP_AFTER: 1;
+    };
+    nsITypeAheadFind: {
+        readonly name: 'nsITypeAheadFind';
+        readonly number: 'ae501e28-c57f-4692-ac74-410e1bed98b7';
+        readonly FIND_INITIAL: 0;
+        readonly FIND_NEXT: 1;
+        readonly FIND_PREVIOUS: 2;
+        readonly FIND_FIRST: 3;
+        readonly FIND_LAST: 4;
+        readonly FIND_FOUND: 0;
+        readonly FIND_NOTFOUND: 1;
+        readonly FIND_WRAPPED: 2;
+        readonly FIND_PENDING: 3;
+    };
+    nsIU2FTokenManager: {
+        readonly name: 'nsIU2FTokenManager';
+        readonly number: '745e1eac-e449-4342-bca1-ee0e6ead09fc';
+    };
+    nsIUDPSocket: {
+        readonly name: 'nsIUDPSocket';
+        readonly number: 'd423bf4e-4499-40cf-bc03-153e2bf206d1';
+    };
+    nsIUDPSocketListener: {
+        readonly name: 'nsIUDPSocketListener';
+        readonly number: '2E4B5DD3-7358-4281-B81F-10C62EF39CB5';
+    };
+    nsIUDPMessage: {
+        readonly name: 'nsIUDPMessage';
+        readonly number: 'afdc743f-9cc0-40d8-b442-695dc54bbb74';
+    };
+    nsIUDPSocketSyncListener: {
+        readonly name: 'nsIUDPSocketSyncListener';
+        readonly number: '99f3d085-3d69-45da-a2c2-a6176af617cb';
+    };
+    nsIUDPSocketInternal: {
+        readonly name: 'nsIUDPSocketInternal';
+        readonly number: '613dd3ad-598b-4da9-ad63-bbda50c20098';
+    };
+    nsIURI: {
+        readonly name: 'nsIURI';
+        readonly number: '';
+    };
+    nsIURIClassifierCallback: {
+        readonly name: 'nsIURIClassifierCallback';
+        readonly number: '8face46e-0c96-470f-af40-0037dcd797bd';
+    };
+    nsIURIClassifier: {
+        readonly name: 'nsIURIClassifier';
+        readonly number: '596620cc-76e3-4133-9d90-360e59a794cf';
+    };
+    nsIURIContentListener: {
+        readonly name: 'nsIURIContentListener';
+        readonly number: '';
+    };
+    nsIURIFixupInfo: {
+        readonly name: 'nsIURIFixupInfo';
+        readonly number: '4819f183-b532-4932-ac09-b309cd853be7';
+    };
+    nsIURIFixup: {
+        readonly name: 'nsIURIFixup';
+        readonly number: '1da7e9d4-620b-4949-849a-1cd6077b1b2d';
+        readonly FIXUP_FLAG_NONE: 0;
+        readonly FIXUP_FLAG_ALLOW_KEYWORD_LOOKUP: 1;
+        readonly FIXUP_FLAGS_MAKE_ALTERNATE_URI: 2;
+        readonly FIXUP_FLAG_PRIVATE_CONTEXT: 4;
+        readonly FIXUP_FLAG_FIX_SCHEME_TYPOS: 8;
+        readonly FIXUP_FLAG_FORCE_ALTERNATE_URI: 16;
+    };
+    nsIURILoader: {
+        readonly name: 'nsIURILoader';
+        readonly number: '8762c4e7-be35-4958-9b81-a05685bb516d';
+    };
+    nsIURISetSpec: {
+        readonly name: 'nsIURISetSpec';
+        readonly number: '1fc53257-898b-4c5e-b69c-05bc84b4cd8f';
+    };
+    nsIURISetters: {
+        readonly name: 'nsIURISetters';
+        readonly number: '5403a6ec-99d7-405e-8b45-9f805bbdfcef';
+    };
+    nsIURIMutator: {
+        readonly name: 'nsIURIMutator';
+        readonly number: '';
+    };
+    nsIURIWithSpecialOrigin: {
+        readonly name: 'nsIURIWithSpecialOrigin';
+        readonly number: '4f65569b-d6fc-4580-94d9-21e775658a2a';
+    };
+    nsIURL: {
+        readonly name: 'nsIURL';
+        readonly number: '86adcd89-0b70-47a2-b0fe-5bb2c5f37e31';
+    };
+    nsIURLMutator: {
+        readonly name: 'nsIURLMutator';
+        readonly number: '25072eb8-f1e6-482f-9ca9-eddd3d65169a';
+    };
+    nsIURLDecorationAnnotationsService: {
+        readonly name: 'nsIURLDecorationAnnotationsService';
+        readonly number: '937d0c66-6821-4e3f-9e04-50dbc2b2b476';
+    };
+    nsIURLFormatter: {
+        readonly name: 'nsIURLFormatter';
+        readonly number: '4ab31d30-372d-11db-a98b-0800200c9a66';
+    };
+    nsIURLParser: {
+        readonly name: 'nsIURLParser';
+        readonly number: '78c5d19f-f5d2-4732-8d3d-d5a7d7133bc0';
+    };
+    nsIURLQueryStrippingListObserver: {
+        readonly name: 'nsIURLQueryStrippingListObserver';
+        readonly number: 'ef56ae12-b1bb-43e6-b1d8-16459cb98dfd';
+    };
+    nsIURLQueryStrippingListService: {
+        readonly name: 'nsIURLQueryStrippingListService';
+        readonly number: 'afff16f0-3fd2-4153-9ccd-c6d9abd879e4';
+    };
+    nsIUUIDGenerator: {
+        readonly name: 'nsIUUIDGenerator';
+        readonly number: '138ad1b2-c694-41cc-b201-333ce936d8b8';
+    };
+    nsIUnicharInputStream: {
+        readonly name: 'nsIUnicharInputStream';
+        readonly number: 'd5e3bd80-6723-4b92-b0c9-22f6162fd94f';
+    };
+    nsIUnicharLineInputStream: {
+        readonly name: 'nsIUnicharLineInputStream';
+        readonly number: '67f42475-ba80-40f8-ac0b-649c89230184';
+    };
+    nsIUnicharOutputStream: {
+        readonly name: 'nsIUnicharOutputStream';
+        readonly number: '2d00b1bb-8b21-4a63-bcc6-7213f513ac2e';
+    };
+    nsIUpdatePatch: {
+        readonly name: 'nsIUpdatePatch';
+        readonly number: 'dc8fb8a9-3a53-4031-9469-2a5197ea30e7';
+    };
+    nsIUpdate: {
+        readonly name: 'nsIUpdate';
+        readonly number: 'e094c045-f4ff-41fd-92da-cd2effd2c7c9';
+    };
+    nsIUpdateCheckResult: {
+        readonly name: 'nsIUpdateCheckResult';
+        readonly number: 'bff08110-e79f-4a9f-a56c-348170f9208a';
+    };
+    nsIUpdateCheck: {
+        readonly name: 'nsIUpdateCheck';
+        readonly number: '2620aa24-27aa-463a-b6d2-0734695c1f7a';
+    };
+    nsIUpdateChecker: {
+        readonly name: 'nsIUpdateChecker';
+        readonly number: '877ace25-8bc5-452a-8586-9c1cf2871994';
+        readonly BACKGROUND_CHECK: 1;
+        readonly FOREGROUND_CHECK: 2;
+    };
+    nsIApplicationUpdateService: {
+        readonly name: 'nsIApplicationUpdateService';
+        readonly number: '1107d207-a263-403a-b268-05772ec10757';
+        readonly STATE_IDLE: 1;
+        readonly STATE_DOWNLOADING: 2;
+        readonly STATE_STAGING: 4;
+        readonly STATE_PENDING: 5;
+        readonly STATE_SWAP: 6;
+    };
+    nsIUpdateProcessor: {
+        readonly name: 'nsIUpdateProcessor';
+        readonly number: '74439497-d796-4915-8cef-3dfe43027e4d';
+    };
+    nsIUpdateSyncManager: {
+        readonly name: 'nsIUpdateSyncManager';
+        readonly number: 'cf4c4487-66d9-4e18-a2e9-39002245332f';
+    };
+    nsIUpdateManager: {
+        readonly name: 'nsIUpdateManager';
+        readonly number: '0f1098e9-a447-4af9-b030-6f8f35c85f89';
+    };
+    nsIUpdateTimerManager: {
+        readonly name: 'nsIUpdateTimerManager';
+        readonly number: '0765c92c-6145-4253-9db4-594d8023087e';
+    };
+    nsIUploadChannel: {
+        readonly name: 'nsIUploadChannel';
+        readonly number: '5cfe15bd-5adb-4a7f-9e55-4f5a67d15794';
+    };
+    nsIUploadChannel2: {
+        readonly name: 'nsIUploadChannel2';
+        readonly number: '2f712b52-19c5-4e0c-9e8f-b5c7c3b67049';
+    };
+    nsIUrlClassifierCallback: {
+        readonly name: 'nsIUrlClassifierCallback';
+        readonly number: '4ca27b6b-a674-4b3d-ab30-d21e2da2dffb';
+    };
+    nsIUrlClassifierUpdateObserver: {
+        readonly name: 'nsIUrlClassifierUpdateObserver';
+        readonly number: '9fa11561-5816-4e1b-bcc9-b629ca05cce6';
+    };
+    nsIUrlClassifierDBService: {
+        readonly name: 'nsIUrlClassifierDBService';
+        readonly number: '7a258022-6765-11e5-b379-b37b1f2354be';
+    };
+    nsIUrlClassifierLookupCallback: {
+        readonly name: 'nsIUrlClassifierLookupCallback';
+        readonly number: 'b903dc8f-dff1-42fe-894b-36e7a59bb801';
+    };
+    nsIUrlClassifierClassifyCallback: {
+        readonly name: 'nsIUrlClassifierClassifyCallback';
+        readonly number: '091adf98-28a5-473d-8dec-5b34b4e62496';
+    };
+    nsIUrlClassifierExceptionListObserver: {
+        readonly name: 'nsIUrlClassifierExceptionListObserver';
+        readonly number: 'f7c918e5-94bf-4b6e-9758-ef7bdab6af7e';
+    };
+    nsIUrlClassifierExceptionListService: {
+        readonly name: 'nsIUrlClassifierExceptionListService';
+        readonly number: '75c3d1a3-e977-4079-9e27-b3b56bdb76ea';
+    };
+    nsIUrlClassifierFeature: {
+        readonly name: 'nsIUrlClassifierFeature';
+        readonly number: 'a6c9b24e-b4f1-426e-af58-2c976c3943a8';
+    };
+    nsIUrlClassifierFeatureResult: {
+        readonly name: 'nsIUrlClassifierFeatureResult';
+        readonly number: 'ccb88140-5d66-4873-9815-a1b98d6cdc92';
+    };
+    nsIUrlClassifierFeatureCallback: {
+        readonly name: 'nsIUrlClassifierFeatureCallback';
+        readonly number: '2ea83c26-dfc9-44ed-9cfc-171d4753d78e';
+    };
+    nsIFullHashMatch: {
+        readonly name: 'nsIFullHashMatch';
+        readonly number: 'aabeb50e-d9f7-418e-9469-2cd9608958c0';
+    };
+    nsIUrlClassifierHashCompleterCallback: {
+        readonly name: 'nsIUrlClassifierHashCompleterCallback';
+        readonly number: 'da16de40-df26-414d-bde7-c4faf4504868';
+    };
+    nsIUrlClassifierHashCompleter: {
+        readonly name: 'nsIUrlClassifierHashCompleter';
+        readonly number: '231fb2ad-ea8a-4e63-a331-eafc3b434811';
+    };
+    nsIUrlClassifierPositiveCacheEntry: {
+        readonly name: 'nsIUrlClassifierPositiveCacheEntry';
+        readonly number: 'b3c27f8c-7db8-4f3f-97a5-5a94d781e565';
+    };
+    nsIUrlClassifierCacheEntry: {
+        readonly name: 'nsIUrlClassifierCacheEntry';
+        readonly number: 'd6297907-8236-4126-adaf-c3aa239a0d40';
+    };
+    nsIUrlClassifierCacheInfo: {
+        readonly name: 'nsIUrlClassifierCacheInfo';
+        readonly number: '69384f24-d9c5-4462-b24e-351c69e3b46a';
+    };
+    nsIUrlClassifierGetCacheCallback: {
+        readonly name: 'nsIUrlClassifierGetCacheCallback';
+        readonly number: '26e12ea4-14ff-4c77-858f-6745998b7659';
+    };
+    nsIUrlClassifierInfo: {
+        readonly name: 'nsIUrlClassifierInfo';
+        readonly number: '411bbff4-1b88-4687-aa36-e2bbdd93f6e8';
+    };
+    nsIUrlClassifierPrefixSet: {
+        readonly name: 'nsIUrlClassifierPrefixSet';
+        readonly number: '3d8579f0-75fa-4e00-ba41-38661d5b5d17';
+    };
+    nsIUrlClassifierRemoteSettingsService: {
+        readonly name: 'nsIUrlClassifierRemoteSettingsService';
+        readonly number: '26a445a4-0d00-4b20-ba5f-1297d3344a25';
+    };
+    nsIUrlClassifierStreamUpdater: {
+        readonly name: 'nsIUrlClassifierStreamUpdater';
+        readonly number: 'e1797597-f4d6-4dd3-a1e1-745ad352cd80';
+    };
+    nsIUrlClassifierParseFindFullHashCallback: {
+        readonly name: 'nsIUrlClassifierParseFindFullHashCallback';
+        readonly number: 'fbb9684a-a0aa-11e6-88b0-08606e456b8a';
+    };
+    nsIUrlClassifierUtils: {
+        readonly name: 'nsIUrlClassifierUtils';
+        readonly number: 'e4f0e59c-b922-48b0-a7b6-1735c1f96fed';
+    };
+    nsIUrlListManager: {
+        readonly name: 'nsIUrlListManager';
+        readonly number: 'd60a08ee-5c83-4eb6-bdfb-79fd0716501e';
+    };
+    nsIUserIdleService: {
+        readonly name: 'nsIUserIdleService';
+        readonly number: 'cc52f19a-63ae-4a1c-9cc3-e79eace0b471';
+    };
+    nsIUserIdleServiceInternal: {
+        readonly name: 'nsIUserIdleServiceInternal';
+        readonly number: '7b89a2e7-ed12-42e0-b86d-4984239abd7b';
+    };
+    nsIUtilityProcessTest: {
+        readonly name: 'nsIUtilityProcessTest';
+        readonly number: '0a4478f4-c5ae-4fb1-8686-d5b09fb99afb';
+    };
+    nsIVariant: {
+        readonly name: 'nsIVariant';
+        readonly number: '';
+    };
+    nsIWritableVariant: {
+        readonly name: 'nsIWritableVariant';
+        readonly number: '5586a590-8c82-11d5-90f3-0010a4e73d9a';
+    };
+    nsIVersionComparator: {
+        readonly name: 'nsIVersionComparator';
+        readonly number: 'e6cd620a-edbb-41d2-9e42-9a2ffc8107f3';
+    };
+    nsIViewSourceChannel: {
+        readonly name: 'nsIViewSourceChannel';
+        readonly number: '3e9800f8-edb7-4c9a-9285-09b4f045b019';
+    };
+    nsIWakeLock: {
+        readonly name: 'nsIWakeLock';
+        readonly number: 'e27e57ce-fa63-4035-b9ef-27c5dc0cc3ae';
+    };
+    nsIWeakReference: {
+        readonly name: 'nsIWeakReference';
+        readonly number: '';
+    };
+    nsISupportsWeakReference: {
+        readonly name: 'nsISupportsWeakReference';
+        readonly number: '9188bc86-f92e-11d2-81ef-0060083a0bcf';
+    };
+    nsIWebBrowser: {
+        readonly name: 'nsIWebBrowser';
+        readonly number: '';
+    };
+    nsIWebBrowserChrome: {
+        readonly name: 'nsIWebBrowserChrome';
+        readonly number: '';
+        readonly CHROME_DEFAULT: 0x00000001;
+        readonly CHROME_WINDOW_BORDERS: 0x00000002;
+        readonly CHROME_WINDOW_CLOSE: 0x00000004;
+        readonly CHROME_WINDOW_RESIZE: 0x00000008;
+        readonly CHROME_MENUBAR: 0x00000010;
+        readonly CHROME_TOOLBAR: 0x00000020;
+        readonly CHROME_LOCATIONBAR: 0x00000040;
+        readonly CHROME_STATUSBAR: 0x00000080;
+        readonly CHROME_PERSONAL_TOOLBAR: 0x00000100;
+        readonly CHROME_SCROLLBARS: 0x00000200;
+        readonly CHROME_TITLEBAR: 0x00000400;
+        readonly CHROME_EXTRA: 0x00000800;
+        readonly CHROME_WITH_SIZE: 0x00001000;
+        readonly CHROME_WITH_POSITION: 0x00002000;
+        readonly CHROME_WINDOW_MIN: 0x00004000;
+        readonly CHROME_WINDOW_POPUP: 0x00008000;
+        readonly CHROME_PRIVATE_WINDOW: 0x00010000;
+        readonly CHROME_NON_PRIVATE_WINDOW: 0x00020000;
+        readonly CHROME_PRIVATE_LIFETIME: 0x00040000;
+        readonly CHROME_ALWAYS_ON_TOP: 0x00080000;
+        readonly CHROME_REMOTE_WINDOW: 0x00100000;
+        readonly CHROME_FISSION_WINDOW: 0x00200000;
+        readonly CHROME_SUPPRESS_ANIMATION: 0x01000000;
+        readonly CHROME_WINDOW_RAISED: 0x02000000;
+        readonly CHROME_WINDOW_LOWERED: 0x04000000;
+        readonly CHROME_CENTER_SCREEN: 0x08000000;
+        readonly CHROME_DEPENDENT: 0x10000000;
+        readonly CHROME_MODAL: 0x20000000;
+        readonly CHROME_OPENAS_DIALOG: 0x40000000;
+        readonly CHROME_OPENAS_CHROME: 0x80000000;
+        readonly CHROME_ALL: 0x00000ffe;
+    };
+    nsIWebBrowserChromeFocus: {
+        readonly name: 'nsIWebBrowserChromeFocus';
+        readonly number: '947B2EE6-51ED-4C2B-9F45-426C27CA84C6';
+    };
+    nsIWebBrowserFind: {
+        readonly name: 'nsIWebBrowserFind';
+        readonly number: 'e4920136-b3e0-49e0-b1cd-6c783d2591a8';
+    };
+    nsIWebBrowserFindInFrames: {
+        readonly name: 'nsIWebBrowserFindInFrames';
+        readonly number: 'e0f5d182-34bc-11d5-be5b-b760676c6ebc';
+    };
+    nsIWebBrowserPersist: {
+        readonly name: 'nsIWebBrowserPersist';
+        readonly number: '8cd752a4-60b1-42c3-a819-65c7a1138a28';
+        readonly PERSIST_FLAGS_NONE: 0;
+        readonly PERSIST_FLAGS_FROM_CACHE: 1;
+        readonly PERSIST_FLAGS_BYPASS_CACHE: 2;
+        readonly PERSIST_FLAGS_IGNORE_REDIRECTED_DATA: 4;
+        readonly PERSIST_FLAGS_IGNORE_IFRAMES: 8;
+        readonly PERSIST_FLAGS_NO_CONVERSION: 16;
+        readonly PERSIST_FLAGS_REPLACE_EXISTING_FILES: 32;
+        readonly PERSIST_FLAGS_NO_BASE_TAG_MODIFICATIONS: 64;
+        readonly PERSIST_FLAGS_FIXUP_ORIGINAL_DOM: 128;
+        readonly PERSIST_FLAGS_FIXUP_LINKS_TO_DESTINATION: 256;
+        readonly PERSIST_FLAGS_DONT_FIXUP_LINKS: 512;
+        readonly PERSIST_FLAGS_SERIALIZE_OUTPUT: 1024;
+        readonly PERSIST_FLAGS_DONT_CHANGE_FILENAMES: 2048;
+        readonly PERSIST_FLAGS_FAIL_ON_BROKEN_LINKS: 4096;
+        readonly PERSIST_FLAGS_CLEANUP_ON_FAILURE: 8192;
+        readonly PERSIST_FLAGS_AUTODETECT_APPLY_CONVERSION: 16384;
+        readonly PERSIST_FLAGS_APPEND_TO_FILE: 32768;
+        readonly PERSIST_STATE_READY: 1;
+        readonly PERSIST_STATE_SAVING: 2;
+        readonly PERSIST_STATE_FINISHED: 3;
+        readonly ENCODE_FLAGS_SELECTION_ONLY: 1;
+        readonly ENCODE_FLAGS_FORMATTED: 2;
+        readonly ENCODE_FLAGS_RAW: 4;
+        readonly ENCODE_FLAGS_BODY_ONLY: 8;
+        readonly ENCODE_FLAGS_PREFORMATTED: 16;
+        readonly ENCODE_FLAGS_WRAP: 32;
+        readonly ENCODE_FLAGS_FORMAT_FLOWED: 64;
+        readonly ENCODE_FLAGS_ABSOLUTE_LINKS: 128;
+        readonly ENCODE_FLAGS_CR_LINEBREAKS: 512;
+        readonly ENCODE_FLAGS_LF_LINEBREAKS: 1024;
+        readonly ENCODE_FLAGS_NOSCRIPT_CONTENT: 2048;
+        readonly ENCODE_FLAGS_NOFRAMES_CONTENT: 4096;
+        readonly ENCODE_FLAGS_ENCODE_BASIC_ENTITIES: 8192;
+    };
+    nsIWebBrowserPersistURIMap: {
+        readonly name: 'nsIWebBrowserPersistURIMap';
+        readonly number: 'd52e8b93-2771-45e8-a5b0-6e12b667046b';
+    };
+    nsIWebBrowserPersistDocument: {
+        readonly name: 'nsIWebBrowserPersistDocument';
+        readonly number: '74aa4918-5d15-46b6-9ccf-74f9696d721d';
+    };
+    nsIWebBrowserPersistResourceVisitor: {
+        readonly name: 'nsIWebBrowserPersistResourceVisitor';
+        readonly number: '8ce37706-b7d3-481a-be68-54f174fc0d0a';
+    };
+    nsIWebBrowserPersistWriteCompletion: {
+        readonly name: 'nsIWebBrowserPersistWriteCompletion';
+        readonly number: 'a07e6892-38ae-4207-8340-7fa6ec446ed6';
+    };
+    nsIWebBrowserPersistDocumentReceiver: {
+        readonly name: 'nsIWebBrowserPersistDocumentReceiver';
+        readonly number: '321e3174-594f-4036-b7be-791b821bd376';
+    };
+    nsIWebBrowserPrint: {
+        readonly name: 'nsIWebBrowserPrint';
+        readonly number: 'c9a934ed-fff1-4971-bfba-6c25ad70e1e6';
+        readonly PRINTPREVIEW_GOTO_PAGENUM: 0;
+        readonly PRINTPREVIEW_PREV_PAGE: 1;
+        readonly PRINTPREVIEW_NEXT_PAGE: 2;
+        readonly PRINTPREVIEW_HOME: 3;
+        readonly PRINTPREVIEW_END: 4;
+    };
+    nsIWebNavigation: {
+        readonly name: 'nsIWebNavigation';
+        readonly number: '3ade79d4-8cb9-4952-b18d-4f9b63ca0d31';
+        readonly LOAD_FLAGS_MASK: 0xffff;
+        readonly LOAD_FLAGS_NONE: 0x0000;
+        readonly LOAD_FLAGS_IS_REFRESH: 0x0010;
+        readonly LOAD_FLAGS_IS_LINK: 0x0020;
+        readonly LOAD_FLAGS_BYPASS_HISTORY: 0x0040;
+        readonly LOAD_FLAGS_REPLACE_HISTORY: 0x0080;
+        readonly LOAD_FLAGS_BYPASS_CACHE: 0x0100;
+        readonly LOAD_FLAGS_BYPASS_PROXY: 0x0200;
+        readonly LOAD_FLAGS_CHARSET_CHANGE: 0x0400;
+        readonly LOAD_FLAGS_STOP_CONTENT: 0x0800;
+        readonly LOAD_FLAGS_FROM_EXTERNAL: 0x1000;
+        readonly LOAD_FLAGS_FIRST_LOAD: 0x4000;
+        readonly LOAD_FLAGS_ALLOW_POPUPS: 0x8000;
+        readonly LOAD_FLAGS_BYPASS_CLASSIFIER: 0x10000;
+        readonly LOAD_FLAGS_FORCE_ALLOW_COOKIES: 0x20000;
+        readonly LOAD_FLAGS_DISALLOW_INHERIT_PRINCIPAL: 0x40000;
+        readonly LOAD_FLAGS_ERROR_LOAD_CHANGES_RV: 0x80000;
+        readonly LOAD_FLAGS_ALLOW_THIRD_PARTY_FIXUP: 0x100000;
+        readonly LOAD_FLAGS_FIXUP_SCHEME_TYPOS: 0x200000;
+        readonly LOAD_FLAGS_FORCE_ALLOW_DATA_URI: 0x400000;
+        readonly LOAD_FLAGS_IS_REDIRECT: 0x800000;
+        readonly LOAD_FLAGS_DISABLE_TRR: 0x1000000;
+        readonly LOAD_FLAGS_FORCE_TRR: 0x2000000;
+        readonly LOAD_FLAGS_BYPASS_LOAD_URI_DELEGATE: 0x4000000;
+        readonly LOAD_FLAGS_USER_ACTIVATION: 0x8000000;
+        readonly STOP_NETWORK: 0x01;
+        readonly STOP_CONTENT: 0x02;
+        readonly STOP_ALL: 0x03;
+    };
+    nsIWebNavigationInfo: {
+        readonly name: 'nsIWebNavigationInfo';
+        readonly number: '62a93afb-93a1-465c-84c8-0432264229de';
+        readonly UNSUPPORTED: 0;
+        readonly IMAGE: 1;
+        readonly FALLBACK: 2;
+    };
+    nsIWebPageDescriptor: {
+        readonly name: 'nsIWebPageDescriptor';
+        readonly number: '6f30b676-3710-4c2c-80b1-0395fb26516e';
+    };
+    nsIWebProgress: {
+        readonly name: 'nsIWebProgress';
+        readonly number: '';
+        readonly NOTIFY_STATE_REQUEST: 0x00000001;
+        readonly NOTIFY_STATE_DOCUMENT: 0x00000002;
+        readonly NOTIFY_STATE_NETWORK: 0x00000004;
+        readonly NOTIFY_STATE_WINDOW: 0x00000008;
+        readonly NOTIFY_STATE_ALL: 0x0000000f;
+        readonly NOTIFY_PROGRESS: 0x00000010;
+        readonly NOTIFY_STATUS: 0x00000020;
+        readonly NOTIFY_SECURITY: 0x00000040;
+        readonly NOTIFY_LOCATION: 0x00000080;
+        readonly NOTIFY_REFRESH: 0x00000100;
+        readonly NOTIFY_CONTENT_BLOCKING: 0x00000200;
+        readonly NOTIFY_ALL: 0x000003ff;
+    };
+    nsIWebProgressListener: {
+        readonly name: 'nsIWebProgressListener';
+        readonly number: 'a9df523b-efe2-421e-9d8e-3d7f807dda4c';
+        readonly STATE_START: 0x00000001;
+        readonly STATE_REDIRECTING: 0x00000002;
+        readonly STATE_TRANSFERRING: 0x00000004;
+        readonly STATE_NEGOTIATING: 0x00000008;
+        readonly STATE_STOP: 0x00000010;
+        readonly STATE_IS_REQUEST: 0x00010000;
+        readonly STATE_IS_DOCUMENT: 0x00020000;
+        readonly STATE_IS_NETWORK: 0x00040000;
+        readonly STATE_IS_WINDOW: 0x00080000;
+        readonly STATE_IS_REDIRECTED_DOCUMENT: 0x00100000;
+        readonly STATE_RESTORING: 0x01000000;
+        readonly STATE_IS_INSECURE: 0x00000004;
+        readonly STATE_IS_BROKEN: 0x00000001;
+        readonly STATE_IS_SECURE: 0x00000002;
+        readonly STATE_BLOCKED_MIXED_ACTIVE_CONTENT: 0x00000010;
+        readonly STATE_LOADED_MIXED_ACTIVE_CONTENT: 0x00000020;
+        readonly STATE_BLOCKED_MIXED_DISPLAY_CONTENT: 0x00000100;
+        readonly STATE_LOADED_MIXED_DISPLAY_CONTENT: 0x00000200;
+        readonly STATE_IDENTITY_EV_TOPLEVEL: 0x00100000;
+        readonly STATE_USES_SSL_3: 0x01000000;
+        readonly STATE_USES_WEAK_CRYPTO: 0x02000000;
+        readonly STATE_CERT_USER_OVERRIDDEN: 0x04000000;
+        readonly STATE_BLOCKED_TRACKING_CONTENT: 0x00001000;
+        readonly STATE_LOADED_LEVEL_1_TRACKING_CONTENT: 0x00002000;
+        readonly STATE_LOADED_LEVEL_2_TRACKING_CONTENT: 0x00100000;
+        readonly STATE_BLOCKED_FINGERPRINTING_CONTENT: 0x00000040;
+        readonly STATE_LOADED_FINGERPRINTING_CONTENT: 0x00000400;
+        readonly STATE_BLOCKED_CRYPTOMINING_CONTENT: 0x00000800;
+        readonly STATE_LOADED_CRYPTOMINING_CONTENT: 0x00200000;
+        readonly STATE_BLOCKED_UNSAFE_CONTENT: 0x00004000;
+        readonly STATE_COOKIES_LOADED: 0x00008000;
+        readonly STATE_COOKIES_LOADED_TRACKER: 0x00040000;
+        readonly STATE_COOKIES_LOADED_SOCIALTRACKER: 0x00080000;
+        readonly STATE_COOKIES_BLOCKED_BY_PERMISSION: 0x10000000;
+        readonly STATE_COOKIES_BLOCKED_TRACKER: 0x20000000;
+        readonly STATE_COOKIES_BLOCKED_SOCIALTRACKER: 0x01000000;
+        readonly STATE_COOKIES_BLOCKED_ALL: 0x40000000;
+        readonly STATE_COOKIES_PARTITIONED_FOREIGN: 0x80000000;
+        readonly STATE_COOKIES_BLOCKED_FOREIGN: 0x00000080;
+        readonly STATE_BLOCKED_SOCIALTRACKING_CONTENT: 0x00010000;
+        readonly STATE_LOADED_SOCIALTRACKING_CONTENT: 0x00020000;
+        readonly STATE_REPLACED_TRACKING_CONTENT: 0x00000010;
+        readonly STATE_ALLOWED_TRACKING_CONTENT: 0x00000020;
+        readonly STATE_BLOCKED_EMAILTRACKING_CONTENT: 0x00400000;
+        readonly STATE_LOADED_EMAILTRACKING_LEVEL_1_CONTENT: 0x00800000;
+        readonly STATE_LOADED_EMAILTRACKING_LEVEL_2_CONTENT: 0x00000100;
+        readonly STATE_HTTPS_ONLY_MODE_UPGRADED: 0x00400000;
+        readonly STATE_HTTPS_ONLY_MODE_UPGRADE_FAILED: 0x00800000;
+        readonly LOCATION_CHANGE_SAME_DOCUMENT: 0x00000001;
+        readonly LOCATION_CHANGE_ERROR_PAGE: 0x00000002;
+        readonly LOCATION_CHANGE_RELOAD: 0x00000004;
+        readonly LOCATION_CHANGE_HASHCHANGE: 0x00000008;
+        readonly LOCATION_CHANGE_SESSION_STORE: 0x00000010;
+    };
+    nsIWebProgressListener2: {
+        readonly name: 'nsIWebProgressListener2';
+        readonly number: 'dde39de0-e4e0-11da-8ad9-0800200c9a66';
+    };
+    nsIWebProtocolHandlerRegistrar: {
+        readonly name: 'nsIWebProtocolHandlerRegistrar';
+        readonly number: '1ce9ef8d-f462-49ca-b8e9-c946c4f37d6e';
+    };
+    nsIWebSocketChannel: {
+        readonly name: 'nsIWebSocketChannel';
+        readonly number: 'ce71d028-322a-4105-a947-a894689b52bf';
+        readonly CLOSE_NORMAL: 1000;
+        readonly CLOSE_GOING_AWAY: 1001;
+        readonly CLOSE_PROTOCOL_ERROR: 1002;
+        readonly CLOSE_UNSUPPORTED_DATATYPE: 1003;
+        readonly CLOSE_NO_STATUS: 1005;
+        readonly CLOSE_ABNORMAL: 1006;
+        readonly CLOSE_INVALID_PAYLOAD: 1007;
+        readonly CLOSE_POLICY_VIOLATION: 1008;
+        readonly CLOSE_TOO_LARGE: 1009;
+        readonly CLOSE_EXTENSION_MISSING: 1010;
+        readonly CLOSE_INTERNAL_ERROR: 1011;
+        readonly CLOSE_TLS_FAILED: 1015;
+    };
+    nsIWebSocketFrame: {
+        readonly name: 'nsIWebSocketFrame';
+        readonly number: '6714a6be-2265-4f73-a988-d78a12416037';
+        readonly OPCODE_CONTINUATION: 0x0;
+        readonly OPCODE_TEXT: 0x1;
+        readonly OPCODE_BINARY: 0x2;
+        readonly OPCODE_CLOSE: 0x8;
+        readonly OPCODE_PING: 0x9;
+        readonly OPCODE_PONG: 0xA;
+    };
+    nsIWebSocketEventListener: {
+        readonly name: 'nsIWebSocketEventListener';
+        readonly number: 'e7c005ab-e694-489b-b741-96db43ffb16f';
+        readonly TYPE_STRING: 0x0;
+        readonly TYPE_BLOB: 0x1;
+        readonly TYPE_ARRAYBUFFER: 0x2;
+    };
+    nsIWebSocketEventService: {
+        readonly name: 'nsIWebSocketEventService';
+        readonly number: 'b89d1b90-2cf3-4d8f-ac21-5aedfb25c760';
+    };
+    nsIWebSocketImpl: {
+        readonly name: 'nsIWebSocketImpl';
+        readonly number: 'db1f4e2b-3cff-4615-a03c-341fda66c53d';
+    };
+    nsIWebSocketListener: {
+        readonly name: 'nsIWebSocketListener';
+        readonly number: 'd74c96b2-65b3-4e39-9e39-c577de5d7a73';
+    };
+    nsIWebTransport: {
+        readonly name: 'nsIWebTransport';
+        readonly number: 'c20d6e77-8cb1-4838-a88d-fff826080aa3';
+    };
+    WebTransportSessionEventListener: {
+        readonly name: 'WebTransportSessionEventListener';
+        readonly number: '0e3cb269-f318-43c8-959e-897f57894b71';
+    };
+    nsIWebTransportStreamCallback: {
+        readonly name: 'nsIWebTransportStreamCallback';
+        readonly number: 'c6eeff1d-599b-40a8-9157-c7a40c3d51a2';
+    };
+    nsIWebTransportSendStreamStats: {
+        readonly name: 'nsIWebTransportSendStreamStats';
+        readonly number: 'ccc3e685-8411-48f0-8b3e-ff6d1fae4809';
+    };
+    nsIWebTransportReceiveStreamStats: {
+        readonly name: 'nsIWebTransportReceiveStreamStats';
+        readonly number: '43ce1145-30ef-41a7-b97d-fa797f7f7d18';
+    };
+    nsIWebTransportStreamStatsCallback: {
+        readonly name: 'nsIWebTransportStreamStatsCallback';
+        readonly number: '9c1df3f5-bf04-46b6-9977-eb6389076db8';
+    };
+    nsIWebTransportReceiveStream: {
+        readonly name: 'nsIWebTransportReceiveStream';
+        readonly number: 'd461b235-6291-4817-adcc-a2a3b3dfc10b';
+    };
+    nsIWebTransportSendStream: {
+        readonly name: 'nsIWebTransportSendStream';
+        readonly number: '804f245c-52ea-403c-8a78-f751533bdd70';
+    };
+    nsIWebTransportBidirectionalStream: {
+        readonly name: 'nsIWebTransportBidirectionalStream';
+        readonly number: 'f9ecb509-36db-4689-97d6-137639a08750';
+    };
+    nsIWebVTTListener: {
+        readonly name: 'nsIWebVTTListener';
+        readonly number: '';
+    };
+    nsIWebVTTParserWrapper: {
+        readonly name: 'nsIWebVTTParserWrapper';
+        readonly number: '8dfe016e-1701-4618-9f5e-9a6154e853f0';
+    };
+    nsIWellKnownOpportunisticUtils: {
+        readonly name: 'nsIWellKnownOpportunisticUtils';
+        readonly number: 'b4f96c89-5238-450c-8bda-e12c26f1d150';
+    };
+    nsIWifiAccessPoint: {
+        readonly name: 'nsIWifiAccessPoint';
+        readonly number: '';
+    };
+    nsIWifiListener: {
+        readonly name: 'nsIWifiListener';
+        readonly number: '';
+    };
+    nsIWifiMonitor: {
+        readonly name: 'nsIWifiMonitor';
+        readonly number: 'F289701E-D9AF-4685-BC2F-E4226FF7C018';
+    };
+    nsIWinAppHelper: {
+        readonly name: 'nsIWinAppHelper';
+        readonly number: 'dc263ca8-b257-47eb-b5b7-339d9e0b90f7';
+    };
+    nsIWinTaskSchedulerService: {
+        readonly name: 'nsIWinTaskSchedulerService';
+        readonly number: 'a8d36901-0b6a-46c3-a214-a9e1d5d6047a';
+    };
+    nsIWinTaskbar: {
+        readonly name: 'nsIWinTaskbar';
+        readonly number: '11751471-9246-4c72-a80f-0c7df765d640';
+    };
+    nsIWindowCreator: {
+        readonly name: 'nsIWindowCreator';
+        readonly number: '';
+    };
+    nsIWindowMediator: {
+        readonly name: 'nsIWindowMediator';
+        readonly number: 'df0da056-357d-427f-bafd-e6cbf19c9381';
+        readonly zLevelTop: 1;
+        readonly zLevelBottom: 2;
+        readonly zLevelBelow: 3;
+    };
+    nsIWindowMediatorListener: {
+        readonly name: 'nsIWindowMediatorListener';
+        readonly number: '2F276982-0D60-4377-A595-D350BA516395';
+    };
+    nsIWindowProvider: {
+        readonly name: 'nsIWindowProvider';
+        readonly number: 'e97a3830-15ef-499b-8372-c22d128091c1';
+    };
+    nsIWindowWatcher: {
+        readonly name: 'nsIWindowWatcher';
+        readonly number: '641fe945-6902-4b3f-87c2-0daef32499b3';
+    };
+    nsIWindowlessBrowser: {
+        readonly name: 'nsIWindowlessBrowser';
+        readonly number: 'abb46f48-abfc-41bf-aa9a-7feccefcf977';
+    };
+    nsIUnknownWindowsTagListener: {
+        readonly name: 'nsIUnknownWindowsTagListener';
+        readonly number: '059f8305-4e2f-4d31-a9cb-5b918ee84773';
+    };
+    nsIWindowsAlertsService: {
+        readonly name: 'nsIWindowsAlertsService';
+        readonly number: 'e01c8066-fb4b-4304-b9c9-ab6ed4a8322c';
+    };
+    nsIWindowsPackageManager: {
+        readonly name: 'nsIWindowsPackageManager';
+        readonly number: 'ad57ac40-52f0-11ec-ada8-4f671255c4aa';
+    };
+    nsIWindowsRegKey: {
+        readonly name: 'nsIWindowsRegKey';
+        readonly number: '2555b930-d64f-437e-9be7-0a2cb252c1f4';
+        readonly ROOT_KEY_CLASSES_ROOT: 0x80000000;
+        readonly ROOT_KEY_CURRENT_USER: 0x80000001;
+        readonly ROOT_KEY_LOCAL_MACHINE: 0x80000002;
+        readonly ACCESS_BASIC: 0x00020000;
+        readonly ACCESS_QUERY_VALUE: 0x00000001;
+        readonly ACCESS_SET_VALUE: 0x00000002;
+        readonly ACCESS_CREATE_SUB_KEY: 0x00000004;
+        readonly ACCESS_ENUMERATE_SUB_KEYS: 0x00000008;
+        readonly ACCESS_NOTIFY: 0x00000010;
+        readonly WOW64_32: 0x00000200;
+        readonly WOW64_64: 0x00000100;
+        readonly TYPE_NONE: 0;
+        readonly TYPE_STRING: 1;
+        readonly TYPE_BINARY: 3;
+        readonly TYPE_INT: 4;
+        readonly TYPE_INT64: 11;
+    };
+    nsIWindowsShellService: {
+        readonly name: 'nsIWindowsShellService';
+        readonly number: 'fb9b59db-5a91-4e67-92b6-35e7d6e6d3fd';
+    };
+    nsIWindowsUIUtils: {
+        readonly name: 'nsIWindowsUIUtils';
+        readonly number: 'aa8a0ecf-96a1-418c-b80e-f24ae18bbedc';
+    };
+    nsIWorkerDebuggerListener: {
+        readonly name: 'nsIWorkerDebuggerListener';
+        readonly number: '9cf3b48e-361d-486a-8917-55cf8d00bb41';
+    };
+    nsIWorkerDebugger: {
+        readonly name: 'nsIWorkerDebugger';
+        readonly number: '';
+        readonly TYPE_DEDICATED: 0;
+        readonly TYPE_SHARED: 1;
+        readonly TYPE_SERVICE: 2;
+    };
+    nsIWorkerDebuggerManagerListener: {
+        readonly name: 'nsIWorkerDebuggerManagerListener';
+        readonly number: 'd2aa74ee-6b98-4d5d-8173-4e23422daf1e';
+    };
+    nsIWorkerDebuggerManager: {
+        readonly name: 'nsIWorkerDebuggerManager';
+        readonly number: '056d7918-dc86-452a-b4e6-86da3405f015';
+    };
+    nsIWritablePropertyBag: {
+        readonly name: 'nsIWritablePropertyBag';
+        readonly number: '96fc4671-eeb4-4823-9421-e50fb70ad353';
+    };
+    nsIWritablePropertyBag2: {
+        readonly name: 'nsIWritablePropertyBag2';
+        readonly number: '9cfd1587-360e-4957-a58f-4c2b1c5e7ed9';
+    };
+    nsIX509Cert: {
+        readonly name: 'nsIX509Cert';
+        readonly number: '';
+        readonly UNKNOWN_CERT: 0;
+        readonly ANY_CERT: 0xffff;
+    };
+    nsIOpenSignedAppFileCallback: {
+        readonly name: 'nsIOpenSignedAppFileCallback';
+        readonly number: 'fc2b60e5-9a07-47c2-a2cd-b83b68a660ac';
+    };
+    nsIAsyncBoolCallback: {
+        readonly name: 'nsIAsyncBoolCallback';
+        readonly number: '07c08655-8b11-4650-b6c4-0c145595ceb5';
+    };
+    nsICertVerificationCallback: {
+        readonly name: 'nsICertVerificationCallback';
+        readonly number: '49e16fc8-efac-4f57-8361-956ef6b960a4';
+    };
+    nsIX509CertDB: {
+        readonly name: 'nsIX509CertDB';
+        readonly number: '5c16cd9b-5a73-47f1-ab0f-11ede7495cce';
+        readonly UNTRUSTED: 0;
+        readonly Success: 0;
+        readonly ERROR_UNKNOWN: 1;
+        readonly ERROR_PKCS12_NOSMARTCARD_EXPORT: 2;
+        readonly ERROR_PKCS12_RESTORE_FAILED: 3;
+        readonly ERROR_PKCS12_BACKUP_FAILED: 4;
+        readonly ERROR_PKCS12_CERT_COLLISION: 5;
+        readonly ERROR_BAD_PASSWORD: 6;
+        readonly ERROR_DECODE_ERROR: 7;
+        readonly ERROR_PKCS12_DUPLICATE_DATA: 8;
+        readonly AppXPCShellRoot: 6;
+        readonly AddonsPublicRoot: 7;
+        readonly AddonsStageRoot: 8;
+    };
+    nsIX509CertValidity: {
+        readonly name: 'nsIX509CertValidity';
+        readonly number: 'e701dfd8-1dd1-11b2-a172-ffa6cc6156ad';
+    };
+    nsIXPCScriptable: {
+        readonly name: 'nsIXPCScriptable';
+        readonly number: '19b70b26-7c3f-437f-a04a-2a8f9e28b617';
+    };
+    nsIXREDirProvider: {
+        readonly name: 'nsIXREDirProvider';
+        readonly number: 'f6ee3c0a-5119-47fc-b1a7-ace9e1111fff';
+    };
+    nsIXULAppInfo: {
+        readonly name: 'nsIXULAppInfo';
+        readonly number: 'ddea4f31-3c5e-4769-ac68-21ab4b3d7845';
+    };
+    nsIXULBrowserWindow: {
+        readonly name: 'nsIXULBrowserWindow';
+        readonly number: 'a8675fa9-c8b4-4350-9803-c38f344a9e38';
+    };
+    nsIXULRuntime: {
+        readonly name: 'nsIXULRuntime';
+        readonly number: '03602fac-fa3f-4a50-9baa-b88456fb4a0f';
+        readonly PROCESS_TYPE_DEFAULT: 0;
+        readonly PROCESS_TYPE_CONTENT: 2;
+        readonly PROCESS_TYPE_IPDLUNITTEST: 3;
+        readonly PROCESS_TYPE_GMPLUGIN: 4;
+        readonly PROCESS_TYPE_GPU: 5;
+        readonly PROCESS_TYPE_VR: 6;
+        readonly PROCESS_TYPE_RDD: 7;
+        readonly PROCESS_TYPE_SOCKET: 8;
+        readonly PROCESS_TYPE_REMOTESANDBOXBROKER: 9;
+        readonly PROCESS_TYPE_FORKSERVER: 10;
+        readonly PROCESS_TYPE_UTILITY: 11;
+        readonly E10S_MULTI_EXPERIMENT: 1;
+    };
+    nsIXULStore: {
+        readonly name: 'nsIXULStore';
+        readonly number: '987c4b35-c426-4dd7-ad49-3c9fa4c65d20';
+    };
+    nsIZipEntry: {
+        readonly name: 'nsIZipEntry';
+        readonly number: '';
+    };
+    nsIZipReader: {
+        readonly name: 'nsIZipReader';
+        readonly number: '9ba4ef54-e0a0-4f65-9d23-128482448885';
+    };
+    nsIZipReaderCache: {
+        readonly name: 'nsIZipReaderCache';
+        readonly number: '31179807-9fcd-46c4-befa-2ade209a394b';
+    };
+    nsIZipWriter: {
+        readonly name: 'nsIZipWriter';
+        readonly number: '3ca10750-797e-4a22-bcfe-66170b5e96dd';
+        readonly COMPRESSION_NONE: 0;
+        readonly COMPRESSION_FASTEST: 1;
+        readonly COMPRESSION_DEFAULT: 6;
+        readonly COMPRESSION_BEST: 9;
+    };
+    nsPIDNSService: {
+        readonly name: 'nsPIDNSService';
+        readonly number: '24e598fd-7b1a-436c-9154-14d8b38df8a5';
+    };
+    nsPIPromptService: {
+        readonly name: 'nsPIPromptService';
+        readonly number: 'C60A1955-6CB3-4827-8EF8-4F5C668AF0B3';
+    };
+    nsPISocketTransportService: {
+        readonly name: 'nsPISocketTransportService';
+        readonly number: '18f73bf1-b35b-4b7b-aa9a-11bcbdbc389c';
+    };
+    nsPIWidgetCocoa: {
+        readonly name: 'nsPIWidgetCocoa';
+        readonly number: 'f75ff69e-3a51-419e-bd29-042f804bc2ed';
+    };
+    nsPIWindowWatcher: {
+        readonly name: 'nsPIWindowWatcher';
+        readonly number: 'd162f9c4-19d5-4723-931f-f1e51bfa9f68';
+    };
+    txIEXSLTFunctions: {
+        readonly name: 'txIEXSLTFunctions';
+        readonly number: '21b1cfa4-00ce-4cc1-bfc1-92af1d00e580';
+    };
+    xpcIJSWeakReference: {
+        readonly name: 'xpcIJSWeakReference';
+        readonly number: '';
+    };
+    nsIXPCComponents_Interfaces: {
+        readonly name: 'nsIXPCComponents_Interfaces';
+        readonly number: 'b8c31bba-79db-4a1d-930d-4cdd68713f9e';
+    };
+    nsIXPCComponents_Classes: {
+        readonly name: 'nsIXPCComponents_Classes';
+        readonly number: '978ff520-d26c-11d2-9842-006008962422';
+    };
+    nsIXPCComponents_Results: {
+        readonly name: 'nsIXPCComponents_Results';
+        readonly number: '2fc229a0-5860-11d3-9899-006008962422';
+    };
+    nsIXPCComponents_ID: {
+        readonly name: 'nsIXPCComponents_ID';
+        readonly number: '7994a6e0-e028-11d3-8f5d-0010a4e73d9a';
+    };
+    nsIXPCComponents_Exception: {
+        readonly name: 'nsIXPCComponents_Exception';
+        readonly number: '5bf039c0-e028-11d3-8f5d-0010a4e73d9a';
+    };
+    nsIXPCComponents_Constructor: {
+        readonly name: 'nsIXPCComponents_Constructor';
+        readonly number: '88655640-e028-11d3-8f5d-0010a4e73d9a';
+    };
+    nsIXPCComponents_utils_Sandbox: {
+        readonly name: 'nsIXPCComponents_utils_Sandbox';
+        readonly number: '4f8ae0dc-d266-4a32-875b-6a9de71a8ce9';
+    };
+    nsIScheduledGCCallback: {
+        readonly name: 'nsIScheduledGCCallback';
+        readonly number: '71000535-b0fd-44d1-8ce0-909760e3953c';
+    };
+    nsIXPCComponents_Utils: {
+        readonly name: 'nsIXPCComponents_Utils';
+        readonly number: '86003fe3-ee9a-4620-91dc-eef8b1e58815';
+    };
+    nsIXPCComponents: {
+        readonly name: 'nsIXPCComponents';
+        readonly number: 'aa28aaf6-70ce-4b03-9514-afe43c7dfda8';
+    };
+    nsIXPCTestObjectReadOnly: {
+        readonly name: 'nsIXPCTestObjectReadOnly';
+        readonly number: '42fbd9f6-b12d-47ef-b7a1-02d73c11fe53';
+    };
+    nsIXPCTestObjectReadWrite: {
+        readonly name: 'nsIXPCTestObjectReadWrite';
+        readonly number: 'f07529b0-a479-4954-aba5-ab3142c6b1cb';
+    };
+    nsIXPCTestBug809674: {
+        readonly name: 'nsIXPCTestBug809674';
+        readonly number: '2df46559-da21-49bf-b863-0d7b7bbcbc73';
+    };
+    nsIXPCTestCEnums: {
+        readonly name: 'nsIXPCTestCEnums';
+        readonly number: '6a2f918e-cda2-11e8-bc9a-a34c716d1f2a';
+        readonly testConst: 1;
+    };
+    nsIXPCTestESMReturnCodeParent: {
+        readonly name: 'nsIXPCTestESMReturnCodeParent';
+        readonly number: '494f9336-ad06-46ad-bbb4-b0010e27e12d';
+    };
+    nsIXPCTestESMReturnCodeChild: {
+        readonly name: 'nsIXPCTestESMReturnCodeChild';
+        readonly number: 'dee07408-75d8-4968-a37c-fe0d48ccd1ac';
+        readonly CHILD_SHOULD_THROW: 0;
+        readonly CHILD_SHOULD_RETURN_SUCCESS: 1;
+        readonly CHILD_SHOULD_RETURN_RESULTCODE: 2;
+        readonly CHILD_SHOULD_NEST_RESULTCODES: 3;
+    };
+    nsIXPCTestInterfaceA: {
+        readonly name: 'nsIXPCTestInterfaceA';
+        readonly number: '';
+    };
+    nsIXPCTestInterfaceB: {
+        readonly name: 'nsIXPCTestInterfaceB';
+        readonly number: '';
+    };
+    nsIXPCTestInterfaceC: {
+        readonly name: 'nsIXPCTestInterfaceC';
+        readonly number: '401cf1b4-355b-4cee-b7b3-c7973aee49bd';
+    };
+    nsIXPCTestParams: {
+        readonly name: 'nsIXPCTestParams';
+        readonly number: '812145c7-9fcc-425e-a878-36ad1b7730b7';
+    };
+    nsIXPCTestReturnCodeParent: {
+        readonly name: 'nsIXPCTestReturnCodeParent';
+        readonly number: '479e4532-95cf-48b8-a99b-8a5881e47138';
+    };
+    nsIXPCTestReturnCodeChild: {
+        readonly name: 'nsIXPCTestReturnCodeChild';
+        readonly number: '672cfd34-1fd1-455d-9901-d879fa6fdb95';
+        readonly CHILD_SHOULD_THROW: 0;
+        readonly CHILD_SHOULD_RETURN_SUCCESS: 1;
+        readonly CHILD_SHOULD_RETURN_RESULTCODE: 2;
+        readonly CHILD_SHOULD_NEST_RESULTCODES: 3;
+    };
+    nsIXPCTestFunctionInterface: {
+        readonly name: 'nsIXPCTestFunctionInterface';
+        readonly number: 'd58a82ab-d8f7-4ca9-9273-b3290d42a0cf';
+    };
+    nsIXPCTestUtils: {
+        readonly name: 'nsIXPCTestUtils';
+        readonly number: '1e9cddeb-510d-449a-b152-3c1b5b31d41d';
+    };
 }
 declare var Ci: CiType;
 

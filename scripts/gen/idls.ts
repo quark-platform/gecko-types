@@ -1,6 +1,14 @@
 import { writeFile } from 'fs/promises'
 import { getAllInterfaces, getXPCOMClasses } from 'gecko-index'
-import { member_$0_$0 } from 'gecko-index/lib/parser.js'
+import {
+  attribute_code,
+  const_code,
+  enum_code,
+  func,
+  ifacebody_$0_$0_$0,
+  interface_main,
+  member_$0_$0,
+} from 'gecko-index/lib/parser.js'
 import ts from 'typescript'
 import { parse as jsdocParse } from 'comment-parser'
 import type { Block } from 'comment-parser/primitives'
@@ -16,6 +24,8 @@ import {
 
 const interfaceFiles = await getAllInterfaces()
 export const idlTypes = new Set<string>()
+export const idlConstants = new Map<string, { key: string; value: string }[]>()
+export const idlUUID = new Map<string, string>()
 
 let idlDefFile = ''
 const idlDefFileBuilder = ts.createSourceFile(
@@ -25,6 +35,217 @@ const idlDefFileBuilder = ts.createSourceFile(
   /*setParentNodes*/ false,
   ts.ScriptKind.TS
 )
+
+function handleAttribute(
+  code: attribute_code,
+  docComment: string
+): ts.TypeElement[] {
+  let modifiers = []
+
+  if (code.readonly) {
+    modifiers.push(READ_ONLY_MODIFIER)
+  }
+
+  // TODO: Array<...> support
+  if (typeof code.name != 'string' || typeof code.type != 'string') return []
+
+  return [
+    ts.addSyntheticLeadingComment(
+      ts.factory.createPropertySignature(
+        modifiers,
+        code.name,
+        undefined,
+        ts.factory.createTypeReferenceNode(code.type.replaceAll(' ', '_'))
+      ),
+      ts.SyntaxKind.MultiLineCommentTrivia,
+      formatDocCommentString(docComment),
+      true
+    ),
+  ]
+}
+
+function handleFunc(
+  code: func,
+  docCommentRaw: member_$0_$0[]
+): ts.TypeElement[] {
+  const { return_type: returnType, name, params: rawParams } = code
+  const docComment = generateDocCommentType(docCommentRaw)
+  const parsed: Block[] = jsdocParse(`/*${idlDocToJSDocParam(docComment)}*/`)
+
+  // TODO: Array<...> support
+  if (typeof returnType != 'string') return []
+  if (typeof name != 'string') return []
+
+  let params = []
+
+  if (rawParams?.first_param) {
+    params.push(
+      ...[
+        rawParams.first_param,
+        ...(rawParams?.other.map((val) => val.param) || []),
+      ].map((val) => {
+        let name = 'invalid',
+          type = 'invalid'
+
+        if (typeof val.name == 'string') name = val.name
+        // TODO: Array<...> support
+        if (typeof val.type == 'string') type = val.type.replaceAll(' ', '_')
+
+        if (name == 'debugger' || name == 'function') name = `_${name}`
+
+        const matchingDocSpec = getJSDocNamedSpec(parsed, name)
+        if (matchingDocSpec) {
+          if (matchingDocSpec.optional) type += '?'
+        }
+
+        return ts.factory.createParameterDeclaration(
+          undefined,
+          undefined,
+          name,
+          undefined,
+          ts.factory.createTypeReferenceNode(type)
+        )
+      })
+    )
+  }
+
+  return [
+    ts.addSyntheticLeadingComment(
+      ts.factory.createMethodSignature(
+        undefined,
+        name,
+        undefined,
+        undefined,
+        params,
+        ts.factory.createTypeReferenceNode(returnType.replaceAll(' ', '_'))
+      ),
+      ts.SyntaxKind.MultiLineCommentTrivia,
+      docComment,
+      true
+    ),
+  ]
+}
+
+function handleConst(
+  code: const_code,
+  interfaceName: string
+): ts.TypeElement[] {
+  const constants = idlConstants.get(interfaceName) || []
+
+  const { name: key, value } = code
+  if (typeof key !== 'string' || typeof value !== 'string') return []
+  constants.push({ key, value })
+
+  idlConstants.set(interfaceName, constants)
+
+  // We do not emit anything here. We add it to Ci further down
+  return []
+}
+
+function interfaceBody(
+  contents: ifacebody_$0_$0_$0,
+  interfaceName: string
+): ts.TypeElement[] {
+  if (typeof contents == 'string') return []
+  if (
+    contents.kind == 'ANY_COMMENT_$0' ||
+    contents.kind == 'REGULAR_MULTILINE_COMMENT' ||
+    contents.kind == 'SINGLE_LINE_COMMENT'
+  )
+    return []
+
+  let docComment: string = ''
+
+  for (const comment of contents.docComment) {
+    if (comment.kind != 'DOC_COMMENT') continue
+
+    docComment += cleanUpComment(comment.contents)
+    docComment += '\n'
+  }
+
+  if (typeof contents.code == 'string') return []
+  if (contents.code.kind == 'attribute_code')
+    return handleAttribute(contents.code, docComment)
+  if (contents.code.kind == 'func')
+    return handleFunc(contents.code, contents.docComment)
+
+  if (contents.code.kind == 'const_code') {
+    return handleConst(contents.code, interfaceName)
+  }
+
+  return []
+}
+
+function interfaceMain(node: interface_main) {
+  const name = `${node.name}Type`
+  const rawName = node.name.toString()
+
+  // Fetch the UUID and store it in the global map
+  {
+    const attrs = [
+      node.attrs?.first_attribute,
+      ...(node.attrs?.other_attributes || []).map(({ attr }) => attr),
+    ].filter(Boolean)
+    let uuid = ''
+
+    for (const attr of attrs) {
+      if (attr && attr.name == 'uuid') {
+        const value = attr.param?.value
+        if (typeof value !== 'string') continue
+        uuid = value
+      }
+    }
+
+    idlUUID.set(rawName, uuid)
+  }
+
+  let parentInterface: ts.Identifier | undefined
+  const members: ts.TypeElement[] = []
+  let docComments = []
+
+  if (node.base && typeof node.base.extends == 'string')
+    parentInterface = ts.factory.createIdentifier(`${node.base.extends}Type`)
+  else if (node.name === 'nsISupports') {
+    /* The one class allowed not to extend something */
+  }
+  // All XPCOM interfaces that aren't import interfaces must extend something
+  else return
+
+  for (const { contents } of node.body?.contents?.contents || []) {
+    members.push(...interfaceBody(contents, rawName))
+  }
+
+  if (node.doc_comment) {
+    docComments.push(node.doc_comment)
+  }
+
+  idlTypes.add(rawName)
+  idlDefFile += printNode(
+    ts.addSyntheticLeadingComment(
+      ts.factory.createInterfaceDeclaration(
+        [DECLARE_MODIFIER],
+        name,
+        undefined,
+        parentInterface
+          ? [
+              ts.factory.createHeritageClause(ts.SyntaxKind.ExtendsKeyword, [
+                ts.factory.createExpressionWithTypeArguments(
+                  parentInterface,
+                  undefined
+                ),
+              ]),
+            ]
+          : [],
+        members
+      ),
+      ts.SyntaxKind.MultiLineCommentTrivia,
+      generateDocCommentType(docComments),
+      true
+    ),
+    idlDefFileBuilder
+  )
+  idlDefFile += '\n\n'
+}
 
 for (const file in interfaceFiles) {
   const fileContents = interfaceFiles[file]
@@ -44,178 +265,7 @@ for (const file in interfaceFiles) {
     }
 
     if (node.kind == 'interface_main') {
-      const name = `${node.name}Type`
-      const rawName = node.name.toString()
-
-      let parentInterface: ts.Identifier | undefined
-      const members: ts.TypeElement[] = []
-      let docComments = []
-
-      if (node.base && typeof node.base.extends == 'string')
-        parentInterface = ts.factory.createIdentifier(
-          `${node.base.extends}Type`
-        )
-      else if (node.name === 'nsISupports') {
-        /* The one class allowed not to extend something */
-      }
-      // All XPCOM interfaces that aren't import interfaces must extend something
-      else continue
-
-      for (const { contents } of node.body?.contents?.contents || []) {
-        if (typeof contents == 'string') continue
-        if (
-          contents.kind == 'ANY_COMMENT_$0' ||
-          contents.kind == 'REGULAR_MULTILINE_COMMENT' ||
-          contents.kind == 'SINGLE_LINE_COMMENT'
-        )
-          continue
-
-        let docComment = ''
-
-        for (const comment of contents.docComment) {
-          if (comment.kind != 'DOC_COMMENT') continue
-
-          docComment += cleanUpComment(comment.contents)
-          docComment += '\n'
-        }
-
-        if (typeof contents.code == 'string') continue
-        if (contents.code.kind == 'attribute_code') {
-          let modifiers = []
-
-          if (contents.code.readonly) {
-            modifiers.push(READ_ONLY_MODIFIER)
-          }
-
-          // TODO: Array<...> support
-          if (
-            typeof contents.code.name != 'string' ||
-            typeof contents.code.type != 'string'
-          )
-            continue
-
-          members.push(
-            ts.addSyntheticLeadingComment(
-              ts.factory.createPropertySignature(
-                modifiers,
-                contents.code.name,
-                undefined,
-                ts.factory.createTypeReferenceNode(
-                  contents.code.type.replaceAll(' ', '_')
-                )
-              ),
-              ts.SyntaxKind.MultiLineCommentTrivia,
-              generateDocCommentType(contents.docComment),
-              true
-            )
-          )
-          continue
-        }
-        if (contents.code.kind == 'func') {
-          const {
-            return_type: returnType,
-            name,
-            params: rawParams,
-          } = contents.code
-          const docComment = generateDocCommentType(contents.docComment)
-          const parsed: Block[] = jsdocParse(
-            `/*${idlDocToJSDocParam(docComment)}*/`
-          )
-
-          // TODO: Array<...> support
-          if (typeof returnType != 'string') continue
-          if (typeof name != 'string') continue
-
-          let params = []
-
-          if (rawParams?.first_param) {
-            params.push(
-              ...[
-                rawParams.first_param,
-                ...(rawParams?.other.map((val) => val.param) || []),
-              ].map((val) => {
-                let name = 'invalid',
-                  type = 'invalid'
-
-                if (typeof val.name == 'string') name = val.name
-                // TODO: Array<...> support
-                if (typeof val.type == 'string')
-                  type = val.type.replaceAll(' ', '_')
-
-                if (name == 'debugger' || name == 'function') name = `_${name}`
-
-                const matchingDocSpec = getJSDocNamedSpec(parsed, name)
-                if (matchingDocSpec) {
-                  if (matchingDocSpec.optional) type += '?'
-                }
-
-                return ts.factory.createParameterDeclaration(
-                  undefined,
-                  undefined,
-                  name,
-                  undefined,
-                  ts.factory.createTypeReferenceNode(type)
-                )
-              })
-            )
-          }
-
-          members.push(
-            ts.addSyntheticLeadingComment(
-              ts.factory.createMethodSignature(
-                undefined,
-                name,
-                undefined,
-                undefined,
-                params,
-                ts.factory.createTypeReferenceNode(
-                  returnType.replaceAll(' ', '_')
-                )
-              ),
-              ts.SyntaxKind.MultiLineCommentTrivia,
-              docComment,
-              true
-            )
-          )
-
-          continue
-        }
-      }
-
-      if (node.doc_comment) {
-        docComments.push(node.doc_comment)
-      }
-
-      idlTypes.add(rawName)
-      idlDefFile += printNode(
-        ts.addSyntheticLeadingComment(
-          ts.factory.createInterfaceDeclaration(
-            [DECLARE_MODIFIER],
-            name,
-            undefined,
-            parentInterface
-              ? [
-                  ts.factory.createHeritageClause(
-                    ts.SyntaxKind.ExtendsKeyword,
-                    [
-                      ts.factory.createExpressionWithTypeArguments(
-                        parentInterface,
-                        undefined
-                      ),
-                    ]
-                  ),
-                ]
-              : [],
-            members
-          ),
-          ts.SyntaxKind.MultiLineCommentTrivia,
-          generateDocCommentType(docComments),
-          true
-        ),
-        idlDefFileBuilder
-      )
-      idlDefFile += '\n\n'
-
+      interfaceMain(node)
       continue
     }
 
@@ -228,8 +278,54 @@ for (const file in interfaceFiles) {
   const members: ts.TypeElement[] = []
 
   for (const iface of idlTypes) {
+    // Each CI item should have a type that looks something like this:
+    // ```js
+    // {
+    //    "name": "ciName",
+    //    "number": "UUID",
+    //    ...constants
+    // }
+    // ```
+
+    const constants = (idlConstants.get(iface) || []).map(({ key, value }) => {
+      let type
+
+      if (value.startsWith('0x') || !isNaN(value as unknown as number)) {
+        type = ts.factory.createNumericLiteral(value)
+      } else {
+        type = ts.factory.createStringLiteral(value)
+      }
+
+      return ts.factory.createPropertySignature(
+        [READ_ONLY_MODIFIER],
+        key,
+        undefined,
+        ts.factory.createLiteralTypeNode(type)
+      )
+    })
+
+    const type = ts.factory.createTypeLiteralNode([
+      ts.factory.createPropertySignature(
+        [READ_ONLY_MODIFIER],
+        'name',
+        undefined,
+        ts.factory.createLiteralTypeNode(
+          ts.factory.createStringLiteral(iface, true)
+        )
+      ),
+      ts.factory.createPropertySignature(
+        [READ_ONLY_MODIFIER],
+        'number',
+        undefined,
+        ts.factory.createLiteralTypeNode(
+          ts.factory.createStringLiteral(idlUUID.get(iface) || '', true)
+        )
+      ),
+      ...constants,
+    ])
+
     members.push(
-      ts.factory.createPropertySignature(undefined, iface, undefined, undefined)
+      ts.factory.createPropertySignature(undefined, iface, undefined, type)
     )
   }
 
