@@ -4190,6 +4190,19 @@ declare interface nsIAboutThirdPartyType extends nsISupportsType {
      */
     lookupApplication(aModulePath: AString): nsIInstalledApplication;
     /**
+     * Returns true if DynamicBlocklist is available.
+     */
+    readonly isDynamicBlocklistAvailable: bool;
+    /**
+     * Returns true if DynamicBlocklist is available but disabled.
+     */
+    readonly isDynamicBlocklistDisabled: bool;
+    /**
+     * Add or remove an entry from the dynamic blocklist and save
+     * the resulting file.
+     */
+    updateBlocklist(aLeafName: AString, aNewBlockStatus: boolean): Promise;
+    /**
      * Posts a background task to collect system information and resolves
      * the returned promise when the task is finished.
      */
@@ -4476,8 +4489,12 @@ declare interface nsIAlertsServiceType extends nsISupportsType {
      * @param aName          The name of the notification to close. If no name
      * is provided then only a notification created with
      * no name (if any) will be closed.
+     * @param aContextClosed The notification was implicitly closed, e.g. by tab
+     * or window closure. This is necessary to track as some
+     * platforms intentionally leave the notification visible
+     * unless explicitly closed, e.g. by notification.close().
      */
-    closeAlert(aName: AString): void;
+    closeAlert(aName: AString, aContextClosed: boolean): void;
 }
 
 /**
@@ -4612,21 +4629,11 @@ declare interface nsIAppShellType extends nsISupportsType {
      */
     exit(): void;
     /**
-     * Give hint to native event queue notification mechanism. If the native
-     * platform needs to tradeoff performance vs. native event starvation this
-     * hint tells the native dispatch code which to favor.  The default is to
-     * prevent native event starvation.
-     *
-     * Calls to this function may be nested. When the number of calls that pass
-     * PR_TRUE is subtracted from the number of calls that pass PR_FALSE is
-     * greater than 0, performance is given precedence over preventing event
-     * starvation.
-     *
-     * The starvationDelay arg is only used when favorPerfOverStarvation is
-     * PR_FALSE. It is the amount of time in milliseconds to wait before the
-     * PR_FALSE actually takes effect.
+     * Ask the native event queue notification mechanism to favor Gecko tasks
+     * (instead of native tasks) for a short while. (Content processes always
+     * favor Gecko tasks.)
      */
-    favorPerformanceHint(favorPerfOverStarvation: boolean, starvationDelay: unsigned_long): void;
+    geckoTaskBurst(): void;
     /**
      * Suspends the use of additional platform-specific methods (besides the
      * nsIAppShell->run() event loop) to run Gecko events on the main
@@ -5027,30 +5034,6 @@ declare interface nsIAppWindowType extends nsISupportsType {
      * docshell could cause problems.
      */
     beforeStartLayout(): void;
-    /**
-     * Given the dimensions of some content area held within this
-     * XUL window, and assuming that that content area will change
-     * its dimensions in linear proportion to the dimensions of this
-     * XUL window, changes the size of the XUL window so that the
-     * content area reaches a particular size.
-     *
-     * We need to supply the content area dimensions because sometimes
-     * the child's nsDocShellTreeOwner needs to propagate a SizeShellTo
-     * call to the parent. But the shellItem argument of the call will
-     * not be available on the parent side.
-     *
-     * Note: this is an internal method, other consumers should never call this.
-     *
-     * @param aDesiredWidth
-     * The desired width of the content area in device pixels.
-     * @param aDesiredHeight
-     * The desired height of the content area in device pixels.
-     * @param shellItemWidth
-     * The current width of the content area.
-     * @param shellItemHeight
-     * The current height of the content area.
-     */
-    sizeShellToWithLimit(aDesiredWidth: int32_t, aDesiredHeight: int32_t, shellItemWidth: int32_t, shellItemHeight: int32_t): void;
     /**
      * If the window was opened as a content window, this will return the initial
      * nsIOpenWindowInfo to use.
@@ -5550,6 +5533,12 @@ declare interface nsIAsyncShutdownClientType extends nsISupportsType {
      */
     readonly name: AString;
     /**
+     * Whether the client is still open for new blockers.
+     * When this is true it is too late to add new blockers and addBlocker will
+     * throw an exception.
+     */
+    readonly isClosed: boolean;
+    /**
      * Add a blocker.
      *
      * After a `blocker` has been added with `addBlocker`, if it is not
@@ -5567,6 +5556,8 @@ declare interface nsIAsyncShutdownClientType extends nsISupportsType {
      * @param aLineNumber The linenumber of the callsite, as given by `__LINE__`.
      * @param aStack Information on the stack that lead to this call. Generally
      * empty when called from C++.
+     * @throws If it's too late to add a blocker.
+     * @see isClosed.
      */
     addBlocker(aBlocker: nsIAsyncShutdownBlocker, aFileName: AString, aLineNumber: long, aStack: AString): void;
     /**
@@ -5582,7 +5573,7 @@ declare interface nsIAsyncShutdownClientType extends nsISupportsType {
      *
      * It is strongly recommended that JS clients of this API use
      * `jsclient` instead of the `nsIAsyncShutdownClient`. See
-     * AsyncShutdown.jsm for more information on the JS version of
+     * AsyncShutdown.sys.mjs for more information on the JS version of
      * this API.
      */
     readonly jsclient: jsval;
@@ -7090,7 +7081,7 @@ declare interface nsIBackgroundTasksRunnerType extends nsISupportsType {
      *
      * See BackgroundTask_removeDirectory.sys.mjs for details about the arguments.
      */
-    removeDirectoryInDetachedProcess(aParentDirPath: ACString, aChildDirName: ACString, aSecondsToWait: ACString, aOtherFoldersSuffix: ACString): void;
+    removeDirectoryInDetachedProcess(aParentDirPath: ACString, aChildDirName: ACString, aSecondsToWait: ACString, aOtherFoldersSuffix: ACString, aMetricsId: ACString): void;
 }
 
 /**
@@ -7178,6 +7169,35 @@ declare interface nsIBaseWindowType extends nsISupportsType {
      * Also is more efficient than calling both.
      */
     getPositionAndSize(x: long, y: long, cx: long, cy: long): void;
+    /**
+     * Allows to request the change of individual dimensions without specifying
+     * the other components.
+     *
+     * @param aRequest - The requested change. A request to change only the width
+     * may look like:
+     * {DimensionKind::Outer, Nothing(), Nothing(), Some(20), Nothing()}
+     *
+     * Note: Inner position is not supported.
+     *
+     * @see DimensionRequest
+     */
+    setDimensions(aRequest: DimensionRequest): void;
+    /**
+     * Gets the dimensions of the window. The caller may pass nullptr for any
+     * value it is uninterested in receiving.
+     *
+     * @param aDimensionKind  Specifies whether the dimensions are in reference
+     * to the inner or outer dimensions.
+     * @param aX              Left hand corner of the outer area; or nullptr.
+     * @param aY              Top corner of the outer area; or nullptr.
+     * @param aCX             Width of the inner or outer area; or nullptr.
+     * @param aCY             Height of the inner or outer area; or nullptr.
+     *
+     * Note: Inner position is not supported.
+     *
+     * @see DimensionRequest
+     */
+    getDimensions(aDimensionKind: DimensionKind, aX: long, aY: long, aCX: long, aCY: long): void;
     /**
      * Tell the window to repaint itself
      * @param aForce - if true, repaint immediately
@@ -7284,6 +7304,52 @@ declare interface nsIBidiKeyboardType extends nsISupportsType {
      * information.
      */
     readonly haveBidiKeyboards: boolean;
+}
+
+/**
+ *
+ */
+declare interface nsIBinaryHttpRequestType extends nsISupportsType {
+    /**
+     *
+     */
+    readonly method: ACString;
+    /**
+     *
+     */
+    readonly scheme: ACString;
+    /**
+     *
+     */
+    readonly authority: ACString;
+    /**
+     *
+     */
+    readonly path: ACString;
+}
+
+/**
+ *
+ */
+declare interface nsIBinaryHttpResponseType extends nsISupportsType {
+    /**
+     *
+     */
+    readonly status: uint16_t;
+}
+
+/**
+ *
+ */
+declare interface nsIBinaryHttpType extends nsISupportsType {
+    /**
+     *
+     */
+    decodeRequest(request: invalid): nsIBinaryHttpRequest;
+    /**
+     *
+     */
+    decodeResponse(response: invalid): nsIBinaryHttpResponse;
 }
 
 /**
@@ -7853,10 +7919,6 @@ declare interface nsIBrowserChildType extends nsISupportsType {
     /**
      *
      */
-    remoteSizeShellTo(width: int32_t, height: int32_t, shellItemWidth: int32_t, shellItemHeight: int32_t): void;
-    /**
-     *
-     */
     remoteDropLinks(links: invalid): void;
     /**
      * Resolved after content has received a PBrowser::ChildToParentMatrix.
@@ -8060,6 +8122,10 @@ declare interface nsIBrowserHandlerType extends nsISupportsType {
      *
      */
     majorUpgrade: boolean;
+    /**
+     *
+     */
+    firstRunProfile: boolean;
     /**
      * Extract the width and height specified on the command line, if present.
      * @return A feature string with a prepended comma, e.g. ",width=500,height=400"
@@ -10423,19 +10489,13 @@ declare interface nsIClipboardType extends nsISupportsType {
     hasDataMatchingFlavors(aFlavorList: invalid, aWhichClipboard: long): boolean;
     /**
      * Allows clients to determine if the implementation supports the concept of a
-     * separate clipboard for selection.
+     * separate clipboard.
      *
-     * @outResult - true if
-     * @result NS_OK if successful.
+     * @param aWhichClipboard  Specifies the clipboard to which this operation applies.
+     * @outResult  true if the implementaion supports specific clipboard type.
+     * @result  NS_OK if successful.
      */
-    supportsSelectionClipboard(): boolean;
-    /**
-     * Allows clients to determine if the implementation supports the concept of a
-     * separate clipboard for find search strings.
-     *
-     * @result NS_OK if successful.
-     */
-    supportsFindClipboard(): boolean;
+    isClipboardTypeSupported(aWhichClipboard: long): boolean;
     /**
      * Filters the flavors aTransferable can import (see
      * `nsITransferable::flavorsTransferableCanImport`) and gets the data for the
@@ -10583,7 +10643,7 @@ declare interface nsIColorPickerType extends nsISupportsType {
      * parameter has to follow the format specified on top
      * of this file.
      */
-    init(parent: mozIDOMWindowProxy, title: AString, initialColor: AString): void;
+    init(parent: mozIDOMWindowProxy, title: AString, initialColor: AString, defaultColors: invalid): void;
     /**
      * Opens the color dialog asynchrounously.
      * The results are provided via the callback object.
@@ -12920,6 +12980,17 @@ declare interface nsICookieBannerServiceType extends nsISupportsType {
      */
     removeRule(aRule: nsICookieBannerRule): void;
     /**
+     * Computes whether we have a rule for the given browsing context or any of
+     * its children. This takes the current cookie banner service mode into
+     * consideration and whether the BC is in private browsing mode.
+     *
+     * This method only takes the global service mode into account. It will ignore
+     * any per-site mode overrides. It is meant for callers to find out whether an
+     * applicable rule exists, even if users have disabled the feature for the
+     * given site.
+     */
+    hasRuleForBrowsingContextTree(aBrowsingContext: BrowsingContext): boolean;
+    /**
      * Get the domain preference of the given top-level URI. It will return the
      * service mode if there is a site preference for the given URI. Otherwise, it
      * will return MODE_UNSET.
@@ -12929,6 +13000,16 @@ declare interface nsICookieBannerServiceType extends nsISupportsType {
      * Set the domain preference of the given top-level URI.
      */
     setDomainPref(aTopLevelURI: nsIURI, aMode: nsICookieBannerService_Modes, aIsPrivate: boolean): void;
+    /**
+     * Set the domain preference of the given top-level URI. It will persist the
+     * domain preference for private browsing.
+     *
+     * WARNING: setting permanent domain preference _will_ leak data in private
+     * browsing. Only use if you understand the consequences and trade-offs. If
+     * you are unsure, |setDomainPref| is very likely what you want to use
+     * instead.
+     */
+    setDomainPrefAndPersistInPrivateBrowsing(aTopLevelURI: nsIURI, aMode: nsICookieBannerService_Modes): void;
     /**
      * Remove the domain preference of the given top-level URI.
      */
@@ -14042,7 +14123,12 @@ declare interface nsIDNSAddrRecordType extends nsIDNSRecordType {
     /**
      * The TRR mode this record is used.
      */
-    readonly effectiveTRRMode: unsigned_long;
+    readonly effectiveTRRMode: nsIRequest_TRRMode;
+    /**
+     * If the DNS request didn't use TRR, this value
+     * contains the reason why that was skipped.
+     */
+    readonly trrSkipReason: nsITRRSkipReason_value;
     /**
      * Returns the ttl of this record.
      */
@@ -14083,11 +14169,11 @@ declare interface nsIDNSServiceType extends nsISupportsType {
      *
      * @return An object that can be used to cancel the host lookup.
      */
-    asyncResolve(aHostName: AUTF8String, aType: nsIDNSService_ResolveType, aFlags: unsigned_long, aInfo: nsIDNSAdditionalInfo, aListener: nsIDNSListener, aListenerTarget: nsIEventTarget, aOriginAttributes: jsval): nsICancelable;
+    asyncResolve(aHostName: AUTF8String, aType: nsIDNSService_ResolveType, aFlags: nsIDNSService_DNSFlags, aInfo: nsIDNSAdditionalInfo, aListener: nsIDNSListener, aListenerTarget: nsIEventTarget, aOriginAttributes: jsval): nsICancelable;
     /**
      *
      */
-    asyncResolveNative(aHostName: AUTF8String, aType: nsIDNSService_ResolveType, aFlags: unsigned_long, aInfo: nsIDNSAdditionalInfo, aListener: nsIDNSListener, aListenerTarget: nsIEventTarget, aOriginAttributes: OriginAttributes, aResult: nsICancelable): nsresult;
+    asyncResolveNative(aHostName: AUTF8String, aType: nsIDNSService_ResolveType, aFlags: nsIDNSService_DNSFlags, aInfo: nsIDNSAdditionalInfo, aListener: nsIDNSListener, aListenerTarget: nsIEventTarget, aOriginAttributes: OriginAttributes, aResult: nsICancelable): nsresult;
     /**
      * Returns a new nsIDNSAdditionalInfo object containing the URL we pass to it.
      */
@@ -14116,11 +14202,11 @@ declare interface nsIDNSServiceType extends nsISupportsType {
      * the originAttribute for this resolving. This attribute is optional
      * to avoid breaking add-ons.
      */
-    cancelAsyncResolve(aHostName: AUTF8String, aType: nsIDNSService_ResolveType, aFlags: unsigned_long, aResolver: nsIDNSAdditionalInfo, aListener: nsIDNSListener, aReason: nsresult, aOriginAttributes: jsval): void;
+    cancelAsyncResolve(aHostName: AUTF8String, aType: nsIDNSService_ResolveType, aFlags: nsIDNSService_DNSFlags, aResolver: nsIDNSAdditionalInfo, aListener: nsIDNSListener, aReason: nsresult, aOriginAttributes: jsval): void;
     /**
      *
      */
-    cancelAsyncResolveNative(aHostName: AUTF8String, aType: nsIDNSService_ResolveType, aFlags: unsigned_long, aResolver: nsIDNSAdditionalInfo, aListener: nsIDNSListener, aReason: nsresult, aOriginAttributes: OriginAttributes): nsresult;
+    cancelAsyncResolveNative(aHostName: AUTF8String, aType: nsIDNSService_ResolveType, aFlags: nsIDNSService_DNSFlags, aResolver: nsIDNSAdditionalInfo, aListener: nsIDNSListener, aReason: nsresult, aOriginAttributes: OriginAttributes): nsresult;
     /**
      * called to synchronously resolve a hostname.
      *
@@ -14140,11 +14226,11 @@ declare interface nsIDNSServiceType extends nsISupportsType {
      * @throws NS_ERROR_UNKNOWN_HOST if host could not be resolved.
      * @throws NS_ERROR_NOT_AVAILABLE if accessed from the main thread.
      */
-    resolve(aHostName: AUTF8String, aFlags: unsigned_long, aOriginAttributes: jsval): nsIDNSRecord;
+    resolve(aHostName: AUTF8String, aFlags: nsIDNSService_DNSFlags, aOriginAttributes: jsval): nsIDNSRecord;
     /**
      *
      */
-    resolveNative(aHostName: AUTF8String, aFlags: unsigned_long, aOriginAttributes: OriginAttributes, aResult: nsIDNSRecord): nsresult;
+    resolveNative(aHostName: AUTF8String, aFlags: nsIDNSService_DNSFlags, aOriginAttributes: OriginAttributes, aResult: nsIDNSRecord): nsresult;
     /**
      * The method takes a pointer to an nsTArray
      * and fills it with cache entry data
@@ -14170,6 +14256,20 @@ declare interface nsIDNSServiceType extends nsISupportsType {
      * on network preferences.
      */
     setDetectedTrrURI(aURI: AUTF8String): void;
+    /**
+     * Stores the result of the TRR heuristic detection.
+     * Will be TRR_OK if no heuristics failed.
+     */
+    setHeuristicDetectionResult(value: nsITRRSkipReason_value): void;
+    /**
+     * Returns the result of the last TRR heuristic detection.
+     * Will be TRR_OK if no heuristics failed.
+     */
+    readonly heuristicDetectionResult: nsITRRSkipReason_value;
+    /**
+     *
+     */
+    getTRRSkipReasonName(value: nsITRRSkipReason_value): ACString;
     /**
      * Notifies the DNS service that we failed to connect to this alternative
      * endpoint.
@@ -14202,6 +14302,10 @@ declare interface nsIDNSServiceType extends nsISupportsType {
      */
     readonly currentTrrMode: nsIDNSService_ResolverMode;
     /**
+     *
+     */
+    setTRRModeInChild(mode: nsIDNSService_ResolverMode): void;
+    /**
      * The TRRService's current confirmation state.
      * This is mostly for testing purposes.
      */
@@ -14210,6 +14314,10 @@ declare interface nsIDNSServiceType extends nsISupportsType {
      * @return the hostname of the operating system.
      */
     readonly myHostName: AUTF8String;
+    /**
+     * returns the current TRR domain.
+     */
+    readonly trrDomain: ACString;
     /**
      * Returns true when we have valid ODoHConfigs to encrypt/decrypt oblivious
      * DNS packets.
@@ -15298,13 +15406,6 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      */
     readonly nodeObservedByIMEContentObserver: Node;
     /**
-     * Get the current zoom factor.
-     * This is _approximately_ the same as nsIContentViewer.fullZoom,
-     * but takes into account Gecko's quantization of the zoom factor, which is
-     * implemented by adjusting the (integer) number of appUnits per devPixel.
-     */
-    readonly fullZoom: float;
-    /**
      * Dispatches aEvent as a synthesized trusted event for tests via the
      * PresShell object of the window's document.
      * The event is dispatched to aTarget, which should be an object
@@ -15387,6 +15488,12 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      * Synthesize a selection set event to the window.
      *
      * This sets the selection as the specified information.
+     * Note that for avoiding unnecessary update from user and web app point of
+     * view, it compares aOffset and aLength with selection cache which is same
+     * as what is notified with NOTIFY_IME_OF_SELECTION_CHANGE.  Therefore, if
+     * the notification is still queued, this works different from user's
+     * scenario.  Therefore, before calling this, the caller should wait at least
+     * 2 animation frames if `Selection` was changed before.
      *
      * @param aOffset  The caret offset of the selection start.
      * @param aLength  The length of the selection.  If this is too long, the
@@ -16235,15 +16342,7 @@ declare interface nsIDOMXULMenuListElementType extends nsIDOMXULSelectControlEle
     /**
      *
      */
-    crop: AString;
-    /**
-     *
-     */
     image: AString;
-    /**
-     *
-     */
-    readonly inputField: Element;
 }
 
 /**
@@ -16365,10 +16464,6 @@ declare interface nsIDOMXULSelectControlItemElementType extends nsISupportsType 
      *
      */
     disabled: boolean;
-    /**
-     *
-     */
-    crop: AString;
     /**
      *
      */
@@ -17659,21 +17754,21 @@ declare interface nsIDocShellTreeOwnerType extends nsISupportsType {
      */
     sizeShellTo(shell: nsIDocShellTreeItem, cx: long, cy: long): void;
     /**
-     * Gets the size of the primary content area in CSS pixels. This should work
+     * Gets the size of the primary content area in device pixels. This should work
      * for both in-process and out-of-process content areas.
      */
     getPrimaryContentSize(width: long, height: long): void;
     /**
-     * Sets the size of the primary content area in CSS pixels. This should work
+     * Sets the size of the primary content area in device pixels. This should work
      * for both in-process and out-of-process content areas.
      */
     setPrimaryContentSize(width: long, height: long): void;
     /**
-     * Gets the size of the root docshell in CSS pixels.
+     * Gets the size of the root docshell in device pixels.
      */
     getRootShellSize(width: long, height: long): void;
     /**
-     * Sets the size of the root docshell in CSS pixels.
+     * Sets the size of the root docshell in device pixels.
      */
     setRootShellSize(width: long, height: long): void;
     /**
@@ -18142,6 +18237,12 @@ declare interface nsIDragSessionType extends nsISupportsType {
      */
     sourceWindowContext: WindowContext;
     /**
+     * The top-level window context where the drag was started, which will be
+     * null if the drag originated outside the application. Useful for
+     * determining if a drop originated in the same top-level window context.
+     */
+    sourceTopWindowContext: WindowContext;
+    /**
      * The dom node that was originally dragged to start the session, which will be null if the
      * drag originated outside the application.
      */
@@ -18310,7 +18411,7 @@ declare interface nsIEarlyHintObserverType extends nsISupportsType {
      * This method is called when the transaction has early hint (i.e. the
      * '103 Early Hint' informational response) headers.
      */
-    earlyHint(linkHeader: ACString, referrerPolicy: ACString): void;
+    earlyHint(linkHeader: ACString, referrerPolicy: ACString, cspHeader: ACString): void;
 }
 
 /**
@@ -20222,6 +20323,18 @@ declare interface nsIFOGType extends nsISupportsType {
      */
     testGetExperimentData(aExperimentId: ACString): jsval;
     /**
+     * Set remote-configuration for metrics' disabled property.
+     *
+     * See [`glean_core::Glean::set_metrics_disabled_config`]
+     *
+     * Logs on error, but does not throw.
+     *
+     * @param aJsonConfig - The stringified JSON object in the form
+     * {metric_base_identifier: boolean,}
+     * which may contain multiple metric object entries.
+     */
+    setMetricsFeatureConfig(aJsonConfig: ACString): void;
+    /**
      * ** Test-only Method **
      *
      * Flush all data from all child processes.
@@ -20774,9 +20887,13 @@ declare interface nsIFileType extends nsISupportsType {
      * This will try to delete this file.  The 'recursive' flag
      * must be PR_TRUE to delete directories which are not empty.
      *
+     * If passed, 'removeCount' will be incremented by the total number of files
+     * and/or directories removed. Will be 1 unless the 'recursive' flag is
+     * set. The parameter must be initialized beforehand.
+     *
      * This will not resolve any symlinks.
      */
-    remove(recursive: boolean): void;
+    remove(recursive: boolean, removeCount: uint32_t): void;
     /**
      * Attributes of nsIFile.
      */
@@ -21126,19 +21243,6 @@ declare interface nsIFileChannelType extends nsISupportsType {
 /**
  *
  */
-declare interface nsIFilePickerShownCallbackType extends nsISupportsType {
-    /**
-     * Callback which is called when a filepicker is shown and a result
-     * is returned.
-     *
-     * @param aResult One of returnOK, returnCancel, or returnReplace
-     */
-    done(aResult: short): void;
-}
-
-/**
- *
- */
 declare interface nsIFilePickerType extends nsISupportsType {
     /**
      * Initialize the file picker widget.  The file picker is not valid until this
@@ -21149,7 +21253,7 @@ declare interface nsIFilePickerType extends nsISupportsType {
      * @param      title    The title for the file widget
      * @param      mode     load, save, or get folder
      */
-    init(parent: mozIDOMWindowProxy, title: AString, mode: short): void;
+    init(parent: mozIDOMWindowProxy, title: AString, mode: nsIFilePicker_Mode): void;
     /**
      * Append to the  filter list with things from the predefined list
      *
@@ -21255,7 +21359,7 @@ declare interface nsIFilePickerType extends nsISupportsType {
      * The picker's mode, as set by the 'mode' argument passed to init()
      * (one of the modeOpen et. al. constants specified above).
      */
-    readonly mode: short;
+    readonly mode: nsIFilePicker_Mode;
     /**
      * If set to non-empty string, the nsIFilePicker implementation
      * may use okButtonLabel as the label for the button the user uses to accept
@@ -21263,9 +21367,24 @@ declare interface nsIFilePickerType extends nsISupportsType {
      */
     okButtonLabel: AString;
     /**
+     * Implementation of HTMLInputElement's `capture` property.
      *
+     * Not used by Firefox Desktop.
      */
-    capture: short;
+    capture: nsIFilePicker_CaptureTarget;
+}
+
+/**
+ *
+ */
+declare interface nsIFilePickerShownCallbackType extends nsISupportsType {
+    /**
+     * Callback which is called when a filepicker is shown and a result
+     * is returned.
+     *
+     * @param aResult One of returnOK, returnCancel, or returnReplace
+     */
+    done(aResult: nsIFilePicker_ResultCode): void;
 }
 
 /**
@@ -21767,11 +21886,6 @@ declare interface nsIFontEnumeratorType extends nsISupportsType {
      */
     getDefaultFont(aLangGroup: string, aGeneric: string): wstring;
     /**
-     * update the global font list
-     * return true if font list is changed
-     */
-    updateFontList(): boolean;
-    /**
      * get the standard family name on the system from given family
      * @param  aName family name which may be alias
      * @return the standard family name on the system, if given name does not
@@ -21986,7 +22100,9 @@ declare interface nsIGIOServiceType extends nsISupportsType {
     getDescriptionForMimeType(mimeType: AUTF8String): AUTF8String;
     /**
      * * Misc. methods **
-     *
+     */
+    readonly isRunningUnderFlatpak: boolean;
+    /**
      * Open the given URI in the default application
      */
     showURI(uri: nsIURI): void;
@@ -22158,10 +22274,6 @@ declare interface nsIGfxInfoType extends nsISupportsType {
      * These are non-Android linux-specific
      */
     readonly windowProtocol: AString;
-    /**
-     *
-     */
-    readonly desktopEnvironment: AString;
     /**
      *
      */
@@ -22390,8 +22502,13 @@ declare interface nsIGleanBooleanType extends nsISupportsType {
 declare interface nsIGleanDatetimeType extends nsISupportsType {
     /**
      * Set the datetime to the provided value, or the local now.
+     * The internal value will store the local timezone.
      *
-     * @param aValue The time value in milliseconds since epoch. Defaults to local now.
+     * Note: The metric's time_unit affects the resolution of the value, not the
+     * unit of this function's parameter (which is always PRTime/nanos).
+     *
+     * @param aValue The (optional) time value as PRTime (nanoseconds since epoch).
+     * Defaults to local now.
      */
     set(aValue: PRTime): void;
     /**
@@ -22409,7 +22526,8 @@ declare interface nsIGleanDatetimeType extends nsISupportsType {
      * @param aPingName The (optional) name of the ping to retrieve the metric
      * for. Defaults to the first value in `send_in_pings`.
      *
-     * @return value of the stored metric, or undefined if there is no value.
+     * @return value of the stored metric as a JS Date with timezone,
+     * or undefined if there is no value.
      */
     testGetValue(aPingName: AUTF8String): jsval;
 }
@@ -24785,6 +24903,19 @@ declare interface nsIHttpChannelInternalType extends nsISupportsType {
      */
     readonly isResolvedByTRR: boolean;
     /**
+     * The effective TRR mode used to resolve this channel.
+     * This is computed by taking the value returned by nsIRequest.getTRRMode()
+     * and the state of the TRRService. If the domain is excluded from TRR
+     * or the TRRService is disabled, the effective mode would be TRR_DISABLED_MODE
+     * even if the initial mode set on the request was TRR_ONLY_MODE.
+     */
+    readonly effectiveTRRMode: nsIRequest_TRRMode;
+    /**
+     * If the DNS request triggered by this channel didn't use TRR, this value
+     * contains the reason why that was skipped.
+     */
+    readonly trrSkipReason: nsITRRSkipReason_value;
+    /**
      * True if channel is loaded by socket process.
      */
     readonly isLoadedBySocketProcess: boolean;
@@ -26085,15 +26216,15 @@ declare interface nsIIdentityCredentialPromptServiceType extends nsISupportsType
     /**
      *
      */
-    showProviderPrompt(browsingContext: BrowsingContext, identityProviders: jsval): Promise;
+    showProviderPrompt(browsingContext: BrowsingContext, identityProviders: jsval, identityManifests: jsval): Promise;
     /**
      *
      */
-    showPolicyPrompt(browsingContext: BrowsingContext, identityProvider: jsval, identityClientMetadata: jsval): Promise;
+    showPolicyPrompt(browsingContext: BrowsingContext, identityProvider: jsval, identityManifest: jsval, identityClientMetadata: jsval): Promise;
     /**
      *
      */
-    showAccountListPrompt(browsingContext: BrowsingContext, accountList: jsval): Promise;
+    showAccountListPrompt(browsingContext: BrowsingContext, accountList: jsval, identityProvider: jsval, identityManifest: jsval): Promise;
     /**
      *
      */
@@ -28682,6 +28813,11 @@ declare interface nsILoadInfoType extends nsISupportsType {
      *
      */
     binarySetInterceptionInfo(info: nsIInterceptionInfo): void;
+    /**
+     * Whether nsICookieInjector has injected a cookie for this request to
+     * handle a cookie banner. This is only done for top-level requests.
+     */
+    hasInjectedCookieForCookieBannerHandling: boolean;
 }
 
 /**
@@ -29907,7 +30043,7 @@ declare interface nsIMIMEHeaderParamType extends nsISupportsType {
      * @return             the value of `aParamName` after
      * RFC 2231 decoding but without charset conversion.
      */
-    getParameterInternal(aHeaderVal: string, aParamName: string, aCharset: string, aLang: string): string;
+    getParameterInternal(aHeaderVal: ACString, aParamName: string, aCharset: string, aLang: string): string;
     /**
      * Given a header value, decodes RFC 2047-style encoding and
      * returns the decoded header value in UTF-8 if either it's
@@ -30384,6 +30520,13 @@ declare interface nsIMIMEServiceType extends nsISupportsType {
      */
     getMIMEInfoFromOS(aType: ACString, aFileExtension: ACString, aFound: boolean): nsIMIMEInfo;
     /**
+     * Update the mime info's default app information based on OS
+     * lookups.
+     * Note: normally called automatically by nsIMIMEInfo. If you find
+     * yourself needing to call this from elsewhere, file a bug instead.
+     */
+    updateDefaultAppInfo(aMIMEInfo: nsIMIMEInfo): void;
+    /**
      * Generate a valid filename from the channel that can be used to save
      * the content of the channel to the local disk.
      *
@@ -30402,8 +30545,9 @@ declare interface nsIMIMEServiceType extends nsISupportsType {
      * character, either ' ' or an ideographic space 0x3000 if present.
      * - Unless VALIDATE_DONT_TRUNCATE is specified, the filename is truncated
      * to a maximum length, preserving the extension if possible.
-     * - Some filenames are invalid on certain platforms. These are replaced if
-     * possible.
+     * - Some filenames and extensions are invalid on certain platforms.
+     * These are replaced if possible unless VALIDATE_ALLOW_INVALID_FILENAMES
+     * is specified.
      *
      * If the VALIDATE_NO_DEFAULT_FILENAME flag is not specified, and after the
      * rules above are applied, the resulting filename is empty, a default
@@ -30691,6 +30835,10 @@ declare interface nsIMediaDeviceType extends nsISupportsType {
      *
      */
     readonly scary: boolean;
+    /**
+     *
+     */
+    readonly canRequestOsLevelPrompt: boolean;
     /**
      *
      */
@@ -31904,89 +32052,15 @@ declare interface nsINativeOSFileInternalsServiceType extends nsISupportsType {
 }
 
 /**
- * Observer for bookmarks changes.
- */
-declare interface nsINavBookmarkObserverType extends nsISupportsType {
-    /**
-     * This observer should not be called for items that are tags.
-     */
-    readonly skipTags: boolean;
-    /**
-     * Notifies that an item's information has changed.  This will be called
-     * whenever any attributes like "title" are changed.
-     *
-     * @param aItemId
-     * The id of the item that was changed.
-     * @param aProperty
-     * The property which changed.
-     * @param aIsAnnotationProperty
-     * Obsolete and unused.
-     * @param aNewValue
-     * For certain properties, this is set to the new value of the
-     * property (see the list below).
-     * @param aLastModified
-     * The updated last-modified value.
-     * @param aItemType
-     * The type of the item to be removed (see TYPE_* constants below).
-     * @param aParentId
-     * The id of the folder containing the item.
-     * @param aGuid
-     * The unique ID associated with the item.
-     * @param aParentGuid
-     * The unique ID associated with the item's parent.
-     * @param aOldValue
-     * For certain properties, this is set to the new value of the
-     * property (see the list below).
-     * @param aSource
-     * A change source constant from nsINavBookmarksService::SOURCE_*,
-     * passed to the method that notifies the observer.
-     *
-     * @note List of values that may be associated with properties:
-     * aProperty     | aNewValue
-     * =====================================================================
-     * guid          | The new bookmark guid.
-     * cleartime     | Empty string (all visits to this item were removed).
-     * title         | The new title.
-     * uri           | new URL.
-     * tags          | Empty string (tags for this item changed)
-     * dateAdded     | PRTime (as string) when the item was first added.
-     * lastModified  | PRTime (as string) when the item was last modified.
-     *
-     * aProperty     | aOldValue
-     * =====================================================================
-     * guid          | The old bookmark guid.
-     * cleartime     | Empty string (currently unused).
-     * title         | Empty string (currently unused).
-     * uri           | old URL.
-     * tags          | Empty string (currently unused).
-     * dateAdded     | Empty string (currently unused).
-     * lastModified  | Empty string (currently unused).
-     */
-    onItemChanged(aItemId: long_long, aProperty: ACString, aIsAnnotationProperty: boolean, aNewValue: AUTF8String, aLastModified: PRTime, aItemType: unsigned_short, aParentId: long_long, aGuid: ACString, aParentGuid: ACString, aOldValue: AUTF8String, aSource: unsigned_short): void;
-}
-
-/**
  * The BookmarksService interface provides methods for managing bookmarked
  * history items.  Bookmarks consist of a set of user-customizable
  * folders.  A URI in history can be contained in one or more such folders.
  */
 declare interface nsINavBookmarksServiceType extends nsISupportsType {
     /**
-     * The item ID of the Places root.
-     */
-    readonly placesRoot: long_long;
-    /**
-     * The item ID of the bookmarks menu folder.
-     */
-    readonly bookmarksMenuFolder: long_long;
-    /**
      * The item ID of the top-level folder that contain the tag "folders".
      */
     readonly tagsFolder: long_long;
-    /**
-     * The item ID of the personal toolbar folder.
-     */
-    readonly toolbarFolder: long_long;
     /**
      * The total number of Sync changes (inserts, updates, deletes, merges, and
      * uploads) recorded since Places startup for all bookmarks.
@@ -32101,21 +32175,6 @@ declare interface nsINavBookmarksServiceType extends nsISupportsType {
      * the corresponding itemChanged notification instead.
      */
     setItemLastModified(aItemId: long_long, aLastModified: PRTime, aSource: unsigned_short): void;
-    /**
-     * Get the parent folder's id for an item.
-     */
-    getFolderIdForItem(aItemId: long_long): long_long;
-    /**
-     * Adds a bookmark observer. If ownsWeak is false, the bookmark service will
-     * keep an owning reference to the observer.  If ownsWeak is true, then
-     * aObserver must implement nsISupportsWeakReference, and the bookmark
-     * service will keep a weak reference to the observer.
-     */
-    addObserver(observer: nsINavBookmarkObserver, ownsWeak: boolean): void;
-    /**
-     * Removes a bookmark observer.
-     */
-    removeObserver(observer: nsINavBookmarkObserver): void;
 }
 
 /**
@@ -32347,12 +32406,12 @@ declare interface nsINavHistoryResultObserverType extends nsISupportsType {
     /**
      * Whether the observer is interested into history details changes.
      * Those include visits additions and removals. If the observer doesn't
-     * provide this attribute, it will default to true.
+     * provide this attribute, it will default to false.
      * In practice, the observer won't receive nodeHistoryDetailsChanged.
      * Note: this is only read when the observer is added, it cannot be changed
      * dynamically.
      */
-    readonly observeHistoryDetails: boolean;
+    readonly skipHistoryDetailsNotifications: boolean;
     /**
      * Called when 'aItem' is inserted into 'aParent' at index 'aNewIndex'.
      * The item previously at index (if any) and everything below it will have
@@ -32891,6 +32950,17 @@ declare interface nsINavHistoryServiceType extends nsISupportsType {
      */
     recalculateOriginFrecencyStats(aCallback: nsIObserver): void;
     /**
+     * Whether frecency is in the process of being decayed. The value can also
+     * be read through the is_frecency_decaying() SQL function exposed by Places
+     * database connections.
+     */
+    isFrecencyDecaying: boolean;
+    /**
+     * This is set to true when a frecency is invalidated and set back to false
+     * when all the outdated values have been recalculated.
+     */
+    shouldStartFrecencyRecalculation: boolean;
+    /**
      * The database connection used by Places.
      */
     readonly DBConnection: mozIStorageConnection;
@@ -32919,11 +32989,6 @@ declare interface nsINavHistoryServiceType extends nsISupportsType {
      * May be null if it's too late to get one.
      */
     readonly connectionShutdownClient: nsIAsyncShutdownClient;
-    /**
-     * Asynchronously recalculates frecency for all pages where frecency < 0, then
-     * decays frecency and inputhistory values.
-     */
-    decayFrecency(): void;
 }
 
 /**
@@ -33596,19 +33661,6 @@ declare interface nsINotificationStorageType extends nsISupportsType {
      * @param id: the uuid for the notification to delete
      */
     delete(origin: AString, id: AString): void;
-    /**
-     * Notifications are not supposed to be persistent, according to spec, at
-     * least for now. But we want to be able to have this behavior on B2G. Thus,
-     * this method will check if the origin sending the notifications is a valid
-     * registered app with a manifest or not. Hence, a webpage that has none
-     * will have its notification sent and available (via Notification.get())
-     * during the life time of the page.
-     *
-     * @param origin: Origin from which the notification is sent.
-     *
-     * @return boolean
-     */
-    canPut(origin: AString): boolean;
 }
 
 /**
@@ -33894,18 +33946,6 @@ declare interface nsIObjectLoadingContentType extends nsISupportsType {
      */
     reload(aClearActivation: boolean): void;
     /**
-     *
-     */
-    stopPluginInstance(): void;
-    /**
-     *
-     */
-    syncStartPluginInstance(): void;
-    /**
-     *
-     */
-    asyncStartPluginInstance(): void;
-    /**
      * Puts the tag in the "waiting on a channel" state and adopts this
      * channel. This does not override the normal logic of examining attributes
      * and the channel type, so the load may cancel this channel if it decides not
@@ -34026,6 +34066,24 @@ declare interface nsIObliviousHttpType extends nsISupportsType {
      *
      */
     server(): nsIObliviousHttpServer;
+}
+
+/**
+ *
+ */
+declare interface nsIObliviousHttpServiceType extends nsISupportsType {
+    /**
+     *
+     */
+    newChannel(relayURI: nsIURI, targetURI: nsIURI, encodedConfig: invalid): nsIChannel;
+    /**
+     *
+     */
+    getTRRSettings(relayURI: nsIURI, encodedConfig: invalid): void;
+    /**
+     *
+     */
+    clearTRRConfig(): void;
 }
 
 /**
@@ -36925,6 +36983,10 @@ declare interface nsIPrincipalType extends nsISupportsType {
      */
     readonly addonPolicy: WebExtensionPolicy;
     /**
+     *
+     */
+    readonly contentScriptAddonPolicy: WebExtensionPolicy;
+    /**
      * Gets the id of the user context this principal is inside.  If this
      * principal is inside the default userContext, this returns
      * nsIScriptSecurityManager::DEFAULT_USER_CONTEXT_ID.
@@ -37277,6 +37339,10 @@ declare interface nsIPrintSettingsType extends nsISupportsType {
      * margins, but nonzero values will be clamped to unwriteable margins.
      */
     honorPageRuleMargins: boolean;
+    /**
+     * Whether @page rule size should be used for the output paper size.
+     */
+    usePageRuleSizeAsPaperSize: boolean;
     /**
      * Whether unwritable margins should be ignored. This should be set when
      * when the user explicitly requests "Margins: None", e.g. for documents
@@ -40082,8 +40148,10 @@ declare interface nsIRaceCacheWithNetworkType extends nsISupportsType {
      * ***************************************************************************
      *
      * Triggers network activity after given timeout. If timeout is 0, network
-     * activity is triggered immediately. If the cache.asyncOpenURI callbacks
-     * have already been called, the network activity may have already been triggered
+     * activity is triggered immediately if asyncOpen has already been called.
+     * Otherwise the delayed timer will be set when the normal call to
+     * TriggerNetwork is made. If the cache.asyncOpenURI callbacks have already
+     * been called, the network activity may have already been triggered
      * or the content may have already been delivered from the cache, so this
      * operation will have no effect.
      *
@@ -40146,7 +40214,7 @@ declare interface nsIRandomAccessStreamType extends nsISeekableStreamType {
     /**
      *
      */
-    serialize(): RandomAccessStreamParams;
+    serialize(aCallbacks: nsIInterfaceRequestor): RandomAccessStreamParams;
     /**
      *
      */
@@ -41699,6 +41767,10 @@ declare interface nsIScreenType extends nsISupportsType {
      */
     readonly colorDepth: long;
     /**
+     * ScreenColorGamut is native type, which cannot be declared [infallible].
+     */
+    readonly colorGamut: ScreenColorGamut;
+    /**
      * The number of device pixels per desktop pixel for this screen (for
      * hidpi configurations where there may be multiple device pixels per
      * desktop px and/or per CSS px).
@@ -41986,7 +42058,7 @@ declare interface nsIScriptLoaderObserverType extends nsISupportsType {
      * @param aLineNo At what line does the script appear (generally 1
      * if it is a loaded script).
      */
-    scriptAvailable(aResult: nsresult, aElement: nsIScriptElement, aIsInlineClassicScript: boolean, aURI: nsIURI, aLineNo: int32_t): void;
+    scriptAvailable(aResult: nsresult, aElement: nsIScriptElement, aIsInlineClassicScript: boolean, aURI: nsIURI, aLineNo: uint32_t): void;
     /**
      * The script has been evaluated.
      *
@@ -42414,24 +42486,22 @@ declare interface nsISearchEngineType extends nsISupportsType {
      * Gets a nsISearchSubmission object that contains information about what to
      * send to the search engine, including the URI and postData, if applicable.
      *
-     * @param  data
-     * Data to add to the submission object.
-     * i.e. the search terms.
+     * @param searchTerms
+     * The search term(s) for the submission.
      *
-     * @param  responseType [optional]
+     * @param responseType [optional]
      * The MIME type that we'd like to receive in response
      * to this submission.  If null, will default to "text/html".
      *
      * @param purpose [optional]
-     * A string meant to indicate the context of the search request. This
-     * allows the search service to provide a different nsISearchSubmission
-     * depending on e.g. where the search is triggered in the UI.
+     * A string that indicates the context of the search request. This may then
+     * be used to provide different submission data depending on the context.
      *
-     * @returns A nsISearchSubmission object that contains information about what
-     * to send to the search engine.  If no submission can be
-     * obtained for the given responseType, returns null.
+     * @returns nsISearchSubmission
+     * The submission data. If no appropriate submission can be determined for
+     * the request type, this may be null.
      */
-    getSubmission(data: AString, responseType: AString, purpose: AString): nsISearchSubmission;
+    getSubmission(searchTerms: AString, responseType: AString, purpose: AString): nsISearchSubmission;
     /**
      * Returns the search term of a possible search result URI if and only if:
      * - The URI has the same scheme, host, and path as the engine.
@@ -42528,7 +42598,14 @@ declare interface nsISearchEngineType extends nsISupportsType {
      */
     readonly id: AString;
     /**
-     * A URL string pointing to the engine's search form.
+     * The searchForm URL points to the engine's organic search page. This should
+     * not contain neither search term parameters nor partner codes, but may
+     * contain parameters which set the engine in the correct way.
+     *
+     * This URL is typically the prePath and filePath of the search submission URI,
+     * but may vary for different engines. For example, some engines may use a
+     * different domain, e.g. https://sub.example.com for the search URI but
+     * https://example.org/ for the organic search page.
      */
     readonly searchForm: AString;
     /**
@@ -47021,6 +47098,12 @@ declare interface nsITLSSocketControlType extends nsISupportsType {
 /**
  *
  */
+declare interface nsITRRSkipReasonType extends nsISupportsType {
+}
+
+/**
+ *
+ */
 declare interface nsITXTToHTMLConvType extends nsIStreamConverterType {
     /**
      * @param text: Title to set for the HTML document.  Only applicable if
@@ -48310,29 +48393,6 @@ declare interface nsITelemetryType extends nsISupportsType {
      * completed and all data has been recorded.
      */
     gatherMemory(): Promise;
-    /**
-     * Serializes the per-origin data in plain text, optionally clearing
-     * the storage. Only to be used by about:telemetry.
-     *
-     * The returned structure looks like:
-     * { metric: {origin1: count1, origin2: count2, ...}, ...}
-     *
-     * @param aClear Whether to clear the storage. Default false.
-     * @return a snapshot of the per-origin data.
-     */
-    getOriginSnapshot(aClear: boolean): jsval;
-    /**
-     * Encodes the per-origin information then serializes it.
-     * Returns a Promise.
-     *
-     * @param aClear Whether to clear the storage. Default false.
-     * @return Promise that resolves to the serialized encoded data.
-     */
-    getEncodedOriginSnapshot(aClear: boolean): Promise;
-    /**
-     * Clears Firefox Origin Telemetry. Only to be used in tests.
-     */
-    clearOrigins(): void;
 }
 
 /**
@@ -49287,21 +49347,6 @@ declare interface nsIThreadType extends nsISerialEventTargetType {
      */
     dispatchToQueue(event: alreadyAddRefed_nsIRunnable, queue: EventQueuePriority): void;
     /**
-     * Use this attribute to dispatch runnables to the thread. Eventually, the
-     * eventTarget attribute will be the only way to dispatch events to a
-     * thread--nsIThread will no longer inherit from nsIEventTarget.
-     */
-    readonly eventTarget: nsIEventTarget;
-    /**
-     * A fast C++ getter for the eventTarget.
-     */
-    EventTarget(): nsIEventTargetPtr;
-    /**
-     * A fast C++ getter for the eventTarget. It asserts that the thread's event
-     * target is an nsISerialEventTarget and then returns it.
-     */
-    SerialEventTarget(): nsISerialEventTargetPtr;
-    /**
      * This is set to the end of the last 50+ms event that was executed on
      * this thread (for MainThread only).  Otherwise returns a null TimeStamp.
      */
@@ -49340,6 +49385,15 @@ declare interface nsIThreadType extends nsISerialEventTargetType {
      *
      */
     setNameForWakeupTelemetry(name: ACString): void;
+    /**
+     * Set the QoS priority of threads where this may be available. Currently
+     * restricted to MacOS. Must be on the thread to call this method.
+     *
+     * @param aPriority
+     * The specified priority we will adjust to. Can be low (background) or
+     * normal (default / user-interactive)
+     */
+    setThreadQoS(aPriority: nsIThread_QoSPriority): void;
 }
 
 /**
@@ -49452,14 +49506,13 @@ declare interface nsIThreadManagerType extends nsISupportsType {
      *
      * @param name
      * The name of the thread. If it is empty the thread will not be named.
-     * @param stackSize
-     * Number of bytes to reserve for the thread's stack. 0 means use platform
-     * default.
+     * @param options
+     * Configuration options for the newly created thread.
      *
      * @returns
      * The newly created nsIThread object.
      */
-    newNamedThread(name: ACString, stackSize: unsigned_long): nsIThread;
+    newNamedThread(name: ACString, options: ThreadCreationOptions): nsIThread;
     /**
      * Get the main thread.
      */
@@ -49496,6 +49549,11 @@ declare interface nsIThreadManagerType extends nsISupportsType {
      * the regular queue.
      */
     idleDispatchToMainThread(event: nsIRunnable, timeout: uint32_t): void;
+    /**
+     * A helper method to dispatch a task through nsIDirectTaskDispatcher to the
+     * current thread.
+     */
+    dispatchDirectTaskToCurrentThread(event: nsIRunnable): void;
     /**
      * Enter a nested event loop on the current thread, waiting on, and
      * processing events until condition.isDone() returns true.
@@ -49549,6 +49607,12 @@ declare interface nsIThreadPoolListenerType extends nsISupportsType {
  * will be run on the next available worker thread.
  */
 declare interface nsIThreadPoolType extends nsIEventTargetType {
+    /**
+     * Set the entire pool's QoS priority. If the priority has not changed, do nothing.
+     * Existing threads will update their QoS priority the next time they become
+     * active, and newly created threads will set this QoS priority upon creation.
+     */
+    setQoSForThreads(aPriority: nsIThread_QoSPriority): void;
     /**
      * Shutdown the thread pool.  This method may not be executed from any thread
      * in the thread pool.  Instead, it is meant to be executed from another
@@ -52952,6 +53016,29 @@ declare interface nsIURLParserType extends nsISupportsType {
 }
 
 /**
+ * nsIURLQueryStringStripper is responsible for stripping certain part of the
+ * query string of the given URI to address the bounce(redirect) tracking
+ * issues. It will strip every query parameter which matches the strip list
+ * defined in the pref 'privacy.query_stripping.strip_list'. Note that It's
+ * different from URLDecorationStripper which strips the entire query string
+ * from the referrer if there is a tracking query parameter present in the URI.
+ *
+ * TODO: Given that nsIURLQueryStringStripper and URLDecorationStripper are
+ * doing similar things. We could somehow combine these two modules into
+ * one. We will improve this in the future.
+ */
+declare interface nsIURLQueryStringStripperType extends nsISupportsType {
+    /**
+     *
+     */
+    strip(aURI: nsIURI, aIsPBM: bool, aOutput: nsIURI): uint32_t;
+    /**
+     *
+     */
+    testGetStripList(): ACString;
+}
+
+/**
  * Observer for query stripping list updates.
  */
 declare interface nsIURLQueryStrippingListObserverType extends nsISupportsType {
@@ -52975,10 +53062,6 @@ declare interface nsIURLQueryStrippingListObserverType extends nsISupportsType {
  * as a local pref and remote settings updates.
  */
 declare interface nsIURLQueryStrippingListServiceType extends nsISupportsType {
-    /**
-     * Initialize the URL query stripping list service.
-     */
-    init(): void;
     /**
      * Register a new observer to query stripping list updates. When the observer
      * is registered it is called immediately once. Afterwards it will be called
@@ -53004,6 +53087,14 @@ declare interface nsIURLQueryStrippingListServiceType extends nsISupportsType {
      * Note that this is for testing purpose.
      */
     clearLists(): void;
+    /**
+     * Test-only method used to wait for the list service to initialize fully.
+     * Resolves once the service has reached a fully disabled (false) or fully
+     * enabled state (true).
+     * May also be called when the service is already fully initialized or
+     * disabled, in this case it will resolve immediately.
+     */
+    testWaitForInit(): Promise;
 }
 
 /**
@@ -54693,14 +54784,19 @@ declare interface nsIUtilityProcessTestType extends nsISupportsType {
      * ** Test-only Method **
      *
      * Allowing to start Utility Process from JS code.
+     *
+     * actorsToAdd: An array of actor names, taken from WebIDLUtilityActorName.
+     * Unlike normal utility processes, test processes launched this way do not
+     * have any associated actor names unless specified here.  Empty by default.
      */
-    startProcess(unknownActors: int32_t): Promise;
+    startProcess(actorsToAdd: invalid): Promise;
     /**
      * ** Test-only Method **
      *
      * Allowing to stop Utility Process from JS code.
+     * Default behavior is to stop any utility process.
      */
-    stopProcess(): void;
+    stopProcess(utilityActorName: string): void;
     /**
      * ** Test-only Method **
      *
@@ -55098,8 +55194,6 @@ declare interface nsIWebBrowserType extends nsISupportsType {
      * this property to point to the chrome object before creating the browser
      * window via the browser's `nsIBaseWindow` interface.
      *
-     * The chrome object must also implement `nsIEmbeddingSiteWindow`.
-     *
      * The chrome may optionally implement `nsIInterfaceRequestor`,
      * `nsIWebBrowserChromeFocus`,
      * `nsIContextMenuListener` and
@@ -55119,7 +55213,6 @@ declare interface nsIWebBrowserType extends nsISupportsType {
      *
      * @see nsIBaseWindow
      * @see nsIWebBrowserChrome
-     * @see nsIEmbeddingSiteWindow
      * @see nsIInterfaceRequestor
      * @see nsIWebBrowserChromeFocus
      * @see nsIContextMenuListener
@@ -55167,6 +55260,28 @@ declare interface nsIWebBrowserChromeType extends nsISupportsType {
      * @return true if it's a modal window
      */
     isWindowModal(): boolean;
+    /**
+     * Allows to request the change of individual dimensions of a window
+     * without specifying all dimensions.
+     *
+     * Gets called as fallback when no nsIBaseWindow is available.
+     *
+     * @see nsIBaseWindow
+     */
+    setDimensions(aRequest: DimensionRequest): void;
+    /**
+     * Gets the dimensions of the window. The caller may pass
+     * `nullptr` for any value it is uninterested in receiving.
+     *
+     * Gets called as fallback when no nsIBaseWindow is available.
+     *
+     * @see nsIBaseWindow
+     */
+    getDimensions(aDimensionKind: DimensionKind, aX: long, aY: long, aCX: long, aCY: long): void;
+    /**
+     * Blur the window. This should unfocus the window and send an onblur event.
+     */
+    blur(): void;
 }
 
 /**
@@ -55799,18 +55914,41 @@ declare interface nsIWebNavigationType extends nsISupportsType {
      * loading.
      *
      * @param aURI
-     * The URI string to load.  For HTTP and FTP URLs and possibly others,
-     * characters above U+007F will be converted to UTF-8 and then URL-
-     * escaped per the rules of RFC 2396.
+     * The URI to load.
      * @param aLoadURIOptions
      * A JSObject defined in LoadURIOptions.webidl holding info like e.g.
      * the triggeringPrincipal, the referrer info.
      */
-    loadURI(aURI: AString, aLoadURIOptions: jsval): void;
+    loadURI(aURI: nsIURI, aLoadURIOptions: jsval): void;
+    /**
+     * Parse / fix up a URI out of the string and load it.
+     * This will give priority to loading the requested URI
+     * in the object implementing this interface.  If it can't be loaded here
+     * however, the URI dispatcher will go through its normal process of content
+     * loading.
+     *
+     * @param aURIString
+     * The URI string to load.  For HTTP and FTP URLs and possibly others,
+     * characters above U+007F will be converted to UTF-8 and then URL-
+     * escaped per the rules of RFC 2396.
+     * This method may use nsIURIFixup to try to fix up typos etc. in the
+     * input string based on the load flag arguments in aLoadURIOptions.
+     * It can even convert the input to a search results page using the
+     * default search service.
+     * If you have an nsIURI anyway, prefer calling `loadURI`, above.
+     * @param aLoadURIOptions
+     * A JSObject defined in LoadURIOptions.webidl holding info like e.g.
+     * the triggeringPrincipal, the referrer info.
+     */
+    fixupAndLoadURIString(aURIString: AString, aLoadURIOptions: jsval): void;
     /**
      * A C++ friendly version of loadURI
      */
-    binaryLoadURI(aURI: AString, aLoadURIOptions: LoadURIOptionsRef): void;
+    binaryLoadURI(aURI: nsIURI, aLoadURIOptions: LoadURIOptionsRef): void;
+    /**
+     * A C++ friendly version of fixupAndLoadURIString
+     */
+    binaryFixupAndLoadURIString(aURIString: AString, aLoadURIOptions: LoadURIOptionsRef): void;
     /**
      * Tells the Object to reload the current page.  There may be cases where the
      * user will be asked to confirm the reload (for example, when it is
@@ -56561,6 +56699,18 @@ declare interface nsIWebTransportType extends nsISupportsType {
      *
      */
     createOutgoingUnidirectionalStream(aListener: nsIWebTransportStreamCallback): void;
+    /**
+     *
+     */
+    sendDatagram(aData: invalid, aTrackingId: uint64_t): void;
+    /**
+     *
+     */
+    getMaxDatagramSize(): void;
+    /**
+     *
+     */
+    retargetTo(aTarget: nsIEventTarget): void;
 }
 
 /**
@@ -56591,6 +56741,22 @@ declare interface WebTransportSessionEventListenerType extends nsISupportsType {
      *
      */
     onIncomingStreamAvailableInternal(aStream: Http3WebTransportStreamPtr): void;
+    /**
+     *
+     */
+    onDatagramReceived(aData: invalid): void;
+    /**
+     *
+     */
+    onDatagramReceivedInternal(aData: Datagram): void;
+    /**
+     *
+     */
+    onMaxDatagramSize(aSize: uint64_t): void;
+    /**
+     *
+     */
+    onOutgoingDatagramOutCome(aId: uint64_t, aOutCome: WebTransportSessionEventListener_DatagramOutcome): void;
 }
 
 /**
@@ -56672,7 +56838,11 @@ declare interface nsIWebTransportReceiveStreamType extends nsISupportsType {
     /**
      *
      */
-    asyncWaitForRead(aCallback: nsIInputStreamCallback, aFlags: unsigned_long, aRequestedCount: unsigned_long, aEventTarget: nsIEventTarget): void;
+    readonly hasReceivedFIN: boolean;
+    /**
+     *
+     */
+    readonly inputStream: nsIAsyncInputStream;
 }
 
 /**
@@ -56691,6 +56861,10 @@ declare interface nsIWebTransportSendStreamType extends nsISupportsType {
      *
      */
     getSendStreamStats(aCallback: nsIWebTransportStreamStatsCallback): void;
+    /**
+     *
+     */
+    readonly outputStream: nsIAsyncOutputStream;
 }
 
 /**
@@ -56712,7 +56886,15 @@ declare interface nsIWebTransportBidirectionalStreamType extends nsISupportsType
     /**
      *
      */
-    asyncWaitForRead(aCallback: nsIInputStreamCallback, aFlags: unsigned_long, aRequestedCount: unsigned_long, aEventTarget: nsIEventTarget): void;
+    readonly hasReceivedFIN: boolean;
+    /**
+     *
+     */
+    readonly inputStream: nsIAsyncInputStream;
+    /**
+     *
+     */
+    readonly outputStream: nsIAsyncOutputStream;
 }
 
 /**
@@ -57095,17 +57277,6 @@ declare interface nsIWinTaskbarType extends nsISupportsType {
      */
     setGroupIdForWindow(aParent: mozIDOMWindow, aIdentifier: AString): void;
     /**
-     * Notify the taskbar that a window is about to enter full screen mode.
-     *
-     * A Windows autohide taskbar will not behave correctly in all cases if
-     * it is not notified when full screen operations start and end.
-     *
-     * @throw NS_ERROR_INVALID_ARG if the window is not a valid top level window
-     * @throw NS_ERROR_UNEXPECTED for general failures.
-     * @throw NS_ERROR_NOT_AVAILABLE if the taskbar cannot be obtained.
-     */
-    prepareFullScreen(aWindow: mozIDOMWindow, aFullScreen: boolean): void;
-    /**
      * Notify the taskbar that a window identified by its HWND is about to enter
      * full screen mode.
      *
@@ -57116,7 +57287,7 @@ declare interface nsIWinTaskbarType extends nsISupportsType {
      * @throw NS_ERROR_UNEXPECTED for general failures.
      * @throw NS_ERROR_NOT_AVAILABLE if the taskbar cannot be obtained.
      */
-    prepareFullScreenHWND(aWindow: voidPtr, aFullScreen: boolean): void;
+    prepareFullScreen(aHWND: voidPtr, aFullScreen: boolean): void;
 }
 
 /**
@@ -57565,11 +57736,20 @@ declare interface nsIWindowsAlertsServiceType extends nsIAlertsServiceType {
      * this Firefox process, set the associated event.
      *
      * @param {AString} aWindowsTag the tag
-     * @param {nsIUnhandledWindowsTagListener} aListener the listener to callback
-     * if the tag is unknown and has an associated launch URL.
-     * @return {boolean} `true` iff the tag is registered and an event was set.
+     * @return {Promise}
+     * @resolves {Object}
+     * Resolves with an Object, may contain the following optional
+     * properties if notification exists but wasn't registered with
+     * the WindowsAlertService:
+     *
+     * `launchUrl` {string} a fallback URL to open.
+     *
+     * `privilegedName` {string} a privileged name assigned by the
+     * browser chrome.
+     *
+     * @rejects `nsresult` when there was an error retrieving the notification.
      */
-    handleWindowsTag(aWindowsTag: AString, aListener: nsIUnknownWindowsTagListener): bool;
+    handleWindowsTag(aWindowsTag: AString): Promise;
     /**
      * Get the Windows-specific XML generated for the given alert.
      *
@@ -58781,16 +58961,6 @@ declare interface nsIXULRuntimeType extends nsISupportsType {
      */
     readonly fissionAutostart: boolean;
     /**
-     * The user's enrollment status in the Fission experiment at process startup.
-     * See `ExperimentStatus` for the potential values.
-     *
-     * Only available in the parent process.
-     *
-     * This value is guaranteed to remain constant for the length of a browser
-     * session.
-     */
-    readonly fissionExperimentStatus: nsIXULRuntime_ExperimentStatus;
-    /**
      * The deciding factor which caused Fission to be enabled or disabled in
      * this session. The string version is the same of the name of the constant,
      * without the leading `eFission`, and with an initial lower-case letter.
@@ -58943,6 +59113,10 @@ declare interface nsIXULRuntimeType extends nsISupportsType {
      */
     readonly drawInTitlebar: boolean;
     /**
+     * Returns the desktop environment identifier. Only meaningful on GTK
+     */
+    readonly desktopEnvironment: ACString;
+    /**
      * The path of the shortcut used to start the current process, or "" if none.
      *
      * Windows Main process only, otherwise throws NS_ERROR_NOT_AVAILABLE
@@ -58980,12 +59154,6 @@ declare interface nsIXULRuntimeType extends nsISupportsType {
  * Typically it is used to store the persisted state for the document, such as
  * window location, toolbars that are open and nodes that are open and closed in a tree.
  *
- * If MOZ_NEW_XULSTORE is enabled:
- * XULStore.jsm wraps this API in useful abstractions for JS consumers.
- * XULStore.h provides a more idiomatic API for C++ consumers.
- * You should use those APIs unless you have good reasons to use this one.
- *
- * If MOZ_NEW_XULSTORE is disabled:
  * The data is serialized to [profile directory]/xulstore.json
  */
 declare interface nsIXULStoreType extends nsISupportsType {
@@ -60747,6 +60915,10 @@ declare interface nsIXPCTestParamsType extends nsISupportsType {
      *
      */
     testOmittedOptionalOut(aJSObj: nsIXPCTestParams, aOut: nsIURI): void;
+    /**
+     *
+     */
+    readonly testNaN: double;
 }
 
 /**
@@ -61725,6 +61897,18 @@ interface CiType {
         readonly name: 'nsIBidiKeyboard';
         readonly number: '288dae24-76e2-43a3-befe-9d9fabe8014e';
     };
+    nsIBinaryHttpRequest: {
+        readonly name: 'nsIBinaryHttpRequest';
+        readonly number: 'f6f899cc-683a-43da-9206-0eb0c09cc758';
+    };
+    nsIBinaryHttpResponse: {
+        readonly name: 'nsIBinaryHttpResponse';
+        readonly number: '6ca85d9c-cdc5-45d4-9adc-005abedce9c9';
+    };
+    nsIBinaryHttp: {
+        readonly name: 'nsIBinaryHttp';
+        readonly number: 'b43b3f73-8160-4ab2-9f5d-4129a9708081';
+    };
     nsIBinaryInputStream: {
         readonly name: 'nsIBinaryInputStream';
         readonly number: '899b826b-2eb3-469c-8b31-4c29f5d341a6';
@@ -61787,6 +61971,7 @@ interface CiType {
         readonly ERROR_TYPE_ACCESS_DENIED_EXPECTED: 48;
         readonly ERROR_TYPE_FAILED_TO_CONNECT_TO_BCM: 49;
         readonly ERROR_TYPE_USE_AFTER_REQUEST_SHUTDOWN: 50;
+        readonly ERROR_TYPE_BROWSER_SHUTTING_DOWN: 51;
         readonly ERROR_ACTION_UNKNOWN: 1;
         readonly ERROR_ACTION_NONE: 2;
         readonly ERROR_ACTION_START_DOWNLOAD: 3;
@@ -63051,6 +63236,7 @@ interface CiType {
         readonly DISPATCH_SYNC: 1;
         readonly DISPATCH_AT_END: 2;
         readonly DISPATCH_EVENT_MAY_BLOCK: 4;
+        readonly DISPATCH_IGNORE_BLOCK_DISPATCH: 8;
     };
     nsIStackFrame: {
         readonly name: 'nsIStackFrame';
@@ -63115,20 +63301,9 @@ interface CiType {
         readonly name: 'nsIFileChannel';
         readonly number: '06169120-136d-45a5-b535-498f1f755ab7';
     };
-    nsIFilePickerShownCallback: {
-        readonly name: 'nsIFilePickerShownCallback';
-        readonly number: '0d79adad-b244-49A5-9997-2a8cad93fc44';
-    };
     nsIFilePicker: {
         readonly name: 'nsIFilePicker';
         readonly number: '9285b984-02d3-46b4-9514-7da8c471a747';
-        readonly modeOpen: 0;
-        readonly modeSave: 1;
-        readonly modeGetFolder: 2;
-        readonly modeOpenMultiple: 3;
-        readonly returnOK: 0;
-        readonly returnCancel: 1;
-        readonly returnReplace: 2;
         readonly filterAll: 0x001;
         readonly filterHTML: 0x002;
         readonly filterText: 0x004;
@@ -63139,10 +63314,10 @@ interface CiType {
         readonly filterAllowURLs: 0x080;
         readonly filterAudio: 0x100;
         readonly filterVideo: 0x200;
-        readonly captureNone: 0;
-        readonly captureDefault: 1;
-        readonly captureUser: 2;
-        readonly captureEnv: 3;
+    };
+    nsIFilePickerShownCallback: {
+        readonly name: 'nsIFilePickerShownCallback';
+        readonly number: '0d79adad-b244-49A5-9997-2a8cad93fc44';
     };
     nsIFileProtocolHandler: {
         readonly name: 'nsIFileProtocolHandler';
@@ -63327,7 +63502,8 @@ interface CiType {
         readonly FEATURE_DMABUF_SURFACE_EXPORT: 40;
         readonly FEATURE_REUSE_DECODER_DEVICE: 41;
         readonly FEATURE_BACKDROP_FILTER: 42;
-        readonly FEATURE_MAX_VALUE: "FEATURE_BACKDROP_FILTER";
+        readonly FEATURE_ACCELERATED_CANVAS2D: 43;
+        readonly FEATURE_MAX_VALUE: "FEATURE_ACCELERATED_CANVAS2D";
         readonly FEATURE_STATUS_OK: 1;
         readonly FEATURE_STATUS_UNKNOWN: 2;
         readonly FEATURE_BLOCKED_DRIVER_VERSION: 3;
@@ -63988,6 +64164,7 @@ interface CiType {
         readonly VALIDATE_ALLOW_EMPTY: 16;
         readonly VALIDATE_NO_DEFAULT_FILENAME: 32;
         readonly VALIDATE_FORCE_APPEND_EXTENSION: 64;
+        readonly VALIDATE_ALLOW_INVALID_FILENAMES: 128;
     };
     nsIMacAttributionService: {
         readonly name: 'nsIMacAttributionService';
@@ -64164,10 +64341,6 @@ interface CiType {
     nsINativeOSFileInternalsService: {
         readonly name: 'nsINativeOSFileInternalsService';
         readonly number: '913362AD-1526-4623-9E6B-A2EB08AFBBB9';
-    };
-    nsINavBookmarkObserver: {
-        readonly name: 'nsINavBookmarkObserver';
-        readonly number: '4d00c221-2c4a-47ab-a617-abb324110492';
     };
     nsINavBookmarksService: {
         readonly name: 'nsINavBookmarksService';
@@ -64434,6 +64607,10 @@ interface CiType {
     nsIObliviousHttp: {
         readonly name: 'nsIObliviousHttp';
         readonly number: 'd581149e-3319-4563-b95e-46c64af5c4e8';
+    };
+    nsIObliviousHttpService: {
+        readonly name: 'nsIObliviousHttpService';
+        readonly number: 'b1f08d56-fca6-4290-9500-d5168dc9d8c3';
     };
     nsIObserver: {
         readonly name: 'nsIObserver';
@@ -65354,7 +65531,8 @@ interface CiType {
         readonly SELECTION_FIND: 8;
         readonly SELECTION_URLSECONDARY: 9;
         readonly SELECTION_URLSTRIKEOUT: 10;
-        readonly NUM_SELECTIONTYPES: 11;
+        readonly SELECTION_HIGHLIGHT: 11;
+        readonly NUM_SELECTIONTYPES: 12;
         readonly SELECTION_ANCHOR_REGION: 0;
         readonly SELECTION_FOCUS_REGION: 1;
         readonly SELECTION_WHOLE_SELECTION: 2;
@@ -65985,6 +66163,10 @@ interface CiType {
         readonly SSL_HMAC_SHA256: 5;
         readonly SSL_MAC_AEAD: 6;
     };
+    nsITRRSkipReason: {
+        readonly name: 'nsITRRSkipReason';
+        readonly number: 'e61b5d39-f6d6-4ed3-aead-1213b24c6f27';
+    };
     nsITXTToHTMLConv: {
         readonly name: 'nsITXTToHTMLConv';
         readonly number: '933355f6-1dd2-11b2-a9b0-d335b9e35983';
@@ -66402,6 +66584,10 @@ interface CiType {
     nsIURLParser: {
         readonly name: 'nsIURLParser';
         readonly number: '78c5d19f-f5d2-4732-8d3d-d5a7d7133bc0';
+    };
+    nsIURLQueryStringStripper: {
+        readonly name: 'nsIURLQueryStringStripper';
+        readonly number: '6b42a890-2624-4560-99c4-b25380e8cd77';
     };
     nsIURLQueryStrippingListObserver: {
         readonly name: 'nsIURLQueryStrippingListObserver';
@@ -67320,6 +67506,7 @@ declare module Services {
     declare var prefs: nsIPrefServiceType & nsIPrefBranchType;
     declare var loadContextInfo: nsILoadContextInfoFactoryType;
     declare var cache2: nsICacheStorageServiceType;
+    declare var dns: nsIDNSServiceType;
     declare var eTLD: nsIEffectiveTLDServiceType;
     declare var io: nsIIOServiceType & nsISpeculativeConnectType & nsINetUtilType;
     declare var cookies: nsICookieServiceType & nsICookieManagerType;
@@ -67336,6 +67523,7 @@ declare module Services {
     declare var telemetry: nsITelemetryType;
     declare var DAPTelemetry: nsIDAPTelemetryType;
     declare var urlFormatter: nsIURLFormatterType;
+    declare var xulStore: nsIXULStoreType;
     declare var blocklist: nsIBlocklistServiceType;
     declare var appinfo: nsIXULRuntimeType & nsIXULAppInfoType & nsICrashReporterType;
     declare var ww: nsIWindowWatcherType;

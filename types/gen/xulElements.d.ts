@@ -36,6 +36,10 @@ declare interface NamedDeck extends MozXULElement {
 }
 declare interface NotificationMessage extends MozXULElement {
 }
+declare interface PanelList extends MozXULElement {
+}
+declare interface PanelItem extends MozXULElement {
+}
 declare interface MozPanel extends MozXULElement {
 }
 declare interface MozPopupNotification extends MozXULElement {
@@ -96,6 +100,8 @@ type XULElementTypes = {
     ['button-group']: ButtonGroup;
     ['named-deck']: NamedDeck;
     ['notification-message']: NotificationMessage;
+    ['panel-list']: PanelList;
+    ['panel-item']: PanelItem;
     ['panel']: MozPanel;
     ['popupnotification']: MozPopupNotification;
     ['radiogroup']: MozRadiogroup;

@@ -28,6 +28,10 @@ declare module ChromeUtils {
      */
     var domProcessChild: readonly nsIDOMProcessChildType ?;
     /**
+     * The number of currently alive utility processes.
+     */
+    var aliveUtilityProcesses: readonly unsigned_long ;
+    /**
      *
      */
     function getObjectNodeId(): NodeId ;
@@ -126,6 +130,19 @@ declare module ChromeUtils {
      */
     function dateNow(): double ;
     /**
+     * Defines a getter on a specified object that will be created upon first
+     * use.
+     *
+     * @param aTarget
+     * The object to define the lazy getter on.
+     * @param aName
+     * The name of the getter to define on aTarget.
+     * @param aLambda
+     * A function that returns what the getter should return.  This will
+     * only ever be called once.
+     */
+    function defineLazyGetter(): undefined ;
+    /**
      *
      */
     function originAttributesToSuffix(): ByteString ;
@@ -206,6 +223,10 @@ declare module ChromeUtils {
      *
      */
     function getClassName(): DOMString ;
+    /**
+     *
+     */
+    function isDOMObject(): boolean ;
     /**
      * Clones the properties of the given object into a new object in the given
      * target compartment (or the caller compartment if no target is provided).
@@ -386,6 +407,16 @@ declare module ChromeUtils {
      *
      */
     function isDarkBackground(): boolean ;
+    /**
+     *
+     */
+    function ensureJSOracleStarted(): undefined ;
+    /**
+     * Get a list of all possible Utility process Actor Names ; mostly useful to
+     * perform testing and ensure about:processes display is sound and misses no
+     * actor name.
+     */
+    function getAllPossibleUtilityActorNames(): sequence<DOMString> ;
 }
 
 declare module IOUtils {
@@ -936,13 +967,9 @@ declare module PathUtils {
      */
     var localProfileDir: readonly DOMString ;
     /**
-     * The temporary directory for the process.
-     */
-    var tempDir: readonly DOMString ;
-    /**
      * The OS temporary directory.
      */
-    var osTempDir: readonly DOMString ;
+    var tempDir: readonly DOMString ;
     /**
      * The libxul path.
      */
@@ -1031,13 +1058,9 @@ declare module PathUtils {
      */
     function getLocalProfileDir(): Promise<DOMString> ;
     /**
-     * The temporary directory for the process.
-     */
-    function getTempDir(): Promise<DOMString> ;
-    /**
      * The OS temporary directory.
      */
-    function getOSTempDir(): Promise<DOMString> ;
+    function getTempDir(): Promise<DOMString> ;
     /**
      * The libxul path.
      */
@@ -1065,13 +1088,6 @@ declare module PlacesObservers {
      *
      */
     function notifyListeners(): undefined ;
-}
-
-declare module PrioEncoder {
-    /**
-     *
-     */
-    function encode(): PrioEncodedData ;
 }
 
 declare module PromiseDebugging {
@@ -1240,21 +1256,42 @@ declare module TelemetryStopwatch {
 
 declare module UniFFIScaffolding {
     /**
+     * Call a scaffolding function on the worker thread.
      *
+     * id is a unique identifier for the function, known to both the C++ and JS code
      */
     function callAsync(): Promise<UniFFIScaffoldingCallResult> ;
     /**
+     * Call a scaffolding function on the main thread
      *
+     * id is a unique identifier for the function, known to both the C++ and JS code
      */
     function callSync(): UniFFIScaffoldingCallResult ;
     /**
+     * Read a UniFFIPointer from an ArrayBuffer
      *
+     * id is a unique identifier for the pointer type, known to both the C++ and JS code
      */
     function readPointer(): UniFFIPointer ;
     /**
+     * Write a UniFFIPointer to an ArrayBuffer
      *
+     * id is a unique identifier for the pointer type, known to both the C++ and JS code
      */
     function writePointer(): undefined ;
+    /**
+     * Register the global calblack handler
+     *
+     * This will be used to invoke all calls for a CallbackInterface.
+     * interfaceId is a unique identifier for the callback interface, known to both the C++ and JS code
+     */
+    function registerCallbackHandler(): undefined ;
+    /**
+     * Deregister the global calblack handler
+     *
+     * This is called at shutdown to clear out the reference to the JS function.
+     */
+    function deregisterCallbackHandler(): undefined ;
 }
 
 declare module UserInteraction {
@@ -1290,6 +1327,10 @@ declare module AddonManagerPermissions {
 }
 
 declare module CSS {
+    /**
+     *
+     */
+    var highlights: readonly HighlightRegistry ;
     /**
      *
      */

@@ -1,0 +1,56 @@
+declare module "resource://gre/modules/GMPUtils.sys.mjs" {
+    var OPEN_H264_ID;
+    var WIDEVINE_ID;
+    var GMP_PLUGIN_IDS;
+    var GMPUtils: {
+        isPluginHidden(aPlugin);
+        _isPluginSupported(aPlugin);
+        _isPluginVisible(aPlugin);
+        _isPluginForceSupported(aPlugin);
+        _isWindowsOnARM64();
+        _expectedABI(aPlugin);
+    };
+    var GMPPrefs: {
+        KEY_EME_ENABLED;
+        KEY_PLUGIN_ENABLED;
+        KEY_PLUGIN_LAST_DOWNLOAD;
+        KEY_PLUGIN_LAST_DOWNLOAD_FAILED;
+        KEY_PLUGIN_LAST_DOWNLOAD_FAIL_REASON;
+        KEY_PLUGIN_LAST_INSTALL_FAILED;
+        KEY_PLUGIN_LAST_INSTALL_START;
+        KEY_PLUGIN_LAST_UPDATE;
+        KEY_PLUGIN_HASHVALUE;
+        KEY_PLUGIN_VERSION;
+        KEY_PLUGIN_AUTOUPDATE;
+        KEY_PLUGIN_VISIBLE;
+        KEY_PLUGIN_ABI;
+        KEY_PLUGIN_FORCE_SUPPORTED;
+        KEY_PLUGIN_ALLOW_X64_ON_ARM64;
+        KEY_URL;
+        KEY_URL_OVERRIDE;
+        KEY_CERT_CHECKATTRS;
+        KEY_CERT_REQUIREBUILTIN;
+        KEY_CHECK_CONTENT_SIGNATURE;
+        KEY_UPDATE_LAST_CHECK;
+        KEY_UPDATE_LAST_EMPTY_CHECK;
+        KEY_SECONDS_BETWEEN_CHECKS;
+        KEY_UPDATE_ENABLED;
+        KEY_APP_DISTRIBUTION;
+        KEY_APP_DISTRIBUTION_VERSION;
+        KEY_BUILDID;
+        KEY_CERTS_BRANCH;
+        KEY_PROVIDER_ENABLED;
+        KEY_LOG_BASE;
+        KEY_LOGGING_LEVEL;
+        KEY_LOGGING_DUMP;
+        getString(aKey, aDefaultValue, aPlugin);
+        getInt(aKey, aDefaultValue, aPlugin);
+        getBool(aKey, aDefaultValue, aPlugin);
+        setString(aKey, aVal, aPlugin);
+        setBool(aKey, aVal, aPlugin);
+        setInt(aKey, aVal, aPlugin);
+        isSet(aKey, aPlugin);
+        reset(aKey, aPlugin);
+        getPrefKey(aKey, aPlugin);
+    };
+}

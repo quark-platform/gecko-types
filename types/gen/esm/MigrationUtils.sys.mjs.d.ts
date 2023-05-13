@@ -1,0 +1,1 @@
+declare module "resource://app/modules/MigrationUtils.sys.mjs" { }
