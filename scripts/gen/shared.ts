@@ -59,6 +59,14 @@ export function printNode(node: ts.Node, builder: ts.SourceFile): string {
   return printer.printNode(ts.EmitHint.Unspecified, node, builder)
 }
 
+export function printNodes(
+  nodes: ts.NodeArray<ts.Node>,
+  builder: ts.SourceFile
+): string {
+  const printer = ts.createPrinter()
+  return printer.printList(ts.ListFormat.MultiLine, nodes, builder)
+}
+
 export function convertIdlType(type: IdlType): string {
   if (typeof type == 'string') {
     if (idlTypes.has(type)) type += 'Type'
