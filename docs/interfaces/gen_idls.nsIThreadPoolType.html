@@ -53,6 +53,7 @@ will be run on the next available worker thread.</p>
 <a href="gen_idls.nsIThreadPoolType.html#isOnCurrentThreadInfallible" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>is<wbr/>On<wbr/>Current<wbr/>Thread<wbr/>Infallible</span></a>
 <a href="gen_idls.nsIThreadPoolType.html#registerShutdownTask" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>register<wbr/>Shutdown<wbr/>Task</span></a>
 <a href="gen_idls.nsIThreadPoolType.html#setName" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>Name</span></a>
+<a href="gen_idls.nsIThreadPoolType.html#setQoSForThreads" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>QoSFor<wbr/>Threads</span></a>
 <a href="gen_idls.nsIThreadPoolType.html#shutdown" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>shutdown</span></a>
 <a href="gen_idls.nsIThreadPoolType.html#shutdownWithTimeout" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>shutdown<wbr/>With<wbr/>Timeout</span></a>
 <a href="gen_idls.nsIThreadPoolType.html#unregisterShutdownTask" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>unregister<wbr/>Shutdown<wbr/>Task</span></a>
@@ -318,6 +319,21 @@ NOTE that unlike <code>dispatch</code>, this will not leak the task if it fails.
 <li>
 <h5>aName: <span class="tsd-signature-type">string</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="setQoSForThreads" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>QoSFor<wbr/>Threads</span><a href="#setQoSForThreads" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="setQoSForThreads.setQoSForThreads-1">set<wbr/>QoSFor<wbr/>Threads<span class="tsd-signature-symbol">(</span>aPriority<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIThread_QoSPriority</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#setQoSForThreads.setQoSForThreads-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Set the entire pool&#39;s QoS priority. If the priority has not changed, do nothing.
+Existing threads will update their QoS priority the next time they become
+active, and newly created threads will set this QoS priority upon creation.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aPriority: <span class="tsd-signature-type">nsIThread_QoSPriority</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="shutdown" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>shutdown</span><a href="#shutdown" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -421,7 +437,6 @@ accepting events, or that the shutdown task cannot be found.</p>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.MediaControlService.html">Media<wbr/>Control<wbr/>Service</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PathUtils.html">Path<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PlacesObservers.html">Places<wbr/>Observers</a></li>
-<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PrioEncoder.html">Prio<wbr/>Encoder</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PromiseDebugging.html">Promise<wbr/>Debugging</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.SessionStoreUtils.html">Session<wbr/>Store<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TelemetryStopwatch.html">Telemetry<wbr/>Stopwatch</a></li>
@@ -451,6 +466,7 @@ accepting events, or that the shutdown task cannot be found.</p>
 <li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.nsIThreadPoolType.html#isOnCurrentThreadInfallible" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>is<wbr/>On<wbr/>Current<wbr/>Thread<wbr/>Infallible</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.nsIThreadPoolType.html#registerShutdownTask" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>register<wbr/>Shutdown<wbr/>Task</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIThreadPoolType.html#setName" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>Name</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIThreadPoolType.html#setQoSForThreads" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>QoSFor<wbr/>Threads</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIThreadPoolType.html#shutdown" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>shutdown</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIThreadPoolType.html#shutdownWithTimeout" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>shutdown<wbr/>With<wbr/>Timeout</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.nsIThreadPoolType.html#unregisterShutdownTask" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>unregister<wbr/>Shutdown<wbr/>Task</a></li></ul></li></ul></nav></div></div>

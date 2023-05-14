@@ -38,6 +38,7 @@ more information.</p>
 <h3 class="tsd-index-heading">Properties</h3>
 <div class="tsd-index-list"><a href="gen_idls.mozIStorageVacuumParticipantType.html#databaseConnection" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF984D" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-1024-path"></rect><path d="M9.354 16V7.24H12.174C12.99 7.24 13.638 7.476 14.118 7.948C14.606 8.412 14.85 9.036 14.85 9.82C14.85 10.604 14.606 11.232 14.118 11.704C13.638 12.168 12.99 12.4 12.174 12.4H10.434V16H9.354ZM10.434 11.428H12.174C12.646 11.428 13.022 11.284 13.302 10.996C13.59 10.7 13.734 10.308 13.734 9.82C13.734 9.324 13.59 8.932 13.302 8.644C13.022 8.356 12.646 8.212 12.174 8.212H10.434V11.428Z" fill="var(--color-text)" id="icon-1024-text"></path></svg><span>database<wbr/>Connection</span></a>
 <a href="gen_idls.mozIStorageVacuumParticipantType.html#expectedDatabasePageSize" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>expected<wbr/>Database<wbr/>Page<wbr/>Size</span></a>
+<a href="gen_idls.mozIStorageVacuumParticipantType.html#useIncrementalVacuum" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>use<wbr/>Incremental<wbr/>Vacuum</span></a>
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading">Methods</h3>
@@ -51,20 +52,28 @@ more information.</p>
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="databaseConnection" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>database<wbr/>Connection</span><a href="#databaseConnection" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" id="icon-anchor-a"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" id="icon-anchor-b"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" id="icon-anchor-c"></path></svg></a></h3>
-<div class="tsd-signature">database<wbr/>Connection<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">mozIStorageConnection</span></div>
+<div class="tsd-signature">database<wbr/>Connection<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">mozIStorageAsyncConnection</span></div>
 <div class="tsd-comment tsd-typography"><p>Connection to the database file to be vacuumed.</p>
 </div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="expectedDatabasePageSize" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>expected<wbr/>Database<wbr/>Page<wbr/>Size</span><a href="#expectedDatabasePageSize" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">expected<wbr/>Database<wbr/>Page<wbr/>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 <div class="tsd-comment tsd-typography"><p>The expected page size in bytes for the database.  The vacuum manager will
-try to correct the page size during idle based on this value.</p>
+try to correct the page size by executing a full vacuum.</p>
 
 <h3>Note</h3><p>If the database is using the WAL journal mode, the page size won&#39;t
 be changed to the requested value.  See bug 634374.</p>
 
 <h3>Note</h3><p>Valid page size values are powers of 2 between 512 and 65536.
 The suggested value is mozIStorageConnection::defaultPageSize.</p>
+</div></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="useIncrementalVacuum" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>use<wbr/>Incremental<wbr/>Vacuum</span><a href="#useIncrementalVacuum" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">use<wbr/>Incremental<wbr/>Vacuum<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+<div class="tsd-comment tsd-typography"><p>Whether the main schema should be using auto_vacuum = INCREMENTAL.
+This will cause auto_vacuum to change to INCREMENTAL if it&#39;s not set yet.
+It is not possible to change mode of any attached databases through this,
+to do that you must open a separate connection and use asyncVacuum() on it.</p>
 </div></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
@@ -142,9 +151,9 @@ database till onEndVacuum is received.</p>
 opt-out for now, it will be retried later.  Useful when participant
 is running some other heavy operation that can&#39;t be interrupted.</p>
 
-<h3>Note</h3><p>When a vacuum operation starts or ends it will also dispatch a global
-&quot;heavy-io-task&quot; notification through the observer service with the
-data argument being either &quot;vacuum-begin&quot; or &quot;vacuum-end&quot;.</p>
+<h3>Note</h3><p>When a vacuum operation starts or ends it will also dispatch global
+&quot;vacuum-begin&quot; and &quot;vacuum-end&quot; notifications through the observer
+service with the data argument being the database filename.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="onEndVacuum" class="tsd-anchor"></a>
@@ -207,7 +216,6 @@ data argument being either &quot;vacuum-begin&quot; or &quot;vacuum-end&quot;.</
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.MediaControlService.html">Media<wbr/>Control<wbr/>Service</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PathUtils.html">Path<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PlacesObservers.html">Places<wbr/>Observers</a></li>
-<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PrioEncoder.html">Prio<wbr/>Encoder</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PromiseDebugging.html">Promise<wbr/>Debugging</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.SessionStoreUtils.html">Session<wbr/>Store<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TelemetryStopwatch.html">Telemetry<wbr/>Stopwatch</a></li>
@@ -223,6 +231,7 @@ data argument being either &quot;vacuum-begin&quot; or &quot;vacuum-end&quot;.</
 <ul>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.mozIStorageVacuumParticipantType.html#databaseConnection" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>database<wbr/>Connection</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.mozIStorageVacuumParticipantType.html#expectedDatabasePageSize" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>expected<wbr/>Database<wbr/>Page<wbr/>Size</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.mozIStorageVacuumParticipantType.html#useIncrementalVacuum" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>use<wbr/>Incremental<wbr/>Vacuum</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.mozIStorageVacuumParticipantType.html#AddRef" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>Add<wbr/>Ref</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.mozIStorageVacuumParticipantType.html#QueryInterface" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>Query<wbr/>Interface</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.mozIStorageVacuumParticipantType.html#Release" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>Release</a></li>

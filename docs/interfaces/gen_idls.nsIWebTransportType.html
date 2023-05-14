@@ -33,10 +33,14 @@
 <a href="gen_idls.nsIWebTransportType.html#QueryInterface" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>Query<wbr/>Interface</span></a>
 <a href="gen_idls.nsIWebTransportType.html#Release" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>Release</span></a>
 <a href="gen_idls.nsIWebTransportType.html#asyncConnect" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>async<wbr/>Connect</span></a>
+<a href="gen_idls.nsIWebTransportType.html#asyncConnectWithClient" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>async<wbr/>Connect<wbr/>With<wbr/>Client</span></a>
 <a href="gen_idls.nsIWebTransportType.html#closeSession" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>close<wbr/>Session</span></a>
 <a href="gen_idls.nsIWebTransportType.html#createOutgoingBidirectionalStream" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>create<wbr/>Outgoing<wbr/>Bidirectional<wbr/>Stream</span></a>
 <a href="gen_idls.nsIWebTransportType.html#createOutgoingUnidirectionalStream" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>create<wbr/>Outgoing<wbr/>Unidirectional<wbr/>Stream</span></a>
+<a href="gen_idls.nsIWebTransportType.html#getMaxDatagramSize" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Max<wbr/>Datagram<wbr/>Size</span></a>
 <a href="gen_idls.nsIWebTransportType.html#getStats" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Stats</span></a>
+<a href="gen_idls.nsIWebTransportType.html#retargetTo" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>retarget<wbr/>To</span></a>
+<a href="gen_idls.nsIWebTransportType.html#sendDatagram" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>send<wbr/>Datagram</span></a>
 </div></section></div></details></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
@@ -119,6 +123,25 @@ the associated instance is deleted.</p>
 <li>
 <h5>aListener: <span class="tsd-signature-type">WebTransportSessionEventListener</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="asyncConnectWithClient" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>async<wbr/>Connect<wbr/>With<wbr/>Client</span><a href="#asyncConnectWithClient" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="asyncConnectWithClient.asyncConnectWithClient-1">async<wbr/>Connect<wbr/>With<wbr/>Client<span class="tsd-signature-symbol">(</span>aURI<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIURI</span>, aLoadingPrincipal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIPrincipal</span>, aSecurityFlags<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, aListener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">WebTransportSessionEventListener</span>, aClientInfo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">const_MaybeClientInfoRef</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#asyncConnectWithClient.asyncConnectWithClient-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aURI: <span class="tsd-signature-type">nsIURI</span></h5></li>
+<li>
+<h5>aLoadingPrincipal: <span class="tsd-signature-type">nsIPrincipal</span></h5></li>
+<li>
+<h5>aSecurityFlags: <span class="tsd-signature-type">number</span></h5></li>
+<li>
+<h5>aListener: <span class="tsd-signature-type">WebTransportSessionEventListener</span></h5></li>
+<li>
+<h5>aClientInfo: <span class="tsd-signature-type">const_MaybeClientInfoRef</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="closeSession" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>close<wbr/>Session</span><a href="#closeSession" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -154,11 +177,41 @@ the associated instance is deleted.</p>
 <li>
 <h5>aListener: <span class="tsd-signature-type">nsIWebTransportStreamCallback</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getMaxDatagramSize" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Max<wbr/>Datagram<wbr/>Size</span><a href="#getMaxDatagramSize" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="getMaxDatagramSize.getMaxDatagramSize-1">get<wbr/>Max<wbr/>Datagram<wbr/>Size<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#getMaxDatagramSize.getMaxDatagramSize-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="getStats" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Stats</span><a href="#getStats" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
 <li class="tsd-signature tsd-anchor-link" id="getStats.getStats-1">get<wbr/>Stats<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#getStats.getStats-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="retargetTo" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>retarget<wbr/>To</span><a href="#retargetTo" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="retargetTo.retargetTo-1">retarget<wbr/>To<span class="tsd-signature-symbol">(</span>aTarget<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIEventTarget</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#retargetTo.retargetTo-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aTarget: <span class="tsd-signature-type">nsIEventTarget</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="sendDatagram" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>send<wbr/>Datagram</span><a href="#sendDatagram" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="sendDatagram.sendDatagram-1">send<wbr/>Datagram<span class="tsd-signature-symbol">(</span>aData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">invalid</span>, aTrackingId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">uint64_t</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#sendDatagram.sendDatagram-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aData: <span class="tsd-signature-type">invalid</span></h5></li>
+<li>
+<h5>aTrackingId: <span class="tsd-signature-type">uint64_t</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
@@ -205,7 +258,6 @@ the associated instance is deleted.</p>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.MediaControlService.html">Media<wbr/>Control<wbr/>Service</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PathUtils.html">Path<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PlacesObservers.html">Places<wbr/>Observers</a></li>
-<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PrioEncoder.html">Prio<wbr/>Encoder</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PromiseDebugging.html">Promise<wbr/>Debugging</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.SessionStoreUtils.html">Session<wbr/>Store<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TelemetryStopwatch.html">Telemetry<wbr/>Stopwatch</a></li>
@@ -223,10 +275,14 @@ the associated instance is deleted.</p>
 <li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.nsIWebTransportType.html#QueryInterface" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>Query<wbr/>Interface</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.nsIWebTransportType.html#Release" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>Release</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWebTransportType.html#asyncConnect" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>async<wbr/>Connect</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWebTransportType.html#asyncConnectWithClient" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>async<wbr/>Connect<wbr/>With<wbr/>Client</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWebTransportType.html#closeSession" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>close<wbr/>Session</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWebTransportType.html#createOutgoingBidirectionalStream" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>create<wbr/>Outgoing<wbr/>Bidirectional<wbr/>Stream</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWebTransportType.html#createOutgoingUnidirectionalStream" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>create<wbr/>Outgoing<wbr/>Unidirectional<wbr/>Stream</a></li>
-<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWebTransportType.html#getStats" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Stats</a></li></ul></li></ul></nav></div></div>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWebTransportType.html#getMaxDatagramSize" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Max<wbr/>Datagram<wbr/>Size</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWebTransportType.html#getStats" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Stats</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWebTransportType.html#retargetTo" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>retarget<wbr/>To</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWebTransportType.html#sendDatagram" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>send<wbr/>Datagram</a></li></ul></li></ul></nav></div></div>
 <div class="container tsd-generator">
 <p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
 <div class="overlay"></div><script src="../assets/main.js"></script></body></html>

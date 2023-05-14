@@ -104,14 +104,18 @@ the associated instance is deleted.</p>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
 <li class="tsd-signature tsd-anchor-link" id="set.set-1">set<span class="tsd-signature-symbol">(</span>aValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#set.set-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Set the datetime to the provided value, or the local now.</p>
+<div class="tsd-comment tsd-typography"><p>Set the datetime to the provided value, or the local now.
+The internal value will store the local timezone.</p>
+<p>Note: The metric&#39;s time_unit affects the resolution of the value, not the
+unit of this function&#39;s parameter (which is always PRTime/nanos).</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
 <h5>aValue: <span class="tsd-signature-type">number</span></h5>
-<div class="tsd-comment tsd-typography"><p>The time value in milliseconds since epoch. Defaults to local now.</p>
+<div class="tsd-comment tsd-typography"><p>The (optional) time value as PRTime (nanoseconds since epoch).
+Defaults to local now.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="testGetValue" class="tsd-anchor"></a>
@@ -127,7 +131,8 @@ This function will not wait for data from child processes.</p>
 <p>This doesn&#39;t clear the stored value.
 Parent process only. Panics in child processes.</p>
 
-<h3>Returns</h3><p>value of the stored metric, or undefined if there is no value.</p>
+<h3>Returns</h3><p>value of the stored metric as a JS Date with timezone,
+or undefined if there is no value.</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -183,7 +188,6 @@ for. Defaults to the first value in <code>send_in_pings</code>.</p>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.MediaControlService.html">Media<wbr/>Control<wbr/>Service</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PathUtils.html">Path<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PlacesObservers.html">Places<wbr/>Observers</a></li>
-<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PrioEncoder.html">Prio<wbr/>Encoder</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PromiseDebugging.html">Promise<wbr/>Debugging</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.SessionStoreUtils.html">Session<wbr/>Store<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TelemetryStopwatch.html">Telemetry<wbr/>Stopwatch</a></li>

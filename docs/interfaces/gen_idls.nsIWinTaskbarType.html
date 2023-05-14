@@ -69,7 +69,6 @@ See nsIJumpListBuilder for more information.</p>
 <a href="gen_idls.nsIWinTaskbarType.html#getTaskbarProgress" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Taskbar<wbr/>Progress</span></a>
 <a href="gen_idls.nsIWinTaskbarType.html#getTaskbarWindowPreview" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Taskbar<wbr/>Window<wbr/>Preview</span></a>
 <a href="gen_idls.nsIWinTaskbarType.html#prepareFullScreen" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>prepare<wbr/>Full<wbr/>Screen</span></a>
-<a href="gen_idls.nsIWinTaskbarType.html#prepareFullScreenHWND" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>prepare<wbr/>Full<wbr/>ScreenHWND</span></a>
 <a href="gen_idls.nsIWinTaskbarType.html#setGroupIdForWindow" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>Group<wbr/>Id<wbr/>For<wbr/>Window</span></a>
 </div></section></div></details></section></section>
 <section class="tsd-panel-group tsd-member-group">
@@ -247,30 +246,7 @@ information.</p>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="prepareFullScreen" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>prepare<wbr/>Full<wbr/>Screen</span><a href="#prepareFullScreen" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-<li class="tsd-signature tsd-anchor-link" id="prepareFullScreen.prepareFullScreen-1">prepare<wbr/>Full<wbr/>Screen<span class="tsd-signature-symbol">(</span>aWindow<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">mozIDOMWindow</span>, aFullScreen<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#prepareFullScreen.prepareFullScreen-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
-<li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Notify the taskbar that a window is about to enter full screen mode.</p>
-<p>A Windows autohide taskbar will not behave correctly in all cases if
-it is not notified when full screen operations start and end.</p>
-
-<h3>Throw</h3><p>NS_ERROR_INVALID_ARG if the window is not a valid top level window</p>
-
-<h3>Throw</h3><p>NS_ERROR_UNEXPECTED for general failures.</p>
-
-<h3>Throw</h3><p>NS_ERROR_NOT_AVAILABLE if the taskbar cannot be obtained.</p>
-</div>
-<div class="tsd-parameters">
-<h4 class="tsd-parameters-title">Parameters</h4>
-<ul class="tsd-parameter-list">
-<li>
-<h5>aWindow: <span class="tsd-signature-type">mozIDOMWindow</span></h5></li>
-<li>
-<h5>aFullScreen: <span class="tsd-signature-type">boolean</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
-<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="prepareFullScreenHWND" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>prepare<wbr/>Full<wbr/>ScreenHWND</span><a href="#prepareFullScreenHWND" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-<li class="tsd-signature tsd-anchor-link" id="prepareFullScreenHWND.prepareFullScreenHWND-1">prepare<wbr/>Full<wbr/>ScreenHWND<span class="tsd-signature-symbol">(</span>aWindow<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">voidPtr</span>, aFullScreen<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#prepareFullScreenHWND.prepareFullScreenHWND-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="prepareFullScreen.prepareFullScreen-1">prepare<wbr/>Full<wbr/>Screen<span class="tsd-signature-symbol">(</span>aHWND<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">voidPtr</span>, aFullScreen<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#prepareFullScreen.prepareFullScreen-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Notify the taskbar that a window identified by its HWND is about to enter
 full screen mode.</p>
@@ -287,7 +263,7 @@ it is not notified when full screen operations start and end.</p>
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5>aWindow: <span class="tsd-signature-type">voidPtr</span></h5></li>
+<h5>aHWND: <span class="tsd-signature-type">voidPtr</span></h5></li>
 <li>
 <h5>aFullScreen: <span class="tsd-signature-type">boolean</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
@@ -368,7 +344,6 @@ associated with a widget.</p>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.MediaControlService.html">Media<wbr/>Control<wbr/>Service</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PathUtils.html">Path<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PlacesObservers.html">Places<wbr/>Observers</a></li>
-<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PrioEncoder.html">Prio<wbr/>Encoder</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PromiseDebugging.html">Promise<wbr/>Debugging</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.SessionStoreUtils.html">Session<wbr/>Store<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TelemetryStopwatch.html">Telemetry<wbr/>Stopwatch</a></li>
@@ -394,7 +369,6 @@ associated with a widget.</p>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWinTaskbarType.html#getTaskbarProgress" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Taskbar<wbr/>Progress</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWinTaskbarType.html#getTaskbarWindowPreview" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Taskbar<wbr/>Window<wbr/>Preview</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWinTaskbarType.html#prepareFullScreen" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>prepare<wbr/>Full<wbr/>Screen</a></li>
-<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWinTaskbarType.html#prepareFullScreenHWND" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>prepare<wbr/>Full<wbr/>ScreenHWND</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWinTaskbarType.html#setGroupIdForWindow" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>Group<wbr/>Id<wbr/>For<wbr/>Window</a></li></ul></li></ul></nav></div></div>
 <div class="container tsd-generator">
 <p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>

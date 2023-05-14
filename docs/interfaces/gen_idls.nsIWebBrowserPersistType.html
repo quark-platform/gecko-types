@@ -46,7 +46,6 @@
 <a href="gen_idls.nsIWebBrowserPersistType.html#cancelSave" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>cancel<wbr/>Save</span></a>
 <a href="gen_idls.nsIWebBrowserPersistType.html#saveChannel" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>save<wbr/>Channel</span></a>
 <a href="gen_idls.nsIWebBrowserPersistType.html#saveDocument" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>save<wbr/>Document</span></a>
-<a href="gen_idls.nsIWebBrowserPersistType.html#savePrivacyAwareURI" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>save<wbr/>Privacy<wbr/>AwareURI</span></a>
 <a href="gen_idls.nsIWebBrowserPersistType.html#saveURI" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>saveURI</span></a>
 </div></section></div></details></section></section>
 <section class="tsd-panel-group tsd-member-group">
@@ -253,46 +252,10 @@ wrap text at. Parameter is ignored if wrapping is not
 specified by the encoding flags.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
-<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="savePrivacyAwareURI" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>save<wbr/>Privacy<wbr/>AwareURI</span><a href="#savePrivacyAwareURI" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-<li class="tsd-signature tsd-anchor-link" id="savePrivacyAwareURI.savePrivacyAwareURI-1">save<wbr/>Privacy<wbr/>AwareURI<span class="tsd-signature-symbol">(</span>aURI<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIURI</span>, aTriggeringPrincipal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIPrincipal</span>, aCacheKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, aReferrerInfo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIReferrerInfo</span>, aCookieJarSettings<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsICookieJarSettings</span>, aPostData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIInputStream</span>, aExtraHeaders<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aFile<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsISupports</span>, aContentPolicyType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsContentPolicyType</span>, aIsPrivate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#savePrivacyAwareURI.savePrivacyAwareURI-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
-<li class="tsd-description">
-<div class="tsd-comment tsd-typography">
-<h3>See</h3><p>saveURI for all other parameter descriptions</p>
-</div>
-<div class="tsd-parameters">
-<h4 class="tsd-parameters-title">Parameters</h4>
-<ul class="tsd-parameter-list">
-<li>
-<h5>aURI: <span class="tsd-signature-type">nsIURI</span></h5></li>
-<li>
-<h5>aTriggeringPrincipal: <span class="tsd-signature-type">nsIPrincipal</span></h5></li>
-<li>
-<h5>aCacheKey: <span class="tsd-signature-type">number</span></h5></li>
-<li>
-<h5>aReferrerInfo: <span class="tsd-signature-type">nsIReferrerInfo</span></h5></li>
-<li>
-<h5>aCookieJarSettings: <span class="tsd-signature-type">nsICookieJarSettings</span></h5></li>
-<li>
-<h5>aPostData: <span class="tsd-signature-type">nsIInputStream</span></h5></li>
-<li>
-<h5>aExtraHeaders: <span class="tsd-signature-type">string</span></h5></li>
-<li>
-<h5>aFile: <span class="tsd-signature-type">nsISupports</span></h5></li>
-<li>
-<h5>aContentPolicyType: <span class="tsd-signature-type">nsContentPolicyType</span></h5></li>
-<li>
-<h5>aIsPrivate: <span class="tsd-signature-type">boolean</span></h5>
-<div class="tsd-comment tsd-typography"><p>Treat the save operation as private (ie. with
-regards to networking operations and persistence
-of intermediate data, etc.)</p>
-</div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="saveURI" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>saveURI</span><a href="#saveURI" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-<li class="tsd-signature tsd-anchor-link" id="saveURI.saveURI-1">saveURI<span class="tsd-signature-symbol">(</span>aURI<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIURI</span>, aTriggeringPrincipal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIPrincipal</span>, aCacheKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, aReferrerInfo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIReferrerInfo</span>, aCookieJarSettings<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsICookieJarSettings</span>, aPostData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIInputStream</span>, aExtraHeaders<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aFile<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsISupports</span>, aContentPolicyType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsContentPolicyType</span>, aPrivacyContext<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsILoadContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#saveURI.saveURI-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="saveURI.saveURI-1">saveURI<span class="tsd-signature-symbol">(</span>aURI<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIURI</span>, aTriggeringPrincipal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIPrincipal</span>, aCacheKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, aReferrerInfo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIReferrerInfo</span>, aCookieJarSettings<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsICookieJarSettings</span>, aPostData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIInputStream</span>, aExtraHeaders<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aFile<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsISupports</span>, aContentPolicyType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsContentPolicyType</span>, aIsPrivate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#saveURI.saveURI-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Save the specified URI to file.</p>
 
@@ -352,12 +315,10 @@ supports uploading (e.g. ftp).</p>
 <div class="tsd-comment tsd-typography"><p>The type of content we&#39;re saving.</p>
 </div></li>
 <li>
-<h5>aPrivacyContext: <span class="tsd-signature-type">nsILoadContext</span></h5>
-<div class="tsd-comment tsd-typography"><p>A context from which the privacy status of this
-save operation can be determined. Must only be null
-in situations in which no such context is available
-(eg. the operation has no logical association with any
-window or document)</p>
+<h5>aIsPrivate: <span class="tsd-signature-type">boolean</span></h5>
+<div class="tsd-comment tsd-typography"><p>Treat the save operation as private (ie. with
+regards to networking operations and persistence
+of intermediate data, etc.)</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -405,7 +366,6 @@ window or document)</p>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.MediaControlService.html">Media<wbr/>Control<wbr/>Service</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PathUtils.html">Path<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PlacesObservers.html">Places<wbr/>Observers</a></li>
-<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PrioEncoder.html">Prio<wbr/>Encoder</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PromiseDebugging.html">Promise<wbr/>Debugging</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.SessionStoreUtils.html">Session<wbr/>Store<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TelemetryStopwatch.html">Telemetry<wbr/>Stopwatch</a></li>
@@ -430,7 +390,6 @@ window or document)</p>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWebBrowserPersistType.html#cancelSave" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>cancel<wbr/>Save</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWebBrowserPersistType.html#saveChannel" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>save<wbr/>Channel</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWebBrowserPersistType.html#saveDocument" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>save<wbr/>Document</a></li>
-<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWebBrowserPersistType.html#savePrivacyAwareURI" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>save<wbr/>Privacy<wbr/>AwareURI</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIWebBrowserPersistType.html#saveURI" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>saveURI</a></li></ul></li></ul></nav></div></div>
 <div class="container tsd-generator">
 <p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>

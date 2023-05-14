@@ -147,8 +147,10 @@ entry.</p>
 them to do anything important in your code.</p>
 <hr>
 <p>Triggers network activity after given timeout. If timeout is 0, network
-activity is triggered immediately. If the cache.asyncOpenURI callbacks
-have already been called, the network activity may have already been triggered
+activity is triggered immediately if asyncOpen has already been called.
+Otherwise the delayed timer will be set when the normal call to
+TriggerNetwork is made. If the cache.asyncOpenURI callbacks have already
+been called, the network activity may have already been triggered
 or the content may have already been delivered from the cache, so this
 operation will have no effect.</p>
 </div>
@@ -205,7 +207,6 @@ operation will have no effect.</p>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.MediaControlService.html">Media<wbr/>Control<wbr/>Service</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PathUtils.html">Path<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PlacesObservers.html">Places<wbr/>Observers</a></li>
-<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PrioEncoder.html">Prio<wbr/>Encoder</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PromiseDebugging.html">Promise<wbr/>Debugging</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.SessionStoreUtils.html">Session<wbr/>Store<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TelemetryStopwatch.html">Telemetry<wbr/>Stopwatch</a></li>

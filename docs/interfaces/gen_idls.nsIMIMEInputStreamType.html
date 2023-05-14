@@ -47,6 +47,7 @@ automatic creation of the content-length header.</p>
 <a href="gen_idls.nsIMIMEInputStreamType.html#read" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>read</span></a>
 <a href="gen_idls.nsIMIMEInputStreamType.html#readSegments" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>read<wbr/>Segments</span></a>
 <a href="gen_idls.nsIMIMEInputStreamType.html#setData" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>Data</span></a>
+<a href="gen_idls.nsIMIMEInputStreamType.html#streamStatus" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>stream<wbr/>Status</span></a>
 <a href="gen_idls.nsIMIMEInputStreamType.html#visitHeaders" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>visit<wbr/>Headers</span></a>
 </div></section></div></details></section></section>
 <section class="tsd-panel-group tsd-member-group">
@@ -176,7 +177,9 @@ condition</p>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Close the stream.  This method causes subsequent calls to Read and
 ReadSegments to return 0 bytes read to indicate end-of-file.  Any
-subsequent calls to Available should throw NS_BASE_STREAM_CLOSED.</p>
+subsequent calls to Available or StreamStatus should throw
+NS_BASE_STREAM_CLOSED.</p>
+<p>Succeeds (without side effects) if already closed.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="gen_idls.nsIInputStreamType.html">nsIInputStreamType</a>.<a href="gen_idls.nsIInputStreamType.html#close">close</a></p></aside></li></ul></section>
@@ -286,6 +289,27 @@ an nsISeekableStream.</p>
 <div class="tsd-comment tsd-typography"><p>stream containing the data for the stream</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="streamStatus" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>stream<wbr/>Status</span><a href="#streamStatus" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+<li class="tsd-signature tsd-anchor-link" id="streamStatus.streamStatus-1">stream<wbr/>Status<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#streamStatus.streamStatus-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Check the current status of the stream.  A stream that is closed will
+throw an exception when this method is called.  That enables the caller
+to know the condition of the stream before attempting to read from it.</p>
+<p>This method will not throw NS_BASE_STREAM_WOULD_BLOCK, even if the stream
+is an non-blocking stream with no data. A non-blocking stream that does
+not yet have any data to read should return NS_OK.</p>
+<p>NOTE: Unlike available, his method should not block the calling thread
+(e.g. to query the state of a file descriptor), even when called on a
+blocking stream.</p>
+
+<h3>Throws</h3><p>NS_BASE_STREAM_CLOSED if the stream closed normally</p>
+
+<h3>Throws</h3><p><other-error> if the stream closed with a different status</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<p>Inherited from <a href="gen_idls.nsIInputStreamType.html">nsIInputStreamType</a>.<a href="gen_idls.nsIInputStreamType.html#streamStatus">streamStatus</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="visitHeaders" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>visit<wbr/>Headers</span><a href="#visitHeaders" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -345,7 +369,6 @@ addHeader while visiting request headers has undefined behavior.</p>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.MediaControlService.html">Media<wbr/>Control<wbr/>Service</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PathUtils.html">Path<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PlacesObservers.html">Places<wbr/>Observers</a></li>
-<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PrioEncoder.html">Prio<wbr/>Encoder</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PromiseDebugging.html">Promise<wbr/>Debugging</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.SessionStoreUtils.html">Session<wbr/>Store<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TelemetryStopwatch.html">Telemetry<wbr/>Stopwatch</a></li>
@@ -370,6 +393,7 @@ addHeader while visiting request headers has undefined behavior.</p>
 <li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.nsIMIMEInputStreamType.html#read" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>read</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.nsIMIMEInputStreamType.html#readSegments" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>read<wbr/>Segments</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIMIMEInputStreamType.html#setData" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>Data</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.nsIMIMEInputStreamType.html#streamStatus" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>stream<wbr/>Status</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIMIMEInputStreamType.html#visitHeaders" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>visit<wbr/>Headers</a></li></ul></li></ul></nav></div></div>
 <div class="container tsd-generator">
 <p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>

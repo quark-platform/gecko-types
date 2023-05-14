@@ -45,7 +45,6 @@
 <a href="gen_idls.nsIDOMWindowUtilsType.html#focusedInputType" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>focused<wbr/>Input<wbr/>Type</span></a>
 <a href="gen_idls.nsIDOMWindowUtilsType.html#framesConstructed" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>frames<wbr/>Constructed</span></a>
 <a href="gen_idls.nsIDOMWindowUtilsType.html#framesReflowed" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>frames<wbr/>Reflowed</span></a>
-<a href="gen_idls.nsIDOMWindowUtilsType.html#fullZoom" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>full<wbr/>Zoom</span></a>
 <a href="gen_idls.nsIDOMWindowUtilsType.html#gpuProcessPid" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>gpu<wbr/>Process<wbr/>Pid</span></a>
 <a href="gen_idls.nsIDOMWindowUtilsType.html#hasScrollLinkedEffect" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>has<wbr/>Scroll<wbr/>Linked<wbr/>Effect</span></a>
 <a href="gen_idls.nsIDOMWindowUtilsType.html#imageAnimationMode" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>image<wbr/>Animation<wbr/>Mode</span></a>
@@ -322,14 +321,6 @@ document.</p>
 <div class="tsd-signature">frames<wbr/>Reflowed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 <div class="tsd-comment tsd-typography"><p>Number of frames reflowed for the curent document.</p>
 <p>May throw NS_ERROR_NOT_AVAILABLE.</p>
-</div></section>
-<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="fullZoom" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>full<wbr/>Zoom</span><a href="#fullZoom" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">full<wbr/>Zoom<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-<div class="tsd-comment tsd-typography"><p>Get the current zoom factor.
-This is <em>approximately</em> the same as nsIContentViewer.fullZoom,
-but takes into account Gecko&#39;s quantization of the zoom factor, which is
-implemented by adjusting the (integer) number of appUnits per devPixel.</p>
 </div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="gpuProcessPid" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>gpu<wbr/>Process<wbr/>Pid</span><a href="#gpuProcessPid" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
@@ -2585,7 +2576,13 @@ for the other parameters and the result.</p>
 <li class="tsd-signature tsd-anchor-link" id="sendSelectionSetEvent.sendSelectionSetEvent-1">send<wbr/>Selection<wbr/>Set<wbr/>Event<span class="tsd-signature-symbol">(</span>aOffset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, aLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, aAdditionalFlags<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><a href="#sendSelectionSetEvent.sendSelectionSetEvent-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Synthesize a selection set event to the window.</p>
-<p>This sets the selection as the specified information.</p>
+<p>This sets the selection as the specified information.
+Note that for avoiding unnecessary update from user and web app point of
+view, it compares aOffset and aLength with selection cache which is same
+as what is notified with NOTIFY_IME_OF_SELECTION_CHANGE.  Therefore, if
+the notification is still queued, this works different from user&#39;s
+scenario.  Therefore, before calling this, the caller should wait at least
+2 animation frames if <code>Selection</code> was changed before.</p>
 
 <h3>Returns</h3><p>True, if succeeded.  Otherwise, false.</p>
 </div>
@@ -3415,7 +3412,6 @@ purpose of the test for bug 503926.</p>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.MediaControlService.html">Media<wbr/>Control<wbr/>Service</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PathUtils.html">Path<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PlacesObservers.html">Places<wbr/>Observers</a></li>
-<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PrioEncoder.html">Prio<wbr/>Encoder</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PromiseDebugging.html">Promise<wbr/>Debugging</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.SessionStoreUtils.html">Session<wbr/>Store<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TelemetryStopwatch.html">Telemetry<wbr/>Stopwatch</a></li>
@@ -3445,7 +3441,6 @@ purpose of the test for bug 503926.</p>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIDOMWindowUtilsType.html#focusedInputType" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>focused<wbr/>Input<wbr/>Type</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIDOMWindowUtilsType.html#framesConstructed" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>frames<wbr/>Constructed</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIDOMWindowUtilsType.html#framesReflowed" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>frames<wbr/>Reflowed</a></li>
-<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIDOMWindowUtilsType.html#fullZoom" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>full<wbr/>Zoom</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIDOMWindowUtilsType.html#gpuProcessPid" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>gpu<wbr/>Process<wbr/>Pid</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIDOMWindowUtilsType.html#hasScrollLinkedEffect" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>has<wbr/>Scroll<wbr/>Linked<wbr/>Effect</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIDOMWindowUtilsType.html#imageAnimationMode" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>image<wbr/>Animation<wbr/>Mode</a></li>

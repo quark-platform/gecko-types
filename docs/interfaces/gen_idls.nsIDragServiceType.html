@@ -41,6 +41,7 @@
 <a href="gen_idls.nsIDragServiceType.html#invokeDragSessionWithRemoteImage" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>invoke<wbr/>Drag<wbr/>Session<wbr/>With<wbr/>Remote<wbr/>Image</span></a>
 <a href="gen_idls.nsIDragServiceType.html#invokeDragSessionWithSelection" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>invoke<wbr/>Drag<wbr/>Session<wbr/>With<wbr/>Selection</span></a>
 <a href="gen_idls.nsIDragServiceType.html#maybeAddChildProcess" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>maybe<wbr/>Add<wbr/>Child<wbr/>Process</span></a>
+<a href="gen_idls.nsIDragServiceType.html#maybeEditorDeletedSourceNode" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>maybe<wbr/>Editor<wbr/>Deleted<wbr/>Source<wbr/>Node</span></a>
 <a href="gen_idls.nsIDragServiceType.html#removeAllChildProcesses" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>remove<wbr/>All<wbr/>Child<wbr/>Processes</span></a>
 <a href="gen_idls.nsIDragServiceType.html#startDragSession" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>start<wbr/>Drag<wbr/>Session</span></a>
 <a href="gen_idls.nsIDragServiceType.html#startDragSessionForTests" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>start<wbr/>Drag<wbr/>Session<wbr/>For<wbr/>Tests</span></a>
@@ -329,6 +330,21 @@ event are needed to calculate the image location.</p>
 <li>
 <h5>aChild: <span class="tsd-signature-type">ContentParentPtr</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="maybeEditorDeletedSourceNode" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>maybe<wbr/>Editor<wbr/>Deleted<wbr/>Source<wbr/>Node</span><a href="#maybeEditorDeletedSourceNode" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+<li class="tsd-signature tsd-anchor-link" id="maybeEditorDeletedSourceNode.maybeEditorDeletedSourceNode-1">maybe<wbr/>Editor<wbr/>Deleted<wbr/>Source<wbr/>Node<span class="tsd-signature-symbol">(</span>aEditingHost<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#maybeEditorDeletedSourceNode.maybeEditorDeletedSourceNode-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Called when HTMLEditor maybe deleted the source node from the document.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>aEditingHost: <span class="tsd-signature-type">Element</span></h5>
+<div class="tsd-comment tsd-typography"><p>The editing host when the editor deletes selection.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="removeAllChildProcesses" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>remove<wbr/>All<wbr/>Child<wbr/>Processes</span><a href="#removeAllChildProcesses" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -425,7 +441,6 @@ If level is greater than one, dragging is disabled.</p>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.MediaControlService.html">Media<wbr/>Control<wbr/>Service</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PathUtils.html">Path<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PlacesObservers.html">Places<wbr/>Observers</a></li>
-<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PrioEncoder.html">Prio<wbr/>Encoder</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PromiseDebugging.html">Promise<wbr/>Debugging</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.SessionStoreUtils.html">Session<wbr/>Store<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TelemetryStopwatch.html">Telemetry<wbr/>Stopwatch</a></li>
@@ -451,6 +466,7 @@ If level is greater than one, dragging is disabled.</p>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIDragServiceType.html#invokeDragSessionWithRemoteImage" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>invoke<wbr/>Drag<wbr/>Session<wbr/>With<wbr/>Remote<wbr/>Image</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIDragServiceType.html#invokeDragSessionWithSelection" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>invoke<wbr/>Drag<wbr/>Session<wbr/>With<wbr/>Selection</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIDragServiceType.html#maybeAddChildProcess" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>maybe<wbr/>Add<wbr/>Child<wbr/>Process</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIDragServiceType.html#maybeEditorDeletedSourceNode" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>maybe<wbr/>Editor<wbr/>Deleted<wbr/>Source<wbr/>Node</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIDragServiceType.html#removeAllChildProcesses" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>remove<wbr/>All<wbr/>Child<wbr/>Processes</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIDragServiceType.html#startDragSession" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>start<wbr/>Drag<wbr/>Session</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIDragServiceType.html#startDragSessionForTests" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>start<wbr/>Drag<wbr/>Session<wbr/>For<wbr/>Tests</a></li>

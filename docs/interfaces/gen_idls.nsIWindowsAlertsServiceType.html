@@ -107,7 +107,7 @@ the associated instance is deleted.</p>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="closeAlert" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>close<wbr/>Alert</span><a href="#closeAlert" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
-<li class="tsd-signature tsd-anchor-link" id="closeAlert.closeAlert-1">close<wbr/>Alert<span class="tsd-signature-symbol">(</span>aName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#closeAlert.closeAlert-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="closeAlert.closeAlert-1">close<wbr/>Alert<span class="tsd-signature-symbol">(</span>aName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aContextClosed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#closeAlert.closeAlert-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Close alerts created by the service.</p>
 </div>
@@ -119,6 +119,13 @@ the associated instance is deleted.</p>
 <div class="tsd-comment tsd-typography"><p>The name of the notification to close. If no name
 is provided then only a notification created with
 no name (if any) will be closed.</p>
+</div></li>
+<li>
+<h5>aContextClosed: <span class="tsd-signature-type">boolean</span></h5>
+<div class="tsd-comment tsd-typography"><p>The notification was implicitly closed, e.g. by tab
+or window closure. This is necessary to track as some
+platforms intentionally leave the notification visible
+unless explicitly closed, e.g. by notification.close().</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="gen_idls.nsIAlertsServiceType.html">nsIAlertsServiceType</a>.<a href="gen_idls.nsIAlertsServiceType.html#closeAlert">closeAlert</a></p></aside></li></ul></section>
@@ -146,12 +153,20 @@ no name (if any) will be closed.</p>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="handleWindowsTag" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>handle<wbr/>Windows<wbr/>Tag</span><a href="#handleWindowsTag" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-<li class="tsd-signature tsd-anchor-link" id="handleWindowsTag.handleWindowsTag-1">handle<wbr/>Windows<wbr/>Tag<span class="tsd-signature-symbol">(</span>aWindowsTag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, aListener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">nsIUnknownWindowsTagListener</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bool</span><a href="#handleWindowsTag.handleWindowsTag-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="handleWindowsTag.handleWindowsTag-1">handle<wbr/>Windows<wbr/>Tag<span class="tsd-signature-symbol">(</span>aWindowsTag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><a href="#handleWindowsTag.handleWindowsTag-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>If callbacks for the given Windows-specific tag string will be handled by
 this Firefox process, set the associated event.</p>
 
-<h3>Returns</h3><p><code>true</code> iff the tag is registered and an event was set.</p>
+<h3>Returns</h3>
+<h3>Resolves</h3><p>Resolves with an Object, may contain the following optional
+properties if notification exists but wasn&#39;t registered with
+the WindowsAlertService:</p>
+<p><code>launchUrl</code> {string} a fallback URL to open.</p>
+<p><code>privilegedName</code> {string} a privileged name assigned by the
+browser chrome.</p>
+
+<h3>Rejects</h3><p><code>nsresult</code> when there was an error retrieving the notification.</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -159,13 +174,8 @@ this Firefox process, set the associated event.</p>
 <li>
 <h5>aWindowsTag: <span class="tsd-signature-type">string</span></h5>
 <div class="tsd-comment tsd-typography"><p>the tag</p>
-</div></li>
-<li>
-<h5>aListener: <span class="tsd-signature-type">nsIUnknownWindowsTagListener</span></h5>
-<div class="tsd-comment tsd-typography"><p>the listener to callback
-if the tag is unknown and has an associated launch URL.</p>
 </div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">bool</span></h4></li></ul></section>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="removeAllNotificationsForInstall" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>remove<wbr/>All<wbr/>Notifications<wbr/>For<wbr/>Install</span><a href="#removeAllNotificationsForInstall" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -310,7 +320,6 @@ doesn&#39;t care about callbacks.</p>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.MediaControlService.html">Media<wbr/>Control<wbr/>Service</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PathUtils.html">Path<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PlacesObservers.html">Places<wbr/>Observers</a></li>
-<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PrioEncoder.html">Prio<wbr/>Encoder</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PromiseDebugging.html">Promise<wbr/>Debugging</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.SessionStoreUtils.html">Session<wbr/>Store<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TelemetryStopwatch.html">Telemetry<wbr/>Stopwatch</a></li>

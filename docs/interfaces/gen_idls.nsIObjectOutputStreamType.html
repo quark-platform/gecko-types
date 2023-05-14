@@ -44,6 +44,7 @@
 <a href="gen_idls.nsIObjectOutputStreamType.html#isNonBlocking" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>is<wbr/>Non<wbr/>Blocking</span></a>
 <a href="gen_idls.nsIObjectOutputStreamType.html#putBuffer" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>put<wbr/>Buffer</span></a>
 <a href="gen_idls.nsIObjectOutputStreamType.html#setOutputStream" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>Output<wbr/>Stream</span></a>
+<a href="gen_idls.nsIObjectOutputStreamType.html#streamStatus" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>stream<wbr/>Status</span></a>
 <a href="gen_idls.nsIObjectOutputStreamType.html#write" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>write</span></a>
 <a href="gen_idls.nsIObjectOutputStreamType.html#write16" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>write16</span></a>
 <a href="gen_idls.nsIObjectOutputStreamType.html#write32" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>write32</span></a>
@@ -134,7 +135,9 @@ the associated instance is deleted.</p>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
 <li class="tsd-signature tsd-anchor-link" id="close.close-1">close<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#close.close-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Close the stream. Forces the output stream to flush any buffered data.</p>
+<div class="tsd-comment tsd-typography"><p>Close the stream. Forces the output stream to flush any buffered data.
+Any subsequent calls to StreamStatus should throw NS_BASE_STREAM_CLOSED.
+Succeeds without effect if already closed.</p>
 
 <h3>Throws</h3><p>NS_BASE_STREAM_WOULD_BLOCK if unable to flush without blocking
 the calling thread (non-blocking mode only)</p>
@@ -208,6 +211,26 @@ once its write method is unable to accept any data without blocking.</p>
 <h5>aOutputStream: <span class="tsd-signature-type">nsIOutputStream</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <p>Inherited from <a href="gen_idls.nsIBinaryOutputStreamType.html">nsIBinaryOutputStreamType</a>.<a href="gen_idls.nsIBinaryOutputStreamType.html#setOutputStream">setOutputStream</a></p></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="streamStatus" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>stream<wbr/>Status</span><a href="#streamStatus" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+<li class="tsd-signature tsd-anchor-link" id="streamStatus.streamStatus-1">stream<wbr/>Status<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#streamStatus.streamStatus-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Check the current status of the stream.  A stream that is closed will
+throw an exception when this method is called.  That enables the caller
+to know the condition of the stream before attempting to write into it.</p>
+<p>This method will not throw NS_BASE_STREAM_WOULD_BLOCK, even if the stream
+is a non-blocking stream with no available space. A non-blocking stream
+which has not been closed, but has no available room should return NS_OK.</p>
+<p>NOTE: This method should not block the calling thread (e.g. to query the
+state of a file descriptor), even when called on a blocking stream.</p>
+
+<h3>Throws</h3><p>NS_BASE_STREAM_CLOSED if the stream closed normally</p>
+
+<h3>Throws</h3><p><other-error> if the stream closed with a different status</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<p>Inherited from <a href="gen_idls.nsIBinaryOutputStreamType.html">nsIBinaryOutputStreamType</a>.<a href="gen_idls.nsIBinaryOutputStreamType.html#streamStatus">streamStatus</a></p></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a id="write" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>write</span><a href="#write" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
@@ -600,7 +623,6 @@ aObject in memory, or in the serialization.</p>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.MediaControlService.html">Media<wbr/>Control<wbr/>Service</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PathUtils.html">Path<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PlacesObservers.html">Places<wbr/>Observers</a></li>
-<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PrioEncoder.html">Prio<wbr/>Encoder</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PromiseDebugging.html">Promise<wbr/>Debugging</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.SessionStoreUtils.html">Session<wbr/>Store<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TelemetryStopwatch.html">Telemetry<wbr/>Stopwatch</a></li>
@@ -623,6 +645,7 @@ aObject in memory, or in the serialization.</p>
 <li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.nsIObjectOutputStreamType.html#isNonBlocking" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>is<wbr/>Non<wbr/>Blocking</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIObjectOutputStreamType.html#putBuffer" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>put<wbr/>Buffer</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.nsIObjectOutputStreamType.html#setOutputStream" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>Output<wbr/>Stream</a></li>
+<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.nsIObjectOutputStreamType.html#streamStatus" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>stream<wbr/>Status</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.nsIObjectOutputStreamType.html#write" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>write</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.nsIObjectOutputStreamType.html#write16" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>write16</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.nsIObjectOutputStreamType.html#write32" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>write32</a></li>

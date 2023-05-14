@@ -36,6 +36,7 @@
 <a href="gen_idls.nsIDragSessionType.html#numDropItems" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>num<wbr/>Drop<wbr/>Items</span></a>
 <a href="gen_idls.nsIDragSessionType.html#onlyChromeDrop" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>only<wbr/>Chrome<wbr/>Drop</span></a>
 <a href="gen_idls.nsIDragSessionType.html#sourceNode" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>source<wbr/>Node</span></a>
+<a href="gen_idls.nsIDragSessionType.html#sourceTopWindowContext" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>source<wbr/>Top<wbr/>Window<wbr/>Context</span></a>
 <a href="gen_idls.nsIDragSessionType.html#sourceWindowContext" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>source<wbr/>Window<wbr/>Context</span></a>
 <a href="gen_idls.nsIDragSessionType.html#triggeringPrincipal" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>triggering<wbr/>Principal</span></a>
 </div></section>
@@ -98,6 +99,13 @@ triggered in a browsing context inside it.</p>
 <div class="tsd-signature">source<wbr/>Node<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Node</span></div>
 <div class="tsd-comment tsd-typography"><p>The dom node that was originally dragged to start the session, which will be null if the
 drag originated outside the application.</p>
+</div></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="sourceTopWindowContext" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>source<wbr/>Top<wbr/>Window<wbr/>Context</span><a href="#sourceTopWindowContext" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">source<wbr/>Top<wbr/>Window<wbr/>Context<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WindowContext</span></div>
+<div class="tsd-comment tsd-typography"><p>The top-level window context where the drag was started, which will be
+null if the drag originated outside the application. Useful for
+determining if a drop originated in the same top-level window context.</p>
 </div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="sourceWindowContext" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>source<wbr/>Window<wbr/>Context</span><a href="#sourceWindowContext" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
@@ -366,7 +374,6 @@ anonymous node.</p>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.MediaControlService.html">Media<wbr/>Control<wbr/>Service</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PathUtils.html">Path<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PlacesObservers.html">Places<wbr/>Observers</a></li>
-<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PrioEncoder.html">Prio<wbr/>Encoder</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PromiseDebugging.html">Promise<wbr/>Debugging</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.SessionStoreUtils.html">Session<wbr/>Store<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TelemetryStopwatch.html">Telemetry<wbr/>Stopwatch</a></li>
@@ -387,6 +394,7 @@ anonymous node.</p>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIDragSessionType.html#numDropItems" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>num<wbr/>Drop<wbr/>Items</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIDragSessionType.html#onlyChromeDrop" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>only<wbr/>Chrome<wbr/>Drop</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIDragSessionType.html#sourceNode" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>source<wbr/>Node</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIDragSessionType.html#sourceTopWindowContext" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>source<wbr/>Top<wbr/>Window<wbr/>Context</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIDragSessionType.html#sourceWindowContext" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>source<wbr/>Window<wbr/>Context</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIDragSessionType.html#triggeringPrincipal" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>triggering<wbr/>Principal</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.nsIDragSessionType.html#AddRef" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>Add<wbr/>Ref</a></li>

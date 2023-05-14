@@ -33,6 +33,7 @@
 <a href="gen_idls.nsIDNSAddrRecordType.html#effectiveTRRMode" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>effectiveTRRMode</span></a>
 <a href="gen_idls.nsIDNSAddrRecordType.html#trrFetchDuration" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>trr<wbr/>Fetch<wbr/>Duration</span></a>
 <a href="gen_idls.nsIDNSAddrRecordType.html#trrFetchDurationNetworkOnly" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>trr<wbr/>Fetch<wbr/>Duration<wbr/>Network<wbr/>Only</span></a>
+<a href="gen_idls.nsIDNSAddrRecordType.html#trrSkipReason" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>trr<wbr/>Skip<wbr/>Reason</span></a>
 <a href="gen_idls.nsIDNSAddrRecordType.html#ttl" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>ttl</span></a>
 </div></section>
 <section class="tsd-index-section">
@@ -64,7 +65,7 @@ e.g., élève.w3c-test.org --&gt; xn--lve-6lad.w3c-test.org</p>
 </div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="effectiveTRRMode" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>effectiveTRRMode</span><a href="#effectiveTRRMode" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">effectiveTRRMode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+<div class="tsd-signature">effectiveTRRMode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsIRequest_TRRMode</span></div>
 <div class="tsd-comment tsd-typography"><p>The TRR mode this record is used.</p>
 </div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="trrFetchDuration" class="tsd-anchor"></a>
@@ -84,6 +85,12 @@ make a connection and a time neededto parse results (this also does not
 include delays that may be introduce because parsing is perform on the main
 thread).
 Thee time is measured in milliseconds.</p>
+</div></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="trrSkipReason" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>trr<wbr/>Skip<wbr/>Reason</span><a href="#trrSkipReason" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">trr<wbr/>Skip<wbr/>Reason<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">nsITRRSkipReason_value</span></div>
+<div class="tsd-comment tsd-typography"><p>If the DNS request didn&#39;t use TRR, this value
+contains the reason why that was skipped.</p>
 </div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="ttl" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>ttl</span><a href="#ttl" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
@@ -316,7 +323,6 @@ address in the record.</p>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.MediaControlService.html">Media<wbr/>Control<wbr/>Service</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PathUtils.html">Path<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PlacesObservers.html">Places<wbr/>Observers</a></li>
-<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PrioEncoder.html">Prio<wbr/>Encoder</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PromiseDebugging.html">Promise<wbr/>Debugging</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.SessionStoreUtils.html">Session<wbr/>Store<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TelemetryStopwatch.html">Telemetry<wbr/>Stopwatch</a></li>
@@ -334,6 +340,7 @@ address in the record.</p>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIDNSAddrRecordType.html#effectiveTRRMode" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>effectiveTRRMode</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIDNSAddrRecordType.html#trrFetchDuration" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>trr<wbr/>Fetch<wbr/>Duration</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIDNSAddrRecordType.html#trrFetchDurationNetworkOnly" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>trr<wbr/>Fetch<wbr/>Duration<wbr/>Network<wbr/>Only</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIDNSAddrRecordType.html#trrSkipReason" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>trr<wbr/>Skip<wbr/>Reason</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="gen_idls.nsIDNSAddrRecordType.html#ttl" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>ttl</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="gen_idls.nsIDNSAddrRecordType.html#AddRef" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>Add<wbr/>Ref</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIDNSAddrRecordType.html#IsTRR" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>IsTRR</a></li>

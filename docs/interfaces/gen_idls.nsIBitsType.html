@@ -22,7 +22,7 @@ Service. This should only be used on Windows.</p>
 <p>It would be preferable for the functions in this interface to return
 Promises, but this interface is implemented in Rust, which does not yet have
 support for Promises. There is a JS wrapper around this class that should be
-preferred over using this interface directly, located in Bits.jsm.</p>
+preferred over using this interface directly, located in Bits.sys.mjs.</p>
 <p>Methods of this class that take a nsIBitsNewRequestCallback do not return or
 throw errors. All errors will be reported through the callback. The only
 things that should cause methods to directly throw errors are null arguments.</p>
@@ -301,7 +301,6 @@ null pointer.</p>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.MediaControlService.html">Media<wbr/>Control<wbr/>Service</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PathUtils.html">Path<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PlacesObservers.html">Places<wbr/>Observers</a></li>
-<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PrioEncoder.html">Prio<wbr/>Encoder</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PromiseDebugging.html">Promise<wbr/>Debugging</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.SessionStoreUtils.html">Session<wbr/>Store<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TelemetryStopwatch.html">Telemetry<wbr/>Stopwatch</a></li>

@@ -58,7 +58,6 @@
 <a href="gen_idls.nsIAppWindowType.html#remoteTabRemoved" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>remote<wbr/>Tab<wbr/>Removed</span></a>
 <a href="gen_idls.nsIAppWindowType.html#removeChildWindow" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>remove<wbr/>Child<wbr/>Window</span></a>
 <a href="gen_idls.nsIAppWindowType.html#showModal" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>show<wbr/>Modal</span></a>
-<a href="gen_idls.nsIAppWindowType.html#sizeShellToWithLimit" class="tsd-index-link tsd-kind-method tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>size<wbr/>Shell<wbr/>To<wbr/>With<wbr/>Limit</span></a>
 </div></section></div></details></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
@@ -347,42 +346,6 @@ Since readback of Windows DirectComposition is very slow.</p>
 <div class="tsd-comment tsd-typography"><p>Shows the window as a modal window. That is, ensures that it is visible
 and runs a local event loop, exiting only once the window has been closed.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section>
-<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface"><a id="sizeShellToWithLimit" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>size<wbr/>Shell<wbr/>To<wbr/>With<wbr/>Limit</span><a href="#sizeShellToWithLimit" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-<li class="tsd-signature tsd-anchor-link" id="sizeShellToWithLimit.sizeShellToWithLimit-1">size<wbr/>Shell<wbr/>To<wbr/>With<wbr/>Limit<span class="tsd-signature-symbol">(</span>aDesiredWidth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">int32_t</span>, aDesiredHeight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">int32_t</span>, shellItemWidth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">int32_t</span>, shellItemHeight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">int32_t</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#sizeShellToWithLimit.sizeShellToWithLimit-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
-<li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Given the dimensions of some content area held within this
-XUL window, and assuming that that content area will change
-its dimensions in linear proportion to the dimensions of this
-XUL window, changes the size of the XUL window so that the
-content area reaches a particular size.</p>
-<p>We need to supply the content area dimensions because sometimes
-the child&#39;s nsDocShellTreeOwner needs to propagate a SizeShellTo
-call to the parent. But the shellItem argument of the call will
-not be available on the parent side.</p>
-<p>Note: this is an internal method, other consumers should never call this.</p>
-</div>
-<div class="tsd-parameters">
-<h4 class="tsd-parameters-title">Parameters</h4>
-<ul class="tsd-parameter-list">
-<li>
-<h5>aDesiredWidth: <span class="tsd-signature-type">int32_t</span></h5>
-<div class="tsd-comment tsd-typography"><p>The desired width of the content area in device pixels.</p>
-</div></li>
-<li>
-<h5>aDesiredHeight: <span class="tsd-signature-type">int32_t</span></h5>
-<div class="tsd-comment tsd-typography"><p>The desired height of the content area in device pixels.</p>
-</div></li>
-<li>
-<h5>shellItemWidth: <span class="tsd-signature-type">int32_t</span></h5>
-<div class="tsd-comment tsd-typography"><p>The current width of the content area.</p>
-</div></li>
-<li>
-<h5>shellItemHeight: <span class="tsd-signature-type">int32_t</span></h5>
-<div class="tsd-comment tsd-typography"><p>The current height of the content area.</p>
-</div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4></li></ul></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
@@ -429,7 +392,6 @@ not be available on the parent side.</p>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.MediaControlService.html">Media<wbr/>Control<wbr/>Service</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PathUtils.html">Path<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PlacesObservers.html">Places<wbr/>Observers</a></li>
-<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PrioEncoder.html">Prio<wbr/>Encoder</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.PromiseDebugging.html">Promise<wbr/>Debugging</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.SessionStoreUtils.html">Session<wbr/>Store<wbr/>Utils</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/gen_namespaces.TelemetryStopwatch.html">Telemetry<wbr/>Stopwatch</a></li>
@@ -468,8 +430,7 @@ not be available on the parent side.</p>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIAppWindowType.html#remoteTabAdded" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>remote<wbr/>Tab<wbr/>Added</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIAppWindowType.html#remoteTabRemoved" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>remote<wbr/>Tab<wbr/>Removed</a></li>
 <li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIAppWindowType.html#removeChildWindow" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>remove<wbr/>Child<wbr/>Window</a></li>
-<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIAppWindowType.html#showModal" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>show<wbr/>Modal</a></li>
-<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIAppWindowType.html#sizeShellToWithLimit" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>size<wbr/>Shell<wbr/>To<wbr/>With<wbr/>Limit</a></li></ul></li></ul></nav></div></div>
+<li class="tsd-kind-method tsd-parent-kind-interface"><a href="gen_idls.nsIAppWindowType.html#showModal" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>show<wbr/>Modal</a></li></ul></li></ul></nav></div></div>
 <div class="container tsd-generator">
 <p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
 <div class="overlay"></div><script src="../assets/main.js"></script></body></html>
