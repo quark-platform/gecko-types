@@ -27,13 +27,13 @@ declare module "resource://app/modules/Sanitizer.sys.mjs" {
                 clear(range);
             };
             cookies: {
-                clear(range, clearHonoringExceptions);
+                clear(range, param1, clearHonoringExceptions);
             };
             offlineApps: {
-                clear(range, clearHonoringExceptions);
+                clear(range, param1, clearHonoringExceptions);
             };
             history: {
-                clear(range);
+                clear(range, param1);
             };
             formdata: {
                 clear(range);
@@ -50,7 +50,7 @@ declare module "resource://app/modules/Sanitizer.sys.mjs" {
             openWindows: {
                 _canCloseWindow(win);
                 _resetAllWindowClosures(windowList);
-                clear(range);
+                clear(range, param1);
             };
             pluginData: {
                 clear(range);

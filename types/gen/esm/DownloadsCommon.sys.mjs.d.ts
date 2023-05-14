@@ -38,6 +38,6 @@ declare module "resource://app/modules/DownloadsCommon.sys.mjs" {
         openDownload(download, options);
         showDownloadedFile(aFile);
         showDirectory(aDirectory);
-        confirmUnblockDownload();
+        confirmUnblockDownload(param0);
     };
 }

@@ -1,9 +1,9 @@
 declare module "resource://gre/modules/GeckoViewUtils.sys.mjs" {
     var GeckoViewUtils: {
-        addLazyGetter(scope, name);
+        addLazyGetter(scope, name, param2);
         _addLazyListeners(events, handler, scope, name, addFn, handleFn);
-        addLazyEventListener(target, events);
-        addLazyPrefObserver(aPrefs);
+        addLazyEventListener(target, events, param2);
+        addLazyPrefObserver(aPrefs, param1);
         getRootDocShell(aWin);
         getChromeWindow(aWin);
         getContentFrameMessageManager(aWin);

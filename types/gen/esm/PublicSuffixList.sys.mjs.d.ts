@@ -4,6 +4,6 @@ declare module "resource://gre/modules/netwerk-dns/PublicSuffixList.sys.mjs" {
         init();
         getFilePath(fileURI);
         notifyUpdate(fileURI);
-        onUpdate();
+        onUpdate(param0);
     };
 }

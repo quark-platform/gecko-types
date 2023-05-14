@@ -33,6 +33,6 @@ declare module "resource://gre/modules/E10SUtils.sys.mjs" {
         getBrowserPids(aBrowser, aRemoteSubframes);
         remoteTypePrefix(aRemoteType);
         isWebRemoteType(aRemoteType);
-        predictOriginAttributes();
+        predictOriginAttributes(param0);
     };
 }

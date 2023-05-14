@@ -11,7 +11,7 @@ declare module "resource://app/modules/sessionstore/SessionStartup.sys.mjs" {
         _resumeSessionEnabled;
         init();
         _createSupportsString(data);
-        _onSessionFileRead();
+        _onSessionFileRead(param0);
         observe(subject, topic, data);
         get onceInitialized(): any;
         get state(): any;

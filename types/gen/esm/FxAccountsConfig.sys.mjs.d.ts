@@ -11,7 +11,7 @@ declare module "resource://gre/modules/FxAccountsConfig.sys.mjs" {
         promiseOAuthURI(extraParams);
         promiseMetricsFlowURI(entrypoint, extraParams);
         get defaultParams(): any;
-        _buildURL(path);
+        _buildURL(path, param1);
         _buildURLFromString(href, extraParams);
         resetConfigURLs();
         getAutoConfigURL();

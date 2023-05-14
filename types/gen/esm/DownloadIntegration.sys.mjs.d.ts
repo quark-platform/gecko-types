@@ -15,7 +15,7 @@ declare module "resource://gre/modules/DownloadIntegration.sys.mjs" {
         _zoneIdKey(aKey, aUrl, aFallback);
         downloadDone(aDownload);
         shouldViewDownloadInternally(aMimeType, aExtension);
-        launchDownload(aDownload);
+        launchDownload(aDownload, param1);
         confirmLaunchExecutable(path);
         launchFile(file, mimeInfo);
         showContainingDirectory(aFilePath);
