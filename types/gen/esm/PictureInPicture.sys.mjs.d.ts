@@ -47,7 +47,7 @@ declare module "resource://gre/modules/PictureInPicture.sys.mjs" {
         isOriginatingBrowser(browser);
         moveToggle();
         getAvailScreenSize(screen);
-        getWorkingScreen(left, top);
+        getWorkingScreen(left, top, width, height);
         savePosition(win);
         loadPosition();
         setFirstSeen(dateSeconds);

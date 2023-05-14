@@ -28,7 +28,7 @@ declare module "resource://gre/modules/PushServiceWebSocket.sys.mjs" {
         _wsSendMessage(msg);
         init(options, mainPushService, serverURI);
         _reconnect();
-        _shutdownWS();
+        _shutdownWS(shouldCancelPending);
         uninit();
         _startBackoffTimer();
         _hasPendingRequests();

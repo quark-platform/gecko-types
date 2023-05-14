@@ -9,9 +9,9 @@ declare module "resource://app/modules/PlacesUIUtils.sys.mjs" {
         getPluralString;
         getString;
         obfuscateUrlForXulStore(url);
-        showBookmarkDialog(aInfo);
-        showBookmarkPagesDialog(URIList);
-        loadFavicon(browser, principal, pageURI, uri);
+        showBookmarkDialog(aInfo, aParentWindow);
+        showBookmarkPagesDialog(URIList, hiddenRows, win);
+        loadFavicon(browser, principal, pageURI, uri, expiration, iconURI);
         getViewForNode;
         getControllerForCommand(win, command);
         updateCommands(win);
@@ -40,7 +40,7 @@ declare module "resource://app/modules/PlacesUIUtils.sys.mjs" {
         onSidebarTreeMouseMove(event);
         setMouseoverURL(url, win);
         NUM_TOOLBAR_BOOKMARKS_TO_UNHIDE: number;
-        maybeToggleBookmarkToolbarVisibility();
+        maybeToggleBookmarkToolbarVisibility(aForceVisible);
         managedPlacesContextShowing(event);
         placesContextShowing(event);
         placesContextHiding(event);

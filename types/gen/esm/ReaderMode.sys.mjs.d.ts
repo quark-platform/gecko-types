@@ -8,8 +8,8 @@ declare module "resource://gre/modules/ReaderMode.sys.mjs" {
         getOriginalUrl(url);
         getOriginalUrlObjectForDisplay(url);
         parseDocument(doc);
-        downloadAndParseDocument(url);
-        _downloadDocument(url);
+        downloadAndParseDocument(url, docContentType);
+        _downloadDocument(url, docContentType);
         log(msg);
         _readerParse(doc);
         _assignLanguage(article);

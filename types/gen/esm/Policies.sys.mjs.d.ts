@@ -288,7 +288,7 @@ declare module "resource://app/modules/policies/Policies.sys.mjs" {
     };
     function setAndLockPref(prefName, prefValue);
     var PoliciesUtils: {
-        setDefaultPref(prefName, prefValue);
+        setDefaultPref(prefName, prefValue, locked);
     };
     function runOnce(actionName, callback);
 }

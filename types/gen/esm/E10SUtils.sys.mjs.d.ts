@@ -18,13 +18,13 @@ declare module "resource://gre/modules/E10SUtils.sys.mjs" {
         log;
         serializeCSP(csp);
         deserializeCSP(csp_b64);
-        canLoadURIInRemoteType(aURL, aRemoteSubframes);
-        getRemoteTypeForURI(aURL, aMultiProcess, aRemoteSubframes, aCurrentUri);
+        canLoadURIInRemoteType(aURL, aRemoteSubframes, aRemoteType, aOriginAttributes);
+        getRemoteTypeForURI(aURL, aMultiProcess, aRemoteSubframes, aPreferredRemoteType, aCurrentUri, aOriginAttributes);
         getRemoteTypeForURIObject(aURI, options);
-        getRemoteTypeForWorkerPrincipal(aPrincipal, aWorkerType, aIsMultiProcess, aIsFission);
+        getRemoteTypeForWorkerPrincipal(aPrincipal, aWorkerType, aIsMultiProcess, aIsFission, aPreferredRemoteType);
         makeInputStream(data);
         serializePrincipal(principal);
-        deserializePrincipal(serializedPincipal);
+        deserializePrincipal(serializedPincipal, fallbackPrincipalCallback);
         serializeCookieJarSettings(cookieJarSettings);
         deserializeCookieJarSettings(cookieJarSettings_b64);
         wrapHandlingUserInput(aWindow, aIsHandling, aCallback);

@@ -79,7 +79,7 @@ declare module "resource://app/modules/UrlbarUtils.sys.mjs" {
         getPayloadSchema(type);
         addToUrlbarHistory(url, window);
         getShortcutOrURIAndPostData(url);
-        getPostDataStream(postDataString);
+        getPostDataStream(postDataString, type);
         _compareIgnoringDiacritics;
         getTokenMatches(tokens, str, highlightType);
         getResultGroup(result);
@@ -90,7 +90,7 @@ declare module "resource://app/modules/UrlbarUtils.sys.mjs" {
         getIconForUrl(url);
         searchModeForToken(token);
         setupSpeculativeConnection(urlOrEngine, window);
-        stripPrefixAndTrim(spec);
+        stripPrefixAndTrim(spec, options);
         stripPublicSuffixFromHost(host);
         stripUnsafeProtocolOnPaste(pasteData);
         addToInputHistory(url, input);
@@ -99,15 +99,15 @@ declare module "resource://app/modules/UrlbarUtils.sys.mjs" {
         substringAt(sourceStr, targetStr);
         substringAfter(sourceStr, targetStr);
         stripURLPrefix(str);
-        getHeuristicResultFor(searchString);
+        getHeuristicResultFor(searchString, window);
         getLogger();
         getResultSourceName(source);
         addToFormHistory(input, value, source);
-        canAutofillURL(url, candidate);
+        canAutofillURL(url, candidate, checkFragmentOnly);
         telemetryTypeFromResult(result);
         unEscapeURIForUI(uri);
         searchEngagementTelemetryGroup(result);
-        searchEngagementTelemetryType(result);
+        searchEngagementTelemetryType(result, selType);
         searchEngagementTelemetrySubtype(result, element);
     };
     export class UrlbarQueryContext {

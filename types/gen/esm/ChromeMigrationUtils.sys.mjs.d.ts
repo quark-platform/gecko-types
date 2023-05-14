@@ -9,9 +9,9 @@ declare module "resource://app/modules/ChromeMigrationUtils.sys.mjs" {
         _getLocaleString(key, locale, extensionId, profileId);
         isExtensionInstalled(extensionId, profileId);
         getLastUsedProfileId();
-        getLocalState();
+        getLocalState(dataPath);
         getExtensionPath(profileId);
-        getDataPath();
+        getDataPath(chromeProjectName);
         _getSortedByVersionSubDirectoryNames(path);
         chromeTimeToDate(aTime, aFallbackValue);
         dateToChromeTime(aDate);

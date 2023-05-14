@@ -18,7 +18,7 @@ declare module "resource://app/modules/Sanitizer.sys.mjs" {
         showUI(parentWindow);
         onStartup();
         getClearRange(ts);
-        sanitize();
+        sanitize(itemsToClear, options);
         observe(subject, topic, data);
         QueryInterface;
         runSanitizeOnShutdown();

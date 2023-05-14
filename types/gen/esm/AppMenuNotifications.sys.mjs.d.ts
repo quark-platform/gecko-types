@@ -7,7 +7,7 @@ declare module "resource://gre/modules/AppMenuNotifications.sys.mjs" {
         uninit();
         observe(subject, topic, status);
         get activeNotification(): any;
-        showNotification(id, mainAction, secondaryAction);
+        showNotification(id, mainAction, secondaryAction, options);
         showBadgeOnlyNotification(id);
         removeNotification(id);
         dismissNotification(id);

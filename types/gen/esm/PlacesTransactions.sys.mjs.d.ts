@@ -3,7 +3,7 @@ declare module "resource://gre/modules/PlacesTransactions.sys.mjs" {
         batch(transactionsToBatch);
         undo();
         redo();
-        clearTransactionsHistory();
+        clearTransactionsHistory(undoEntries, redoEntries);
         get length(): any;
         entry(index);
         get undoPosition(): any;

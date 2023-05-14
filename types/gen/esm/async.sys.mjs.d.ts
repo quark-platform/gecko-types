@@ -5,8 +5,8 @@ declare module "resource://gre/modules/services-common/async.sys.mjs" {
         isAppReady();
         isShutdownException(exception);
         promiseYield();
-        yieldState();
-        yieldingForEach(iterable, fn);
+        yieldState(yieldEvery);
+        yieldingForEach(iterable, fn, yieldEvery);
         asyncQueueCaller(log);
         asyncObserver(log, obj);
         watchdog();

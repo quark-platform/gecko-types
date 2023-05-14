@@ -4,9 +4,9 @@ declare module "resource://gre/modules/BrowserUtils.sys.mjs" {
         mimeTypeIsTextBased(mimeType);
         canFindInPage(location);
         isFindbarVisible(docShell);
-        promiseObserved(topic);
-        formatURIStringForDisplay(uriString);
-        formatURIForDisplay(uri);
+        promiseObserved(topic, test);
+        formatURIStringForDisplay(uriString, options);
+        formatURIForDisplay(uri, options);
         getShareableURL(url);
         hrefAndLinkNodeForClickEvent(event);
         whereToOpenLink(e, ignoreButton, ignoreAlt);

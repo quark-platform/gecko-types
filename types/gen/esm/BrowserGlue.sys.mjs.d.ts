@@ -48,7 +48,7 @@ declare module "resource://app/modules/BrowserGlue.sys.mjs" {
         _aboutHomeURI;
         get aboutHomeURI(): any;
         _cacheProgress;
-        onShutdown();
+        onShutdown(withTimeout);
         cacheNow();
         requestCache();
         makePipe();

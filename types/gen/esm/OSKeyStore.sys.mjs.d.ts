@@ -7,8 +7,8 @@ declare module "resource://gre/modules/OSKeyStore.sys.mjs" {
         get isUIBusy(): any;
         canReauth();
         _reauthInTests();
-        ensureLoggedIn();
-        decrypt(cipherText);
+        ensureLoggedIn(reauth, dialogCaption, parentWindow, generateKeyIfNotAvailable);
+        decrypt(cipherText, reauth);
         encrypt(plainText);
         waitForExistingDialog();
         cleanup();

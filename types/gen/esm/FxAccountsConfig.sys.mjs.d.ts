@@ -1,24 +1,24 @@
 declare module "resource://gre/modules/FxAccountsConfig.sys.mjs" {
     var FxAccountsConfig: {
-        promiseEmailURI(email, entrypoint);
-        promiseConnectAccountURI(entrypoint);
-        promiseForceSigninURI(entrypoint);
-        promiseManageURI(entrypoint);
-        promiseChangeAvatarURI(entrypoint);
-        promiseManageDevicesURI(entrypoint);
-        promiseConnectDeviceURI(entrypoint);
-        promisePairingURI();
-        promiseOAuthURI();
-        promiseMetricsFlowURI(entrypoint);
+        promiseEmailURI(email, entrypoint, extraParams);
+        promiseConnectAccountURI(entrypoint, extraParams);
+        promiseForceSigninURI(entrypoint, extraParams);
+        promiseManageURI(entrypoint, extraParams);
+        promiseChangeAvatarURI(entrypoint, extraParams);
+        promiseManageDevicesURI(entrypoint, extraParams);
+        promiseConnectDeviceURI(entrypoint, extraParams);
+        promisePairingURI(extraParams);
+        promiseOAuthURI(extraParams);
+        promiseMetricsFlowURI(entrypoint, extraParams);
         get defaultParams(): any;
         _buildURL(path);
-        _buildURLFromString(href);
+        _buildURLFromString(href, extraParams);
         resetConfigURLs();
         getAutoConfigURL();
         ensureConfigured();
         isProductionConfig();
         updateConfigURLs();
-        fetchConfigDocument();
+        fetchConfigDocument(rootURL);
         getSignedInUser();
     };
 }

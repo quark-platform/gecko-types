@@ -6,6 +6,6 @@ declare module "resource://gre/modules/PushCrypto.sys.mjs" {
         validateAppServerKey(key);
         generateKeys();
         decrypt(privateKey, publicKey, authenticationSecret, headers, payload);
-        encrypt(plaintext, receiverPublicKey, receiverAuthSecret);
+        encrypt(plaintext, receiverPublicKey, receiverAuthSecret, options);
     };
 }

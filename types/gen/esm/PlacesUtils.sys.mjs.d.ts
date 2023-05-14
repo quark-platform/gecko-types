@@ -46,7 +46,7 @@ declare module "resource://gre/modules/PlacesUtils.sys.mjs" {
         nodeIsURI;
         nodeIsQuery;
         nodeAncestors;
-        validateItemProperties(name, validators, props);
+        validateItemProperties(name, validators, props, behavior);
         BOOKMARK_VALIDATORS;
         PAGEINFO_VALIDATORS;
         SYNC_BOOKMARK_VALIDATORS;
@@ -65,7 +65,7 @@ declare module "resource://gre/modules/PlacesUtils.sys.mjs" {
         getReversedHost(url);
         wrapNode(aNode, aType);
         unwrapNodes;
-        validatePageInfo(pageInfo);
+        validatePageInfo(pageInfo, validateVisits);
         normalizeToURLOrGUID(key);
         getFolderContents(aFolderGuid, aExcludeItems, aExpandQueries);
         get tagsFolderId(): any;
@@ -79,16 +79,16 @@ declare module "resource://gre/modules/PlacesUtils.sys.mjs" {
         get largeCacheDBConnDeferred(): any;
         promiseUnsafeWritableDBConnection;
         withConnectionWrapper(name, task);
-        promiseFaviconData(aPageUrl);
+        promiseFaviconData(aPageUrl, preferredWidth);
         urlWithSizeRef(window, href, size);
         promiseItemGuid(aItemId);
         promiseItemId(aGuid);
         promiseManyItemIds(aGuids);
         invalidateCachedGuidFor(aItemId);
         invalidateCachedGuids();
-        promiseBookmarksTree();
+        promiseBookmarksTree(aItemGuid, aOptions);
         chunkArray(array, chunkLength);
-        sqlBindPlaceholders(info);
+        sqlBindPlaceholders(info, prefix, suffix);
         md5(data);
         maybeInsertPlace(db, url);
         maybeInsertManyPlaces(db, urls);

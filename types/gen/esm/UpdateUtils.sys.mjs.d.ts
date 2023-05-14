@@ -2,7 +2,7 @@ declare module "resource://gre/modules/UpdateUtils.sys.mjs" {
     var UpdateUtils: {
         _locale;
         _configFilePath;
-        getUpdateChannel();
+        getUpdateChannel(aIncludePartners);
         get UpdateChannel(): any;
         formatUpdateURL(url);
         getLocale();

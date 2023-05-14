@@ -21,13 +21,13 @@ declare module "resource://gre/modules/PushService.sys.mjs" {
         _setState(aNewState);
         _changeStateOfflineEvent(offline, calledFromConnEnabledEvent);
         _changeStateConnectionEnabledEvent(enabled);
-        changeTestServer(url);
+        changeTestServer(url, options);
         observe;
         _clearOriginData(data);
         _backgroundUnregister(record, reason);
         _findService(serverURL);
-        _changeServerURL(serverURI, event);
-        init();
+        _changeServerURL(serverURI, event, options);
+        init(options);
         _startObservers();
         _startService(service, serverURI, options);
         _stopService(event);

@@ -21,7 +21,7 @@ declare module "resource://app/modules/DownloadsCommon.sys.mjs" {
         get strings(): any;
         get openInSystemViewerItemEnabled(): any;
         get alwaysOpenInSystemViewerItemEnabled(): any;
-        getData(window);
+        getData(window, history, privateAll, limited);
         initializeAllDataLinks();
         getIndicatorData(aWindow);
         getSummary(aWindow, aNumToExclude);
@@ -29,7 +29,7 @@ declare module "resource://app/modules/DownloadsCommon.sys.mjs" {
         _privateSummary;
         stateOfDownload(download);
         deleteDownload(download);
-        deleteDownloadFiles(download);
+        deleteDownloadFiles(download, clearHistory);
         getMimeInfo(download);
         isFileOfType(download, mimeType);
         copyDownloadLink(download);

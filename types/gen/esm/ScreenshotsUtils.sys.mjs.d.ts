@@ -12,7 +12,7 @@ declare module "resource://app/modules/ScreenshotsUtils.sys.mjs" {
         notify(window, type);
         getActor(browser);
         openPanel(browser);
-        closePanel(browser);
+        closePanel(browser, closeOverlay);
         togglePanelAndOverlay(browser, data);
         getDialog(browser);
         closeDialogBox(browser);
