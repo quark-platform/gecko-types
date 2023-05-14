@@ -1,339 +1,339 @@
-import "BrowserContentHandler.sys.mjs.d.ts";
-import "BrowserGlue.sys.mjs.d.ts";
-import "StartupRecorder.sys.mjs.d.ts";
-import "FeatureCallout.sys.mjs.d.ts";
-import "PartnerLinkAttribution.sys.mjs.d.ts";
-import "PermissionUI.sys.mjs.d.ts";
-import "Sanitizer.sys.mjs.d.ts";
-import "URILoadingHelper.sys.mjs.d.ts";
-import "BackgroundTask_uninstall.sys.mjs.d.ts";
-import "BuiltInThemeConfig.sys.mjs.d.ts";
-import "BuiltInThemes.sys.mjs.d.ts";
-import "ThemeVariableMap.sys.mjs.d.ts";
-import "Windows8WindowFrameColor.sys.mjs.d.ts";
-import "jsdebugger.sys.mjs.d.ts";
-import "AboutDebuggingRegistration.sys.mjs.d.ts";
-import "AboutDevToolsToolboxRegistration.sys.mjs.d.ts";
-import "DevToolsStartup.sys.mjs.d.ts";
-import "URIFixup.sys.mjs.d.ts";
-import "IndexedDBHelper.sys.mjs.d.ts";
-import "Push.sys.mjs.d.ts";
-import "PushBroadcastService.sys.mjs.d.ts";
-import "PushComponents.sys.mjs.d.ts";
-import "PushCrypto.sys.mjs.d.ts";
-import "PushDB.sys.mjs.d.ts";
-import "PushRecord.sys.mjs.d.ts";
-import "PushService.sys.mjs.d.ts";
-import "PushServiceHttp2.sys.mjs.d.ts";
-import "PushServiceWebSocket.sys.mjs.d.ts";
-import "LangPackMatcher.sys.mjs.d.ts";
-import "PluralForm.sys.mjs.d.ts";
-import "PublicSuffixList.sys.mjs.d.ts";
-import "UrlClassifierExceptionListService.sys.mjs.d.ts";
-import "ServicesAutomation.sys.mjs.d.ts";
-import "async.sys.mjs.d.ts";
-import "kinto-storage-adapter.sys.mjs.d.ts";
-import "logmanager.sys.mjs.d.ts";
-import "observers.sys.mjs.d.ts";
-import "rest.sys.mjs.d.ts";
-import "uptake-telemetry.sys.mjs.d.ts";
-import "utils.sys.mjs.d.ts";
-import "hawkclient.sys.mjs.d.ts";
-import "hawkrequest.sys.mjs.d.ts";
-import "tokenserverclient.sys.mjs.d.ts";
-import "Credentials.sys.mjs.d.ts";
-import "FxAccounts.sys.mjs.d.ts";
-import "FxAccountsClient.sys.mjs.d.ts";
-import "FxAccountsCommands.sys.mjs.d.ts";
-import "FxAccountsConfig.sys.mjs.d.ts";
-import "FxAccountsDevice.sys.mjs.d.ts";
-import "FxAccountsKeys.sys.mjs.d.ts";
-import "FxAccountsPairing.sys.mjs.d.ts";
-import "FxAccountsPairingChannel.sys.mjs.d.ts";
-import "FxAccountsProfile.sys.mjs.d.ts";
-import "FxAccountsProfileClient.sys.mjs.d.ts";
-import "FxAccountsPush.sys.mjs.d.ts";
-import "FxAccountsStorage.sys.mjs.d.ts";
-import "FxAccountsTelemetry.sys.mjs.d.ts";
-import "FxAccountsWebChannel.sys.mjs.d.ts";
-import "Attachments.sys.mjs.d.ts";
-import "Database.sys.mjs.d.ts";
-import "remote-settings.sys.mjs.d.ts";
-import "RemoteSettingsClient.sys.mjs.d.ts";
-import "RemoteSettingsComponents.sys.mjs.d.ts";
-import "RemoteSettingsWorker.sys.mjs.d.ts";
-import "SyncHistory.sys.mjs.d.ts";
-import "Weave.sys.mjs.d.ts";
-import "AboutPagesUtils.sys.mjs.d.ts";
-import "ActorManagerParent.sys.mjs.d.ts";
-import "AppMenuNotifications.sys.mjs.d.ts";
-import "AsyncPrefs.sys.mjs.d.ts";
-import "BinarySearch.sys.mjs.d.ts";
-import "BrowserTelemetryUtils.sys.mjs.d.ts";
-import "BrowserUtils.sys.mjs.d.ts";
-import "CertUtils.sys.mjs.d.ts";
-import "Color.sys.mjs.d.ts";
-import "Console.sys.mjs.d.ts";
-import "ContentDOMReference.sys.mjs.d.ts";
-import "CreditCard.sys.mjs.d.ts";
-import "DateTimePickerPanel.sys.mjs.d.ts";
-import "DeferredTask.sys.mjs.d.ts";
-import "Deprecated.sys.mjs.d.ts";
-import "E10SUtils.sys.mjs.d.ts";
-import "EventEmitter.sys.mjs.d.ts";
-import "FileUtils.sys.mjs.d.ts";
-import "FindBarContent.sys.mjs.d.ts";
-import "Finder.sys.mjs.d.ts";
-import "FinderHighlighter.sys.mjs.d.ts";
-import "FinderIterator.sys.mjs.d.ts";
-import "FinderParent.sys.mjs.d.ts";
-import "FirstStartup.sys.mjs.d.ts";
-import "FormLikeFactory.sys.mjs.d.ts";
-import "Geometry.sys.mjs.d.ts";
-import "HiddenFrame.sys.mjs.d.ts";
-import "Http.sys.mjs.d.ts";
-import "IgnoreLists.sys.mjs.d.ts";
-import "IndexedDB.sys.mjs.d.ts";
-import "InlineSpellChecker.sys.mjs.d.ts";
-import "InlineSpellCheckerContent.sys.mjs.d.ts";
-import "Integration.sys.mjs.d.ts";
-import "JSONFile.sys.mjs.d.ts";
-import "JsonSchema.sys.mjs.d.ts";
-import "KeywordUtils.sys.mjs.d.ts";
-import "LayoutUtils.sys.mjs.d.ts";
-import "Log.sys.mjs.d.ts";
-import "NewTabUtils.sys.mjs.d.ts";
-import "NLP.sys.mjs.d.ts";
-import "OsEnvironment.sys.mjs.d.ts";
-import "OSKeyStore.sys.mjs.d.ts";
-import "PermissionsUtils.sys.mjs.d.ts";
-import "PopupNotifications.sys.mjs.d.ts";
-import "Preferences.sys.mjs.d.ts";
-import "PrivateBrowsingUtils.sys.mjs.d.ts";
-import "ProcessType.sys.mjs.d.ts";
-import "ProfileAge.sys.mjs.d.ts";
-import "PromiseUtils.sys.mjs.d.ts";
-import "Region.sys.mjs.d.ts";
-import "RemotePageAccessManager.sys.mjs.d.ts";
-import "ResetProfile.sys.mjs.d.ts";
-import "ResponsivenessMonitor.sys.mjs.d.ts";
-import "SelectionUtils.sys.mjs.d.ts";
-import "ServiceRequest.sys.mjs.d.ts";
-import "ShortcutUtils.sys.mjs.d.ts";
-import "Sqlite.sys.mjs.d.ts";
-import "SubDialog.sys.mjs.d.ts";
-import "Timer.sys.mjs.d.ts";
-import "Troubleshoot.sys.mjs.d.ts";
-import "UpdateUtils.sys.mjs.d.ts";
-import "WebChannel.sys.mjs.d.ts";
-import "AsanReporter.sys.mjs.d.ts";
-import "PropertyListUtils.sys.mjs.d.ts";
-import "GMPInstallManager.sys.mjs.d.ts";
-import "GMPUtils.sys.mjs.d.ts";
-import "LightweightThemeConsumer.sys.mjs.d.ts";
-import "WindowsRegistry.sys.mjs.d.ts";
-import "ExtHandlerService.sys.mjs.d.ts";
-import "WebHandlerApp.sys.mjs.d.ts";
-import "HandlerList.sys.mjs.d.ts";
-import "LoginBreaches.sys.mjs.d.ts";
-import "AttributionCode.sys.mjs.d.ts";
-import "ProvenanceData.sys.mjs.d.ts";
-import "MacAttribution.sys.mjs.d.ts";
-import "DoHConfig.sys.mjs.d.ts";
-import "DoHController.sys.mjs.d.ts";
-import "DoHHeuristics.sys.mjs.d.ts";
-import "TRRPerformance.sys.mjs.d.ts";
-import "DownloadsCommon.sys.mjs.d.ts";
-import "DownloadSpamProtection.sys.mjs.d.ts";
-import "DownloadsTaskbar.sys.mjs.d.ts";
-import "DownloadsViewableInternally.sys.mjs.d.ts";
-import "DownloadsViewUI.sys.mjs.d.ts";
-import "DownloadsMacFinderProgress.sys.mjs.d.ts";
-import "Policies.sys.mjs.d.ts";
-import "ChromeMigrationUtils.sys.mjs.d.ts";
-import "ChromeProfileMigrator.sys.mjs.d.ts";
-import "FirefoxProfileMigrator.sys.mjs.d.ts";
-import "InternalTestingProfileMigrator.sys.mjs.d.ts";
-import "MigrationUtils.sys.mjs.d.ts";
-import "MigratorBase.sys.mjs.d.ts";
-import "ProfileMigrator.sys.mjs.d.ts";
-import "360seMigrationUtils.sys.mjs.d.ts";
-import "ChromeWindowsLoginCrypto.sys.mjs.d.ts";
-import "EdgeProfileMigrator.sys.mjs.d.ts";
-import "ESEDBReader.sys.mjs.d.ts";
-import "IEProfileMigrator.sys.mjs.d.ts";
-import "MSMigrationUtils.sys.mjs.d.ts";
-import "ChromeMacOSLoginCrypto.sys.mjs.d.ts";
-import "SafariProfileMigrator.sys.mjs.d.ts";
-import "OpenGraphPageData.sys.mjs.d.ts";
-import "PageDataSchema.sys.mjs.d.ts";
-import "PageDataService.sys.mjs.d.ts";
-import "SchemaOrgPageData.sys.mjs.d.ts";
-import "TwitterPageData.sys.mjs.d.ts";
-import "Interactions.sys.mjs.d.ts";
-import "InteractionsBlocklist.sys.mjs.d.ts";
-import "PlacesUIUtils.sys.mjs.d.ts";
-import "ScreenshotsOverlayChild.sys.mjs.d.ts";
-import "ScreenshotsUtils.sys.mjs.d.ts";
-import "BrowserSearchTelemetry.sys.mjs.d.ts";
-import "SearchOneOffs.sys.mjs.d.ts";
-import "SearchSERPTelemetry.sys.mjs.d.ts";
-import "SearchUIUtils.sys.mjs.d.ts";
-import "ContentRestore.sys.mjs.d.ts";
-import "ContentSessionStore.sys.mjs.d.ts";
-import "GlobalState.sys.mjs.d.ts";
-import "RecentlyClosedTabsAndWindowsMenuUtils.sys.mjs.d.ts";
-import "RunState.sys.mjs.d.ts";
-import "SessionCookies.sys.mjs.d.ts";
-import "SessionFile.sys.mjs.d.ts";
-import "SessionMigration.sys.mjs.d.ts";
-import "SessionSaver.sys.mjs.d.ts";
-import "SessionStartup.sys.mjs.d.ts";
-import "SessionStore.sys.mjs.d.ts";
-import "SessionWriter.sys.mjs.d.ts";
-import "StartupPerformance.sys.mjs.d.ts";
-import "TabAttributes.sys.mjs.d.ts";
-import "TabState.sys.mjs.d.ts";
-import "TabStateCache.sys.mjs.d.ts";
-import "TabStateFlusher.sys.mjs.d.ts";
-import "MerinoClient.sys.mjs.d.ts";
-import "QuickActionsLoaderDefault.sys.mjs.d.ts";
-import "QuickSuggest.sys.mjs.d.ts";
-import "UrlbarController.sys.mjs.d.ts";
-import "UrlbarEventBufferer.sys.mjs.d.ts";
-import "UrlbarInput.sys.mjs.d.ts";
-import "UrlbarMuxerUnifiedComplete.sys.mjs.d.ts";
-import "UrlbarPrefs.sys.mjs.d.ts";
-import "UrlbarProviderAboutPages.sys.mjs.d.ts";
-import "UrlbarProviderAliasEngines.sys.mjs.d.ts";
-import "UrlbarProviderAutofill.sys.mjs.d.ts";
-import "UrlbarProviderBookmarkKeywords.sys.mjs.d.ts";
-import "UrlbarProviderCalculator.sys.mjs.d.ts";
-import "UrlbarProviderContextualSearch.sys.mjs.d.ts";
-import "UrlbarProviderExtension.sys.mjs.d.ts";
-import "UrlbarProviderHeuristicFallback.sys.mjs.d.ts";
-import "UrlbarProviderHistoryUrlHeuristic.sys.mjs.d.ts";
-import "UrlbarProviderInputHistory.sys.mjs.d.ts";
-import "UrlbarProviderInterventions.sys.mjs.d.ts";
-import "UrlbarProviderOmnibox.sys.mjs.d.ts";
-import "UrlbarProviderOpenTabs.sys.mjs.d.ts";
-import "UrlbarProviderPlaces.sys.mjs.d.ts";
-import "UrlbarProviderPreloadedSites.sys.mjs.d.ts";
-import "UrlbarProviderPrivateSearch.sys.mjs.d.ts";
-import "UrlbarProviderQuickActions.sys.mjs.d.ts";
-import "UrlbarProviderQuickSuggest.sys.mjs.d.ts";
-import "UrlbarProviderRemoteTabs.sys.mjs.d.ts";
-import "UrlbarProviderSearchSuggestions.sys.mjs.d.ts";
-import "UrlbarProviderSearchTips.sys.mjs.d.ts";
-import "UrlbarProvidersManager.sys.mjs.d.ts";
-import "UrlbarProviderTabToSearch.sys.mjs.d.ts";
-import "UrlbarProviderTokenAliasEngines.sys.mjs.d.ts";
-import "UrlbarProviderTopSites.sys.mjs.d.ts";
-import "UrlbarProviderUnitConversion.sys.mjs.d.ts";
-import "UrlbarProviderWeather.sys.mjs.d.ts";
-import "UrlbarResult.sys.mjs.d.ts";
-import "UrlbarSearchOneOffs.sys.mjs.d.ts";
-import "UrlbarSearchUtils.sys.mjs.d.ts";
-import "UrlbarTokenizer.sys.mjs.d.ts";
-import "UrlbarUtils.sys.mjs.d.ts";
-import "UrlbarValueFormatter.sys.mjs.d.ts";
-import "UrlbarView.sys.mjs.d.ts";
-import "XPCOMUtils.sys.mjs.d.ts";
-import "WellKnownOpportunisticUtils.sys.mjs.d.ts";
-import "DER.sys.mjs.d.ts";
-import "RemoteSecuritySettings.sys.mjs.d.ts";
-import "X509.sys.mjs.d.ts";
-import "AsyncShutdown.sys.mjs.d.ts";
-import "nsAsyncShutdown.sys.mjs.d.ts";
-import "AutoCompleteSimpleSearch.sys.mjs.d.ts";
-import "BackgroundTasksManager.sys.mjs.d.ts";
-import "BackgroundTasksUtils.sys.mjs.d.ts";
-import "BackgroundTask_exception.sys.mjs.d.ts";
-import "BackgroundTask_failure.sys.mjs.d.ts";
-import "BackgroundTask_message.sys.mjs.d.ts";
-import "BackgroundTask_removeDirectory.sys.mjs.d.ts";
-import "BackgroundTask_success.sys.mjs.d.ts";
-import "ClearDataService.sys.mjs.d.ts";
-import "PrincipalsCollector.sys.mjs.d.ts";
-import "ServiceWorkerCleanUp.sys.mjs.d.ts";
-import "ContextualIdentityService.sys.mjs.d.ts";
-import "IdentityCredentialPromptService.sys.mjs.d.ts";
-import "DownloadCore.sys.mjs.d.ts";
-import "DownloadIntegration.sys.mjs.d.ts";
-import "DownloadLegacy.sys.mjs.d.ts";
-import "DownloadList.sys.mjs.d.ts";
-import "DownloadPaths.sys.mjs.d.ts";
-import "Downloads.sys.mjs.d.ts";
-import "DownloadStore.sys.mjs.d.ts";
-import "DownloadUIHelper.sys.mjs.d.ts";
-import "DownloadHistory.sys.mjs.d.ts";
-import "EnterprisePolicies.sys.mjs.d.ts";
-import "EnterprisePoliciesContent.sys.mjs.d.ts";
-import "EnterprisePoliciesParent.sys.mjs.d.ts";
-import "WindowsGPOParser.sys.mjs.d.ts";
-import "macOSPoliciesParser.sys.mjs.d.ts";
-import "ExtensionDNR.sys.mjs.d.ts";
-import "ExtensionDNRLimits.sys.mjs.d.ts";
-import "ExtensionDNRStore.sys.mjs.d.ts";
-import "mozIntl.sys.mjs.d.ts";
-import "PictureInPicture.sys.mjs.d.ts";
-import "PictureInPictureControls.sys.mjs.d.ts";
-import "BookmarkHTMLUtils.sys.mjs.d.ts";
-import "BookmarkJSONUtils.sys.mjs.d.ts";
-import "Bookmarks.sys.mjs.d.ts";
-import "ExtensionSearchHandler.sys.mjs.d.ts";
-import "History.sys.mjs.d.ts";
-import "PlacesBackups.sys.mjs.d.ts";
-import "PlacesDBUtils.sys.mjs.d.ts";
-import "PlacesExpiration.sys.mjs.d.ts";
-import "PlacesFrecencyRecalculator.sys.mjs.d.ts";
-import "PlacesPreviews.sys.mjs.d.ts";
-import "PlacesSyncUtils.sys.mjs.d.ts";
-import "PlacesTransactions.sys.mjs.d.ts";
-import "PlacesUtils.sys.mjs.d.ts";
-import "SyncedBookmarksMirror.sys.mjs.d.ts";
-import "TaggingService.sys.mjs.d.ts";
-import "FormAutoComplete.sys.mjs.d.ts";
-import "FormHistory.sys.mjs.d.ts";
-import "FormHistoryStartup.sys.mjs.d.ts";
-import "InputListAutoComplete.sys.mjs.d.ts";
-import "nsFormAutoCompleteResult.sys.mjs.d.ts";
-import "AddonSearchEngine.sys.mjs.d.ts";
-import "OpenSearchEngine.sys.mjs.d.ts";
-import "PolicySearchEngine.sys.mjs.d.ts";
-import "SearchEngine.sys.mjs.d.ts";
-import "SearchEngineSelector.sys.mjs.d.ts";
-import "SearchService.sys.mjs.d.ts";
-import "SearchSettings.sys.mjs.d.ts";
-import "SearchStaticData.sys.mjs.d.ts";
-import "SearchSuggestionController.sys.mjs.d.ts";
-import "SearchSuggestions.sys.mjs.d.ts";
-import "SearchUtils.sys.mjs.d.ts";
-import "UserSearchEngine.sys.mjs.d.ts";
-import "SessionStoreFunctions.sys.mjs.d.ts";
-import "TelemetryStartup.sys.mjs.d.ts";
-import "SimpleServices.sys.mjs.d.ts";
-import "Subprocess.sys.mjs.d.ts";
-import "subprocess_common.sys.mjs.d.ts";
-import "subprocess_win.sys.mjs.d.ts";
-import "subprocess_unix.sys.mjs.d.ts";
-import "ContentDispatchChooser.sys.mjs.d.ts";
-import "BackgroundTask_backgroundupdate.sys.mjs.d.ts";
-import "BookmarksPolicies.sys.mjs.d.ts";
-import "ProxyPolicies.sys.mjs.d.ts";
-import "WebsiteFilter.sys.mjs.d.ts";
-import "UnitConverterSimple.sys.mjs.d.ts";
-import "UnitConverterTemperature.sys.mjs.d.ts";
-import "UnitConverterTimezone.sys.mjs.d.ts";
-import "GeckoViewPrompter.sys.mjs.d.ts";
-import "GeckoViewActorChild.sys.mjs.d.ts";
-import "GeckoViewActorManager.sys.mjs.d.ts";
-import "GeckoViewActorParent.sys.mjs.d.ts";
-import "GeckoViewModule.sys.mjs.d.ts";
-import "GeckoViewUtils.sys.mjs.d.ts";
-import "Messaging.sys.mjs.d.ts";
-import "CommonDialog.sys.mjs.d.ts";
-import "Prompter.sys.mjs.d.ts";
-import "PromptUtils.sys.mjs.d.ts";
-import "crypto-utils.sys.mjs.d.ts";
-import "siteperms-addon-utils.sys.mjs.d.ts";
+///<reference path="./BrowserContentHandler.sys.mjs.d.ts" />
+///<reference path="./BrowserGlue.sys.mjs.d.ts" />
+///<reference path="./StartupRecorder.sys.mjs.d.ts" />
+///<reference path="./FeatureCallout.sys.mjs.d.ts" />
+///<reference path="./PartnerLinkAttribution.sys.mjs.d.ts" />
+///<reference path="./PermissionUI.sys.mjs.d.ts" />
+///<reference path="./Sanitizer.sys.mjs.d.ts" />
+///<reference path="./URILoadingHelper.sys.mjs.d.ts" />
+///<reference path="./BackgroundTask_uninstall.sys.mjs.d.ts" />
+///<reference path="./BuiltInThemeConfig.sys.mjs.d.ts" />
+///<reference path="./BuiltInThemes.sys.mjs.d.ts" />
+///<reference path="./ThemeVariableMap.sys.mjs.d.ts" />
+///<reference path="./Windows8WindowFrameColor.sys.mjs.d.ts" />
+///<reference path="./jsdebugger.sys.mjs.d.ts" />
+///<reference path="./AboutDebuggingRegistration.sys.mjs.d.ts" />
+///<reference path="./AboutDevToolsToolboxRegistration.sys.mjs.d.ts" />
+///<reference path="./DevToolsStartup.sys.mjs.d.ts" />
+///<reference path="./URIFixup.sys.mjs.d.ts" />
+///<reference path="./IndexedDBHelper.sys.mjs.d.ts" />
+///<reference path="./Push.sys.mjs.d.ts" />
+///<reference path="./PushBroadcastService.sys.mjs.d.ts" />
+///<reference path="./PushComponents.sys.mjs.d.ts" />
+///<reference path="./PushCrypto.sys.mjs.d.ts" />
+///<reference path="./PushDB.sys.mjs.d.ts" />
+///<reference path="./PushRecord.sys.mjs.d.ts" />
+///<reference path="./PushService.sys.mjs.d.ts" />
+///<reference path="./PushServiceHttp2.sys.mjs.d.ts" />
+///<reference path="./PushServiceWebSocket.sys.mjs.d.ts" />
+///<reference path="./LangPackMatcher.sys.mjs.d.ts" />
+///<reference path="./PluralForm.sys.mjs.d.ts" />
+///<reference path="./PublicSuffixList.sys.mjs.d.ts" />
+///<reference path="./UrlClassifierExceptionListService.sys.mjs.d.ts" />
+///<reference path="./ServicesAutomation.sys.mjs.d.ts" />
+///<reference path="./async.sys.mjs.d.ts" />
+///<reference path="./kinto-storage-adapter.sys.mjs.d.ts" />
+///<reference path="./logmanager.sys.mjs.d.ts" />
+///<reference path="./observers.sys.mjs.d.ts" />
+///<reference path="./rest.sys.mjs.d.ts" />
+///<reference path="./uptake-telemetry.sys.mjs.d.ts" />
+///<reference path="./utils.sys.mjs.d.ts" />
+///<reference path="./hawkclient.sys.mjs.d.ts" />
+///<reference path="./hawkrequest.sys.mjs.d.ts" />
+///<reference path="./tokenserverclient.sys.mjs.d.ts" />
+///<reference path="./Credentials.sys.mjs.d.ts" />
+///<reference path="./FxAccounts.sys.mjs.d.ts" />
+///<reference path="./FxAccountsClient.sys.mjs.d.ts" />
+///<reference path="./FxAccountsCommands.sys.mjs.d.ts" />
+///<reference path="./FxAccountsConfig.sys.mjs.d.ts" />
+///<reference path="./FxAccountsDevice.sys.mjs.d.ts" />
+///<reference path="./FxAccountsKeys.sys.mjs.d.ts" />
+///<reference path="./FxAccountsPairing.sys.mjs.d.ts" />
+///<reference path="./FxAccountsPairingChannel.sys.mjs.d.ts" />
+///<reference path="./FxAccountsProfile.sys.mjs.d.ts" />
+///<reference path="./FxAccountsProfileClient.sys.mjs.d.ts" />
+///<reference path="./FxAccountsPush.sys.mjs.d.ts" />
+///<reference path="./FxAccountsStorage.sys.mjs.d.ts" />
+///<reference path="./FxAccountsTelemetry.sys.mjs.d.ts" />
+///<reference path="./FxAccountsWebChannel.sys.mjs.d.ts" />
+///<reference path="./Attachments.sys.mjs.d.ts" />
+///<reference path="./Database.sys.mjs.d.ts" />
+///<reference path="./remote-settings.sys.mjs.d.ts" />
+///<reference path="./RemoteSettingsClient.sys.mjs.d.ts" />
+///<reference path="./RemoteSettingsComponents.sys.mjs.d.ts" />
+///<reference path="./RemoteSettingsWorker.sys.mjs.d.ts" />
+///<reference path="./SyncHistory.sys.mjs.d.ts" />
+///<reference path="./Weave.sys.mjs.d.ts" />
+///<reference path="./AboutPagesUtils.sys.mjs.d.ts" />
+///<reference path="./ActorManagerParent.sys.mjs.d.ts" />
+///<reference path="./AppMenuNotifications.sys.mjs.d.ts" />
+///<reference path="./AsyncPrefs.sys.mjs.d.ts" />
+///<reference path="./BinarySearch.sys.mjs.d.ts" />
+///<reference path="./BrowserTelemetryUtils.sys.mjs.d.ts" />
+///<reference path="./BrowserUtils.sys.mjs.d.ts" />
+///<reference path="./CertUtils.sys.mjs.d.ts" />
+///<reference path="./Color.sys.mjs.d.ts" />
+///<reference path="./Console.sys.mjs.d.ts" />
+///<reference path="./ContentDOMReference.sys.mjs.d.ts" />
+///<reference path="./CreditCard.sys.mjs.d.ts" />
+///<reference path="./DateTimePickerPanel.sys.mjs.d.ts" />
+///<reference path="./DeferredTask.sys.mjs.d.ts" />
+///<reference path="./Deprecated.sys.mjs.d.ts" />
+///<reference path="./E10SUtils.sys.mjs.d.ts" />
+///<reference path="./EventEmitter.sys.mjs.d.ts" />
+///<reference path="./FileUtils.sys.mjs.d.ts" />
+///<reference path="./FindBarContent.sys.mjs.d.ts" />
+///<reference path="./Finder.sys.mjs.d.ts" />
+///<reference path="./FinderHighlighter.sys.mjs.d.ts" />
+///<reference path="./FinderIterator.sys.mjs.d.ts" />
+///<reference path="./FinderParent.sys.mjs.d.ts" />
+///<reference path="./FirstStartup.sys.mjs.d.ts" />
+///<reference path="./FormLikeFactory.sys.mjs.d.ts" />
+///<reference path="./Geometry.sys.mjs.d.ts" />
+///<reference path="./HiddenFrame.sys.mjs.d.ts" />
+///<reference path="./Http.sys.mjs.d.ts" />
+///<reference path="./IgnoreLists.sys.mjs.d.ts" />
+///<reference path="./IndexedDB.sys.mjs.d.ts" />
+///<reference path="./InlineSpellChecker.sys.mjs.d.ts" />
+///<reference path="./InlineSpellCheckerContent.sys.mjs.d.ts" />
+///<reference path="./Integration.sys.mjs.d.ts" />
+///<reference path="./JSONFile.sys.mjs.d.ts" />
+///<reference path="./JsonSchema.sys.mjs.d.ts" />
+///<reference path="./KeywordUtils.sys.mjs.d.ts" />
+///<reference path="./LayoutUtils.sys.mjs.d.ts" />
+///<reference path="./Log.sys.mjs.d.ts" />
+///<reference path="./NewTabUtils.sys.mjs.d.ts" />
+///<reference path="./NLP.sys.mjs.d.ts" />
+///<reference path="./OsEnvironment.sys.mjs.d.ts" />
+///<reference path="./OSKeyStore.sys.mjs.d.ts" />
+///<reference path="./PermissionsUtils.sys.mjs.d.ts" />
+///<reference path="./PopupNotifications.sys.mjs.d.ts" />
+///<reference path="./Preferences.sys.mjs.d.ts" />
+///<reference path="./PrivateBrowsingUtils.sys.mjs.d.ts" />
+///<reference path="./ProcessType.sys.mjs.d.ts" />
+///<reference path="./ProfileAge.sys.mjs.d.ts" />
+///<reference path="./PromiseUtils.sys.mjs.d.ts" />
+///<reference path="./Region.sys.mjs.d.ts" />
+///<reference path="./RemotePageAccessManager.sys.mjs.d.ts" />
+///<reference path="./ResetProfile.sys.mjs.d.ts" />
+///<reference path="./ResponsivenessMonitor.sys.mjs.d.ts" />
+///<reference path="./SelectionUtils.sys.mjs.d.ts" />
+///<reference path="./ServiceRequest.sys.mjs.d.ts" />
+///<reference path="./ShortcutUtils.sys.mjs.d.ts" />
+///<reference path="./Sqlite.sys.mjs.d.ts" />
+///<reference path="./SubDialog.sys.mjs.d.ts" />
+///<reference path="./Timer.sys.mjs.d.ts" />
+///<reference path="./Troubleshoot.sys.mjs.d.ts" />
+///<reference path="./UpdateUtils.sys.mjs.d.ts" />
+///<reference path="./WebChannel.sys.mjs.d.ts" />
+///<reference path="./AsanReporter.sys.mjs.d.ts" />
+///<reference path="./PropertyListUtils.sys.mjs.d.ts" />
+///<reference path="./GMPInstallManager.sys.mjs.d.ts" />
+///<reference path="./GMPUtils.sys.mjs.d.ts" />
+///<reference path="./LightweightThemeConsumer.sys.mjs.d.ts" />
+///<reference path="./WindowsRegistry.sys.mjs.d.ts" />
+///<reference path="./ExtHandlerService.sys.mjs.d.ts" />
+///<reference path="./WebHandlerApp.sys.mjs.d.ts" />
+///<reference path="./HandlerList.sys.mjs.d.ts" />
+///<reference path="./LoginBreaches.sys.mjs.d.ts" />
+///<reference path="./AttributionCode.sys.mjs.d.ts" />
+///<reference path="./ProvenanceData.sys.mjs.d.ts" />
+///<reference path="./MacAttribution.sys.mjs.d.ts" />
+///<reference path="./DoHConfig.sys.mjs.d.ts" />
+///<reference path="./DoHController.sys.mjs.d.ts" />
+///<reference path="./DoHHeuristics.sys.mjs.d.ts" />
+///<reference path="./TRRPerformance.sys.mjs.d.ts" />
+///<reference path="./DownloadsCommon.sys.mjs.d.ts" />
+///<reference path="./DownloadSpamProtection.sys.mjs.d.ts" />
+///<reference path="./DownloadsTaskbar.sys.mjs.d.ts" />
+///<reference path="./DownloadsViewableInternally.sys.mjs.d.ts" />
+///<reference path="./DownloadsViewUI.sys.mjs.d.ts" />
+///<reference path="./DownloadsMacFinderProgress.sys.mjs.d.ts" />
+///<reference path="./Policies.sys.mjs.d.ts" />
+///<reference path="./ChromeMigrationUtils.sys.mjs.d.ts" />
+///<reference path="./ChromeProfileMigrator.sys.mjs.d.ts" />
+///<reference path="./FirefoxProfileMigrator.sys.mjs.d.ts" />
+///<reference path="./InternalTestingProfileMigrator.sys.mjs.d.ts" />
+///<reference path="./MigrationUtils.sys.mjs.d.ts" />
+///<reference path="./MigratorBase.sys.mjs.d.ts" />
+///<reference path="./ProfileMigrator.sys.mjs.d.ts" />
+///<reference path="./360seMigrationUtils.sys.mjs.d.ts" />
+///<reference path="./ChromeWindowsLoginCrypto.sys.mjs.d.ts" />
+///<reference path="./EdgeProfileMigrator.sys.mjs.d.ts" />
+///<reference path="./ESEDBReader.sys.mjs.d.ts" />
+///<reference path="./IEProfileMigrator.sys.mjs.d.ts" />
+///<reference path="./MSMigrationUtils.sys.mjs.d.ts" />
+///<reference path="./ChromeMacOSLoginCrypto.sys.mjs.d.ts" />
+///<reference path="./SafariProfileMigrator.sys.mjs.d.ts" />
+///<reference path="./OpenGraphPageData.sys.mjs.d.ts" />
+///<reference path="./PageDataSchema.sys.mjs.d.ts" />
+///<reference path="./PageDataService.sys.mjs.d.ts" />
+///<reference path="./SchemaOrgPageData.sys.mjs.d.ts" />
+///<reference path="./TwitterPageData.sys.mjs.d.ts" />
+///<reference path="./Interactions.sys.mjs.d.ts" />
+///<reference path="./InteractionsBlocklist.sys.mjs.d.ts" />
+///<reference path="./PlacesUIUtils.sys.mjs.d.ts" />
+///<reference path="./ScreenshotsOverlayChild.sys.mjs.d.ts" />
+///<reference path="./ScreenshotsUtils.sys.mjs.d.ts" />
+///<reference path="./BrowserSearchTelemetry.sys.mjs.d.ts" />
+///<reference path="./SearchOneOffs.sys.mjs.d.ts" />
+///<reference path="./SearchSERPTelemetry.sys.mjs.d.ts" />
+///<reference path="./SearchUIUtils.sys.mjs.d.ts" />
+///<reference path="./ContentRestore.sys.mjs.d.ts" />
+///<reference path="./ContentSessionStore.sys.mjs.d.ts" />
+///<reference path="./GlobalState.sys.mjs.d.ts" />
+///<reference path="./RecentlyClosedTabsAndWindowsMenuUtils.sys.mjs.d.ts" />
+///<reference path="./RunState.sys.mjs.d.ts" />
+///<reference path="./SessionCookies.sys.mjs.d.ts" />
+///<reference path="./SessionFile.sys.mjs.d.ts" />
+///<reference path="./SessionMigration.sys.mjs.d.ts" />
+///<reference path="./SessionSaver.sys.mjs.d.ts" />
+///<reference path="./SessionStartup.sys.mjs.d.ts" />
+///<reference path="./SessionStore.sys.mjs.d.ts" />
+///<reference path="./SessionWriter.sys.mjs.d.ts" />
+///<reference path="./StartupPerformance.sys.mjs.d.ts" />
+///<reference path="./TabAttributes.sys.mjs.d.ts" />
+///<reference path="./TabState.sys.mjs.d.ts" />
+///<reference path="./TabStateCache.sys.mjs.d.ts" />
+///<reference path="./TabStateFlusher.sys.mjs.d.ts" />
+///<reference path="./MerinoClient.sys.mjs.d.ts" />
+///<reference path="./QuickActionsLoaderDefault.sys.mjs.d.ts" />
+///<reference path="./QuickSuggest.sys.mjs.d.ts" />
+///<reference path="./UrlbarController.sys.mjs.d.ts" />
+///<reference path="./UrlbarEventBufferer.sys.mjs.d.ts" />
+///<reference path="./UrlbarInput.sys.mjs.d.ts" />
+///<reference path="./UrlbarMuxerUnifiedComplete.sys.mjs.d.ts" />
+///<reference path="./UrlbarPrefs.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderAboutPages.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderAliasEngines.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderAutofill.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderBookmarkKeywords.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderCalculator.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderContextualSearch.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderExtension.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderHeuristicFallback.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderHistoryUrlHeuristic.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderInputHistory.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderInterventions.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderOmnibox.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderOpenTabs.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderPlaces.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderPreloadedSites.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderPrivateSearch.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderQuickActions.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderQuickSuggest.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderRemoteTabs.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderSearchSuggestions.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderSearchTips.sys.mjs.d.ts" />
+///<reference path="./UrlbarProvidersManager.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderTabToSearch.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderTokenAliasEngines.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderTopSites.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderUnitConversion.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderWeather.sys.mjs.d.ts" />
+///<reference path="./UrlbarResult.sys.mjs.d.ts" />
+///<reference path="./UrlbarSearchOneOffs.sys.mjs.d.ts" />
+///<reference path="./UrlbarSearchUtils.sys.mjs.d.ts" />
+///<reference path="./UrlbarTokenizer.sys.mjs.d.ts" />
+///<reference path="./UrlbarUtils.sys.mjs.d.ts" />
+///<reference path="./UrlbarValueFormatter.sys.mjs.d.ts" />
+///<reference path="./UrlbarView.sys.mjs.d.ts" />
+///<reference path="./XPCOMUtils.sys.mjs.d.ts" />
+///<reference path="./WellKnownOpportunisticUtils.sys.mjs.d.ts" />
+///<reference path="./DER.sys.mjs.d.ts" />
+///<reference path="./RemoteSecuritySettings.sys.mjs.d.ts" />
+///<reference path="./X509.sys.mjs.d.ts" />
+///<reference path="./AsyncShutdown.sys.mjs.d.ts" />
+///<reference path="./nsAsyncShutdown.sys.mjs.d.ts" />
+///<reference path="./AutoCompleteSimpleSearch.sys.mjs.d.ts" />
+///<reference path="./BackgroundTasksManager.sys.mjs.d.ts" />
+///<reference path="./BackgroundTasksUtils.sys.mjs.d.ts" />
+///<reference path="./BackgroundTask_exception.sys.mjs.d.ts" />
+///<reference path="./BackgroundTask_failure.sys.mjs.d.ts" />
+///<reference path="./BackgroundTask_message.sys.mjs.d.ts" />
+///<reference path="./BackgroundTask_removeDirectory.sys.mjs.d.ts" />
+///<reference path="./BackgroundTask_success.sys.mjs.d.ts" />
+///<reference path="./ClearDataService.sys.mjs.d.ts" />
+///<reference path="./PrincipalsCollector.sys.mjs.d.ts" />
+///<reference path="./ServiceWorkerCleanUp.sys.mjs.d.ts" />
+///<reference path="./ContextualIdentityService.sys.mjs.d.ts" />
+///<reference path="./IdentityCredentialPromptService.sys.mjs.d.ts" />
+///<reference path="./DownloadCore.sys.mjs.d.ts" />
+///<reference path="./DownloadIntegration.sys.mjs.d.ts" />
+///<reference path="./DownloadLegacy.sys.mjs.d.ts" />
+///<reference path="./DownloadList.sys.mjs.d.ts" />
+///<reference path="./DownloadPaths.sys.mjs.d.ts" />
+///<reference path="./Downloads.sys.mjs.d.ts" />
+///<reference path="./DownloadStore.sys.mjs.d.ts" />
+///<reference path="./DownloadUIHelper.sys.mjs.d.ts" />
+///<reference path="./DownloadHistory.sys.mjs.d.ts" />
+///<reference path="./EnterprisePolicies.sys.mjs.d.ts" />
+///<reference path="./EnterprisePoliciesContent.sys.mjs.d.ts" />
+///<reference path="./EnterprisePoliciesParent.sys.mjs.d.ts" />
+///<reference path="./WindowsGPOParser.sys.mjs.d.ts" />
+///<reference path="./macOSPoliciesParser.sys.mjs.d.ts" />
+///<reference path="./ExtensionDNR.sys.mjs.d.ts" />
+///<reference path="./ExtensionDNRLimits.sys.mjs.d.ts" />
+///<reference path="./ExtensionDNRStore.sys.mjs.d.ts" />
+///<reference path="./mozIntl.sys.mjs.d.ts" />
+///<reference path="./PictureInPicture.sys.mjs.d.ts" />
+///<reference path="./PictureInPictureControls.sys.mjs.d.ts" />
+///<reference path="./BookmarkHTMLUtils.sys.mjs.d.ts" />
+///<reference path="./BookmarkJSONUtils.sys.mjs.d.ts" />
+///<reference path="./Bookmarks.sys.mjs.d.ts" />
+///<reference path="./ExtensionSearchHandler.sys.mjs.d.ts" />
+///<reference path="./History.sys.mjs.d.ts" />
+///<reference path="./PlacesBackups.sys.mjs.d.ts" />
+///<reference path="./PlacesDBUtils.sys.mjs.d.ts" />
+///<reference path="./PlacesExpiration.sys.mjs.d.ts" />
+///<reference path="./PlacesFrecencyRecalculator.sys.mjs.d.ts" />
+///<reference path="./PlacesPreviews.sys.mjs.d.ts" />
+///<reference path="./PlacesSyncUtils.sys.mjs.d.ts" />
+///<reference path="./PlacesTransactions.sys.mjs.d.ts" />
+///<reference path="./PlacesUtils.sys.mjs.d.ts" />
+///<reference path="./SyncedBookmarksMirror.sys.mjs.d.ts" />
+///<reference path="./TaggingService.sys.mjs.d.ts" />
+///<reference path="./FormAutoComplete.sys.mjs.d.ts" />
+///<reference path="./FormHistory.sys.mjs.d.ts" />
+///<reference path="./FormHistoryStartup.sys.mjs.d.ts" />
+///<reference path="./InputListAutoComplete.sys.mjs.d.ts" />
+///<reference path="./nsFormAutoCompleteResult.sys.mjs.d.ts" />
+///<reference path="./AddonSearchEngine.sys.mjs.d.ts" />
+///<reference path="./OpenSearchEngine.sys.mjs.d.ts" />
+///<reference path="./PolicySearchEngine.sys.mjs.d.ts" />
+///<reference path="./SearchEngine.sys.mjs.d.ts" />
+///<reference path="./SearchEngineSelector.sys.mjs.d.ts" />
+///<reference path="./SearchService.sys.mjs.d.ts" />
+///<reference path="./SearchSettings.sys.mjs.d.ts" />
+///<reference path="./SearchStaticData.sys.mjs.d.ts" />
+///<reference path="./SearchSuggestionController.sys.mjs.d.ts" />
+///<reference path="./SearchSuggestions.sys.mjs.d.ts" />
+///<reference path="./SearchUtils.sys.mjs.d.ts" />
+///<reference path="./UserSearchEngine.sys.mjs.d.ts" />
+///<reference path="./SessionStoreFunctions.sys.mjs.d.ts" />
+///<reference path="./TelemetryStartup.sys.mjs.d.ts" />
+///<reference path="./SimpleServices.sys.mjs.d.ts" />
+///<reference path="./Subprocess.sys.mjs.d.ts" />
+///<reference path="./subprocess_common.sys.mjs.d.ts" />
+///<reference path="./subprocess_win.sys.mjs.d.ts" />
+///<reference path="./subprocess_unix.sys.mjs.d.ts" />
+///<reference path="./ContentDispatchChooser.sys.mjs.d.ts" />
+///<reference path="./BackgroundTask_backgroundupdate.sys.mjs.d.ts" />
+///<reference path="./BookmarksPolicies.sys.mjs.d.ts" />
+///<reference path="./ProxyPolicies.sys.mjs.d.ts" />
+///<reference path="./WebsiteFilter.sys.mjs.d.ts" />
+///<reference path="./UnitConverterSimple.sys.mjs.d.ts" />
+///<reference path="./UnitConverterTemperature.sys.mjs.d.ts" />
+///<reference path="./UnitConverterTimezone.sys.mjs.d.ts" />
+///<reference path="./GeckoViewPrompter.sys.mjs.d.ts" />
+///<reference path="./GeckoViewActorChild.sys.mjs.d.ts" />
+///<reference path="./GeckoViewActorManager.sys.mjs.d.ts" />
+///<reference path="./GeckoViewActorParent.sys.mjs.d.ts" />
+///<reference path="./GeckoViewModule.sys.mjs.d.ts" />
+///<reference path="./GeckoViewUtils.sys.mjs.d.ts" />
+///<reference path="./Messaging.sys.mjs.d.ts" />
+///<reference path="./CommonDialog.sys.mjs.d.ts" />
+///<reference path="./Prompter.sys.mjs.d.ts" />
+///<reference path="./PromptUtils.sys.mjs.d.ts" />
+///<reference path="./crypto-utils.sys.mjs.d.ts" />
+///<reference path="./siteperms-addon-utils.sys.mjs.d.ts" />

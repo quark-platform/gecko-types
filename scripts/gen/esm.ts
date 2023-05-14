@@ -70,19 +70,7 @@ for (const { isGRE, modules } of await getMozBuildFiles()) {
 
   writeFileSync(
     `./types/gen/esm/index.d.ts`,
-    printNodes(
-      ts.factory.createNodeArray(
-        mods.map((mod) =>
-          ts.factory.createImportDeclaration(
-            undefined,
-            undefined,
-            ts.factory.createStringLiteral(mod),
-            undefined
-          )
-        )
-      ),
-      moduleDefBuilder
-    )
+    mods.map((mod) => `///<reference path="./${mod}" />`).join('\n')
   )
 }
 

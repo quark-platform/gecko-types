@@ -8,4 +8,4 @@
 ///<reference path="./gen/idls.d.ts" />
 ///<reference path="./gen/namespaces.d.ts" />
 
-import './gen/esm/index.d.ts'
+///<reference path="./gen/esm/index.d.ts" />
