@@ -62,6 +62,18 @@ declare module ChromeUtils {
      */
     function readHeapSnapshot(): HeapSnapshot ;
     /**
+     *
+     */
+    function isDevToolsOpened(): boolean ;
+    /**
+     *
+     */
+    function notifyDevToolsOpened(): undefined ;
+    /**
+     *
+     */
+    function notifyDevToolsClosed(): undefined ;
+    /**
      * Return the keys in a weak map.  This operation is
      * non-deterministic because it is affected by the scheduling of the
      * garbage collector and the cycle collector.
