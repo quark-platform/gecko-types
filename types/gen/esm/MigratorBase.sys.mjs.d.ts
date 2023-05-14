@@ -8,6 +8,8 @@ declare module "resource://app/modules/MigratorBase.sys.mjs" {
         getLastUsedDate();
         get startupOnlyMigrator();
         get enabled();
+        hasPermissions();
+        getPermissions();
         getMigrateData();
         migrate();
         isSourceAvailable();

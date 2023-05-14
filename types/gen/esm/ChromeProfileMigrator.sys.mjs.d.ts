@@ -34,6 +34,7 @@ declare module "resource://app/modules/ChromeProfileMigrator.sys.mjs" {
     export class BraveProfileMigrator {
         get key();
         get displayNameL10nID();
+        get brandImage();
     }
     export class ChromiumEdgeMigrator {
         get key();

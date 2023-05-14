@@ -5,6 +5,8 @@ declare module "resource://app/modules/EdgeProfileMigrator.sys.mjs" {
         get brandImage();
         getBookmarksMigratorForTesting();
         getReadingListMigratorForTesting();
+        getHistoryDBMigratorForTesting();
+        getHistoryRegistryMigratorForTesting();
         getResources();
         getLastUsedDate();
         getSourceProfiles();

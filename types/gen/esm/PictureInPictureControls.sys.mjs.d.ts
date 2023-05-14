@@ -13,6 +13,7 @@ declare module "resource://gre/modules/PictureInPictureControls.sys.mjs" {
         HIDDEN: number;
         TOP: number;
         ONE_QUARTER: number;
+        MIDDLE: number;
         THREE_QUARTERS: number;
         BOTTOM: number;
     };

@@ -10,6 +10,7 @@ declare module "resource://app/modules/UrlbarInput.sys.mjs" {
         handleCommand();
         handleNavigation();
         handleRevert();
+        maybeHandleRevertFromPopup();
         handoff();
         pickElement();
         pickResult();

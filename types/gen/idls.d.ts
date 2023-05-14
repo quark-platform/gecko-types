@@ -816,6 +816,10 @@ declare interface imgIRequestType extends nsIRequestType {
      */
     readonly CORSMode: long;
     /**
+     * The referrer that this image was loaded with.
+     */
+    readonly referrerInfo: nsIReferrerInfo;
+    /**
      * Cancels this request as in nsIRequest::Cancel(); further, also nulls out
      * decoderObserver so it gets no further notifications from us.
      *
@@ -1127,15 +1131,11 @@ declare interface inIDeepTreeWalkerType extends nsISupportsType {
     /**
      *
      */
-    init(aRoot: Node, aWhatToShow: unsigned_long): void;
+    init(aRoot: Node): void;
     /**
      *
      */
     readonly root: Node;
-    /**
-     *
-     */
-    readonly whatToShow: unsigned_long;
     /**
      *
      */
@@ -1801,7 +1801,7 @@ declare interface mozIGeckoMediaPluginServiceType extends nsISupportsType {
      * Get a plugin that supports the specified tags.
      * Callable on any thread
      */
-    hasPluginForAPI(api: ACString, tags: TagArray): boolean;
+    hasPluginForAPI(api: ACString, tags: ConstTagArrayRef): boolean;
     /**
      * Get a video decoder that supports the specified tags.
      * The array of tags should at least contain a codec tag, and optionally
@@ -2546,6 +2546,33 @@ declare interface mozIStorageAsyncConnectionType extends nsISupportsType {
      * @throws if used on an unsupported connection type, or a closed connection.
      */
     interrupt(): void;
+    /**
+     * Vacuum the main database plus all the attached one.
+     * If the database is in auto_vacuum = INCREMENTAL mode, this executes an
+     * incremental_vacuum, otherwise it will always execute a full vacuum.
+     *
+     * While it's possible to invoke this method directly, it's suggested, when
+     * possible, to use the VacuumManager instead.
+     * That means registering your component for the "vacuum-participant" XPCOM
+     * category, and implement the mozIStorageVacuumParticipant interface.
+     *
+     * @param [aCallback] Completion callback invoked once the operation is
+     * complete.
+     * @param [aUseIncremental] When set to true, this will try to convert the
+     * main schema to auto_vacuum = INCREMENTAL mode, if it's not set yet.
+     * When set to false, it will try to set auto_vacuum = NONE.
+     * Note a full vacuum will be executed if the auto_vacuum mode must be
+     * changed, otherwise an incremental vacuum will happen if the database
+     * is already in INCREMENTAL mode.
+     * @param [aSetPageSize] This can be used to change the database page_size, a
+     * full vacuum will be executed to persist the change. If the page
+     * size is already correct, or you pass 0, this will be a no-op.
+     * @throws If it's not possible to start the async vacuum operation, note in
+     * this case the callback won't be invoked.
+     * @note Vacuum will fail inside a transaction, or if there is an ongoing
+     * read statement.
+     */
+    asyncVacuum(aCallback: mozIStorageCompletionCallback?, aUseIncremental: boolean?, aSetPageSize: long?): void;
     /**
      * Create an asynchronous statement for the given SQL. An
      * asynchronous statement can only be used to dispatch asynchronous
@@ -3646,7 +3673,7 @@ declare interface mozIStorageStatementCallbackType extends nsISupportsType {
 declare interface mozIStorageVacuumParticipantType extends nsISupportsType {
     /**
      * The expected page size in bytes for the database.  The vacuum manager will
-     * try to correct the page size during idle based on this value.
+     * try to correct the page size by executing a full vacuum.
      *
      * @note If the database is using the WAL journal mode, the page size won't
      * be changed to the requested value.  See bug 634374.
@@ -3655,9 +3682,16 @@ declare interface mozIStorageVacuumParticipantType extends nsISupportsType {
      */
     readonly expectedDatabasePageSize: long;
     /**
+     * Whether the main schema should be using auto_vacuum = INCREMENTAL.
+     * This will cause auto_vacuum to change to INCREMENTAL if it's not set yet.
+     * It is not possible to change mode of any attached databases through this,
+     * to do that you must open a separate connection and use asyncVacuum() on it.
+     */
+    readonly useIncrementalVacuum: boolean;
+    /**
      * Connection to the database file to be vacuumed.
      */
-    readonly databaseConnection: mozIStorageConnection;
+    readonly databaseConnection: mozIStorageAsyncConnection;
     /**
      * Notifies when a vacuum operation begins.  Listeners should avoid using the
      * database till onEndVacuum is received.
@@ -3666,9 +3700,9 @@ declare interface mozIStorageVacuumParticipantType extends nsISupportsType {
      * opt-out for now, it will be retried later.  Useful when participant
      * is running some other heavy operation that can't be interrupted.
      *
-     * @note When a vacuum operation starts or ends it will also dispatch a global
-     * "heavy-io-task" notification through the observer service with the
-     * data argument being either "vacuum-begin" or "vacuum-end".
+     * @note When a vacuum operation starts or ends it will also dispatch global
+     * "vacuum-begin" and "vacuum-end" notifications through the observer
+     * service with the data argument being the database filename.
      */
     onBeginVacuum(): boolean;
     /**
@@ -7508,7 +7542,7 @@ declare interface nsIBinaryOutputStreamType extends nsIOutputStreamType {
  * It would be preferable for the functions in this interface to return
  * Promises, but this interface is implemented in Rust, which does not yet have
  * support for Promises. There is a JS wrapper around this class that should be
- * preferred over using this interface directly, located in Bits.jsm.
+ * preferred over using this interface directly, located in Bits.sys.mjs.
  *
  * Methods of this class that take a nsIBitsNewRequestCallback do not return or
  * throw errors. All errors will be reported through the callback. The only
@@ -7638,7 +7672,7 @@ declare interface nsIBitsNewRequestCallbackType extends nsISupportsType {
  * It would be preferable for the functions in this interface to return
  * Promises, but this interface is implemented in Rust, which does not yet have
  * support for Promises. There is a JS wrapper around this class that should be
- * preferred over using this interface directly, located in Bits.jsm.
+ * preferred over using this interface directly, located in Bits.sys.mjs.
  *
  * Methods of this class that take a nsIBitsCallback do not return or throw
  * errors. All errors will be reported through the callback. The only
@@ -7928,10 +7962,6 @@ declare interface nsIBrowserChildType extends nsISupportsType {
      *
      */
     readonly tabId: uint64_t;
-    /**
-     * Indicates whether or not there are other tabs in this tab's window.
-     */
-    hasSiblings: boolean;
     /**
      * Send a message from the BrowserChild to the BrowserParent that a
      * nsIWebNavigation navigation finished in the child.
@@ -13815,7 +13845,11 @@ declare interface nsIDAPTelemetryType extends nsISupportsType {
      * @note This can potentially run for a long time. Take care not to block
      * the main thread for too long.
      */
-    GetReport(leaderHpkeConfig: invalid, helperHpkeConfig: invalid, measurement: uint8_t, task_id: invalid, time_precision: uint64_t, report: invalid): void;
+    GetReportU8(leaderHpkeConfig: invalid, helperHpkeConfig: invalid, measurement: uint8_t, task_id: invalid, time_precision: uint64_t, report: invalid): void;
+    /**
+     *
+     */
+    GetReportVecU16(leaderHpkeConfig: invalid, helperHpkeConfig: invalid, measurement: invalid, task_id: invalid, time_precision: uint64_t, report: invalid): void;
 }
 
 /**
@@ -17257,12 +17291,6 @@ declare interface nsIDocShellType extends nsIDocShellTreeItemType {
      */
     HistoryID(): nsIDRef;
     /**
-     * Sets whether a docshell is an app tab. An app tab docshell may behave
-     * differently than a non-app tab docshell in some cases, such as when
-     * handling link clicks. Docshells are not app tabs unless told otherwise.
-     */
-    isAppTab: boolean;
-    /**
      * Create a new about:blank document and content viewer.
      * @param aPrincipal the principal to use for the new document.
      * @param aPartitionedPrincipal the partitioned principal to use for the new
@@ -17427,17 +17455,6 @@ declare interface nsIDocShellType extends nsIDocShellTreeItemType {
      *
      */
     getExtantDocument(): Document;
-    /**
-     * If deviceSizeIsPageSize is set to true, device-width/height media queries
-     * will be calculated from the page size, not the device size.
-     *
-     * Used by the Responsive Design Mode and B2G Simulator.
-     *
-     * Default is False.
-     * Default value can be overriden with
-     * docshell.device_size_is_page_size pref.
-     */
-    deviceSizeIsPageSize: boolean;
     /**
      * Notify DocShell when the browser is about to start executing JS, and after
      * that execution has stopped.  This only occurs when the Timeline devtool
@@ -18207,6 +18224,12 @@ declare interface nsIDragServiceType extends nsISupportsType {
      *
      */
     removeAllChildProcesses(): boolean;
+    /**
+     * Called when HTMLEditor maybe deleted the source node from the document.
+     *
+     * @param aEditingHost    The editing host when the editor deletes selection.
+     */
+    maybeEditorDeletedSourceNode(aEditingHost: Element): void;
 }
 
 /**
@@ -24581,12 +24604,12 @@ declare interface nsIHttpChannelType extends nsIIdentChannelType {
      */
     topLevelContentWindowId: uint64_t;
     /**
-     * ID of the top-level browsing context for this channel.
+     * ID of the browser for this channel.
      *
      * NOTE: The setter of this attribute is currently for xpcshell test only.
      * Don't alter it otherwise.
      */
-    topBrowsingContextId: uint64_t;
+    browserId: uint64_t;
     /**
      * In e10s, the information that the CORS response blocks the load is in the
      * parent, which doesn't know the true window id of the request, so we may
@@ -24607,6 +24630,14 @@ declare interface nsIHttpChannelType extends nsIIdentChannelType {
      *
      */
     setSource(aSource: UniqueProfileChunkedBuffer): void;
+    /**
+     *
+     */
+    classicScriptHintCharset: AString;
+    /**
+     *
+     */
+    documentCharacterSet: AString;
 }
 
 /**
@@ -25079,6 +25110,10 @@ declare interface nsIHttpChannelInternalType extends nsISupportsType {
      * This attribute indicates if the channel was loaded via Proxy.
      */
     readonly isProxyUsed: boolean;
+    /**
+     * Set mWebTransportSessionEventListener.
+     */
+    setWebTransportSessionEventListener(aListener: WebTransportSessionEventListener): void;
 }
 
 /**
@@ -26636,7 +26671,10 @@ declare interface nsIInputStreamType extends nsISupportsType {
     /**
      * Close the stream.  This method causes subsequent calls to Read and
      * ReadSegments to return 0 bytes read to indicate end-of-file.  Any
-     * subsequent calls to Available should throw NS_BASE_STREAM_CLOSED.
+     * subsequent calls to Available or StreamStatus should throw
+     * NS_BASE_STREAM_CLOSED.
+     *
+     * Succeeds (without side effects) if already closed.
      */
     close(): void;
     /**
@@ -26664,6 +26702,23 @@ declare interface nsIInputStreamType extends nsISupportsType {
      * condition
      */
     available(): unsigned_long_long;
+    /**
+     * Check the current status of the stream.  A stream that is closed will
+     * throw an exception when this method is called.  That enables the caller
+     * to know the condition of the stream before attempting to read from it.
+     *
+     * This method will not throw NS_BASE_STREAM_WOULD_BLOCK, even if the stream
+     * is an non-blocking stream with no data. A non-blocking stream that does
+     * not yet have any data to read should return NS_OK.
+     *
+     * NOTE: Unlike available, his method should not block the calling thread
+     * (e.g. to query the state of a file descriptor), even when called on a
+     * blocking stream.
+     *
+     * @throws NS_BASE_STREAM_CLOSED if the stream closed normally
+     * @throws <other-error> if the stream closed with a different status
+     */
+    streamStatus(): void;
     /**
      * Read data from the stream.
      *
@@ -28826,17 +28881,6 @@ declare interface nsILoadInfoType extends nsISupportsType {
  * or Progressive Web Apps.
  */
 declare interface nsILoadURIDelegateType extends nsISupportsType {
-    /**
-     * Delegates the URI load. This should only be called for top-level loads.
-     *
-     * @param aURI The URI to load.
-     * @param aWhere See possible values described in nsIBrowserDOMWindow.
-     * @param aFlags Flags which control the behavior of the load.
-     * @param aTriggeringPrincipal The principal that triggered the load of aURI.
-     *
-     * Returns whether the load has been successfully handled.
-     */
-    loadURI(aURI: nsIURI, aWhere: short, aFlags: long, aTriggeringPrincipal: nsIPrincipal): boolean;
     /**
      * Delegates page load error handling. This may be called for either top-level
      * loads or subframes.
@@ -34254,6 +34298,8 @@ declare interface nsIOpenWindowInfoType extends nsISupportsType {
 declare interface nsIOutputStreamType extends nsISupportsType {
     /**
      * Close the stream. Forces the output stream to flush any buffered data.
+     * Any subsequent calls to StreamStatus should throw NS_BASE_STREAM_CLOSED.
+     * Succeeds without effect if already closed.
      *
      * @throws NS_BASE_STREAM_WOULD_BLOCK if unable to flush without blocking
      * the calling thread (non-blocking mode only)
@@ -34266,6 +34312,22 @@ declare interface nsIOutputStreamType extends nsISupportsType {
      * the calling thread (non-blocking mode only)
      */
     flush(): void;
+    /**
+     * Check the current status of the stream.  A stream that is closed will
+     * throw an exception when this method is called.  That enables the caller
+     * to know the condition of the stream before attempting to write into it.
+     *
+     * This method will not throw NS_BASE_STREAM_WOULD_BLOCK, even if the stream
+     * is a non-blocking stream with no available space. A non-blocking stream
+     * which has not been closed, but has no available room should return NS_OK.
+     *
+     * NOTE: This method should not block the calling thread (e.g. to query the
+     * state of a file descriptor), even when called on a blocking stream.
+     *
+     * @throws NS_BASE_STREAM_CLOSED if the stream closed normally
+     * @throws <other-error> if the stream closed with a different status
+     */
+    streamStatus(): void;
     /**
      * Write data into the stream.
      *
@@ -40239,6 +40301,24 @@ declare interface nsIRandomGeneratorType extends nsISupportsType {
 }
 
 /**
+ *
+ */
+declare interface nsIRddProcessTestType extends nsISupportsType {
+    /**
+     * ** Test-only Method **
+     *
+     * Sending Telemetry probes
+     */
+    testTelemetryProbes(): Promise;
+    /**
+     * ** Test-only Method **
+     *
+     * Stop existing RDD process
+     */
+    stopProcess(): void;
+}
+
+/**
  * Used on the chrome process as a service to join channel implementation
  * and parent IPC protocol side under a unique id.  Provides this way a generic
  * communication while redirecting to various protocols.
@@ -41110,6 +41190,10 @@ declare interface nsISHEntryType extends nsISupportsType {
      * Post Data for the document
      */
     postData: nsIInputStream;
+    /**
+     *
+     */
+    readonly hasPostData: boolean;
     /**
      * LayoutHistoryState for scroll position and form values
      */
@@ -42643,17 +42727,11 @@ declare interface nsISearchEngineType extends nsISupportsType {
      */
     readonly isGeneralPurposeEngine: boolean;
     /**
-     * Gets a string representing the hostname from which search results for a
-     * given responseType are returned.  This can be specified as an url attribute
-     * in the engine description file, but will default to host from the <Url>'s
-     * template otherwise.
+     * The domain from which search results are returned for this engine.
      *
-     * @param  responseType [optional]
-     * The MIME type to get resultDomain for.  Defaults to "text/html".
-     *
-     * @return the resultDomain for the given responseType.
+     * @return the domain of the the search URL.
      */
-    getResultDomain(responseType: AString): AString;
+    readonly searchUrlDomain: AString;
 }
 
 /**
@@ -44537,6 +44615,14 @@ declare interface nsISocketTransportType extends nsITransportType {
      */
     resolvedByTRR(): bool;
     /**
+     * Returns the effectiveTRRMode used for the DNS resolution.
+     */
+    readonly effectiveTRRMode: nsIRequest_TRRMode;
+    /**
+     * Returns the TRR skip reason used for the DNS resolution.
+     */
+    readonly trrSkipReason: nsITRRSkipReason_value;
+    /**
      * Indicate whether this socket is created from a private window. If yes,
      * this socket will be closed when the last private window is closed.
      */
@@ -44764,6 +44850,13 @@ declare interface nsISpeculativeConnectionOverriderType extends nsISupportsType 
      * by default speculative connections are not made to RFC 1918 addresses
      */
     readonly allow1918: boolean;
+    /**
+     * By default the speculative connections triggered by nsISpeculativeConnect
+     * should respect the user certificate checks implemented in nsHttpHandler.
+     * The checks can be ignored for `Link: rel=preconnect` and is also
+     * controlled by a pref.
+     */
+    readonly ignoreUserCertCheck: boolean;
 }
 
 /**
@@ -50539,6 +50632,14 @@ declare interface nsITouchBarHelperType extends nsISupportsType {
      */
     readonly isUrlbarFocused: boolean;
     /**
+     * Toggles Urlbar focus.
+     */
+    toggleFocusUrlbar(): void;
+    /**
+     * Unfocuses the Urlbar.
+     */
+    unfocusUrlbar(): void;
+    /**
      * Returns all available Touch Bar Inputs in an nsIArray
      * of nsITouchBarInput objects.
      */
@@ -51082,6 +51183,10 @@ declare interface nsITransferableType extends nsISupportsType {
      * from.
      */
     cookieJarSettings: nsICookieJarSettings;
+    /**
+     * Used for initializing the referrer when downloading a file promise.
+     */
+    referrerInfo: nsIReferrerInfo;
 }
 
 /**
@@ -51650,9 +51755,9 @@ declare interface nsITypeAheadFindType extends nsISupportsType {
 }
 
 /**
- * TODO: U2FTokenManager needs to be renamed to CTAPTokenManager or similar,
- * because it now contains also CTAP2 functionality (e.g. pinCallback)
- * See bug 1801643
+ * TODO(1737205,1819414) Fold this interface into nsIWebAuthnController when we
+ * remove the legacy U2F DOM API.
+ *
  * nsIU2FTokenManager
  *
  * An interface to the U2FTokenManager singleton.
@@ -51669,26 +51774,6 @@ declare interface nsIU2FTokenManagerType extends nsISupportsType {
      * @param aForceNoneAttestation : The user might enforce none attestation.
      */
     resumeRegister(aTransactionID: uint64_t, aForceNoneAttestation: bool): void;
-    /**
-     * Resumes the current WebAuthn transaction.
-     * This is used only when the hardware token requires
-     * user-verification and is thus protected by a PIN.
-     *
-     * @param aPin : PIN the user entered after being prompted.
-     */
-    pinCallback(aPin: ACString): void;
-    /**
-     * Resumes the current WebAuthn transaction if that matches the given
-     * transaction ID. This is used only when the hardware token returned
-     * multiple results for signin in and the user needs to select with which
-     * to log in.
-     * TODO(MS): This is a CTAP2 operation, so U2FTokenManager is probably
-     * not the ideal place for this function. It is a shortcut for now.
-     *
-     * @param aTransactionID : The ID of the transaction to resume.
-     * @param idx : The index of the selected result
-     */
-    resumeWithSelectedSignResult(aTransactionID: uint64_t, idx: uint64_t): void;
     /**
      * Cancels the current WebAuthn/U2F transaction if that matches the given
      * transaction ID.
@@ -54793,6 +54878,12 @@ declare interface nsIUtilityProcessTestType extends nsISupportsType {
     /**
      * ** Test-only Method **
      *
+     * Note that we are going to manually crash a process
+     */
+    noteIntentionalCrash(pid: unsigned_long): void;
+    /**
+     * ** Test-only Method **
+     *
      * Allowing to stop Utility Process from JS code.
      * Default behavior is to stop any utility process.
      */
@@ -55180,6 +55271,174 @@ declare interface nsISupportsWeakReferenceType extends nsISupportsType {
 }
 
 /**
+ *
+ */
+declare interface nsICtapRegisterArgsType extends nsISupportsType {
+    /**
+     *
+     */
+    readonly origin: AString;
+    /**
+     *
+     */
+    readonly clientDataJSON: ACString;
+    /**
+     *
+     */
+    readonly rpId: AString;
+    /**
+     *
+     */
+    readonly rpName: AString;
+    /**
+     *
+     */
+    readonly userName: AString;
+    /**
+     *
+     */
+    readonly userDisplayName: AString;
+    /**
+     *
+     */
+    readonly hmacCreateSecret: bool;
+    /**
+     *
+     */
+    readonly requireResidentKey: bool;
+    /**
+     *
+     */
+    readonly userVerification: AString;
+    /**
+     *
+     */
+    readonly authenticatorAttachment: AString;
+    /**
+     *
+     */
+    readonly timeoutMS: uint32_t;
+    /**
+     *
+     */
+    readonly attestationConveyancePreference: AString;
+}
+
+/**
+ *
+ */
+declare interface nsICtapSignArgsType extends nsISupportsType {
+    /**
+     *
+     */
+    readonly origin: AString;
+    /**
+     *
+     */
+    readonly rpId: AString;
+    /**
+     *
+     */
+    readonly clientDataJSON: ACString;
+    /**
+     *
+     */
+    readonly hmacCreateSecret: bool;
+    /**
+     *
+     */
+    readonly appId: AString;
+    /**
+     *
+     */
+    readonly userVerification: AString;
+    /**
+     *
+     */
+    readonly timeoutMS: unsigned_long;
+}
+
+/**
+ *
+ */
+declare interface nsICtapRegisterResultType extends nsISupportsType {
+    /**
+     *
+     */
+    readonly status: nsresult;
+    /**
+     *
+     */
+    readonly clientDataJSON: ACString;
+}
+
+/**
+ *
+ */
+declare interface nsICtapSignResultType extends nsISupportsType {
+    /**
+     *
+     */
+    readonly status: nsresult;
+    /**
+     *
+     */
+    readonly userName: ACString;
+}
+
+/**
+ *
+ */
+declare interface nsIWebAuthnControllerType extends nsIU2FTokenManagerType {
+    /**
+     *
+     */
+    pinCallback(aTransactionId: uint64_t, aPin: ACString): void;
+    /**
+     *
+     */
+    signatureSelectionCallback(aTransactionId: uint64_t, aIndex: uint64_t): void;
+    /**
+     *
+     */
+    sendPromptNotificationPreformatted(aTransactionId: uint64_t, aJSON: ACString): void;
+    /**
+     *
+     */
+    finishRegister(aTransactionId: uint64_t, aResult: nsICtapRegisterResult): void;
+    /**
+     *
+     */
+    finishSign(aTransactionId: uint64_t, aClientDataJson: ACString, aResult: invalid): void;
+}
+
+/**
+ *
+ */
+declare interface nsIWebAuthnTransportType extends nsISupportsType {
+    /**
+     *
+     */
+    controller: nsIWebAuthnController;
+    /**
+     *
+     */
+    makeCredential(aTransactionId: uint64_t, browsingContextId: uint64_t, args: nsICtapRegisterArgs): void;
+    /**
+     *
+     */
+    getAssertion(aTransactionId: uint64_t, browsingContextId: uint64_t, args: nsICtapSignArgs): void;
+    /**
+     *
+     */
+    pinCallback(aTransactionId: uint64_t, aPin: ACString): void;
+    /**
+     *
+     */
+    cancel(): void;
+}
+
+/**
  * The nsIWebBrowser interface is implemented by web browser objects.
  * Embedders use this interface during initialisation to associate
  * the new web browser instance with the embedders chrome and
@@ -55475,11 +55734,9 @@ declare interface nsIWebBrowserPersistType extends nsICancelableType {
      * nsIURI object with a file scheme or a scheme that
      * supports uploading (e.g. ftp).
      * @param aContentPolicyType The type of content we're saving.
-     * @param aPrivacyContext A context from which the privacy status of this
-     * save operation can be determined. Must only be null
-     * in situations in which no such context is available
-     * (eg. the operation has no logical association with any
-     * window or document)
+     * @param aIsPrivate Treat the save operation as private (ie. with
+     * regards to networking operations and persistence
+     * of intermediate data, etc.)
      *
      * @see nsIFile
      * @see nsIURI
@@ -55487,14 +55744,7 @@ declare interface nsIWebBrowserPersistType extends nsICancelableType {
      *
      * @throws NS_ERROR_INVALID_ARG One or more arguments was invalid.
      */
-    saveURI(aURI: nsIURI, aTriggeringPrincipal: nsIPrincipal, aCacheKey: unsigned_long, aReferrerInfo: nsIReferrerInfo, aCookieJarSettings: nsICookieJarSettings, aPostData: nsIInputStream, aExtraHeaders: string, aFile: nsISupports, aContentPolicyType: nsContentPolicyType, aPrivacyContext: nsILoadContext): void;
-    /**
-     * @param aIsPrivate Treat the save operation as private (ie. with
-     * regards to networking operations and persistence
-     * of intermediate data, etc.)
-     * @see saveURI for all other parameter descriptions
-     */
-    savePrivacyAwareURI(aURI: nsIURI, aTriggeringPrincipal: nsIPrincipal, aCacheKey: unsigned_long, aReferrerInfo: nsIReferrerInfo, aCookieJarSettings: nsICookieJarSettings, aPostData: nsIInputStream, aExtraHeaders: string, aFile: nsISupports, aContentPolicyType: nsContentPolicyType, aIsPrivate: boolean): void;
+    saveURI(aURI: nsIURI, aTriggeringPrincipal: nsIPrincipal, aCacheKey: unsigned_long, aReferrerInfo: nsIReferrerInfo, aCookieJarSettings: nsICookieJarSettings, aPostData: nsIInputStream, aExtraHeaders: string, aFile: nsISupports, aContentPolicyType: nsContentPolicyType, aIsPrivate: boolean): void;
     /**
      * Save a channel to a file. It must not be opened yet.
      * @see saveURI
@@ -56686,6 +56936,10 @@ declare interface nsIWebTransportType extends nsISupportsType {
     /**
      *
      */
+    asyncConnectWithClient(aURI: nsIURI, aLoadingPrincipal: nsIPrincipal, aSecurityFlags: unsigned_long, aListener: WebTransportSessionEventListener, aClientInfo: const_MaybeClientInfoRef): void;
+    /**
+     *
+     */
     getStats(): void;
     /**
      *
@@ -57667,17 +57921,17 @@ declare interface nsIWindowWatcherType extends nsISupportsType {
      */
     getChromeForWindow(aWindow: mozIDOMWindowProxy): nsIWebBrowserChrome;
     /**
-     * Retrieve an existing window (or frame).
+     * Retrieve an existing chrome window (or frame).
      * @param aTargetName the window name
-     * @param aCurrentWindow a starting point in the window hierarchy to
-     * begin the search.  If null, each toplevel window
-     * will be searched.
+     *
+     * Note: This method will not consider special names like "_blank", "_top",
+     * "_self", or "_parent", as there is no reference window.
      *
      * Note: This method will search all open windows for any window or
      * frame with the given window name. Make sure you understand the
      * security implications of this before using this method!
      */
-    getWindowByName(aTargetName: AString, aCurrentWindow: mozIDOMWindowProxy): mozIDOMWindowProxy;
+    getWindowByName(aTargetName: AString): mozIDOMWindowProxy;
     /**
      * Retrieves the active window from the focus manager.
      */
@@ -61354,7 +61608,7 @@ interface CiType {
     };
     mozIStorageAsyncConnection: {
         readonly name: 'mozIStorageAsyncConnection';
-        readonly number: '8bfd34d5-4ddf-4e4b-89dd-9b14f33534c6';
+        readonly number: '';
         readonly TRANSACTION_DEFERRED: 0;
         readonly TRANSACTION_IMMEDIATE: 1;
         readonly TRANSACTION_EXCLUSIVE: 2;
@@ -63233,7 +63487,6 @@ interface CiType {
         readonly name: 'nsIEventTarget';
         readonly number: '';
         readonly DISPATCH_NORMAL: 0;
-        readonly DISPATCH_SYNC: 1;
         readonly DISPATCH_AT_END: 2;
         readonly DISPATCH_EVENT_MAY_BLOCK: 4;
         readonly DISPATCH_IGNORE_BLOCK_DISPATCH: 8;
@@ -65268,6 +65521,10 @@ interface CiType {
         readonly name: 'nsIRandomGenerator';
         readonly number: '2362d97a-747a-4576-8863-697667309209';
     };
+    nsIRddProcessTest: {
+        readonly name: 'nsIRddProcessTest';
+        readonly number: '12f7d302-5368-412d-bdc9-26d151518e6c';
+    };
     nsIRedirectChannelRegistrar: {
         readonly name: 'nsIRedirectChannelRegistrar';
         readonly number: 'efa36ea2-5b07-46fc-9534-a5acb8b77b72';
@@ -66803,6 +67060,30 @@ interface CiType {
     nsISupportsWeakReference: {
         readonly name: 'nsISupportsWeakReference';
         readonly number: '9188bc86-f92e-11d2-81ef-0060083a0bcf';
+    };
+    nsICtapRegisterArgs: {
+        readonly name: 'nsICtapRegisterArgs';
+        readonly number: '2fc8febe-a277-11ed-bda2-8f6495a5e75c';
+    };
+    nsICtapSignArgs: {
+        readonly name: 'nsICtapSignArgs';
+        readonly number: '2e621cf4-a277-11ed-ae00-bf41a54ef553';
+    };
+    nsICtapRegisterResult: {
+        readonly name: 'nsICtapRegisterResult';
+        readonly number: '0567c384-a728-11ed-85f7-030324a370f0';
+    };
+    nsICtapSignResult: {
+        readonly name: 'nsICtapSignResult';
+        readonly number: '05fff816-a728-11ed-b9ac-ff38cc2c8c28';
+    };
+    nsIWebAuthnController: {
+        readonly name: 'nsIWebAuthnController';
+        readonly number: 'c0744f48-ad64-11ed-b515-cf5149f4d6a6';
+    };
+    nsIWebAuthnTransport: {
+        readonly name: 'nsIWebAuthnTransport';
+        readonly number: 'e236a9b4-a26f-11ed-b6cc-07a9834e19b1';
     };
     nsIWebBrowser: {
         readonly name: 'nsIWebBrowser';

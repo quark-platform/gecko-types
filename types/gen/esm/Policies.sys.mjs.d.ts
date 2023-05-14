@@ -46,6 +46,7 @@ declare module "resource://app/modules/policies/Policies.sys.mjs" {
         Certificates: {
             onBeforeAddons(manager, param);
         };
+        Containers: {};
         Cookies: {
             onBeforeUIStartup(manager, param);
         };

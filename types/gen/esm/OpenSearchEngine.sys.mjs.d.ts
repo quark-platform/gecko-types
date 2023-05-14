@@ -1,6 +1,7 @@
 declare module "resource://gre/modules/OpenSearchEngine.sys.mjs" {
     export class OpenSearchEngine {
         constructor();
+        toJSON();
         install();
         _onLoad();
         _initFromData();

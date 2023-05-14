@@ -1,4 +1,4 @@
 declare module "resource://gre/modules/Console.sys.mjs" {
-    function ConsoleAPI();
+    function ConsoleAPI(aConsoleOptions);
     var console;
 }

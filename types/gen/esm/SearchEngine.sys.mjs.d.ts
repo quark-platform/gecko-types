@@ -53,7 +53,7 @@ declare module "resource://gre/modules/SearchEngine.sys.mjs" {
         get searchUrlQueryParamName();
         get searchUrlPublicSuffix();
         supportsResponseType();
-        getResultDomain();
+        get searchUrlDomain();
         getURLParsingInfo();
         get wrappedJSObject();
         getIconURLBySize();

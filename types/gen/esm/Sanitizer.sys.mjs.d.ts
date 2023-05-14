@@ -27,10 +27,10 @@ declare module "resource://app/modules/Sanitizer.sys.mjs" {
                 clear(range);
             };
             cookies: {
-                clear(range);
+                clear(range, clearHonoringExceptions);
             };
             offlineApps: {
-                clear(range);
+                clear(range, clearHonoringExceptions);
             };
             history: {
                 clear(range);

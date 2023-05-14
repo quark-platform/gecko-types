@@ -1,3 +1,3 @@
 declare module "resource://gre/modules/PopupNotifications.sys.mjs" {
-    function PopupNotifications(tabbrowser, panel, iconBox);
+    function PopupNotifications(tabbrowser, panel, iconBox, options);
 }

@@ -1,4 +1,5 @@
 declare module "resource://app/modules/BrowserGlue.sys.mjs" {
+    var BrowserInitState: {};
     function BrowserGlue();
     function ContentPermissionPrompt();
     var DefaultBrowserCheck: {

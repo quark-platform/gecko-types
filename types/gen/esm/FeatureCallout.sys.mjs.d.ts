@@ -1,6 +1,7 @@
 declare module "resource://app/modules/FeatureCallout.sys.mjs" {
     export class FeatureCallout {
         constructor();
+        get _loadPageEventManager();
         _addPositionListeners();
         _removePositionListeners();
         _handlePrefChange();
@@ -20,5 +21,8 @@ declare module "resource://app/modules/FeatureCallout.sys.mjs" {
         _handlePageEventAction();
         _getUniqueElementIdentifier();
         showFeatureCallout();
+        _initTheme();
+        _applyTheme();
+        _setThemeVariable();
     }
 }
