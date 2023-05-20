@@ -7,5 +7,6 @@
 
 ///<reference path="./gen/idls.d.ts" />
 ///<reference path="./gen/namespaces.d.ts" />
+///<reference path="./gen/classes.d.ts" />
 
 ///<reference path="./gen/esm/index.d.ts" />
