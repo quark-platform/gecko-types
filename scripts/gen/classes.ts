@@ -49,9 +49,42 @@ const types: ts.TypeElement[] = classes.flatMap(
                 undefined,
                 ts.factory.createIdentifier('createInstance'),
                 undefined,
-                undefined,
-                [],
-                ifaceType
+                [
+                  ts.factory.createTypeParameterDeclaration(
+                    undefined,
+                    ts.factory.createIdentifier('I'),
+                    ts.factory.createTypeReferenceNode('CiKeys')
+                  ),
+                ],
+                [
+                  ts.factory.createParameterDeclaration(
+                    undefined,
+                    undefined,
+                    ts.factory.createIdentifier('req'),
+                    undefined,
+                    ts.factory.createIndexedAccessTypeNode(
+                      ts.factory.createTypeReferenceNode(
+                        ts.factory.createIdentifier('CiType'),
+                        undefined
+                      ),
+                      ts.factory.createTypeReferenceNode(
+                        ts.factory.createIdentifier('I'),
+                        undefined
+                      )
+                    ),
+                    undefined
+                  ),
+                ],
+                ts.factory.createIndexedAccessTypeNode(
+                  ts.factory.createTypeReferenceNode(
+                    ts.factory.createIdentifier('CiMap'),
+                    undefined
+                  ),
+                  ts.factory.createTypeReferenceNode(
+                    ts.factory.createIdentifier('I'),
+                    undefined
+                  )
+                )
               ),
             ts.factory.createPropertySignature(
               undefined,

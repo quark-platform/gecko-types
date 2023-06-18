@@ -3,7 +3,6 @@ import { getAllInterfaces, getXPCOMClasses } from 'gecko-index'
 import {
   attribute_code,
   const_code,
-  enum_code,
   func,
   ifacebody_$0_$0_$0,
   interface_main,
@@ -272,6 +271,46 @@ for (const file in interfaceFiles) {
     console.log('Unknown type', node.kind)
   }
 }
+
+// Helper keys
+idlDefFile += printNode(
+  ts.factory.createTypeAliasDeclaration(
+    undefined,
+    ts.factory.createIdentifier('CiKeys'),
+    undefined,
+    ts.factory.createUnionTypeNode(
+      [...idlTypes].map((iface) =>
+        ts.factory.createLiteralTypeNode(ts.factory.createStringLiteral(iface))
+      )
+    )
+  ),
+  idlDefFileBuilder
+)
+idlDefFile += '\n'
+
+// Helper type maps
+idlDefFile += printNode(
+  ts.factory.createInterfaceDeclaration(
+    undefined,
+    ts.factory.createIdentifier('CiMap'),
+    undefined,
+    undefined,
+    [...idlTypes].map((iface) =>
+      ts.factory.createPropertySignature(
+        undefined,
+        ts.factory.createIdentifier(iface),
+        undefined,
+        ts.factory.createTypeReferenceNode(
+          ts.factory.createIdentifier(`${iface}Type`),
+          undefined
+        )
+      )
+    )
+  ),
+  idlDefFileBuilder
+)
+
+idlDefFile += '\n\n'
 
 // Ci namespace
 {
