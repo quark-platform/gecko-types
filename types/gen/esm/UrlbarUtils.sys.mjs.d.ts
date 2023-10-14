@@ -12,13 +12,11 @@ declare module "resource://app/modules/UrlbarUtils.sys.mjs" {
             HEURISTIC_BOOKMARK_KEYWORD;
             HEURISTIC_HISTORY_URL;
             HEURISTIC_OMNIBOX;
-            HEURISTIC_PRELOADED;
             HEURISTIC_SEARCH_TIP;
             HEURISTIC_TEST;
             HEURISTIC_TOKEN_ALIAS_ENGINE;
             INPUT_HISTORY;
             OMNIBOX;
-            PRELOADED;
             REMOTE_SUGGESTION;
             REMOTE_TAB;
             SUGGESTED_INDEX;
@@ -109,6 +107,7 @@ declare module "resource://app/modules/UrlbarUtils.sys.mjs" {
         searchEngagementTelemetryGroup(result);
         searchEngagementTelemetryType(result, selType);
         searchEngagementTelemetrySubtype(result, element);
+        _getQuickSuggestTelemetryType(result);
     };
     export class UrlbarQueryContext {
         constructor();
@@ -130,11 +129,10 @@ declare module "resource://app/modules/UrlbarUtils.sys.mjs" {
         getPriority();
         startQuery();
         cancelQuery();
-        pickResult();
-        blockResult();
         onEngagement();
         onSelection();
         getViewUpdate();
+        getResultCommands();
         get deferUserSelection();
     }
     export class SkippableTimer {

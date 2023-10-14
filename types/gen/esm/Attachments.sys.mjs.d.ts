@@ -6,6 +6,7 @@ declare module "resource://gre/modules/services-settings/Attachments.sys.mjs" {
         constructor();
         get cacheImpl();
         download();
+        isDownloaded();
         deleteDownloaded();
         prune();
         downloadToDisk();

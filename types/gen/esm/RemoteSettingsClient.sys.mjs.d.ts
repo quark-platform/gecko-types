@@ -1,18 +1,34 @@
 declare module "resource://gre/modules/services-settings/RemoteSettingsClient.sys.mjs" {
     export class RemoteSettingsClient {
-        get DEFAULT_SUGGESTION_SCORE();
-        constructor();
-        get shouldEnable();
-        get enablingPreferences();
-        get emitter();
-        get readyPromise();
-        get config();
-        enable();
-        fetch();
-        getFullKeyword();
-        get _test_rs();
-        get _test_resultsByKeyword();
-        _test_setConfig();
-        _test_addResults();
+        get APIError();
+        get NetworkError();
+        get NetworkOfflineError();
+        get ServerContentParseError();
+        get BackendError();
+        get BackoffError();
+        get TimeoutError();
+        get StorageError();
+        get InvalidSignatureError();
+        get MissingSignatureError();
+        get CorruptedDataError();
+        get UnknownCollectionError();
+        constructor(collectionName);
+        refreshBucketName();
+        get identifier();
+        get lastCheckTimePref();
+        httpClient();
+        getLastModified();
+        get();
+        sync();
+        maybeSync();
+        _adjustedError();
+        _telemetryFromError();
+        _importJSONDump();
+        _validateCollectionSignature();
+        _importChanges();
+        _fetchChangeset();
+        _filterSyncResult();
+        _filterEntries();
+        _cleanLocalFields();
     }
 }

@@ -1,6 +1,8 @@
 declare module "resource://gre/modules/GeckoViewMediaControl.sys.mjs" {
     export class GeckoViewMediaControl {
         onInit();
+        onInitBrowser();
+        onDestroyBrowser();
         onEnable();
         onDisable();
         get controller();

@@ -94,6 +94,11 @@ declare var Cc: {
         name: "@mozilla.org/network/protocol/about;1?what=crashgpu";
         number: "{56ebedd4-6ccf-48e8-bdae-adc77f044567}";
     };
+    ["@mozilla.org/network/protocol/about;1?what=crashextensions"]: {
+        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
+        name: "@mozilla.org/network/protocol/about;1?what=crashextensions";
+        number: "{56ebedd4-6ccf-48e8-bdae-adc77f044567}";
+    };
     ["@mozilla.org/network/protocol/about;1?what=credits"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/protocol/about;1?what=credits";
@@ -494,6 +499,11 @@ declare var Cc: {
         name: "@mozilla.org/geolocation/mls-provider;1";
         number: "{77DA64D3-7458-4920-9491-86CC9914F904}";
     };
+    ["@mozilla.org/webauthn/transport;1"]: {
+        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
+        name: "@mozilla.org/webauthn/transport;1";
+        number: "{ebe8a51d-bd54-4838-b031-cd2289990e14}";
+    };
     ["@mozilla.org/dom/test-interface-js;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/dom/test-interface-js;1";
@@ -804,11 +814,6 @@ declare var Cc: {
         name: "@mozilla.org/referrer-info;1";
         number: "{041a129f-10ce-4bda-a60d-e027a26d5ed0}";
     };
-    ["@mozilla.org/net/osfileconstantsservice;1"]: {
-        getService(): unknown;
-        name: "@mozilla.org/net/osfileconstantsservice;1";
-        number: "{4bbe1b96-8956-457f-a03f-9c27435f2afa}";
-    };
     ["@mozilla.org/network/protocol;1?name=javascript"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/protocol;1?name=javascript";
@@ -1008,16 +1013,6 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/zipwriter;1";
         number: "{430d416c-a722-4ad1-be98-d9a445f85e3f}";
-    };
-    ["@mozilla.org/preferences-service;1"]: {
-        getService(): nsIPrefServiceType;
-        name: "@mozilla.org/preferences-service;1";
-        number: "{91ca2441-050f-4f7c-9df8-75b40ea40156}";
-    };
-    ["@mozilla.org/pref-localizedstring;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/pref-localizedstring;1";
-        number: "{064d9cee-1dd2-11b2-83e3-d25ab0193c26}";
     };
     ["@mozilla.org/io/arraybuffer-input-stream;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1619,6 +1614,11 @@ declare var Cc: {
         name: "@mozilla.org/security/CRLiteTimestamp;1";
         number: "{9676cfc4-6e84-11ec-a30d-d3cd0af86e01}";
     };
+    ["@mozilla.org/security/datastoragemanager;1"]: {
+        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
+        name: "@mozilla.org/security/datastoragemanager;1";
+        number: "{71b49926-fd4e-43e2-ab8d-d9b049413c0b}";
+    };
     ["@mozilla.org/sandbox/sandbox-settings;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/sandbox/sandbox-settings;1";
@@ -1683,6 +1683,11 @@ declare var Cc: {
         getService(): unknown;
         name: "@mozilla.org/about-windowsmessages;1";
         number: "{ba8cdb8a-9624-493d-aac4-23ee83378d7c}";
+    };
+    ["@mozilla.org/bounce-tracking-protection;1"]: {
+        getService(): nsIBounceTrackingProtectionType;
+        name: "@mozilla.org/bounce-tracking-protection;1";
+        number: "{4866F748-29DA-4C10-8EAA-ED2F7851E6B1}";
     };
     ["@mozilla.org/tracking-db-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1798,11 +1803,6 @@ declare var Cc: {
         getService(): unknown;
         name: "@mozilla.org/reputationservice/login-reputation-service;1";
         number: "{91fa9e67-1427-4ee9-8ee0-1a6ed578bee1}";
-    };
-    ["@mozilla.org/toolkit/osfile/native-internals;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/toolkit/osfile/native-internals;1";
-        number: "{63a69303-8a64-45a9-848c-d4e2792794e6}";
     };
     ["@mozilla.org/alerts-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2044,16 +2044,6 @@ declare var Cc: {
         name: "@mozilla.org/login-manager/crypto/SDR;1";
         number: "{dc6c2976-0f73-4f1f-b9ff-3d72b4e28309}";
     };
-    ["@mozilla.org/login-manager/storage/json;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/login-manager/storage/json;1";
-        number: "{c00c432d-a0c9-46d7-bef6-9c45b4d07341}";
-    };
-    ["@mozilla.org/login-manager/storage/default;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/login-manager/storage/default;1";
-        number: "{c00c432d-a0c9-46d7-bef6-9c45b4d07341}";
-    };
     ["@mozilla.org/login-manager/prompter;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/login-manager/prompter;1";
@@ -2194,11 +2184,6 @@ declare var Cc: {
         name: "@mozilla.org/satchel/form-autocomplete;1";
         number: "{c11c21b2-71c9-4f87-a0f8-5e13f50495fd}";
     };
-    ["@mozilla.org/satchel/inputlist-autocomplete;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/satchel/inputlist-autocomplete;1";
-        number: "{bf1e01d0-953e-11df-981c-0800200c9a66}";
-    };
     ["@mozilla.org/satchel/form-history-startup;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/satchel/form-history-startup;1";
@@ -2223,11 +2208,6 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/base/telemetry-controller-content;1";
         number: "{efc1415c-5708-41cc-8226-82bf1d3bee16}";
-    };
-    ["@mozilla.org/base/telemetry;1"]: {
-        getService(): nsITelemetryType;
-        name: "@mozilla.org/base/telemetry;1";
-        number: "{aea477f2-b3a2-469c-aa29-0a82d132b829}";
     };
     ["@mozilla.org/base/daptelemetry;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2314,15 +2294,15 @@ declare var Cc: {
         name: "@mozilla.org/addons/installtrigger;1";
         number: "{9df8ef2b-94da-45c9-ab9f-132eb55fddf1}";
     };
-    ["@mozilla.org/uriloader/content-handler;1?type=application/x-xpinstall"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/uriloader/content-handler;1?type=application/x-xpinstall";
-        number: "{7beb3ba8-6ec3-41b4-b67c-da89b8518922}";
-    };
     ["@mozilla.org/addon-web-api/manager;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/addon-web-api/manager;1";
         number: "{8866d8e3-4ea5-48b7-a891-13ba0ac15235}";
+    };
+    ["@mozilla.org/uriloader/content-handler;1?type=application/x-xpinstall"]: {
+        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
+        name: "@mozilla.org/uriloader/content-handler;1?type=application/x-xpinstall";
+        number: "{7beb3ba8-6ec3-41b4-b67c-da89b8518922}";
     };
     ["@mozilla.org/content-dispatch-chooser;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2459,191 +2439,6 @@ declare var Cc: {
         name: "@mozilla.org/uriloader/web-handler-app;1";
         number: "{8b1ae382-51a9-4972-b930-56977a57919d}";
     };
-    ["@mozilla.org/widget/appshell/android;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/appshell/android;1";
-        number: "{2d96b3df-c051-11d1-a827-0040959a28c9}";
-    };
-    ["@mozilla.org/gfx/parent/screenmanager;1"]: {
-        getService(): unknown;
-        name: "@mozilla.org/gfx/parent/screenmanager;1";
-        number: "{d594094c-28b6-466b-97d7-66c039c3dea9}";
-    };
-    ["@mozilla.org/widget/useridleservice;1"]: {
-        getService(): unknown;
-        name: "@mozilla.org/widget/useridleservice;1";
-        number: "{6987230e-0098-4e78-bc5f-1493ee7519fa}";
-    };
-    ["@mozilla.org/widget/transferable;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/transferable;1";
-        number: "{8b5314bc-db01-11d2-96ce-0060b0fb9956}";
-    };
-    ["@mozilla.org/widget/parent/clipboard;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/parent/clipboard;1";
-        number: "{9d5adbb9-1da4-4162-acba-b373fe3ae837}";
-    };
-    ["@mozilla.org/widget/clipboardhelper;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/clipboardhelper;1";
-        number: "{77221d5a-1dd2-11b2-8c69-c710f15d2ed5}";
-    };
-    ["@mozilla.org/gfx/printsettings-service;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/gfx/printsettings-service;1";
-        number: "{841387c8-72e6-484b-9296-bf6eea80d58a}";
-    };
-    ["@mozilla.org/gfx/devicecontextspec;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/gfx/devicecontextspec;1";
-        number: "{d3f69889-e13a-4321-980c-a39332e21f34}";
-    };
-    ["@mozilla.org/widget/htmlformatconverter;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/htmlformatconverter;1";
-        number: "{948a0023-e3a7-11d2-96cf-0060b0fb9956}";
-    };
-    ["@mozilla.org/gfx/info;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/gfx/info;1";
-        number: "{d755a760-9f27-11df-0800-200c9a664242}";
-    };
-    ["@mozilla.org/android/bridge;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/android/bridge;1";
-        number: "{0fe2321d-ebd9-467d-a743-03a68d40599e}";
-    };
-    ["@mozilla.org/system-alerts-service;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/system-alerts-service;1";
-        number: "{84e11f80-ca55-11dd-ad8b-0800200c9a66}";
-    };
-    ["@mozilla.org/widget/parent/clipboard;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/parent/clipboard;1";
-        number: "{49f428e8-baf9-4ba3-b1b0-7d2fd3abbcea}";
-    };
-    ["@mozilla.org/gfx/info;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/gfx/info;1";
-        number: "{d755a760-9f27-11df-0800-200c9a664242}";
-    };
-    ["@mozilla.org/parent/filepicker;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/parent/filepicker;1";
-        number: "{e5170091-c16b-492d-bf00-f45d72470553}";
-    };
-    ["@mozilla.org/parent/colorpicker;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/parent/colorpicker;1";
-        number: "{b90f5fdd-c23e-4ad6-a10e-1da8ffe07799}";
-    };
-    ["@mozilla.org/widget/appshell/mac;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/appshell/mac;1";
-        number: "{2d96b3df-c051-11d1-a827-0040959a28c9}";
-    };
-    ["@mozilla.org/parent/sound;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/parent/sound;1";
-        number: "{15cc80a9-5329-4fcb-9a0b-c6cf1440ae51}";
-    };
-    ["@mozilla.org/widget/transferable;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/transferable;1";
-        number: "{8b5314bc-db01-11d2-96ce-0060b0fb9956}";
-    };
-    ["@mozilla.org/widget/htmlformatconverter;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/htmlformatconverter;1";
-        number: "{948a0023-e3a7-11d2-96cf-0060b0fb9956}";
-    };
-    ["@mozilla.org/widget/clipboardhelper;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/clipboardhelper;1";
-        number: "{77221d5a-1dd2-11b2-8c69-c710f15d2ed5}";
-    };
-    ["@mozilla.org/widget/parent/dragservice;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/parent/dragservice;1";
-        number: "{9a155bb2-2b67-45de-83e3-13a9dacf8336}";
-    };
-    ["@mozilla.org/gfx/parent/screenmanager;1"]: {
-        getService(): unknown;
-        name: "@mozilla.org/gfx/parent/screenmanager;1";
-        number: "{f0ddedd7-e8d5-4f95-a5b4-0f48f1741b36}";
-    };
-    ["@mozilla.org/gfx/devicecontextspec;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/gfx/devicecontextspec;1";
-        number: "{d3f69889-e13a-4321-980c-a39332e21f34}";
-    };
-    ["@mozilla.org/gfx/printerlist;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/gfx/printerlist;1";
-        number: "{a6cf9129-15b3-11d2-932e-00805f8add32}";
-    };
-    ["@mozilla.org/gfx/printsettings-service;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/gfx/printsettings-service;1";
-        number: "{841387c8-72e6-484b-9296-bf6eea80d58a}";
-    };
-    ["@mozilla.org/widget/printdialog-service;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/printdialog-service;1";
-        number: "{06beec76-a183-4d9f-85dd-085f26da565a}";
-    };
-    ["@mozilla.org/widget/useridleservice;1"]: {
-        getService(): unknown;
-        name: "@mozilla.org/widget/useridleservice;1";
-        number: "{6987230e-0089-4e78-bc5f-1493ee7519fa}";
-    };
-    ["@mozilla.org/system-alerts-service;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/system-alerts-service;1";
-        number: "{84e11f80-ca55-11dd-ad8b-0800200c9a66}";
-    };
-    ["@mozilla.org/widget/macdocksupport;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/macdocksupport;1";
-        number: "{2451baed-8dc3-46d9-9e30-96e1baa03666}";
-    };
-    ["@mozilla.org/widget/macfinderprogress;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/macfinderprogress;1";
-        number: "{74ea4101-a5bb-49bc-9984-66da8b225a37}";
-    };
-    ["@mozilla.org/widget/macsharingservice;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/macsharingservice;1";
-        number: "{de59fe1a-46c8-490f-b04d-34545acb06c9}";
-    };
-    ["@mozilla.org/widget/macuseractivityupdater;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/macuseractivityupdater;1";
-        number: "{29046c8f-cba6-4ffa-9141-1685e96c4ea0}";
-    };
-    ["@mozilla.org/widget/mac-web-app-utils;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/mac-web-app-utils;1";
-        number: "{e9096367-ddd9-45e4-b762-49c0c18b7119}";
-    };
-    ["@mozilla.org/widget/standalonenativemenu;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/standalonenativemenu;1";
-        number: "{1f39ae50-b6a0-4b37-90f4-60af614193d8}";
-    };
-    ["@mozilla.org/widget/systemstatusbar;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/systemstatusbar;1";
-        number: "{b6e1a890-b2b8-4883-a65f-9476f6185313}";
-    };
-    ["@mozilla.org/widget/touchbarupdater;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/touchbarupdater;1";
-        number: "{38f396e2-93c9-4a77-aaf7-2d50b9962186}";
-    };
     ["@mozilla.org/widget/clipboard;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/clipboard;1";
@@ -2704,430 +2499,15 @@ declare var Cc: {
         name: "@mozilla.org/gfx/content/screenmanager;1";
         number: "{b2cdd51c-4277-417b-a931-08306c7814c3}";
     };
-    ["@mozilla.org/widget/appshell/gtk;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/appshell/gtk;1";
-        number: "{2d96b3df-c051-11d1-a827-0040959a28c9}";
-    };
-    ["@mozilla.org/gfx/parent/screenmanager;1"]: {
-        getService(): unknown;
-        name: "@mozilla.org/gfx/parent/screenmanager;1";
-        number: "{e9537f8f-c07e-4435-8ab3-83f1ad6e3bbf}";
-    };
-    ["@mozilla.org/widget/taskbarprogress/gtk;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/taskbarprogress/gtk;1";
-        number: "{a9339876-0027-430f-b953-84c9c11c2da3}";
-    };
-    ["@mozilla.org/parent/colorpicker;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/parent/colorpicker;1";
-        number: "{4364de1a-798e-419c-a6f5-ca28866b6d5f}";
-    };
-    ["@mozilla.org/parent/filepicker;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/parent/filepicker;1";
-        number: "{1940fed5-7d02-4122-8acf-7abaac698983}";
-    };
-    ["@mozilla.org/widget/htmlformatconverter;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/htmlformatconverter;1";
-        number: "{948a0023-e3a7-11d2-96cf-0060b0fb9956}";
-    };
-    ["@mozilla.org/parent/sound;1"]: {
-        getService(): unknown;
-        name: "@mozilla.org/parent/sound;1";
-        number: "{e711c28b-c1f1-4b87-8448-e1e0da0a7b7d}";
-    };
-    ["@mozilla.org/widget/transferable;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/transferable;1";
-        number: "{8b5314bc-db01-11d2-96ce-0060b0fb9956}";
-    };
-    ["@mozilla.org/applicationchooser;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/applicationchooser;1";
-        number: "{e221df9b-3d66-4045-9a66-5720949f8d10}";
-    };
-    ["@mozilla.org/widget/parent/clipboard;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/parent/clipboard;1";
-        number: "{f55f5d31-dbb7-4d0d-9f6f-a4f4cd8e8ef1}";
-    };
-    ["@mozilla.org/widget/clipboardhelper;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/clipboardhelper;1";
-        number: "{77221d5a-1dd2-11b2-8c69-c710f15d2ed5}";
-    };
-    ["@mozilla.org/widget/parent/dragservice;1"]: {
-        getService(): unknown;
-        name: "@mozilla.org/widget/parent/dragservice;1";
-        number: "{0ba77e04-2adb-422f-af01-5a57b8013100}";
-    };
-    ["@mozilla.org/gfx/info;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/gfx/info;1";
-        number: "{d755a760-9f27-11df-0800-200c9a664242}";
-    };
-    ["@mozilla.org/widget/useridleservice;1"]: {
-        getService(): unknown;
-        name: "@mozilla.org/widget/useridleservice;1";
-        number: "{6987230e-0098-4e78-bc5f-1493ee7519fa}";
-    };
-    ["@mozilla.org/gfx/devicecontextspec;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/gfx/devicecontextspec;1";
-        number: "{d3f69889-e13a-4321-980c-a39332e21f34}";
-    };
-    ["@mozilla.org/widget/printdialog-service;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/printdialog-service;1";
-        number: "{06beec76-a183-4d9f-85dd-085f26da565a}";
-    };
-    ["@mozilla.org/gfx/printsettings-service;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/gfx/printsettings-service;1";
-        number: "{841387c8-72e6-484b-9296-bf6eea80d58a}";
-    };
-    ["@mozilla.org/gfx/printerlist;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/gfx/printerlist;1";
-        number: "{a6cf9129-15b3-11d2-932e-00805f8add32}";
-    };
-    ["@mozilla.org/gfx/parent/screenmanager;1"]: {
-        getService(): unknown;
-        name: "@mozilla.org/gfx/parent/screenmanager;1";
-        number: "{4c9dee4a-b083-4261-8bbe-c6883d2a6bc9}";
-    };
-    ["@mozilla.org/widget/appshell/win;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/appshell/win;1";
-        number: "{2d96b3df-c051-11d1-a827-0040959a28c9}";
-    };
-    ["@mozilla.org/widget/useridleservice;1"]: {
-        getService(): unknown;
-        name: "@mozilla.org/widget/useridleservice;1";
-        number: "{6987230e-0098-4e78-bc5f-1493ee7519fa}";
-    };
-    ["@mozilla.org/parent/sound;1"]: {
-        getService(): unknown;
-        name: "@mozilla.org/parent/sound;1";
-        number: "{919f1217-073a-4a14-b034-67d461eccacc}";
-    };
-    ["@mozilla.org/widget/clipboardhelper;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/clipboardhelper;1";
-        number: "{77221d5a-1dd2-11b2-8c69-c710f15d2ed5}";
-    };
-    ["@mozilla.org/windows-taskbar;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/windows-taskbar;1";
-        number: "{b8e5bc54-a22f-4eb2-b061-24cb6d19c15f}";
-    };
-    ["@mozilla.org/windows-jumplistbuilder;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/windows-jumplistbuilder;1";
-        number: "{73a5946f-608d-454f-9d33-0b8f8c7294b6}";
-    };
-    ["@mozilla.org/windows-jumplistitem;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/windows-jumplistitem;1";
-        number: "{2b9a1f2c-27ce-45b6-8d4e-755d0e34f8db}";
-    };
-    ["@mozilla.org/windows-jumplistseparator;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/windows-jumplistseparator;1";
-        number: "{21f1f13b-f75a-42ad-867a-d91ad694447e}";
-    };
-    ["@mozilla.org/windows-jumplistlink;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/windows-jumplistlink;1";
-        number: "{f72c5dc4-5a12-47be-be28-ab105f33b08f}";
-    };
-    ["@mozilla.org/windows-jumplistshortcut;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/windows-jumplistshortcut;1";
-        number: "{b16656b2-5187-498f-abf4-56346126bfdb}";
-    };
-    ["@mozilla.org/windows-ui-utils;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/windows-ui-utils;1";
-        number: "{e04a55e8-fee3-4ea2-a98b-41d2621adc3c}";
-    };
-    ["@mozilla.org/widget/transferable;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/transferable;1";
-        number: "{8b5314bc-db01-11d2-96ce-0060b0fb9956}";
-    };
-    ["@mozilla.org/widget/htmlformatconverter;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/htmlformatconverter;1";
-        number: "{948a0023-e3a7-11d2-96cf-0060b0fb9956}";
-    };
-    ["@mozilla.org/widget/parent/dragservice;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/parent/dragservice;1";
-        number: "{f92e733e-33a3-4752-90e5-25801ddeaf7b}";
-    };
-    ["@mozilla.org/widget/taskbar-preview-callback;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/taskbar-preview-callback;1";
-        number: "{9a0cb62b-d638-4faf-9588-ae96f5e29093}";
-    };
-    ["@mozilla.org/gfx/info;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/gfx/info;1";
-        number: "{d755a760-9f27-11df-0800-200c9a664242}";
-    };
-    ["@mozilla.org/parent/filepicker;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/parent/filepicker;1";
-        number: "{e2fc3e45-c893-4b34-8f6d-b87faf65a897}";
-    };
-    ["@mozilla.org/parent/colorpicker;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/parent/colorpicker;1";
-        number: "{035d92f3-3802-4cf5-87cb-1758bfc5d4da}";
-    };
-    ["@mozilla.org/sharepicker;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/sharepicker;1";
-        number: "{1201d357-8417-4926-a694-e6408fbedcf8}";
-    };
-    ["@mozilla.org/widget/parent/clipboard;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/parent/clipboard;1";
-        number: "{25b4efa0-7054-4787-9cd6-630efb3fe6fa}";
-    };
-    ["@mozilla.org/widget/systemstatusbar;1"]: {
-        getService(): unknown;
-        name: "@mozilla.org/widget/systemstatusbar;1";
-        number: "{b6e1a890-b2b8-4883-a65f-9476f6185313}";
-    };
-    ["@mozilla.org/gfx/devicecontextspec;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/gfx/devicecontextspec;1";
-        number: "{d3f69889-e13a-4321-980c-a39332e21f34}";
-    };
-    ["@mozilla.org/widget/printdialog-service;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/widget/printdialog-service;1";
-        number: "{06beec76-a183-4d9f-85dd-085f26da565a}";
-    };
-    ["@mozilla.org/gfx/printsettings-service;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/gfx/printsettings-service;1";
-        number: "{841387c8-72e6-484b-9296-bf6eea80d58a}";
-    };
-    ["@mozilla.org/gfx/printerlist;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/gfx/printerlist;1";
-        number: "{a6cf9129-15b3-11d2-932e-00805f8add32}";
-    };
     ["@mozilla.org/xpcom/debug;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/xpcom/debug;1";
         number: "{cb6cdb94-e417-4601-b4a5-f991bf41453d}";
     };
-    ["@mozilla.org/message-loop;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/message-loop;1";
-        number: "{67b3ac0c-d806-4d48-939e-6a819e6c248f}";
-    };
     ["@mozilla.org/xpcom/memory-watcher;1"]: {
         getService(): unknown;
         name: "@mozilla.org/xpcom/memory-watcher;1";
         number: "{68bf4793-5204-45cf-9ee2-69adffbc2e38}";
-    };
-    ["@mozilla.org/binaryinputstream;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/binaryinputstream;1";
-        number: "{c521a612-2aad-46db-b6ab-3b821fb150b1}";
-    };
-    ["@mozilla.org/binaryoutputstream;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/binaryoutputstream;1";
-        number: "{86c37b9a-74e7-4672-844e-6e7dd83ba484}";
-    };
-    ["@mozilla.org/network/protocol;1?name=chrome"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/network/protocol;1?name=chrome";
-        number: "{61ba33c0-3031-11d3-8cd0-0060b0fc14a3}";
-    };
-    ["@mozilla.org/chrome/chrome-registry;1"]: {
-        getService(): unknown;
-        name: "@mozilla.org/chrome/chrome-registry;1";
-        number: "{47049e42-1d87-482a-984d-56ae185e367a}";
-    };
-    ["@mozilla.org/consoleservice;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/consoleservice;1";
-        number: "{7e3ff85c-1dd2-11b2-8d4b-eb452cb0ff40}";
-    };
-    ["@mozilla.org/hash-property-bag;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/hash-property-bag;1";
-        number: "{678c50b8-6bcb-4ad0-b9b8-c81175955199}";
-    };
-    ["@mozilla.org/io-util;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/io-util;1";
-        number: "{eb833911-4f49-4623-845f-e58a8e6de4c2}";
-    };
-    ["@mozilla.org/file/local;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/file/local;1";
-        number: "{2e23e220-60be-11d3-8c4a-000064657374}";
-    };
-    ["@mozilla.org/memory-info-dumper;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/memory-info-dumper;1";
-        number: "{00bd71fb-7f09-4ec3-96af-a0b522b77969}";
-    };
-    ["@mozilla.org/memory-reporter-manager;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/memory-reporter-manager;1";
-        number: "{fb97e4f5-32dd-497a-baa2-7d1e55079910}";
-    };
-    ["@mozilla.org/process/util;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/process/util;1";
-        number: "{7b4eeb20-d781-11d4-8a83-0010a4e0c9ca}";
-    };
-    ["@mozilla.org/scriptablebase64encoder;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/scriptablebase64encoder;1";
-        number: "{aaf68860-f849-40ee-bb7a-b229bce036a3}";
-    };
-    ["@mozilla.org/securityconsole/message;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/securityconsole/message;1";
-        number: "{43ebf210-8a7b-4ddb-a83d-b87c51a058db}";
-    };
-    ["@mozilla.org/storagestream;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/storagestream;1";
-        number: "{669a9795-6ff7-4ed4-9150-c34ce2971b63}";
-    };
-    ["@mozilla.org/supports-cstring;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/supports-cstring;1";
-        number: "{acf8dc41-4a25-11d3-9890-006008962422}";
-    };
-    ["@mozilla.org/supports-char;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/supports-char;1";
-        number: "{acf8dc4a-4a25-11d3-9890-006008962422}";
-    };
-    ["@mozilla.org/supports-double;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/supports-double;1";
-        number: "{cbf86871-4ac0-11d3-baea-00805f8a5dd7}";
-    };
-    ["@mozilla.org/supports-float;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/supports-float;1";
-        number: "{cbf86870-4ac0-11d3-baea-00805f8a5dd7}";
-    };
-    ["@mozilla.org/supports-interface-pointer;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/supports-interface-pointer;1";
-        number: "{a99febba-1dd1-11b2-a943-b02334a6d083}";
-    };
-    ["@mozilla.org/supports-PRBool;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/supports-PRBool;1";
-        number: "{acf8dc43-4a25-11d3-9890-006008962422}";
-    };
-    ["@mozilla.org/supports-PRInt16;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/supports-PRInt16;1";
-        number: "{acf8dc4b-4a25-11d3-9890-006008962422}";
-    };
-    ["@mozilla.org/supports-PRInt32;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/supports-PRInt32;1";
-        number: "{acf8dc4c-4a25-11d3-9890-006008962422}";
-    };
-    ["@mozilla.org/supports-PRInt64;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/supports-PRInt64;1";
-        number: "{acf8dc4d-4a25-11d3-9890-006008962422}";
-    };
-    ["@mozilla.org/supports-PRTime;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/supports-PRTime;1";
-        number: "{acf8dc49-4a25-11d3-9890-006008962422}";
-    };
-    ["@mozilla.org/supports-PRUint16;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/supports-PRUint16;1";
-        number: "{acf8dc46-4a25-11d3-9890-006008962422}";
-    };
-    ["@mozilla.org/supports-PRUint32;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/supports-PRUint32;1";
-        number: "{acf8dc47-4a25-11d3-9890-006008962422}";
-    };
-    ["@mozilla.org/supports-PRUint64;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/supports-PRUint64;1";
-        number: "{acf8dc48-4a25-11d3-9890-006008962422}";
-    };
-    ["@mozilla.org/supports-PRUint8;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/supports-PRUint8;1";
-        number: "{acf8dc44-4a25-11d3-9890-006008962422}";
-    };
-    ["@mozilla.org/supports-string;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/supports-string;1";
-        number: "{acf8dc42-4a25-11d3-9890-006008962422}";
-    };
-    ["@mozilla.org/system-info;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/system-info;1";
-        number: "{d962398a-99e5-49b2-857a-c159049c7f6c}";
-    };
-    ["@mozilla.org/thread-manager;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/thread-manager;1";
-        number: "{7a4204c6-e45a-4c37-8ebb-6709a22c917c}";
-    };
-    ["@mozilla.org/uuid-generator;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/uuid-generator;1";
-        number: "{706d36bb-bf79-4293-81f2-8f6828c18f9d}";
-    };
-    ["@mozilla.org/variant;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/variant;1";
-        number: "{0d6ea1d0-879c-11d5-90ef-0010a4e73d9a}";
-    };
-    ["@mozilla.org/xpcom/version-comparator;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/xpcom/version-comparator;1";
-        number: "{c6e47036-ca94-4be3-963a-9abd8705f7a8}";
-    };
-    ["@mozilla.org/xpcom/ini-parser-factory;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/xpcom/ini-parser-factory;1";
-        number: "{dfac10a9-dd24-43cf-a095-6ffa2e4b6a6c}";
-    };
-    ["@mozilla.org/categorymanager;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/categorymanager;1";
-        number: "{16d222a6-1dd2-11b2-b693-f38b02c021b2}";
-    };
-    ["@mozilla.org/array;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/array;1";
-        number: "{35c66fd1-95e9-4e0a-80c5-c3bd2b375481}";
-    };
-    ["@mozilla.org/observer-service;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/observer-service;1";
-        number: "{d07f5195-e3d1-11d2-8acd-00105a1b8860}";
     };
     ["@mozilla.org/file/directory_service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -3163,6 +2543,11 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/timer;1";
         number: "{5ff24248-1dd2-11b2-8427-fbab44f29bc8}";
+    };
+    ["@mozilla.org/timer-manager;1"]: {
+        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
+        name: "@mozilla.org/timer-manager;1";
+        number: "{d39a8904-2e09-4a3a-a273-c3bec7db2bfe}";
     };
     ["@mozilla.org/appshell/appShellService;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];

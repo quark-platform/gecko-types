@@ -1,0 +1,35 @@
+declare module "resource://gre/modules/GeckoViewPrompt.sys.mjs" {
+    export class PromptFactory {
+        constructor();
+        handleEvent();
+        _handleClick();
+        _generateSelectItems();
+        _handleSelect();
+        _handleDateTime();
+        _dispatchEvents();
+        _handlePopupBlocked();
+        getPrompt();
+        callProxy();
+        alert();
+        alertBC();
+        alertCheck();
+        alertCheckBC();
+        confirm();
+        confirmBC();
+        confirmCheck();
+        confirmCheckBC();
+        confirmEx();
+        confirmExBC();
+        prompt();
+        promptBC();
+        promptUsernameAndPassword();
+        promptUsernameAndPasswordBC();
+        promptPassword();
+        promptPasswordBC();
+        select();
+        selectBC();
+        promptAuth();
+        promptAuthBC();
+        asyncPromptAuth();
+    }
+}

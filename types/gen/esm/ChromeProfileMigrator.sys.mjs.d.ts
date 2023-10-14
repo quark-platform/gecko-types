@@ -9,6 +9,7 @@ declare module "resource://app/modules/ChromeProfileMigrator.sys.mjs" {
         getLastUsedDate();
         getSourceProfiles();
         _GetPasswordsResource();
+        _GetPaymentMethodsResource();
     }
     export class ChromiumProfileMigrator {
         get key();

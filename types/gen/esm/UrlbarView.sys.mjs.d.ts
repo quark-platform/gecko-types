@@ -16,6 +16,7 @@ declare module "resource://app/modules/UrlbarView.sys.mjs" {
         getResultAtIndex();
         resultIsSelected();
         selectBy();
+        acknowledgeFeedback();
         removeAccessibleFocus();
         clear();
         close();
@@ -26,6 +27,7 @@ declare module "resource://app/modules/UrlbarView.sys.mjs" {
         onQueryResults();
         onQueryResultRemoved();
         openResultMenu();
+        invalidateResultMenuCommands();
         handleEvent();
         addDynamicViewTemplate();
         removeDynamicViewTemplate();
@@ -38,5 +40,6 @@ declare module "resource://app/modules/UrlbarView.sys.mjs" {
         on_resize();
         on_command();
         on_popupshowing();
+        onPrefChanged();
     }
 }

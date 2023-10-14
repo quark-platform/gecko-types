@@ -4,6 +4,7 @@ declare module "resource://app/modules/UrlbarInput.sys.mjs" {
         formatValue();
         focus();
         select();
+        setSelectionRange();
         setURI();
         makeURIReadable();
         handleEvent();
@@ -65,6 +66,7 @@ declare module "resource://app/modules/UrlbarInput.sys.mjs" {
         _loadURL();
         _whereToOpen();
         _initCopyCutController();
+        _initStripOnShare();
         _initPasteAndGo();
         _notifyStartNavigation();
         _searchModeForResult();
@@ -79,10 +81,12 @@ declare module "resource://app/modules/UrlbarInput.sys.mjs" {
         _on_draggableregionleftmousedown();
         _on_mousedown();
         _on_input();
+        _on_selectionchange();
         _on_select();
         _on_overflow();
         _on_underflow();
         _on_paste();
+        sanitizeTextFromClipboard();
         _on_scrollend();
         _on_TabSelect();
         _on_beforeinput();

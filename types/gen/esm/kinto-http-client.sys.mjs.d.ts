@@ -1,0 +1,1 @@
+declare module "resource://gre/modules/services-common/kinto-http-client.sys.mjs" { }

@@ -1,3 +1,3 @@
-declare module "resource://gre/modules/EventEmitter.sys.mjs" {
-    function EventEmitter();
+declare module "resource://app/modules/syncedtabs/EventEmitter.sys.mjs" {
+    var EventEmitter;
 }

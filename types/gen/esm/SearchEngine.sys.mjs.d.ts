@@ -36,6 +36,8 @@ declare module "resource://gre/modules/SearchEngine.sys.mjs" {
         get description();
         get hidden();
         set hidden(val);
+        get hideOneOffButton();
+        set hideOneOffButton(val);
         get iconURI();
         get _iconURL();
         get _location();

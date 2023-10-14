@@ -1,3 +1,7 @@
 declare module "resource://gre/modules/FormHistoryStartup.sys.mjs" {
-    function FormHistoryStartup();
+    export class FormHistoryStartup {
+        observe();
+        init();
+        receiveMessage();
+    }
 }

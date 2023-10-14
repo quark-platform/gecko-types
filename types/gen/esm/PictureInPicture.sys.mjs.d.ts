@@ -15,6 +15,7 @@ declare module "resource://gre/modules/PictureInPicture.sys.mjs" {
         originatingWinWeakMap;
         weakGlobalToEligiblePipCount;
         getWeakPipPlayer(pipActorRef);
+        getPanelForBrowser(browser);
         handleEvent(event);
         addPiPBrowserToWeakMap(browser);
         addOriginatingWinToWeakMap(browser);
@@ -24,14 +25,18 @@ declare module "resource://gre/modules/PictureInPicture.sys.mjs" {
         updatePlayingDurationHistograms();
         onCommand(event);
         focusTabAndClosePip(window, pipActor);
-        updateEligiblePipVideoCount(browsingContext, count);
+        toggleRespectDisablePip(event);
+        updateEligiblePipVideoCount(browsingContext, object);
         windowGlobalPipCountGenerator(browser);
         getEligiblePipVideoCount(browser);
         updateUrlbarHoverText(document, pipToggle, dataL10nId);
         updateUrlbarToggle(browser);
         toggleUrlbar(event);
+        onPipPanelShown(event);
+        onPipPanelHidden(event);
+        togglePipPanel(browser);
         setUrlbarPipIconActive(win);
-        setUrlbarPipIconInactive(pipWin);
+        setUrlbarPipIconInactive(win);
         clearPipTabIcon(window);
         closePipWindow(pipWin);
         closeSinglePipWindow(closeData);

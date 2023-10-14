@@ -1,5 +1,7 @@
 declare module "resource://gre/modules/BackgroundUpdate.sys.mjs" {
     var BackgroundUpdate: {
+        QueryInterface;
+        name;
         _initialized;
         get taskId(): any;
         _hasOmnijar();
@@ -12,6 +14,8 @@ declare module "resource://gre/modules/BackgroundUpdate.sys.mjs" {
         maybeScheduleBackgroundUpdateTask();
         recordUpdateEnvironment();
         scheduleFirefoxMessagingSystemTargetingSnapshotting();
+        notify();
+        _startTargetingSnapshottingTimer();
         readFirefoxMessagingSystemTargetingSnapshot(lock);
         _recordGleanMetrics(reasons);
     };

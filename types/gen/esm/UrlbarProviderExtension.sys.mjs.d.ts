@@ -11,7 +11,6 @@ declare module "resource://app/modules/UrlbarProviderExtension.sys.mjs" {
         getViewUpdate();
         startQuery();
         cancelQuery();
-        pickResult();
         onEngagement();
         _notifyListener();
         _makeUrlbarResult();

@@ -12,6 +12,7 @@ declare module "resource://gre/modules/SearchService.sys.mjs" {
         get appDefaultEngine();
         get appPrivateDefaultEngine();
         get isInitialized();
+        get hasSuccessfullyInitialized();
         getDefaultEngineInfo();
         getEngineByName();
         getEngineById();
@@ -23,6 +24,7 @@ declare module "resource://gre/modules/SearchService.sys.mjs" {
         init();
         runBackgroundChecks();
         reset();
+        forceInitializationStatusForTests();
         resetEngineSelector();
         resetToAppDefaultEngine();
         maybeSetAndOverrideDefault();

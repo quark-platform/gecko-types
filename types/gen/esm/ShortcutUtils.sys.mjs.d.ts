@@ -14,6 +14,7 @@ declare module "resource://gre/modules/ShortcutUtils.sys.mjs" {
         NEXT_TAB;
         PREVIOUS_TAB;
         prettifyShortcut(aElemKey);
+        metaKeyIsCommandKey();
         getModifierString(elemMod);
         getKeyString(keyCode, keyAttribute);
         getKeyAttribute(chromeKey);

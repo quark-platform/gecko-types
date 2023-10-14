@@ -10,6 +10,8 @@ declare module "resource://gre/modules/GeckoViewContent.sys.mjs" {
         handleEvent();
         observe();
         _containsFormData();
+        _requestAnalysis();
+        _requestRecommendations();
         _hasCookieBannerRuleForBrowsingContextTree();
         _findInPage();
         _clearMatches();

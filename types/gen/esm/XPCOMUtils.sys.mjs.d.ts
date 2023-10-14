@@ -8,8 +8,7 @@ declare module "resource://gre/modules/XPCOMUtils.sys.mjs" {
         defineLazyServiceGetters(aObject, aServices);
         defineLazyModuleGetter(aObject, aName, aResource, aSymbol, aPreLambda, aPostLambda, aProxy);
         defineLazyModuleGetters(aObject, aModules);
-        defineLazyPreferenceGetter(aObject, aName, aPreference, aDefaultValue, aOnUpdate, aTransform);
+        defineLazyPreferenceGetter(aObject, aName, aPreference, aDefaultPrefValue, aOnUpdate, aTransform);
         defineConstant(aObj, aName, aValue);
-        defineLazyProxy(aObject, aName, aInitFuncOrResource, aStubProperties, aUntrapCallback);
     };
 }

@@ -42,6 +42,7 @@ declare module "resource://gre/modules/SearchUtils.sys.mjs" {
         makeChannel(url);
         isPartnerBuild();
         get SETTINGS_VERSION(): any;
+        get MODIFIED_APP_CHANNEL(): any;
         sanitizeName(name);
         getVerificationHash(name);
         isSecureURIForOpenSearch(uri);

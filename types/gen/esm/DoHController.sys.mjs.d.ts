@@ -18,6 +18,7 @@ declare module "resource://app/modules/DoHController.sys.mjs" {
         runTRRSelection();
         runTRRSelectionDryRun();
         observe(subject, topic, data);
+        setHeuristicResult(skipReason);
         onPrefChanged(pref);
         _debounceTimer;
         _cancelDebounce();

@@ -72,7 +72,6 @@ declare module "resource://gre/modules/PlacesUtils.sys.mjs" {
         isRootItem(guid);
         getContainerNodeWithOptions;
         hasChildURIs;
-        getChildCountForFolder(guid);
         getURLsForContainerNode;
         promiseDBConnection;
         promiseLargeCacheDBConnection;
@@ -81,11 +80,6 @@ declare module "resource://gre/modules/PlacesUtils.sys.mjs" {
         withConnectionWrapper(name, task);
         promiseFaviconData(aPageUrl, preferredWidth);
         urlWithSizeRef(window, href, size);
-        promiseItemGuid(aItemId);
-        promiseItemId(aGuid);
-        promiseManyItemIds(aGuids);
-        invalidateCachedGuidFor(aItemId);
-        invalidateCachedGuids();
         promiseBookmarksTree(aItemGuid, aOptions);
         chunkArray(array, chunkLength);
         sqlBindPlaceholders(info, prefix, suffix);

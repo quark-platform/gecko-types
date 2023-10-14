@@ -13,5 +13,6 @@ declare module "resource://gre/modules/translation/LanguageDetector.sys.mjs" {
     };
     var LanguageDetector: {
         detectLanguage(aParams);
+        detectLanguageFromDocument(aDocument);
     };
 }

@@ -12,6 +12,7 @@ declare module "resource://gre/modules/GeckoViewModule.sys.mjs" {
         get settings();
         get moduleManager();
         onInitBrowser();
+        onDestroyBrowser();
         onInit();
         onDestroy();
         onSettingsUpdate();

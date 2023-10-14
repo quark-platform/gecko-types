@@ -8,7 +8,6 @@ declare module "resource://gre/modules/FileUtils.sys.mjs" {
         MODE_TRUNCATE: number;
         PERMS_FILE: number;
         PERMS_DIRECTORY: number;
-        getFile;
         getDir;
         openFileOutputStream;
         openAtomicFileOutputStream;

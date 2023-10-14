@@ -5,9 +5,6 @@ declare module "resource://app/modules/PlacesUIUtils.sys.mjs" {
         LAST_USED_FOLDERS_META_KEY;
         lastContextMenuTriggerNode;
         lastBookmarkDialogDeferred;
-        getFormattedString;
-        getPluralString;
-        getString;
         obfuscateUrlForXulStore(url);
         showBookmarkDialog(aInfo, aParentWindow);
         showBookmarkPagesDialog(URIList, hiddenRows, win);

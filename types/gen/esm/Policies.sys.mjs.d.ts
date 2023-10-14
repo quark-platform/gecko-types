@@ -155,8 +155,8 @@ declare module "resource://app/modules/policies/Policies.sys.mjs" {
         FirefoxHome: {
             onBeforeAddons(manager, param);
         };
-        FlashPlugin: {
-            onBeforeUIStartup(manager, param);
+        FirefoxSuggest: {
+            onBeforeAddons(manager, param);
         };
         GoToIntranetSiteForSingleWordEntryInAddressBar: {
             onBeforeAddons(manager, param);

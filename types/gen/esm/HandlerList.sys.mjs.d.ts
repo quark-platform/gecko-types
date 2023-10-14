@@ -15,13 +15,6 @@ declare module "resource://gre/modules/handlers/HandlerList.sys.mjs" {
                 };
             };
         };
-        csb: {
-            schemes: {
-                mailto: {
-                    handlers;
-                };
-            };
-        };
         ja: {
             schemes: {
                 mailto: {
@@ -58,13 +51,6 @@ declare module "resource://gre/modules/handlers/HandlerList.sys.mjs" {
             };
         };
         ru: {
-            schemes: {
-                mailto: {
-                    handlers;
-                };
-            };
-        };
-        sah: {
             schemes: {
                 mailto: {
                     handlers;

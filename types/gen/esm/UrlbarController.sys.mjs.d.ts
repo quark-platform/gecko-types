@@ -13,7 +13,7 @@ declare module "resource://app/modules/UrlbarController.sys.mjs" {
         speculativeConnect();
         set userSelectionBehavior(behavior);
         recordSelectedResult();
-        handleDeleteEntry();
+        removeResult();
         clearLastQueryContextCache();
         notify();
     }

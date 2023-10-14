@@ -7,7 +7,6 @@ declare module "resource://gre/modules/PlacesDBUtils.sys.mjs" {
         checkAndFixDatabase();
         _refreshUI();
         checkIntegrity();
-        invalidateCaches();
         checkCoherence();
         incrementalVacuum();
         deleteOrphanPreviews();

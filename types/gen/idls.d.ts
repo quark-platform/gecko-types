@@ -1333,6 +1333,11 @@ declare interface mozIAsyncHistoryType extends nsISupportsType {
      * A mozIVisitStatusCallback object which receives the visited status.
      */
     isURIVisited(aURI: nsIURI, aCallback: mozIVisitedStatusCallback): void;
+    /**
+     * Helper to clear any internal state caches, like the recent URIs list.
+     * This may be useful in testing code.
+     */
+    clearCache(): void;
 }
 
 /**
@@ -4370,6 +4375,15 @@ declare interface nsIAlertActionType extends nsISupportsType {
      * On non-Windows, this field is ignored.
      */
     readonly windowsSystemActivationType: boolean;
+    /**
+     * On Windows, chrome-privileged notifications -- i.e., those with a
+     * non-actionable principal -- can have action-specific `opaqueRelaunchData`.
+     * This data will be provided to the application at relaunch and can trigger
+     * specific actions.
+     *
+     * On non-Windows, this field is ignored.
+     */
+    readonly opaqueRelaunchData: AString;
 }
 
 /**
@@ -4462,10 +4476,14 @@ declare interface nsIAlertNotificationType extends nsISupportsType {
      */
     readonly source: AString;
     /**
-     * A URL to navigate to if the application is relaunched in to complete
-     * interaction with this alert.
+     * On Windows, chrome-privileged notifications -- i.e., those with a
+     * non-actionable principal -- can have `opaqueRelaunchData`.  This data will
+     * be provided to the application at relaunch and can trigger specific
+     * actions.
+     *
+     * On non-Windows, this field is ignored.
      */
-    launchURL: AString;
+    opaqueRelaunchData: AString;
     /**
      * Loads the image associated with this alert.
      *
@@ -6100,7 +6118,6 @@ declare interface nsIAuthPromptType extends nsISupportsType {
     prompt(dialogTitle: wstring, text: wstring, passwordRealm: wstring, savePassword: uint32_t, defaultText: wstring, result: wstring): boolean;
     /**
      * Puts up a username/password dialog with OK and Cancel buttons.
-     * Puts up a password dialog with OK and Cancel buttons.
      * @param  dialogText    The title for the dialog.
      * @param  text          The text to display in the dialog.
      * @param  passwordRealm The "realm" the password belongs to: e.g.
@@ -6112,6 +6129,19 @@ declare interface nsIAuthPromptType extends nsISupportsType {
      * @return true for OK, false for Cancel
      */
     promptUsernameAndPassword(dialogTitle: wstring, text: wstring, passwordRealm: wstring, savePassword: uint32_t, user: wstring, pwd: wstring): boolean;
+    /**
+     * Puts up an async username/password dialog with OK and Cancel buttons.
+     * @param  dialogText    The title for the dialog.
+     * @param  text          The text to display in the dialog.
+     * @param  passwordRealm The "realm" the password belongs to: e.g.
+     * ldap://localhost/dc=test
+     * @param  savePassword  One of the SAVE_PASSWORD_* options above.
+     * @param  user          The username entered in the dialog.
+     * @param  pwd           The password entered by the user if OK was
+     * selected.
+     * @return promise resolving to true for OK, false for Cancel
+     */
+    asyncPromptUsernameAndPassword(dialogTitle: wstring, text: wstring, passwordRealm: wstring, savePassword: uint32_t, user: wstring, pwd: wstring): Promise;
     /**
      * Puts up a password dialog with OK and Cancel buttons.
      * @param  dialogText    The title for the dialog.
@@ -6130,6 +6160,24 @@ declare interface nsIAuthPromptType extends nsISupportsType {
      * @return true for OK, false for Cancel
      */
     promptPassword(dialogTitle: wstring, text: wstring, passwordRealm: wstring, savePassword: uint32_t, pwd: wstring): boolean;
+    /**
+     * Puts up an async password dialog with OK and Cancel buttons.
+     * @param  dialogText    The title for the dialog.
+     * @param  text          The text to display in the dialog.
+     * @param  passwordRealm The "realm" the password belongs to: e.g.
+     * ldap://localhost/dc=test. If a username is
+     * specified (http://user@site.com) it will be used
+     * when matching existing logins or saving new ones.
+     * If no username is specified, only password-only
+     * logins will be matched or saved.
+     * Note: if a username is specified, the username
+     * should be escaped.
+     * @param  savePassword  One of the SAVE_PASSWORD_* options above.
+     * @param  pwd           The password entered by the user if OK was
+     * selected.
+     * @return promise resolving to true for OK, false for Cancel
+     */
+    asyncPromptPassword(dialogTitle: wstring, text: wstring, passwordRealm: wstring, savePassword: uint32_t, pwd: wstring): Promise;
 }
 
 /**
@@ -6667,10 +6715,8 @@ declare interface nsIAutoCompleteSearchType extends nsISupportsType {
      * @param searchParam - An extra parameter
      * @param previousResult - A previous result to use for faster searching
      * @param listener - A listener to notify when the search is complete
-     * @param options An optional set of additional search parameters that may be
-     * passed to the underlying implementation.
      */
-    startSearch(searchString: AString, searchParam: AString, previousResult: nsIAutoCompleteResult, listener: nsIAutoCompleteObserver, options: nsIPropertyBag2): void;
+    startSearch(searchString: AString, searchParam: AString, previousResult: nsIAutoCompleteResult, listener: nsIAutoCompleteObserver): void;
     /**
      * Stop all searches that are in progress
      */
@@ -7818,6 +7864,28 @@ declare interface nsIBlocklistServiceType extends nsISupportsType {
 /**
  *
  */
+declare interface nsIBounceTrackingProtectionType extends nsISupportsType {
+    /**
+     *
+     */
+    reset(): void;
+    /**
+     *
+     */
+    testRunPurgeBounceTrackers(): Promise;
+    /**
+     *
+     */
+    testAddBounceTrackerCandidate(aHost: ACString, aBounceTime: PRTime): void;
+    /**
+     *
+     */
+    testAddUserActivation(aHost: ACString, aActivationTime: PRTime): void;
+}
+
+/**
+ *
+ */
 declare interface nsIBrowserType extends nsISupportsType {
     /**
      * Called by the child to inform the parent that links are dropped into
@@ -8790,6 +8858,11 @@ declare interface nsICachePurgeLockType extends nsISupportsType {
      * after unlocking.
      */
     unlock(): void;
+    /**
+     * Returns the file used to guarantee single access to a resource.
+     * This method is used to remove the lock file when no longer necessary.
+     */
+    getLockFile(profileName: AUTF8String): nsIFile;
 }
 
 /**
@@ -9239,20 +9312,15 @@ declare interface nsICertOverrideType extends nsISupportsType {
      */
     readonly port: int32_t;
     /**
-     * Whether or not the override is only used for this
-     * session (true) or stored persistently (false)
-     */
-    readonly isTemporary: boolean;
-    /**
-     * The database key for the associated certificate.
-     */
-    readonly dbKey: ACString;
-    /**
      * A combination of hostname and port in the form host:port.
      * Since the port can be -1 which is equivalent to port 433 we use an
      * existing function of nsCertOverrideService to create this property.
      */
     readonly hostPort: ACString;
+    /**
+     * The fingerprint for the associated certificate.
+     */
+    readonly fingerprint: ACString;
     /**
      * The origin attributes associated with this override.
      */
@@ -10429,10 +10497,6 @@ declare interface nsIClientAuthRememberRecordType extends nsISupportsType {
     /**
      *
      */
-    readonly fingerprint: ACString;
-    /**
-     *
-     */
     readonly dbKey: ACString;
     /**
      *
@@ -10451,19 +10515,19 @@ declare interface nsIClientAuthRememberServiceType extends nsISupportsType {
     /**
      *
      */
-    rememberDecision(aHostName: ACString, aOriginAttributes: const_OriginAttributesRef, aServerCert: nsIX509Cert, aClientCert: nsIX509Cert): void;
+    rememberDecision(aHostName: ACString, aOriginAttributes: const_OriginAttributesRef, aClientCert: nsIX509Cert): void;
     /**
      *
      */
-    rememberDecisionScriptable(aHostName: ACString, originAttributes: jsval, aServerCert: nsIX509Cert, aClientCert: nsIX509Cert): void;
+    rememberDecisionScriptable(aHostName: ACString, originAttributes: jsval, aClientCert: nsIX509Cert): void;
     /**
      *
      */
-    hasRememberedDecision(aHostName: ACString, aOriginAttributes: const_OriginAttributesRef, aServerCert: nsIX509Cert, aCertDBKey: ACString): bool;
+    hasRememberedDecision(aHostName: ACString, aOriginAttributes: const_OriginAttributesRef, aCertDBKey: ACString): bool;
     /**
      *
      */
-    hasRememberedDecisionScriptable(aHostName: ACString, originAttributes: jsval, aServerCert: nsIX509Cert, aCertDBKey: ACString): bool;
+    hasRememberedDecisionScriptable(aHostName: ACString, originAttributes: jsval, aCertDBKey: ACString): bool;
     /**
      *
      */
@@ -10472,6 +10536,43 @@ declare interface nsIClientAuthRememberServiceType extends nsISupportsType {
      *
      */
     deleteDecisionsByHost(aHostName: ACString, aOriginAttributes: jsval): void;
+}
+
+/**
+ *
+ */
+declare interface nsIAsyncSetClipboardDataType extends nsISupportsType {
+    /**
+     * Provide the data for the set request.
+     *
+     * @param  aTransferable
+     * The transferable contains the data to be written.
+     * @param  aOwner [optional]
+     * The owner of the transferable.
+     */
+    setData(aTransferable: nsITransferable, aOwner: nsIClipboardOwner): void;
+    /**
+     * Abort the request to set data.
+     *
+     * @param  aReason
+     * The reason for the abort, can not be NS_OK.
+     */
+    abort(aReason: nsresult): void;
+}
+
+/**
+ *
+ */
+declare interface nsIAsyncSetClipboardDataCallbackType extends nsISupportsType {
+    /**
+     * Indicates that the clipboard asyncSetData request has either succeeded or
+     * been canceled.
+     *
+     * @param  aResult
+     * The result of the request. NS_OK if successful, or another value
+     * that indicates the reason for failure or cancellation.
+     */
+    onComplete(aResult: nsresult): void;
 }
 
 /**
@@ -10487,6 +10588,21 @@ declare interface nsIClipboardType extends nsISupportsType {
      * @result NS_Ok if no errors
      */
     setData(aTransferable: nsITransferable, anOwner: nsIClipboardOwner, aWhichClipboard: long): void;
+    /**
+     * Requests setting data to the native clipboard. The acutal set occur
+     * when the data is provided by calling nsIAsyncSetClipboardData::setData().
+     * The result will be notified by nsIClipboardCallback. A new set request
+     * will cancel any prior pending requests, if any exist.
+     *
+     * @param  aWhichClipboard
+     * Specifies the clipboard to which this operation applies.
+     * @param  aCallback [optional]
+     * The callback object that will be notified upon completion.
+     * @return nsIAsyncSetClipboardData
+     * The write request object. The actual write will occur when the
+     * data is provided by calling nsIAsyncSetClipboardData::setData().
+     */
+    asyncSetData(aWhichClipboard: long, aCallback: nsIAsyncSetClipboardDataCallback): nsIAsyncSetClipboardData;
     /**
      * Filters the flavors aTransferable can import (see
      * `nsITransferable::flavorsTransferableCanImport`) and gets the data for the
@@ -11318,6 +11434,10 @@ declare interface nsIConsoleServiceType extends nsISupportsType {
      *
      */
     logMessage(message: nsIConsoleMessage): void;
+    /**
+     *
+     */
+    callFunctionAndLogException(targetGlobal: jsval, _function: jsval): jsval;
     /**
      *
      */
@@ -12208,7 +12328,7 @@ declare interface nsIContentSecurityPolicyType extends nsISerializableType {
      * of a redirect. In this case, aOriginalURIIfRedirect must be the original
      * URL.
      */
-    shouldLoad(aContentType: nsContentPolicyType, aCSPEventListener: nsICSPEventListener, aContentLocation: nsIURI, aOriginalURIIfRedirect: nsIURI, aSendViolationReports: bool, aNonce: AString, aParserCreated: boolean): short;
+    shouldLoad(aContentType: nsContentPolicyType, aCSPEventListener: nsICSPEventListener, aLoadInfo: nsILoadInfo, aContentLocation: nsIURI, aOriginalURIIfRedirect: nsIURI, aSendViolationReports: bool): short;
     /**
      * Returns the CSP in JSON notation.
      */
@@ -14305,6 +14425,16 @@ declare interface nsIDNSServiceType extends nsISupportsType {
      */
     getTRRSkipReasonName(value: nsITRRSkipReason_value): ACString;
     /**
+     * The channel status of the last TRR confirmation attempt.
+     * In strict mode it reflects the channel status of the last TRR request.
+     */
+    readonly lastConfirmationStatus: nsresult;
+    /**
+     * The TRR skip reason of the last TRR confirmation attempt.
+     * In strict mode it reflects the TRR skip reason of the last TRR request.
+     */
+    readonly lastConfirmationSkipReason: nsITRRSkipReason_value;
+    /**
      * Notifies the DNS service that we failed to connect to this alternative
      * endpoint.
      * @param aOwnerName
@@ -14336,10 +14466,6 @@ declare interface nsIDNSServiceType extends nsISupportsType {
      */
     readonly currentTrrMode: nsIDNSService_ResolverMode;
     /**
-     *
-     */
-    setTRRModeInChild(mode: nsIDNSService_ResolverMode): void;
-    /**
      * The TRRService's current confirmation state.
      * This is mostly for testing purposes.
      */
@@ -14353,10 +14479,9 @@ declare interface nsIDNSServiceType extends nsISupportsType {
      */
     readonly trrDomain: ACString;
     /**
-     * Returns true when we have valid ODoHConfigs to encrypt/decrypt oblivious
-     * DNS packets.
+     * returns the telemetry key for current TRR domain.
      */
-    readonly ODoHActivated: boolean;
+    readonly TRRDomainKey: ACString;
 }
 
 /**
@@ -15994,6 +16119,10 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      */
     readonly framesReflowed: unsigned_long_long;
     /**
+     * Number of restyles triggered by animations.
+     */
+    readonly animationTriggeredRestyles: unsigned_long_long;
+    /**
      * Indicates whether the current frame's refresh driver has a pending tick,
      * as reported by nsRefreshDriver::HasPendingTick.
      *
@@ -16224,6 +16353,10 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      *
      */
     readonly orientationLock: uint32_t;
+    /**
+     *
+     */
+    getWheelScrollTarget(): Element;
 }
 
 /**
@@ -16622,6 +16755,60 @@ declare interface nsIDashboardEventNotifierType extends nsISupportsType {
      *
      */
     newMsgReceived(aHost: ACString, aSerial: unsigned_long, aLength: unsigned_long): void;
+}
+
+/**
+ *
+ */
+declare interface nsIDataStorageManagerType extends nsISupportsType {
+    /**
+     *
+     */
+    get(dataStorage: nsIDataStorageManager_DataStorage): nsIDataStorage;
+}
+
+/**
+ *
+ */
+declare interface nsIDataStorageType extends nsISupportsType {
+    /**
+     *
+     */
+    get(key: ACString, type: nsIDataStorage_DataType): ACString;
+    /**
+     *
+     */
+    put(key: ACString, value: ACString, type: nsIDataStorage_DataType): void;
+    /**
+     *
+     */
+    remove(key: ACString, type: nsIDataStorage_DataType): void;
+    /**
+     *
+     */
+    clear(): void;
+    /**
+     *
+     */
+    isReady(): bool;
+}
+
+/**
+ *
+ */
+declare interface nsIDataStorageItemType extends nsISupportsType {
+    /**
+     *
+     */
+    readonly key: ACString;
+    /**
+     *
+     */
+    readonly value: ACString;
+    /**
+     *
+     */
+    readonly type: nsIDataStorage_DataType;
 }
 
 /**
@@ -18954,14 +19141,6 @@ declare interface nsIEditorType extends nsISupportsType {
      */
     readonly textLength: unsigned_long;
     /**
-     * Get and set the body wrap width.
-     *
-     * Special values:
-     * 0 = wrap to window width
-     * -1 = no wrap at all
-     */
-    wrapWidth: long;
-    /**
      * Get and set newline handling.
      *
      * Values are the constants defined above.
@@ -19016,6 +19195,14 @@ declare interface nsIEditorMailSupportType extends nsISupportsType {
      * @param aString   the string to be inserted
      */
     insertTextWithQuotations(aStringToInsert: AString): void;
+    /**
+     * Get and set the body wrap width.
+     *
+     * Special values:
+     * 0 = wrap to window width
+     * -1 = no wrap at all
+     */
+    wrapWidth: long;
 }
 
 /**
@@ -19988,7 +20175,7 @@ declare interface nsIExternalHelperAppServiceType extends nsISupportsType {
      * is issued, the stream listener implementation will launch the helper app
      * with this data.
      * @param aMimeContentType The content type of the incoming data
-     * @param aRequest The request corresponding to the incoming data
+     * @param aChannel The channel corresponding to the incoming data
      * @param aContentContext Used in processing content document refresh
      * headers after target content is downloaded.
      * @param aForceSave True to always save this content to disk, regardless of
@@ -19998,7 +20185,7 @@ declare interface nsIExternalHelperAppServiceType extends nsISupportsType {
      * in which case dialogs will be parented to aContentContext.
      * @return A nsIStreamListener which the caller should pump the data into.
      */
-    doContent(aMimeContentType: ACString, aRequest: nsIRequest, aContentContext: nsIInterfaceRequestor, aForceSave: boolean, aWindowContext: nsIInterfaceRequestor): nsIStreamListener;
+    doContent(aMimeContentType: ACString, aChannel: nsIChannel, aContentContext: nsIInterfaceRequestor, aForceSave: boolean, aWindowContext: nsIInterfaceRequestor): nsIStreamListener;
     /**
      * Binds an external helper application to a stream listener. The caller
      * should pump data into the returned stream listener. When the OnStopRequest
@@ -20007,8 +20194,8 @@ declare interface nsIExternalHelperAppServiceType extends nsISupportsType {
      * Replaces doContent for native code, and uses BrowsingContext.
      *
      * @param aMimeContentType The content type of the incoming data
-     * @param aRequest The request corresponding to the incoming data
-     * @param aContentContext The BrowsingContext that the request was initiated
+     * @param aChannel The channel corresponding to the incoming data
+     * @param aContentContext The BrowsingContext that the channel was initiated
      * by. Used for closing the window if we opened one specifically for this download.
      * @param aForceSave True to always save this content to disk, regardless of
      * nsIMIMEInfo and other such influences.
@@ -20017,7 +20204,7 @@ declare interface nsIExternalHelperAppServiceType extends nsISupportsType {
      * in which case dialogs will be parented to aContentContext.
      * @return A nsIStreamListener which the caller should pump the data into.
      */
-    createListener(aMimeContentType: ACString, aRequest: nsIRequest, aContentContext: BrowsingContext, aForceSave: boolean, aWindowContext: nsIInterfaceRequestor): nsIStreamListener;
+    createListener(aMimeContentType: ACString, aChannel: nsIChannel, aContentContext: BrowsingContext, aForceSave: boolean, aWindowContext: nsIInterfaceRequestor): nsIStreamListener;
     /**
      * Returns true if data from a URL with this extension combination
      * is to be decoded from aEncodingType prior to saving or passing
@@ -20265,8 +20452,7 @@ declare interface nsIFOGType extends nsISupportsType {
     /**
      * Initialize FOG.
      *
-     * To be scheduled at some opportune time after the bulk of Firefox startup
-     * has completed.
+     * Call it eventually. Metric data recorded beforehand will be buffered.
      *
      * @param aDataPathOverride - The path of a custom Glean data path to use
      * instead of the profile dir.
@@ -20348,7 +20534,7 @@ declare interface nsIFOGType extends nsISupportsType {
     /**
      * Set remote-configuration for metrics' disabled property.
      *
-     * See [`glean_core::Glean::set_metrics_disabled_config`]
+     * See [`glean_core::Glean::set_metrics_enabled_config`]
      *
      * Logs on error, but does not throw.
      *
@@ -21335,7 +21521,8 @@ declare interface nsIFilePickerType extends nsISupportsType {
      */
     displaySpecialDirectory: AString;
     /**
-     * Get the nsIFile for the file or directory.
+     * Get the nsIFile for the file or directory. A different file object
+     * may be returned by each invocation.
      *
      * @return Returns the file currently selected
      */
@@ -21947,7 +22134,7 @@ declare interface nsIFormAutoCompleteType extends nsISupportsType {
     /**
      * Generate results for a form input autocomplete menu asynchronously.
      */
-    autoCompleteSearchAsync(aInputName: AString, aSearchString: AString, aField: HTMLInputElement, aPreviousResult: nsIAutoCompleteResult, aDatalistResult: nsIAutoCompleteResult, aListener: nsIFormAutoCompleteObserver, options: nsIPropertyBag2): void;
+    autoCompleteSearchAsync(aInputName: AString, aSearchString: AString, aField: HTMLInputElement, aPreviousResult: nsIAutoCompleteResult, aAddDatalist: bool, aListener: nsIFormAutoCompleteObserver): void;
     /**
      * If a search is in progress, stop it. Otherwise, do nothing. This is used
      * to cancel an existing search, for example, in preparation for a new search.
@@ -22481,12 +22668,6 @@ declare interface nsIGfxInfoDebugType extends nsISupportsType {
      *
      */
     spoofOSVersion(aVersion: unsigned_long): void;
-    /**
-     * Manually invoke any test processes required to query for driver
-     * information. This is used by XPC shell tests which do not run these queries
-     * by default.
-     */
-    fireTestProcess(): void;
 }
 
 /**
@@ -23107,6 +23288,36 @@ declare interface nsIGleanUrlType extends nsISupportsType {
      * Sets to the specified stringified URL.
      *
      * @param value The stringified URL to set the metric to.
+     */
+    set(value: AUTF8String): void;
+    /**
+     * **Test-only API**
+     *
+     * Gets the currently stored value as a string.
+     *
+     * This function will attempt to await the last parent-process task (if any)
+     * writing to the the metric's storage engine before returning a value.
+     * This function will not wait for data from child processes.
+     *
+     * This doesn't clear the stored value.
+     * Parent process only. Panics in child processes.
+     *
+     * @param aPingName The (optional) name of the ping to retrieve the metric
+     * for. Defaults to the first value in `send_in_pings`.
+     *
+     * @return value of the stored metric, or undefined if there is no value.
+     */
+    testGetValue(aPingName: AUTF8String): jsval;
+}
+
+/**
+ *
+ */
+declare interface nsIGleanTextType extends nsISupportsType {
+    /**
+     * Set to the specified value.
+     *
+     * @param value The text to set the metric to.
      */
     set(value: AUTF8String): void;
     /**
@@ -24620,8 +24831,11 @@ declare interface nsIHttpChannelType extends nsIIdentChannelType {
      *
      * @param aCategory
      * The category under which the message should be displayed.
+     *
+     * @param aIsWarning
+     * When true, this is a warning message.
      */
-    logBlockedCORSRequest(aMessage: AString, aCategory: ACString): void;
+    logBlockedCORSRequest(aMessage: AString, aCategory: ACString, aIsWarning: boolean): void;
     /**
      *
      */
@@ -25114,6 +25328,11 @@ declare interface nsIHttpChannelInternalType extends nsISupportsType {
      * Set mWebTransportSessionEventListener.
      */
     setWebTransportSessionEventListener(aListener: WebTransportSessionEventListener): void;
+    /**
+     * This attribute indicates the type of Link header in the received
+     * 103 response.
+     */
+    earlyHintLinkType: unsigned_long;
 }
 
 /**
@@ -26942,7 +27161,7 @@ declare interface nsIInputStreamPumpType extends nsIRequestType {
      * @param aMainThreadTarget
      * a labeled main therad event target.
      */
-    init(aStream: nsIInputStream, aSegmentSize: unsigned_long, aSegmentCount: unsigned_long, aCloseWhenDone: boolean, aMainThreadTarget: nsIEventTarget): void;
+    init(aStream: nsIInputStream, aSegmentSize: unsigned_long, aSegmentCount: unsigned_long, aCloseWhenDone: boolean, aMainThreadTarget: nsISerialEventTarget): void;
     /**
      * asyncRead causes the input stream to be read in chunks and delivered
      * asynchronously to the listener via OnDataAvailable.
@@ -28141,6 +28360,17 @@ declare interface nsILoadInfoType extends nsISupportsType {
      */
     triggeringSandboxFlags: unsigned_long;
     /**
+     * The window id and storage access status of the window of the
+     * context that triggered the load. This is used to allow self-initiated
+     * same-origin navigations to propogate their "has storage access" bit
+     * to the next Document.
+     */
+    triggeringWindowId: unsigned_long_long;
+    /**
+     *
+     */
+    triggeringStorageAccess: boolean;
+    /**
      * Allows to query only the security mode bits from above.
      */
     readonly securityMode: unsigned_long;
@@ -28156,6 +28386,10 @@ declare interface nsILoadInfoType extends nsISupportsType {
      * set on requests that should be excempt from an upgrade.
      */
     httpsOnlyStatus: unsigned_long;
+    /**
+     * Reflects whetehr this is an HTTP Strict Transport Security host
+     */
+    hstsStatus: boolean;
     /**
      * Returns true if at the time of the loadinfo construction the document
      * that triggered this load has the bit hasValidTransientUserGestureActivation
@@ -28383,6 +28617,20 @@ declare interface nsILoadInfoType extends nsISupportsType {
      *
      */
     readonly browsingContext: BrowsingContext;
+    /**
+     * The BrowsingContext which the worker is associated.
+     *
+     * Note that this could be 0 if the load is not triggered in a WorkerScope.
+     * This value is only set and used in the parent process for some sitautions
+     * the channel is created in the parent process for Workers. Such as fetch().
+     * In content process, it is always 0.
+     * This value would not be propagated through IPC.
+     */
+    workerAssociatedBrowsingContextID: unsigned_long_long;
+    /**
+     *
+     */
+    readonly workerAssociatedBrowsingContext: BrowsingContext;
     /**
      * Only when the element being loaded is <frame src="foo.html">
      * (or, more generally, if the element QIs to nsFrameLoaderOwner),
@@ -28796,6 +29044,10 @@ declare interface nsILoadInfoType extends nsISupportsType {
      * * TYPE_STYLESHEET
      */
     cspNonce: AString;
+    /**
+     *
+     */
+    integrityMetadata: AString;
     /**
      * If the request associated with this load info was blocked by some of
      * our content or load blockers, the reason can be found here.
@@ -29271,6 +29523,20 @@ declare interface nsILoginInfoType extends nsISupportsType {
      */
     passwordField: AString;
     /**
+     * Unknown fields this client doesn't know about but will be roundtripped
+     * for other clients to prevent data loss
+     */
+    unknownFields: AString;
+    /**
+     * True if the login has ever been synced at some point.
+     */
+    everSynced: boolean;
+    /**
+     * A counter used to indicate that syncing is occuring. It will get restored to 0
+     * once syncing is complete.
+     */
+    syncCounter: long;
+    /**
      * Initialize a newly created nsLoginInfo object.
      *
      * The arguments are the fields for the new object.
@@ -29344,6 +29610,18 @@ declare interface nsILoginManagerType extends nsISupportsType {
      * be used instead.
      */
     addLogin(aLogin: nsILoginInfo): nsILoginInfo;
+    /**
+     * Like addLogin, but asynchronous.
+     *
+     * @param aLogin
+     * The login to be added.
+     * @return A promise which resolves with a cloned login with the guid set.
+     *
+     * Default values for each login's nsILoginMetaInfo properties will be
+     * created. However, if the caller specifies non-default values, they will
+     * be used instead.
+     */
+    addLoginAsync(aLogin: nsILoginInfo): Promise;
     /**
      * Like addLogin, but asynchronous and for many logins.
      *
@@ -29425,19 +29703,20 @@ declare interface nsILoginManagerType extends nsISupportsType {
      */
     removeAllLogins(): void;
     /**
-     * Like getAllLogins, but asynchronous. This method is faster when large
-     * amounts of logins are present since it will handle decryption in one batch.
+     * Fetch all logins in the login manager. An array is always returned;
+     * if there are no logins the array is empty. Decryption is handled in
+     * one batch.
      *
      * @return A promise which resolves with a JS Array of nsILoginInfo objects.
      */
-    getAllLoginsAsync(): Promise;
+    getAllLogins(): Promise;
     /**
-     * Like getAllLoginsAsync, but with a callback returning the search results.
+     * Like getAllLogins, but with a callback returning the search results.
      *
      * @param {nsILoginSearchCallback} aCallback
      * The interface to notify when the search is complete.
      */
-    getAllLoginsWithCallbackAsync(aCallback: nsILoginSearchCallback): void;
+    getAllLoginsWithCallback(aCallback: nsILoginSearchCallback): void;
     /**
      * Check to see if saving logins has been disabled for an origin.
      *
@@ -31755,14 +32034,6 @@ declare interface nsINSSComponentType extends nsISupportsType {
      */
     issuerMatchesMitmCanary(certIssuer: string): void;
     /**
-     * Returns true if the user has a PKCS#11 module with removable slots.
-     */
-    hasActiveSmartCards(): bool;
-    /**
-     * Returns true if the user has any client authentication certificates.
-     */
-    hasUserCertsInstalled(): bool;
-    /**
      * Returns an already-adrefed handle to the currently configured shared
      * certificate verifier.
      */
@@ -32337,12 +32608,6 @@ declare interface nsINavHistoryResultNodeType extends nsISupportsType {
      * history visit nodes, this value is -1.
      */
     readonly visitId: long_long;
-    /**
-     * The unique ID associated with visit node which was the referrer of this
-     * history visit. For node types other than history visit nodes, or visits
-     * without any known referrer, this value is -1.
-     */
-    readonly fromVisitId: long_long;
     /**
      * The transition type associated with this visit. For node types other than
      * history visit nodes, this value is 0.
@@ -33688,17 +33953,6 @@ declare interface nsINotificationStorageType extends nsISupportsType {
      */
     get(origin: AString, tag: AString, aCallback: nsINotificationStorageCallback): void;
     /**
-     * Retrieve a notification by ID.
-     *
-     * @param origin: the origin/app for which to fetch notifications.
-     * @param id: the id of the notification.
-     * @param callback: nsINotificationStorageCallback whose Handle method will
-     * be called *at most once* if the notification with that ID is found. Not
-     * called if that ID is not found. Done() will be called right after
-     * Handle().
-     */
-    getByID(origin: AString, id: AString, aCallback: nsINotificationStorageCallback): void;
-    /**
      * Remove a notification from storage.
      *
      * @param origin: the origin/app to delete the notification from
@@ -33738,18 +33992,15 @@ declare interface nsIOSKeyStoreType extends nsISupportsType {
      * rest. The key used to encrypt and decrypt the data is stored in the OS
      * key store.
      *
+     * NB: To first authenticate the user to the system, use
+     * nsIOSReauthenticator.
+     *
      * Usage:
      *
      * // obtain the singleton OSKeyStore instance
      * const oskeystore = Cc["@mozilla.org/security/oskeystore;1"].getService(Ci.nsIOSKeyStore);
      *
      * const PASSWORD_LABEL = "mylabel1";
-     * const COOKIE_LABEL = "mylabel2";
-     *
-     * // Unlock the key store.
-     * // Note that this is not necesssary. The key store will be unlocked
-     * // automatically when an operation is performed on it.
-     * await oskeystore.asyncUnlock();
      *
      * // Check if there's a secret for your label already.
      * if (!await oskeystore.asyncSecretAvailable(PASSWORD_LABEL)) {
@@ -33768,9 +34019,6 @@ declare interface nsIOSKeyStoreType extends nsISupportsType {
      *
      * // Recover a secret from a recovery code.
      * await oskeystore.asyncRecoverSecret(PASSWORD_LABEL, recoveryPhrase);
-     *
-     * // Lock the key store to prompt the user to log into her OS key store again.
-     * await oskeystore.asyncLock();
      *
      * Generate a new secret and store it in the OS key store with the given label.
      * The caller should make sure that no other secrets with the same label are
@@ -33827,26 +34075,6 @@ declare interface nsIOSKeyStoreType extends nsISupportsType {
      * @return Promise resolving to the plaintext bytes or an error.
      */
     asyncDecryptBytes(label: ACString, encryptedBase64Text: ACString): Promise;
-    /**
-     * Lock the key store.
-     * The actual behaviour of this depends on the OS.
-     *
-     * @return Promise resolving to undefined or an error.
-     */
-    asyncLock(): Promise;
-    /**
-     * Unlock the key store.
-     * The actual behaviour of this depends on the OS.
-     *
-     * @return Promise resolving to undefined or an error.
-     */
-    asyncUnlock(): Promise;
-    /**
-     * Check if the implementation is using the NSS key store.
-     * This is a special case because Firefox has to handle the locking and
-     * unlocking.
-     */
-    readonly isNSSKeyStore: bool;
 }
 
 /**
@@ -35609,10 +35837,6 @@ declare interface nsIPermissionDelegateHandlerType extends nsISupportsType {
      * @param aTypes the permission types to check
      */
     maybeUnsafePermissionDelegate(aTypes: invalid): boolean;
-    /**
-     * Return true if permissions.delegation.enabled is true.
-     */
-    readonly permissionDelegateFPEnabled: boolean;
 }
 
 /**
@@ -36315,21 +36539,6 @@ declare interface nsIPrefBranchType extends nsISupportsType {
      */
     deleteBranch(aStartingAt: string): void;
     /**
-     * Called to reset all of the preferences referenced by this branch to their
-     * default values.
-     *
-     * @param aStartingAt The point on the branch at which to start the resetting
-     * preferences to their default values. Pass in "" to
-     * reset all preferences referenced by this branch.
-     *
-     * @note
-     * This method can be called on either a default or user branch but, in
-     * effect, always operates on the user branch.
-     *
-     * @throws Error The preference(s) do not exist or an error occurred.
-     */
-    resetBranch(aStartingAt: string): void;
-    /**
      * Add a preference change observer. On preference changes, the following
      * arguments will be passed to the nsIObserver.observe() method:
      * aSubject - The nsIPrefBranch object (this)
@@ -36805,12 +37014,19 @@ declare interface nsIPrincipalType extends nsISupportsType {
      */
     readonly origin: ACString;
     /**
-     * Returns an ASCII compatible representation
-     * of the principals Origin
+     * Returns an ASCII compatible serialization of the principal's origin, as
+     * specified by the whatwg HTML specification. If the principal does not
+     * have a host, the origin will be "null".
+     *
+     * https://html.spec.whatwg.org/multipage/browsers.html#ascii-serialisation-of-an-origin
+     *
+     * Note that this is different from `origin`, does not contain
+     * gecko-specific metadata like origin attributes, and should not be used
+     * for permissions or security checks.
      *
      * May be called from any thread.
      */
-    readonly asciiOrigin: ACString;
+    readonly webExposedOriginSerialization: ACString;
     /**
      * Returns the "host:port" portion of the
      * Principals URI, if any.
@@ -36911,6 +37127,12 @@ declare interface nsIPrincipalType extends nsISupportsType {
      * @param list The list to be checked
      */
     isURIInList(list: ACString): boolean;
+    /**
+     * Check if the Principal's URI is a content-accessible about: page
+     *
+     * May be called from any thread.
+     */
+    isContentAccessibleAboutURI(): boolean;
     /**
      * Uses NS_Security Compare to determine if the
      * other URI is same-origin as the uri of the Principal
@@ -39955,6 +40177,13 @@ declare interface nsIQuotaManagerServiceType extends nsISupportsType {
      */
     clear(): nsIQuotaRequest;
     /**
+     * Removes all storages stored for private browsing. The files may not be
+     * deleted immediately depending on prohibitive concurrent operations.  In
+     * terms of locks, it will get an exclusive multi directory lock for entire
+     * private repository.
+     */
+    clearStoragesForPrivateBrowsing(): nsIQuotaRequest;
+    /**
      * Removes all storages stored for the given pattern. The files may not be
      * deleted immediately depending on prohibitive concurrent operations.  In
      * terms of locks, it will get an exclusive multi directory lock for given
@@ -40133,6 +40362,10 @@ declare interface nsIQuotaFullOriginMetadataResultType extends nsISupportsType {
      *
      */
     readonly origin: ACString;
+    /**
+     *
+     */
+    readonly storageOrigin: ACString;
     /**
      *
      */
@@ -42670,6 +42903,10 @@ declare interface nsISearchEngineType extends nsISupportsType {
      */
     hidden: boolean;
     /**
+     * Whether the associated one off button should be hidden from the user.
+     */
+    hideOneOffButton: boolean;
+    /**
      * A nsIURI corresponding to the engine's icon, stored locally. May be null.
      */
     readonly iconURI: nsIURI;
@@ -42782,6 +43019,10 @@ declare interface nsISearchServiceType extends nsISupportsType {
      * initialization has not been triggered yet.
      */
     readonly isInitialized: bool;
+    /**
+     * Determine whether initialization has been completed successfully.
+     */
+    readonly hasSuccessfullyInitialized: bool;
     /**
      * Runs background checks; Designed to be run on idle.
      */
@@ -44049,6 +44290,10 @@ declare interface nsISessionStoreRestoreDataType extends nsISupportsType {
     /**
      *
      */
+    addCustomElement(aIsXPath: boolean, aIdOrXPath: AString, aValue: jsval, aState: jsval): void;
+    /**
+     *
+     */
     addChild(aChild: nsISessionStoreRestoreData, aIndex: unsigned_long): void;
 }
 
@@ -44220,38 +44465,6 @@ declare interface nsISimpleURIMutatorType extends nsISupportsType {
 /**
  *
  */
-declare interface nsISiteSecurityStateType extends nsISupportsType {
-    /**
-     *
-     */
-    readonly hostname: ACString;
-    /**
-     *
-     */
-    readonly expireTime: long_long;
-    /**
-     *
-     */
-    readonly securityPropertyState: short;
-    /**
-     *
-     */
-    readonly includeSubdomains: boolean;
-    /**
-     *
-     */
-    readonly originAttributes: jsval;
-}
-
-/**
- *
- */
-declare interface nsISiteHSTSStateType extends nsISiteSecurityStateType {
-}
-
-/**
- *
- */
 declare interface nsISiteSecurityServiceType extends nsISupportsType {
     /**
      * Parses a given HTTP header and records the results internally.
@@ -44299,8 +44512,10 @@ declare interface nsISiteSecurityServiceType extends nsISupportsType {
      * by userContextId because of the risk of man-in-
      * the-middle attacks before trust-on-second-use
      * happens).
+     * @param aScope  The scope of state to reset. See ResetStateBy. Defaults
+     * to ExactDomain.
      */
-    resetState(aURI: nsIURI, aOriginAttributes: jsval): void;
+    resetState(aURI: nsIURI, aOriginAttributes: jsval, aScope: nsISiteSecurityService_ResetStateBy): void;
     /**
      * Checks whether or not the URI's hostname has HSTS set.
      * For example:
@@ -44327,13 +44542,6 @@ declare interface nsISiteSecurityServiceType extends nsISupportsType {
      * settings.
      */
     clearAll(): void;
-    /**
-     * Returns an enumerator of the nsISiteSecurityService storage. Each item in
-     * the enumeration is a nsISiteSecurityState that can be QueryInterfaced to
-     * nsISiteHSTSState.
-     * Doesn't include hard-coded preloaded entries.
-     */
-    enumerate(): nsISimpleEnumerator;
 }
 
 /**
@@ -44816,12 +45024,19 @@ declare interface nsISpeculativeConnectType extends nsISupportsType {
      * channel of the hinted transaction.
      * @param aCallbacks any security callbacks for use with SSL for interfaces.
      * May be null.
+     * @param aAnonymous indicates if this is an anonymous connection.
      */
-    speculativeConnect(aURI: nsIURI, aPrincipal: nsIPrincipal, aCallbacks: nsIInterfaceRequestor): void;
+    speculativeConnect(aURI: nsIURI, aPrincipal: nsIPrincipal, aCallbacks: nsIInterfaceRequestor, aAnonymous: boolean): void;
+    /**
+     * This method is similar to speculativeConnect, but it use
+     * the partition key of the originAttributes directly to create the
+     * connection.
+     */
+    speculativeConnectWithOriginAttributes(aURI: nsIURI, originAttributes: jsval, aCallbacks: nsIInterfaceRequestor, aAnonymous: boolean): void;
     /**
      *
      */
-    speculativeAnonymousConnect(aURI: nsIURI, aPrincipal: nsIPrincipal, aCallbacks: nsIInterfaceRequestor): void;
+    speculativeConnectWithOriginAttributesNative(aURI: nsIURI, originAttributes: OriginAttributes, aCallbacks: nsIInterfaceRequestor, aAnonymous: boolean): void;
 }
 
 /**
@@ -44850,13 +45065,6 @@ declare interface nsISpeculativeConnectionOverriderType extends nsISupportsType 
      * by default speculative connections are not made to RFC 1918 addresses
      */
     readonly allow1918: boolean;
-    /**
-     * By default the speculative connections triggered by nsISpeculativeConnect
-     * should respect the user certificate checks implemented in nsHttpHandler.
-     * The checks can be ignored for `Link: rel=preconnect` and is also
-     * controlled by a pref.
-     */
-    readonly ignoreUserCertCheck: boolean;
 }
 
 /**
@@ -46763,6 +46971,10 @@ declare interface nsISynthVoiceRegistryType extends nsISupportsType {
      */
     notifyVoicesChanged(): void;
     /**
+     * Notify chrome code of an error when starting speech synthesis service
+     */
+    notifyVoicesError(aError: AString): void;
+    /**
      * Set a voice as default.
      *
      * @param aUri       a unique identifier of an existing voice.
@@ -47186,6 +47398,10 @@ declare interface nsITLSSocketControlType extends nsISupportsType {
      * other fields of nsITLSSocketControl.
      */
     asyncGetSecurityInfo(): Promise;
+    /**
+     * Claim a speculative connection.
+     */
+    claim(): void;
 }
 
 /**
@@ -48110,6 +48326,12 @@ declare interface nsITelemetryType extends nsISupportsType {
      * Defaults to 0.
      */
     getUntrustedModuleLoadEvents(aFlags: unsigned_long): Promise;
+    /**
+     * Whether the untrusted module load events are ready for processing.
+     * Calling getUntrustedModuleLoadEvents() before this attribute is true
+     * will result in an empty array.
+     */
+    readonly areUntrustedModuleLoadEventsReady: boolean;
     /**
      * Asynchronously get an array of the modules loaded in the process.
      *
@@ -49795,14 +50017,14 @@ declare interface nsIThreadRetargetableRequestType extends nsISupportsType {
      * should be ready to deal with OnDataAvailable on either the main thread or
      * the new target thread.
      */
-    retargetDeliveryTo(aNewTarget: nsIEventTarget): void;
+    retargetDeliveryTo(aNewTarget: nsISerialEventTarget): void;
     /**
      * Returns the event target where OnDataAvailable events will be dispatched.
      *
      * This is only valid after OnStartRequest has been called. Any time before
      * that point, the value may be changed by `retargetDeliveryTo` calls.
      */
-    readonly deliveryTarget: nsIEventTarget;
+    readonly deliveryTarget: nsISerialEventTarget;
 }
 
 /**
@@ -50300,6 +50522,10 @@ declare interface nsITimerType extends nsISupportsType {
      */
     target: nsIEventTarget;
     /**
+     *
+     */
+    readonly name: ACString;
+    /**
      * The number of microseconds this nsITimer implementation can possibly
      * fire early.
      */
@@ -50308,6 +50534,12 @@ declare interface nsITimerType extends nsISupportsType {
      *
      */
     sizeOfIncludingThis(aMallocSizeOf: MallocSizeOf): size_t;
+}
+
+/**
+ *
+ */
+declare interface nsITimerManagerType extends nsISupportsType {
 }
 
 /**
@@ -52320,6 +52552,10 @@ declare interface nsIURIType extends nsISupportsType {
      */
     readonly query: AUTF8String;
     /**
+     * Returns if there is a query portion (the part after the "?") of the URI.
+     */
+    readonly hasQuery: boolean;
+    /**
      * If the URI has a punycode encoded hostname, this will hold the UTF8
      * representation of that hostname (if that representation doesn't contain
      * blacklisted characters, and the network.IDN_show_punycode pref is false)
@@ -53120,6 +53356,10 @@ declare interface nsIURLQueryStringStripperType extends nsISupportsType {
     /**
      *
      */
+    stripForCopyOrShare(aURI: nsIURI): nsIURI;
+    /**
+     *
+     */
     testGetStripList(): ACString;
 }
 
@@ -53140,6 +53380,16 @@ declare interface nsIURLQueryStrippingListObserverType extends nsISupportsType {
      * stripping.
      */
     onQueryStrippingListUpdate(aStripList: AString, aAllowList: ACString): void;
+    /**
+     * Called by nsIQueryStrippingListService when the list of query stripping
+     * parameters for strip-on-share feature is updated and when the observer is first registered.
+     *
+     * @param aStripRules
+     * An Array of stringified strip rules.
+     * A stringified rule has the form of:
+     * "'queryParams': ['param1', 'param2', ...], 'topLevelSites': ['www.site.com', 'www.site.de', ...]"
+     */
+    onStripOnShareUpdate(aStripRules: invalid): void;
 }
 
 /**
@@ -53160,12 +53410,31 @@ declare interface nsIURLQueryStrippingListServiceType extends nsISupportsType {
      */
     registerAndRunObserver(aObserver: nsIURLQueryStrippingListObserver): void;
     /**
+     * Register a new observer to strip-on-share stripping list updates
+     * (this is the strip-on-share list combined with the QPS list).
+     * When the observer is registered it is called immediately once. Afterwards it will be called
+     * when there is an remote settings update to the QPS strip list.
+     *
+     * @param aObserver
+     * An nsIURLQueryStrippingListObserver object or function that
+     * will receive updates to the strip list and the allow list. Will be
+     * called immediately with the current list value.
+     */
+    registerAndRunObserverStripOnShare(aObserver: nsIURLQueryStrippingListObserver): void;
+    /**
      * Unregister an observer.
      *
      * @param aObserver
      * The nsIURLQueryStrippingListObserver object to unregister.
      */
     unregisterObserver(aObserver: nsIURLQueryStrippingListObserver): void;
+    /**
+     * Unregister an observer for strip-on-share.
+     *
+     * @param aObserver
+     * The nsIURLQueryStrippingListObserver object to unregister.
+     */
+    unregisterStripOnShareObserver(aObserver: nsIURLQueryStrippingListObserver): void;
     /**
      * Clear all Lists.
      *
@@ -53751,6 +54020,12 @@ declare interface nsIApplicationUpdateServiceType extends nsISupportsType {
      */
     readonly manualUpdateOnly: boolean;
     /**
+     * Determines if the base directory is writable. If not, we assume that
+     * further permissions are required and that we are dealing with an elevated
+     * installation.
+     */
+    readonly isAppBaseDirWritable: boolean;
+    /**
      * This can be set to true to prevent updates being processed beyond starting
      * an update download. This should only be used when we are being run as a
      * background task.
@@ -53819,6 +54094,26 @@ declare interface nsIUpdateProcessorType extends nsISupportsType {
      * If this is called on a non-Windows platform.
      */
     getServiceRegKeyExists(): bool;
+    /**
+     * Registers an application restart upon program exit with the same
+     * arguments it was started with, while accepting additional arguments.
+     * The application must have been running for a minimum of 60 seconds
+     * before invoking this function due to limitations in
+     * RegisterApplicationRestart.
+     *
+     * This function should only be called on Windows.
+     *
+     * @param  argvExtra
+     * An array of strings to be passed to the application upon
+     * restart as additional arguments.
+     * @throws NS_ERROR_ABORT
+     * If the application is in a restart loop.
+     * @throws NS_ERROR_NOT_IMPLEMENTED
+     * If this is called on a non-Windows platform.
+     * @throws NS_ERROR_NOT_AVAILABLE
+     * If the command line cannot be read.
+     */
+    registerApplicationRestartWithLaunchArgs(argvExtra: invalid): void;
 }
 
 /**
@@ -53910,6 +54205,25 @@ declare interface nsIUpdateManagerType extends nsISupportsType {
      *
      */
     cleanupReadyUpdate(): void;
+    /**
+     * Runs cleanup that ought to happen on a Firefox paveover install to
+     * prevent a stale update from being processed when Firefox is first
+     * launched.
+     * This is best-effort. It will not throw on cleanup failure.
+     *
+     * The returned promise does not resolve with any particular value. It simply
+     * conveys that the cleanup has completed.
+     */
+    doInstallCleanup(): Promise;
+    /**
+     * Runs cleanup that ought to happen when Firefox is uninstalled to clean up
+     * old update data that is no longer needed.
+     * This is best-effort. It will not throw on cleanup failure.
+     *
+     * The returned promise does not resolve with any particular value. It simply
+     * conveys that the cleanup has completed.
+     */
+    doUninstallCleanup(): Promise;
 }
 
 /**
@@ -55281,10 +55595,6 @@ declare interface nsICtapRegisterArgsType extends nsISupportsType {
     /**
      *
      */
-    readonly clientDataJSON: ACString;
-    /**
-     *
-     */
     readonly rpId: AString;
     /**
      *
@@ -55305,7 +55615,7 @@ declare interface nsICtapRegisterArgsType extends nsISupportsType {
     /**
      *
      */
-    readonly requireResidentKey: bool;
+    readonly residentKey: AString;
     /**
      *
      */
@@ -55339,10 +55649,6 @@ declare interface nsICtapSignArgsType extends nsISupportsType {
     /**
      *
      */
-    readonly clientDataJSON: ACString;
-    /**
-     *
-     */
     readonly hmacCreateSecret: bool;
     /**
      *
@@ -55366,10 +55672,6 @@ declare interface nsICtapRegisterResultType extends nsISupportsType {
      *
      */
     readonly status: nsresult;
-    /**
-     *
-     */
-    readonly clientDataJSON: ACString;
 }
 
 /**
@@ -55409,7 +55711,37 @@ declare interface nsIWebAuthnControllerType extends nsIU2FTokenManagerType {
     /**
      *
      */
-    finishSign(aTransactionId: uint64_t, aClientDataJson: ACString, aResult: invalid): void;
+    finishSign(aTransactionId: uint64_t, aResult: invalid): void;
+}
+
+/**
+ *
+ */
+declare interface nsICredentialParametersType extends nsISupportsType {
+    /**
+     *
+     */
+    readonly credentialId: ACString;
+    /**
+     *
+     */
+    readonly isResidentCredential: bool;
+    /**
+     *
+     */
+    readonly rpId: ACString;
+    /**
+     *
+     */
+    readonly privateKey: ACString;
+    /**
+     *
+     */
+    readonly userHandle: ACString;
+    /**
+     *
+     */
+    readonly signCount: uint32_t;
 }
 
 /**
@@ -55428,6 +55760,30 @@ declare interface nsIWebAuthnTransportType extends nsISupportsType {
      *
      */
     getAssertion(aTransactionId: uint64_t, browsingContextId: uint64_t, args: nsICtapSignArgs): void;
+    /**
+     *
+     */
+    addVirtualAuthenticator(protocol: ACString, transport: ACString, hasResidentKey: bool, hasUserVerification: bool, isUserConsenting: bool, isUserVerified: bool): uint64_t;
+    /**
+     *
+     */
+    removeVirtualAuthenticator(authenticatorId: uint64_t): void;
+    /**
+     *
+     */
+    addCredential(authenticatorId: uint64_t, credentialId: ACString, isResidentCredential: bool, rpId: ACString, privateKey: ACString, userHandle: ACString, signCount: uint32_t): void;
+    /**
+     *
+     */
+    removeCredential(authenticatorId: uint64_t, credentialId: ACString): void;
+    /**
+     *
+     */
+    removeAllCredentials(authenticatorId: uint64_t): void;
+    /**
+     *
+     */
+    setUserVerified(authenticatorId: uint64_t, isUserVerified: bool): void;
     /**
      *
      */
@@ -56982,7 +57338,7 @@ declare interface WebTransportSessionEventListenerType extends nsISupportsType {
     /**
      *
      */
-    onSessionClosed(aErrorCode: uint32_t, aReason: ACString): void;
+    onSessionClosed(aCleanly: bool, aErrorCode: uint32_t, aReason: ACString): void;
     /**
      *
      */
@@ -56995,6 +57351,14 @@ declare interface WebTransportSessionEventListenerType extends nsISupportsType {
      *
      */
     onIncomingStreamAvailableInternal(aStream: Http3WebTransportStreamPtr): void;
+    /**
+     *
+     */
+    onStopSending(aStreamId: uint64_t, aError: nsresult): void;
+    /**
+     *
+     */
+    onResetReceived(aStreamId: uint64_t, aError: nsresult): void;
     /**
      *
      */
@@ -57097,6 +57461,10 @@ declare interface nsIWebTransportReceiveStreamType extends nsISupportsType {
      *
      */
     readonly inputStream: nsIAsyncInputStream;
+    /**
+     *
+     */
+    readonly streamId: uint64_t;
 }
 
 /**
@@ -57119,6 +57487,10 @@ declare interface nsIWebTransportSendStreamType extends nsISupportsType {
      *
      */
     readonly outputStream: nsIAsyncOutputStream;
+    /**
+     *
+     */
+    readonly streamId: uint64_t;
 }
 
 /**
@@ -57149,6 +57521,10 @@ declare interface nsIWebTransportBidirectionalStreamType extends nsISupportsType
      *
      */
     readonly outputStream: nsIAsyncOutputStream;
+    /**
+     *
+     */
+    readonly streamId: uint64_t;
 }
 
 /**
@@ -57312,9 +57688,13 @@ declare interface nsIWifiListenerType extends nsISupportsType {
 declare interface nsIWifiMonitorType extends nsISupportsType {
     /**
      * startWatching
-     * aListener will be called once, then each time the list of wifi access points change.
+     * aListener will be called once, then each time the list of wifi access
+     * points change.  The wifi access point list will be updated when our
+     * network changes, or on a regular interval if we are on a mobile network.
+     * If aForcePolling is true then we will always poll as long as this
+     * listener is watching.
      */
-    startWatching(aListener: nsIWifiListener): void;
+    startWatching(aListener: nsIWifiListener, aForcePolling: boolean): void;
     /**
      * stopWatching
      * cancels all notifications to the |aListener|.
@@ -57968,22 +58348,6 @@ declare interface nsIWindowlessBrowserType extends nsIWebNavigationType {
 /**
  *
  */
-declare interface nsIUnknownWindowsTagListenerType extends nsISupportsType {
-    /**
-     * Handle any launch URL associated to the given Windows-specific tag string.
-     * Usually, this will navigate to the launch URL in some manner.
-     *
-     * @param {AString} aWindowsTag the tag
-     * @param {AString} aLaunchURL associated launch URL, or null.
-     * @param {AString} aPrivilegedName associated alert name if this is a chrome
-     * privileged alert, or null.
-     */
-    handleUnknownWindowsTag(aWindowsTag: AString, aLaunchURL: AString, aPrivilegedName: AString): void;
-}
-
-/**
- *
- */
 declare interface nsIWindowsAlertsServiceType extends nsIAlertsServiceType {
     /**
      * If callbacks for the given Windows-specific tag string will be handled by
@@ -57994,12 +58358,10 @@ declare interface nsIWindowsAlertsServiceType extends nsIAlertsServiceType {
      * @resolves {Object}
      * Resolves with an Object, may contain the following optional
      * properties if notification exists but wasn't registered with
-     * the WindowsAlertService:
+     * the WindowsAlertsService:
      *
-     * `launchUrl` {string} a fallback URL to open.
-     *
-     * `privilegedName` {string} a privileged name assigned by the
-     * browser chrome.
+     * `notificationData` {string} relaunch data, generally opaque to
+     * the Windows notification server DLL, for this relaunch.
      *
      * @rejects `nsresult` when there was an error retrieving the notification.
      */
@@ -58349,8 +58711,8 @@ declare interface nsIWindowsShellServiceType extends nsISupportsType {
      * shortcut refers to the current executable, if the paths differ due
      * to e.g. symlinks. This should be rare.
      *
-     * This is fully supported on Windows 7, 8, and 11. On Windows 10, it will
-     * definitely fail on a version prior to build 1809 (October 2018 Update).
+     * This will definitely fail on an OS before Windows 10 build 1809
+     * (October 2018 Update).
      *
      * NOTE: Can only run on the main thread, but the actual work occurs on a
      * background thread.
@@ -58492,6 +58854,34 @@ declare interface nsIWindowsUIUtilsType extends nsISupportsType {
      * Share URL
      */
     shareUrl(shareTitle: AString, urlToShare: AString): void;
+}
+
+/**
+ *
+ */
+declare interface nsIWorkerChannelLoadInfoType extends nsISupportsType {
+    /**
+     *
+     */
+    workerAssociatedBrowsingContextID: unsigned_long_long;
+    /**
+     *
+     */
+    readonly workerAssociatedBrowsingContext: BrowsingContext;
+}
+
+/**
+ *
+ */
+declare interface nsIWorkerChannelInfoType extends nsISupportsType {
+    /**
+     *
+     */
+    loadInfo: nsIWorkerChannelLoadInfo;
+    /**
+     *
+     */
+    readonly channelId: uint64_t;
 }
 
 /**
@@ -59296,18 +59686,9 @@ declare interface nsIXULRuntimeType extends nsISupportsType {
      */
     readonly accessibilityEnabled: boolean;
     /**
-     * If true, the AccessibleHandler dll is used.
-     */
-    readonly accessibleHandlerUsed: boolean;
-    /**
      * Executable of Windows service that activated accessibility.
      */
     readonly accessibilityInstantiator: AString;
-    /**
-     * Temporary, do not use. Indicates if an incompat version of JAWS
-     * screen reader software is loaded in our process space.
-     */
-    readonly shouldBlockIncompatJaws: boolean;
     /**
      * Indicates whether the current Firefox build is 64-bit.
      */
@@ -59363,6 +59744,10 @@ declare interface nsIXULRuntimeType extends nsISupportsType {
      */
     readonly contentThemeDerivedColorSchemeIsDark: boolean;
     /**
+     * Whether the user prefers reduced motion
+     */
+    readonly prefersReducedMotion: boolean;
+    /**
      * Whether we should draw over the titlebar
      */
     readonly drawInTitlebar: boolean;
@@ -59370,6 +59755,10 @@ declare interface nsIXULRuntimeType extends nsISupportsType {
      * Returns the desktop environment identifier. Only meaningful on GTK
      */
     readonly desktopEnvironment: ACString;
+    /**
+     * Whether we use Wayland. Only meaningful on GTK
+     */
+    readonly isWayland: boolean;
     /**
      * The path of the shortcut used to start the current process, or "" if none.
      *
@@ -59541,6 +59930,15 @@ declare interface nsIZipReaderType extends nsISupportsType {
      * Opens a zip file inside a zip file for reading.
      */
     openInner(zipReader: nsIZipReader, zipEntry: AUTF8String): void;
+    /**
+     * Opens a zip file stored in memory; the file attribute will be null.
+     *
+     * The ZipReader does not copy or take ownership of this memory; the
+     * caller must ensure that it is valid and unmodified until the
+     * ZipReader is closed or destroyed, and must free the memory as
+     * appropriate afterwards.
+     */
+    openMemory(aData: voidPtr, aLength: unsigned_long): void;
     /**
      * The file that represents the zip with which this zip reader was
      * initialized.  This will be null if there is no underlying file.
@@ -60281,10 +60679,6 @@ declare interface nsIXPCComponents_UtilsType extends nsISupportsType {
      */
     readonly Sandbox: nsIXPCComponents_utils_Sandbox;
     /**
-     *
-     */
-    createServicesCache(): jsval;
-    /**
      * evalInSandbox is designed to be called from JavaScript only.
      *
      * evalInSandbox evaluates the provided source string in the given sandbox.
@@ -60589,13 +60983,6 @@ declare interface nsIXPCComponents_UtilsType extends nsISupportsType {
      * affects which error reporter gets called.
      */
     dispatch(runnable: jsval, scope: jsval): void;
-    /**
-     * Bug 1621603 - Remove strict_mode.
-     *
-     * Do not use this API! Instead use "use strict"; at the top of your JS
-     * file.
-     */
-    strict_mode: boolean;
     /**
      *
      */
@@ -61215,7 +61602,7 @@ declare interface nsIXPCTestUtilsType extends nsISupportsType {
     doubleWrapFunction(f: nsIXPCTestFunctionInterface): nsIXPCTestFunctionInterface;
 }
 
-type CiKeys = "IJSDebugger" | "IPeerConnectionObserver" | "IPeerConnection" | "IUrlClassifierUITelemetry" | "nsIScriptableOK" | "nsIScriptableWithNotXPCOM" | "nsISessionStoreFunctions" | "amIAddonManagerStartup" | "amIWebInstallPrompt" | "extIWebNavigation" | "imgICache" | "imgIContainer" | "imgIContainerDebug" | "imgIEncoder" | "imgILoader" | "imgINotificationObserver" | "imgIRequest" | "imgIScriptedNotificationObserver" | "imgITools" | "imgIContainerCallback" | "inIDeepTreeWalker" | "mozIAppServicesLogger" | "mozIVisitInfo" | "mozIPlaceInfo" | "mozIVisitInfoCallback" | "mozIVisitedStatusCallback" | "mozIAsyncHistory" | "mozIBridgedSyncEngineCallback" | "mozIBridgedSyncEngineApplyCallback" | "mozIBridgedSyncEngine" | "mozIDOMWindow" | "mozIDOMWindowProxy" | "mozIDownloadPlatform" | "mozIExtensionServiceWorkerInfo" | "mozIExtensionListenerCallOptions" | "mozIExtensionEventListener" | "mozIExtensionAPIRequest" | "mozIExtensionAPIRequestResult" | "mozIExtensionAPIRequestHandler" | "mozIExtensionProcessScript" | "mozIExtensionStorageArea" | "mozIConfigurableExtensionStorageArea" | "mozISyncedExtensionStorageArea" | "mozIExtensionStorageListener" | "mozIExtensionStorageCallback" | "mozIGeckoMediaPluginChromeService" | "mozIGeckoMediaPluginService" | "mozIInterruptible" | "mozIJSSubScriptLoader" | "mozILocaleService" | "mozIMozIntl" | "mozIMozIntlHelper" | "mozIOSPreferences" | "mozIPersonalDictionary" | "mozIPlacesAutoComplete" | "mozIPlacesPendingOperation" | "mozIRemoteLazyInputStream" | "mozISandboxReport" | "mozISandboxReportArray" | "mozISandboxReporter" | "mozISandboxSettings" | "mozISandboxTest" | "mozIServicesLogSink" | "mozISpellCheckingEngine" | "mozIStorageAsyncConnection" | "mozIStorageAsyncStatement" | "mozIStorageBaseStatement" | "mozIStorageBindingParams" | "mozIStorageBindingParamsArray" | "mozIStorageCompletionCallback" | "mozIStorageConnection" | "mozIStorageError" | "mozIStorageFunction" | "mozIStoragePendingStatement" | "mozIStorageProgressHandler" | "mozIStorageResultSet" | "mozIStorageRow" | "mozIStorageService" | "mozIStorageStatement" | "mozIStorageStatementCallback" | "mozIStorageVacuumParticipant" | "mozIStorageValueArray" | "mozISyncedBookmarksMirrorProgressListener" | "mozISyncedBookmarksMirrorCallback" | "mozISyncedBookmarksMirrorLogger" | "mozISyncedBookmarksMerger" | "mozITXTToHTMLConv" | "mozITestInterfaceJS" | "mozIThirdPartyUtil" | "nsIASN1Tree" | "nsIAboutModule" | "nsIAboutNewTabService" | "nsIInstalledApplication" | "nsIAboutThirdParty" | "nsIAddonPolicyService" | "nsIAddonContentPolicy" | "nsIAlertNotificationImageListener" | "nsIAlertAction" | "nsIAlertNotification" | "nsIAlertsService" | "nsIAlertsDoNotDisturb" | "nsIAlertsIconData" | "nsIAlertsIconURI" | "nsIAndroidEventCallback" | "nsIAndroidEventFinalizer" | "nsIAndroidEventListener" | "nsIAndroidEventDispatcher" | "nsIAndroidView" | "nsIAndroidBridge" | "nsIAppShell" | "nsIAppShellService" | "nsIAppStartup" | "nsIAppWindow" | "nsIApplicationChooserFinishedCallback" | "nsIApplicationChooser" | "nsIApplicationReputationService" | "nsIApplicationReputationQuery" | "nsIApplicationReputationCallback" | "nsIArray" | "nsIArrayBufferInputStream" | "nsIArrayExtensions" | "nsIAsyncInputStream" | "nsIInputStreamCallback" | "nsIAsyncOutputStream" | "nsIOutputStreamCallback" | "nsIAsyncShutdownBlocker" | "nsIAsyncShutdownClient" | "nsIAsyncShutdownCompletionCallback" | "nsIAsyncShutdownBarrier" | "nsIAsyncShutdownService" | "nsIAsyncStreamCopier" | "nsIAsyncStreamCopier2" | "nsIAsyncVerifyRedirectCallback" | "nsISuspendedTypes" | "nsIAudioChannelAgentCallback" | "nsIAudioChannelAgent" | "nsIAudioDeviceInfo" | "nsIAuthInformation" | "nsIAuthModule" | "nsIAuthPrompt" | "nsIAuthPrompt2" | "nsIAuthPromptAdapterFactory" | "nsIAuthPromptCallback" | "nsIAuthPromptProvider" | "nsIAutoCompleteController" | "nsIAutoCompleteInput" | "nsIAutoCompletePopup" | "nsIAutoCompleteResult" | "nsIAutoCompleteSearch" | "nsIAutoCompleteObserver" | "nsIAutoCompleteSearchDescriptor" | "nsIAutoCompleteSimpleResult" | "nsIAutoCompleteSimpleResultListener" | "nsIAutoCompleteSimpleSearch" | "nsIAutoplay" | "nsITabUnloader" | "nsIAvailableMemoryWatcherBase" | "nsIBFCacheEntry" | "nsIBackgroundChannelRegistrar" | "nsIBackgroundFileSaver" | "nsIBackgroundFileSaverObserver" | "nsIBackgroundTasks" | "nsIBackgroundTasksManager" | "nsIBackgroundTasksRunner" | "nsIBaseWindow" | "nsIBidiKeyboard" | "nsIBinaryHttpRequest" | "nsIBinaryHttpResponse" | "nsIBinaryHttp" | "nsIBinaryInputStream" | "nsIBinaryOutputStream" | "nsIBits" | "nsIBitsNewRequestCallback" | "nsIBitsRequest" | "nsIBitsCallback" | "nsIBlocklistService" | "nsIBrowser" | "nsIBrowserChild" | "nsIBrowserController" | "nsIOpenURIInFrameParams" | "nsIBrowserDOMWindow" | "nsIBrowserElementAPI" | "nsIBrowserHandler" | "nsIBrowserUsage" | "nsIVisibleTab" | "nsIBrowserWindowTracker" | "nsIBufferedInputStream" | "nsIBufferedOutputStream" | "nsIByteRangeRequest" | "nsICacheEntry" | "nsICacheEntryMetaDataVisitor" | "nsICacheEntryDoomCallback" | "nsICacheEntryOpenCallback" | "nsIInputStreamReceiver" | "nsICacheInfoChannel" | "nsICachePurgeLock" | "nsICacheStorage" | "nsICacheStorageService" | "nsICacheStorageConsumptionObserver" | "nsICacheStorageVisitor" | "nsICacheTesting" | "nsICachingChannel" | "nsICancelable" | "nsICaptivePortalCallback" | "nsICaptivePortalDetector" | "nsICaptivePortalServiceCallback" | "nsICaptivePortalService" | "nsICascadeFilter" | "nsICategoryEntry" | "nsICategoryManager" | "nsICertOverride" | "nsICertOverrideService" | "nsICertStorageCallback" | "nsIRevocationState" | "nsIIssuerAndSerialRevocationState" | "nsISubjectAndPubKeyRevocationState" | "nsICRLiteCoverage" | "nsICRLiteTimestamp" | "nsICertInfo" | "nsICertStorage" | "nsICertTreeItem" | "nsICertTree" | "nsICertificateDialogs" | "nsIChannel" | "nsIIdentChannel" | "nsIUrlClassifierBlockedChannel" | "nsIChannelClassifierService" | "nsIChannelEventSink" | "nsIChildChannel" | "nsIChromeRegistry" | "nsIXULChromeRegistry" | "nsIClassInfo" | "nsIClassOfService" | "nsIClassifiedChannel" | "nsIClearDataService" | "nsIClearDataCallback" | "nsIClickRule" | "nsIClientAuthDialogs" | "nsIClientAuthRememberRecord" | "nsIClientAuthRememberService" | "nsIClipboard" | "nsIClipboardHelper" | "nsIClipboardOwner" | "nsICloneableInputStream" | "nsICloneableInputStreamWithRange" | "nsICodeCoverage" | "nsIColorPickerShownCallback" | "nsIColorPicker" | "nsICommandLine" | "nsICommandLineHandler" | "nsICommandLineRunner" | "nsICommandLineValidator" | "nsICommandManager" | "nsICommandParams" | "nsIComponentManager" | "nsIComponentRegistrar" | "nsICompressConvStats" | "nsIConsoleAPIStorage" | "nsIConsoleListener" | "nsIConsoleMessage" | "nsIConsoleService" | "nsIContentBlockingAllowList" | "nsIContentDispatchChooser" | "nsIContentHandler" | "nsIContentPermissionType" | "nsIContentPermissionRequest" | "nsIContentPermissionPrompt" | "nsIContentPolicy" | "nsIContentPrefObserver" | "nsIContentPrefService2" | "nsIContentPrefCallback2" | "nsIContentPref" | "nsIContentProcessInfo" | "nsIContentProcessProvider" | "nsIContentSecurityManager" | "nsIContentSecurityPolicy" | "nsICSPEventListener" | "nsIContentSignatureVerifier" | "nsIContentSniffer" | "nsIContentViewer" | "nsIContentViewerEdit" | "nsIController" | "nsICommandController" | "nsIControllerCommand" | "nsIControllerCommandTable" | "nsIControllerContext" | "nsIControllers" | "nsIConverterInputStream" | "nsIConverterOutputStream" | "nsICookie" | "nsICookieBannerListService" | "nsICookieBannerRule" | "nsICookieBannerService" | "nsICookieJarSettings" | "nsICookieManager" | "nsICookiePermission" | "nsICookieRule" | "nsICookieTransactionCallback" | "nsICookieService" | "nsICrashReporter" | "nsICrashService" | "nsICryptoHash" | "nsICycleCollectorHandler" | "nsICycleCollectorLogSink" | "nsICycleCollectorListener" | "nsIDAPTelemetry" | "nsIDHCPClient" | "nsIDNSAdditionalInfo" | "nsIDNSByTypeRecord" | "nsIDNSTXTRecord" | "nsISVCParam" | "nsISVCParamAlpn" | "nsISVCParamNoDefaultAlpn" | "nsISVCParamPort" | "nsISVCParamIPv4Hint" | "nsISVCParamEchConfig" | "nsISVCParamIPv6Hint" | "nsISVCParamODoHConfig" | "nsISVCBRecord" | "nsIDNSHTTPSSVCRecord" | "nsIDNSListener" | "nsIDNSRecord" | "nsIDNSAddrRecord" | "nsIDNSService" | "nsIDOMChromeWindow" | "nsIDOMEventListener" | "nsIDOMGeoPosition" | "nsIDOMGeoPositionCallback" | "nsIDOMGeoPositionCoords" | "nsIDOMGeoPositionErrorCallback" | "nsIDOMGlobalPropertyInitializer" | "nsIDOMMozBrowserFrame" | "nsIDOMProcessChild" | "nsIDOMProcessParent" | "nsIDOMRequestService" | "nsIDOMStorageManager" | "nsIDOMSessionStorageManager" | "nsIDOMMozWakeLockListener" | "nsIDOMWindow" | "nsIDOMWindowUtils" | "nsITranslationNodeList" | "nsIJSRAIIHelper" | "nsIDOMXULButtonElement" | "nsIDOMXULCommandDispatcher" | "nsIDOMXULContainerItemElement" | "nsIDOMXULContainerElement" | "nsIDOMXULControlElement" | "nsIDOMXULMenuListElement" | "nsIDOMXULMultiSelectControlElement" | "nsIDOMXULRadioGroupElement" | "nsIDOMXULRelatedElement" | "nsIDOMXULSelectControlElement" | "nsIDOMXULSelectControlItemElement" | "nsINetDashboardCallback" | "nsIDashboard" | "nsIDashboardEventNotifier" | "nsIDebug2" | "nsIDeviceSensorData" | "nsIDeviceSensors" | "nsIDialogParamBlock" | "nsIDirIndex" | "nsIDirIndexListener" | "nsIDirIndexParser" | "nsIDirectTaskDispatcher" | "nsIDirectoryEnumerator" | "nsIDirectoryServiceProvider" | "nsIDirectoryServiceProvider2" | "nsIDirectoryService" | "nsIDisplayInfo" | "nsIDocShell" | "nsIDocShellTreeItem" | "nsIDocShellTreeOwner" | "nsIDocumentEncoderNodeFixup" | "nsIDocumentEncoder" | "nsIDocumentLoader" | "nsIDocumentLoaderFactory" | "nsIDocumentStateListener" | "nsIDomainPolicy" | "nsIDomainSet" | "nsIDownloader" | "nsIDownloadObserver" | "nsIDragService" | "nsIDragSession" | "nsIDroppedLinkItem" | "nsIDroppedLinkHandler" | "nsIE10SUtils" | "nsIEarlyHintObserver" | "nsIEdgeMigrationUtils" | "nsIEditActionListener" | "nsIEditingSession" | "nsIEditor" | "nsIEditorMailSupport" | "nsIEditorSpellCheck" | "nsIEditorSpellCheckCallback" | "nsIEffectiveTLDService" | "nsIEmbeddingSiteWindow" | "nsISupports" | "nsIEncodedChannel" | "nsIEnterprisePolicies" | "nsIEnvironment" | "nsIEventListenerChange" | "nsIListenerChangeListener" | "nsIEventListenerInfo" | "nsIEventListenerService" | "nsIEventSourceEventListener" | "nsIEventSourceEventService" | "nsIEventTarget" | "nsIStackFrame" | "nsIException" | "nsIExpatSink" | "nsIExternalHelperAppService" | "nsPIExternalAppLauncher" | "nsIHelperAppLauncher" | "nsIExternalProtocolHandler" | "nsIExternalProtocolService" | "nsIFOG" | "nsIFactory" | "nsIFaviconService" | "nsIFaviconDataCallback" | "nsIFile" | "nsIFileChannel" | "nsIFilePicker" | "nsIFilePickerShownCallback" | "nsIFileProtocolHandler" | "nsIFileInputStream" | "nsIFileOutputStream" | "nsIFileRandomAccessStream" | "nsIFileMetadata" | "nsIAsyncFileMetadata" | "nsIFileMetadataCallback" | "nsIFileURL" | "nsIFileURLMutator" | "nsIFinalizationWitnessService" | "nsIFind" | "nsIFindService" | "nsIFocusManager" | "nsIFontEnumerator" | "nsIFontLoadCompleteCallback" | "nsIForcePendingChannel" | "nsIFormAutoComplete" | "nsIFormAutoCompleteObserver" | "nsIFormFillController" | "nsIFormPOSTActionChannel" | "nsIFormatConverter" | "nsIGIOMimeApp" | "nsIGIOService" | "nsIGNOMEShellService" | "nsIGSettingsCollection" | "nsIGSettingsService" | "nsIGeolocationUpdate" | "nsIGeolocationProvider" | "nsIGfxInfo" | "nsIGfxInfoDebug" | "nsIGleanBoolean" | "nsIGleanDatetime" | "nsIGleanCounter" | "nsIGleanTimingDistribution" | "nsIGleanMemoryDistribution" | "nsIGleanCustomDistribution" | "nsIGleanPingTestCallback" | "nsIGleanPing" | "nsIGleanString" | "nsIGleanStringList" | "nsIGleanTimespan" | "nsIGleanUuid" | "nsIGleanEvent" | "nsIGleanQuantity" | "nsIGleanDenominator" | "nsIGleanNumerator" | "nsIGleanRate" | "nsIGleanUrl" | "nsIGtkTaskbarProgress" | "nsIHTMLAbsPosEditor" | "nsIHTMLEditor" | "nsIHTMLInlineTableEditor" | "nsIHTMLObjectResizer" | "nsIHandlerService" | "nsIHangDetails" | "nsIHangReport" | "nsIHapticFeedback" | "nsIHelperAppLauncherDialog" | "nsIHttpActivityObserver" | "nsIHttpActivityDistributor" | "nsIHttpAuthManager" | "nsIHttpAuthenticableChannel" | "nsIHttpAuthenticator" | "nsIHttpAuthenticatorCallback" | "nsIHttpChannel" | "nsIHttpChannelAuthProvider" | "nsIHttpChannelChild" | "nsIHttpUpgradeListener" | "nsIHttpChannelInternal" | "nsIHttpHeaderVisitor" | "nsIHttpProtocolHandler" | "nsIHttpPushListener" | "nsIHttpServer" | "nsIHttpServerStoppedCallback" | "nsIHttpServerIdentity" | "nsIHttpRequestHandler" | "nsIHttpRequest" | "nsIHttpResponse" | "nsIHttpsOnlyModePermission" | "nsIIDBPermissionsRequest" | "nsIIDNService" | "nsIINIParser" | "nsIINIParserWriter" | "nsIINIParserFactory" | "nsIIOService" | "nsIIOServiceInternal" | "nsIIOUtil" | "nsIMozIconURI" | "nsIIdentityCredentialPromptService" | "nsIIdentityCredentialStorageService" | "nsIIdlePeriod" | "nsIImageLoadingContent" | "nsIIncrementalDownload" | "nsIIncrementalStreamLoaderObserver" | "nsIIncrementalStreamLoader" | "nsIInlineSpellChecker" | "nsIInputListAutoComplete" | "nsIInputStream" | "nsIInputStreamChannel" | "nsIInputStreamLength" | "nsIAsyncInputStreamLength" | "nsIInputStreamLengthCallback" | "nsIInputStreamPriority" | "nsIInputStreamPump" | "nsIInputStreamTee" | "nsIInterceptionInfo" | "nsIInterfaceRequestor" | "nsIJARChannel" | "nsIJARURI" | "nsIJARURIMutator" | "nsIJSInspector" | "nsIJumpListCommittedCallback" | "nsIJumpListBuilder" | "nsIJumpListItem" | "nsIJumpListSeparator" | "nsIJumpListLink" | "nsIJumpListShortcut" | "nsIKeyValueService" | "nsIKeyValueDatabase" | "nsIKeyValuePair" | "nsIKeyValueEnumerator" | "nsIKeyValueDatabaseCallback" | "nsIKeyValueEnumeratorCallback" | "nsIKeyValuePairCallback" | "nsIKeyValueVariantCallback" | "nsIKeyValueVoidCallback" | "nsIKeychainMigrationUtils" | "nsILayoutDebuggingTools" | "nsILayoutHistoryState" | "nsILineInputStream" | "nsILoadContext" | "nsILoadContextInfo" | "nsILoadContextInfoFactory" | "nsILoadGroup" | "nsILoadGroupChild" | "nsILoadInfo" | "nsILoadURIDelegate" | "nsILocalFileMac" | "nsILocalFileWin" | "nsILocalStorageManager" | "nsILoginAutoCompleteSearch" | "nsILoginDetectionService" | "nsILoginInfo" | "nsILoginSearchCallback" | "nsILoginManager" | "nsILoginManagerAuthPrompter" | "nsILoginManagerCrypto" | "nsILoginManagerPrompter" | "nsILoginManagerStorage" | "nsILoginMetaInfo" | "nsILoginReputationVerdictType" | "nsILoginReputationQuery" | "nsILoginReputationQueryCallback" | "nsILoginReputationService" | "nsIMIMEHeaderParam" | "nsIHandlerInfo" | "nsIMIMEInfo" | "nsIHandlerApp" | "nsILocalHandlerApp" | "nsIWebHandlerApp" | "nsIDBusHandlerApp" | "nsIMIMEInputStream" | "nsIMIMEService" | "nsIMacAttributionService" | "nsIMacDockSupport" | "nsIMacFinderProgressCanceledCallback" | "nsIMacFinderProgress" | "nsIMacPreferencesReader" | "nsIMacSharingService" | "nsIMacShellService" | "nsIMacUserActivityUpdater" | "nsITrashAppCallback" | "nsIMacWebAppUtils" | "nsIMarionette" | "nsIMediaDevice" | "nsIMediaManagerService" | "nsIFinishDumpingCallback" | "nsIDumpGCAndCCLogsCallback" | "nsIMemoryInfoDumper" | "nsIHandleReportCallback" | "nsIMemoryReporter" | "nsIFinishReportingCallback" | "nsIHeapAllocatedCallback" | "nsIMemoryReporterManager" | "nsIMessageLoop" | "nsIMessageSender" | "nsIInProcessContentFrameMessageManager" | "nsIMozBrowserFrame" | "nsIMultiPartChannel" | "nsIMultiPartChannelListener" | "nsIMultiplexInputStream" | "nsIMutableArray" | "nsINSSComponent" | "nsINSSErrorsService" | "nsINSSVersion" | "nsINamed" | "nsINamedPipeDataObserver" | "nsINamedPipeService" | "nsINativeAppSupport" | "nsINativeDNSResolverOverride" | "nsINativeOSFileResult" | "nsINativeOSFileSuccessCallback" | "nsINativeOSFileErrorCallback" | "nsINativeOSFileInternalsService" | "nsINavBookmarksService" | "nsINavHistoryResultNode" | "nsINavHistoryContainerResultNode" | "nsINavHistoryQueryResultNode" | "nsINavHistoryResultObserver" | "nsINavHistoryResult" | "nsINavHistoryQuery" | "nsINavHistoryQueryOptions" | "nsINavHistoryService" | "nsINestedURI" | "nsINestedURIMutator" | "nsINestedAboutURIMutator" | "nsIJSURIMutator" | "nsINetAddr" | "nsINetUtil" | "nsINetworkConnectivityService" | "nsIListNetworkAddressesListener" | "nsIGetHostnameListener" | "nsINetworkInfoService" | "nsIInterceptedBodyCallback" | "nsIInterceptedChannel" | "nsINetworkInterceptController" | "nsINetworkLinkService" | "nsINetworkPredictor" | "nsINetworkPredictorVerifier" | "nsINotificationStorageCallback" | "nsINotificationStorage" | "nsINullChannel" | "nsIOSFileConstantsService" | "nsIOSKeyStore" | "nsIOSPermissionRequest" | "nsIOSReauthenticator" | "nsIObjectInputStream" | "nsIObjectLoadingContent" | "nsIObjectOutputStream" | "nsIObliviousHttpClientResponse" | "nsIObliviousHttpClientRequest" | "nsIObliviousHttpServerResponse" | "nsIObliviousHttpServer" | "nsIObliviousHttp" | "nsIObliviousHttpService" | "nsIObserver" | "nsIObserverService" | "nsIBrowsingContextReadyCallback" | "nsIOpenWindowInfo" | "nsIOutputStream" | "nsIPK11Token" | "nsIPK11TokenDB" | "nsIPKCS11Module" | "nsIPKCS11ModuleDB" | "nsIPKCS11Slot" | "nsIPageThumbsStorageService" | "nsIPaper" | "nsIPaperMargin" | "nsIParentChannel" | "nsIAsyncVerifyRedirectReadyCallback" | "nsIParentRedirectingChannel" | "nsIParentalControlsService" | "nsIParserUtils" | "nsIPartitioningExceptionListObserver" | "nsIPartitioningExceptionListService" | "nsIPaymentResponseData" | "nsIGeneralResponseData" | "nsIBasicCardResponseData" | "nsIPaymentActionResponse" | "nsIPaymentCanMakeActionResponse" | "nsIPaymentShowActionResponse" | "nsIPaymentAbortActionResponse" | "nsIPaymentCompleteActionResponse" | "nsIMethodChangeDetails" | "nsIGeneralChangeDetails" | "nsIBasicCardChangeDetails" | "nsIPaymentAddress" | "nsIPaymentMethodData" | "nsIPaymentCurrencyAmount" | "nsIPaymentItem" | "nsIPaymentDetailsModifier" | "nsIPaymentShippingOption" | "nsIPaymentDetails" | "nsIPaymentOptions" | "nsIPaymentRequest" | "nsIPaymentRequestService" | "nsIPaymentUIService" | "nsIPermission" | "nsIPermissionDelegateHandler" | "nsIPermissionManager" | "nsIPropertyElement" | "nsIPersistentProperties" | "nsIPipe" | "nsISearchableInputStream" | "nsIPlacesPreviewsHelperService" | "nsIPlatformInfo" | "nsIPluginTag" | "nsIFakePluginTag" | "nsIPowerManagerService" | "nsIPrefBranch" | "nsIPrefLocalizedString" | "nsIPrefStatsCallback" | "nsIPrefObserver" | "nsIPrefService" | "nsIPrefetchService" | "nsIPreloadedStyleSheet" | "nsIPrincipal" | "nsIExpandedPrincipal" | "nsIPrintDialogService" | "nsIPrintPreviewNavigation" | "nsIPrintSettings" | "nsIPrintSettingsService" | "nsIPrintSettingsWin" | "nsIPrinterInfo" | "nsIPrinter" | "nsIPrinterList" | "nsIPrivacyTransitionObserver" | "nsIPrivateBrowsingChannel" | "nsIProcess" | "nsIProcessToolsService" | "nsIProfileStartup" | "nsIProfileMigrator" | "nsIProfileUnlocker" | "nsIProfilerStartParams" | "nsIProfiler" | "nsIProgressEventSink" | "nsIPrompt" | "nsIPromptCollection" | "nsIPromptFactory" | "nsIPromptInstance" | "nsIPromptService" | "nsIProperties" | "nsIProperty" | "nsIPropertyBag" | "nsIPropertyBag2" | "nsIProtectedAuthThread" | "nsIProtocolHandlerWithDynamicFlags" | "nsIProtocolHandler" | "nsIProtocolProxyCallback" | "nsIProxyProtocolFilterResult" | "nsIProtocolProxyFilter" | "nsIProtocolProxyChannelFilter" | "nsIProxyConfigChangedCallback" | "nsIProtocolProxyService" | "nsIProtocolProxyService2" | "nsIProxiedChannel" | "nsIProxiedProtocolHandler" | "nsIProxyInfo" | "nsIPublicKeyPinningService" | "nsIPurgeTrackerService" | "nsIPushErrorReporter" | "nsIPushNotifier" | "nsIPushData" | "nsIPushMessage" | "nsIPushSubscription" | "nsIPushSubscriptionCallback" | "nsIUnsubscribeResultCallback" | "nsIPushClearResultCallback" | "nsIPushService" | "nsIPushQuotaManager" | "nsIQueryContentEventResult" | "nsIQuotaUsageCallback" | "nsIQuotaCallback" | "nsIQuotaManagerService" | "nsIQuotaRequestBase" | "nsIQuotaUsageRequest" | "nsIQuotaRequest" | "nsIQuotaFullOriginMetadataResult" | "nsIQuotaUsageResult" | "nsIQuotaOriginUsageResult" | "nsIQuotaEstimateResult" | "nsIRaceCacheWithNetwork" | "nsIRandomAccessStream" | "nsIRandomGenerator" | "nsIRddProcessTest" | "nsIRedirectChannelRegistrar" | "nsIRedirectHistoryEntry" | "nsIRedirectResultListener" | "nsIReferrerInfo" | "nsIReflowObserver" | "nsIRefreshURI" | "nsIRegion" | "nsIRelativeFilePref" | "nsIRemoteAgent" | "nsIRemoteTab" | "nsIRequest" | "nsIRequestTailUnblockCallback" | "nsIRequestContext" | "nsIRequestContextService" | "nsIRequestObserver" | "nsIRequestObserverProxy" | "nsIResProtocolHandler" | "nsIResumableChannel" | "nsIRunnable" | "nsIRunnablePriority" | "nsIRunnableIPCMessageType" | "nsISDBCallback" | "nsISDBCloseCallback" | "nsISDBConnection" | "nsISDBRequest" | "nsISDBResult" | "nsISHEntry" | "nsISHistory" | "nsISHistoryListener" | "nsISafeOutputStream" | "nsIScreen" | "nsIScreenManager" | "nsIScriptChannel" | "nsIScriptErrorNote" | "nsIScriptError" | "nsIScriptLoaderObserver" | "nsIScriptSecurityManager" | "nsIScriptableBase64Encoder" | "nsIScriptableContentIterator" | "nsIScriptableInputStream" | "nsIScriptableUnicodeConverter" | "nsISearchSubmission" | "nsISearchEngine" | "nsISearchParseSubmissionResult" | "nsISearchService" | "nsISecCheckWrapChannel" | "nsISecretDecoderRing" | "nsISecureBrowserUI" | "nsISecurityConsoleMessage" | "nsISecurityUITelemetry" | "nsISeekableStream" | "nsISelectionController" | "nsISelectionDisplay" | "nsISelectionListener" | "nsISensitiveInfoHiddenURI" | "nsISerialEventTarget" | "nsISerializable" | "nsISerializationHelper" | "nsIServerSocket" | "nsIServerSocketListener" | "nsIServiceManager" | "nsIServiceWorkerUnregisterCallback" | "nsIServiceWorkerInfo" | "nsIServiceWorkerRegistrationInfoListener" | "nsIServiceWorkerRegistrationInfo" | "nsIServiceWorkerManagerListener" | "nsIServiceWorkerManager" | "nsISessionStorageService" | "nsISessionStoreRestoreData" | "nsISharePicker" | "nsISharingHandlerApp" | "nsIShellService" | "nsIJSEnumerator" | "nsISimpleEnumeratorBase" | "nsISimpleEnumerator" | "nsISimpleStreamListener" | "nsISimpleURIMutator" | "nsISiteSecurityState" | "nsISiteHSTSState" | "nsISiteSecurityService" | "nsISlowScriptDebugCallback" | "nsISlowScriptDebuggerStartupCallback" | "nsISlowScriptDebugRemoteCallback" | "nsISlowScriptDebug" | "nsISocketFilter" | "nsISocketFilterHandler" | "nsISocketProvider" | "nsISocketProviderService" | "nsISocketTransport" | "nsISTSShutdownObserver" | "nsISocketTransportService" | "nsIRoutedSocketTransportService" | "nsISound" | "nsISpeculativeConnect" | "nsISpeculativeConnectionOverrider" | "nsISpeechGrammarCompilationCallback" | "nsISpeechRecognitionService" | "nsISpeechTaskCallback" | "nsISpeechTask" | "nsISpeechService" | "nsIStandaloneNativeMenu" | "nsIStandardURL" | "nsIStandardURLMutator" | "nsIStartupCacheInfo" | "nsIStorageActivityService" | "nsIStorageStream" | "nsIStreamBufferAccess" | "nsIStreamConverter" | "nsIStreamConverterService" | "nsIStreamListener" | "nsIStreamListenerTee" | "nsIStreamLoaderObserver" | "nsIStreamLoader" | "nsIStreamTransportService" | "nsIInputAvailableCallback" | "nsIStringBundle" | "nsIStringBundleService" | "nsIStringEnumeratorBase" | "nsIStringEnumerator" | "nsIUTF8StringEnumerator" | "nsIStringInputStream" | "nsIStructuredCloneContainer" | "nsISFVBareItem" | "nsISFVInteger" | "nsISFVString" | "nsISFVBool" | "nsISFVDecimal" | "nsISFVToken" | "nsISFVByteSeq" | "nsISFVParams" | "nsISFVParametrizable" | "nsISFVItemOrInnerList" | "nsISFVSerialize" | "nsISFVItem" | "nsISFVInnerList" | "nsISFVList" | "nsISFVDictionary" | "nsISFVService" | "nsIStyleSheetService" | "nsISubstitutingProtocolHandler" | "nsIOutputIterator" | "nsIInputIterator" | "nsIForwardIterator" | "nsIBidirectionalIterator" | "nsIRandomAccessIterator" | "nsISupportsPrimitive" | "nsISupportsID" | "nsISupportsCString" | "nsISupportsString" | "nsISupportsPRBool" | "nsISupportsPRUint8" | "nsISupportsPRUint16" | "nsISupportsPRUint32" | "nsISupportsPRUint64" | "nsISupportsPRTime" | "nsISupportsChar" | "nsISupportsPRInt16" | "nsISupportsPRInt32" | "nsISupportsPRInt64" | "nsISupportsFloat" | "nsISupportsDouble" | "nsISupportsInterfacePointer" | "nsISupportsPriority" | "nsISyncStreamListener" | "nsISynthVoiceRegistry" | "nsISystemInfo" | "nsISystemProxySettings" | "nsISystemStatusBar" | "nsITCPSocketCallback" | "nsITLSServerSocket" | "nsITLSClientStatus" | "nsITLSServerConnectionInfo" | "nsITLSServerSecurityObserver" | "nsITLSSocketControl" | "nsITRRSkipReason" | "nsITXTToHTMLConv" | "nsITableEditor" | "nsITaggingService" | "nsITaskbarOverlayIconController" | "nsITaskbarPreview" | "nsITaskbarPreviewButton" | "nsITaskbarPreviewCallback" | "nsITaskbarPreviewController" | "nsITaskbarProgress" | "nsITaskbarTabPreview" | "nsITaskbarWindowPreview" | "nsIFetchTelemetryDataCallback" | "nsITelemetry" | "nsITellableStream" | "nsITextInputProcessor" | "nsITextInputProcessorNotification" | "nsITextInputProcessorCallback" | "nsITextToSubURI" | "nsIThread" | "nsIThreadInternal" | "nsIThreadObserver" | "nsINestedEventLoopCondition" | "nsIThreadManager" | "nsIThreadPoolListener" | "nsIThreadPool" | "nsIThreadRetargetableRequest" | "nsIThreadRetargetableStreamListener" | "nsIThreadShutdown" | "nsIInputChannelThrottleQueue" | "nsIThrottledInputChannel" | "nsIServerTiming" | "nsITimedChannel" | "nsITimerCallback" | "nsITimer" | "nsITlsHandshakeCallbackListener" | "nsITokenDialogs" | "nsITokenPasswordDialogs" | "nsIToolkitChromeRegistry" | "nsIProfileLock" | "nsIToolkitProfile" | "nsIToolkitProfileService" | "nsIToolkitShellService" | "nsITooltipListener" | "nsITooltipTextProvider" | "nsITouchBarHelper" | "nsITouchBarInputCallback" | "nsITouchBarInput" | "nsITouchBarUpdater" | "nsITraceableChannel" | "nsITrackingDBService" | "nsITransaction" | "nsITransactionManager" | "nsITransfer" | "nsIFlavorDataProvider" | "nsITransferable" | "nsITransport" | "nsITransportEventSink" | "nsITransportProvider" | "nsITransportSecurityInfo" | "nsITreeSelection" | "nsINativeTreeSelection" | "nsITreeView" | "nsITypeAheadFind" | "nsIU2FTokenManager" | "nsIUDPSocket" | "nsIUDPSocketListener" | "nsIUDPMessage" | "nsIUDPSocketSyncListener" | "nsIUDPSocketInternal" | "nsIURI" | "nsIURIClassifierCallback" | "nsIURIClassifier" | "nsIURIContentListener" | "nsIURIFixupInfo" | "nsIURIFixup" | "nsIURILoader" | "nsIURISetSpec" | "nsIURISetters" | "nsIURIMutator" | "nsIURIWithSpecialOrigin" | "nsIURL" | "nsIURLMutator" | "nsIURLDecorationAnnotationsService" | "nsIURLFormatter" | "nsIURLParser" | "nsIURLQueryStringStripper" | "nsIURLQueryStrippingListObserver" | "nsIURLQueryStrippingListService" | "nsIUUIDGenerator" | "nsIUnicharInputStream" | "nsIUnicharLineInputStream" | "nsIUnicharOutputStream" | "nsIUpdatePatch" | "nsIUpdate" | "nsIUpdateCheckResult" | "nsIUpdateCheck" | "nsIUpdateChecker" | "nsIApplicationUpdateService" | "nsIUpdateProcessor" | "nsIUpdateSyncManager" | "nsIUpdateManager" | "nsIUpdateTimerManager" | "nsIUploadChannel" | "nsIUploadChannel2" | "nsIUrlClassifierCallback" | "nsIUrlClassifierUpdateObserver" | "nsIUrlClassifierDBService" | "nsIUrlClassifierLookupCallback" | "nsIUrlClassifierClassifyCallback" | "nsIUrlClassifierExceptionListObserver" | "nsIUrlClassifierExceptionListService" | "nsIUrlClassifierFeature" | "nsIUrlClassifierFeatureResult" | "nsIUrlClassifierFeatureCallback" | "nsIFullHashMatch" | "nsIUrlClassifierHashCompleterCallback" | "nsIUrlClassifierHashCompleter" | "nsIUrlClassifierPositiveCacheEntry" | "nsIUrlClassifierCacheEntry" | "nsIUrlClassifierCacheInfo" | "nsIUrlClassifierGetCacheCallback" | "nsIUrlClassifierInfo" | "nsIUrlClassifierPrefixSet" | "nsIUrlClassifierRemoteSettingsService" | "nsIUrlClassifierStreamUpdater" | "nsIUrlClassifierParseFindFullHashCallback" | "nsIUrlClassifierUtils" | "nsIUrlListManager" | "nsIUserIdleService" | "nsIUserIdleServiceInternal" | "nsIUtilityProcessTest" | "nsIVariant" | "nsIWritableVariant" | "nsIVersionComparator" | "nsIViewSourceChannel" | "nsIWakeLock" | "nsIWeakReference" | "nsISupportsWeakReference" | "nsICtapRegisterArgs" | "nsICtapSignArgs" | "nsICtapRegisterResult" | "nsICtapSignResult" | "nsIWebAuthnController" | "nsIWebAuthnTransport" | "nsIWebBrowser" | "nsIWebBrowserChrome" | "nsIWebBrowserChromeFocus" | "nsIWebBrowserFind" | "nsIWebBrowserFindInFrames" | "nsIWebBrowserPersist" | "nsIWebBrowserPersistURIMap" | "nsIWebBrowserPersistDocument" | "nsIWebBrowserPersistResourceVisitor" | "nsIWebBrowserPersistWriteCompletion" | "nsIWebBrowserPersistDocumentReceiver" | "nsIWebBrowserPrint" | "nsIWebNavigation" | "nsIWebNavigationInfo" | "nsIWebPageDescriptor" | "nsIWebProgress" | "nsIWebProgressListener" | "nsIWebProgressListener2" | "nsIWebProtocolHandlerRegistrar" | "nsIWebSocketChannel" | "nsIWebSocketFrame" | "nsIWebSocketEventListener" | "nsIWebSocketEventService" | "nsIWebSocketImpl" | "nsIWebSocketListener" | "nsIWebTransport" | "WebTransportSessionEventListener" | "nsIWebTransportStreamCallback" | "nsIWebTransportSendStreamStats" | "nsIWebTransportReceiveStreamStats" | "nsIWebTransportStreamStatsCallback" | "nsIWebTransportReceiveStream" | "nsIWebTransportSendStream" | "nsIWebTransportBidirectionalStream" | "nsIWebVTTListener" | "nsIWebVTTParserWrapper" | "nsIWellKnownOpportunisticUtils" | "nsIWifiAccessPoint" | "nsIWifiListener" | "nsIWifiMonitor" | "nsIWinAppHelper" | "nsIWinTaskSchedulerService" | "nsIWinTaskbar" | "nsIWindowCreator" | "nsIWindowMediator" | "nsIWindowMediatorListener" | "nsIWindowProvider" | "nsIWindowWatcher" | "nsIWindowlessBrowser" | "nsIUnknownWindowsTagListener" | "nsIWindowsAlertsService" | "nsIWindowsPackageManager" | "nsIWindowsRegKey" | "nsIWindowsShellService" | "nsIWindowsUIUtils" | "nsIWorkerDebuggerListener" | "nsIWorkerDebugger" | "nsIWorkerDebuggerManagerListener" | "nsIWorkerDebuggerManager" | "nsIWritablePropertyBag" | "nsIWritablePropertyBag2" | "nsIX509Cert" | "nsIOpenSignedAppFileCallback" | "nsIAsyncBoolCallback" | "nsICertVerificationCallback" | "nsIX509CertDB" | "nsIX509CertValidity" | "nsIXPCScriptable" | "nsIXREDirProvider" | "nsIXULAppInfo" | "nsIXULBrowserWindow" | "nsIXULRuntime" | "nsIXULStore" | "nsIZipEntry" | "nsIZipReader" | "nsIZipReaderCache" | "nsIZipWriter" | "nsPIDNSService" | "nsPIPromptService" | "nsPISocketTransportService" | "nsPIWidgetCocoa" | "nsPIWindowWatcher" | "txIEXSLTFunctions" | "xpcIJSWeakReference" | "nsIXPCComponents_Interfaces" | "nsIXPCComponents_Classes" | "nsIXPCComponents_Results" | "nsIXPCComponents_ID" | "nsIXPCComponents_Exception" | "nsIXPCComponents_Constructor" | "nsIXPCComponents_utils_Sandbox" | "nsIScheduledGCCallback" | "nsIXPCComponents_Utils" | "nsIXPCComponents" | "nsIXPCTestObjectReadOnly" | "nsIXPCTestObjectReadWrite" | "nsIXPCTestBug809674" | "nsIXPCTestCEnums" | "nsIXPCTestESMReturnCodeParent" | "nsIXPCTestESMReturnCodeChild" | "nsIXPCTestInterfaceA" | "nsIXPCTestInterfaceB" | "nsIXPCTestInterfaceC" | "nsIXPCTestParams" | "nsIXPCTestReturnCodeParent" | "nsIXPCTestReturnCodeChild" | "nsIXPCTestFunctionInterface" | "nsIXPCTestUtils";
+type CiKeys = "IJSDebugger" | "IPeerConnectionObserver" | "IPeerConnection" | "IUrlClassifierUITelemetry" | "nsIScriptableOK" | "nsIScriptableWithNotXPCOM" | "nsISessionStoreFunctions" | "amIAddonManagerStartup" | "amIWebInstallPrompt" | "extIWebNavigation" | "imgICache" | "imgIContainer" | "imgIContainerDebug" | "imgIEncoder" | "imgILoader" | "imgINotificationObserver" | "imgIRequest" | "imgIScriptedNotificationObserver" | "imgITools" | "imgIContainerCallback" | "inIDeepTreeWalker" | "mozIAppServicesLogger" | "mozIVisitInfo" | "mozIPlaceInfo" | "mozIVisitInfoCallback" | "mozIVisitedStatusCallback" | "mozIAsyncHistory" | "mozIBridgedSyncEngineCallback" | "mozIBridgedSyncEngineApplyCallback" | "mozIBridgedSyncEngine" | "mozIDOMWindow" | "mozIDOMWindowProxy" | "mozIDownloadPlatform" | "mozIExtensionServiceWorkerInfo" | "mozIExtensionListenerCallOptions" | "mozIExtensionEventListener" | "mozIExtensionAPIRequest" | "mozIExtensionAPIRequestResult" | "mozIExtensionAPIRequestHandler" | "mozIExtensionProcessScript" | "mozIExtensionStorageArea" | "mozIConfigurableExtensionStorageArea" | "mozISyncedExtensionStorageArea" | "mozIExtensionStorageListener" | "mozIExtensionStorageCallback" | "mozIGeckoMediaPluginChromeService" | "mozIGeckoMediaPluginService" | "mozIInterruptible" | "mozIJSSubScriptLoader" | "mozILocaleService" | "mozIMozIntl" | "mozIMozIntlHelper" | "mozIOSPreferences" | "mozIPersonalDictionary" | "mozIPlacesAutoComplete" | "mozIPlacesPendingOperation" | "mozIRemoteLazyInputStream" | "mozISandboxReport" | "mozISandboxReportArray" | "mozISandboxReporter" | "mozISandboxSettings" | "mozISandboxTest" | "mozIServicesLogSink" | "mozISpellCheckingEngine" | "mozIStorageAsyncConnection" | "mozIStorageAsyncStatement" | "mozIStorageBaseStatement" | "mozIStorageBindingParams" | "mozIStorageBindingParamsArray" | "mozIStorageCompletionCallback" | "mozIStorageConnection" | "mozIStorageError" | "mozIStorageFunction" | "mozIStoragePendingStatement" | "mozIStorageProgressHandler" | "mozIStorageResultSet" | "mozIStorageRow" | "mozIStorageService" | "mozIStorageStatement" | "mozIStorageStatementCallback" | "mozIStorageVacuumParticipant" | "mozIStorageValueArray" | "mozISyncedBookmarksMirrorProgressListener" | "mozISyncedBookmarksMirrorCallback" | "mozISyncedBookmarksMirrorLogger" | "mozISyncedBookmarksMerger" | "mozITXTToHTMLConv" | "mozITestInterfaceJS" | "mozIThirdPartyUtil" | "nsIASN1Tree" | "nsIAboutModule" | "nsIAboutNewTabService" | "nsIInstalledApplication" | "nsIAboutThirdParty" | "nsIAddonPolicyService" | "nsIAddonContentPolicy" | "nsIAlertNotificationImageListener" | "nsIAlertAction" | "nsIAlertNotification" | "nsIAlertsService" | "nsIAlertsDoNotDisturb" | "nsIAlertsIconData" | "nsIAlertsIconURI" | "nsIAndroidEventCallback" | "nsIAndroidEventFinalizer" | "nsIAndroidEventListener" | "nsIAndroidEventDispatcher" | "nsIAndroidView" | "nsIAndroidBridge" | "nsIAppShell" | "nsIAppShellService" | "nsIAppStartup" | "nsIAppWindow" | "nsIApplicationChooserFinishedCallback" | "nsIApplicationChooser" | "nsIApplicationReputationService" | "nsIApplicationReputationQuery" | "nsIApplicationReputationCallback" | "nsIArray" | "nsIArrayBufferInputStream" | "nsIArrayExtensions" | "nsIAsyncInputStream" | "nsIInputStreamCallback" | "nsIAsyncOutputStream" | "nsIOutputStreamCallback" | "nsIAsyncShutdownBlocker" | "nsIAsyncShutdownClient" | "nsIAsyncShutdownCompletionCallback" | "nsIAsyncShutdownBarrier" | "nsIAsyncShutdownService" | "nsIAsyncStreamCopier" | "nsIAsyncStreamCopier2" | "nsIAsyncVerifyRedirectCallback" | "nsISuspendedTypes" | "nsIAudioChannelAgentCallback" | "nsIAudioChannelAgent" | "nsIAudioDeviceInfo" | "nsIAuthInformation" | "nsIAuthModule" | "nsIAuthPrompt" | "nsIAuthPrompt2" | "nsIAuthPromptAdapterFactory" | "nsIAuthPromptCallback" | "nsIAuthPromptProvider" | "nsIAutoCompleteController" | "nsIAutoCompleteInput" | "nsIAutoCompletePopup" | "nsIAutoCompleteResult" | "nsIAutoCompleteSearch" | "nsIAutoCompleteObserver" | "nsIAutoCompleteSearchDescriptor" | "nsIAutoCompleteSimpleResult" | "nsIAutoCompleteSimpleResultListener" | "nsIAutoCompleteSimpleSearch" | "nsIAutoplay" | "nsITabUnloader" | "nsIAvailableMemoryWatcherBase" | "nsIBFCacheEntry" | "nsIBackgroundChannelRegistrar" | "nsIBackgroundFileSaver" | "nsIBackgroundFileSaverObserver" | "nsIBackgroundTasks" | "nsIBackgroundTasksManager" | "nsIBackgroundTasksRunner" | "nsIBaseWindow" | "nsIBidiKeyboard" | "nsIBinaryHttpRequest" | "nsIBinaryHttpResponse" | "nsIBinaryHttp" | "nsIBinaryInputStream" | "nsIBinaryOutputStream" | "nsIBits" | "nsIBitsNewRequestCallback" | "nsIBitsRequest" | "nsIBitsCallback" | "nsIBlocklistService" | "nsIBounceTrackingProtection" | "nsIBrowser" | "nsIBrowserChild" | "nsIBrowserController" | "nsIOpenURIInFrameParams" | "nsIBrowserDOMWindow" | "nsIBrowserElementAPI" | "nsIBrowserHandler" | "nsIBrowserUsage" | "nsIVisibleTab" | "nsIBrowserWindowTracker" | "nsIBufferedInputStream" | "nsIBufferedOutputStream" | "nsIByteRangeRequest" | "nsICacheEntry" | "nsICacheEntryMetaDataVisitor" | "nsICacheEntryDoomCallback" | "nsICacheEntryOpenCallback" | "nsIInputStreamReceiver" | "nsICacheInfoChannel" | "nsICachePurgeLock" | "nsICacheStorage" | "nsICacheStorageService" | "nsICacheStorageConsumptionObserver" | "nsICacheStorageVisitor" | "nsICacheTesting" | "nsICachingChannel" | "nsICancelable" | "nsICaptivePortalCallback" | "nsICaptivePortalDetector" | "nsICaptivePortalServiceCallback" | "nsICaptivePortalService" | "nsICascadeFilter" | "nsICategoryEntry" | "nsICategoryManager" | "nsICertOverride" | "nsICertOverrideService" | "nsICertStorageCallback" | "nsIRevocationState" | "nsIIssuerAndSerialRevocationState" | "nsISubjectAndPubKeyRevocationState" | "nsICRLiteCoverage" | "nsICRLiteTimestamp" | "nsICertInfo" | "nsICertStorage" | "nsICertTreeItem" | "nsICertTree" | "nsICertificateDialogs" | "nsIChannel" | "nsIIdentChannel" | "nsIUrlClassifierBlockedChannel" | "nsIChannelClassifierService" | "nsIChannelEventSink" | "nsIChildChannel" | "nsIChromeRegistry" | "nsIXULChromeRegistry" | "nsIClassInfo" | "nsIClassOfService" | "nsIClassifiedChannel" | "nsIClearDataService" | "nsIClearDataCallback" | "nsIClickRule" | "nsIClientAuthDialogs" | "nsIClientAuthRememberRecord" | "nsIClientAuthRememberService" | "nsIAsyncSetClipboardData" | "nsIAsyncSetClipboardDataCallback" | "nsIClipboard" | "nsIClipboardHelper" | "nsIClipboardOwner" | "nsICloneableInputStream" | "nsICloneableInputStreamWithRange" | "nsICodeCoverage" | "nsIColorPickerShownCallback" | "nsIColorPicker" | "nsICommandLine" | "nsICommandLineHandler" | "nsICommandLineRunner" | "nsICommandLineValidator" | "nsICommandManager" | "nsICommandParams" | "nsIComponentManager" | "nsIComponentRegistrar" | "nsICompressConvStats" | "nsIConsoleAPIStorage" | "nsIConsoleListener" | "nsIConsoleMessage" | "nsIConsoleService" | "nsIContentBlockingAllowList" | "nsIContentDispatchChooser" | "nsIContentHandler" | "nsIContentPermissionType" | "nsIContentPermissionRequest" | "nsIContentPermissionPrompt" | "nsIContentPolicy" | "nsIContentPrefObserver" | "nsIContentPrefService2" | "nsIContentPrefCallback2" | "nsIContentPref" | "nsIContentProcessInfo" | "nsIContentProcessProvider" | "nsIContentSecurityManager" | "nsIContentSecurityPolicy" | "nsICSPEventListener" | "nsIContentSignatureVerifier" | "nsIContentSniffer" | "nsIContentViewer" | "nsIContentViewerEdit" | "nsIController" | "nsICommandController" | "nsIControllerCommand" | "nsIControllerCommandTable" | "nsIControllerContext" | "nsIControllers" | "nsIConverterInputStream" | "nsIConverterOutputStream" | "nsICookie" | "nsICookieBannerListService" | "nsICookieBannerRule" | "nsICookieBannerService" | "nsICookieJarSettings" | "nsICookieManager" | "nsICookiePermission" | "nsICookieRule" | "nsICookieTransactionCallback" | "nsICookieService" | "nsICrashReporter" | "nsICrashService" | "nsICryptoHash" | "nsICycleCollectorHandler" | "nsICycleCollectorLogSink" | "nsICycleCollectorListener" | "nsIDAPTelemetry" | "nsIDHCPClient" | "nsIDNSAdditionalInfo" | "nsIDNSByTypeRecord" | "nsIDNSTXTRecord" | "nsISVCParam" | "nsISVCParamAlpn" | "nsISVCParamNoDefaultAlpn" | "nsISVCParamPort" | "nsISVCParamIPv4Hint" | "nsISVCParamEchConfig" | "nsISVCParamIPv6Hint" | "nsISVCParamODoHConfig" | "nsISVCBRecord" | "nsIDNSHTTPSSVCRecord" | "nsIDNSListener" | "nsIDNSRecord" | "nsIDNSAddrRecord" | "nsIDNSService" | "nsIDOMChromeWindow" | "nsIDOMEventListener" | "nsIDOMGeoPosition" | "nsIDOMGeoPositionCallback" | "nsIDOMGeoPositionCoords" | "nsIDOMGeoPositionErrorCallback" | "nsIDOMGlobalPropertyInitializer" | "nsIDOMMozBrowserFrame" | "nsIDOMProcessChild" | "nsIDOMProcessParent" | "nsIDOMRequestService" | "nsIDOMStorageManager" | "nsIDOMSessionStorageManager" | "nsIDOMMozWakeLockListener" | "nsIDOMWindow" | "nsIDOMWindowUtils" | "nsITranslationNodeList" | "nsIJSRAIIHelper" | "nsIDOMXULButtonElement" | "nsIDOMXULCommandDispatcher" | "nsIDOMXULContainerItemElement" | "nsIDOMXULContainerElement" | "nsIDOMXULControlElement" | "nsIDOMXULMenuListElement" | "nsIDOMXULMultiSelectControlElement" | "nsIDOMXULRadioGroupElement" | "nsIDOMXULRelatedElement" | "nsIDOMXULSelectControlElement" | "nsIDOMXULSelectControlItemElement" | "nsINetDashboardCallback" | "nsIDashboard" | "nsIDashboardEventNotifier" | "nsIDataStorageManager" | "nsIDataStorage" | "nsIDataStorageItem" | "nsIDebug2" | "nsIDeviceSensorData" | "nsIDeviceSensors" | "nsIDialogParamBlock" | "nsIDirIndex" | "nsIDirIndexListener" | "nsIDirIndexParser" | "nsIDirectTaskDispatcher" | "nsIDirectoryEnumerator" | "nsIDirectoryServiceProvider" | "nsIDirectoryServiceProvider2" | "nsIDirectoryService" | "nsIDisplayInfo" | "nsIDocShell" | "nsIDocShellTreeItem" | "nsIDocShellTreeOwner" | "nsIDocumentEncoderNodeFixup" | "nsIDocumentEncoder" | "nsIDocumentLoader" | "nsIDocumentLoaderFactory" | "nsIDocumentStateListener" | "nsIDomainPolicy" | "nsIDomainSet" | "nsIDownloader" | "nsIDownloadObserver" | "nsIDragService" | "nsIDragSession" | "nsIDroppedLinkItem" | "nsIDroppedLinkHandler" | "nsIE10SUtils" | "nsIEarlyHintObserver" | "nsIEdgeMigrationUtils" | "nsIEditActionListener" | "nsIEditingSession" | "nsIEditor" | "nsIEditorMailSupport" | "nsIEditorSpellCheck" | "nsIEditorSpellCheckCallback" | "nsIEffectiveTLDService" | "nsIEmbeddingSiteWindow" | "nsISupports" | "nsIEncodedChannel" | "nsIEnterprisePolicies" | "nsIEnvironment" | "nsIEventListenerChange" | "nsIListenerChangeListener" | "nsIEventListenerInfo" | "nsIEventListenerService" | "nsIEventSourceEventListener" | "nsIEventSourceEventService" | "nsIEventTarget" | "nsIStackFrame" | "nsIException" | "nsIExpatSink" | "nsIExternalHelperAppService" | "nsPIExternalAppLauncher" | "nsIHelperAppLauncher" | "nsIExternalProtocolHandler" | "nsIExternalProtocolService" | "nsIFOG" | "nsIFactory" | "nsIFaviconService" | "nsIFaviconDataCallback" | "nsIFile" | "nsIFileChannel" | "nsIFilePicker" | "nsIFilePickerShownCallback" | "nsIFileProtocolHandler" | "nsIFileInputStream" | "nsIFileOutputStream" | "nsIFileRandomAccessStream" | "nsIFileMetadata" | "nsIAsyncFileMetadata" | "nsIFileMetadataCallback" | "nsIFileURL" | "nsIFileURLMutator" | "nsIFinalizationWitnessService" | "nsIFind" | "nsIFindService" | "nsIFocusManager" | "nsIFontEnumerator" | "nsIFontLoadCompleteCallback" | "nsIForcePendingChannel" | "nsIFormAutoComplete" | "nsIFormAutoCompleteObserver" | "nsIFormFillController" | "nsIFormPOSTActionChannel" | "nsIFormatConverter" | "nsIGIOMimeApp" | "nsIGIOService" | "nsIGNOMEShellService" | "nsIGSettingsCollection" | "nsIGSettingsService" | "nsIGeolocationUpdate" | "nsIGeolocationProvider" | "nsIGfxInfo" | "nsIGfxInfoDebug" | "nsIGleanBoolean" | "nsIGleanDatetime" | "nsIGleanCounter" | "nsIGleanTimingDistribution" | "nsIGleanMemoryDistribution" | "nsIGleanCustomDistribution" | "nsIGleanPingTestCallback" | "nsIGleanPing" | "nsIGleanString" | "nsIGleanStringList" | "nsIGleanTimespan" | "nsIGleanUuid" | "nsIGleanEvent" | "nsIGleanQuantity" | "nsIGleanDenominator" | "nsIGleanNumerator" | "nsIGleanRate" | "nsIGleanUrl" | "nsIGleanText" | "nsIGtkTaskbarProgress" | "nsIHTMLAbsPosEditor" | "nsIHTMLEditor" | "nsIHTMLInlineTableEditor" | "nsIHTMLObjectResizer" | "nsIHandlerService" | "nsIHangDetails" | "nsIHangReport" | "nsIHapticFeedback" | "nsIHelperAppLauncherDialog" | "nsIHttpActivityObserver" | "nsIHttpActivityDistributor" | "nsIHttpAuthManager" | "nsIHttpAuthenticableChannel" | "nsIHttpAuthenticator" | "nsIHttpAuthenticatorCallback" | "nsIHttpChannel" | "nsIHttpChannelAuthProvider" | "nsIHttpChannelChild" | "nsIHttpUpgradeListener" | "nsIHttpChannelInternal" | "nsIHttpHeaderVisitor" | "nsIHttpProtocolHandler" | "nsIHttpPushListener" | "nsIHttpServer" | "nsIHttpServerStoppedCallback" | "nsIHttpServerIdentity" | "nsIHttpRequestHandler" | "nsIHttpRequest" | "nsIHttpResponse" | "nsIHttpsOnlyModePermission" | "nsIIDBPermissionsRequest" | "nsIIDNService" | "nsIINIParser" | "nsIINIParserWriter" | "nsIINIParserFactory" | "nsIIOService" | "nsIIOServiceInternal" | "nsIIOUtil" | "nsIMozIconURI" | "nsIIdentityCredentialPromptService" | "nsIIdentityCredentialStorageService" | "nsIIdlePeriod" | "nsIImageLoadingContent" | "nsIIncrementalDownload" | "nsIIncrementalStreamLoaderObserver" | "nsIIncrementalStreamLoader" | "nsIInlineSpellChecker" | "nsIInputListAutoComplete" | "nsIInputStream" | "nsIInputStreamChannel" | "nsIInputStreamLength" | "nsIAsyncInputStreamLength" | "nsIInputStreamLengthCallback" | "nsIInputStreamPriority" | "nsIInputStreamPump" | "nsIInputStreamTee" | "nsIInterceptionInfo" | "nsIInterfaceRequestor" | "nsIJARChannel" | "nsIJARURI" | "nsIJARURIMutator" | "nsIJSInspector" | "nsIJumpListCommittedCallback" | "nsIJumpListBuilder" | "nsIJumpListItem" | "nsIJumpListSeparator" | "nsIJumpListLink" | "nsIJumpListShortcut" | "nsIKeyValueService" | "nsIKeyValueDatabase" | "nsIKeyValuePair" | "nsIKeyValueEnumerator" | "nsIKeyValueDatabaseCallback" | "nsIKeyValueEnumeratorCallback" | "nsIKeyValuePairCallback" | "nsIKeyValueVariantCallback" | "nsIKeyValueVoidCallback" | "nsIKeychainMigrationUtils" | "nsILayoutDebuggingTools" | "nsILayoutHistoryState" | "nsILineInputStream" | "nsILoadContext" | "nsILoadContextInfo" | "nsILoadContextInfoFactory" | "nsILoadGroup" | "nsILoadGroupChild" | "nsILoadInfo" | "nsILoadURIDelegate" | "nsILocalFileMac" | "nsILocalFileWin" | "nsILocalStorageManager" | "nsILoginAutoCompleteSearch" | "nsILoginDetectionService" | "nsILoginInfo" | "nsILoginSearchCallback" | "nsILoginManager" | "nsILoginManagerAuthPrompter" | "nsILoginManagerCrypto" | "nsILoginManagerPrompter" | "nsILoginManagerStorage" | "nsILoginMetaInfo" | "nsILoginReputationVerdictType" | "nsILoginReputationQuery" | "nsILoginReputationQueryCallback" | "nsILoginReputationService" | "nsIMIMEHeaderParam" | "nsIHandlerInfo" | "nsIMIMEInfo" | "nsIHandlerApp" | "nsILocalHandlerApp" | "nsIWebHandlerApp" | "nsIDBusHandlerApp" | "nsIMIMEInputStream" | "nsIMIMEService" | "nsIMacAttributionService" | "nsIMacDockSupport" | "nsIMacFinderProgressCanceledCallback" | "nsIMacFinderProgress" | "nsIMacPreferencesReader" | "nsIMacSharingService" | "nsIMacShellService" | "nsIMacUserActivityUpdater" | "nsITrashAppCallback" | "nsIMacWebAppUtils" | "nsIMarionette" | "nsIMediaDevice" | "nsIMediaManagerService" | "nsIFinishDumpingCallback" | "nsIDumpGCAndCCLogsCallback" | "nsIMemoryInfoDumper" | "nsIHandleReportCallback" | "nsIMemoryReporter" | "nsIFinishReportingCallback" | "nsIHeapAllocatedCallback" | "nsIMemoryReporterManager" | "nsIMessageLoop" | "nsIMessageSender" | "nsIInProcessContentFrameMessageManager" | "nsIMozBrowserFrame" | "nsIMultiPartChannel" | "nsIMultiPartChannelListener" | "nsIMultiplexInputStream" | "nsIMutableArray" | "nsINSSComponent" | "nsINSSErrorsService" | "nsINSSVersion" | "nsINamed" | "nsINamedPipeDataObserver" | "nsINamedPipeService" | "nsINativeAppSupport" | "nsINativeDNSResolverOverride" | "nsINativeOSFileResult" | "nsINativeOSFileSuccessCallback" | "nsINativeOSFileErrorCallback" | "nsINativeOSFileInternalsService" | "nsINavBookmarksService" | "nsINavHistoryResultNode" | "nsINavHistoryContainerResultNode" | "nsINavHistoryQueryResultNode" | "nsINavHistoryResultObserver" | "nsINavHistoryResult" | "nsINavHistoryQuery" | "nsINavHistoryQueryOptions" | "nsINavHistoryService" | "nsINestedURI" | "nsINestedURIMutator" | "nsINestedAboutURIMutator" | "nsIJSURIMutator" | "nsINetAddr" | "nsINetUtil" | "nsINetworkConnectivityService" | "nsIListNetworkAddressesListener" | "nsIGetHostnameListener" | "nsINetworkInfoService" | "nsIInterceptedBodyCallback" | "nsIInterceptedChannel" | "nsINetworkInterceptController" | "nsINetworkLinkService" | "nsINetworkPredictor" | "nsINetworkPredictorVerifier" | "nsINotificationStorageCallback" | "nsINotificationStorage" | "nsINullChannel" | "nsIOSFileConstantsService" | "nsIOSKeyStore" | "nsIOSPermissionRequest" | "nsIOSReauthenticator" | "nsIObjectInputStream" | "nsIObjectLoadingContent" | "nsIObjectOutputStream" | "nsIObliviousHttpClientResponse" | "nsIObliviousHttpClientRequest" | "nsIObliviousHttpServerResponse" | "nsIObliviousHttpServer" | "nsIObliviousHttp" | "nsIObliviousHttpService" | "nsIObserver" | "nsIObserverService" | "nsIBrowsingContextReadyCallback" | "nsIOpenWindowInfo" | "nsIOutputStream" | "nsIPK11Token" | "nsIPK11TokenDB" | "nsIPKCS11Module" | "nsIPKCS11ModuleDB" | "nsIPKCS11Slot" | "nsIPageThumbsStorageService" | "nsIPaper" | "nsIPaperMargin" | "nsIParentChannel" | "nsIAsyncVerifyRedirectReadyCallback" | "nsIParentRedirectingChannel" | "nsIParentalControlsService" | "nsIParserUtils" | "nsIPartitioningExceptionListObserver" | "nsIPartitioningExceptionListService" | "nsIPaymentResponseData" | "nsIGeneralResponseData" | "nsIBasicCardResponseData" | "nsIPaymentActionResponse" | "nsIPaymentCanMakeActionResponse" | "nsIPaymentShowActionResponse" | "nsIPaymentAbortActionResponse" | "nsIPaymentCompleteActionResponse" | "nsIMethodChangeDetails" | "nsIGeneralChangeDetails" | "nsIBasicCardChangeDetails" | "nsIPaymentAddress" | "nsIPaymentMethodData" | "nsIPaymentCurrencyAmount" | "nsIPaymentItem" | "nsIPaymentDetailsModifier" | "nsIPaymentShippingOption" | "nsIPaymentDetails" | "nsIPaymentOptions" | "nsIPaymentRequest" | "nsIPaymentRequestService" | "nsIPaymentUIService" | "nsIPermission" | "nsIPermissionDelegateHandler" | "nsIPermissionManager" | "nsIPropertyElement" | "nsIPersistentProperties" | "nsIPipe" | "nsISearchableInputStream" | "nsIPlacesPreviewsHelperService" | "nsIPlatformInfo" | "nsIPluginTag" | "nsIFakePluginTag" | "nsIPowerManagerService" | "nsIPrefBranch" | "nsIPrefLocalizedString" | "nsIPrefStatsCallback" | "nsIPrefObserver" | "nsIPrefService" | "nsIPrefetchService" | "nsIPreloadedStyleSheet" | "nsIPrincipal" | "nsIExpandedPrincipal" | "nsIPrintDialogService" | "nsIPrintPreviewNavigation" | "nsIPrintSettings" | "nsIPrintSettingsService" | "nsIPrintSettingsWin" | "nsIPrinterInfo" | "nsIPrinter" | "nsIPrinterList" | "nsIPrivacyTransitionObserver" | "nsIPrivateBrowsingChannel" | "nsIProcess" | "nsIProcessToolsService" | "nsIProfileStartup" | "nsIProfileMigrator" | "nsIProfileUnlocker" | "nsIProfilerStartParams" | "nsIProfiler" | "nsIProgressEventSink" | "nsIPrompt" | "nsIPromptCollection" | "nsIPromptFactory" | "nsIPromptInstance" | "nsIPromptService" | "nsIProperties" | "nsIProperty" | "nsIPropertyBag" | "nsIPropertyBag2" | "nsIProtectedAuthThread" | "nsIProtocolHandlerWithDynamicFlags" | "nsIProtocolHandler" | "nsIProtocolProxyCallback" | "nsIProxyProtocolFilterResult" | "nsIProtocolProxyFilter" | "nsIProtocolProxyChannelFilter" | "nsIProxyConfigChangedCallback" | "nsIProtocolProxyService" | "nsIProtocolProxyService2" | "nsIProxiedChannel" | "nsIProxiedProtocolHandler" | "nsIProxyInfo" | "nsIPublicKeyPinningService" | "nsIPurgeTrackerService" | "nsIPushErrorReporter" | "nsIPushNotifier" | "nsIPushData" | "nsIPushMessage" | "nsIPushSubscription" | "nsIPushSubscriptionCallback" | "nsIUnsubscribeResultCallback" | "nsIPushClearResultCallback" | "nsIPushService" | "nsIPushQuotaManager" | "nsIQueryContentEventResult" | "nsIQuotaUsageCallback" | "nsIQuotaCallback" | "nsIQuotaManagerService" | "nsIQuotaRequestBase" | "nsIQuotaUsageRequest" | "nsIQuotaRequest" | "nsIQuotaFullOriginMetadataResult" | "nsIQuotaUsageResult" | "nsIQuotaOriginUsageResult" | "nsIQuotaEstimateResult" | "nsIRaceCacheWithNetwork" | "nsIRandomAccessStream" | "nsIRandomGenerator" | "nsIRddProcessTest" | "nsIRedirectChannelRegistrar" | "nsIRedirectHistoryEntry" | "nsIRedirectResultListener" | "nsIReferrerInfo" | "nsIReflowObserver" | "nsIRefreshURI" | "nsIRegion" | "nsIRelativeFilePref" | "nsIRemoteAgent" | "nsIRemoteTab" | "nsIRequest" | "nsIRequestTailUnblockCallback" | "nsIRequestContext" | "nsIRequestContextService" | "nsIRequestObserver" | "nsIRequestObserverProxy" | "nsIResProtocolHandler" | "nsIResumableChannel" | "nsIRunnable" | "nsIRunnablePriority" | "nsIRunnableIPCMessageType" | "nsISDBCallback" | "nsISDBCloseCallback" | "nsISDBConnection" | "nsISDBRequest" | "nsISDBResult" | "nsISHEntry" | "nsISHistory" | "nsISHistoryListener" | "nsISafeOutputStream" | "nsIScreen" | "nsIScreenManager" | "nsIScriptChannel" | "nsIScriptErrorNote" | "nsIScriptError" | "nsIScriptLoaderObserver" | "nsIScriptSecurityManager" | "nsIScriptableBase64Encoder" | "nsIScriptableContentIterator" | "nsIScriptableInputStream" | "nsIScriptableUnicodeConverter" | "nsISearchSubmission" | "nsISearchEngine" | "nsISearchParseSubmissionResult" | "nsISearchService" | "nsISecCheckWrapChannel" | "nsISecretDecoderRing" | "nsISecureBrowserUI" | "nsISecurityConsoleMessage" | "nsISecurityUITelemetry" | "nsISeekableStream" | "nsISelectionController" | "nsISelectionDisplay" | "nsISelectionListener" | "nsISensitiveInfoHiddenURI" | "nsISerialEventTarget" | "nsISerializable" | "nsISerializationHelper" | "nsIServerSocket" | "nsIServerSocketListener" | "nsIServiceManager" | "nsIServiceWorkerUnregisterCallback" | "nsIServiceWorkerInfo" | "nsIServiceWorkerRegistrationInfoListener" | "nsIServiceWorkerRegistrationInfo" | "nsIServiceWorkerManagerListener" | "nsIServiceWorkerManager" | "nsISessionStorageService" | "nsISessionStoreRestoreData" | "nsISharePicker" | "nsISharingHandlerApp" | "nsIShellService" | "nsIJSEnumerator" | "nsISimpleEnumeratorBase" | "nsISimpleEnumerator" | "nsISimpleStreamListener" | "nsISimpleURIMutator" | "nsISiteSecurityService" | "nsISlowScriptDebugCallback" | "nsISlowScriptDebuggerStartupCallback" | "nsISlowScriptDebugRemoteCallback" | "nsISlowScriptDebug" | "nsISocketFilter" | "nsISocketFilterHandler" | "nsISocketProvider" | "nsISocketProviderService" | "nsISocketTransport" | "nsISTSShutdownObserver" | "nsISocketTransportService" | "nsIRoutedSocketTransportService" | "nsISound" | "nsISpeculativeConnect" | "nsISpeculativeConnectionOverrider" | "nsISpeechGrammarCompilationCallback" | "nsISpeechRecognitionService" | "nsISpeechTaskCallback" | "nsISpeechTask" | "nsISpeechService" | "nsIStandaloneNativeMenu" | "nsIStandardURL" | "nsIStandardURLMutator" | "nsIStartupCacheInfo" | "nsIStorageActivityService" | "nsIStorageStream" | "nsIStreamBufferAccess" | "nsIStreamConverter" | "nsIStreamConverterService" | "nsIStreamListener" | "nsIStreamListenerTee" | "nsIStreamLoaderObserver" | "nsIStreamLoader" | "nsIStreamTransportService" | "nsIInputAvailableCallback" | "nsIStringBundle" | "nsIStringBundleService" | "nsIStringEnumeratorBase" | "nsIStringEnumerator" | "nsIUTF8StringEnumerator" | "nsIStringInputStream" | "nsIStructuredCloneContainer" | "nsISFVBareItem" | "nsISFVInteger" | "nsISFVString" | "nsISFVBool" | "nsISFVDecimal" | "nsISFVToken" | "nsISFVByteSeq" | "nsISFVParams" | "nsISFVParametrizable" | "nsISFVItemOrInnerList" | "nsISFVSerialize" | "nsISFVItem" | "nsISFVInnerList" | "nsISFVList" | "nsISFVDictionary" | "nsISFVService" | "nsIStyleSheetService" | "nsISubstitutingProtocolHandler" | "nsIOutputIterator" | "nsIInputIterator" | "nsIForwardIterator" | "nsIBidirectionalIterator" | "nsIRandomAccessIterator" | "nsISupportsPrimitive" | "nsISupportsID" | "nsISupportsCString" | "nsISupportsString" | "nsISupportsPRBool" | "nsISupportsPRUint8" | "nsISupportsPRUint16" | "nsISupportsPRUint32" | "nsISupportsPRUint64" | "nsISupportsPRTime" | "nsISupportsChar" | "nsISupportsPRInt16" | "nsISupportsPRInt32" | "nsISupportsPRInt64" | "nsISupportsFloat" | "nsISupportsDouble" | "nsISupportsInterfacePointer" | "nsISupportsPriority" | "nsISyncStreamListener" | "nsISynthVoiceRegistry" | "nsISystemInfo" | "nsISystemProxySettings" | "nsISystemStatusBar" | "nsITCPSocketCallback" | "nsITLSServerSocket" | "nsITLSClientStatus" | "nsITLSServerConnectionInfo" | "nsITLSServerSecurityObserver" | "nsITLSSocketControl" | "nsITRRSkipReason" | "nsITXTToHTMLConv" | "nsITableEditor" | "nsITaggingService" | "nsITaskbarOverlayIconController" | "nsITaskbarPreview" | "nsITaskbarPreviewButton" | "nsITaskbarPreviewCallback" | "nsITaskbarPreviewController" | "nsITaskbarProgress" | "nsITaskbarTabPreview" | "nsITaskbarWindowPreview" | "nsIFetchTelemetryDataCallback" | "nsITelemetry" | "nsITellableStream" | "nsITextInputProcessor" | "nsITextInputProcessorNotification" | "nsITextInputProcessorCallback" | "nsITextToSubURI" | "nsIThread" | "nsIThreadInternal" | "nsIThreadObserver" | "nsINestedEventLoopCondition" | "nsIThreadManager" | "nsIThreadPoolListener" | "nsIThreadPool" | "nsIThreadRetargetableRequest" | "nsIThreadRetargetableStreamListener" | "nsIThreadShutdown" | "nsIInputChannelThrottleQueue" | "nsIThrottledInputChannel" | "nsIServerTiming" | "nsITimedChannel" | "nsITimerCallback" | "nsITimer" | "nsITimerManager" | "nsITlsHandshakeCallbackListener" | "nsITokenDialogs" | "nsITokenPasswordDialogs" | "nsIToolkitChromeRegistry" | "nsIProfileLock" | "nsIToolkitProfile" | "nsIToolkitProfileService" | "nsIToolkitShellService" | "nsITooltipListener" | "nsITooltipTextProvider" | "nsITouchBarHelper" | "nsITouchBarInputCallback" | "nsITouchBarInput" | "nsITouchBarUpdater" | "nsITraceableChannel" | "nsITrackingDBService" | "nsITransaction" | "nsITransactionManager" | "nsITransfer" | "nsIFlavorDataProvider" | "nsITransferable" | "nsITransport" | "nsITransportEventSink" | "nsITransportProvider" | "nsITransportSecurityInfo" | "nsITreeSelection" | "nsINativeTreeSelection" | "nsITreeView" | "nsITypeAheadFind" | "nsIU2FTokenManager" | "nsIUDPSocket" | "nsIUDPSocketListener" | "nsIUDPMessage" | "nsIUDPSocketSyncListener" | "nsIUDPSocketInternal" | "nsIURI" | "nsIURIClassifierCallback" | "nsIURIClassifier" | "nsIURIContentListener" | "nsIURIFixupInfo" | "nsIURIFixup" | "nsIURILoader" | "nsIURISetSpec" | "nsIURISetters" | "nsIURIMutator" | "nsIURIWithSpecialOrigin" | "nsIURL" | "nsIURLMutator" | "nsIURLDecorationAnnotationsService" | "nsIURLFormatter" | "nsIURLParser" | "nsIURLQueryStringStripper" | "nsIURLQueryStrippingListObserver" | "nsIURLQueryStrippingListService" | "nsIUUIDGenerator" | "nsIUnicharInputStream" | "nsIUnicharLineInputStream" | "nsIUnicharOutputStream" | "nsIUpdatePatch" | "nsIUpdate" | "nsIUpdateCheckResult" | "nsIUpdateCheck" | "nsIUpdateChecker" | "nsIApplicationUpdateService" | "nsIUpdateProcessor" | "nsIUpdateSyncManager" | "nsIUpdateManager" | "nsIUpdateTimerManager" | "nsIUploadChannel" | "nsIUploadChannel2" | "nsIUrlClassifierCallback" | "nsIUrlClassifierUpdateObserver" | "nsIUrlClassifierDBService" | "nsIUrlClassifierLookupCallback" | "nsIUrlClassifierClassifyCallback" | "nsIUrlClassifierExceptionListObserver" | "nsIUrlClassifierExceptionListService" | "nsIUrlClassifierFeature" | "nsIUrlClassifierFeatureResult" | "nsIUrlClassifierFeatureCallback" | "nsIFullHashMatch" | "nsIUrlClassifierHashCompleterCallback" | "nsIUrlClassifierHashCompleter" | "nsIUrlClassifierPositiveCacheEntry" | "nsIUrlClassifierCacheEntry" | "nsIUrlClassifierCacheInfo" | "nsIUrlClassifierGetCacheCallback" | "nsIUrlClassifierInfo" | "nsIUrlClassifierPrefixSet" | "nsIUrlClassifierRemoteSettingsService" | "nsIUrlClassifierStreamUpdater" | "nsIUrlClassifierParseFindFullHashCallback" | "nsIUrlClassifierUtils" | "nsIUrlListManager" | "nsIUserIdleService" | "nsIUserIdleServiceInternal" | "nsIUtilityProcessTest" | "nsIVariant" | "nsIWritableVariant" | "nsIVersionComparator" | "nsIViewSourceChannel" | "nsIWakeLock" | "nsIWeakReference" | "nsISupportsWeakReference" | "nsICtapRegisterArgs" | "nsICtapSignArgs" | "nsICtapRegisterResult" | "nsICtapSignResult" | "nsIWebAuthnController" | "nsICredentialParameters" | "nsIWebAuthnTransport" | "nsIWebBrowser" | "nsIWebBrowserChrome" | "nsIWebBrowserChromeFocus" | "nsIWebBrowserFind" | "nsIWebBrowserFindInFrames" | "nsIWebBrowserPersist" | "nsIWebBrowserPersistURIMap" | "nsIWebBrowserPersistDocument" | "nsIWebBrowserPersistResourceVisitor" | "nsIWebBrowserPersistWriteCompletion" | "nsIWebBrowserPersistDocumentReceiver" | "nsIWebBrowserPrint" | "nsIWebNavigation" | "nsIWebNavigationInfo" | "nsIWebPageDescriptor" | "nsIWebProgress" | "nsIWebProgressListener" | "nsIWebProgressListener2" | "nsIWebProtocolHandlerRegistrar" | "nsIWebSocketChannel" | "nsIWebSocketFrame" | "nsIWebSocketEventListener" | "nsIWebSocketEventService" | "nsIWebSocketImpl" | "nsIWebSocketListener" | "nsIWebTransport" | "WebTransportSessionEventListener" | "nsIWebTransportStreamCallback" | "nsIWebTransportSendStreamStats" | "nsIWebTransportReceiveStreamStats" | "nsIWebTransportStreamStatsCallback" | "nsIWebTransportReceiveStream" | "nsIWebTransportSendStream" | "nsIWebTransportBidirectionalStream" | "nsIWebVTTListener" | "nsIWebVTTParserWrapper" | "nsIWellKnownOpportunisticUtils" | "nsIWifiAccessPoint" | "nsIWifiListener" | "nsIWifiMonitor" | "nsIWinAppHelper" | "nsIWinTaskSchedulerService" | "nsIWinTaskbar" | "nsIWindowCreator" | "nsIWindowMediator" | "nsIWindowMediatorListener" | "nsIWindowProvider" | "nsIWindowWatcher" | "nsIWindowlessBrowser" | "nsIWindowsAlertsService" | "nsIWindowsPackageManager" | "nsIWindowsRegKey" | "nsIWindowsShellService" | "nsIWindowsUIUtils" | "nsIWorkerChannelLoadInfo" | "nsIWorkerChannelInfo" | "nsIWorkerDebuggerListener" | "nsIWorkerDebugger" | "nsIWorkerDebuggerManagerListener" | "nsIWorkerDebuggerManager" | "nsIWritablePropertyBag" | "nsIWritablePropertyBag2" | "nsIX509Cert" | "nsIOpenSignedAppFileCallback" | "nsIAsyncBoolCallback" | "nsICertVerificationCallback" | "nsIX509CertDB" | "nsIX509CertValidity" | "nsIXPCScriptable" | "nsIXREDirProvider" | "nsIXULAppInfo" | "nsIXULBrowserWindow" | "nsIXULRuntime" | "nsIXULStore" | "nsIZipEntry" | "nsIZipReader" | "nsIZipReaderCache" | "nsIZipWriter" | "nsPIDNSService" | "nsPIPromptService" | "nsPISocketTransportService" | "nsPIWidgetCocoa" | "nsPIWindowWatcher" | "txIEXSLTFunctions" | "xpcIJSWeakReference" | "nsIXPCComponents_Interfaces" | "nsIXPCComponents_Classes" | "nsIXPCComponents_Results" | "nsIXPCComponents_ID" | "nsIXPCComponents_Exception" | "nsIXPCComponents_Constructor" | "nsIXPCComponents_utils_Sandbox" | "nsIScheduledGCCallback" | "nsIXPCComponents_Utils" | "nsIXPCComponents" | "nsIXPCTestObjectReadOnly" | "nsIXPCTestObjectReadWrite" | "nsIXPCTestBug809674" | "nsIXPCTestCEnums" | "nsIXPCTestESMReturnCodeParent" | "nsIXPCTestESMReturnCodeChild" | "nsIXPCTestInterfaceA" | "nsIXPCTestInterfaceB" | "nsIXPCTestInterfaceC" | "nsIXPCTestParams" | "nsIXPCTestReturnCodeParent" | "nsIXPCTestReturnCodeChild" | "nsIXPCTestFunctionInterface" | "nsIXPCTestUtils";
 interface CiMap {
     IJSDebugger: IJSDebuggerType;
     IPeerConnectionObserver: IPeerConnectionObserverType;
@@ -61393,6 +61780,7 @@ interface CiMap {
     nsIBitsRequest: nsIBitsRequestType;
     nsIBitsCallback: nsIBitsCallbackType;
     nsIBlocklistService: nsIBlocklistServiceType;
+    nsIBounceTrackingProtection: nsIBounceTrackingProtectionType;
     nsIBrowser: nsIBrowserType;
     nsIBrowserChild: nsIBrowserChildType;
     nsIBrowserController: nsIBrowserControllerType;
@@ -61457,6 +61845,8 @@ interface CiMap {
     nsIClientAuthDialogs: nsIClientAuthDialogsType;
     nsIClientAuthRememberRecord: nsIClientAuthRememberRecordType;
     nsIClientAuthRememberService: nsIClientAuthRememberServiceType;
+    nsIAsyncSetClipboardData: nsIAsyncSetClipboardDataType;
+    nsIAsyncSetClipboardDataCallback: nsIAsyncSetClipboardDataCallbackType;
     nsIClipboard: nsIClipboardType;
     nsIClipboardHelper: nsIClipboardHelperType;
     nsIClipboardOwner: nsIClipboardOwnerType;
@@ -61573,6 +61963,9 @@ interface CiMap {
     nsINetDashboardCallback: nsINetDashboardCallbackType;
     nsIDashboard: nsIDashboardType;
     nsIDashboardEventNotifier: nsIDashboardEventNotifierType;
+    nsIDataStorageManager: nsIDataStorageManagerType;
+    nsIDataStorage: nsIDataStorageType;
+    nsIDataStorageItem: nsIDataStorageItemType;
     nsIDebug2: nsIDebug2Type;
     nsIDeviceSensorData: nsIDeviceSensorDataType;
     nsIDeviceSensors: nsIDeviceSensorsType;
@@ -61688,6 +62081,7 @@ interface CiMap {
     nsIGleanNumerator: nsIGleanNumeratorType;
     nsIGleanRate: nsIGleanRateType;
     nsIGleanUrl: nsIGleanUrlType;
+    nsIGleanText: nsIGleanTextType;
     nsIGtkTaskbarProgress: nsIGtkTaskbarProgressType;
     nsIHTMLAbsPosEditor: nsIHTMLAbsPosEditorType;
     nsIHTMLEditor: nsIHTMLEditorType;
@@ -62092,8 +62486,6 @@ interface CiMap {
     nsISimpleEnumerator: nsISimpleEnumeratorType;
     nsISimpleStreamListener: nsISimpleStreamListenerType;
     nsISimpleURIMutator: nsISimpleURIMutatorType;
-    nsISiteSecurityState: nsISiteSecurityStateType;
-    nsISiteHSTSState: nsISiteHSTSStateType;
     nsISiteSecurityService: nsISiteSecurityServiceType;
     nsISlowScriptDebugCallback: nsISlowScriptDebugCallbackType;
     nsISlowScriptDebuggerStartupCallback: nsISlowScriptDebuggerStartupCallbackType;
@@ -62224,6 +62616,7 @@ interface CiMap {
     nsITimedChannel: nsITimedChannelType;
     nsITimerCallback: nsITimerCallbackType;
     nsITimer: nsITimerType;
+    nsITimerManager: nsITimerManagerType;
     nsITlsHandshakeCallbackListener: nsITlsHandshakeCallbackListenerType;
     nsITokenDialogs: nsITokenDialogsType;
     nsITokenPasswordDialogs: nsITokenPasswordDialogsType;
@@ -62333,6 +62726,7 @@ interface CiMap {
     nsICtapRegisterResult: nsICtapRegisterResultType;
     nsICtapSignResult: nsICtapSignResultType;
     nsIWebAuthnController: nsIWebAuthnControllerType;
+    nsICredentialParameters: nsICredentialParametersType;
     nsIWebAuthnTransport: nsIWebAuthnTransportType;
     nsIWebBrowser: nsIWebBrowserType;
     nsIWebBrowserChrome: nsIWebBrowserChromeType;
@@ -62383,12 +62777,13 @@ interface CiMap {
     nsIWindowProvider: nsIWindowProviderType;
     nsIWindowWatcher: nsIWindowWatcherType;
     nsIWindowlessBrowser: nsIWindowlessBrowserType;
-    nsIUnknownWindowsTagListener: nsIUnknownWindowsTagListenerType;
     nsIWindowsAlertsService: nsIWindowsAlertsServiceType;
     nsIWindowsPackageManager: nsIWindowsPackageManagerType;
     nsIWindowsRegKey: nsIWindowsRegKeyType;
     nsIWindowsShellService: nsIWindowsShellServiceType;
     nsIWindowsUIUtils: nsIWindowsUIUtilsType;
+    nsIWorkerChannelLoadInfo: nsIWorkerChannelLoadInfoType;
+    nsIWorkerChannelInfo: nsIWorkerChannelInfoType;
     nsIWorkerDebuggerListener: nsIWorkerDebuggerListenerType;
     nsIWorkerDebugger: nsIWorkerDebuggerType;
     nsIWorkerDebuggerManagerListener: nsIWorkerDebuggerManagerListenerType;
@@ -63503,6 +63898,10 @@ interface CiType {
         readonly STATE_BLOCKED: 2;
         readonly STATE_MAX: 3;
     };
+    nsIBounceTrackingProtection: {
+        readonly name: 'nsIBounceTrackingProtection';
+        readonly number: '4866F748-29DA-4C10-8EAA-ED2F7851E6B1';
+    };
     nsIBrowser: {
         readonly name: 'nsIBrowser';
         readonly number: '';
@@ -63812,6 +64211,14 @@ interface CiType {
         readonly name: 'nsIClientAuthRememberService';
         readonly number: '1dbc6eb6-0972-4bdb-9dc4-acd0abf72369';
     };
+    nsIAsyncSetClipboardData: {
+        readonly name: 'nsIAsyncSetClipboardData';
+        readonly number: '801e2318-c8fa-11ed-afa1-0242ac120002';
+    };
+    nsIAsyncSetClipboardDataCallback: {
+        readonly name: 'nsIAsyncSetClipboardDataCallback';
+        readonly number: '78f7c18e-c8fa-11ed-afa1-0242ac120002';
+    };
     nsIClipboard: {
         readonly name: 'nsIClipboard';
         readonly number: 'ceaa0047-647f-4b8e-ad1c-aff9fa62aa51';
@@ -63950,6 +64357,7 @@ interface CiType {
     nsIContentPrefService2: {
         readonly name: 'nsIContentPrefService2';
         readonly number: 'bed98666-d995-470f-bebd-62476d318576';
+        readonly GROUP_NAME_MAX_LENGTH: 2000;
     };
     nsIContentPrefCallback2: {
         readonly name: 'nsIContentPrefCallback2';
@@ -64277,7 +64685,6 @@ interface CiType {
         readonly MODIFIER_SCROLLLOCK: 0x0200;
         readonly MODIFIER_SYMBOL: 0x0400;
         readonly MODIFIER_SYMBOLLOCK: 0x0800;
-        readonly MODIFIER_OS: 0x1000;
         readonly WHEEL_EVENT_CAUSED_BY_NO_LINE_OR_PAGE_DELTA_DEVICE: 0x0001;
         readonly WHEEL_EVENT_CAUSED_BY_MOMENTUM: 0x0002;
         readonly WHEEL_EVENT_CUSTOMIZED_BY_USER_PREFS: 0x0004;
@@ -64446,6 +64853,18 @@ interface CiType {
     nsIDashboardEventNotifier: {
         readonly name: 'nsIDashboardEventNotifier';
         readonly number: '24fdfcbe-54cb-4997-8392-3c476126ea3b';
+    };
+    nsIDataStorageManager: {
+        readonly name: 'nsIDataStorageManager';
+        readonly number: '71b49926-fd4e-43e2-ab8d-d9b049413c0b';
+    };
+    nsIDataStorage: {
+        readonly name: 'nsIDataStorage';
+        readonly number: 'fcbb5ec4-7134-4069-91c6-9378eff51e03';
+    };
+    nsIDataStorageItem: {
+        readonly name: 'nsIDataStorageItem';
+        readonly number: '4501f984-0e3a-4199-a67e-7753649e93f1';
     };
     nsIDebug2: {
         readonly name: 'nsIDebug2';
@@ -64796,6 +65215,7 @@ interface CiType {
         readonly filterAllowURLs: 0x080;
         readonly filterAudio: 0x100;
         readonly filterVideo: 0x200;
+        readonly filterPDF: 0x400;
     };
     nsIFilePickerShownCallback: {
         readonly name: 'nsIFilePickerShownCallback';
@@ -64985,7 +65405,10 @@ interface CiType {
         readonly FEATURE_REUSE_DECODER_DEVICE: 41;
         readonly FEATURE_BACKDROP_FILTER: 42;
         readonly FEATURE_ACCELERATED_CANVAS2D: 43;
-        readonly FEATURE_MAX_VALUE: "FEATURE_ACCELERATED_CANVAS2D";
+        readonly FEATURE_H264_HW_DECODE: 44;
+        readonly FEATURE_AV1_HW_DECODE: 45;
+        readonly FEATURE_VIDEO_SOFTWARE_OVERLAY: 46;
+        readonly FEATURE_MAX_VALUE: "FEATURE_VIDEO_SOFTWARE_OVERLAY";
         readonly FEATURE_STATUS_OK: 1;
         readonly FEATURE_STATUS_UNKNOWN: 2;
         readonly FEATURE_BLOCKED_DRIVER_VERSION: 3;
@@ -65073,6 +65496,10 @@ interface CiType {
     nsIGleanUrl: {
         readonly name: 'nsIGleanUrl';
         readonly number: 'a59672c4-bc48-4bfe-8f9c-6f408a59d819';
+    };
+    nsIGleanText: {
+        readonly name: 'nsIGleanText';
+        readonly number: 'fafceafb-c3a0-4424-b3b9-b7bd487f6bb4';
     };
     nsIGtkTaskbarProgress: {
         readonly name: 'nsIGtkTaskbarProgress';
@@ -65912,6 +66339,7 @@ interface CiType {
     nsINavHistoryService: {
         readonly name: 'nsINavHistoryService';
         readonly number: '20c974ff-ee16-4828-9326-1b7c9e036622';
+        readonly DATABASE_SCHEMA_VERSION: 75;
         readonly TRANSITION_LINK: 1;
         readonly TRANSITION_TYPED: 2;
         readonly TRANSITION_BOOKMARK: 3;
@@ -67174,17 +67602,6 @@ interface CiType {
         readonly name: 'nsISimpleURIMutator';
         readonly number: 'e055bddd-f3c2-404b-adec-db9304e93be2';
     };
-    nsISiteSecurityState: {
-        readonly name: 'nsISiteSecurityState';
-        readonly number: '31313372-842c-4110-bdf1-6aea17c845ad';
-        readonly SECURITY_PROPERTY_UNSET: 0;
-        readonly SECURITY_PROPERTY_SET: 1;
-        readonly SECURITY_PROPERTY_KNOCKOUT: 2;
-    };
-    nsISiteHSTSState: {
-        readonly name: 'nsISiteHSTSState';
-        readonly number: '9ff16e40-1029-496c-95c2-bc819872b216';
-    };
     nsISiteSecurityService: {
         readonly name: 'nsISiteSecurityService';
         readonly number: '275127f8-dbd7-4681-afbf-6df0c6587a01';
@@ -67237,15 +67654,15 @@ interface CiType {
         readonly number: '';
         readonly TIMEOUT_CONNECT: 0;
         readonly TIMEOUT_READ_WRITE: 1;
-        readonly STATUS_RESOLVING: 0x804b0003;
-        readonly STATUS_RESOLVED: 0x804b000b;
-        readonly STATUS_CONNECTING_TO: 0x804b0007;
-        readonly STATUS_CONNECTED_TO: 0x804b0004;
-        readonly STATUS_SENDING_TO: 0x804b0005;
-        readonly STATUS_WAITING_FOR: 0x804b000a;
-        readonly STATUS_RECEIVING_FROM: 0x804b0006;
-        readonly STATUS_TLS_HANDSHAKE_STARTING: 0x804b000c;
-        readonly STATUS_TLS_HANDSHAKE_ENDED: 0x804b000d;
+        readonly STATUS_RESOLVING: 0x4b0003;
+        readonly STATUS_RESOLVED: 0x4b000b;
+        readonly STATUS_CONNECTING_TO: 0x4b0007;
+        readonly STATUS_CONNECTED_TO: 0x4b0004;
+        readonly STATUS_SENDING_TO: 0x4b0005;
+        readonly STATUS_WAITING_FOR: 0x4b000a;
+        readonly STATUS_RECEIVING_FROM: 0x4b0006;
+        readonly STATUS_TLS_HANDSHAKE_STARTING: 0x4b000c;
+        readonly STATUS_TLS_HANDSHAKE_ENDED: 0x4b000d;
     };
     nsISTSShutdownObserver: {
         readonly name: 'nsISTSShutdownObserver';
@@ -67830,6 +68247,10 @@ interface CiType {
         readonly TYPE_REPEATING_SLACK_LOW_PRIORITY: 4;
         readonly TYPE_ONE_SHOT_LOW_PRIORITY: 5;
     };
+    nsITimerManager: {
+        readonly name: 'nsITimerManager';
+        readonly number: '5482506d-1d21-4d08-b01c-95c87e1295ad';
+    };
     nsITlsHandshakeCallbackListener: {
         readonly name: 'nsITlsHandshakeCallbackListener';
         readonly number: 'b4bbe824-ec4c-48be-9a40-6a7339347f40';
@@ -67926,8 +68347,8 @@ interface CiType {
     nsITransport: {
         readonly name: 'nsITransport';
         readonly number: '2a8c6334-a5e6-4ec3-9865-1256541446fb';
-        readonly STATUS_READING: 0x804b0008;
-        readonly STATUS_WRITING: 0x804b0009;
+        readonly STATUS_READING: 0x4b0008;
+        readonly STATUS_WRITING: 0x4b0009;
     };
     nsITransportEventSink: {
         readonly name: 'nsITransportEventSink';
@@ -68310,6 +68731,10 @@ interface CiType {
         readonly name: 'nsIWebAuthnController';
         readonly number: 'c0744f48-ad64-11ed-b515-cf5149f4d6a6';
     };
+    nsICredentialParameters: {
+        readonly name: 'nsICredentialParameters';
+        readonly number: '6c4ecd9f-57c0-4d7d-8080-bf6e4d499f8f';
+    };
     nsIWebAuthnTransport: {
         readonly name: 'nsIWebAuthnTransport';
         readonly number: 'e236a9b4-a26f-11ed-b6cc-07a9834e19b1';
@@ -68520,6 +68945,8 @@ interface CiType {
         readonly STATE_LOADED_LEVEL_2_TRACKING_CONTENT: 0x00100000;
         readonly STATE_BLOCKED_FINGERPRINTING_CONTENT: 0x00000040;
         readonly STATE_LOADED_FINGERPRINTING_CONTENT: 0x00000400;
+        readonly STATE_REPLACED_FINGERPRINTING_CONTENT: 0x08000000;
+        readonly STATE_ALLOWED_FINGERPRINTING_CONTENT: 0x00000200;
         readonly STATE_BLOCKED_CRYPTOMINING_CONTENT: 0x00000800;
         readonly STATE_LOADED_CRYPTOMINING_CONTENT: 0x00200000;
         readonly STATE_BLOCKED_UNSAFE_CONTENT: 0x00004000;
@@ -68541,6 +68968,7 @@ interface CiType {
         readonly STATE_LOADED_EMAILTRACKING_LEVEL_2_CONTENT: 0x00000100;
         readonly STATE_HTTPS_ONLY_MODE_UPGRADED: 0x00400000;
         readonly STATE_HTTPS_ONLY_MODE_UPGRADE_FAILED: 0x00800000;
+        readonly STATE_HTTPS_ONLY_MODE_UPGRADED_FIRST: 0x08000000;
         readonly LOCATION_CHANGE_SAME_DOCUMENT: 0x00000001;
         readonly LOCATION_CHANGE_ERROR_PAGE: 0x00000002;
         readonly LOCATION_CHANGE_RELOAD: 0x00000004;
@@ -68699,10 +69127,6 @@ interface CiType {
         readonly name: 'nsIWindowlessBrowser';
         readonly number: 'abb46f48-abfc-41bf-aa9a-7feccefcf977';
     };
-    nsIUnknownWindowsTagListener: {
-        readonly name: 'nsIUnknownWindowsTagListener';
-        readonly number: '059f8305-4e2f-4d31-a9cb-5b918ee84773';
-    };
     nsIWindowsAlertsService: {
         readonly name: 'nsIWindowsAlertsService';
         readonly number: 'e01c8066-fb4b-4304-b9c9-ab6ed4a8322c';
@@ -68738,6 +69162,14 @@ interface CiType {
     nsIWindowsUIUtils: {
         readonly name: 'nsIWindowsUIUtils';
         readonly number: 'aa8a0ecf-96a1-418c-b80e-f24ae18bbedc';
+    };
+    nsIWorkerChannelLoadInfo: {
+        readonly name: 'nsIWorkerChannelLoadInfo';
+        readonly number: 'bf9a175a-03bc-4d7b-ba2f-76347cf40d7b';
+    };
+    nsIWorkerChannelInfo: {
+        readonly name: 'nsIWorkerChannelInfo';
+        readonly number: 'df1fffe4-dac6-487e-979a-629ac8c64831';
     };
     nsIWorkerDebuggerListener: {
         readonly name: 'nsIWorkerDebuggerListener';
@@ -69013,7 +69445,6 @@ declare module Services {
     declare var focus: nsIFocusManagerType;
     declare var scriptSecurityManager: nsIScriptSecurityManagerType;
     declare var prompt: nsIPromptServiceType;
-    declare var prefs: nsIPrefServiceType & nsIPrefBranchType;
     declare var loadContextInfo: nsILoadContextInfoFactoryType;
     declare var cache2: nsICacheStorageServiceType;
     declare var dns: nsIDNSServiceType;
@@ -69030,7 +69461,6 @@ declare module Services {
     declare var logins: nsILoginManagerType;
     declare var prompt: nsIPromptServiceType;
     declare var search: nsISearchServiceType;
-    declare var telemetry: nsITelemetryType;
     declare var DAPTelemetry: nsIDAPTelemetryType;
     declare var urlFormatter: nsIURLFormatterType;
     declare var xulStore: nsIXULStoreType;
@@ -69038,15 +69468,7 @@ declare module Services {
     declare var appinfo: nsIXULRuntimeType & nsIXULAppInfoType & nsICrashReporterType;
     declare var ww: nsIWindowWatcherType;
     declare var profiler: nsIProfilerType;
-    declare var androidBridge: nsIAndroidBridgeType;
     declare var clipboard: nsIClipboardType;
-    declare var console: nsIConsoleServiceType;
-    declare var sysinfo: nsIPropertyBag2Type & nsISystemInfoType;
-    declare var tm: nsIThreadManagerType;
-    declare var uuid: nsIUUIDGeneratorType;
-    declare var vc: nsIVersionComparatorType;
-    declare var catMan: nsICategoryManagerType;
-    declare var obs: nsIObserverServiceType;
     declare var dirsvc: nsIDirectoryServiceType & nsIPropertiesType;
     declare var env: nsIEnvironmentType;
     declare var appShell: nsIAppShellServiceType;

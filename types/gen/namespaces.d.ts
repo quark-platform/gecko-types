@@ -157,6 +157,10 @@ declare module ChromeUtils {
     /**
      *
      */
+    function getLibcConstants(): LibcConstants ;
+    /**
+     *
+     */
     function originAttributesToSuffix(): ByteString ;
     /**
      *
@@ -319,10 +323,6 @@ declare module ChromeUtils {
      */
     function createError(): object ;
     /**
-     * Request performance metrics to the current process & all content processes.
-     */
-    function requestPerformanceMetrics(): Promise<sequence<PerformanceInfoDictionary>> ;
-    /**
      *
      */
     function setPerfStatsCollectionMask(): undefined ;
@@ -359,6 +359,11 @@ declare module ChromeUtils {
      * For testing purpose we need to reset this value.
      */
     function resetLastExternalProtocolIframeAllowed(): undefined ;
+    /**
+     * For webdriver consistency purposes, we need to be able to end a wheel
+     * transaction from the browser chrome.
+     */
+    function endWheelTransaction(): undefined ;
     /**
      * Register a new toplevel window global actor. This method may only be
      * called in the parent process. |name| must be globally unique.
@@ -429,6 +434,10 @@ declare module ChromeUtils {
      * actor name.
      */
     function getAllPossibleUtilityActorNames(): sequence<DOMString> ;
+    /**
+     *
+     */
+    function shouldResistFingerprinting(): boolean ;
 }
 
 declare module IOUtils {
@@ -456,7 +465,8 @@ declare module IOUtils {
     function read(): Promise<Uint8Array> ;
     /**
      * Reads the UTF-8 text file located at |path| and returns the decoded
-     * contents as a |DOMString|.
+     * contents as a |DOMString|. If a UTF-8 byte order marker (BOM) is
+     * present, it will be stripped from the returned string.
      *
      * NB: The maximum file size that can be read is UINT32_MAX.
      *
@@ -816,19 +826,7 @@ declare module InspectorUtils {
     /**
      *
      */
-    function getSelectorCount(): unsigned_long ;
-    /**
-     *
-     */
-    function getSelectorText(): DOMString ;
-    /**
-     *
-     */
-    function getSpecificity(): unsigned_long_long ;
-    /**
-     *
-     */
-    function selectorMatchesElement(): boolean ;
+    function getAllStyleSheetCSSStyleRules(): sequence<CSSRule> ;
     /**
      *
      */
@@ -884,7 +882,7 @@ declare module InspectorUtils {
     /**
      *
      */
-    function getChildrenForNode(): NodeList ;
+    function getChildrenForNode(): sequence<Node> ;
     /**
      *
      */
@@ -945,6 +943,10 @@ declare module InspectorUtils {
      *
      */
     function getOverflowingChildrenOfElement(): NodeList ;
+    /**
+     *
+     */
+    function getRegisteredCssHighlights(): sequence<DOMString> ;
 }
 
 declare module L10nOverlays {
@@ -1355,6 +1357,10 @@ declare module CSS {
      *
      */
     function escape(): DOMString ;
+    /**
+     *
+     */
+    function registerProperty(): undefined ;
 }
 
 declare module console {
@@ -1482,6 +1488,18 @@ declare module WebrtcGlobalInformation {
      *
      */
     function getAllStats(): undefined ;
+    /**
+     *
+     */
+    function getStatsHistoryPcIds(): undefined ;
+    /**
+     *
+     */
+    function getStatsHistorySince(): undefined ;
+    /**
+     *
+     */
+    function getMediaContext(): WebrtcGlobalMediaContext ;
     /**
      *
      */

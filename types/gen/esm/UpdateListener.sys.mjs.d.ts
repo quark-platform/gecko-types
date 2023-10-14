@@ -18,7 +18,8 @@ declare module "resource://gre/modules/UpdateListener.sys.mjs" {
         requestRestart();
         openManualUpdateUrl(win);
         openUnsupportedUpdateUrl(win, detailsURL);
-        showUpdateNotification(type, mainActionDismiss, dismissed, mainAction, beforeShowDoorhanger);
+        getReleaseNotesUrl(update);
+        showUpdateNotification(type, mainAction, mainActionDismiss, options);
         showRestartNotification(update, dismissed);
         showUpdateAvailableNotification(update, dismissed);
         showManualUpdateNotification(update, dismissed);

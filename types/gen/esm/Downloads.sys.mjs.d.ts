@@ -3,16 +3,16 @@ declare module "resource://gre/modules/Downloads.sys.mjs" {
         get PUBLIC(): any;
         get PRIVATE(): any;
         get ALL(): any;
-        createDownload;
-        fetch(aSource, aTarget, aOptions);
-        getList(aType);
+        createDownload(properties);
+        fetch(source, target, options);
+        getList(type);
         _promiseListsInitialized;
         _lists: {};
-        getSummary(aType);
+        getSummary(type);
         _summaries: {};
-        getSystemDownloadsDirectory;
-        getPreferredDownloadsDirectory;
-        getTemporaryDownloadsDirectory;
+        getSystemDownloadsDirectory();
+        getPreferredDownloadsDirectory();
+        getTemporaryDownloadsDirectory();
         Error;
     };
 }

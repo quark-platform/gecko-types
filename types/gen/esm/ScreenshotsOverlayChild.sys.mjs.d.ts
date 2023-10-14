@@ -1,5 +1,59 @@
 declare module "resource://app/modules/ScreenshotsOverlayChild.sys.mjs" {
-    var ScreenshotsOverlayChild: {
-        AnonymousContentOverlay;
-    };
+    export class ScreenshotsOverlay {
+        get markup();
+        get fragment();
+        get initialized();
+        get state();
+        constructor(contentDocument);
+        get content();
+        getElementById();
+        initialize();
+        initializeElements();
+        tearDown();
+        addEventListeners();
+        removeEventListeners();
+        getCoordinatesFromEvent();
+        handleEvent();
+        handleClick();
+        handlePointerDown();
+        handlePointerMove();
+        handlePointerUp();
+        crosshairsStart();
+        draggingReadyStart();
+        draggingStart();
+        selectedStart();
+        resizingStart();
+        crosshairsDragStart();
+        selectedDragStart();
+        crosshairsMove();
+        draggingReadyDrag();
+        draggingDrag();
+        resizingDrag();
+        draggingReadyDragEnd();
+        draggingDragEnd();
+        resizingDragEnd();
+        drawPreviewEyes();
+        showPreviewContainer();
+        hidePreviewContainer();
+        updateScreenshotsOverlayContainer();
+        showScreenshotsOverlayContainer();
+        hideScreenshotsOverlayContainer();
+        drawHoverElementRegion();
+        showHoverElementContainer();
+        hideHoverElementContainer();
+        drawSelectionContainer();
+        showSelectionContainer();
+        hideSelectionContainer();
+        drawButtonsContainer();
+        showButtonsContainer();
+        hideButtonsContainer();
+        setPointerEventsNone();
+        resetPointerEvents();
+        handleElementHover();
+        scrollIfByEdge();
+        scrollWindow();
+        updateScreenshotsOverlayDimensions();
+        getDimensionsFromWindow();
+        updateWindowDimensions();
+    }
 }

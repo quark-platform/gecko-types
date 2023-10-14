@@ -2,6 +2,7 @@ declare module "resource://app/modules/FirefoxProfileMigrator.sys.mjs" {
     export class FirefoxProfileMigrator {
         get key();
         get displayNameL10nID();
+        get brandImage();
         _getAllProfiles();
         getSourceProfiles();
         _getFileObject();
