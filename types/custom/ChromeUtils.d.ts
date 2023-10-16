@@ -11,4 +11,18 @@ declare module ChromeUtils {
    * interface list.
    */
   function generateQI(interfaces: (keyof CiType)[]): MozQueryInterface
+
+  /**
+   * Defines propertys on the given target which lazily imports a ES module
+   * when accessed.
+   *
+   * @param target The target object on which to define the property.
+   * @param modules An object with a property for each module property to be
+   * imported, where the property name is the name of the
+   * imported symbol and the value is the module URI.
+   */
+  function defineESModuleGetters<Modules extends Partial<MozESMExportFile>>(
+    target: { [Key in keyof Modules]: MozESMExportType[Key] },
+    modules: Modules,
+  ): void
 }
