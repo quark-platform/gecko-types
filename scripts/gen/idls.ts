@@ -23,7 +23,10 @@ import {
 
 const interfaceFiles = await getAllInterfaces()
 export const idlTypes = new Set<string>()
-export const idlConstants = new Map<string, { key: string; value: string }[]>()
+export const idlConstants = new Map<
+  string,
+  { key: string; value: string | undefined }[]
+>()
 export const idlUUID = new Map<string, string>()
 
 let idlDefFile = ''
@@ -136,8 +139,13 @@ function handleConst(
   const constants = idlConstants.get(interfaceName) || []
 
   const { name: key, value } = code
-  if (typeof key !== 'string' || typeof value !== 'string') return []
-  constants.push({ key, value })
+  if (typeof key !== 'string') return []
+
+  if (typeof value !== 'string') {
+    constants.push({ key, value: undefined })
+  } else {
+    constants.push({ key, value })
+  }
 
   idlConstants.set(interfaceName, constants)
 
@@ -335,17 +343,23 @@ idlDefFile += '\n\n'
     const constants = (idlConstants.get(iface) || []).map(({ key, value }) => {
       let type
 
-      if (value.startsWith('0x') || !isNaN(value as unknown as number)) {
-        type = ts.factory.createNumericLiteral(value)
+      if (typeof value === 'undefined') {
+        type = ts.factory.createKeywordTypeNode(ts.SyntaxKind.UndefinedKeyword)
+      } else if (value.startsWith('0x') || !isNaN(value as unknown as number)) {
+        type = ts.factory.createLiteralTypeNode(
+          ts.factory.createNumericLiteral(value),
+        )
       } else {
-        type = ts.factory.createStringLiteral(value)
+        type = ts.factory.createLiteralTypeNode(
+          ts.factory.createStringLiteral(value),
+        )
       }
 
       return ts.factory.createPropertySignature(
         [READ_ONLY_MODIFIER],
         key,
         undefined,
-        ts.factory.createLiteralTypeNode(type),
+        type,
       )
     })
 

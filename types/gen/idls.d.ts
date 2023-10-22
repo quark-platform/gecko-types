@@ -62853,6 +62853,7 @@ interface CiType {
         readonly number: '14afc8e7-e421-4d0c-99a5-69308d871481';
         readonly kHintAudio: 0x00000001;
         readonly kHintVideo: 0x00000002;
+        readonly kActionNone: undefined;
         readonly kActionOffer: 0;
         readonly kActionAnswer: 1;
         readonly kActionPRAnswer: 2;
@@ -62967,6 +62968,7 @@ interface CiType {
         readonly FLAG_DECODE_TO_SRGB_COLORSPACE: 0x800;
         readonly FLAG_RECORD_BLOB: 0x1000;
         readonly DECODE_FLAGS_DEFAULT: 0;
+        readonly DECODE_FLAGS_FOR_REENCODE: undefined;
         readonly FRAME_FIRST: 0;
         readonly FRAME_CURRENT: 1;
         readonly FRAME_MAX_VALUE: 1;
@@ -62988,6 +62990,8 @@ interface CiType {
     imgILoader: {
         readonly name: 'imgILoader';
         readonly number: '';
+        readonly LOAD_CORS_ANONYMOUS: undefined;
+        readonly LOAD_CORS_USE_CREDENTIALS: undefined;
     };
     imgINotificationObserver: {
         readonly name: 'imgINotificationObserver';
@@ -63013,6 +63017,10 @@ interface CiType {
         readonly STATUS_DECODE_COMPLETE: 0x10;
         readonly STATUS_IS_ANIMATED: 0x20;
         readonly STATUS_HAS_TRANSPARENCY: 0x40;
+        readonly CATEGORY_FRAME_INIT: undefined;
+        readonly CATEGORY_FRAME_STYLE: undefined;
+        readonly CATEGORY_SIZE_QUERY: undefined;
+        readonly CATEGORY_DISPLAY: undefined;
     };
     imgIScriptedNotificationObserver: {
         readonly name: 'imgIScriptedNotificationObserver';
@@ -63187,6 +63195,16 @@ interface CiType {
         readonly MATCH_BEGINNING: 3;
         readonly MATCH_ANYWHERE_UNMODIFIED: 4;
         readonly MATCH_BEGINNING_CASE_SENSITIVE: 5;
+        readonly BEHAVIOR_HISTORY: undefined;
+        readonly BEHAVIOR_BOOKMARK: undefined;
+        readonly BEHAVIOR_TAG: undefined;
+        readonly BEHAVIOR_TITLE: undefined;
+        readonly BEHAVIOR_URL: undefined;
+        readonly BEHAVIOR_TYPED: undefined;
+        readonly BEHAVIOR_JAVASCRIPT: undefined;
+        readonly BEHAVIOR_OPENPAGE: undefined;
+        readonly BEHAVIOR_RESTRICT: undefined;
+        readonly BEHAVIOR_SEARCH: undefined;
     };
     mozIPlacesPendingOperation: {
         readonly name: 'mozIPlacesPendingOperation';
@@ -63233,6 +63251,7 @@ interface CiType {
     mozIStorageAsyncConnection: {
         readonly name: 'mozIStorageAsyncConnection';
         readonly number: '';
+        readonly TRANSACTION_DEFAULT: undefined;
         readonly TRANSACTION_DEFERRED: 0;
         readonly TRANSACTION_IMMEDIATE: 1;
         readonly TRANSACTION_EXCLUSIVE: 2;
@@ -63316,7 +63335,11 @@ interface CiType {
         readonly name: 'mozIStorageService';
         readonly number: '07b6b2f5-6d97-47b4-9584-e65bc467fe9e';
         readonly OPEN_DEFAULT: 0;
+        readonly OPEN_SHARED: undefined;
+        readonly OPEN_READONLY: undefined;
+        readonly OPEN_IGNORE_LOCKING_MODE: undefined;
         readonly CONNECTION_DEFAULT: 0;
+        readonly CONNECTION_INTERRUPTIBLE: undefined;
     };
     mozIStorageStatement: {
         readonly name: 'mozIStorageStatement';
@@ -63380,6 +63403,9 @@ interface CiType {
         readonly name: 'mozITXTToHTMLConv';
         readonly number: '77c0e42a-1dd2-11b2-8ebf-edc6606f2f4b';
         readonly kEntities: 0;
+        readonly kURLs: undefined;
+        readonly kGlyphSubstitution: undefined;
+        readonly kStructPhrase: undefined;
     };
     mozITestInterfaceJS: {
         readonly name: 'mozITestInterfaceJS';
@@ -63396,6 +63422,18 @@ interface CiType {
     nsIAboutModule: {
         readonly name: 'nsIAboutModule';
         readonly number: 'c0c19db9-1b5a-4ac5-b656-ed6f8149fa48';
+        readonly URI_SAFE_FOR_UNTRUSTED_CONTENT: undefined;
+        readonly ALLOW_SCRIPT: undefined;
+        readonly HIDE_FROM_ABOUTABOUT: undefined;
+        readonly ENABLE_INDEXED_DB: undefined;
+        readonly URI_CAN_LOAD_IN_CHILD: undefined;
+        readonly URI_MUST_LOAD_IN_CHILD: undefined;
+        readonly MAKE_UNLINKABLE: undefined;
+        readonly MAKE_LINKABLE: undefined;
+        readonly URI_CAN_LOAD_IN_PRIVILEGEDABOUT_PROCESS: undefined;
+        readonly URI_MUST_LOAD_IN_EXTENSION_PROCESS: undefined;
+        readonly ALLOW_UNSANITIZED_CONTENT: undefined;
+        readonly IS_SECURE_CHROME_UI: undefined;
     };
     nsIAboutNewTabService: {
         readonly name: 'nsIAboutNewTabService';
@@ -63408,6 +63446,11 @@ interface CiType {
     nsIAboutThirdParty: {
         readonly name: 'nsIAboutThirdParty';
         readonly number: 'd33ff086-b328-4ae6-aaf5-52d41aa5df38';
+        readonly ModuleType_Unknown: undefined;
+        readonly ModuleType_IME: undefined;
+        readonly ModuleType_ShellExtension: undefined;
+        readonly ModuleType_BlockedByUser: undefined;
+        readonly ModuleType_BlockedByUserAtLaunch: undefined;
     };
     nsIAddonPolicyService: {
         readonly name: 'nsIAddonPolicyService';
@@ -63417,6 +63460,10 @@ interface CiType {
         readonly name: 'nsIAddonContentPolicy';
         readonly number: '7a4fe60b-9131-45f5-83f3-dc63b5d71a5d';
         readonly CSP_ALLOW_ANY: 0xFFFF;
+        readonly CSP_ALLOW_LOCALHOST: undefined;
+        readonly CSP_ALLOW_EVAL: undefined;
+        readonly CSP_ALLOW_REMOTE: undefined;
+        readonly CSP_ALLOW_WASM: undefined;
     };
     nsIAlertNotificationImageListener: {
         readonly name: 'nsIAlertNotificationImageListener';
@@ -63477,6 +63524,7 @@ interface CiType {
     nsIAppShellService: {
         readonly name: 'nsIAppShellService';
         readonly number: '19266025-354c-4bb9-986b-3483b2b1cdef';
+        readonly SIZE_TO_CONTENT: undefined;
     };
     nsIAppStartup: {
         readonly name: 'nsIAppStartup';
@@ -63536,6 +63584,7 @@ interface CiType {
     nsIAsyncInputStream: {
         readonly name: 'nsIAsyncInputStream';
         readonly number: '';
+        readonly WAIT_CLOSURE_ONLY: undefined;
     };
     nsIInputStreamCallback: {
         readonly name: 'nsIInputStreamCallback';
@@ -63544,6 +63593,7 @@ interface CiType {
     nsIAsyncOutputStream: {
         readonly name: 'nsIAsyncOutputStream';
         readonly number: '';
+        readonly WAIT_CLOSURE_ONLY: undefined;
     };
     nsIOutputStreamCallback: {
         readonly name: 'nsIOutputStreamCallback';
@@ -63631,6 +63681,9 @@ interface CiType {
         readonly name: 'nsIAuthModule';
         readonly number: '6e35dbc0-49ef-4e2c-b1ea-b72ec64450a2';
         readonly REQ_DEFAULT: 0;
+        readonly REQ_MUTUAL_AUTH: undefined;
+        readonly REQ_DELEGATE: undefined;
+        readonly REQ_PROXY_AUTH: undefined;
         readonly NTLM_MODULE_SAMBA_AUTH_PROXY: 0;
         readonly NTLM_MODULE_SAMBA_AUTH_DIRECT: 1;
         readonly NTLM_MODULE_WIN_API_PROXY: 2;
@@ -64008,6 +64061,13 @@ interface CiType {
         readonly name: 'nsICacheStorage';
         readonly number: '';
         readonly OPEN_NORMALLY: 0;
+        readonly OPEN_TRUNCATE: undefined;
+        readonly OPEN_READONLY: undefined;
+        readonly OPEN_PRIORITY: undefined;
+        readonly OPEN_BYPASS_IF_BUSY: undefined;
+        readonly CHECK_MULTITHREADED: undefined;
+        readonly OPEN_SECRETLY: undefined;
+        readonly OPEN_INTERCEPTED: undefined;
     };
     nsICacheStorageService: {
         readonly name: 'nsICacheStorageService';
@@ -64031,6 +64091,11 @@ interface CiType {
     nsICachingChannel: {
         readonly name: 'nsICachingChannel';
         readonly number: 'dd1d6122-5ecf-4fe4-8f0f-995e7ab3121a';
+        readonly LOAD_NO_NETWORK_IO: undefined;
+        readonly LOAD_BYPASS_LOCAL_CACHE: undefined;
+        readonly LOAD_BYPASS_LOCAL_CACHE_IF_BUSY: undefined;
+        readonly LOAD_ONLY_FROM_CACHE: undefined;
+        readonly LOAD_ONLY_IF_MODIFIED: undefined;
     };
     nsICancelable: {
         readonly name: 'nsICancelable';
@@ -64135,6 +64200,16 @@ interface CiType {
     nsIChannel: {
         readonly name: 'nsIChannel';
         readonly number: '';
+        readonly LOAD_DOCUMENT_URI: undefined;
+        readonly LOAD_RETARGETED_DOCUMENT_URI: undefined;
+        readonly LOAD_REPLACE: undefined;
+        readonly LOAD_INITIAL_DOCUMENT_URI: undefined;
+        readonly LOAD_TARGETED: undefined;
+        readonly LOAD_CALL_CONTENT_SNIFFERS: undefined;
+        readonly LOAD_BYPASS_URL_CLASSIFIER: undefined;
+        readonly LOAD_MEDIA_SNIFFER_OVERRIDES_CONTENT_TYPE: undefined;
+        readonly LOAD_EXPLICIT_CREDENTIALS: undefined;
+        readonly LOAD_BYPASS_SERVICE_WORKER: undefined;
         readonly DISPOSITION_INLINE: 0;
         readonly DISPOSITION_ATTACHMENT: 1;
         readonly DISPOSITION_FORCE_INLINE: 2;
@@ -64158,6 +64233,10 @@ interface CiType {
     nsIChannelEventSink: {
         readonly name: 'nsIChannelEventSink';
         readonly number: '0197720d-37ed-4e75-8956-d0d296e4d8a6';
+        readonly REDIRECT_TEMPORARY: undefined;
+        readonly REDIRECT_PERMANENT: undefined;
+        readonly REDIRECT_INTERNAL: undefined;
+        readonly REDIRECT_STS_UPGRADE: undefined;
     };
     nsIChildChannel: {
         readonly name: 'nsIChildChannel';
@@ -64177,10 +64256,25 @@ interface CiType {
     nsIClassInfo: {
         readonly name: 'nsIClassInfo';
         readonly number: '';
+        readonly SINGLETON: undefined;
+        readonly THREADSAFE: undefined;
+        readonly SINGLETON_CLASSINFO: undefined;
+        readonly RESERVED: undefined;
     };
     nsIClassOfService: {
         readonly name: 'nsIClassOfService';
         readonly number: '1ccb58ec-5e07-4cf9-a30d-ac5490d23b41';
+        readonly Leader: undefined;
+        readonly Follower: undefined;
+        readonly Speculative: undefined;
+        readonly Background: undefined;
+        readonly Unblocked: undefined;
+        readonly Throttleable: undefined;
+        readonly UrgentStart: undefined;
+        readonly DontThrottle: undefined;
+        readonly Tail: undefined;
+        readonly TailAllowed: undefined;
+        readonly TailForbidden: undefined;
     };
     nsIClassifiedChannel: {
         readonly name: 'nsIClassifiedChannel';
@@ -64189,7 +64283,35 @@ interface CiType {
     nsIClearDataService: {
         readonly name: 'nsIClearDataService';
         readonly number: '6ef3ef16-a502-4576-9fb4-919f1c40bf61';
+        readonly CLEAR_COOKIES: undefined;
+        readonly CLEAR_NETWORK_CACHE: undefined;
+        readonly CLEAR_IMAGE_CACHE: undefined;
+        readonly CLEAR_DOWNLOADS: undefined;
+        readonly CLEAR_PASSWORDS: undefined;
+        readonly CLEAR_MEDIA_DEVICES: undefined;
+        readonly CLEAR_DOM_QUOTA: undefined;
+        readonly CLEAR_PREDICTOR_NETWORK_DATA: undefined;
+        readonly CLEAR_DOM_PUSH_NOTIFICATIONS: undefined;
+        readonly CLEAR_HISTORY: undefined;
+        readonly CLEAR_SESSION_HISTORY: undefined;
+        readonly CLEAR_AUTH_TOKENS: undefined;
+        readonly CLEAR_AUTH_CACHE: undefined;
+        readonly CLEAR_PERMISSIONS: undefined;
+        readonly CLEAR_CONTENT_PREFERENCES: undefined;
+        readonly CLEAR_HSTS: undefined;
+        readonly CLEAR_EME: undefined;
+        readonly CLEAR_REPORTS: undefined;
+        readonly CLEAR_STORAGE_ACCESS: undefined;
+        readonly CLEAR_CERT_EXCEPTIONS: undefined;
+        readonly CLEAR_CONTENT_BLOCKING_RECORDS: undefined;
+        readonly CLEAR_CSS_CACHE: undefined;
+        readonly CLEAR_PREFLIGHT_CACHE: undefined;
+        readonly CLEAR_CLIENT_AUTH_REMEMBER_SERVICE: undefined;
+        readonly CLEAR_CREDENTIAL_MANAGER_STATE: undefined;
         readonly CLEAR_ALL: 0xFFFFFFFF;
+        readonly CLEAR_ALL_CACHES: undefined;
+        readonly CLEAR_DOM_STORAGES: undefined;
+        readonly CLEAR_FORGET_ABOUT_SITE: undefined;
     };
     nsIClearDataCallback: {
         readonly name: 'nsIClearDataCallback';
@@ -64348,6 +64470,11 @@ interface CiType {
     nsIContentPolicy: {
         readonly name: 'nsIContentPolicy';
         readonly number: 'caad4f1f-d047-46ac-ae9d-dc598e4fb91b';
+        readonly REJECT_REQUEST: undefined;
+        readonly REJECT_TYPE: undefined;
+        readonly REJECT_SERVER: undefined;
+        readonly REJECT_OTHER: undefined;
+        readonly REJECT_POLICY: undefined;
         readonly ACCEPT: 1;
     };
     nsIContentPrefObserver: {
@@ -64376,6 +64503,7 @@ interface CiType {
     nsIContentProcessProvider: {
         readonly name: 'nsIContentProcessProvider';
         readonly number: '83ffb063-5f65-4c45-ae07-3f553e0809bb';
+        readonly NEW_PROCESS: undefined;
     };
     nsIContentSecurityManager: {
         readonly name: 'nsIContentSecurityManager';
@@ -64414,6 +64542,7 @@ interface CiType {
         readonly COPY_IMAGE_TEXT: 0x0001;
         readonly COPY_IMAGE_HTML: 0x0002;
         readonly COPY_IMAGE_DATA: 0x0004;
+        readonly COPY_IMAGE_ALL: undefined;
     };
     nsIController: {
         readonly name: 'nsIController';
@@ -64727,6 +64856,7 @@ interface CiType {
         readonly UPDATE_TYPE_MAIN_THREAD: 1;
         readonly SCROLL_MODE_INSTANT: 0;
         readonly SCROLL_MODE_SMOOTH: 1;
+        readonly FLUSH_NONE: undefined;
         readonly FLUSH_STYLE: 0;
         readonly FLUSH_LAYOUT: 1;
         readonly FLUSH_DISPLAY: 2;
@@ -64786,6 +64916,7 @@ interface CiType {
         readonly MOUSE_BUTTONS_MIDDLE_BUTTON: 0x04;
         readonly MOUSE_BUTTONS_4TH_BUTTON: 0x08;
         readonly MOUSE_BUTTONS_5TH_BUTTON: 0x10;
+        readonly MOUSE_BUTTONS_NOT_SPECIFIED: undefined;
         readonly DIRECTION_LTR: 0;
         readonly DIRECTION_RTL: 1;
         readonly DIRECTION_NOT_SET: 2;
@@ -64954,6 +65085,30 @@ interface CiType {
     nsIDocumentEncoder: {
         readonly name: 'nsIDocumentEncoder';
         readonly number: '';
+        readonly OutputSelectionOnly: undefined;
+        readonly OutputFormatted: undefined;
+        readonly OutputRaw: undefined;
+        readonly OutputBodyOnly: undefined;
+        readonly OutputPreformatted: undefined;
+        readonly OutputWrap: undefined;
+        readonly OutputFormatFlowed: undefined;
+        readonly OutputAbsoluteLinks: undefined;
+        readonly OutputCRLineBreak: undefined;
+        readonly OutputLFLineBreak: undefined;
+        readonly OutputNoScriptContent: undefined;
+        readonly OutputNoFramesContent: undefined;
+        readonly OutputNoFormattingInPre: undefined;
+        readonly OutputEncodeBasicEntities: undefined;
+        readonly OutputPersistNBSP: undefined;
+        readonly OutputDontRewriteEncodingDeclaration: undefined;
+        readonly SkipInvisibleContent: undefined;
+        readonly OutputFormatDelSp: undefined;
+        readonly OutputDropInvisibleBreak: undefined;
+        readonly OutputIgnoreMozDirty: undefined;
+        readonly OutputForPlainTextClipboardCopy: undefined;
+        readonly OutputRubyAnnotation: undefined;
+        readonly OutputDisallowLineBreaking: undefined;
+        readonly RequiresReinitAfterOutput: undefined;
     };
     nsIDocumentLoader: {
         readonly name: 'nsIDocumentLoader';
@@ -65099,6 +65254,7 @@ interface CiType {
     nsIEnterprisePolicies: {
         readonly name: 'nsIEnterprisePolicies';
         readonly number: '6a568972-cc91-4bf5-963e-3768f3319b8a';
+        readonly UNINITIALIZED: undefined;
         readonly INACTIVE: 0;
         readonly ACTIVE: 1;
         readonly FAILED: 2;
@@ -65228,14 +65384,20 @@ interface CiType {
     nsIFileInputStream: {
         readonly name: 'nsIFileInputStream';
         readonly number: 'e3d56a20-c7ec-11d3-8cda-0060b0fc14a3';
+        readonly CLOSE_ON_EOF: undefined;
+        readonly REOPEN_ON_REWIND: undefined;
+        readonly DEFER_OPEN: undefined;
+        readonly SHARE_DELETE: undefined;
     };
     nsIFileOutputStream: {
         readonly name: 'nsIFileOutputStream';
         readonly number: 'e734cac9-1295-4e6f-9684-3ac4e1f91063';
+        readonly DEFER_OPEN: undefined;
     };
     nsIFileRandomAccessStream: {
         readonly name: 'nsIFileRandomAccessStream';
         readonly number: '82cf605a-8393-4550-83ab-43cd5578e006';
+        readonly DEFER_OPEN: undefined;
     };
     nsIFileMetadata: {
         readonly name: 'nsIFileMetadata';
@@ -65285,6 +65447,8 @@ interface CiType {
         readonly FLAG_BYTOUCH: 0x200000;
         readonly FLAG_BYJS: 0x400000;
         readonly FLAG_BYLONGPRESS: 0x800000;
+        readonly METHOD_MASK: undefined;
+        readonly METHODANDRING_MASK: undefined;
         readonly MOVEFOCUS_FORWARD: 1;
         readonly MOVEFOCUS_BACKWARD: 2;
         readonly MOVEFOCUS_FORWARDDOC: 3;
@@ -65591,6 +65755,14 @@ interface CiType {
     nsIHttpAuthenticator: {
         readonly name: 'nsIHttpAuthenticator';
         readonly number: 'fef7db8a-a4e2-49d1-9685-19ed7e309b7d';
+        readonly USING_INTERNAL_IDENTITY: undefined;
+        readonly REQUEST_BASED: undefined;
+        readonly CONNECTION_BASED: undefined;
+        readonly REUSABLE_CREDENTIALS: undefined;
+        readonly REUSABLE_CHALLENGE: undefined;
+        readonly IDENTITY_IGNORED: undefined;
+        readonly IDENTITY_INCLUDES_DOMAIN: undefined;
+        readonly IDENTITY_ENCRYPTED: undefined;
     };
     nsIHttpAuthenticatorCallback: {
         readonly name: 'nsIHttpAuthenticatorCallback';
@@ -65615,6 +65787,7 @@ interface CiType {
     nsIHttpChannelInternal: {
         readonly name: 'nsIHttpChannelInternal';
         readonly number: '4e28263d-1e03-46f4-aa5c-9512f91957f9';
+        readonly THIRD_PARTY_FORCE_ALLOW: undefined;
         readonly REDIRECT_MODE_FOLLOW: 0;
         readonly REDIRECT_MODE_ERROR: 1;
         readonly REDIRECT_MODE_MANUAL: 2;
@@ -65720,6 +65893,7 @@ interface CiType {
     nsIImageLoadingContent: {
         readonly name: 'nsIImageLoadingContent';
         readonly number: '0357123d-9224-4d12-a47e-868c32689777';
+        readonly UNKNOWN_REQUEST: undefined;
         readonly CURRENT_REQUEST: 0;
         readonly PENDING_REQUEST: 1;
     };
@@ -65907,6 +66081,32 @@ interface CiType {
         readonly name: 'nsILoadInfo';
         readonly number: '';
         readonly SEC_ONLY_FOR_EXPLICIT_CONTENTSEC_CHECK: 0;
+        readonly SEC_REQUIRE_SAME_ORIGIN_INHERITS_SEC_CONTEXT: undefined;
+        readonly SEC_REQUIRE_SAME_ORIGIN_DATA_IS_BLOCKED: undefined;
+        readonly SEC_ALLOW_CROSS_ORIGIN_INHERITS_SEC_CONTEXT: undefined;
+        readonly SEC_ALLOW_CROSS_ORIGIN_SEC_CONTEXT_IS_NULL: undefined;
+        readonly SEC_REQUIRE_CORS_INHERITS_SEC_CONTEXT: undefined;
+        readonly SEC_COOKIES_DEFAULT: undefined;
+        readonly SEC_COOKIES_INCLUDE: undefined;
+        readonly SEC_COOKIES_SAME_ORIGIN: undefined;
+        readonly SEC_COOKIES_OMIT: undefined;
+        readonly SEC_FORCE_INHERIT_PRINCIPAL: undefined;
+        readonly SEC_ABOUT_BLANK_INHERITS: undefined;
+        readonly SEC_ALLOW_CHROME: undefined;
+        readonly SEC_DISALLOW_SCRIPT: undefined;
+        readonly SEC_DONT_FOLLOW_REDIRECTS: undefined;
+        readonly SEC_LOAD_ERROR_PAGE: undefined;
+        readonly SEC_FORCE_INHERIT_PRINCIPAL_OVERRULE_OWNER: undefined;
+        readonly HTTPS_ONLY_UNINITIALIZED: undefined;
+        readonly HTTPS_ONLY_UPGRADED_LISTENER_NOT_REGISTERED: undefined;
+        readonly HTTPS_ONLY_UPGRADED_LISTENER_REGISTERED: undefined;
+        readonly HTTPS_ONLY_EXEMPT: undefined;
+        readonly HTTPS_ONLY_TOP_LEVEL_LOAD_IN_PROGRESS: undefined;
+        readonly HTTPS_ONLY_DOWNLOAD_IN_PROGRESS: undefined;
+        readonly HTTPS_ONLY_DO_NOT_LOG_TO_CONSOLE: undefined;
+        readonly HTTPS_ONLY_UPGRADED_HTTPS_FIRST: undefined;
+        readonly HTTPS_ONLY_BYPASS_ORB: undefined;
+        readonly HTTPS_ONLY_EXEMPT_NEXT_LOAD: undefined;
         readonly TAINTING_BASIC: 0;
         readonly TAINTING_CORS: 1;
         readonly TAINTING_OPAQUE: 2;
@@ -66210,6 +66410,12 @@ interface CiType {
         readonly number: '12f60021-e14b-4020-99d1-ed2c795be66a';
         readonly ERROR_CLASS_SSL_PROTOCOL: 1;
         readonly ERROR_CLASS_BAD_CERT: 2;
+        readonly NSS_SEC_ERROR_BASE: undefined;
+        readonly NSS_SEC_ERROR_LIMIT: undefined;
+        readonly NSS_SSL_ERROR_BASE: undefined;
+        readonly NSS_SSL_ERROR_LIMIT: undefined;
+        readonly MOZILLA_PKIX_ERROR_BASE: undefined;
+        readonly MOZILLA_PKIX_ERROR_LIMIT: undefined;
     };
     nsINSSVersion: {
         readonly name: 'nsINSSVersion';
@@ -66254,6 +66460,7 @@ interface CiType {
     nsINavBookmarksService: {
         readonly name: 'nsINavBookmarksService';
         readonly number: '24533891-afa6-4663-b72d-3143d03f1b04';
+        readonly DEFAULT_INDEX: undefined;
         readonly TYPE_BOOKMARK: 1;
         readonly TYPE_FOLDER: 2;
         readonly TYPE_SEPARATOR: 3;
@@ -66391,6 +66598,23 @@ interface CiType {
         readonly ESCAPE_URL_PATH: 4;
         readonly ESCAPE_URL_APPLE_EXTRA: 8;
         readonly ESCAPE_URL_SCHEME: 1;
+        readonly ESCAPE_URL_USERNAME: undefined;
+        readonly ESCAPE_URL_PASSWORD: undefined;
+        readonly ESCAPE_URL_HOST: undefined;
+        readonly ESCAPE_URL_DIRECTORY: undefined;
+        readonly ESCAPE_URL_FILE_BASENAME: undefined;
+        readonly ESCAPE_URL_FILE_EXTENSION: undefined;
+        readonly ESCAPE_URL_PARAM: undefined;
+        readonly ESCAPE_URL_QUERY: undefined;
+        readonly ESCAPE_URL_REF: undefined;
+        readonly ESCAPE_URL_FILEPATH: undefined;
+        readonly ESCAPE_URL_MINIMAL: undefined;
+        readonly ESCAPE_URL_FORCED: undefined;
+        readonly ESCAPE_URL_ONLY_ASCII: undefined;
+        readonly ESCAPE_URL_ONLY_NONASCII: undefined;
+        readonly ESCAPE_URL_COLON: undefined;
+        readonly ESCAPE_URL_SKIP_CONTROL: undefined;
+        readonly ESCAPE_URL_EXT_HANDLER: undefined;
     };
     nsINetworkConnectivityService: {
         readonly name: 'nsINetworkConnectivityService';
@@ -66430,6 +66654,9 @@ interface CiType {
         readonly LINK_TYPE_WIMAX: 4;
         readonly LINK_TYPE_MOBILE: 9;
         readonly NONE_DETECTED: 0;
+        readonly VPN_DETECTED: undefined;
+        readonly PROXY_DETECTED: undefined;
+        readonly NRPT_DETECTED: undefined;
     };
     nsINetworkPredictor: {
         readonly name: 'nsINetworkPredictor';
@@ -66623,6 +66850,13 @@ interface CiType {
     nsIParserUtils: {
         readonly name: 'nsIParserUtils';
         readonly number: 'a1101145-0025-411e-8873-fdf57bf28128';
+        readonly SanitizerAllowComments: undefined;
+        readonly SanitizerAllowStyle: undefined;
+        readonly SanitizerCidEmbedsOnly: undefined;
+        readonly SanitizerDropNonCSSPresentation: undefined;
+        readonly SanitizerDropForms: undefined;
+        readonly SanitizerDropMedia: undefined;
+        readonly SanitizerLogRemovals: undefined;
     };
     nsIPartitioningExceptionListObserver: {
         readonly name: 'nsIPartitioningExceptionListObserver';
@@ -66869,6 +67103,8 @@ interface CiType {
         readonly kInitSaveShrinkToFit: 0x08000000;
         readonly kInitSaveScaling: 0x10000000;
         readonly kInitSaveAll: 0xFFFFFFFF;
+        readonly kGlobalSettings: undefined;
+        readonly kPrintDialogPersistSettings: undefined;
         readonly kJustLeft: 0;
         readonly kJustCenter: 1;
         readonly kJustRight: 2;
@@ -66948,6 +67184,8 @@ interface CiType {
         readonly name: 'nsIPrompt';
         readonly number: '';
         readonly BUTTON_POS_0: 1;
+        readonly BUTTON_POS_1: undefined;
+        readonly BUTTON_POS_2: undefined;
         readonly BUTTON_TITLE_OK: 1;
         readonly BUTTON_TITLE_CANCEL: 2;
         readonly BUTTON_TITLE_YES: 3;
@@ -66956,6 +67194,12 @@ interface CiType {
         readonly BUTTON_TITLE_DONT_SAVE: 6;
         readonly BUTTON_TITLE_REVERT: 7;
         readonly BUTTON_TITLE_IS_STRING: 127;
+        readonly BUTTON_POS_0_DEFAULT: undefined;
+        readonly BUTTON_POS_1_DEFAULT: undefined;
+        readonly BUTTON_POS_2_DEFAULT: undefined;
+        readonly BUTTON_DELAY_ENABLE: undefined;
+        readonly STD_OK_CANCEL_BUTTONS: undefined;
+        readonly STD_YES_NO_BUTTONS: undefined;
         readonly MODAL_TYPE_CONTENT: 1;
         readonly MODAL_TYPE_TAB: 2;
         readonly MODAL_TYPE_WINDOW: 3;
@@ -66977,6 +67221,8 @@ interface CiType {
         readonly name: 'nsIPromptService';
         readonly number: '404ebfa2-d8f4-4c94-8416-e65a55f9df5a';
         readonly BUTTON_POS_0: 1;
+        readonly BUTTON_POS_1: undefined;
+        readonly BUTTON_POS_2: undefined;
         readonly BUTTON_TITLE_OK: 1;
         readonly BUTTON_TITLE_CANCEL: 2;
         readonly BUTTON_TITLE_YES: 3;
@@ -66986,6 +67232,11 @@ interface CiType {
         readonly BUTTON_TITLE_REVERT: 7;
         readonly BUTTON_TITLE_IS_STRING: 127;
         readonly BUTTON_POS_0_DEFAULT: 0;
+        readonly BUTTON_POS_1_DEFAULT: undefined;
+        readonly BUTTON_POS_2_DEFAULT: undefined;
+        readonly BUTTON_DELAY_ENABLE: undefined;
+        readonly STD_OK_CANCEL_BUTTONS: undefined;
+        readonly STD_YES_NO_BUTTONS: undefined;
         readonly MODAL_TYPE_CONTENT: 1;
         readonly MODAL_TYPE_TAB: 2;
         readonly MODAL_TYPE_WINDOW: 3;
@@ -67019,6 +67270,32 @@ interface CiType {
         readonly name: 'nsIProtocolHandler';
         readonly number: 'a87210e6-7c8c-41f7-864d-df809015193e';
         readonly URI_STD: 0;
+        readonly URI_NORELATIVE: undefined;
+        readonly URI_NOAUTH: undefined;
+        readonly ALLOWS_PROXY: undefined;
+        readonly ALLOWS_PROXY_HTTP: undefined;
+        readonly URI_INHERITS_SECURITY_CONTEXT: undefined;
+        readonly URI_FORBIDS_AUTOMATIC_DOCUMENT_REPLACEMENT: undefined;
+        readonly URI_LOADABLE_BY_ANYONE: undefined;
+        readonly URI_DANGEROUS_TO_LOAD: undefined;
+        readonly URI_IS_UI_RESOURCE: undefined;
+        readonly URI_IS_LOCAL_FILE: undefined;
+        readonly URI_LOADABLE_BY_SUBSUMERS: undefined;
+        readonly URI_DOES_NOT_RETURN_DATA: undefined;
+        readonly URI_IS_LOCAL_RESOURCE: undefined;
+        readonly URI_OPENING_EXECUTES_SCRIPT: undefined;
+        readonly URI_NON_PERSISTABLE: undefined;
+        readonly URI_CROSS_ORIGIN_NEEDS_WEBAPPS_PERM: undefined;
+        readonly URI_SYNC_LOAD_IS_OK: undefined;
+        readonly URI_IS_POTENTIALLY_TRUSTWORTHY: undefined;
+        readonly URI_FETCHABLE_BY_ANYONE: undefined;
+        readonly ORIGIN_IS_FULL_SPEC: undefined;
+        readonly URI_SCHEME_NOT_SELF_LINKABLE: undefined;
+        readonly URI_LOADABLE_BY_EXTENSIONS: undefined;
+        readonly URI_DISALLOW_IN_PRIVATE_CONTEXT: undefined;
+        readonly URI_FORBIDS_COOKIE_ACCESS: undefined;
+        readonly WEBEXT_URI_WEB_ACCESSIBLE: undefined;
+        readonly DYNAMIC_URI_FLAGS: undefined;
     };
     nsIProtocolProxyCallback: {
         readonly name: 'nsIProtocolProxyCallback';
@@ -67043,6 +67320,10 @@ interface CiType {
     nsIProtocolProxyService: {
         readonly name: 'nsIProtocolProxyService';
         readonly number: 'ef57c8b6-e09d-4cd4-9222-2a5d2402e15d';
+        readonly RESOLVE_PREFER_SOCKS_PROXY: undefined;
+        readonly RESOLVE_IGNORE_URI_SCHEME: undefined;
+        readonly RESOLVE_PREFER_HTTPS_PROXY: undefined;
+        readonly RESOLVE_ALWAYS_TUNNEL: undefined;
         readonly PROXYCONFIG_DIRECT: 0;
         readonly PROXYCONFIG_MANUAL: 1;
         readonly PROXYCONFIG_PAC: 2;
@@ -67064,6 +67345,7 @@ interface CiType {
     nsIProxyInfo: {
         readonly name: 'nsIProxyInfo';
         readonly number: '';
+        readonly TRANSPARENT_PROXY_RESOLVES_HOST: undefined;
     };
     nsIPublicKeyPinningService: {
         readonly name: 'nsIPublicKeyPinningService';
@@ -67227,6 +67509,24 @@ interface CiType {
         readonly number: '';
         readonly LOAD_REQUESTMASK: 0xFFFF;
         readonly LOAD_NORMAL: 0;
+        readonly LOAD_BACKGROUND: undefined;
+        readonly LOAD_HTML_OBJECT_DATA: undefined;
+        readonly LOAD_DOCUMENT_NEEDS_COOKIE: undefined;
+        readonly LOAD_TRR_MASK: undefined;
+        readonly LOAD_TRR_DISABLED_MODE: undefined;
+        readonly LOAD_TRR_FIRST_MODE: undefined;
+        readonly LOAD_TRR_ONLY_MODE: undefined;
+        readonly LOAD_ANONYMOUS_ALLOW_CLIENT_CERT: undefined;
+        readonly LOAD_RECORD_START_REQUEST_DELAY: undefined;
+        readonly INHIBIT_CACHING: undefined;
+        readonly INHIBIT_PERSISTENT_CACHING: undefined;
+        readonly LOAD_BYPASS_CACHE: undefined;
+        readonly LOAD_FROM_CACHE: undefined;
+        readonly VALIDATE_ALWAYS: undefined;
+        readonly VALIDATE_NEVER: undefined;
+        readonly VALIDATE_ONCE_PER_SESSION: undefined;
+        readonly LOAD_ANONYMOUS: undefined;
+        readonly LOAD_FRESH_CONNECTION: undefined;
     };
     nsIRequestTailUnblockCallback: {
         readonly name: 'nsIRequestTailUnblockCallback';
@@ -67346,7 +67646,12 @@ interface CiType {
         readonly name: 'nsIScriptSecurityManager';
         readonly number: '51daad87-3a0c-44cc-b620-7356801c9022';
         readonly STANDARD: 0;
+        readonly LOAD_IS_AUTOMATIC_DOCUMENT_REPLACEMENT: undefined;
+        readonly ALLOW_CHROME: undefined;
+        readonly DISALLOW_INHERIT_PRINCIPAL: undefined;
         readonly DISALLOW_SCRIPT_OR_DATA: "DISALLOW_INHERIT_PRINCIPAL";
+        readonly DISALLOW_SCRIPT: undefined;
+        readonly DONT_REPORT_ERRORS: undefined;
         readonly DEFAULT_USER_CONTEXT_ID: 0;
         readonly DEFAULT_PRIVATE_BROWSING_ID: 0;
     };
@@ -67456,6 +67761,11 @@ interface CiType {
         readonly SELECTION_ON: 2;
         readonly SELECTION_DISABLED: 3;
         readonly SELECTION_ATTENTION: 4;
+        readonly SCROLL_SYNCHRONOUS: undefined;
+        readonly SCROLL_FIRST_ANCESTOR_ONLY: undefined;
+        readonly SCROLL_CENTER_VERTICALLY: undefined;
+        readonly SCROLL_OVERFLOW_HIDDEN: undefined;
+        readonly SCROLL_FOR_CARET_MOVE: undefined;
         readonly MOVE_LEFT: 0;
         readonly MOVE_RIGHT: 1;
         readonly MOVE_UP: 2;
@@ -67644,6 +67954,15 @@ interface CiType {
     nsISocketProvider: {
         readonly name: 'nsISocketProvider';
         readonly number: '';
+        readonly PROXY_RESOLVES_HOST: undefined;
+        readonly ANONYMOUS_CONNECT: undefined;
+        readonly NO_PERMANENT_STORAGE: undefined;
+        readonly BE_CONSERVATIVE: undefined;
+        readonly ANONYMOUS_CONNECT_ALLOW_CLIENT_CERT: undefined;
+        readonly IS_SPECULATIVE_CONNECTION: undefined;
+        readonly DONT_TRY_ECH: undefined;
+        readonly IS_RETRY: undefined;
+        readonly USED_PRIVATE_DNS: undefined;
     };
     nsISocketProviderService: {
         readonly name: 'nsISocketProviderService';
@@ -67663,6 +67982,22 @@ interface CiType {
         readonly STATUS_RECEIVING_FROM: 0x4b0006;
         readonly STATUS_TLS_HANDSHAKE_STARTING: 0x4b000c;
         readonly STATUS_TLS_HANDSHAKE_ENDED: 0x4b000d;
+        readonly BYPASS_CACHE: undefined;
+        readonly ANONYMOUS_CONNECT: undefined;
+        readonly DISABLE_IPV6: undefined;
+        readonly NO_PERMANENT_STORAGE: undefined;
+        readonly DISABLE_IPV4: undefined;
+        readonly DISABLE_RFC1918: undefined;
+        readonly BE_CONSERVATIVE: undefined;
+        readonly DISABLE_TRR: undefined;
+        readonly REFRESH_CACHE: undefined;
+        readonly RETRY_WITH_DIFFERENT_IP_FAMILY: undefined;
+        readonly DONT_TRY_ECH: undefined;
+        readonly TRR_MODE_FLAGS: undefined;
+        readonly USE_IP_HINT_ADDRESS: undefined;
+        readonly ANONYMOUS_CONNECT_ALLOW_CLIENT_CERT: undefined;
+        readonly IS_RETRY: undefined;
+        readonly IS_SPECULATIVE_CONNECTION: undefined;
     };
     nsISTSShutdownObserver: {
         readonly name: 'nsISTSShutdownObserver';
@@ -67887,6 +68222,8 @@ interface CiType {
     nsISubstitutingProtocolHandler: {
         readonly name: 'nsISubstitutingProtocolHandler';
         readonly number: '154c64fd-a69e-4105-89f8-bd7dfe621372';
+        readonly ALLOW_CONTENT_ACCESS: undefined;
+        readonly RESOLVE_JAR_URI: undefined;
     };
     nsIOutputIterator: {
         readonly name: 'nsIOutputIterator';
@@ -67995,6 +68332,8 @@ interface CiType {
     nsISupportsPriority: {
         readonly name: 'nsISupportsPriority';
         readonly number: 'aa578b44-abd5-4c19-8b14-36d4de6fdc36';
+        readonly PRIORITY_HIGHEST: undefined;
+        readonly PRIORITY_HIGH: undefined;
         readonly PRIORITY_NORMAL: 0;
         readonly PRIORITY_LOW: 10;
         readonly PRIORITY_LOWEST: 20;
@@ -68041,6 +68380,7 @@ interface CiType {
         readonly TLS_VERSION_1_1: 0x0302;
         readonly TLS_VERSION_1_2: 0x0303;
         readonly TLS_VERSION_1_3: 0x0304;
+        readonly TLS_VERSION_UNKNOWN: undefined;
     };
     nsITLSServerConnectionInfo: {
         readonly name: 'nsITLSServerConnectionInfo';
@@ -68053,11 +68393,14 @@ interface CiType {
     nsITLSSocketControl: {
         readonly name: 'nsITLSSocketControl';
         readonly number: '418265c8-654e-4fbb-ba62-4eed27de1f03';
+        readonly KEY_EXCHANGE_UNKNOWN: undefined;
         readonly SSL_VERSION_3: 0x0300;
         readonly TLS_VERSION_1: 0x0301;
         readonly TLS_VERSION_1_1: 0x0302;
         readonly TLS_VERSION_1_2: 0x0303;
         readonly TLS_VERSION_1_3: 0x0304;
+        readonly SSL_VERSION_UNKNOWN: undefined;
+        readonly SSL_MAC_UNKNOWN: undefined;
         readonly SSL_MAC_NULL: 0;
         readonly SSL_MAC_MD5: 1;
         readonly SSL_MAC_SHA: 2;
@@ -68141,6 +68484,10 @@ interface CiType {
         readonly SCALAR_TYPE_BOOLEAN: 2;
         readonly DATASET_ALL_CHANNELS: 0;
         readonly DATASET_PRERELEASE_CHANNELS: 1;
+        readonly INCLUDE_OLD_LOADEVENTS: undefined;
+        readonly KEEP_LOADEVENTS_NEW: undefined;
+        readonly INCLUDE_PRIVATE_FIELDS_IN_LOADEVENTS: undefined;
+        readonly EXCLUDE_STACKINFO_FROM_LOADEVENTS: undefined;
     };
     nsITellableStream: {
         readonly name: 'nsITellableStream';
@@ -68347,6 +68694,8 @@ interface CiType {
     nsITransport: {
         readonly name: 'nsITransport';
         readonly number: '2a8c6334-a5e6-4ec3-9865-1256541446fb';
+        readonly OPEN_BLOCKING: undefined;
+        readonly OPEN_UNBUFFERED: undefined;
         readonly STATUS_READING: 0x4b0008;
         readonly STATUS_WRITING: 0x4b0009;
     };
@@ -68382,6 +68731,7 @@ interface CiType {
     nsITreeView: {
         readonly name: 'nsITreeView';
         readonly number: '091116f0-0bdc-4b32-b9c8-c8d5a37cb088';
+        readonly DROP_BEFORE: undefined;
         readonly DROP_ON: 0;
         readonly DROP_AFTER: 1;
     };
@@ -68455,6 +68805,8 @@ interface CiType {
     nsIURILoader: {
         readonly name: 'nsIURILoader';
         readonly number: '8762c4e7-be35-4958-9b81-a05685bb516d';
+        readonly IS_CONTENT_PREFERRED: undefined;
+        readonly DONT_RETARGET: undefined;
     };
     nsIURISetSpec: {
         readonly name: 'nsIURISetSpec';
@@ -68777,6 +69129,7 @@ interface CiType {
         readonly CHROME_OPENAS_DIALOG: 0x40000000;
         readonly CHROME_OPENAS_CHROME: 0x80000000;
         readonly CHROME_ALL: 0x00000ffe;
+        readonly CHROME_MINIMAL_POPUP: undefined;
     };
     nsIWebBrowserChromeFocus: {
         readonly name: 'nsIWebBrowserChromeFocus';
@@ -68894,6 +69247,7 @@ interface CiType {
         readonly UNSUPPORTED: 0;
         readonly IMAGE: 1;
         readonly FALLBACK: 2;
+        readonly OTHER: undefined;
     };
     nsIWebPageDescriptor: {
         readonly name: 'nsIWebPageDescriptor';
@@ -69147,6 +69501,9 @@ interface CiType {
         readonly ACCESS_CREATE_SUB_KEY: 0x00000004;
         readonly ACCESS_ENUMERATE_SUB_KEYS: 0x00000008;
         readonly ACCESS_NOTIFY: 0x00000010;
+        readonly ACCESS_READ: undefined;
+        readonly ACCESS_WRITE: undefined;
+        readonly ACCESS_ALL: undefined;
         readonly WOW64_32: 0x00000200;
         readonly WOW64_64: 0x00000100;
         readonly TYPE_NONE: 0;
@@ -69202,6 +69559,10 @@ interface CiType {
         readonly name: 'nsIX509Cert';
         readonly number: '';
         readonly UNKNOWN_CERT: 0;
+        readonly CA_CERT: undefined;
+        readonly USER_CERT: undefined;
+        readonly EMAIL_CERT: undefined;
+        readonly SERVER_CERT: undefined;
         readonly ANY_CERT: 0xffff;
     };
     nsIOpenSignedAppFileCallback: {
@@ -69220,6 +69581,8 @@ interface CiType {
         readonly name: 'nsIX509CertDB';
         readonly number: '5c16cd9b-5a73-47f1-ab0f-11ede7495cce';
         readonly UNTRUSTED: 0;
+        readonly TRUSTED_SSL: undefined;
+        readonly TRUSTED_EMAIL: undefined;
         readonly Success: 0;
         readonly ERROR_UNKNOWN: 1;
         readonly ERROR_PKCS12_NOSMARTCARD_EXPORT: 2;
@@ -69232,6 +69595,8 @@ interface CiType {
         readonly AppXPCShellRoot: 6;
         readonly AddonsPublicRoot: 7;
         readonly AddonsStageRoot: 8;
+        readonly FLAG_LOCAL_ONLY: undefined;
+        readonly FLAG_MUST_BE_EV: undefined;
     };
     nsIX509CertValidity: {
         readonly name: 'nsIX509CertValidity';
