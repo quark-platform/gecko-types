@@ -13,11 +13,15 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/jsinspector;1";
         number: "{ec5aa99c-7abb-4142-ac5f-aab2419e38e2}";
+        private typeName: "mozilla::jsinspector::nsJSInspector";
+        private interfaceName: "mozIilla::jsinsIpector::nsJSInspector";
     };
     ["@mozilla.org/jsdebugger;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/jsdebugger;1";
         number: "{0365cbd5-d46e-4e94-a39f-83b63cd1a963}";
+        private typeName: "mozilla::jsdebugger::JSDebugger";
+        private interfaceName: "mozIilla::jsdebugger::JSDebugger";
     };
     ["@mozilla.org/devtools/startup-clh;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -38,6 +42,8 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/docloaderservice;1";
         number: "{057b04d0-0ccf-11d2-beba-00805f8a66dc}";
+        private typeName: "nsDocLoader";
+        private interfaceName: "nsIDocLoader";
     };
     ["@mozilla.org/docshell/uri-fixup;1"]: {
         getService(): nsIURIFixupType;
@@ -208,56 +214,78 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/protocol;1?name=default";
         number: "{bd6390c8-fbea-11d4-98f6-001083010e9b}";
+        private typeName: "nsExternalProtocolHandler";
+        private interfaceName: "nsIExternalProtocolHandler";
     };
     ["@mozilla.org/ospermissionrequest;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/ospermissionrequest;1";
         number: "{95790842-75a0-430d-98bf-f5ce3788ea6d}";
+        private typeName: "nsOSPermissionRequest";
+        private interfaceName: "nsIOSPermissionRequest";
     };
     ["@mozilla.org/prefetch-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/prefetch-service;1";
         number: "{6b8bdffc-3394-417d-be83-a81b7c0f63bf}";
+        private typeName: "nsPrefetchService";
+        private interfaceName: "nsIPrefetchService";
     };
     ["@mozilla.org/uriloader/handler-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/uriloader/handler-service;1";
         number: "{c4b6fb7c-bfb1-49dc-a65f-035796524b53}";
+        private typeName: "nsIHandlerService";
+        private interfaceName: "nsIIHandlerService";
     };
     ["@mozilla.org/uriloader/local-handler-app;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/uriloader/local-handler-app;1";
         number: "{bc0017e3-2438-47be-a567-41db58f17627}";
+        private typeName: "PlatformLocalHandlerApp_t";
+        private interfaceName: "PlatformLocalHandlerApp_t";
     };
     ["@mozilla.org/uriloader;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/uriloader;1";
         number: "{9f6d5d40-90e7-11d3-af80-00a024ffc08c}";
+        private typeName: "nsURILoader";
+        private interfaceName: "nsIURILoader";
     };
     ["@mozilla.org/webnavigation-info;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/webnavigation-info;1";
         number: "{f30bc0a2-958b-4287-bf62-ce38ba0c811e}";
+        private typeName: "nsWebNavigationInfo";
+        private interfaceName: "nsIWebNavigationInfo";
     };
     ["@mozilla.org/uriloader/dbus-handler-app;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/uriloader/dbus-handler-app;1";
         number: "{6c3c274b-4cbf-4bb5-a635-05ad2cbb6535}";
+        private typeName: "nsDBusHandlerApp";
+        private interfaceName: "nsIDBusHandlerApp";
     };
     ["@mozilla.org/mime;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/mime;1";
         number: "{a7f800e0-4306-11d4-98d0-001083010e9b}";
+        private typeName: "nsExternalHelperAppService";
+        private interfaceName: "nsIExternalHelperAppService";
     };
     ["@mozilla.org/uriloader/external-helper-app-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/uriloader/external-helper-app-service;1";
         number: "{a7f800e0-4306-11d4-98d0-001083010e9b}";
+        private typeName: "nsExternalHelperAppService";
+        private interfaceName: "nsIExternalHelperAppService";
     };
     ["@mozilla.org/uriloader/external-protocol-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/uriloader/external-protocol-service;1";
         number: "{a7f800e0-4306-11d4-98d0-001083010e9b}";
+        private typeName: "nsExternalHelperAppService";
+        private interfaceName: "nsIExternalHelperAppService";
     };
     ["@mozilla.org/content/dropped-link-handler;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -288,36 +316,50 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/protocol;1?name=blob";
         number: "{b43964aa-a078-44b2-b06b-fd4d1b172e66}";
+        private typeName: "mozilla::dom::BlobURLProtocolHandler";
+        private interfaceName: "mozIilla::dom::BlobURLProtocolHandler";
     };
     ["@mozilla.org/login-detection-service;1"]: {
         getService(): unknown;
         name: "@mozilla.org/login-detection-service;1";
         number: "{91fdaa4e-eba4-4ed3-831c-ce05c142822d}";
+        private typeName: "mozilla::dom::LoginDetectionService";
+        private interfaceName: "mozIilla::dom::LoginDetectionService";
     };
     ["@mozilla.org/dom/l10n/localization;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/dom/l10n/localization;1";
         number: "{a2017fd2-7d8d-11e9-b492-ab187f765b54}";
+        private typeName: "mozilla::dom::DOMLocalization";
+        private interfaceName: "mozIilla::dom::DOMLocalization";
     };
     ["@mozilla.org/dom/l10n/overlays;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/dom/l10n/overlays;1";
         number: "{8d85597c-3a92-11e9-9ffc-73d225b2d53f}";
+        private typeName: "mozilla::dom::L10nOverlays";
+        private interfaceName: "mozIilla::dom::L10nOverlays";
     };
     ["@mozilla.org/peerconnection;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/peerconnection;1";
         number: "{b93af7a1-3411-44a8-bd0a-8af3dde4d8d8}";
+        private typeName: "mozilla::PeerConnectionImpl";
+        private interfaceName: "mozIilla::PeerConnectionImpl";
     };
     ["@mozilla.org/network/tcp-filter-handler;1?name=stun"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/tcp-filter-handler;1?name=stun";
         number: "{9fea635a-2fc2-4d08-9721-d238d3f52f92}";
+        private typeName: "nsStunTCPSocketFilterHandler";
+        private interfaceName: "nsIStunTCPSocketFilterHandler";
     };
     ["@mozilla.org/network/udp-filter-handler;1?name=stun"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/udp-filter-handler;1?name=stun";
         number: "{3e43ee93-829e-4ea6-a34e-62d9e4c9f993}";
+        private typeName: "nsStunUDPSocketFilterHandler";
+        private interfaceName: "nsIStunUDPSocketFilterHandler";
     };
     ["@mozilla.org/dom/peerconnection;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -378,31 +420,43 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/rdd-process-test;1";
         number: "{12f7d302-5368-412d-bdc9-26d151518e6c}";
+        private typeName: "mozilla::RddProcessTest";
+        private interfaceName: "mozIilla::RddProcessTest";
     };
     ["@mozilla.org/androidspeechsynth;1"]: {
         getService(): unknown;
         name: "@mozilla.org/androidspeechsynth;1";
         number: "{311b2dab-f4d3-4be4-8123-6732313d95c2}";
+        private typeName: "mozilla::dom::SpeechSynthesisService";
+        private interfaceName: "mozIilla::dom::SpeechSynthesisService";
     };
     ["@mozilla.org/synthsystem;1"]: {
         getService(): unknown;
         name: "@mozilla.org/synthsystem;1";
         number: "{914e73b4-6337-4bef-97f3-4d069e053a12}";
+        private typeName: "mozilla::dom::OSXSpeechSynthesizerService";
+        private interfaceName: "mozIilla::dom::OSXSpeechSynthesizerService";
     };
     ["@mozilla.org/synthspeechdispatcher;1"]: {
         getService(): unknown;
         name: "@mozilla.org/synthspeechdispatcher;1";
         number: "{8817b1cf-5ada-43bf-bd73-607657703d0d}";
+        private typeName: "mozilla::dom::SpeechDispatcherService";
+        private interfaceName: "mozIilla::dom::SpeechDispatcherService";
     };
     ["@mozilla.org/fakesynth;1"]: {
         getService(): unknown;
         name: "@mozilla.org/fakesynth;1";
         number: "{e7d52d9e-c148-47d8-ab2a-95d7f40ea53d}";
+        private typeName: "mozilla::dom::nsFakeSynthServices";
+        private interfaceName: "mozIilla::dom::nsIFakeSynthServices";
     };
     ["@mozilla.org/synthsapi;1"]: {
         getService(): unknown;
         name: "@mozilla.org/synthsapi;1";
         number: "{21b4a45b-9806-4021-a706-d768ab0548f9}";
+        private typeName: "mozilla::dom::SapiService";
+        private interfaceName: "mozIilla::dom::SapiService";
     };
     ["@mozilla.org/webvttParserWrapper;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -418,56 +472,78 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/dom/payments/basiccard-change-details;1";
         number: "{5296f79e-15ea-40c3-8196-19cfa64d328c}";
+        private typeName: "mozilla::dom::BasicCardMethodChangeDetails";
+        private interfaceName: "mozIilla::dom::BasicCardMethodChangeDetails";
     };
     ["@mozilla.org/dom/payments/basiccard-response-data;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/dom/payments/basiccard-response-data;1";
         number: "{0d55a5e6-d185-44f0-b992-a8e1321e4bce}";
+        private typeName: "mozilla::dom::BasicCardResponseData";
+        private interfaceName: "mozIilla::dom::BasicCardResponsIeData";
     };
     ["@mozilla.org/dom/payments/general-change-details;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/dom/payments/general-change-details;1";
         number: "{e031267e-bec8-4f3c-b0b1-396b77ca260c}";
+        private typeName: "mozilla::dom::GeneralMethodChangeDetails";
+        private interfaceName: "mozIilla::dom::GeneralMethodChangeDetails";
     };
     ["@mozilla.org/dom/payments/general-response-data;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/dom/payments/general-response-data;1";
         number: "{b986773e-2b30-4ed2-b8fe-6a96631c8000}";
+        private typeName: "mozilla::dom::GeneralResponseData";
+        private interfaceName: "mozIilla::dom::GeneralResponsIeData";
     };
     ["@mozilla.org/dom/payments/payment-abort-action-response;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/dom/payments/payment-abort-action-response;1";
         number: "{8c72bcdb-0c37-4786-a9e5-510afa2f8ede}";
+        private typeName: "mozilla::dom::PaymentAbortActionResponse";
+        private interfaceName: "mozIilla::dom::PaymentAbortActionResponsIe";
     };
     ["@mozilla.org/dom/payments/payment-address;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/dom/payments/payment-address;1";
         number: "{49a02241-7e48-477a-9345-9f246925dcb3}";
+        private typeName: "mozilla::dom::payments::PaymentAddress";
+        private interfaceName: "mozIilla::dom::payments::PaymentAddress";
     };
     ["@mozilla.org/dom/payments/payment-canmake-action-response;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/dom/payments/payment-canmake-action-response;1";
         number: "{52fc3f9f-c0cb-4874-b3d4-ee4b6e9cbe9c}";
+        private typeName: "mozilla::dom::PaymentCanMakeActionResponse";
+        private interfaceName: "mozIilla::dom::PaymentCanMakeActionResponsIe";
     };
     ["@mozilla.org/dom/payments/payment-complete-action-response;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/dom/payments/payment-complete-action-response;1";
         number: "{62c01e69-9ca4-4060-99e4-b95f628c8e6d}";
+        private typeName: "mozilla::dom::PaymentCompleteActionResponse";
+        private interfaceName: "mozIilla::dom::PaymentCompleteActionResponsIe";
     };
     ["@mozilla.org/dom/payments/payment-request-service;1"]: {
         getService(): unknown;
         name: "@mozilla.org/dom/payments/payment-request-service;1";
         number: "{cccd665f-edf3-41fc-ab9b-fc55b37340aa}";
+        private typeName: "mozilla::dom::PaymentRequestService";
+        private interfaceName: "mozIilla::dom::PaymentRequestService";
     };
     ["@mozilla.org/dom/payments/payment-show-action-response;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/dom/payments/payment-show-action-response;1";
         number: "{184385cb-2d35-4b99-a9a3-7c780bf66b9b}";
+        private typeName: "mozilla::dom::PaymentShowActionResponse";
+        private interfaceName: "mozIilla::dom::PaymentShowActionResponsIe";
     };
     ["@mozilla.org/power/powermanagerservice;1"]: {
         getService(): unknown;
         name: "@mozilla.org/power/powermanagerservice;1";
         number: "{18c2e238-3a0a-4153-89fc-166b3b1465a1}";
+        private typeName: "mozilla::dom::power::PowerManagerService";
+        private interfaceName: "mozIilla::dom::power::PowerManagerService";
     };
     ["@mozilla.org/push/PushManager;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -483,11 +559,15 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/protocol;1?name=indexeddb";
         number: "{b6f2f870-b0bc-4a1a-9c40-02cc171adb5b}";
+        private typeName: "nsIndexedDBProtocolHandler";
+        private interfaceName: "nsIIndexedDBProtocolHandler";
     };
     ["@mozilla.org/dom/session-storage-service;1"]: {
         getService(): nsISessionStorageServiceType;
         name: "@mozilla.org/dom/session-storage-service;1";
         number: "{7ec4bc82-5022-4d32-8e98-ffbceadb692c}";
+        private typeName: "nsISessionStorageService";
+        private interfaceName: "nsIISessionStorageService";
     };
     ["@mozilla.org/geolocation/provider;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -513,141 +593,197 @@ declare var Cc: {
         getService(): nsIPermissionManagerType;
         name: "@mozilla.org/permissionmanager;1";
         number: "{4f6b5e00-0c36-11d5-a535-0010a401eb10}";
+        private typeName: "nsIPermissionManager";
+        private interfaceName: "nsIIPermissionManager";
     };
     ["@mozilla.org/permissiondelegatehandler;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/permissiondelegatehandler;1";
         number: "{07611dc6-bf4d-4d8a-a64b-f3a5904dddc7}";
+        private typeName: "PermissionDelegateHandler";
+        private interfaceName: "PermissionDelegateHandler";
     };
     ["@mozilla.org/readconfig;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/readconfig;1";
         number: "{ba5bc4c6-1dd1-11b2-bb89-b844c6ec0339}";
+        private typeName: "nsReadConfig";
+        private interfaceName: "nsIReadConfig";
     };
     ["@mozilla.org/spellchecker/engine;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/spellchecker/engine;1";
         number: "{56c778e4-1bee-45f3-a689-886692a97fe7}";
+        private typeName: "mozHunspell";
+        private interfaceName: "mozIHunsIpell";
     };
     ["@mozilla.org/spellchecker/personaldictionary;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/spellchecker/personaldictionary;1";
         number: "{7ef52eaf-b7e1-462b-87e2-5d1dbaca9048}";
+        private typeName: "mozPersonalDictionary";
+        private interfaceName: "mozIPersonalDictionary";
     };
     ["@mozilla.org/gfx/fontenumerator;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/gfx/fontenumerator;1";
         number: "{a6cf9115-15b3-11d2-932e-00805f8add32}";
+        private typeName: "nsThebesFontEnumerator";
+        private interfaceName: "nsIThebesFontEnumerator";
     };
     ["@mozilla.org/fxr/clh;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/fxr/clh;1";
         number: "{5baca10a-4d53-4335-b24d-c69696640a9a}";
+        private typeName: "nsFxrCommandLineHandler";
+        private interfaceName: "nsIFxrCommandLineHandler";
     };
     ["@mozilla.org/image/cache;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/image/cache;1";
         number: "{c1354898-e3fe-4602-88a7-c4520c21cb4e}";
+        private typeName: "imgLoader";
+        private interfaceName: "imgLoader";
     };
     ["@mozilla.org/image/loader;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/image/loader;1";
         number: "{c1354898-e3fe-4602-88a7-c4520c21cb4e}";
+        private typeName: "imgLoader";
+        private interfaceName: "imgLoader";
     };
     ["@mozilla.org/image-blocker-content-policy;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/image-blocker-content-policy;1";
         number: "{f6fcd651-164b-4416-b001-9c8c393fd93b}";
+        private typeName: "mozilla::image::ImageBlocker";
+        private interfaceName: "mozIilla::image::ImageBlocker";
     };
     ["@mozilla.org/image/request;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/image/request;1";
         number: "{20557898-1dd2-11b2-8f65-9c462ee2bc95}";
+        private typeName: "imgRequestProxy";
+        private interfaceName: "imgRequestProxy";
     };
     ["@mozilla.org/image/tools;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/image/tools;1";
         number: "{3d8fa16d-c9e1-4b50-bdef-2c7ae249967a}";
+        private typeName: "mozilla::image::imgTools";
+        private interfaceName: "mozIilla::image::imgTools";
     };
     ["@mozilla.org/image/encoder;2?type=image/bmp"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/image/encoder;2?type=image/bmp";
         number: "{13a5320c-4c91-4fa4-bd16-b081a3ba8c0b}";
+        private typeName: "nsBMPEncoder";
+        private interfaceName: "nsIBMPEncoder";
     };
     ["@mozilla.org/image/encoder;2?type=image/vnd.microsoft.icon"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/image/encoder;2?type=image/vnd.microsoft.icon";
         number: "{92ae3ab2-8968-41b1-8709-b6123bceaf21}";
+        private typeName: "nsICOEncoder";
+        private interfaceName: "nsIICOEncoder";
     };
     ["@mozilla.org/image/encoder;2?type=image/jpeg"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/image/encoder;2?type=image/jpeg";
         number: "{ac2bb8fe-eeeb-4572-b40f-be03932b56e0}";
+        private typeName: "nsJPEGEncoder";
+        private interfaceName: "nsIJPEGEncoder";
     };
     ["@mozilla.org/image/encoder;2?type=image/png"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/image/encoder;2?type=image/png";
         number: "{38d1592e-b81e-432b-86f8-471878bbfe07}";
+        private typeName: "nsPNGEncoder";
+        private interfaceName: "nsIPNGEncoder";
     };
     ["@mozilla.org/image/encoder;2?type=image/webp"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/image/encoder;2?type=image/webp";
         number: "{a8e5a8e5-bebf-4512-9f50-e41e4748ce28}";
+        private typeName: "nsWebPEncoder";
+        private interfaceName: "nsIWebPEncoder";
     };
     ["@mozilla.org/network/protocol;1?name=moz-icon"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/protocol;1?name=moz-icon";
         number: "{d0f9db12-249c-11d5-9905-001083010e9b}";
+        private typeName: "nsIconProtocolHandler";
+        private interfaceName: "nsIIconProtocolHandler";
     };
     ["@mozilla.org/intl/stringbundle;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/intl/stringbundle;1";
         number: "{d85a17c1-aa7c-11d2-9b8c-00805f8a16d9}";
+        private typeName: "nsStringBundleService";
+        private interfaceName: "nsIStringBundleService";
     };
     ["@mozilla.org/intl/localeservice;1"]: {
         getService(): mozILocaleServiceType;
         name: "@mozilla.org/intl/localeservice;1";
         number: "{92735ff4-6384-4ad6-8508-757010e149ee}";
+        private typeName: "mozilla::intl::LocaleService";
+        private interfaceName: "mozIilla::intl::LocaleService";
     };
     ["@mozilla.org/intl/ospreferences;1"]: {
         getService(): unknown;
         name: "@mozilla.org/intl/ospreferences;1";
         number: "{65944815-e9ae-48bd-a2bf-f1108720950c}";
+        private typeName: "mozilla::intl::OSPreferences";
+        private interfaceName: "mozIilla::intl::OSPreferences";
     };
     ["@mozilla.org/intl/converter-input-stream;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/intl/converter-input-stream;1";
         number: "{2bc2ad62-ad5d-4b7b-a9db-f74ae203c527}";
+        private typeName: "nsConverterInputStream";
+        private interfaceName: "nsIConverterInputStream";
     };
     ["@mozilla.org/intl/converter-output-stream;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/intl/converter-output-stream;1";
         number: "{ff8780a5-bbb1-4bc5-8ee7-057e7bc5c925}";
+        private typeName: "nsConverterOutputStream";
+        private interfaceName: "nsIConverterOutputStream";
     };
     ["@mozilla.org/intl/scriptableunicodeconverter"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/intl/scriptableunicodeconverter";
         number: "{0a698c44-3bff-11d4-9649-00c0ca135b4e}";
+        private typeName: "nsScriptableUnicodeConverter";
+        private interfaceName: "nsIScriptableUnicodeConverter";
     };
     ["@mozilla.org/intl/texttosuburi;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/intl/texttosuburi;1";
         number: "{8b042e22-6f87-11d3-b3c8-00805f8a6670}";
+        private typeName: "nsTextToSubURI";
+        private interfaceName: "nsITextToSubURI";
     };
     ["@mozilla.org/fork-server-launcher;1"]: {
         getService(): unknown;
         name: "@mozilla.org/fork-server-launcher;1";
         number: "{cdb4757f-f51b-40c0-8b38-66d12c3bff7b}";
+        private typeName: "mozilla::ipc::ForkServerLauncher";
+        private interfaceName: "mozIilla::ipc::ForkServerLauncher";
     };
     ["@mozilla.org/utility-process-test;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/utility-process-test;1";
         number: "{0a4478f4-c5ae-4fb1-8686-d5b09fb99afb}";
+        private typeName: "mozilla::ipc::UtilityProcessTest";
+        private interfaceName: "mozIilla::ipc::UtilityProcessTest";
     };
     ["@mozilla.org/moz/jssubscript-loader;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/moz/jssubscript-loader;1";
         number: "{929814d6-1dd2-11b2-8e08-82fa0a339b00}";
+        private typeName: "mozJSSubScriptLoader";
+        private interfaceName: "mozIJSSubScriptLoader";
     };
     ["@mozilla.org/childprocessmessagemanager;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -658,51 +794,71 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/content/document-loader-factory;1";
         number: "{fc886801-e768-11d4-9885-00c04fa0cf4b}";
+        private typeName: "nsIDocumentLoaderFactory";
+        private interfaceName: "nsIIDocumentLoaderFactory";
     };
     ["@mozilla.org/content/plugin/document-loader-factory;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/content/plugin/document-loader-factory;1";
         number: "{0ddf4df8-4dbb-4133-8b79-9afb966514f5}";
+        private typeName: "nsIDocumentLoaderFactory";
+        private interfaceName: "nsIIDocumentLoaderFactory";
     };
     ["@mozilla.org/content/style-sheet-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/content/style-sheet-service;1";
         number: "{3b55e72e-ab7e-431b-89c0-3b06a8b14016}";
+        private typeName: "nsStyleSheetService";
+        private interfaceName: "nsIStyleSheetService";
     };
     ["@mozilla.org/contentsecuritymanager;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/contentsecuritymanager;1";
         number: "{cdcc1ab8-3cea-4e6c-a294-a651fa35227f}";
+        private typeName: "nsContentSecurityManager";
+        private interfaceName: "nsIContentSecurityManager";
     };
     ["@mozilla.org/cspcontext;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/cspcontext;1";
         number: "{09d9ed1a-e5d4-4004-bfe0-27ceb923d9ac}";
+        private typeName: "nsCSPContext";
+        private interfaceName: "nsICSPContext";
     };
     ["@mozilla.org/cspservice;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/cspservice;1";
         number: "{8d2f40b2-4875-4c95-97d9-3f7dca2cb460}";
+        private typeName: "CSPService";
+        private interfaceName: "CSPService";
     };
     ["@mozilla.org/data-document-content-policy;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/data-document-content-policy;1";
         number: "{1147d32c-215b-4014-b180-07fe7aedf915}";
+        private typeName: "nsDataDocumentContentPolicy";
+        private interfaceName: "nsIDataDocumentContentPolicy";
     };
     ["@mozilla.org/devicesensors;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/devicesensors;1";
         number: "{ecba5203-77da-465a-865e-78b7af10d8f7}";
+        private typeName: "nsDeviceSensors";
+        private interfaceName: "nsIDeviceSensors";
     };
     ["@mozilla.org/docshell/structured-clone-container;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/docshell/structured-clone-container;1";
         number: "{38bd0634-0fd4-46f0-b85f-13ced889eeec}";
+        private typeName: "nsStructuredCloneContainer";
+        private interfaceName: "nsIStructuredCloneContainer";
     };
     ["@mozilla.org/dom/dom-request-service;1"]: {
         getService(): nsIDOMRequestServiceType;
         name: "@mozilla.org/dom/dom-request-service;1";
         number: "{3160e271-138d-4cc7-9d63-6429f16957c7}";
+        private typeName: "mozilla::dom::DOMRequestService";
+        private interfaceName: "mozIilla::dom::DOMRequestService";
     };
     ["@mozilla.org/dom/localStorage-manager;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -718,6 +874,8 @@ declare var Cc: {
         getService(): nsIQuotaManagerServiceType;
         name: "@mozilla.org/dom/quota-manager-service;1";
         number: "{5a75c25a-5e7e-4d90-8f7c-07eb15cc0aa8}";
+        private typeName: "mozilla::dom::quota::QuotaManagerService";
+        private interfaceName: "mozIilla::dom::quota::QuotaManagerService";
     };
     ["@mozilla.org/dom/sdb-connection;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -728,26 +886,36 @@ declare var Cc: {
         getService(): unknown;
         name: "@mozilla.org/dom/workers/workerdebuggermanager;1";
         number: "{62ec8731-55ad-4246-b2ea-f26c1fe19d2d}";
+        private typeName: "mozilla::dom::WorkerDebuggerManager";
+        private interfaceName: "mozIilla::dom::WorkerDebuggerManager";
     };
     ["@mozilla.org/eventlistenerservice;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/eventlistenerservice;1";
         number: "{baa34652-f1f1-4185-b224-244ee82a413a}";
+        private typeName: "nsIEventListenerService";
+        private interfaceName: "nsIIEventListenerService";
     };
     ["@mozilla.org/focus-manager;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/focus-manager;1";
         number: "{cf7fd51f-aba2-44c1-9ff0-11f7508efcd4}";
+        private typeName: "nsIFocusManager";
+        private interfaceName: "nsIIFocusManager";
     };
     ["@mozilla.org/gecko-media-plugin-service;1"]: {
         getService(): unknown;
         name: "@mozilla.org/gecko-media-plugin-service;1";
         number: "{7b121f7e-ebe4-43ab-9410-dc9087a1dba6}";
+        private typeName: "mozilla::gmp::GeckoMediaPluginService";
+        private interfaceName: "mozIilla::gmp::GeckoMediaPluginService";
     };
     ["@mozilla.org/geolocation;1"]: {
         getService(): unknown;
         name: "@mozilla.org/geolocation;1";
         number: "{01e1c3ff-094a-d048-44b4-62d29c7b4f39}";
+        private typeName: "mozilla::dom::Geolocation";
+        private interfaceName: "mozIilla::dom::Geolocation";
     };
     ["@mozilla.org/globalmessagemanager;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -758,6 +926,8 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/inspector/deep-tree-walker;1";
         number: "{bfcb82c2-5611-4318-90d6-baf4a7864252}";
+        private typeName: "inDeepTreeWalker";
+        private interfaceName: "inDeepTreeWalker";
     };
     ["@mozilla.org/layout/content-policy;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -768,21 +938,29 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/layout/contentserializer;1?mimetype=application/vnd.mozilla.xul+xml";
         number: "{4aef38b7-6364-4e23-a5e7-12f837fbbd9c}";
+        private typeName: "nsIContentSerializer";
+        private interfaceName: "nsIIContentSerializer";
     };
     ["@mozilla.org/layout/contentserializer;1?mimetype=application/xml"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/layout/contentserializer;1?mimetype=application/xml";
         number: "{4aef38b7-6364-4e23-a5e7-12f837fbbd9c}";
+        private typeName: "nsIContentSerializer";
+        private interfaceName: "nsIIContentSerializer";
     };
     ["@mozilla.org/layout/contentserializer;1?mimetype=image/svg+xml"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/layout/contentserializer;1?mimetype=image/svg+xml";
         number: "{4aef38b7-6364-4e23-a5e7-12f837fbbd9c}";
+        private typeName: "nsIContentSerializer";
+        private interfaceName: "nsIIContentSerializer";
     };
     ["@mozilla.org/layout/contentserializer;1?mimetype=text/xml"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/layout/contentserializer;1?mimetype=text/xml";
         number: "{4aef38b7-6364-4e23-a5e7-12f837fbbd9c}";
+        private typeName: "nsIContentSerializer";
+        private interfaceName: "nsIIContentSerializer";
     };
     ["@mozilla.org/layout/contentserializer;1?mimetype=application/xhtml+xml"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -793,6 +971,8 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/layout/contentserializer;1?mimetype=text/html";
         number: "{9d3f70da-86e9-11d4-95ec-00b0d03e37b7}";
+        private typeName: "nsIContentSerializer";
+        private interfaceName: "nsIIContentSerializer";
     };
     ["@mozilla.org/layout/contentserializer;1?mimetype=text/plain"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -803,26 +983,36 @@ declare var Cc: {
         getService(): unknown;
         name: "@mozilla.org/mediaManagerService;1";
         number: "{abc622ea-9655-4123-80d9-22621bdd5465}";
+        private typeName: "nsIMediaManagerService";
+        private interfaceName: "nsIIMediaManagerService";
     };
     ["@mozilla.org/mixedcontentblocker;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/mixedcontentblocker;1";
         number: "{daf1461b-bf29-4f88-8d0e-4bcdf332c862}";
+        private typeName: "nsMixedContentBlocker";
+        private interfaceName: "nsIMixedContentBlocker";
     };
     ["@mozilla.org/referrer-info;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/referrer-info;1";
         number: "{041a129f-10ce-4bda-a60d-e027a26d5ed0}";
+        private typeName: "mozilla::dom::ReferrerInfo";
+        private interfaceName: "mozIilla::dom::ReferrerInfo";
     };
     ["@mozilla.org/network/protocol;1?name=javascript"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/protocol;1?name=javascript";
         number: "{bfc310d2-38a0-11d3-8cd3-0060b0fc14a3}";
+        private typeName: "nsJSProtocolHandler";
+        private interfaceName: "nsIJSProtocolHandler";
     };
     ["@mozilla.org/no-data-protocol-content-policy;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/no-data-protocol-content-policy;1";
         number: "{ac9e3e82-bfbd-4f26-941e-f58c8ee178c1}";
+        private typeName: "nsNoDataProtocolContentPolicy";
+        private interfaceName: "nsINoDataProtocolContentPolicy";
     };
     ["@mozilla.org/parentprocessmessagemanager;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -833,21 +1023,29 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/parserutils;1";
         number: "{af7b24cb-893f-41bb-961f-5a69388e27c3}";
+        private typeName: "nsParserUtils";
+        private interfaceName: "nsIParserUtils";
     };
     ["@mozilla.org/push/Notifier;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/push/Notifier;1";
         number: "{2fc2d3e3-020f-404e-b06a-6ecf3ea2334a}";
+        private typeName: "mozilla::dom::PushNotifier";
+        private interfaceName: "mozIilla::dom::PushNotifier";
     };
     ["@mozilla.org/scriptable-content-iterator;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/scriptable-content-iterator;1";
         number: "{f68037ec-2790-44c5-8e5f-df5da58b93a7}";
+        private typeName: "ScriptableContentIterator";
+        private interfaceName: "ScriptableContentIterator";
     };
     ["@mozilla.org/scripterror;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/scripterror;1";
         number: "{1950539a-90f0-4d22-b5af-71329c68fa35}";
+        private typeName: "nsScriptError";
+        private interfaceName: "nsIScriptError";
     };
     ["@mozilla.org/scriptsecuritymanager;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -858,66 +1056,92 @@ declare var Cc: {
         getService(): unknown;
         name: "@mozilla.org/serviceworkers/manager;1";
         number: "{c74bde32-bcc7-4840-8430-c733351b212a}";
+        private typeName: "mozilla::dom::ServiceWorkerManager";
+        private interfaceName: "mozIilla::dom::ServiceWorkerManager";
     };
     ["@mozilla.org/storage/activity-service;1"]: {
         getService(): unknown;
         name: "@mozilla.org/storage/activity-service;1";
         number: "{69da374a-fda3-4a93-9fbc-d9304f66a7fe}";
+        private typeName: "mozilla::dom::StorageActivityService";
+        private interfaceName: "mozIilla::dom::StorageActivityService";
     };
     ["@mozilla.org/systemprincipal;1"]: {
         getService(): unknown;
         name: "@mozilla.org/systemprincipal;1";
         number: "{4a6212db-accb-11d3-b765-0060b0b6cecb}";
+        private typeName: "nsIPrincipal";
+        private interfaceName: "nsIIPrincipal";
     };
     ["@mozilla.org/text-input-processor;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/text-input-processor;1";
         number: "{caaab47f-1e31-478e-8919-970904e9cb72}";
+        private typeName: "mozilla::TextInputProcessor";
+        private interfaceName: "mozIilla::TextInputProcessor";
     };
     ["@mozilla.org/thirdpartyutil;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/thirdpartyutil;1";
         number: "{08c6cc8b-cfb0-421d-b1f7-683ff2989681}";
+        private typeName: "ThirdPartyUtil";
+        private interfaceName: "ThirdPartyUtil";
     };
     ["@mozilla.org/websocketevent/service;1"]: {
         getService(): unknown;
         name: "@mozilla.org/websocketevent/service;1";
         number: "{31689828-da66-49a6-870c-df62b83fe789}";
+        private typeName: "mozilla::net::WebSocketEventService";
+        private interfaceName: "mozIilla::net::WebSocketEventService";
     };
     ["@mozilla.org/eventsourceevent/service;1"]: {
         getService(): unknown;
         name: "@mozilla.org/eventsourceevent/service;1";
         number: "{abfbb785-5a44-49cf-88db-2f300bf727c9}";
+        private typeName: "mozilla::dom::EventSourceEventService";
+        private interfaceName: "mozIilla::dom::EventSourceEventService";
     };
     ["@mozilla.org/synth-voice-registry;1"]: {
         getService(): unknown;
         name: "@mozilla.org/synth-voice-registry;1";
         number: "{7090524d-5574-4492-a77f-d8d558ced59d}";
+        private typeName: "mozilla::dom::nsSynthVoiceRegistry";
+        private interfaceName: "mozIilla::dom::nsISynthVoiceRegistry";
     };
     ["@mozilla.org/webspeech/service;1?name=online"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/webspeech/service;1?name=online";
         number: "{0ff5ce56-5b09-4db8-adc6-8266af95f864}";
+        private typeName: "mozilla::OnlineSpeechRecognitionService";
+        private interfaceName: "mozIilla::OnlineSpeechRecognitionService";
     };
     ["@mozilla.org/webspeech/service;1?name=fake"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/webspeech/service;1?name=fake";
         number: "{48c345e7-9929-4f9a-a563-f478222dabcd}";
+        private typeName: "mozilla::FakeSpeechRecognitionService";
+        private interfaceName: "mozIilla::FakeSpeechRecognitionService";
     };
     ["@mozilla.org/accessibilityService;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/accessibilityService;1";
         number: "{3b265b69-f813-48ff-880d-d88d101af404}";
+        private typeName: "nsIAccessibilityService";
+        private interfaceName: "nsIIAccessibilityService";
     };
     ["@mozilla.org/layout-debug/layout-debuggingtools;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/layout-debug/layout-debuggingtools;1";
         number: "{3f4c3b63-e640-4712-abbf-fff1301ceb60}";
+        private typeName: "nsLayoutDebuggingTools";
+        private interfaceName: "nsILayoutDebuggingTools";
     };
     ["@mozilla.org/commandlinehandler/general-startup;1?type=layoutdebug"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/commandlinehandler/general-startup;1?type=layoutdebug";
         number: "{a8f52633-5ecf-424a-a147-47c322f7bc2e}";
+        private typeName: "nsLayoutDebugCLH";
+        private interfaceName: "nsILayoutDebugCLH";
     };
     ["@mozilla.org/embedcomp/prompt-collection;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -968,101 +1192,141 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/uriloader/external-helper-app-service;1";
         number: "{91455c77-64a1-4c37-be00-f94eb9c7b8e1}";
+        private typeName: "GeckoViewExternalAppService";
+        private interfaceName: "GeckoViewExternalAppService";
     };
     ["@mozilla.org/browser/history;1"]: {
         getService(): unknown;
         name: "@mozilla.org/browser/history;1";
         number: "{0937a705-91a6-417a-8292-b22eb10da86c}";
+        private typeName: "GeckoViewHistory";
+        private interfaceName: "GeckoViewHistory";
     };
     ["@mozilla.org/libjar/zip-reader;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/libjar/zip-reader;1";
         number: "{88e2fd0b-f7f4-480c-9483-7846b00e8dad}";
+        private typeName: "nsJAR";
+        private interfaceName: "nsIJAR";
     };
     ["@mozilla.org/network/protocol;1?name=jar"]: {
         getService(): unknown;
         name: "@mozilla.org/network/protocol;1?name=jar";
         number: "{c7e410d4-85f2-11d3-9f63-006008a6efe9}";
+        private typeName: "nsJARProtocolHandler";
+        private interfaceName: "nsIJARProtocolHandler";
     };
     ["@mozilla.org/libjar/zip-reader-cache;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/libjar/zip-reader-cache;1";
         number: "{608b7f6f-4b60-40d6-87ed-d933bf53d8c1}";
+        private typeName: "nsZipReaderCache";
+        private interfaceName: "nsIZipReaderCache";
     };
     ["@mozilla.org/streamconv;1?from=uncompressed&to=deflate"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/streamconv;1?from=uncompressed&to=deflate";
         number: "{461cd5dd-73c6-47a4-8cc3-603b37d84a61}";
+        private typeName: "nsDeflateConverter";
+        private interfaceName: "nsIDeflateConverter";
     };
     ["@mozilla.org/streamconv;1?from=uncompressed&to=gzip"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/streamconv;1?from=uncompressed&to=gzip";
         number: "{461cd5dd-73c6-47a4-8cc3-603b37d84a61}";
+        private typeName: "nsDeflateConverter";
+        private interfaceName: "nsIDeflateConverter";
     };
     ["@mozilla.org/streamconv;1?from=uncompressed&to=rawdeflate"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/streamconv;1?from=uncompressed&to=rawdeflate";
         number: "{461cd5dd-73c6-47a4-8cc3-603b37d84a61}";
+        private typeName: "nsDeflateConverter";
+        private interfaceName: "nsIDeflateConverter";
     };
     ["@mozilla.org/streamconv;1?from=uncompressed&to=x-gzip"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/streamconv;1?from=uncompressed&to=x-gzip";
         number: "{461cd5dd-73c6-47a4-8cc3-603b37d84a61}";
+        private typeName: "nsDeflateConverter";
+        private interfaceName: "nsIDeflateConverter";
     };
     ["@mozilla.org/zipwriter;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/zipwriter;1";
         number: "{430d416c-a722-4ad1-be98-d9a445f85e3f}";
+        private typeName: "nsZipWriter";
+        private interfaceName: "nsIZipWriter";
     };
     ["@mozilla.org/preferences-service;1"]: {
         getService(): nsIPrefServiceType;
         name: "@mozilla.org/preferences-service;1";
         number: "{91ca2441-050f-4f7c-9df8-75b40ea40156}";
+        private typeName: "mozilla::Preferences";
+        private interfaceName: "mozIilla::Preferences";
     };
     ["@mozilla.org/pref-localizedstring;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/pref-localizedstring;1";
         number: "{064d9cee-1dd2-11b2-83e3-d25ab0193c26}";
+        private typeName: "nsPrefLocalizedString";
+        private interfaceName: "nsIPrefLocalizedString";
     };
     ["@mozilla.org/io/arraybuffer-input-stream;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/io/arraybuffer-input-stream;1";
         number: "{3014dde6-aa1c-41db-87d0-48764a3710f6}";
+        private typeName: "ArrayBufferInputStream";
+        private interfaceName: "ArrayBufferInputStream";
     };
     ["@mozilla.org/load-context-info-factory;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/load-context-info-factory;1";
         number: "{62d4b190-3642-4450-b019-d1c1fba56025}";
+        private typeName: "mozilla::net::LoadContextInfoFactory";
+        private interfaceName: "mozIilla::net::LoadContextInfoFactory";
     };
     ["@mozilla.org/netwerk/cache-storage-service;1"]: {
         getService(): nsICacheStorageServiceType;
         name: "@mozilla.org/netwerk/cache-storage-service;1";
         number: "{ea70b098-5014-4e21-aee1-75e6b2c4b8e0}";
+        private typeName: "mozilla::net::CacheStorageService";
+        private interfaceName: "mozIilla::net::CacheStorageService";
     };
     ["@mozilla.org/network/cache-storage-service;1"]: {
         getService(): unknown;
         name: "@mozilla.org/network/cache-storage-service;1";
         number: "{ea70b098-5014-4e21-aee1-75e6b2c4b8e0}";
+        private typeName: "mozilla::net::CacheStorageService";
+        private interfaceName: "mozIilla::net::CacheStorageService";
     };
     ["@mozilla.org/network/async-stream-copier;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/async-stream-copier;1";
         number: "{e746a8b1-c97a-4fc5-baa4-66607521bd08}";
+        private typeName: "nsAsyncStreamCopier";
+        private interfaceName: "nsIAsyncStreamCopier";
     };
     ["@mozilla.org/network/atomic-file-output-stream;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/atomic-file-output-stream;1";
         number: "{6eae857e-4ba9-11e3-9b39-b4036188709b}";
+        private typeName: "nsAtomicFileOutputStream";
+        private interfaceName: "nsIAtomicFileOutputStream";
     };
     ["@mozilla.org/network/background-file-saver;1?mode=outputstream"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/background-file-saver;1?mode=outputstream";
         number: "{62147d1e-ef6a-40e8-aaf8-d039f5caaa81}";
+        private typeName: "mozilla::net::BackgroundFileSaverOutputStream";
+        private interfaceName: "mozIilla::net::BackgroundFileSaverOutputStream";
     };
     ["@mozilla.org/network/background-file-saver;1?mode=streamlistener"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/background-file-saver;1?mode=streamlistener";
         number: "{208de7fc-a781-4031-bbae-cc0de539f61a}";
+        private typeName: "mozilla::net::BackgroundFileSaverStreamListener";
+        private interfaceName: "mozIilla::net::BackgroundFileSaverStreamListener";
     };
     ["@mozilla.org/network/binary-detector;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1083,31 +1347,43 @@ declare var Cc: {
         getService(): unknown;
         name: "@mozilla.org/network/captive-portal-service;1";
         number: "{bdbe0555-fc3d-4f7b-9205-c309ceb2d641}";
+        private typeName: "nsICaptivePortalService";
+        private interfaceName: "nsIICaptivePortalService";
     };
     ["@mozilla.org/network/dashboard;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/dashboard;1";
         number: "{c79eb3c6-091a-45a6-8544-5a8d1ab79537}";
+        private typeName: "mozilla::net::Dashboard";
+        private interfaceName: "mozIilla::net::Dashboard";
     };
     ["@mozilla.org/network/dns-service;1"]: {
         getService(): nsIDNSServiceType;
         name: "@mozilla.org/network/dns-service;1";
         number: "{b0ff4572-dae4-4bef-a092-83c1b88f6be9}";
+        private typeName: "nsIDNSService";
+        private interfaceName: "nsIIDNSService";
     };
     ["@mozilla.org/network/native-dns-override;1"]: {
         getService(): unknown;
         name: "@mozilla.org/network/native-dns-override;1";
         number: "{4ffae79e-57bd-4d7a-a0c9-0045a17b3615}";
+        private typeName: "nsINativeDNSResolverOverride";
+        private interfaceName: "nsIINativeDNSResolverOverride";
     };
     ["@mozilla.org/network/downloader;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/downloader;1";
         number: "{510a86bb-6019-4ed1-bb4f-965cffd23ece}";
+        private typeName: "nsDownloader";
+        private interfaceName: "nsIDownloader";
     };
     ["@mozilla.org/network/effective-tld-service;1"]: {
         getService(): nsIEffectiveTLDServiceType;
         name: "@mozilla.org/network/effective-tld-service;1";
         number: "{cb9abbae-66b6-4609-8594-5c4ff300888e}";
+        private typeName: "nsEffectiveTLDService";
+        private interfaceName: "nsIEffectiveTLDService";
     };
     ["@mozilla.org/network/file-input-stream;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1128,16 +1404,22 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/http-activity-distributor;1";
         number: "{15629ada-a41c-4a09-961f-6553cd60b1a2}";
+        private typeName: "mozilla::net::nsHttpActivityDistributor";
+        private interfaceName: "mozIilla::net::nsIHttpActivityDistributor";
     };
     ["@mozilla.org/network/http-auth-manager;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/http-auth-manager;1";
         number: "{36b63ef3-e0fa-4c49-9fd4-e065e85568f4}";
+        private typeName: "mozilla::net::nsHttpAuthManager";
+        private interfaceName: "mozIilla::net::nsIHttpAuthManager";
     };
     ["@mozilla.org/network/idn-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/idn-service;1";
         number: "{62b778a6-bce3-456b-8c31-2865fbb68c91}";
+        private typeName: "nsIDNService";
+        private interfaceName: "nsIIDNService";
     };
     ["@mozilla.org/network/incremental-download;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1153,21 +1435,29 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/input-stream-channel;1";
         number: "{6ddb050c-0d04-11d4-986e-00c04fa0cf4a}";
+        private typeName: "mozilla::net::nsInputStreamChannel";
+        private interfaceName: "mozIilla::net::nsIInputStreamChannel";
     };
     ["@mozilla.org/network/input-stream-pump;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/input-stream-pump;1";
         number: "{ccd0e960-7947-4635-b70e-4c661b63d675}";
+        private typeName: "nsInputStreamPump";
+        private interfaceName: "nsIInputStreamPump";
     };
     ["@mozilla.org/network/io-service;1"]: {
         getService(): nsIIOServiceType;
         name: "@mozilla.org/network/io-service;1";
         number: "{9ac9e770-18bc-11d3-9337-00104ba0fd40}";
+        private typeName: "mozilla::net::nsIOService";
+        private interfaceName: "mozIilla::net::nsIIOService";
     };
     ["@mozilla.org/network/util;1"]: {
         getService(): nsISpeculativeConnectType;
         name: "@mozilla.org/network/util;1";
         number: "{9ac9e770-18bc-11d3-9337-00104ba0fd40}";
+        private typeName: "mozilla::net::nsIOService";
+        private interfaceName: "mozIilla::net::nsIIOService";
     };
     ["@mozilla.org/network/load-group;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1178,6 +1468,8 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/mime-hdrparam;1";
         number: "{1f4dbcf7-245c-4c8c-943d-8a1da0495e8a}";
+        private typeName: "nsMIMEHeaderParamImpl";
+        private interfaceName: "nsIMIMEHeaderParamImpl";
     };
     ["@mozilla.org/network/mime-input-stream;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1188,6 +1480,8 @@ declare var Cc: {
         getService(): unknown;
         name: "@mozilla.org/network/network-connectivity-service;1";
         number: "{2693457e-3ba5-4455-991f-5350946adb12}";
+        private typeName: "nsINetworkConnectivityService";
+        private interfaceName: "nsIINetworkConnectivityService";
     };
     ["@mozilla.org/network/predictor;1"]: {
         getService(): unknown;
@@ -1198,6 +1492,8 @@ declare var Cc: {
         getService(): unknown;
         name: "@mozilla.org/network/protocol-proxy-service;1";
         number: "{e9b301c0-e0e4-11d3-a1a8-0050041caf44}";
+        private typeName: "mozilla::net::nsProtocolProxyService";
+        private interfaceName: "mozIilla::net::nsIProtocolProxyService";
     };
     ["@mozilla.org/network/protocol/about;1?what=blank"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1213,11 +1509,15 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/protocol/about;1?what=cache-entry";
         number: "{7fa5237d-b0eb-438f-9e50-ca0166e63788}";
+        private typeName: "nsAboutCacheEntry";
+        private interfaceName: "nsIAboutCacheEntry";
     };
     ["@mozilla.org/network/protocol;1?name=about"]: {
         getService(): unknown;
         name: "@mozilla.org/network/protocol;1?name=about";
         number: "{9e3b6c90-2f75-11d3-8cd0-0060b0fc14a3}";
+        private typeName: "mozilla::net::nsAboutProtocolHandler";
+        private interfaceName: "mozIilla::net::nsIAboutProtocolHandler";
     };
     ["@mozilla.org/network/protocol;1?name=data"]: {
         getService(): unknown;
@@ -1228,41 +1528,57 @@ declare var Cc: {
         getService(): unknown;
         name: "@mozilla.org/network/protocol;1?name=file";
         number: "{fbc81170-1f69-11d3-9344-00104ba0fd40}";
+        private typeName: "nsFileProtocolHandler";
+        private interfaceName: "nsIFileProtocolHandler";
     };
     ["@mozilla.org/network/protocol;1?name=http"]: {
         getService(): unknown;
         name: "@mozilla.org/network/protocol;1?name=http";
         number: "{4f47e42e-4d23-4dd3-bfda-eb29255e9ea3}";
+        private typeName: "mozilla::net::nsHttpHandler";
+        private interfaceName: "mozIilla::net::nsIHttpHandler";
     };
     ["@mozilla.org/network/protocol;1?name=https"]: {
         getService(): unknown;
         name: "@mozilla.org/network/protocol;1?name=https";
         number: "{dccbe7e4-7750-466b-a557-5ea36c8ff24e}";
+        private typeName: "mozilla::net::nsHttpsHandler";
+        private interfaceName: "mozIilla::net::nsIHttpsHandler";
     };
     ["@mozilla.org/network/protocol;1?name=moz-extension"]: {
         getService(): unknown;
         name: "@mozilla.org/network/protocol;1?name=moz-extension";
         number: "{aea16cd0-f020-4138-b068-0716c4a15b5a}";
+        private typeName: "mozilla::net::ExtensionProtocolHandler";
+        private interfaceName: "mozIilla::net::ExtensIionProtocolHandler";
     };
     ["@mozilla.org/network/protocol;1?name=moz-page-thumb"]: {
         getService(): unknown;
         name: "@mozilla.org/network/protocol;1?name=moz-page-thumb";
         number: "{450a2b55-620a-44b3-9f67-839b3b0c329c}";
+        private typeName: "mozilla::net::PageThumbProtocolHandler";
+        private interfaceName: "mozIilla::net::PageThumbProtocolHandler";
     };
     ["@mozilla.org/network/protocol;1?name=moz-safe-about"]: {
         getService(): unknown;
         name: "@mozilla.org/network/protocol;1?name=moz-safe-about";
         number: "{1423e739-782c-4081-b5d8-fe6fba68c0ef}";
+        private typeName: "mozilla::net::nsSafeAboutProtocolHandler";
+        private interfaceName: "mozIilla::net::nsISafeAboutProtocolHandler";
     };
     ["@mozilla.org/network/protocol;1?name=resource"]: {
         getService(): unknown;
         name: "@mozilla.org/network/protocol;1?name=resource";
         number: "{e64f152a-9f07-11d3-8cda-0060b0fc14a3}";
+        private typeName: "nsResProtocolHandler";
+        private interfaceName: "nsIResProtocolHandler";
     };
     ["@mozilla.org/network/protocol;1?name=view-source"]: {
         getService(): unknown;
         name: "@mozilla.org/network/protocol;1?name=view-source";
         number: "{9c7ec5d1-23f9-11d5-aea8-8fcc0793e97f}";
+        private typeName: "mozilla::net::nsViewSourceHandler";
+        private interfaceName: "mozIilla::net::nsIViewSourceHandler";
     };
     ["@mozilla.org/network/protocol;1?name=ws"]: {
         getService(): unknown;
@@ -1278,46 +1594,64 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/safe-file-output-stream;1";
         number: "{a181af0d-68b8-4308-94db-d4f859058215}";
+        private typeName: "nsSafeFileOutputStream";
+        private interfaceName: "nsISafeFileOutputStream";
     };
     ["@mozilla.org/network/serialization-helper;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/serialization-helper;1";
         number: "{d6ef593d-a429-4b14-a887-d9e2f765d9ed}";
+        private typeName: "nsSerializationHelper";
+        private interfaceName: "nsISerializationHelper";
     };
     ["@mozilla.org/network/server-socket;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/server-socket;1";
         number: "{2ec62893-3b35-48fa-ab1d-5e68a9f45f08}";
+        private typeName: "mozilla::net::nsServerSocket";
+        private interfaceName: "mozIilla::net::nsIServerSocket";
     };
     ["@mozilla.org/network/simple-stream-listener;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/simple-stream-listener;1";
         number: "{fb8cbf4e-4701-4ba1-b1d6-5388e041fb67}";
+        private typeName: "mozilla::net::nsSimpleStreamListener";
+        private interfaceName: "mozIilla::net::nsISimpleStreamListener";
     };
     ["@mozilla.org/network/simple-uri-mutator;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/simple-uri-mutator;1";
         number: "{2be14592-28d4-4a83-8fe9-08e778849f6e}";
+        private typeName: "mozilla::net::nsSimpleURI::Mutator";
+        private interfaceName: "mozIilla::net::nsISimpleURI::Mutator";
     };
     ["@mozilla.org/network/default-uri-mutator;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/default-uri-mutator;1";
         number: "{04445aa0-fd27-4c99-bd41-6be6318ae92c}";
+        private typeName: "mozilla::net::DefaultURI::Mutator";
+        private interfaceName: "mozIilla::net::DefaultURI::Mutator";
     };
     ["@mozilla.org/network/socket-transport-service;1"]: {
         getService(): unknown;
         name: "@mozilla.org/network/socket-transport-service;1";
         number: "{ad56b25f-e6bb-4db3-9f7b-5b7db33fd2b1}";
+        private typeName: "mozilla::net::nsSocketTransportService";
+        private interfaceName: "mozIilla::net::nsISocketTransportService";
     };
     ["@mozilla.org/network/standard-url-mutator;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/standard-url-mutator;1";
         number: "{ce7d7da0-fb28-44a3-8c7b-000c165918f4}";
+        private typeName: "mozilla::net::nsStandardURL::Mutator";
+        private interfaceName: "mozIilla::net::nsIStandardURL::Mutator";
     };
     ["@mozilla.org/network/stream-listener-tee;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/stream-listener-tee;1";
         number: "{831f8f13-7aa8-485f-b02e-77c881cc5773}";
+        private typeName: "mozilla::net::nsStreamListenerTee";
+        private interfaceName: "mozIilla::net::nsIStreamListenerTee";
     };
     ["@mozilla.org/network/stream-loader;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1328,36 +1662,50 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/stream-transport-service;1";
         number: "{0885d4f8-f7b8-4cda-902e-94ba38bc256e}";
+        private typeName: "mozilla::net::nsStreamTransportService";
+        private interfaceName: "mozIilla::net::nsIStreamTransportService";
     };
     ["@mozilla.org/network/throttlequeue;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/throttlequeue;1";
         number: "{4c39159c-cd90-4dd3-97a7-06af5e6d84c4}";
+        private typeName: "nsIInputChannelThrottleQueue";
+        private interfaceName: "nsIIInputChannelThrottleQueue";
     };
     ["@mozilla.org/network/tls-server-socket;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/tls-server-socket;1";
         number: "{1813cbb4-c98e-4622-8c7d-839167f3f272}";
+        private typeName: "mozilla::net::TLSServerSocket";
+        private interfaceName: "mozIilla::net::TLSServerSocket";
     };
     ["@mozilla.org/network/udp-socket;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/udp-socket;1";
         number: "{c9f74572-7b8e-4fec-bb4a-03c0d3021bd6}";
+        private typeName: "mozilla::net::nsUDPSocket";
+        private interfaceName: "mozIilla::net::nsIUDPSocket";
     };
     ["@mozilla.org/network/url-parser;1?auth=maybe"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/url-parser;1?auth=maybe";
         number: "{ff41913b-546a-4bff-9201-dc9b2c032eba}";
+        private typeName: "nsStdURLParser";
+        private interfaceName: "nsIStdURLParser";
     };
     ["@mozilla.org/network/url-parser;1?auth=no"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/url-parser;1?auth=no";
         number: "{78804a84-8173-42b6-bb94-789f0816a810}";
+        private typeName: "nsNoAuthURLParser";
+        private interfaceName: "nsINoAuthURLParser";
     };
     ["@mozilla.org/network/url-parser;1?auth=yes"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/url-parser;1?auth=yes";
         number: "{275d800e-3f60-4896-adb7-d7f390ce0e42}";
+        private typeName: "nsAuthURLParser";
+        private interfaceName: "nsIAuthURLParser";
     };
     ["@mozilla.org/streamConverters;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1428,11 +1776,15 @@ declare var Cc: {
         getService(): nsICookieServiceType;
         name: "@mozilla.org/cookieService;1";
         number: "{c375fa80-150f-11d6-a618-0010a401eb10}";
+        private typeName: "nsICookieService";
+        private interfaceName: "nsIICookieService";
     };
     ["@mozilla.org/cookiemanager;1"]: {
         getService(): nsICookieManagerType;
         name: "@mozilla.org/cookiemanager;1";
         number: "{c375fa80-150f-11d6-a618-0010a401eb10}";
+        private typeName: "nsICookieService";
+        private interfaceName: "nsIICookieService";
     };
     ["@mozilla.org/http-sfv-service;1"]: {
         getService(): unknown;
@@ -1443,21 +1795,29 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/cookieJarSettings;1";
         number: "{4ce234f1-52e8-47a9-8c8d-b02f815733c7}";
+        private typeName: "nsICookieJarSettings";
+        private interfaceName: "nsIICookieJarSettings";
     };
     ["@mozilla.org/wifi/monitor;1"]: {
         getService(): unknown;
         name: "@mozilla.org/wifi/monitor;1";
         number: "{3ff8fb9f-ee63-48df-89f0-dace0242fd82}";
+        private typeName: "nsWifiMonitor";
+        private interfaceName: "nsIWifiMonitor";
     };
     ["@mozilla.org/net/CachePurgeLock;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/net/CachePurgeLock;1";
         number: "{72da39cc-0b9b-4fff-8ff9-d3b9a41d0dc4}";
+        private typeName: "mozilla::net::CachePurgeLock";
+        private interfaceName: "mozIilla::net::CachePurgeLock";
     };
     ["@mozilla.org/network/protocol;1?name=moz-gio"]: {
         getService(): unknown;
         name: "@mozilla.org/network/protocol;1?name=moz-gio";
         number: "{ee706783-3af8-4d19-9e84-e2ebfe213480}";
+        private typeName: "nsGIOProtocolHandler";
+        private interfaceName: "nsIGIOProtocolHandler";
     };
     ["@mozilla.org/network/well-known-opportunistic-utils;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1478,11 +1838,15 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/oblivious-http-service;1";
         number: "{b1f08d56-fca6-4290-9500-d5168dc9d8c3}";
+        private typeName: "mozilla::net::ObliviousHttpService";
+        private interfaceName: "mozIilla::net::ObliviousHttpService";
     };
     ["@mozilla.org/url-classifier/channel-classifier-service;1"]: {
         getService(): unknown;
         name: "@mozilla.org/url-classifier/channel-classifier-service;1";
         number: "{7a6da992-dbce-4943-b463-5a2dd011fa1a}";
+        private typeName: "nsIChannelClassifierService";
+        private interfaceName: "nsIIChannelClassifierService";
     };
     ["@mozilla.org/url-classifier/exception-list-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1503,66 +1867,92 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/nsCertificateDialogs;1";
         number: "{518e071f-1dd2-11b2-937e-c45f14def778}";
+        private typeName: "nsNSSDialogs";
+        private interfaceName: "nsINSSDialogs";
     };
     ["@mozilla.org/nsClientAuthDialogs;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/nsClientAuthDialogs;1";
         number: "{518e071f-1dd2-11b2-937e-c45f14def778}";
+        private typeName: "nsNSSDialogs";
+        private interfaceName: "nsINSSDialogs";
     };
     ["@mozilla.org/nsGeneratingKeypairInfoDialogs;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/nsGeneratingKeypairInfoDialogs;1";
         number: "{518e071f-1dd2-11b2-937e-c45f14def778}";
+        private typeName: "nsNSSDialogs";
+        private interfaceName: "nsINSSDialogs";
     };
     ["@mozilla.org/nsTokenDialogs;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/nsTokenDialogs;1";
         number: "{518e071f-1dd2-11b2-937e-c45f14def778}";
+        private typeName: "nsNSSDialogs";
+        private interfaceName: "nsINSSDialogs";
     };
     ["@mozilla.org/nsTokenPasswordDialogs;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/nsTokenPasswordDialogs;1";
         number: "{518e071f-1dd2-11b2-937e-c45f14def778}";
+        private typeName: "nsNSSDialogs";
+        private interfaceName: "nsINSSDialogs";
     };
     ["@mozilla.org/psm;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/psm;1";
         number: "{4cb64dfd-ca98-4e24-befd-0d9285a33bcb}";
+        private typeName: "nsNSSComponent";
+        private interfaceName: "nsINSSComponent";
     };
     ["@mozilla.org/nss_errors_service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/nss_errors_service;1";
         number: "{9ef18451-a157-4d17-8132-47afef213689}";
+        private typeName: "mozilla::psm::NSSErrorsService";
+        private interfaceName: "mozIilla::psm::NSSErrorsService";
     };
     ["@mozilla.org/security/nssversion;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/security/nssversion;1";
         number: "{23ad3531-11d2-4e8e-805a-6a752e91681a}";
+        private typeName: "nsNSSVersion";
+        private interfaceName: "nsINSSVersion";
     };
     ["@mozilla.org/security/sdr;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/security/sdr;1";
         number: "{0c4f1ddc-1dd2-11b2-9d95-f2fdf113044b}";
+        private typeName: "SecretDecoderRing";
+        private interfaceName: "SecretDecoderRing";
     };
     ["@mozilla.org/security/pk11tokendb;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/security/pk11tokendb;1";
         number: "{b084a2ce-1dd1-11b2-bf10-8324f8e065cc}";
+        private typeName: "nsPK11TokenDB";
+        private interfaceName: "nsIPK11TokenDB";
     };
     ["@mozilla.org/security/pkcs11moduledb;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/security/pkcs11moduledb;1";
         number: "{ff9fbcd7-9517-4334-b97a-ceed78909974}";
+        private typeName: "mozilla::psm::PKCS11ModuleDB";
+        private interfaceName: "mozIilla::psm::PKCS11ModuleDB";
     };
     ["@mozilla.org/security/x509certdb;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/security/x509certdb;1";
         number: "{fb0bbc5c-452e-4783-b32c-80124693d871}";
+        private typeName: "nsNSSCertificateDB";
+        private interfaceName: "nsINSSCertificateDB";
     };
     ["@mozilla.org/security/clientAuthRememberService;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/security/clientAuthRememberService;1";
         number: "{1dbc6eb6-0972-4bdb-9dc4-acd0abf72369}";
+        private typeName: "nsClientAuthRememberService";
+        private interfaceName: "nsIClientAuthRememberService";
     };
     ["@mozilla.org/security/hash;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1573,36 +1963,50 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/security/contentsignatureverifier;1";
         number: "{45a5fe2f-c350-4b86-962d-02d5aaaa955a}";
+        private typeName: "ContentSignatureVerifier";
+        private interfaceName: "ContentSignatureVerifier";
     };
     ["@mozilla.org/security/certoverride;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/security/certoverride;1";
         number: "{67ba681d-5485-4fff-952c-2ee337ffdcd6}";
+        private typeName: "nsCertOverrideService";
+        private interfaceName: "nsICertOverrideService";
     };
     ["@mozilla.org/security/random-generator;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/security/random-generator;1";
         number: "{be65e2b7-fe46-4e0f-88e0-4b385db4d68a}";
+        private typeName: "nsRandomGenerator";
+        private interfaceName: "nsIRandomGenerator";
     };
     ["@mozilla.org/security/transportsecurityinfo;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/security/transportsecurityinfo;1";
         number: "{16786594-0296-4471-8096-8f84497ca428}";
+        private typeName: "mozilla::psm::TransportSecurityInfo";
+        private interfaceName: "mozIilla::psm::TransIportSecurityInfo";
     };
     ["@mozilla.org/ssservice;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/ssservice;1";
         number: "{16955eee-6c48-4152-9309-c42a465138a1}";
+        private typeName: "nsSiteSecurityService";
+        private interfaceName: "nsISiteSecurityService";
     };
     ["@mozilla.org/security/oskeystore;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/security/oskeystore;1";
         number: "{57972956-5718-42d2-8070-b3fc72212eaf}";
+        private typeName: "OSKeyStore";
+        private interfaceName: "OSKeyStore";
     };
     ["@mozilla.org/security/osreauthenticator;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/security/osreauthenticator;1";
         number: "{4fe082ae-6ff0-4b41-b24f-eaa664f6e46a}";
+        private typeName: "OSReauthenticator";
+        private interfaceName: "OSReauthenticator";
     };
     ["@mozilla.org/security/certstorage;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1613,41 +2017,57 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/security/publickeypinningservice;1";
         number: "{f64432b9-e8c6-41b4-b2da-8eb004344bba}";
+        private typeName: "psm::PublicKeyPinningService";
+        private interfaceName: "psm::PublicKeyPinningService";
     };
     ["@mozilla.org/security/nsCertTree;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/security/nsCertTree;1";
         number: "{4ea60761-31d6-491d-9e34-4b53a26c416c}";
+        private typeName: "nsCertTree";
+        private interfaceName: "nsICertTree";
     };
     ["@mozilla.org/security/CRLiteTimestamp;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/security/CRLiteTimestamp;1";
         number: "{9676cfc4-6e84-11ec-a30d-d3cd0af86e01}";
+        private typeName: "mozilla::psm::CRLiteTimestamp";
+        private interfaceName: "mozIilla::psm::CRLiteTimestamp";
     };
     ["@mozilla.org/security/datastoragemanager;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/security/datastoragemanager;1";
         number: "{71b49926-fd4e-43e2-ab8d-d9b049413c0b}";
+        private typeName: "mozilla::DataStorageManager";
+        private interfaceName: "mozIilla::DataStorageManager";
     };
     ["@mozilla.org/sandbox/sandbox-settings;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/sandbox/sandbox-settings;1";
         number: "{5516303d-9007-45a0-94b9-940ef134a6e2}";
+        private typeName: "mozISandboxSettings";
+        private interfaceName: "mozIISandboxSettings";
     };
     ["@mozilla.org/sandbox/sandbox-test;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/sandbox/sandbox-test;1";
         number: "{2306c118-3544-4674-9222-670b88dc07a9}";
+        private typeName: "mozISandboxTest";
+        private interfaceName: "mozIISandboxTest";
     };
     ["@mozilla.org/sandbox/syscall-reporter;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/sandbox/syscall-reporter;1";
         number: "{5118a6f9-2493-4f97-9552-620663e03cb3}";
+        private typeName: "mozISandboxReporter";
+        private interfaceName: "mozIISandboxReporter";
     };
     ["@mozilla.org/appservices/logger;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/appservices/logger;1";
         number: "{d2716568-f5fa-4989-91dd-e11599e932a1}";
+        private typeName: "mozIAppServicesLogger";
+        private interfaceName: "mozIIAppServicesLogger";
     };
     ["@mozilla.org/fxaccounts/push;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1673,31 +2093,43 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/startupcacheinfo;1";
         number: "{a6b2f8b0-7438-11ea-bc55-0242ac130003}";
+        private typeName: "nsIStartupCacheInfo";
+        private interfaceName: "nsIIStartupCacheInfo";
     };
     ["@mozilla.org/storage/service;1"]: {
         getService(): mozIStorageServiceType;
         name: "@mozilla.org/storage/service;1";
         number: "{bbbb1d61-438f-4436-92ed-8308e5830fb0}";
+        private typeName: "mozilla::storage::Service";
+        private interfaceName: "mozIilla::storage::Service";
     };
     ["@mozilla.org/storage/vacuum;1"]: {
         getService(): unknown;
         name: "@mozilla.org/storage/vacuum;1";
         number: "{3b667ee0-d2da-4ccc-9c3d-95f2ca6a8b4c}";
+        private typeName: "mozilla::storage::VacuumManager";
+        private interfaceName: "mozIilla::storage::VacuumManager";
     };
     ["@mozilla.org/about-thirdparty;1"]: {
         getService(): unknown;
         name: "@mozilla.org/about-thirdparty;1";
         number: "{bb6afd78-2e02-4e96-b6b9-eef8cbcdc29c}";
+        private typeName: "AboutThirdParty";
+        private interfaceName: "AboutThirdParty";
     };
     ["@mozilla.org/about-windowsmessages;1"]: {
         getService(): unknown;
         name: "@mozilla.org/about-windowsmessages;1";
         number: "{ba8cdb8a-9624-493d-aac4-23ee83378d7c}";
+        private typeName: "AboutWindowsMessages";
+        private interfaceName: "AboutWindowsMessages";
     };
     ["@mozilla.org/bounce-tracking-protection;1"]: {
         getService(): nsIBounceTrackingProtectionType;
         name: "@mozilla.org/bounce-tracking-protection;1";
         number: "{4866F748-29DA-4C10-8EAA-ED2F7851E6B1}";
+        private typeName: "mozilla::BounceTrackingProtection";
+        private interfaceName: "mozIilla::BounceTrackingProtection";
     };
     ["@mozilla.org/tracking-db-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1723,6 +2155,8 @@ declare var Cc: {
         getService(): unknown;
         name: "@mozilla.org/content-blocking-telemetry-service;1";
         number: "{42906796-d16a-44a1-b518-0f108ab38eba}";
+        private typeName: "mozilla::ContentBlockingTelemetryService";
+        private interfaceName: "mozIilla::ContentBlockingTelemetryService";
     };
     ["@mozilla.org/query-stripping-list-service;1"]: {
         getService(): unknown;
@@ -1733,6 +2167,8 @@ declare var Cc: {
         getService(): nsIURLQueryStringStripperType;
         name: "@mozilla.org/url-query-string-stripper;1";
         number: "{6b42a890-2624-4560-99c4-b25380e8cd77}";
+        private typeName: "mozilla::URLQueryStringStripper";
+        private interfaceName: "mozIilla::URLQueryStringStripper";
     };
     ["@mozilla.org/async-shutdown-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1743,11 +2179,15 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/autocomplete/controller;1";
         number: "{f6d5ebbd-34f4-487d-9d10-3d34123e3eb9}";
+        private typeName: "nsAutoCompleteController";
+        private interfaceName: "nsIAutoCompleteController";
     };
     ["@mozilla.org/autocomplete/simple-result;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/autocomplete/simple-result;1";
         number: "{2ee3039b-2de4-43d9-93b0-649beacff39a}";
+        private typeName: "nsAutoCompleteSimpleResult";
+        private interfaceName: "nsIAutoCompleteSimpleResult";
     };
     ["@mozilla.org/bhr-telemetry-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1758,6 +2198,8 @@ declare var Cc: {
         getService(): unknown;
         name: "@mozilla.org/backgroundtasks;1";
         number: "{cdc33a1f-e8ae-4a4f-85d0-6ec633fe872c}";
+        private typeName: "BackgroundTasks";
+        private interfaceName: "BackgroundTasks";
     };
     ["@mozilla.org/backgroundtasksmanager;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1768,6 +2210,8 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/backgroundtasksrunner;1";
         number: "{8cd92fce-1ec3-470a-ad09-c0de9d98497e}";
+        private typeName: "BackgroundTasksRunner";
+        private interfaceName: "BackgroundTasksRunner";
     };
     ["@mozilla.org/bits;1"]: {
         getService(): unknown;
@@ -1778,106 +2222,148 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/addons/content-policy;1";
         number: "{c26a8241-ecf4-4aed-9f3c-f1f5c713b9a5}";
+        private typeName: "AddonContentPolicy";
+        private interfaceName: "AddonContentPolicy";
     };
     ["@mozilla.org/addons/addon-manager-startup;1"]: {
         getService(): unknown;
         name: "@mozilla.org/addons/addon-manager-startup;1";
         number: "{17a59a6b-92b8-42e5-bce0-ab434c7a7135}";
+        private typeName: "mozilla::AddonManagerStartup";
+        private interfaceName: "mozIilla::AddonManagerStartup";
     };
     ["@mozilla.org/alert-notification;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/alert-notification;1";
         number: "{9a7b7a41-0b47-47f7-b61b-15a210d6f020}";
+        private typeName: "mozilla::AlertNotification";
+        private interfaceName: "mozIilla::AlertNotification";
     };
     ["@mozilla.org/reputationservice/application-reputation-service;1"]: {
         getService(): unknown;
         name: "@mozilla.org/reputationservice/application-reputation-service;1";
         number: "{d21b4c33-716f-4117-8041-2770b59ff8a6}";
+        private typeName: "ApplicationReputationService";
+        private interfaceName: "ApplicationReputationService";
     };
     ["@mozilla.org/toolkit/download-platform;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/toolkit/download-platform;1";
         number: "{649a14c9-fe5c-48ec-9c85-00cad9ccf32e}";
+        private typeName: "DownloadPlatform";
+        private interfaceName: "DownloadPlatform";
     };
     ["@mozilla.org/addons/policy-service;1"]: {
         getService(): unknown;
         name: "@mozilla.org/addons/policy-service;1";
         number: "{562de129-8338-482c-bb96-a1ff09ee53cc}";
+        private typeName: "mozilla::ExtensionPolicyService";
+        private interfaceName: "mozIilla::ExtensIionPolicyService";
     };
     ["@mozilla.org/toolkit/finalizationwitness;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/toolkit/finalizationwitness;1";
         number: "{15686f9d-483e-4361-98cd-37f1e8f1e61d}";
+        private typeName: "mozilla::FinalizationWitnessService";
+        private interfaceName: "mozIilla::FinalizationWitnessService";
     };
     ["@mozilla.org/reputationservice/login-reputation-service;1"]: {
         getService(): unknown;
         name: "@mozilla.org/reputationservice/login-reputation-service;1";
         number: "{91fa9e67-1427-4ee9-8ee0-1a6ed578bee1}";
+        private typeName: "mozilla::LoginReputationService";
+        private interfaceName: "mozIilla::LoginReputationService";
     };
     ["@mozilla.org/alerts-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/alerts-service;1";
         number: "{a0ccaaf8-09da-44d8-b250-9ac3e93c8117}";
+        private typeName: "nsAlertsService";
+        private interfaceName: "nsIAlertsService";
     };
     ["@mozilla.org/toolkit/app-startup;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/toolkit/app-startup;1";
         number: "{7dd4d320-c84b-4624-8d45-7bb9b2356977}";
+        private typeName: "nsAppStartup";
+        private interfaceName: "nsIAppStartup";
     };
     ["@mozilla.org/appshell/component/browser-status-filter;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/appshell/component/browser-status-filter;1";
         number: "{6356aa16-7916-4215-a825-cbc2692ca87a}";
+        private typeName: "nsBrowserStatusFilter";
+        private interfaceName: "nsIBrowserStatusFilter";
     };
     ["@mozilla.org/find/find_service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/find/find_service;1";
         number: "{5060b803-340e-11d5-be5b-b3e063ec6a3c}";
+        private typeName: "nsFindService";
+        private interfaceName: "nsIFindService";
     };
     ["@mozilla.org/typeaheadfind;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/typeaheadfind;1";
         number: "{e7f70966-9a37-48d7-8aeb-35998f31090e}";
+        private typeName: "nsTypeAheadFind";
+        private interfaceName: "nsITypeAheadFind";
     };
     ["@mozilla.org/uriclassifierservice"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/uriclassifierservice";
         number: "{7a258022-6765-11e5-b379-b37b1f2354be}";
+        private typeName: "nsISupports";
+        private interfaceName: "nsIISupports";
     };
     ["@mozilla.org/url-classifier/dbservice;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/url-classifier/dbservice;1";
         number: "{7a258022-6765-11e5-b379-b37b1f2354be}";
+        private typeName: "nsISupports";
+        private interfaceName: "nsIISupports";
     };
     ["@mozilla.org/url-classifier/prefixset;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/url-classifier/prefixset;1";
         number: "{3d8579f0-75fa-4e00-ba41-38661d5b5d17}";
+        private typeName: "nsUrlClassifierPrefixSet";
+        private interfaceName: "nsIUrlClassifierPrefixSet";
     };
     ["@mozilla.org/url-classifier/streamupdater;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/url-classifier/streamupdater;1";
         number: "{e1797597-f4d6-4dd3-a1e1-745ad352cd80}";
+        private typeName: "nsUrlClassifierStreamUpdater";
+        private interfaceName: "nsIUrlClassifierStreamUpdater";
     };
     ["@mozilla.org/url-classifier/utils;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/url-classifier/utils;1";
         number: "{b7b2ccec-7912-4ea6-a548-b038447004bd}";
+        private typeName: "nsUrlClassifierUtils";
+        private interfaceName: "nsIUrlClassifierUtils";
     };
     ["@mozilla.org/updates/update-processor;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/updates/update-processor;1";
         number: "{f3dcf644-79e8-4f59-a1bb-878454488ef9}";
+        private typeName: "nsUpdateProcessor";
+        private interfaceName: "nsIUpdateProcessor";
     };
     ["@mozilla.org/updates/update-sync-manager;1"]: {
         getService(): unknown;
         name: "@mozilla.org/updates/update-sync-manager;1";
         number: "{cf4c4487-66d9-4e18-a2e9-39002245332f}";
+        private typeName: "nsUpdateSyncManager";
+        private interfaceName: "nsIUpdateSyncManager";
     };
     ["@mozilla.org/toolkit/shutdown-terminator;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/toolkit/shutdown-terminator;1";
         number: "{2e59cc70-f83a-412f-89d4-453885837217}";
+        private typeName: "mozilla::nsTerminator";
+        private interfaceName: "mozIilla::nsITerminator";
     };
     ["@mozilla.org/toolkit/captive-detector;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1888,6 +2374,8 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/cascade-filter;1";
         number: "{c8d0b0b3-17f8-458b-9264-7b67b288fe79}";
+        private typeName: "nsICascadeFilter";
+        private interfaceName: "nsIICascadeFilter";
     };
     ["@mozilla.org/clear-data-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1903,6 +2391,8 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/content-blocking-allow-list;1";
         number: "{00ed5d73-9de5-42cf-868c-e739a94f6b37}";
+        private typeName: "mozilla::ContentBlockingAllowList";
+        private interfaceName: "mozIilla::ContentBlockingAllowList";
     };
     ["@mozilla.org/content-pref/service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1913,11 +2403,15 @@ declare var Cc: {
         getService(): nsICookieBannerServiceType;
         name: "@mozilla.org/cookie-banner-service;1";
         number: "{eac9cdc4-ecee-49f2-91da-7627e15c1f3c}";
+        private typeName: "mozilla::nsCookieBannerService";
+        private interfaceName: "mozIilla::nsICookieBannerService";
     };
     ["@mozilla.org/cookie-banner-rule;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/cookie-banner-rule;1";
         number: "{eb1904db-e0d1-4760-a721-db76b1ca3e94}";
+        private typeName: "mozilla::nsCookieBannerRule";
+        private interfaceName: "mozIilla::nsICookieBannerRule";
     };
     ["@mozilla.org/cookie-banner-list-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1948,11 +2442,15 @@ declare var Cc: {
         getService(): nsIIdentityCredentialStorageServiceType;
         name: "@mozilla.org/browser/identity-credential-storage-service;1";
         number: "{029823d0-0448-46c5-af1f-25cd4501d0d7}";
+        private typeName: "mozilla::IdentityCredentialStorageService";
+        private interfaceName: "mozIilla::IdentityCredentialStorageService";
     };
     ["@mozilla.org/jsctypes;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/jsctypes;1";
         number: "{0c797702-1c60-4051-9dd7-4d7405605642}";
+        private typeName: "mozilla::ctypes::Module";
+        private interfaceName: "mozIilla::ctypes::Module";
     };
     ["@mozilla.org/transfer;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1968,11 +2466,15 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/extensions/child;1";
         number: "{db82286d-d649-47fb-8599-ba31673a58c5}";
+        private typeName: "mozilla::extensions::ExtensionsChild";
+        private interfaceName: "mozIilla::extensIions::ExtensionsChild";
     };
     ["@mozilla.org/extensions/storage/internal/sync-area;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/extensions/storage/internal/sync-area;1";
         number: "{f1e424f2-67fe-4f69-a8f8-3993a71f44fa}";
+        private typeName: "mozIExtensionStorageArea";
+        private interfaceName: "mozIIExtensIionStorageArea";
     };
     ["@mozilla.org/extensions/storage/sync;1"]: {
         getService(): unknown;
@@ -1983,6 +2485,8 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/extensions/web-navigation-content;1";
         number: "{acb22042-2b6c-427b-b550-b9f407c6fff6}";
+        private typeName: "mozilla::extensions::WebNavigationContent";
+        private interfaceName: "mozIilla::extensIions::WebNavigationContent";
     };
     ["@mozilla.org/sanity-test;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -1993,6 +2497,8 @@ declare var Cc: {
         getService(): nsIFOGType;
         name: "@mozilla.org/toolkit/glean;1";
         number: "{98d0e975-9cad-4ce3-ae2f-f878b8be6307}";
+        private typeName: "mozilla::FOG";
+        private interfaceName: "mozIilla::FOG";
     };
     ["@mozilla.org/key-value-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2003,11 +2509,15 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/media/sniffer;1";
         number: "{3fdd6c28-5b87-4e3e-8b57-8e83c23c1a6d}";
+        private typeName: "nsMediaSniffer";
+        private interfaceName: "nsIMediaSniffer";
     };
     ["@mozilla.org/mozintlhelper;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/mozintlhelper;1";
         number: "{b43c96be-2b3a-4dc4-90e9-b06d34219b68}";
+        private typeName: "mozilla::MozIntlHelper";
+        private interfaceName: "mozIilla::MozIntlHelper";
     };
     ["@mozilla.org/mozintl;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2093,26 +2603,36 @@ declare var Cc: {
         getService(): unknown;
         name: "@mozilla.org/browser/history;1";
         number: "{0937a705-91a6-417a-8292-b22eb10da86c}";
+        private typeName: "mozilla::places::History";
+        private interfaceName: "mozIilla::places::History";
     };
     ["@mozilla.org/network/protocol;1?name=moz-anno"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/protocol;1?name=moz-anno";
         number: "{e8b8bdb7-c96c-4d82-9c6f-2b3c585ec7ea}";
+        private typeName: "nsAnnoProtocolHandler";
+        private interfaceName: "nsIAnnoProtocolHandler";
     };
     ["@mozilla.org/browser/favicon-service;1"]: {
         getService(): unknown;
         name: "@mozilla.org/browser/favicon-service;1";
         number: "{984e3259-9266-49cf-b605-60b022a00756}";
+        private typeName: "nsFaviconService";
+        private interfaceName: "nsIFaviconService";
     };
     ["@mozilla.org/browser/nav-bookmarks-service;1"]: {
         getService(): unknown;
         name: "@mozilla.org/browser/nav-bookmarks-service;1";
         number: "{9de95a0c-39a4-4d64-9a53-17940dd7cabb}";
+        private typeName: "nsNavBookmarks";
+        private interfaceName: "nsINavBookmarks";
     };
     ["@mozilla.org/browser/nav-history-service;1"]: {
         getService(): unknown;
         name: "@mozilla.org/browser/nav-history-service;1";
         number: "{88cecbb7-6c63-4b3b-8cd4-84f3b8228c69}";
+        private typeName: "nsNavHistory";
+        private interfaceName: "nsINavHistory";
     };
     ["@mozilla.org/browser/tagging-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2138,11 +2658,15 @@ declare var Cc: {
         getService(): unknown;
         name: "@mozilla.org/network/protocol;1?name=page-icon";
         number: "{60a1f7c6-4ff9-4a42-84d3-5a185faa6f32}";
+        private typeName: "mozilla::places::PageIconProtocolHandler";
+        private interfaceName: "mozIilla::places::PageIconProtocolHandler";
     };
     ["@mozilla.org/browser/synced-bookmarks-merger;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/browser/synced-bookmarks-merger;1";
         number: "{7d47b41d-7cc5-4882-b293-d8f3f3b48b46}";
+        private typeName: "mozISyncedBookmarksMerger";
+        private interfaceName: "mozIISyncedBookmarksMerger";
     };
     ["@mozilla.org/places/previews-helper;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2163,6 +2687,8 @@ declare var Cc: {
         getService(): unknown;
         name: "@mozilla.org/processtools-service;1";
         number: "{79A13656-A472-4713-B0E1-AB39A15CF790}";
+        private typeName: "nsIProcessToolsService";
+        private interfaceName: "nsIIProcessToolsService";
     };
     ["@mozilla.org/network/authprompt-adapter-factory;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2178,16 +2704,22 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/jsreflect;1";
         number: "{1a817186-357a-47cd-8aea-2850d60e959e}";
+        private typeName: "mozilla::reflect::Module";
+        private interfaceName: "mozIilla::reflect::Module";
     };
     ["@mozilla.org/satchel/form-fill-controller;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/satchel/form-fill-controller;1";
         number: "{895db6c7-dbdf-40ea-9f64-b175033243dc}";
+        private typeName: "nsFormFillController";
+        private interfaceName: "nsIFormFillController";
     };
     ["@mozilla.org/autocomplete/search;1?name=form-history"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/autocomplete/search;1?name=form-history";
         number: "{895db6c7-dbdf-40ea-9f64-b175033243dc}";
+        private typeName: "nsFormFillController";
+        private interfaceName: "nsIFormFillController";
     };
     ["@mozilla.org/satchel/form-autocomplete;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2223,11 +2755,15 @@ declare var Cc: {
         getService(): nsITelemetryType;
         name: "@mozilla.org/base/telemetry;1";
         number: "{aea477f2-b3a2-469c-aa29-0a82d132b829}";
+        private typeName: "nsITelemetry";
+        private interfaceName: "nsIITelemetry";
     };
     ["@mozilla.org/base/daptelemetry;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/base/daptelemetry;1";
         number: "{58a4c579-d2dd-46b7-9c3b-6881a1c36c6a}";
+        private typeName: "mozilla::DAPTelemetry";
+        private interfaceName: "mozIilla::DAPTelemetry";
     };
     ["@mozilla.org/toolkit/shutdown-terminator-telemetry;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2348,46 +2884,64 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/system-proxy-settings;1";
         number: "{f01f0060-3708-478e-b935-3ec38be294b8}";
+        private typeName: "nsAndroidSystemProxySettings";
+        private interfaceName: "nsIAndroidSystemProxySettings";
     };
     ["@mozilla.org/gio-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/gio-service;1";
         number: "{e3a1f3c9-3ae1-4b40-a5e0-7b457fc9a9ad}";
+        private typeName: "nsGIOService";
+        private interfaceName: "nsIGIOService";
     };
     ["@mozilla.org/gsettings-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/gsettings-service;1";
         number: "{bfd4a9d8-d886-4161-81ef-8868da114170}";
+        private typeName: "nsGSettingsService";
+        private interfaceName: "nsIGSettingsService";
     };
     ["@mozilla.org/system-alerts-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/system-alerts-service;1";
         number: "{84e11f80-ca55-11dd-ad8b-0800200c9a66}";
+        private typeName: "nsSystemAlertsService";
+        private interfaceName: "nsISystemAlertsService";
     };
     ["@mozilla.org/system-proxy-settings;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/system-proxy-settings;1";
         number: "{9afcd4b8-2e0f-41f4-8f1f-3bf0d3cf67de}";
+        private typeName: "nsOSXSystemProxySettings";
+        private interfaceName: "nsIOSXSystemProxySettings";
     };
     ["@mozilla.org/system-proxy-settings;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/system-proxy-settings;1";
         number: "{0fa3158c-d5a7-43de-9181-a285e74cf1d4}";
+        private typeName: "nsUnixSystemProxySettings";
+        private interfaceName: "nsIUnixSystemProxySettings";
     };
     ["@mozilla.org/dhcp-client;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/dhcp-client;1";
         number: "{febf1d69-4d7d-4891-9524-045ad18b5592}";
+        private typeName: "mozilla::toolkit::system::windowsDHCPClient::nsWindowsDHCPClient";
+        private interfaceName: "mozIilla::toolkit::system::windowsDHCPClient::nsIWindowsDHCPClient";
     };
     ["@mozilla.org/windows-package-manager;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/windows-package-manager;1";
         number: "{c75da378-521f-11ec-84cc-336cd3921c24}";
+        private typeName: "mozilla::toolkit::system::nsWindowsPackageManager";
+        private interfaceName: "mozIilla::toolkit::system::nsIWindowsPackageManager";
     };
     ["@mozilla.org/system-proxy-settings;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/system-proxy-settings;1";
         number: "{4e22d3ea-aaa2-436e-ada4-9247de57d367}";
+        private typeName: "nsWindowsSystemProxySettings";
+        private interfaceName: "nsIWindowsSystemProxySettings";
     };
     ["@mozilla.org/xre/app-info;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2408,41 +2962,57 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/embedcomp/rangefind;1";
         number: "{471f4944-1dd2-11b2-87ac-90be0a51d609}";
+        private typeName: "nsFind";
+        private interfaceName: "nsIFind";
     };
     ["@mozilla.org/embedding/browser/nsWebBrowserPersist;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/embedding/browser/nsWebBrowserPersist;1";
         number: "{7e677795-c582-4cd1-9e8d-8271b3474d2a}";
+        private typeName: "nsWebBrowserPersist";
+        private interfaceName: "nsIWebBrowserPersist";
     };
     ["@mozilla.org/embedcomp/window-watcher;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/embedcomp/window-watcher;1";
         number: "{a21bfa01-f349-4394-a84c-8de5cf0737d0}";
+        private typeName: "nsWindowWatcher";
+        private interfaceName: "nsIWindowWatcher";
     };
     ["@mozilla.org/xre/directory-provider;1"]: {
         getService(): unknown;
         name: "@mozilla.org/xre/directory-provider;1";
         number: "{5573967d-f6cf-4c63-8e0e-9ac06e04d62b}";
+        private typeName: "nsXREDirProvider";
+        private interfaceName: "nsIXREDirProvider";
     };
     ["@mozilla.org/embedcomp/dialogparam;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/embedcomp/dialogparam;1";
         number: "{4e4aae11-8901-46cc-8217-dad7c5415873}";
+        private typeName: "nsDialogParamBlock";
+        private interfaceName: "nsIDialogParamBlock";
     };
     ["@mozilla.org/toolkit/profile-service;1"]: {
         getService(): unknown;
         name: "@mozilla.org/toolkit/profile-service;1";
         number: "{5f5e59ce-27bc-47eb-9d1f-b09ca9049836}";
+        private typeName: "nsToolkitProfileService";
+        private interfaceName: "nsIToolkitProfileService";
     };
     ["@mozilla.org/tools/code-coverage;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/tools/code-coverage;1";
         number: "{93576af0-a62f-4c88-bc12-f1855d4e0173}";
+        private typeName: "nsCodeCoverage";
+        private interfaceName: "nsICodeCoverage";
     };
     ["@mozilla.org/tools/profiler;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/tools/profiler;1";
         number: "{25db9b8e-8123-4de1-b66d-8bbbedf2cdf4}";
+        private typeName: "nsProfiler";
+        private interfaceName: "nsIProfiler";
     };
     ["@mozilla.org/uriloader/handler-service-parent;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2463,76 +3033,106 @@ declare var Cc: {
         getService(): unknown;
         name: "@mozilla.org/gfx/parent/screenmanager;1";
         number: "{d594094c-28b6-466b-97d7-66c039c3dea9}";
+        private typeName: "mozilla::widget::ScreenManager";
+        private interfaceName: "mozIilla::widget::ScreenManager";
     };
     ["@mozilla.org/widget/useridleservice;1"]: {
         getService(): unknown;
         name: "@mozilla.org/widget/useridleservice;1";
         number: "{6987230e-0098-4e78-bc5f-1493ee7519fa}";
+        private typeName: "nsUserIdleServiceAndroid";
+        private interfaceName: "nsIUserIdleServiceAndroid";
     };
     ["@mozilla.org/widget/transferable;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/transferable;1";
         number: "{8b5314bc-db01-11d2-96ce-0060b0fb9956}";
+        private typeName: "nsTransferable";
+        private interfaceName: "nsITransferable";
     };
     ["@mozilla.org/widget/parent/clipboard;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/parent/clipboard;1";
         number: "{9d5adbb9-1da4-4162-acba-b373fe3ae837}";
+        private typeName: "nsClipboard";
+        private interfaceName: "nsIClipboard";
     };
     ["@mozilla.org/widget/clipboardhelper;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/clipboardhelper;1";
         number: "{77221d5a-1dd2-11b2-8c69-c710f15d2ed5}";
+        private typeName: "nsClipboardHelper";
+        private interfaceName: "nsIClipboardHelper";
     };
     ["@mozilla.org/gfx/printsettings-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/gfx/printsettings-service;1";
         number: "{841387c8-72e6-484b-9296-bf6eea80d58a}";
+        private typeName: "nsPrintSettingsServiceAndroid";
+        private interfaceName: "nsIPrintSettingsServiceAndroid";
     };
     ["@mozilla.org/gfx/devicecontextspec;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/gfx/devicecontextspec;1";
         number: "{d3f69889-e13a-4321-980c-a39332e21f34}";
+        private typeName: "nsDeviceContextSpecAndroid";
+        private interfaceName: "nsIDeviceContextSpecAndroid";
     };
     ["@mozilla.org/widget/htmlformatconverter;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/htmlformatconverter;1";
         number: "{948a0023-e3a7-11d2-96cf-0060b0fb9956}";
+        private typeName: "nsHTMLFormatConverter";
+        private interfaceName: "nsIHTMLFormatConverter";
     };
     ["@mozilla.org/gfx/info;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/gfx/info;1";
         number: "{d755a760-9f27-11df-0800-200c9a664242}";
+        private typeName: "mozilla::widget::GfxInfo";
+        private interfaceName: "mozIilla::widget::GfxInfo";
     };
     ["@mozilla.org/android/bridge;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/android/bridge;1";
         number: "{0fe2321d-ebd9-467d-a743-03a68d40599e}";
+        private typeName: "nsAndroidBridge";
+        private interfaceName: "nsIAndroidBridge";
     };
     ["@mozilla.org/system-alerts-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/system-alerts-service;1";
         number: "{84e11f80-ca55-11dd-ad8b-0800200c9a66}";
+        private typeName: "mozilla::widget::AndroidAlerts";
+        private interfaceName: "mozIilla::widget::AndroidAlerts";
     };
     ["@mozilla.org/widget/parent/clipboard;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/parent/clipboard;1";
         number: "{49f428e8-baf9-4ba3-b1b0-7d2fd3abbcea}";
+        private typeName: "nsIClipboard";
+        private interfaceName: "nsIIClipboard";
     };
     ["@mozilla.org/gfx/info;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/gfx/info;1";
         number: "{d755a760-9f27-11df-0800-200c9a664242}";
+        private typeName: "mozilla::widget::GfxInfo";
+        private interfaceName: "mozIilla::widget::GfxInfo";
     };
     ["@mozilla.org/parent/filepicker;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/parent/filepicker;1";
         number: "{e5170091-c16b-492d-bf00-f45d72470553}";
+        private typeName: "nsFilePicker";
+        private interfaceName: "nsIFilePicker";
     };
     ["@mozilla.org/parent/colorpicker;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/parent/colorpicker;1";
         number: "{b90f5fdd-c23e-4ad6-a10e-1da8ffe07799}";
+        private typeName: "nsColorPicker";
+        private interfaceName: "nsIColorPicker";
     };
     ["@mozilla.org/widget/appshell/mac;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2543,101 +3143,141 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/parent/sound;1";
         number: "{15cc80a9-5329-4fcb-9a0b-c6cf1440ae51}";
+        private typeName: "nsSound";
+        private interfaceName: "nsISound";
     };
     ["@mozilla.org/widget/transferable;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/transferable;1";
         number: "{8b5314bc-db01-11d2-96ce-0060b0fb9956}";
+        private typeName: "nsTransferable";
+        private interfaceName: "nsITransferable";
     };
     ["@mozilla.org/widget/htmlformatconverter;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/htmlformatconverter;1";
         number: "{948a0023-e3a7-11d2-96cf-0060b0fb9956}";
+        private typeName: "nsHTMLFormatConverter";
+        private interfaceName: "nsIHTMLFormatConverter";
     };
     ["@mozilla.org/widget/clipboardhelper;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/clipboardhelper;1";
         number: "{77221d5a-1dd2-11b2-8c69-c710f15d2ed5}";
+        private typeName: "nsClipboardHelper";
+        private interfaceName: "nsIClipboardHelper";
     };
     ["@mozilla.org/widget/parent/dragservice;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/parent/dragservice;1";
         number: "{9a155bb2-2b67-45de-83e3-13a9dacf8336}";
+        private typeName: "nsDragService";
+        private interfaceName: "nsIDragService";
     };
     ["@mozilla.org/gfx/parent/screenmanager;1"]: {
         getService(): unknown;
         name: "@mozilla.org/gfx/parent/screenmanager;1";
         number: "{f0ddedd7-e8d5-4f95-a5b4-0f48f1741b36}";
+        private typeName: "mozilla::widget::ScreenManager";
+        private interfaceName: "mozIilla::widget::ScreenManager";
     };
     ["@mozilla.org/gfx/devicecontextspec;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/gfx/devicecontextspec;1";
         number: "{d3f69889-e13a-4321-980c-a39332e21f34}";
+        private typeName: "nsDeviceContextSpecX";
+        private interfaceName: "nsIDeviceContextSpecX";
     };
     ["@mozilla.org/gfx/printerlist;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/gfx/printerlist;1";
         number: "{a6cf9129-15b3-11d2-932e-00805f8add32}";
+        private typeName: "nsPrinterListCUPS";
+        private interfaceName: "nsIPrinterListCUPS";
     };
     ["@mozilla.org/gfx/printsettings-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/gfx/printsettings-service;1";
         number: "{841387c8-72e6-484b-9296-bf6eea80d58a}";
+        private typeName: "nsPrintSettingsServiceX";
+        private interfaceName: "nsIPrintSettingsServiceX";
     };
     ["@mozilla.org/widget/printdialog-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/printdialog-service;1";
         number: "{06beec76-a183-4d9f-85dd-085f26da565a}";
+        private typeName: "nsPrintDialogServiceX";
+        private interfaceName: "nsIPrintDialogServiceX";
     };
     ["@mozilla.org/widget/useridleservice;1"]: {
         getService(): unknown;
         name: "@mozilla.org/widget/useridleservice;1";
         number: "{6987230e-0089-4e78-bc5f-1493ee7519fa}";
+        private typeName: "nsUserIdleServiceX";
+        private interfaceName: "nsIUserIdleServiceX";
     };
     ["@mozilla.org/system-alerts-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/system-alerts-service;1";
         number: "{84e11f80-ca55-11dd-ad8b-0800200c9a66}";
+        private typeName: "mozilla::OSXNotificationCenter";
+        private interfaceName: "mozIilla::OSXNotificationCenter";
     };
     ["@mozilla.org/widget/macdocksupport;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/macdocksupport;1";
         number: "{2451baed-8dc3-46d9-9e30-96e1baa03666}";
+        private typeName: "nsMacDockSupport";
+        private interfaceName: "nsIMacDockSupport";
     };
     ["@mozilla.org/widget/macfinderprogress;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/macfinderprogress;1";
         number: "{74ea4101-a5bb-49bc-9984-66da8b225a37}";
+        private typeName: "nsMacFinderProgress";
+        private interfaceName: "nsIMacFinderProgress";
     };
     ["@mozilla.org/widget/macsharingservice;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/macsharingservice;1";
         number: "{de59fe1a-46c8-490f-b04d-34545acb06c9}";
+        private typeName: "nsMacSharingService";
+        private interfaceName: "nsIMacSharingService";
     };
     ["@mozilla.org/widget/macuseractivityupdater;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/macuseractivityupdater;1";
         number: "{29046c8f-cba6-4ffa-9141-1685e96c4ea0}";
+        private typeName: "nsMacUserActivityUpdater";
+        private interfaceName: "nsIMacUserActivityUpdater";
     };
     ["@mozilla.org/widget/mac-web-app-utils;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/mac-web-app-utils;1";
         number: "{e9096367-ddd9-45e4-b762-49c0c18b7119}";
+        private typeName: "nsMacWebAppUtils";
+        private interfaceName: "nsIMacWebAppUtils";
     };
     ["@mozilla.org/widget/standalonenativemenu;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/standalonenativemenu;1";
         number: "{1f39ae50-b6a0-4b37-90f4-60af614193d8}";
+        private typeName: "nsStandaloneNativeMenu";
+        private interfaceName: "nsIStandaloneNativeMenu";
     };
     ["@mozilla.org/widget/systemstatusbar;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/systemstatusbar;1";
         number: "{b6e1a890-b2b8-4883-a65f-9476f6185313}";
+        private typeName: "nsSystemStatusBarCocoa";
+        private interfaceName: "nsISystemStatusBarCocoa";
     };
     ["@mozilla.org/widget/touchbarupdater;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/touchbarupdater;1";
         number: "{38f396e2-93c9-4a77-aaf7-2d50b9962186}";
+        private typeName: "nsTouchBarUpdater";
+        private interfaceName: "nsITouchBarUpdater";
     };
     ["@mozilla.org/widget/clipboard;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2648,6 +3288,8 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/content/clipboard;1";
         number: "{c0ed2a75-96f8-4166-91d4-2fe8774448dc}";
+        private typeName: "nsClipboardProxy";
+        private interfaceName: "nsIClipboardProxy";
     };
     ["@mozilla.org/colorpicker;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2658,6 +3300,8 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/content/colorpicker;1";
         number: "{11a77259-9d16-4386-8ac8-94338ee22f78}";
+        private typeName: "nsColorPickerProxy";
+        private interfaceName: "nsIColorPickerProxy";
     };
     ["@mozilla.org/widget/dragservice;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2668,6 +3312,8 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/content/dragservice;1";
         number: "{28be18ae-73ee-494f-8c6d-5d14b7c998c7}";
+        private typeName: "nsDragServiceProxy";
+        private interfaceName: "nsIDragServiceProxy";
     };
     ["@mozilla.org/filepicker;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2678,6 +3324,8 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/content/filepicker;1";
         number: "{40fd47f2-463a-4e4a-a33f-27eb148bfee4}";
+        private typeName: "nsFilePickerProxy";
+        private interfaceName: "nsIFilePickerProxy";
     };
     ["@mozilla.org/sound;1"]: {
         getService(): unknown;
@@ -2688,6 +3336,8 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/content/sound;1";
         number: "{b02c2470-6e5a-4865-a202-8b5ebae52632}";
+        private typeName: "nsSoundProxy";
+        private interfaceName: "nsISoundProxy";
     };
     ["@mozilla.org/gfx/screenmanager;1"]: {
         getService(): unknown;
@@ -2698,6 +3348,8 @@ declare var Cc: {
         getService(): unknown;
         name: "@mozilla.org/gfx/content/screenmanager;1";
         number: "{b2cdd51c-4277-417b-a931-08306c7814c3}";
+        private typeName: "mozilla::widget::ScreenManager";
+        private interfaceName: "mozIilla::widget::ScreenManager";
     };
     ["@mozilla.org/widget/appshell/gtk;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2708,91 +3360,127 @@ declare var Cc: {
         getService(): unknown;
         name: "@mozilla.org/gfx/parent/screenmanager;1";
         number: "{e9537f8f-c07e-4435-8ab3-83f1ad6e3bbf}";
+        private typeName: "mozilla::widget::ScreenManager";
+        private interfaceName: "mozIilla::widget::ScreenManager";
     };
     ["@mozilla.org/widget/taskbarprogress/gtk;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/taskbarprogress/gtk;1";
         number: "{a9339876-0027-430f-b953-84c9c11c2da3}";
+        private typeName: "TaskbarProgress";
+        private interfaceName: "TaskbarProgress";
     };
     ["@mozilla.org/parent/colorpicker;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/parent/colorpicker;1";
         number: "{4364de1a-798e-419c-a6f5-ca28866b6d5f}";
+        private typeName: "nsColorPicker";
+        private interfaceName: "nsIColorPicker";
     };
     ["@mozilla.org/parent/filepicker;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/parent/filepicker;1";
         number: "{1940fed5-7d02-4122-8acf-7abaac698983}";
+        private typeName: "nsFilePicker";
+        private interfaceName: "nsIFilePicker";
     };
     ["@mozilla.org/widget/htmlformatconverter;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/htmlformatconverter;1";
         number: "{948a0023-e3a7-11d2-96cf-0060b0fb9956}";
+        private typeName: "nsHTMLFormatConverter";
+        private interfaceName: "nsIHTMLFormatConverter";
     };
     ["@mozilla.org/parent/sound;1"]: {
         getService(): unknown;
         name: "@mozilla.org/parent/sound;1";
         number: "{e711c28b-c1f1-4b87-8448-e1e0da0a7b7d}";
+        private typeName: "nsISound";
+        private interfaceName: "nsIISound";
     };
     ["@mozilla.org/widget/transferable;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/transferable;1";
         number: "{8b5314bc-db01-11d2-96ce-0060b0fb9956}";
+        private typeName: "nsTransferable";
+        private interfaceName: "nsITransferable";
     };
     ["@mozilla.org/applicationchooser;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/applicationchooser;1";
         number: "{e221df9b-3d66-4045-9a66-5720949f8d10}";
+        private typeName: "nsApplicationChooser";
+        private interfaceName: "nsIApplicationChooser";
     };
     ["@mozilla.org/widget/parent/clipboard;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/parent/clipboard;1";
         number: "{f55f5d31-dbb7-4d0d-9f6f-a4f4cd8e8ef1}";
+        private typeName: "nsIClipboard";
+        private interfaceName: "nsIIClipboard";
     };
     ["@mozilla.org/widget/clipboardhelper;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/clipboardhelper;1";
         number: "{77221d5a-1dd2-11b2-8c69-c710f15d2ed5}";
+        private typeName: "nsClipboardHelper";
+        private interfaceName: "nsIClipboardHelper";
     };
     ["@mozilla.org/widget/parent/dragservice;1"]: {
         getService(): unknown;
         name: "@mozilla.org/widget/parent/dragservice;1";
         number: "{0ba77e04-2adb-422f-af01-5a57b8013100}";
+        private typeName: "nsDragService";
+        private interfaceName: "nsIDragService";
     };
     ["@mozilla.org/gfx/info;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/gfx/info;1";
         number: "{d755a760-9f27-11df-0800-200c9a664242}";
+        private typeName: "mozilla::widget::GfxInfo";
+        private interfaceName: "mozIilla::widget::GfxInfo";
     };
     ["@mozilla.org/widget/useridleservice;1"]: {
         getService(): unknown;
         name: "@mozilla.org/widget/useridleservice;1";
         number: "{6987230e-0098-4e78-bc5f-1493ee7519fa}";
+        private typeName: "nsUserIdleService";
+        private interfaceName: "nsIUserIdleService";
     };
     ["@mozilla.org/gfx/devicecontextspec;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/gfx/devicecontextspec;1";
         number: "{d3f69889-e13a-4321-980c-a39332e21f34}";
+        private typeName: "nsDeviceContextSpecGTK";
+        private interfaceName: "nsIDeviceContextSpecGTK";
     };
     ["@mozilla.org/widget/printdialog-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/printdialog-service;1";
         number: "{06beec76-a183-4d9f-85dd-085f26da565a}";
+        private typeName: "nsPrintDialogServiceGTK";
+        private interfaceName: "nsIPrintDialogServiceGTK";
     };
     ["@mozilla.org/gfx/printsettings-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/gfx/printsettings-service;1";
         number: "{841387c8-72e6-484b-9296-bf6eea80d58a}";
+        private typeName: "nsPrintSettingsServiceGTK";
+        private interfaceName: "nsIPrintSettingsServiceGTK";
     };
     ["@mozilla.org/gfx/printerlist;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/gfx/printerlist;1";
         number: "{a6cf9129-15b3-11d2-932e-00805f8add32}";
+        private typeName: "nsPrinterListCUPS";
+        private interfaceName: "nsIPrinterListCUPS";
     };
     ["@mozilla.org/gfx/parent/screenmanager;1"]: {
         getService(): unknown;
         name: "@mozilla.org/gfx/parent/screenmanager;1";
         number: "{4c9dee4a-b083-4261-8bbe-c6883d2a6bc9}";
+        private typeName: "mozilla::widget::ScreenManager";
+        private interfaceName: "mozIilla::widget::ScreenManager";
     };
     ["@mozilla.org/widget/appshell/win;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2803,121 +3491,169 @@ declare var Cc: {
         getService(): unknown;
         name: "@mozilla.org/widget/useridleservice;1";
         number: "{6987230e-0098-4e78-bc5f-1493ee7519fa}";
+        private typeName: "nsUserIdleServiceWin";
+        private interfaceName: "nsIUserIdleServiceWin";
     };
     ["@mozilla.org/parent/sound;1"]: {
         getService(): unknown;
         name: "@mozilla.org/parent/sound;1";
         number: "{919f1217-073a-4a14-b034-67d461eccacc}";
+        private typeName: "nsISound";
+        private interfaceName: "nsIISound";
     };
     ["@mozilla.org/widget/clipboardhelper;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/clipboardhelper;1";
         number: "{77221d5a-1dd2-11b2-8c69-c710f15d2ed5}";
+        private typeName: "nsClipboardHelper";
+        private interfaceName: "nsIClipboardHelper";
     };
     ["@mozilla.org/windows-taskbar;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/windows-taskbar;1";
         number: "{b8e5bc54-a22f-4eb2-b061-24cb6d19c15f}";
+        private typeName: "mozilla::widget::WinTaskbar";
+        private interfaceName: "mozIilla::widget::WinTaskbar";
     };
     ["@mozilla.org/windows-jumplistbuilder;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/windows-jumplistbuilder;1";
         number: "{73a5946f-608d-454f-9d33-0b8f8c7294b6}";
+        private typeName: "mozilla::widget::JumpListBuilder";
+        private interfaceName: "mozIilla::widget::JumpListBuilder";
     };
     ["@mozilla.org/windows-jumplistitem;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/windows-jumplistitem;1";
         number: "{2b9a1f2c-27ce-45b6-8d4e-755d0e34f8db}";
+        private typeName: "mozilla::widget::JumpListItem";
+        private interfaceName: "mozIilla::widget::JumpListItem";
     };
     ["@mozilla.org/windows-jumplistseparator;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/windows-jumplistseparator;1";
         number: "{21f1f13b-f75a-42ad-867a-d91ad694447e}";
+        private typeName: "mozilla::widget::JumpListSeparator";
+        private interfaceName: "mozIilla::widget::JumpListSeparator";
     };
     ["@mozilla.org/windows-jumplistlink;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/windows-jumplistlink;1";
         number: "{f72c5dc4-5a12-47be-be28-ab105f33b08f}";
+        private typeName: "mozilla::widget::JumpListLink";
+        private interfaceName: "mozIilla::widget::JumpListLink";
     };
     ["@mozilla.org/windows-jumplistshortcut;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/windows-jumplistshortcut;1";
         number: "{b16656b2-5187-498f-abf4-56346126bfdb}";
+        private typeName: "mozilla::widget::JumpListShortcut";
+        private interfaceName: "mozIilla::widget::JumpListShortcut";
     };
     ["@mozilla.org/windows-ui-utils;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/windows-ui-utils;1";
         number: "{e04a55e8-fee3-4ea2-a98b-41d2621adc3c}";
+        private typeName: "WindowsUIUtils";
+        private interfaceName: "WindowsUIUtils";
     };
     ["@mozilla.org/widget/transferable;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/transferable;1";
         number: "{8b5314bc-db01-11d2-96ce-0060b0fb9956}";
+        private typeName: "nsTransferable";
+        private interfaceName: "nsITransferable";
     };
     ["@mozilla.org/widget/htmlformatconverter;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/htmlformatconverter;1";
         number: "{948a0023-e3a7-11d2-96cf-0060b0fb9956}";
+        private typeName: "nsHTMLFormatConverter";
+        private interfaceName: "nsIHTMLFormatConverter";
     };
     ["@mozilla.org/widget/parent/dragservice;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/parent/dragservice;1";
         number: "{f92e733e-33a3-4752-90e5-25801ddeaf7b}";
+        private typeName: "nsDragService";
+        private interfaceName: "nsIDragService";
     };
     ["@mozilla.org/widget/taskbar-preview-callback;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/taskbar-preview-callback;1";
         number: "{9a0cb62b-d638-4faf-9588-ae96f5e29093}";
+        private typeName: "mozilla::widget::TaskbarPreviewCallback";
+        private interfaceName: "mozIilla::widget::TaskbarPreviewCallback";
     };
     ["@mozilla.org/gfx/info;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/gfx/info;1";
         number: "{d755a760-9f27-11df-0800-200c9a664242}";
+        private typeName: "mozilla::widget::GfxInfo";
+        private interfaceName: "mozIilla::widget::GfxInfo";
     };
     ["@mozilla.org/parent/filepicker;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/parent/filepicker;1";
         number: "{e2fc3e45-c893-4b34-8f6d-b87faf65a897}";
+        private typeName: "nsFilePicker";
+        private interfaceName: "nsIFilePicker";
     };
     ["@mozilla.org/parent/colorpicker;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/parent/colorpicker;1";
         number: "{035d92f3-3802-4cf5-87cb-1758bfc5d4da}";
+        private typeName: "nsColorPicker";
+        private interfaceName: "nsIColorPicker";
     };
     ["@mozilla.org/sharepicker;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/sharepicker;1";
         number: "{1201d357-8417-4926-a694-e6408fbedcf8}";
+        private typeName: "nsSharePicker";
+        private interfaceName: "nsISharePicker";
     };
     ["@mozilla.org/widget/parent/clipboard;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/parent/clipboard;1";
         number: "{25b4efa0-7054-4787-9cd6-630efb3fe6fa}";
+        private typeName: "nsIClipboard";
+        private interfaceName: "nsIIClipboard";
     };
     ["@mozilla.org/widget/systemstatusbar;1"]: {
         getService(): unknown;
         name: "@mozilla.org/widget/systemstatusbar;1";
         number: "{b6e1a890-b2b8-4883-a65f-9476f6185313}";
+        private typeName: "mozilla::widget::SystemStatusBar";
+        private interfaceName: "mozIilla::widget::SystemStatusBar";
     };
     ["@mozilla.org/gfx/devicecontextspec;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/gfx/devicecontextspec;1";
         number: "{d3f69889-e13a-4321-980c-a39332e21f34}";
+        private typeName: "nsDeviceContextSpecWin";
+        private interfaceName: "nsIDeviceContextSpecWin";
     };
     ["@mozilla.org/widget/printdialog-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/widget/printdialog-service;1";
         number: "{06beec76-a183-4d9f-85dd-085f26da565a}";
+        private typeName: "nsPrintDialogServiceWin";
+        private interfaceName: "nsIPrintDialogServiceWin";
     };
     ["@mozilla.org/gfx/printsettings-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/gfx/printsettings-service;1";
         number: "{841387c8-72e6-484b-9296-bf6eea80d58a}";
+        private typeName: "nsPrintSettingsServiceWin";
+        private interfaceName: "nsIPrintSettingsServiceWin";
     };
     ["@mozilla.org/gfx/printerlist;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/gfx/printerlist;1";
         number: "{a6cf9129-15b3-11d2-932e-00805f8add32}";
+        private typeName: "nsPrinterListWin";
+        private interfaceName: "nsIPrinterListWin";
     };
     ["@mozilla.org/xpcom/debug;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2928,41 +3664,57 @@ declare var Cc: {
         getService(): unknown;
         name: "@mozilla.org/xpcom/memory-watcher;1";
         number: "{68bf4793-5204-45cf-9ee2-69adffbc2e38}";
+        private typeName: "mozilla::nsAvailableMemoryWatcherBase";
+        private interfaceName: "mozIilla::nsIAvailableMemoryWatcherBase";
     };
     ["@mozilla.org/binaryinputstream;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/binaryinputstream;1";
         number: "{c521a612-2aad-46db-b6ab-3b821fb150b1}";
+        private typeName: "nsBinaryInputStream";
+        private interfaceName: "nsIBinaryInputStream";
     };
     ["@mozilla.org/binaryoutputstream;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/binaryoutputstream;1";
         number: "{86c37b9a-74e7-4672-844e-6e7dd83ba484}";
+        private typeName: "nsBinaryOutputStream";
+        private interfaceName: "nsIBinaryOutputStream";
     };
     ["@mozilla.org/network/protocol;1?name=chrome"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/protocol;1?name=chrome";
         number: "{61ba33c0-3031-11d3-8cd0-0060b0fc14a3}";
+        private typeName: "nsChromeProtocolHandler";
+        private interfaceName: "nsIChromeProtocolHandler";
     };
     ["@mozilla.org/chrome/chrome-registry;1"]: {
         getService(): unknown;
         name: "@mozilla.org/chrome/chrome-registry;1";
         number: "{47049e42-1d87-482a-984d-56ae185e367a}";
+        private typeName: "nsChromeRegistry";
+        private interfaceName: "nsIChromeRegistry";
     };
     ["@mozilla.org/consoleservice;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/consoleservice;1";
         number: "{7e3ff85c-1dd2-11b2-8d4b-eb452cb0ff40}";
+        private typeName: "nsConsoleService";
+        private interfaceName: "nsIConsoleService";
     };
     ["@mozilla.org/hash-property-bag;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/hash-property-bag;1";
         number: "{678c50b8-6bcb-4ad0-b9b8-c81175955199}";
+        private typeName: "nsHashPropertyBagCC";
+        private interfaceName: "nsIHashPropertyBagCC";
     };
     ["@mozilla.org/io-util;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/io-util;1";
         number: "{eb833911-4f49-4623-845f-e58a8e6de4c2}";
+        private typeName: "nsIOUtil";
+        private interfaceName: "nsIIOUtil";
     };
     ["@mozilla.org/file/local;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -2973,111 +3725,155 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/memory-info-dumper;1";
         number: "{00bd71fb-7f09-4ec3-96af-a0b522b77969}";
+        private typeName: "nsMemoryInfoDumper";
+        private interfaceName: "nsIMemoryInfoDumper";
     };
     ["@mozilla.org/memory-reporter-manager;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/memory-reporter-manager;1";
         number: "{fb97e4f5-32dd-497a-baa2-7d1e55079910}";
+        private typeName: "nsMemoryReporterManager";
+        private interfaceName: "nsIMemoryReporterManager";
     };
     ["@mozilla.org/process/util;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/process/util;1";
         number: "{7b4eeb20-d781-11d4-8a83-0010a4e0c9ca}";
+        private typeName: "nsProcess";
+        private interfaceName: "nsIProcess";
     };
     ["@mozilla.org/scriptablebase64encoder;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/scriptablebase64encoder;1";
         number: "{aaf68860-f849-40ee-bb7a-b229bce036a3}";
+        private typeName: "nsScriptableBase64Encoder";
+        private interfaceName: "nsIScriptableBase64Encoder";
     };
     ["@mozilla.org/securityconsole/message;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/securityconsole/message;1";
         number: "{43ebf210-8a7b-4ddb-a83d-b87c51a058db}";
+        private typeName: "nsSecurityConsoleMessage";
+        private interfaceName: "nsISecurityConsoleMessage";
     };
     ["@mozilla.org/storagestream;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/storagestream;1";
         number: "{669a9795-6ff7-4ed4-9150-c34ce2971b63}";
+        private typeName: "nsStorageStream";
+        private interfaceName: "nsIStorageStream";
     };
     ["@mozilla.org/supports-cstring;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/supports-cstring;1";
         number: "{acf8dc41-4a25-11d3-9890-006008962422}";
+        private typeName: "nsSupportsCString";
+        private interfaceName: "nsISupportsCString";
     };
     ["@mozilla.org/supports-char;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/supports-char;1";
         number: "{acf8dc4a-4a25-11d3-9890-006008962422}";
+        private typeName: "nsSupportsChar";
+        private interfaceName: "nsISupportsChar";
     };
     ["@mozilla.org/supports-double;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/supports-double;1";
         number: "{cbf86871-4ac0-11d3-baea-00805f8a5dd7}";
+        private typeName: "nsSupportsDouble";
+        private interfaceName: "nsISupportsDouble";
     };
     ["@mozilla.org/supports-float;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/supports-float;1";
         number: "{cbf86870-4ac0-11d3-baea-00805f8a5dd7}";
+        private typeName: "nsSupportsFloat";
+        private interfaceName: "nsISupportsFloat";
     };
     ["@mozilla.org/supports-interface-pointer;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/supports-interface-pointer;1";
         number: "{a99febba-1dd1-11b2-a943-b02334a6d083}";
+        private typeName: "nsSupportsInterfacePointer";
+        private interfaceName: "nsISupportsInterfacePointer";
     };
     ["@mozilla.org/supports-PRBool;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/supports-PRBool;1";
         number: "{acf8dc43-4a25-11d3-9890-006008962422}";
+        private typeName: "nsSupportsPRBool";
+        private interfaceName: "nsISupportsPRBool";
     };
     ["@mozilla.org/supports-PRInt16;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/supports-PRInt16;1";
         number: "{acf8dc4b-4a25-11d3-9890-006008962422}";
+        private typeName: "nsSupportsPRInt16";
+        private interfaceName: "nsISupportsPRInt16";
     };
     ["@mozilla.org/supports-PRInt32;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/supports-PRInt32;1";
         number: "{acf8dc4c-4a25-11d3-9890-006008962422}";
+        private typeName: "nsSupportsPRInt32";
+        private interfaceName: "nsISupportsPRInt32";
     };
     ["@mozilla.org/supports-PRInt64;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/supports-PRInt64;1";
         number: "{acf8dc4d-4a25-11d3-9890-006008962422}";
+        private typeName: "nsSupportsPRInt64";
+        private interfaceName: "nsISupportsPRInt64";
     };
     ["@mozilla.org/supports-PRTime;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/supports-PRTime;1";
         number: "{acf8dc49-4a25-11d3-9890-006008962422}";
+        private typeName: "nsSupportsPRTime";
+        private interfaceName: "nsISupportsPRTime";
     };
     ["@mozilla.org/supports-PRUint16;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/supports-PRUint16;1";
         number: "{acf8dc46-4a25-11d3-9890-006008962422}";
+        private typeName: "nsSupportsPRUint16";
+        private interfaceName: "nsISupportsPRUint16";
     };
     ["@mozilla.org/supports-PRUint32;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/supports-PRUint32;1";
         number: "{acf8dc47-4a25-11d3-9890-006008962422}";
+        private typeName: "nsSupportsPRUint32";
+        private interfaceName: "nsISupportsPRUint32";
     };
     ["@mozilla.org/supports-PRUint64;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/supports-PRUint64;1";
         number: "{acf8dc48-4a25-11d3-9890-006008962422}";
+        private typeName: "nsSupportsPRUint64";
+        private interfaceName: "nsISupportsPRUint64";
     };
     ["@mozilla.org/supports-PRUint8;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/supports-PRUint8;1";
         number: "{acf8dc44-4a25-11d3-9890-006008962422}";
+        private typeName: "nsSupportsPRUint8";
+        private interfaceName: "nsISupportsPRUint8";
     };
     ["@mozilla.org/supports-string;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/supports-string;1";
         number: "{acf8dc42-4a25-11d3-9890-006008962422}";
+        private typeName: "nsSupportsString";
+        private interfaceName: "nsISupportsString";
     };
     ["@mozilla.org/system-info;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/system-info;1";
         number: "{d962398a-99e5-49b2-857a-c159049c7f6c}";
+        private typeName: "nsSystemInfo";
+        private interfaceName: "nsISystemInfo";
     };
     ["@mozilla.org/thread-manager;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -3088,21 +3884,29 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/uuid-generator;1";
         number: "{706d36bb-bf79-4293-81f2-8f6828c18f9d}";
+        private typeName: "nsUUIDGenerator";
+        private interfaceName: "nsIUUIDGenerator";
     };
     ["@mozilla.org/variant;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/variant;1";
         number: "{0d6ea1d0-879c-11d5-90ef-0010a4e73d9a}";
+        private typeName: "nsVariantCC";
+        private interfaceName: "nsIVariantCC";
     };
     ["@mozilla.org/xpcom/version-comparator;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/xpcom/version-comparator;1";
         number: "{c6e47036-ca94-4be3-963a-9abd8705f7a8}";
+        private typeName: "nsVersionComparatorImpl";
+        private interfaceName: "nsIVersionComparatorImpl";
     };
     ["@mozilla.org/xpcom/ini-parser-factory;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/xpcom/ini-parser-factory;1";
         number: "{dfac10a9-dd24-43cf-a095-6ffa2e4b6a6c}";
+        private typeName: "nsINIParserFactory";
+        private interfaceName: "nsIINIParserFactory";
     };
     ["@mozilla.org/categorymanager;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -3158,15 +3962,21 @@ declare var Cc: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/timer-manager;1";
         number: "{d39a8904-2e09-4a3a-a273-c3bec7db2bfe}";
+        private typeName: "nsTimerManager";
+        private interfaceName: "nsITimerManager";
     };
     ["@mozilla.org/appshell/appShellService;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/appshell/appShellService;1";
         number: "{0099907d-123c-4853-a46a-43098b5fb68c}";
+        private typeName: "nsAppShellService";
+        private interfaceName: "nsIAppShellService";
     };
     ["@mozilla.org/appshell/window-mediator;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/appshell/window-mediator;1";
         number: "{79a2b7cc-f05b-4605-bfa0-fac54f27eec8}";
+        private typeName: "nsWindowMediator";
+        private interfaceName: "nsIWindowMediator";
     };
 };

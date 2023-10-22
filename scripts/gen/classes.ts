@@ -12,8 +12,11 @@ const ccDefFileBuilder = ts.createSourceFile(
   '',
   ts.ScriptTarget.Latest,
   false,
-  ts.ScriptKind.TS
+  ts.ScriptKind.TS,
 )
+
+const guessInterfaceName = (typeName: string) =>
+  typeName.replace('moz', 'mozI').replace('ns', 'nsI')
 
 const { classes } = await getXPCOMClasses()
 const types: ts.TypeElement[] = classes.flatMap(
@@ -23,14 +26,14 @@ const types: ts.TypeElement[] = classes.flatMap(
       const ifaceType = iface
         ? ts.factory.createTypeReferenceNode(
             ts.factory.createIdentifier(iface + 'Type'),
-            undefined
+            undefined,
           )
         : ts.factory.createKeywordTypeNode(ts.SyntaxKind.UnknownKeyword)
 
       return ts.factory.createPropertySignature(
         undefined,
         ts.factory.createComputedPropertyName(
-          ts.factory.createStringLiteral(contract_id)
+          ts.factory.createStringLiteral(contract_id),
         ),
         undefined,
         ts.factory.createTypeLiteralNode(
@@ -42,7 +45,7 @@ const types: ts.TypeElement[] = classes.flatMap(
                 undefined,
                 undefined,
                 [],
-                ifaceType
+                ifaceType,
               ),
             !c.singleton &&
               ts.factory.createMethodSignature(
@@ -53,7 +56,7 @@ const types: ts.TypeElement[] = classes.flatMap(
                   ts.factory.createTypeParameterDeclaration(
                     undefined,
                     ts.factory.createIdentifier('I'),
-                    ts.factory.createTypeReferenceNode('CiKeys')
+                    ts.factory.createTypeReferenceNode('CiKeys'),
                   ),
                 ],
                 [
@@ -65,47 +68,65 @@ const types: ts.TypeElement[] = classes.flatMap(
                     ts.factory.createIndexedAccessTypeNode(
                       ts.factory.createTypeReferenceNode(
                         ts.factory.createIdentifier('CiType'),
-                        undefined
+                        undefined,
                       ),
                       ts.factory.createTypeReferenceNode(
                         ts.factory.createIdentifier('I'),
-                        undefined
-                      )
+                        undefined,
+                      ),
                     ),
-                    undefined
+                    undefined,
                   ),
                 ],
                 ts.factory.createIndexedAccessTypeNode(
                   ts.factory.createTypeReferenceNode(
                     ts.factory.createIdentifier('CiMap'),
-                    undefined
+                    undefined,
                   ),
                   ts.factory.createTypeReferenceNode(
                     ts.factory.createIdentifier('I'),
-                    undefined
-                  )
-                )
+                    undefined,
+                  ),
+                ),
               ),
             ts.factory.createPropertySignature(
               undefined,
               ts.factory.createIdentifier('name'),
               undefined,
               ts.factory.createLiteralTypeNode(
-                ts.factory.createStringLiteral(contract_id)
-              )
+                ts.factory.createStringLiteral(contract_id),
+              ),
             ),
             ts.factory.createPropertySignature(
               undefined,
               ts.factory.createIdentifier('number'),
               undefined,
               ts.factory.createLiteralTypeNode(
-                ts.factory.createStringLiteral(c.cid)
-              )
+                ts.factory.createStringLiteral(c.cid),
+              ),
             ),
-          ].filter(Boolean)
-        )
+            c.type &&
+              ts.factory.createPropertySignature(
+                [ts.factory.createToken(ts.SyntaxKind.PrivateKeyword)],
+                ts.factory.createIdentifier('typeName'),
+                undefined,
+                ts.factory.createLiteralTypeNode(
+                  ts.factory.createStringLiteral(c.type),
+                ),
+              ),
+            c.type &&
+              ts.factory.createPropertySignature(
+                [ts.factory.createToken(ts.SyntaxKind.PrivateKeyword)],
+                ts.factory.createIdentifier('interfaceName'),
+                undefined,
+                ts.factory.createLiteralTypeNode(
+                  ts.factory.createStringLiteral(guessInterfaceName(c.type)),
+                ),
+              ),
+          ].filter(Boolean),
+        ),
       )
-    }) || []
+    }) || [],
 )
 
 ccDefFile += printNode(
@@ -115,11 +136,11 @@ ccDefFile += printNode(
       ts.factory.createVariableDeclaration(
         ts.factory.createIdentifier('Cc'),
         undefined,
-        ts.factory.createTypeLiteralNode(types)
+        ts.factory.createTypeLiteralNode(types),
       ),
-    ])
+    ]),
   ),
-  ccDefFileBuilder
+  ccDefFileBuilder,
 )
 
 await writeFile('./types/gen/classes.d.ts', ccDefFile)
