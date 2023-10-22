@@ -69445,6 +69445,7 @@ declare module Services {
     declare var focus: nsIFocusManagerType;
     declare var scriptSecurityManager: nsIScriptSecurityManagerType;
     declare var prompt: nsIPromptServiceType;
+    declare var prefs: nsIPrefServiceType & nsIPrefBranchType;
     declare var loadContextInfo: nsILoadContextInfoFactoryType;
     declare var cache2: nsICacheStorageServiceType;
     declare var dns: nsIDNSServiceType;
@@ -69461,6 +69462,7 @@ declare module Services {
     declare var logins: nsILoginManagerType;
     declare var prompt: nsIPromptServiceType;
     declare var search: nsISearchServiceType;
+    declare var telemetry: nsITelemetryType;
     declare var DAPTelemetry: nsIDAPTelemetryType;
     declare var urlFormatter: nsIURLFormatterType;
     declare var xulStore: nsIXULStoreType;
@@ -69468,7 +69470,15 @@ declare module Services {
     declare var appinfo: nsIXULRuntimeType & nsIXULAppInfoType & nsICrashReporterType;
     declare var ww: nsIWindowWatcherType;
     declare var profiler: nsIProfilerType;
+    declare var androidBridge: nsIAndroidBridgeType;
     declare var clipboard: nsIClipboardType;
+    declare var console: nsIConsoleServiceType;
+    declare var sysinfo: nsIPropertyBag2Type & nsISystemInfoType;
+    declare var tm: nsIThreadManagerType;
+    declare var uuid: nsIUUIDGeneratorType;
+    declare var vc: nsIVersionComparatorType;
+    declare var catMan: nsICategoryManagerType;
+    declare var obs: nsIObserverServiceType;
     declare var dirsvc: nsIDirectoryServiceType & nsIPropertiesType;
     declare var env: nsIEnvironmentType;
     declare var appShell: nsIAppShellServiceType;

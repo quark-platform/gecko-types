@@ -1,7 +1,6 @@
-import { getAllInterfaces, getNamespaces } from 'gecko-index'
+import { getNamespaces } from 'gecko-index'
 import { writeFile } from 'node:fs/promises'
 import ts from 'typescript'
-import { idlTypes } from './idls.js'
 
 import {
   cleanUpComment,
@@ -18,7 +17,7 @@ const namespaceDefFileBuilder = ts.createSourceFile(
   '',
   ts.ScriptTarget.Latest,
   false,
-  ts.ScriptKind.TS
+  ts.ScriptKind.TS,
 )
 
 const namespaces = await getNamespaces()
@@ -42,14 +41,14 @@ for (const namespaceKey in namespaces) {
             name,
             undefined,
             ts.factory.createTypeReferenceNode(
-              `${readonly ? 'readonly' : ''} ${idlType} ${nullable ? '?' : ''}`
-            )
+              `${readonly ? 'readonly' : ''} ${idlType} ${nullable ? '?' : ''}`,
+            ),
           ),
         ]),
         ts.SyntaxKind.MultiLineCommentTrivia,
         formatDocCommentString(cleanUpComment(docComment)),
-        true
-      )
+        true,
+      ),
     )
   }
 
@@ -72,14 +71,14 @@ for (const namespaceKey in namespaces) {
           undefined,
           [],
           ts.factory.createTypeReferenceNode(
-            `${idlType} ${nullable ? '?' : ''}`
+            `${idlType} ${nullable ? '?' : ''}`,
           ),
-          undefined
+          undefined,
         ),
         ts.SyntaxKind.MultiLineCommentTrivia,
         formatDocCommentString(cleanUpComment(docComment)),
-        true
-      )
+        true,
+      ),
     )
   }
 
@@ -87,9 +86,9 @@ for (const namespaceKey in namespaces) {
     ts.factory.createModuleDeclaration(
       [DECLARE_MODIFIER],
       ts.factory.createIdentifier(namespaceKey),
-      ts.factory.createModuleBlock([...attributes, ...methods])
+      ts.factory.createModuleBlock([...attributes, ...methods]),
     ),
-    namespaceDefFileBuilder
+    namespaceDefFileBuilder,
   )
   namespaceDefFile += '\n\n'
 }
