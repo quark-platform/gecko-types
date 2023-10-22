@@ -344,7 +344,6 @@ idlDefFile += '\n\n'
       let type
 
       if (typeof value === 'undefined') {
-        type = ts.factory.createKeywordTypeNode(ts.SyntaxKind.UndefinedKeyword)
       } else if (value.startsWith('0x') || !isNaN(value as unknown as number)) {
         type = ts.factory.createLiteralTypeNode(
           ts.factory.createNumericLiteral(value),
