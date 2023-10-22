@@ -319,8 +319,10 @@ idlDefFile += '\n\n'
 // Ci namespace
 {
   const members: ts.TypeElement[] = []
+  const numberBindings: ts.TypeElement[] = []
 
   for (const iface of idlTypes) {
+    const num = idlUUID.get(iface) || ''
     // Each CI item should have a type that looks something like this:
     // ```js
     // {
@@ -361,12 +363,40 @@ idlDefFile += '\n\n'
         'number',
         undefined,
         ts.factory.createLiteralTypeNode(
-          ts.factory.createStringLiteral(idlUUID.get(iface) || '', true),
+          ts.factory.createStringLiteral(num, true),
         ),
       ),
       ...constants,
     ])
 
+    const numberBinding = ts.factory.createTypeLiteralNode([
+      ts.factory.createPropertySignature(
+        [READ_ONLY_MODIFIER],
+        'name',
+        undefined,
+        ts.factory.createLiteralTypeNode(
+          ts.factory.createStringLiteral(iface, true),
+        ),
+      ),
+      ts.factory.createPropertySignature(
+        [READ_ONLY_MODIFIER],
+        'interface',
+        undefined,
+        ts.factory.createTypeReferenceNode(
+          ts.factory.createIdentifier(`${iface}Type`),
+          undefined,
+        ),
+      ),
+    ])
+
+    numberBindings.push(
+      ts.factory.createPropertySignature(
+        undefined,
+        ts.factory.createStringLiteral(`{${num}}`),
+        undefined,
+        numberBinding,
+      ),
+    )
     members.push(
       ts.factory.createPropertySignature(undefined, iface, undefined, type),
     )
@@ -379,6 +409,17 @@ idlDefFile += '\n\n'
       undefined,
       undefined,
       members,
+    ),
+    idlDefFileBuilder,
+  )
+  idlDefFile += '\n'
+  idlDefFile += printNode(
+    ts.factory.createInterfaceDeclaration(
+      undefined,
+      ts.factory.createIdentifier('CiNumberBinding'),
+      undefined,
+      undefined,
+      numberBindings,
     ),
     idlDefFileBuilder,
   )

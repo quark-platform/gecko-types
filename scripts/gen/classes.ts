@@ -15,8 +15,24 @@ const ccDefFileBuilder = ts.createSourceFile(
   ts.ScriptKind.TS,
 )
 
-const guessInterfaceName = (typeName: string) =>
-  typeName.replace('moz', 'mozI').replace('ns', 'nsI')
+const guessInterfaceName = (
+  typeName?: string | undefined,
+  legacy_constructor?: string | undefined,
+): string | void => {
+  if (typeName) {
+    if (typeName.includes('::')) return guessInterfaceName(undefined, typeName)
+
+    return typeName.replace('moz', 'mozI').replace('ns', 'nsI')
+  }
+  if (legacy_constructor) {
+    if (legacy_constructor.includes('::')) {
+      const split = legacy_constructor.split('::')
+      return guessInterfaceName(split[split.length - 2])
+    }
+
+    return guessInterfaceName(legacy_constructor)
+  }
+}
 
 const { classes } = await getXPCOMClasses()
 const types: ts.TypeElement[] = classes.flatMap(
@@ -29,6 +45,8 @@ const types: ts.TypeElement[] = classes.flatMap(
             undefined,
           )
         : ts.factory.createKeywordTypeNode(ts.SyntaxKind.UnknownKeyword)
+
+      const ifaceNameGuess = guessInterfaceName(c.type, c.legacy_constructor)
 
       return ts.factory.createPropertySignature(
         undefined,
@@ -114,13 +132,13 @@ const types: ts.TypeElement[] = classes.flatMap(
                   ts.factory.createStringLiteral(c.type),
                 ),
               ),
-            c.type &&
+            typeof ifaceNameGuess != 'undefined' &&
               ts.factory.createPropertySignature(
                 [ts.factory.createToken(ts.SyntaxKind.PrivateKeyword)],
                 ts.factory.createIdentifier('interfaceName'),
                 undefined,
                 ts.factory.createLiteralTypeNode(
-                  ts.factory.createStringLiteral(guessInterfaceName(c.type)),
+                  ts.factory.createStringLiteral(ifaceNameGuess),
                 ),
               ),
           ].filter(Boolean),
