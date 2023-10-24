@@ -70,9 +70,19 @@ function handleFunc(
   code: func,
   docCommentRaw: member_$0_$0[],
 ): ts.TypeElement[] {
-  const { return_type: returnType, name, params: rawParams } = code
+  const { return_type: returnType, name, params: rawParams, attributes } = code
   const docComment = generateDocCommentType(docCommentRaw)
   const parsed: Block[] = jsdocParse(`/*${idlDocToJSDocParam(docComment)}*/`)
+
+  // Make sure that this is not a noscript attribute
+  if (attributes) {
+    const { first_attribute, other_attributes } = attributes
+    const attrs = [first_attribute, ...other_attributes.map(({ attr }) => attr)]
+    const isNoScript = attrs.some(
+      ({ name }) => typeof name == 'string' && name == 'noscript',
+    )
+    if (isNoScript) return []
+  }
 
   // TODO: Array<...> support
   if (typeof returnType != 'string') return []
