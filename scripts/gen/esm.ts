@@ -70,15 +70,15 @@ for (const { isGRE, modules } of await getMozBuildFiles()) {
     `./types/gen/esm/index.d.ts`,
     mods.map((mod) => `///<reference path="./${mod.name}" />`).join('\n') +
       `
-declare type MozESMFiles = {
+declare interface MozESMFiles {
   ${mods
     .map((mod) => `['${mod.path}']: typeof import('${mod.path}');`)
     .join('\n  ')}
 }\n
-declare type MozESMExportFile = {
+declare interface MozESMExportFile {
   ${exportMods.map((exp) => `['${exp.name}']: '${exp.path}';`).join('\n  ')}
 }\n
-declare type MozESMExportType = {
+declare interface MozESMExportType {
   ${exportMods
     .map(
       (exp) =>

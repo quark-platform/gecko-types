@@ -614,7 +614,7 @@
 ///<reference path="./crypto-utils.sys.mjs.d.ts" />
 ///<reference path="./ProductAddonChecker.sys.mjs.d.ts" />
 ///<reference path="./siteperms-addon-utils.sys.mjs.d.ts" />
-declare type MozESMFiles = {
+declare interface MozESMFiles {
   ['resource://app/modules/BrowserContentHandler.sys.mjs']: typeof import('resource://app/modules/BrowserContentHandler.sys.mjs');
   ['resource://app/modules/BrowserGlue.sys.mjs']: typeof import('resource://app/modules/BrowserGlue.sys.mjs');
   ['resource://app/modules/distribution.sys.mjs']: typeof import('resource://app/modules/distribution.sys.mjs');
@@ -1233,7 +1233,7 @@ declare type MozESMFiles = {
   ['resource://gre/modules/addons/siteperms-addon-utils.sys.mjs']: typeof import('resource://gre/modules/addons/siteperms-addon-utils.sys.mjs');
 }
 
-declare type MozESMExportFile = {
+declare interface MozESMExportFile {
   ['nsBrowserContentHandler']: 'resource://app/modules/BrowserContentHandler.sys.mjs';
   ['nsDefaultCommandLineHandler']: 'resource://app/modules/BrowserContentHandler.sys.mjs';
   ['BrowserInitState']: 'resource://app/modules/BrowserGlue.sys.mjs';
@@ -2254,7 +2254,7 @@ declare type MozESMExportFile = {
   ['isPrincipalInSitePermissionsBlocklist']: 'resource://gre/modules/addons/siteperms-addon-utils.sys.mjs';
 }
 
-declare type MozESMExportType = {
+declare interface MozESMExportType {
   ['nsBrowserContentHandler']: (typeof import('resource://app/modules/BrowserContentHandler.sys.mjs'))['nsBrowserContentHandler'];
   ['nsDefaultCommandLineHandler']: (typeof import('resource://app/modules/BrowserContentHandler.sys.mjs'))['nsDefaultCommandLineHandler'];
   ['BrowserInitState']: (typeof import('resource://app/modules/BrowserGlue.sys.mjs'))['BrowserInitState'];
