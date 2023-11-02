@@ -21,8 +21,8 @@ declare module Components {
   declare function Exception(
     message?: string,
     result?: nsresult,
-    stack: unknown,
-    data: unknown,
+    stack?: unknown,
+    data?: unknown,
   ): nsIExceptionType
 
   declare function Constructor<
