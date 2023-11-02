@@ -123,7 +123,7 @@ function handleFunc(
           if (
             attrs.some(({ name }) => typeof name == 'string' && name == 'array')
           )
-            name += '[]'
+            type += '[]'
         }
 
         const matchingDocSpec = getJSDocNamedSpec(parsed, name)

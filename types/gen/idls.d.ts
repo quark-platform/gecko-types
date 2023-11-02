@@ -424,7 +424,7 @@ declare interface imgIEncoderType extends nsIAsyncInputStreamType {
      * give options to the output encoder. Options are encoder-
      * specific. Just give empty string for default behavior.
      */
-    initFromData(data[]: uint8_t, length: unsigned_long, width: uint32_t, height: uint32_t, stride: uint32_t, inputFormat: uint32_t, outputOptions: AString): void;
+    initFromData(data: uint8_t[], length: unsigned_long, width: uint32_t, height: uint32_t, stride: uint32_t, inputFormat: uint32_t, outputOptions: AString): void;
     /**
      * For encoding images which may contain multiple frames, the 1-shot
      * initFromData() interface is too simplistic. The alternative is to
@@ -437,7 +437,7 @@ declare interface imgIEncoderType extends nsIAsyncInputStreamType {
     /**
      *
      */
-    addImageFrame(data[]: uint8_t, length: unsigned_long, width: uint32_t, height: uint32_t, stride: uint32_t, frameFormat: uint32_t, frameOptions: AString): void;
+    addImageFrame(data: uint8_t[], length: unsigned_long, width: uint32_t, height: uint32_t, stride: uint32_t, frameFormat: uint32_t, frameOptions: AString): void;
     /**
      *
      */
@@ -3186,7 +3186,7 @@ declare interface mozIStorageStatementType extends mozIStorageBaseStatementType 
      * @param[out] aData
      * The contents of the BLOB.  This will be NULL if aDataSize == 0.
      */
-    getBlob(aIndex: unsigned_long, aDataSize: unsigned_long, aData[]: octet): void;
+    getBlob(aIndex: unsigned_long, aDataSize: unsigned_long, aData: octet[]): void;
     /**
      * Retrieve the contents of a Blob column from the current result row as a
      * string.
@@ -3346,7 +3346,7 @@ declare interface mozIStorageValueArrayType extends nsISupportsType {
     /**
      *
      */
-    getBlob(aIndex: unsigned_long, aDataSize: unsigned_long, aData[]: octet): void;
+    getBlob(aIndex: unsigned_long, aDataSize: unsigned_long, aData: octet[]): void;
     /**
      *
      */
@@ -4121,7 +4121,7 @@ declare interface nsIAlertsIconDataType extends nsISupportsType {
      * page that created the alert. If the favicon is not in the Places database,
      * |aIconSize| will be zero.
      */
-    showAlertWithIconData(aAlert: nsIAlertNotificationType, aAlertListener: nsIObserverType, aIconSize: uint32_t, aIconData[]: uint8_t): void;
+    showAlertWithIconData(aAlert: nsIAlertNotificationType, aAlertListener: nsIObserverType, aIconSize: uint32_t, aIconData: uint8_t[]): void;
 }
 
 /**
@@ -11730,7 +11730,7 @@ declare interface nsIContentSnifferType extends nsISupportsType {
      * they should not attempt to set the content type property that subclasses of
      * nsIRequest might offer.
      */
-    getMIMETypeFromContent(aRequest: nsIRequestType, aData[]: octet, aLength: unsigned_long): ACString;
+    getMIMETypeFromContent(aRequest: nsIRequestType, aData: octet[], aLength: unsigned_long): ACString;
 }
 
 /**
@@ -13017,7 +13017,7 @@ declare interface nsICryptoHashType extends nsISupportsType {
      *
      * @throws NS_ERROR_NOT_INITIALIZED If |init| has not been called.
      */
-    update(aData[]: octet, aLen: unsigned_long): void;
+    update(aData: octet[], aLen: unsigned_long): void;
     /**
      * Calculates and updates a new hash based on a given data stream.
      *
@@ -18942,7 +18942,7 @@ declare interface nsIExpatSinkType extends nsISupportsType {
      * @param aLineNumber the line number of the start tag in the data stream.
      * @param aColumnNumber the column number of the start tag in the data stream.
      */
-    HandleStartElement(aName: wstring, aAtts[]: wstring, aAttsCount: unsigned_long, aLineNumber: unsigned_long, aColumnNumber: unsigned_long): void;
+    HandleStartElement(aName: wstring, aAtts: wstring[], aAttsCount: unsigned_long, aLineNumber: unsigned_long, aColumnNumber: unsigned_long): void;
     /**
      * Called to handle the closing tag of an element.
      * @param aName the fully qualified tagname of the element
@@ -19721,7 +19721,7 @@ declare interface nsIFaviconDataCallbackType extends nsISupportsType {
      * recommended that you call the getFaviconLinkForIcon method to convert
      * the "favicon URI" into a "favicon link URI".
      */
-    onComplete(aFaviconURI: nsIURIType, aDataLen: unsigned_long, aData[]: octet, aMimeType: AUTF8String, aWidth: unsigned_short): void;
+    onComplete(aFaviconURI: nsIURIType, aDataLen: unsigned_long, aData: octet[], aMimeType: AUTF8String, aWidth: unsigned_short): void;
 }
 
 /**
@@ -25299,7 +25299,7 @@ declare interface nsIIncrementalStreamLoaderObserverType extends nsISupportsType
      * In comparison with onStreamComplete(), the data buffer cannot be
      * adopted if this method returns NS_SUCCESS_ADOPTED_DATA.
      */
-    onIncrementalData(loader: nsIIncrementalStreamLoaderType, ctxt: nsISupportsType, dataLength: unsigned_long, data[]: octet, consumedLength: unsigned_long): void;
+    onIncrementalData(loader: nsIIncrementalStreamLoaderType, ctxt: nsISupportsType, dataLength: unsigned_long, data: octet[], consumedLength: unsigned_long): void;
     /**
      * Called when the entire stream has been loaded.
      *
@@ -25320,7 +25320,7 @@ declare interface nsIIncrementalStreamLoaderObserverType extends nsISupportsType
      * onStreamComplete() returns; observer must call free()
      * when the data is no longer required.
      */
-    onStreamComplete(loader: nsIIncrementalStreamLoaderType, ctxt: nsISupportsType, status: nsresult, resultLength: unsigned_long, result[]: octet): void;
+    onStreamComplete(loader: nsIIncrementalStreamLoaderType, ctxt: nsISupportsType, status: nsresult, resultLength: unsigned_long, result: octet[]): void;
 }
 
 /**
@@ -35786,7 +35786,7 @@ declare interface nsIProcessType extends nsISupportsType {
      * native character set.
      * @param count      The length of the args array.
      */
-    run(blocking: boolean, args[]: string, count: unsigned_long): void;
+    run(blocking: boolean, args: string[], count: unsigned_long): void;
     /**
      * Executes the file this object was initialized with optionally calling
      * an observer after the process has finished running.
@@ -35799,7 +35799,7 @@ declare interface nsIProcessType extends nsISupportsType {
      * observer will be notified on the main thread.
      * @param holdWeak   Whether to use a weak reference to hold the observer.
      */
-    runAsync(args[]: string, count: unsigned_long, observer: nsIObserverType, holdWeak: boolean): void;
+    runAsync(args: string[], count: unsigned_long, observer: nsIObserverType, holdWeak: boolean): void;
     /**
      * Executes the file this object was initialized with
      * @param blocking   Whether to wait until the process terminates before
@@ -35807,7 +35807,7 @@ declare interface nsIProcessType extends nsISupportsType {
      * @param args       An array of arguments to pass to the process in UTF-16
      * @param count      The length of the args array.
      */
-    runw(blocking: boolean, args[]: wstring, count: unsigned_long): void;
+    runw(blocking: boolean, args: wstring[], count: unsigned_long): void;
     /**
      * Executes the file this object was initialized with optionally calling
      * an observer after the process has finished running.
@@ -35819,7 +35819,7 @@ declare interface nsIProcessType extends nsISupportsType {
      * observer will be notified on the main thread.
      * @param holdWeak   Whether to use a weak reference to hold the observer.
      */
-    runwAsync(args[]: wstring, count: unsigned_long, observer: nsIObserverType, holdWeak: boolean): void;
+    runwAsync(args: wstring[], count: unsigned_long, observer: nsIObserverType, holdWeak: boolean): void;
     /**
      * When set to true the process will not open a new window when started and
      * will run hidden from the user. This currently affects only the Windows
@@ -38165,7 +38165,7 @@ declare interface nsIRandomGeneratorType extends nsISupportsType {
      * @param aBuffer
      * A buffer that contains random bytes of size aLength.
      */
-    generateRandomBytes(aLength: unsigned_long, aBuffer[]: octet): void;
+    generateRandomBytes(aLength: unsigned_long, aBuffer: octet[]): void;
 }
 
 /**
@@ -40149,7 +40149,7 @@ declare interface nsIScriptableUnicodeConverterType extends nsISupportsType {
      * Convert a unicode string to an array of bytes. Finish does not need to be
      * called.
      */
-    convertToByteArray(aString: AString, aLen: unsigned_long, aData[]: octet): void;
+    convertToByteArray(aString: AString, aLen: unsigned_long, aData: octet[]): void;
     /**
      * Converts a unicode string to an input stream. The bytes in the stream are
      * encoded according to the charset attribute.
@@ -41899,7 +41899,7 @@ declare interface nsISocketFilterType extends nsISupportsType {
     /**
      *
      */
-    filterPacket(remote_addr: NetAddrPtr, data[]: uint8_t, len: unsigned_long, direction: long): bool;
+    filterPacket(remote_addr: NetAddrPtr, data: uint8_t[], len: unsigned_long, direction: long): bool;
 }
 
 /**
@@ -42863,7 +42863,7 @@ declare interface nsIStreamLoaderObserverType extends nsISupportsType {
      * onStreamComplete() returns; observer must call free()
      * when the data is no longer required.
      */
-    onStreamComplete(loader: nsIStreamLoaderType, ctxt: nsISupportsType, status: nsresult, resultLength: unsigned_long, result[]: octet): void;
+    onStreamComplete(loader: nsIStreamLoaderType, ctxt: nsISupportsType, status: nsresult, resultLength: unsigned_long, result: octet[]): void;
 }
 
 /**
@@ -50383,7 +50383,7 @@ declare interface nsIUnicharOutputStreamType extends nsISupportsType {
      * @retval true The character was written successfully
      * @retval false Not all bytes of the character could be written.
      */
-    write(aCount: unsigned_long, c[]: char16_t): boolean;
+    write(aCount: unsigned_long, c: char16_t[]): boolean;
     /**
      * Write a string to the stream.
      *
@@ -51631,11 +51631,11 @@ declare interface nsIUrlClassifierPrefixSetType extends nsISupportsType {
     /**
      *
      */
-    setPrefixes(aPrefixes[]: unsigned_long, aLength: unsigned_long): void;
+    setPrefixes(aPrefixes: unsigned_long[], aLength: unsigned_long): void;
     /**
      *
      */
-    getPrefixes(aCount: unsigned_long, aPrefixes[]: unsigned_long): void;
+    getPrefixes(aCount: unsigned_long, aPrefixes: unsigned_long[]): void;
     /**
      *
      */
@@ -55716,7 +55716,7 @@ declare interface nsIX509CertDBType extends nsISupportsType {
      * @param type The type of the certificate, see constants in nsIX509Cert
      * @param ctx A UI context.
      */
-    importCertificates(data[]: octet, length: unsigned_long, type: unsigned_long, ctx: nsIInterfaceRequestorType): void;
+    importCertificates(data: octet[], length: unsigned_long, type: unsigned_long, ctx: nsIInterfaceRequestorType): void;
     /**
      * Import another person's email certificate into the database.
      *
@@ -55724,7 +55724,7 @@ declare interface nsIX509CertDBType extends nsISupportsType {
      * @param length The length of the data to be imported
      * @param ctx A UI context.
      */
-    importEmailCertificate(data[]: octet, length: unsigned_long, ctx: nsIInterfaceRequestorType): void;
+    importEmailCertificate(data: octet[], length: unsigned_long, ctx: nsIInterfaceRequestorType): void;
     /**
      * Import a personal certificate into the database, assuming
      * the database already contains the private key for this certificate.
@@ -55733,7 +55733,7 @@ declare interface nsIX509CertDBType extends nsISupportsType {
      * @param length The length of the data to be imported
      * @param ctx A UI context.
      */
-    importUserCertificate(data[]: octet, length: unsigned_long, ctx: nsIInterfaceRequestorType): void;
+    importUserCertificate(data: octet[], length: unsigned_long, ctx: nsIInterfaceRequestorType): void;
     /**
      * Delete a certificate stored in the database.
      *
@@ -57934,27 +57934,27 @@ declare interface nsIXPCTestParamsType extends nsISupportsType {
     /**
      *
      */
-    testShortArray(aLength: unsigned_long, a[]: short, bLength: unsigned_long, b[]: short, rvLength: unsigned_long, rv[]: short): void;
+    testShortArray(aLength: unsigned_long, a: short[], bLength: unsigned_long, b: short[], rvLength: unsigned_long, rv: short[]): void;
     /**
      *
      */
-    testDoubleArray(aLength: unsigned_long, a[]: double, bLength: unsigned_long, b[]: double, rvLength: unsigned_long, rv[]: double): void;
+    testDoubleArray(aLength: unsigned_long, a: double[], bLength: unsigned_long, b: double[], rvLength: unsigned_long, rv: double[]): void;
     /**
      *
      */
-    testStringArray(aLength: unsigned_long, a[]: string, bLength: unsigned_long, b[]: string, rvLength: unsigned_long, rv[]: string): void;
+    testStringArray(aLength: unsigned_long, a: string[], bLength: unsigned_long, b: string[], rvLength: unsigned_long, rv: string[]): void;
     /**
      *
      */
-    testWstringArray(aLength: unsigned_long, a[]: wstring, bLength: unsigned_long, b[]: wstring, rvLength: unsigned_long, rv[]: wstring): void;
+    testWstringArray(aLength: unsigned_long, a: wstring[], bLength: unsigned_long, b: wstring[], rvLength: unsigned_long, rv: wstring[]): void;
     /**
      *
      */
-    testInterfaceArray(aLength: unsigned_long, a[]: nsIXPCTestInterfaceAType, bLength: unsigned_long, b[]: nsIXPCTestInterfaceAType, rvLength: unsigned_long, rv[]: nsIXPCTestInterfaceAType): void;
+    testInterfaceArray(aLength: unsigned_long, a: nsIXPCTestInterfaceAType[], bLength: unsigned_long, b: nsIXPCTestInterfaceAType[], rvLength: unsigned_long, rv: nsIXPCTestInterfaceAType[]): void;
     /**
      *
      */
-    testByteArrayOptionalLength(a[]: uint8_t, aLength: unsigned_long): unsigned_long;
+    testByteArrayOptionalLength(a: uint8_t[], aLength: unsigned_long): unsigned_long;
     /**
      *
      */
@@ -57970,11 +57970,11 @@ declare interface nsIXPCTestParamsType extends nsISupportsType {
     /**
      *
      */
-    testInterfaceIsArray(aLength: unsigned_long, aIID: nsIIDPtrType, a[]: nsQIResult, bLength: unsigned_long, bIID: nsIIDPtrType, b[]: nsQIResult, rvLength: unsigned_long, rvIID: nsIIDPtrType, rv[]: nsQIResult): void;
+    testInterfaceIsArray(aLength: unsigned_long, aIID: nsIIDPtrType, a: nsQIResult[], bLength: unsigned_long, bIID: nsIIDPtrType, b: nsQIResult[], rvLength: unsigned_long, rvIID: nsIIDPtrType, rv: nsQIResult[]): void;
     /**
      *
      */
-    testJsvalArray(aLength: unsigned_long, a[]: jsval, bLength: unsigned_long, b[]: jsval, rvLength: unsigned_long, rv[]: jsval): void;
+    testJsvalArray(aLength: unsigned_long, a: jsval[], bLength: unsigned_long, b: jsval[], rvLength: unsigned_long, rv: jsval[]): void;
     /**
      *
      */
@@ -57982,7 +57982,7 @@ declare interface nsIXPCTestParamsType extends nsISupportsType {
     /**
      *
      */
-    testStringArrayOptionalSize(a[]: string, aLength: unsigned_long): ACString;
+    testStringArrayOptionalSize(a: string[], aLength: unsigned_long): ACString;
     /**
      *
      */
