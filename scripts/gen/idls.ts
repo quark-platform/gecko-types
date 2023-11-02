@@ -1,6 +1,8 @@
 import { writeFile } from 'fs/promises'
 import { getAllInterfaces, getXPCOMClasses } from 'gecko-index'
 import {
+  attribute,
+  attributes,
   attribute_code,
   const_code,
   func,
@@ -37,6 +39,14 @@ const idlDefFileBuilder = ts.createSourceFile(
   /*setParentNodes*/ false,
   ts.ScriptKind.TS,
 )
+
+const arrayifyAttributes = ({
+  first_attribute,
+  other_attributes,
+}: attributes): attribute[] => [
+  first_attribute,
+  ...other_attributes.map(({ attr }) => attr),
+]
 
 function handleAttribute(
   code: attribute_code,
@@ -76,8 +86,7 @@ function handleFunc(
 
   // Make sure that this is not a noscript attribute
   if (attributes) {
-    const { first_attribute, other_attributes } = attributes
-    const attrs = [first_attribute, ...other_attributes.map(({ attr }) => attr)]
+    const attrs = arrayifyAttributes(attributes)
     const isNoScript = attrs.some(
       ({ name }) => typeof name == 'string' && name == 'noscript',
     )
@@ -106,8 +115,16 @@ function handleFunc(
         // If a type starts with nsI, it is probibly an interface, and we should
         // append the 'Type' postfix
         if (type.startsWith('nsI')) type += 'Type'
-
         if (name == 'debugger' || name == 'function') name = `_${name}`
+
+        // Support type attributes
+        if (val.attribute) {
+          const attrs = arrayifyAttributes(val.attribute)
+          if (
+            attrs.some(({ name }) => typeof name == 'string' && name == 'array')
+          )
+            name += '[]'
+        }
 
         const matchingDocSpec = getJSDocNamedSpec(parsed, name)
         if (matchingDocSpec) {
