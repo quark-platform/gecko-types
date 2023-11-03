@@ -18,14 +18,14 @@ declare module "resource://app/modules/WindowsPreviewPerTab.sys.mjs" {
         _observersAdded;
         enable();
         disable();
-        addPreview(preview);
-        removePreview(preview);
+        addPreview(preview?);
+        removePreview(preview?);
         checkPreviewCount();
-        onOpenWindow(win);
-        onCloseWindow(win);
+        onOpenWindow(win?);
+        onCloseWindow(win?);
         resetCacheTimer();
-        observe(aSubject, aTopic, aData);
-        handlePlacesEvents(events);
+        observe(aSubject?, aTopic?, aData?);
+        handlePlacesEvents(events?);
         QueryInterface;
     };
 }

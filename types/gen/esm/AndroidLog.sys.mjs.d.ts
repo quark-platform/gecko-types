@@ -6,6 +6,6 @@ declare module "resource://gre/modules/AndroidLog.sys.mjs" {
         i;
         w;
         e;
-        bind(tag);
+        bind(tag?);
     };
 }

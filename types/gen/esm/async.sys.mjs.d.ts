@@ -3,12 +3,12 @@ declare module "resource://gre/modules/services-common/async.sys.mjs" {
         chain;
         checkAppReady;
         isAppReady();
-        isShutdownException(exception);
+        isShutdownException(exception?);
         promiseYield();
-        yieldState(yieldEvery);
-        yieldingForEach(iterable, fn, yieldEvery);
-        asyncQueueCaller(log);
-        asyncObserver(log, obj);
+        yieldState(yieldEvery?);
+        yieldingForEach(iterable?, fn?, yieldEvery?);
+        asyncQueueCaller(log?);
+        asyncObserver(log?, obj?);
         watchdog();
     };
 }

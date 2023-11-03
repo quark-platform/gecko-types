@@ -6,6 +6,6 @@ declare module "resource://gre/modules/NetUtil.sys.mjs" {
         newChannel;
         newWebTransport;
         readInputStreamToString;
-        readInputStream(aInputStream, aCount);
+        readInputStream(aInputStream?, aCount?);
     };
 }

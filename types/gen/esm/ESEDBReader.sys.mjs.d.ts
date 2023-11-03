@@ -19,12 +19,12 @@ declare module "resource://app/modules/ESEDBReader.sys.mjs" {
     };
     var ESE: {};
     var gLibs: {};
-    function declareESEFunction(methodName);
+    function declareESEFunction(methodName?);
     function loadLibraries();
     var ESEDBReader: {
-        openDB(rootDir, dbFile, logDir);
-        dbLocked(dbFile);
-        closeDB(db);
+        openDB(rootDir?, dbFile?, logDir?);
+        dbLocked(dbFile?);
+        closeDB(db?);
         COLUMN_TYPES;
     };
 }

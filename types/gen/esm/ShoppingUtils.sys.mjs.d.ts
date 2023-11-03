@@ -5,6 +5,6 @@ declare module "resource://app/modules/ShoppingUtils.sys.mjs" {
         onNimbusUpdate();
         init();
         uninit();
-        setOnUpdate(_pref, _prev, current);
+        setOnUpdate(_pref?, _prev?, current?);
     };
 }

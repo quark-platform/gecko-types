@@ -1,8 +1,8 @@
 declare module "resource://gre/modules/Subprocess.sys.mjs" {
     var Subprocess: {
-        call(options);
+        call(options?);
         getEnvironment();
-        pathSearch(command, environment);
+        pathSearch(command?, environment?);
     };
     function getSubprocessImplForTest();
 }

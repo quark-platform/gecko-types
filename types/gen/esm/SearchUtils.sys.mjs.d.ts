@@ -37,14 +37,14 @@ declare module "resource://gre/modules/SearchUtils.sys.mjs" {
         };
         LoadListener;
         GENERAL_SEARCH_ENGINE_IDS;
-        notifyAction(engine, verb);
-        makeURI(urlSpec);
-        makeChannel(url);
+        notifyAction(engine?, verb?);
+        makeURI(urlSpec?);
+        makeChannel(url?);
         isPartnerBuild();
         get SETTINGS_VERSION(): any;
         get MODIFIED_APP_CHANNEL(): any;
-        sanitizeName(name);
-        getVerificationHash(name);
-        isSecureURIForOpenSearch(uri);
+        sanitizeName(name?);
+        getVerificationHash(name?);
+        isSecureURIForOpenSearch(uri?);
     };
 }

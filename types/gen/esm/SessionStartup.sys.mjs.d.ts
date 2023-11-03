@@ -10,9 +10,9 @@ declare module "resource://app/modules/sessionstore/SessionStartup.sys.mjs" {
         _previousSessionCrashed;
         _resumeSessionEnabled;
         init();
-        _createSupportsString(data);
-        _onSessionFileRead(param0);
-        observe(subject, topic, data);
+        _createSupportsString(data?);
+        _onSessionFileRead(param0?);
+        observe(subject?, topic?, data?);
         get onceInitialized(): any;
         get state(): any;
         isAutomaticRestoreEnabled();

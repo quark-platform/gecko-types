@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/InlineSpellChecker.sys.mjs" {
-    function InlineSpellChecker(aEditor);
+    function InlineSpellChecker(aEditor?);
     var SpellCheckHelper: {
         EDITABLE: number;
         INPUT: number;
@@ -10,8 +10,8 @@ declare module "resource://gre/modules/InlineSpellChecker.sys.mjs" {
         NUMERIC: number;
         PASSWORD: number;
         SPELLCHECKABLE: number;
-        isTargetAKeywordField(aNode, window);
-        getComputedStyle(aElem, aProp);
-        isEditable(element, window);
+        isTargetAKeywordField(aNode?, window?);
+        getComputedStyle(aElem?, aProp?);
+        isEditable(element?, window?);
     };
 }

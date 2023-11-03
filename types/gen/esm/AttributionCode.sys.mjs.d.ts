@@ -8,11 +8,11 @@ declare module "resource://app/modules/AttributionCode.sys.mjs" {
     var AttributionCode: {
         get msixCampaignId(): any;
         get attributionFile(): any;
-        writeAttributionFile(code);
+        writeAttributionFile(code?);
         get allowedCodeKeys(): any;
-        parseAttributionCode(code);
-        parseAttributionCodeFromUrl(url);
-        serializeAttributionData(data);
+        parseAttributionCode(code?);
+        parseAttributionCodeFromUrl(url?);
+        serializeAttributionData(data?);
         getAttrDataAsync();
         getCachedAttributionData();
         deleteFileAsync();

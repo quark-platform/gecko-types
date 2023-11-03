@@ -3,8 +3,8 @@ declare module "resource://app/modules/BrowserGlue.sys.mjs" {
     function BrowserGlue();
     function ContentPermissionPrompt();
     var DefaultBrowserCheck: {
-        prompt(win);
-        willCheckDefaultBrowser(isStartupCheck);
+        prompt(win?);
+        willCheckDefaultBrowser(isStartupCheck?);
     };
     var AboutHomeStartupCache: {
         ABOUT_HOME_URI_STRING;
@@ -48,26 +48,26 @@ declare module "resource://app/modules/BrowserGlue.sys.mjs" {
         _aboutHomeURI;
         get aboutHomeURI(): any;
         _cacheProgress;
-        onShutdown(withTimeout);
+        onShutdown(withTimeout?);
         cacheNow();
         requestCache();
         makePipe();
         get pagePipe(): any;
         get scriptPipe(): any;
         connectToPipes();
-        populateCache(pageInputStream, scriptInputStream);
+        populateCache(pageInputStream?, scriptInputStream?);
         ensureCacheEntry();
         clearCache();
-        onContentProcessCreated(childID, procManager, processParent);
-        onContentProcessShutdown(childID);
+        onContentProcessCreated(childID?, procManager?, processParent?);
+        onContentProcessShutdown(childID?);
         onPreloadedNewTabMessage();
-        setDeferredResult(result);
-        recordResult(result);
-        onUsageResult(success);
+        setDeferredResult(result?);
+        recordResult(result?);
+        onUsageResult(success?);
         QueryInterface;
-        receiveMessage(message);
-        observe(aSubject, aTopic, aData);
-        onCacheEntryCheck(aEntry);
-        onCacheEntryAvailable(aEntry, aNew, aResult);
+        receiveMessage(message?);
+        observe(aSubject?, aTopic?, aData?);
+        onCacheEntryCheck(aEntry?);
+        onCacheEntryAvailable(aEntry?, aNew?, aResult?);
     };
 }

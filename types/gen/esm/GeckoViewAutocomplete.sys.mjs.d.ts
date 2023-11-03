@@ -24,18 +24,18 @@ declare module "resource://gre/modules/GeckoViewAutocomplete.sys.mjs" {
     }
     var GeckoViewAutocomplete: {
         _prompt;
-        fetchLogins(aDomain);
+        fetchLogins(aDomain?);
         fetchCreditCards();
         fetchAddresses();
-        onCreditCardSave(aCreditCard);
-        onAddressSave(aAddress);
-        onLoginSave(aLogin);
-        onLoginPasswordUsed(aLogin);
+        onCreditCardSave(aCreditCard?);
+        onAddressSave(aAddress?);
+        onLoginSave(aLogin?);
+        onLoginPasswordUsed(aLogin?);
         _numActiveSelections: number;
-        onLoginSelect(aBrowser, aOptions);
-        onCreditCardSelect(aBrowser, aOptions);
-        onAddressSelect(aBrowser, aOptions);
-        delegateSelection(param0);
+        onLoginSelect(aBrowser?, aOptions?);
+        onCreditCardSelect(aBrowser?, aOptions?);
+        onAddressSelect(aBrowser?, aOptions?);
+        delegateSelection(param0?);
         delegateDismiss();
     };
 }

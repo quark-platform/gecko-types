@@ -4,8 +4,8 @@ declare module "resource://gre/modules/AsyncPrefs.sys.mjs" {
         reset();
     }
     var AsyncPrefs: {
-        set(pref, value);
-        reset(pref, value);
+        set(pref?, value?);
+        reset(pref?, value?);
     };
     export class AsyncPrefsParent {
         set();

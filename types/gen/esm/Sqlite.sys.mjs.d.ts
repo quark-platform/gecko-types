@@ -5,6 +5,6 @@ declare module "resource://gre/modules/Sqlite.sys.mjs" {
         cloneStorageConnection;
         wrapStorageConnection;
         get shutdown(): any;
-        failTestsOnAutoClose(enabled);
+        failTestsOnAutoClose(enabled?);
     };
 }

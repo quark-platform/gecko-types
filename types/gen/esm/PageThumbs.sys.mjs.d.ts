@@ -7,15 +7,15 @@ declare module "resource://gre/modules/PageThumbs.sys.mjs" {
         get staticHost(): any;
         get contentType(): any;
         init;
-        handlePlacesEvents(events);
+        handlePlacesEvents(events?);
         uninit;
         getThumbnailURL;
         getThumbnailPath;
         captureToBlob;
-        captureToCanvas(aBrowser, aCanvas, aArgs, aSkipTelemetry);
-        shouldStoreThumbnail(aBrowser);
-        _captureToCanvas(aBrowser, aCanvas, aArgs);
-        _captureRemoteThumbnail(aBrowser, aWidth, aHeight, aArgs);
+        captureToCanvas(aBrowser?, aCanvas?, aArgs?, aSkipTelemetry?);
+        shouldStoreThumbnail(aBrowser?);
+        _captureToCanvas(aBrowser?, aCanvas?, aArgs?);
+        _captureRemoteThumbnail(aBrowser?, aWidth?, aHeight?, aArgs?);
         captureAndStore;
         captureAndStoreIfStale;
         _store;
@@ -27,9 +27,9 @@ declare module "resource://gre/modules/PageThumbs.sys.mjs" {
     var PageThumbsStorage: {
         ensurePath;
         _revisionTable: {};
-        updateRevision(aURL);
+        updateRevision(aURL?);
         _revisionRange: number;
-        getRevision(aURL);
+        getRevision(aURL?);
         writeData;
         copy;
         remove;

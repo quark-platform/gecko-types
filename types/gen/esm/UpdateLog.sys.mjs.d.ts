@@ -3,6 +3,6 @@ declare module "resource://gre/modules/UpdateLog.sys.mjs" {
         logPrefixedString;
         get enabled(): any;
         get logFileEnabled(): any;
-        addConfigChangeListener(listener);
+        addConfigChangeListener(listener?);
     };
 }

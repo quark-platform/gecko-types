@@ -19,7 +19,7 @@ declare module "resource://gre/modules/PlacesDBUtils.sys.mjs" {
         removeOldCorruptDBs();
         getEntitiesStats();
         getEntitiesStatsAndCounts();
-        runTasks(tasks);
+        runTasks(tasks?);
     };
     function PlacesDBUtilsIdleMaintenance();
 }

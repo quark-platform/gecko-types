@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/FxAccounts.sys.mjs" {
-    function AccountState(storageManager);
+    function AccountState(storageManager?);
     export class FxAccounts {
         constructor();
         get commands();

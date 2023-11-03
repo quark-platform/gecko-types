@@ -1,3 +1,3 @@
 declare module "resource://gre/modules/FxAccountsPush.sys.mjs" {
-    function FxAccountsPushService(options);
+    function FxAccountsPushService(options?);
 }

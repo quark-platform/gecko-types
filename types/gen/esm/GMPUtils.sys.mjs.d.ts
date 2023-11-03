@@ -3,12 +3,12 @@ declare module "resource://gre/modules/GMPUtils.sys.mjs" {
     var WIDEVINE_ID;
     var GMP_PLUGIN_IDS;
     var GMPUtils: {
-        isPluginHidden(aPlugin);
-        _isPluginSupported(aPlugin);
-        _isPluginVisible(aPlugin);
-        _isPluginForceSupported(aPlugin);
+        isPluginHidden(aPlugin?);
+        _isPluginSupported(aPlugin?);
+        _isPluginVisible(aPlugin?);
+        _isPluginForceSupported(aPlugin?);
         _isWindowsOnARM64();
-        _expectedABI(aPlugin);
+        _expectedABI(aPlugin?);
     };
     var GMPPrefs: {
         KEY_EME_ENABLED;
@@ -44,14 +44,14 @@ declare module "resource://gre/modules/GMPUtils.sys.mjs" {
         KEY_LOG_BASE;
         KEY_LOGGING_LEVEL;
         KEY_LOGGING_DUMP;
-        getString(aKey, aDefaultValue, aPlugin);
-        getInt(aKey, aDefaultValue, aPlugin);
-        getBool(aKey, aDefaultValue, aPlugin);
-        setString(aKey, aVal, aPlugin);
-        setBool(aKey, aVal, aPlugin);
-        setInt(aKey, aVal, aPlugin);
-        isSet(aKey, aPlugin);
-        reset(aKey, aPlugin);
-        getPrefKey(aKey, aPlugin);
+        getString(aKey?, aDefaultValue?, aPlugin?);
+        getInt(aKey?, aDefaultValue?, aPlugin?);
+        getBool(aKey?, aDefaultValue?, aPlugin?);
+        setString(aKey?, aVal?, aPlugin?);
+        setBool(aKey?, aVal?, aPlugin?);
+        setInt(aKey?, aVal?, aPlugin?);
+        isSet(aKey?, aPlugin?);
+        reset(aKey?, aPlugin?);
+        getPrefKey(aKey?, aPlugin?);
     };
 }

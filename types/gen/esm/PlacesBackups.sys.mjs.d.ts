@@ -10,7 +10,7 @@ declare module "resource://gre/modules/PlacesBackups.sys.mjs" {
         getDateForFile;
         getMostRecentBackup;
         hasRecentBackup();
-        saveBookmarksToJSONFile(aFilePath);
+        saveBookmarksToJSONFile(aFilePath?);
         create;
         getBookmarkCountForFile;
         getBookmarksTree();

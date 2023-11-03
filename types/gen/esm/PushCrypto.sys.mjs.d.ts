@@ -1,11 +1,11 @@
 declare module "resource://gre/modules/PushCrypto.sys.mjs" {
-    function getCryptoParamsFromHeaders(headers);
+    function getCryptoParamsFromHeaders(headers?);
     var PushCrypto: {
         concatArray;
         generateAuthenticationSecret();
-        validateAppServerKey(key);
+        validateAppServerKey(key?);
         generateKeys();
-        decrypt(privateKey, publicKey, authenticationSecret, headers, payload);
-        encrypt(plaintext, receiverPublicKey, receiverAuthSecret, options);
+        decrypt(privateKey?, publicKey?, authenticationSecret?, headers?, payload?);
+        encrypt(plaintext?, receiverPublicKey?, receiverAuthSecret?, options?);
     };
 }

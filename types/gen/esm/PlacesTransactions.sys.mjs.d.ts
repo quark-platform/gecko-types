@@ -1,11 +1,11 @@
 declare module "resource://gre/modules/PlacesTransactions.sys.mjs" {
     var PlacesTransactions: {
-        batch(transactionsToBatch);
+        batch(transactionsToBatch?);
         undo();
         redo();
-        clearTransactionsHistory(undoEntries, redoEntries);
+        clearTransactionsHistory(undoEntries?, redoEntries?);
         get length(): any;
-        entry(index);
+        entry(index?);
         get undoPosition(): any;
         get topUndoEntry(): any;
         get topRedoEntry(): any;

@@ -3,6 +3,6 @@ declare module "resource://app/modules/HeadlessShell.sys.mjs" {
         getDimensions();
     }
     var HeadlessShell: {
-        handleCmdLineArgs(cmdLine, URLlist);
+        handleCmdLineArgs(cmdLine?, URLlist?);
     };
 }

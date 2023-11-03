@@ -5,9 +5,9 @@ declare module "resource://gre/modules/NewTabUtils.sys.mjs" {
         init;
         initWithoutProviders;
         uninit;
-        getProviderLinks(aProvider);
-        isTopSiteGivenProvider(aSite, aProvider);
-        isTopPlacesSite(aSite);
+        getProviderLinks(aProvider?);
+        isTopSiteGivenProvider(aSite?, aProvider?);
+        isTopPlacesSite(aSite?);
         restore;
         undoAll;
         links;

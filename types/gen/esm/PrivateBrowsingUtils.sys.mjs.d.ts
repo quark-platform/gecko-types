@@ -3,7 +3,7 @@ declare module "resource://gre/modules/PrivateBrowsingUtils.sys.mjs" {
         get enabled(): any;
         isWindowPrivate;
         isContentWindowPrivate;
-        isBrowserPrivate(aBrowser);
+        isBrowserPrivate(aBrowser?);
         privacyContextFromWindow;
         get permanentPrivateBrowsing(): any;
         enterTemporaryAutoStartMode;

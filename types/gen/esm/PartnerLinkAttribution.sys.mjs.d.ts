@@ -7,9 +7,9 @@ declare module "resource://app/modules/PartnerLinkAttribution.sys.mjs" {
         QS_SELECTION;
     };
     var PartnerLinkAttribution: {
-        makeRequest(param0);
-        makeSearchEngineRequest(engine, targetUrl);
-        sendContextualServicesPing(payload, pingType);
+        makeRequest(param0?);
+        makeSearchEngineRequest(engine?, targetUrl?);
+        sendContextualServicesPing(payload?, pingType?);
         get _pingCentre(): any;
     };
 }

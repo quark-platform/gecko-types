@@ -1,6 +1,6 @@
 declare module "resource://app/modules/CustomizeMode.sys.mjs" {
     var CustomizeMode: {
-        init(libDir);
+        init(libDir?);
         configurations: {
             notCustomizing: {
                 selectors;

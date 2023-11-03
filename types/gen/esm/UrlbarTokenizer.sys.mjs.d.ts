@@ -38,9 +38,9 @@ declare module "resource://app/modules/UrlbarTokenizer.sys.mjs" {
             ACTION;
         };
         get SEARCH_MODE_RESTRICT(): any;
-        looksLikeUrl(token);
-        looksLikeOrigin(token);
-        tokenize(queryContext);
-        isRestrictionToken(token);
+        looksLikeUrl(token?);
+        looksLikeOrigin(token?);
+        tokenize(queryContext?);
+        isRestrictionToken(token?);
     };
 }

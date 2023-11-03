@@ -4,6 +4,6 @@ declare module "resource://gre/modules/ManifestProcessor.sys.mjs" {
         get displayModes(): any;
         get orientationTypes(): any;
         get textDirections(): any;
-        process(aOptions);
+        process(aOptions?);
     };
 }

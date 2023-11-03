@@ -3,7 +3,7 @@ declare module "resource://gre/modules/translation/LanguageDetector.sys.mjs" {
         LARGE_STRING;
         IDLE_TIMEOUT;
         detectionQueue;
-        detectLanguage(aParams);
+        detectLanguage(aParams?);
         _worker;
         _workerReadyPromise;
         get workerReady(): any;
@@ -12,7 +12,7 @@ declare module "resource://gre/modules/translation/LanguageDetector.sys.mjs" {
         _flushWorker();
     };
     var LanguageDetector: {
-        detectLanguage(aParams);
-        detectLanguageFromDocument(aDocument);
+        detectLanguage(aParams?);
+        detectLanguageFromDocument(aDocument?);
     };
 }

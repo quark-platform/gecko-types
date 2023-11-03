@@ -10,7 +10,7 @@ declare module "resource://gre/modules/Extension.sys.mjs" {
         lastCrashTimestamps;
         init();
         uninit();
-        observe(subject, topic, data);
+        observe(subject?, topic?, data?);
         enableProcessSpawning();
         get appInForeground(): any;
         get processSpawningDisabled(): any;

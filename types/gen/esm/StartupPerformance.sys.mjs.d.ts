@@ -14,8 +14,8 @@ declare module "resource://app/modules/sessionstore/StartupPerformance.sys.mjs" 
         init();
         get latestRestoredTimeStamp(): any;
         get isRestored(): any;
-        _onRestorationStarts(isAutoRestore);
+        _onRestorationStarts(isAutoRestore?);
         _startTimer();
-        observe(subject, topic, details);
+        observe(subject?, topic?, details?);
     };
 }

@@ -1,16 +1,16 @@
 declare module "resource://app/modules/BrowserWindowTracker.sys.mjs" {
     var BrowserWindowTracker: {
         pendingWindows;
-        getTopWindow(options);
-        getPendingWindow(options);
-        registerOpeningWindow(window, isPrivate);
+        getTopWindow(options?);
+        getPendingWindow(options?);
+        registerOpeningWindow(window?, isPrivate?);
         openWindow();
-        promiseOpenWindow(options);
+        promiseOpenWindow(options?);
         get windowCount(): any;
         get orderedWindows(): any;
         getAllVisibleTabs();
-        track(window);
-        getBrowserById(browserId);
-        untrackForTestsOnly(window);
+        track(window?);
+        getBrowserById(browserId?);
+        untrackForTestsOnly(window?);
     };
 }

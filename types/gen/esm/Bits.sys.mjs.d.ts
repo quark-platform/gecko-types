@@ -35,8 +35,8 @@ declare module "resource://gre/modules/Bits.sys.mjs" {
     }
     var Bits: {
         get initialized(): any;
-        init(jobName, savePathPrefix, monitorTimeoutMs);
-        startDownload(downloadURL, saveRelPath, proxy, noProgressTimeoutSecs, monitorIntervalMs, observer, context);
-        monitorDownload(id, monitorIntervalMs, observer, context);
+        init(jobName?, savePathPrefix?, monitorTimeoutMs?);
+        startDownload(downloadURL?, saveRelPath?, proxy?, noProgressTimeoutSecs?, monitorIntervalMs?, observer?, context?);
+        monitorDownload(id?, monitorIntervalMs?, observer?, context?);
     };
 }

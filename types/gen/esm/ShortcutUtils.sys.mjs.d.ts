@@ -13,13 +13,13 @@ declare module "resource://gre/modules/ShortcutUtils.sys.mjs" {
         MOVE_TAB_FORWARD;
         NEXT_TAB;
         PREVIOUS_TAB;
-        prettifyShortcut(aElemKey);
+        prettifyShortcut(aElemKey?);
         metaKeyIsCommandKey();
-        getModifierString(elemMod);
-        getKeyString(keyCode, keyAttribute);
-        getKeyAttribute(chromeKey);
-        getKeycodeAttribute(chromeKey);
-        findShortcut(aElemCommand);
+        getModifierString(elemMod?);
+        getKeyString(keyCode?, keyAttribute?);
+        getKeyAttribute(chromeKey?);
+        getKeycodeAttribute(chromeKey?);
+        findShortcut(aElemCommand?);
         chromeModifierKeyMap: {
             Alt;
             Command;
@@ -27,9 +27,9 @@ declare module "resource://gre/modules/ShortcutUtils.sys.mjs" {
             MacCtrl;
             Shift;
         };
-        getModifiersAttribute(chromeModifiers);
-        validate(string);
-        isSystem(win, value);
-        getSystemActionForEvent(event);
+        getModifiersAttribute(chromeModifiers?);
+        validate(string?);
+        isSystem(win?, value?);
+        getSystemActionForEvent(event?);
     };
 }

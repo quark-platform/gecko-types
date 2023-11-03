@@ -10,7 +10,7 @@ declare module "resource://app/modules/AboutNewTab.sys.mjs" {
         _newTabURL;
         _newTabURLOverridden;
         init();
-        toggleActivityStream(stateEnabled, forceState);
+        toggleActivityStream(stateEnabled?, forceState?);
         get newTabURL(): any;
         set newTabURL(aNewTabURL);
         get newTabURLOverridden(): any;
@@ -24,7 +24,7 @@ declare module "resource://app/modules/AboutNewTab.sys.mjs" {
         _alreadyRecordedTopsitesPainted;
         _nonDefaultStartup;
         noteNonDefaultStartup();
-        maybeRecordTopsitesPainted(timestamp);
-        observe(subject, topic, data);
+        maybeRecordTopsitesPainted(timestamp?);
+        observe(subject?, topic?, data?);
     };
 }

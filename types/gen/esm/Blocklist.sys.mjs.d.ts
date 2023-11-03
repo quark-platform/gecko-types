@@ -3,11 +3,11 @@ declare module "resource://gre/modules/Blocklist.sys.mjs" {
         _init();
         isLoaded;
         shutdown();
-        observe(subject, topic, prefName);
+        observe(subject?, topic?, prefName?);
         loadBlocklistAsync();
-        getAddonBlocklistState(addon, appVersion, toolkitVersion);
-        getAddonBlocklistEntry(addon, appVersion, toolkitVersion);
-        recordAddonBlockChangeTelemetry(addon, reason);
+        getAddonBlocklistState(addon?, appVersion?, toolkitVersion?);
+        getAddonBlocklistEntry(addon?, appVersion?, toolkitVersion?);
+        recordAddonBlockChangeTelemetry(addon?, reason?);
         allowDeprecatedBlocklistV2;
         _chooseExtensionBlocklistImplementationFromPref();
         _blocklistUpdated();

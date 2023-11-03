@@ -3,9 +3,9 @@ declare module "resource://gre/modules/ExtensionChild.sys.mjs" {
         _initialized;
         enabledExtensions;
         init();
-        receiveMessage(param0);
-        log(context, type, name, data);
-        _sendActivity(data);
+        receiveMessage(param0?);
+        log(context?, type?, name?, data?);
+        _sendActivity(data?);
     };
     var ExtensionChild: {
         BrowserExtensionContent;

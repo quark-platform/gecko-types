@@ -6,10 +6,10 @@ declare module "resource://app/modules/NewTabPagePreloading.sys.mjs" {
             private: number;
         };
         get enabled(): any;
-        _createBrowser(win);
-        _adoptBrowserFromOtherWindow(window);
-        maybeCreatePreloadedBrowser(window);
-        getPreloadedBrowser(window);
-        removePreloadedBrowser(window);
+        _createBrowser(win?);
+        _adoptBrowserFromOtherWindow(window?);
+        maybeCreatePreloadedBrowser(window?);
+        getPreloadedBrowser(window?);
+        removePreloadedBrowser(window?);
     };
 }

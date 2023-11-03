@@ -6,7 +6,7 @@ declare module "resource://app/modules/DoHConfig.sys.mjs" {
         loadRegion();
         init();
         _uninit();
-        observe(subject, topic, data);
+        observe(subject?, topic?, data?);
         QueryInterface;
         updateFromRemoteSettings();
         kConfigUpdateTopic;

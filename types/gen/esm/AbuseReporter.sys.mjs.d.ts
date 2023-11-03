@@ -6,11 +6,11 @@ declare module "resource://gre/modules/AbuseReporter.sys.mjs" {
         _lastReportTimestamp;
         updateLastReportTimestamp();
         getTimeFromLastReport();
-        isSupportedAddonType(addonType);
-        createAbuseReport(addonId);
-        queryAMOAddonDetails(addonId, reportEntryPoint);
-        getReportData(addon);
+        isSupportedAddonType(addonType?);
+        createAbuseReport(addonId?);
+        queryAMOAddonDetails(addonId?, reportEntryPoint?);
+        getReportData(addon?);
         getOpenDialog();
-        openDialog(addonId, reportEntryPoint, browser);
+        openDialog(addonId?, reportEntryPoint?, browser?);
     };
 }

@@ -4,8 +4,8 @@ declare module "resource://app/modules/DoHHeuristics.sys.mjs" {
         DISABLE_DOH;
         run();
         checkEnterprisePolicy();
-        _setMockLinkService(mockLinkService);
-        heuristicNameToSkipReason(heuristicName);
+        _setMockLinkService(mockLinkService?);
+        heuristicNameToSkipReason(heuristicName?);
     };
     function parentalControls();
 }

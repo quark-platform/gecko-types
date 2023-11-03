@@ -8,15 +8,15 @@ declare module "resource://gre/modules/BackgroundUpdate.sys.mjs" {
         _force();
         _reasonsToNotUpdateInstallation();
         _reasonsToNotScheduleUpdates();
-        _registerBackgroundUpdateTask(taskId);
+        _registerBackgroundUpdateTask(taskId?);
         ensureExperimentToRolloutTransitionPerformed();
-        observe(subject, topic, data);
+        observe(subject?, topic?, data?);
         maybeScheduleBackgroundUpdateTask();
         recordUpdateEnvironment();
         scheduleFirefoxMessagingSystemTargetingSnapshotting();
         notify();
         _startTargetingSnapshottingTimer();
-        readFirefoxMessagingSystemTargetingSnapshot(lock);
-        _recordGleanMetrics(reasons);
+        readFirefoxMessagingSystemTargetingSnapshot(lock?);
+        _recordGleanMetrics(reasons?);
     };
 }

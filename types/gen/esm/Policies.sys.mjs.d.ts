@@ -1,294 +1,294 @@
 declare module "resource://app/modules/policies/Policies.sys.mjs" {
     var Policies: {
         _cleanup: {
-            onBeforeAddons(manager);
-            onProfileAfterChange(manager);
-            onBeforeUIStartup(manager);
-            onAllWindowsRestored(manager);
+            onBeforeAddons(manager?);
+            onProfileAfterChange(manager?);
+            onBeforeUIStartup(manager?);
+            onAllWindowsRestored(manager?);
         };
         AllowedDomainsForApps: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         AppAutoUpdate: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         AppUpdatePin: {
-            validate(param);
+            validate(param?);
         };
         AppUpdateURL: {};
         Authentication: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         AutoLaunchProtocolsFromOrigins: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         BackgroundAppUpdate: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         BlockAboutAddons: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         BlockAboutConfig: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         BlockAboutProfiles: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         BlockAboutSupport: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         Bookmarks: {
-            onAllWindowsRestored(manager, param);
+            onAllWindowsRestored(manager?, param?);
         };
         CaptivePortal: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         Certificates: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         Containers: {};
         Cookies: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         DefaultDownloadDirectory: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         DisableAppUpdate: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         DisableBuiltinPDFViewer: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         DisabledCiphers: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         DisableDefaultBrowserAgent: {};
         DisableDeveloperTools: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         DisableFeedbackCommands: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         DisableFirefoxAccounts: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         DisableFirefoxScreenshots: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         DisableFirefoxStudies: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         DisableForgetButton: {
-            onProfileAfterChange(manager, param);
+            onProfileAfterChange(manager?, param?);
         };
         DisableFormHistory: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         DisableMasterPasswordCreation: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         DisablePasswordReveal: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         DisablePocket: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         DisablePrivateBrowsing: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         DisableProfileImport: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         DisableProfileRefresh: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         DisableSafeMode: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         DisableSecurityBypass: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         DisableSetDesktopBackground: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         DisableSystemAddonUpdate: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         DisableTelemetry: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         DisableThirdPartyModuleBlocking: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         DisplayBookmarksToolbar: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         DisplayMenuBar: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         DNSOverHTTPS: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         DontCheckDefaultBrowser: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         DownloadDirectory: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         EnableTrackingProtection: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         EncryptedMediaExtensions: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         ExemptDomainFileTypePairsFromFileTypeDownloadWarnings: {};
         Extensions: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         ExtensionSettings: {
-            onBeforeAddons(manager, param);
-            onBeforeUIStartup(manager, param);
+            onBeforeAddons(manager?, param?);
+            onBeforeUIStartup(manager?, param?);
         };
         ExtensionUpdate: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         FirefoxHome: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         FirefoxSuggest: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         GoToIntranetSiteForSingleWordEntryInAddressBar: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         Handlers: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         HardwareAcceleration: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         Homepage: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         InstallAddonsPermission: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         LegacyProfiles: {};
         LegacySameSiteCookieBehaviorEnabled: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         LegacySameSiteCookieBehaviorEnabledForDomainList: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         LocalFileLinks: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         ManagedBookmarks: {};
         ManualAppUpdateOnly: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         NetworkPrediction: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         NewTabPage: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         NoDefaultBookmarks: {
-            onProfileAfterChange(manager, param);
+            onProfileAfterChange(manager?, param?);
         };
         OfferToSaveLogins: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         OfferToSaveLoginsDefault: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         OverrideFirstRunPage: {
-            onProfileAfterChange(manager, param);
+            onProfileAfterChange(manager?, param?);
         };
         OverridePostUpdatePage: {
-            onProfileAfterChange(manager, param);
+            onProfileAfterChange(manager?, param?);
         };
         PasswordManagerEnabled: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         PasswordManagerExceptions: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         PDFjs: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         Permissions: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         PictureInPicture: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         PopupBlocking: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         Preferences: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         PrimaryPassword: {
-            onAllWindowsRestored(manager, param);
+            onAllWindowsRestored(manager?, param?);
         };
         PromptForDownloadLocation: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         Proxy: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         RequestedLocales: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         SanitizeOnShutdown: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         SearchBar: {
-            onAllWindowsRestored(manager, param);
+            onAllWindowsRestored(manager?, param?);
         };
         SearchEngines: {
-            onBeforeUIStartup(manager, param);
-            onAllWindowsRestored(manager, param);
+            onBeforeUIStartup(manager?, param?);
+            onAllWindowsRestored(manager?, param?);
         };
         SearchSuggestEnabled: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         SecurityDevices: {
-            onProfileAfterChange(manager, param);
+            onProfileAfterChange(manager?, param?);
         };
         ShowHomeButton: {
-            onBeforeAddons(manager, param);
-            onAllWindowsRestored(manager, param);
+            onBeforeAddons(manager?, param?);
+            onAllWindowsRestored(manager?, param?);
         };
         SSLVersionMax: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         SSLVersionMin: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         StartDownloadsInTempDirectory: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         SupportMenu: {
-            onProfileAfterChange(manager, param);
+            onProfileAfterChange(manager?, param?);
         };
         UserMessaging: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         UseSystemPrintDialog: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
         WebsiteFilter: {
-            onBeforeUIStartup(manager, param);
+            onBeforeUIStartup(manager?, param?);
         };
         WindowsSSO: {
-            onBeforeAddons(manager, param);
+            onBeforeAddons(manager?, param?);
         };
     };
-    function setAndLockPref(prefName, prefValue);
+    function setAndLockPref(prefName?, prefValue?);
     var PoliciesUtils: {
-        setDefaultPref(prefName, prefValue, locked);
+        setDefaultPref(prefName?, prefValue?, locked?);
     };
-    function runOnce(actionName, callback);
+    function runOnce(actionName?, callback?);
 }

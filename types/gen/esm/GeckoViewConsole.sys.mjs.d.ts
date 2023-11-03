@@ -3,10 +3,10 @@ declare module "resource://gre/modules/GeckoViewConsole.sys.mjs" {
         _isEnabled;
         get enabled(): any;
         set enabled(aVal);
-        observe(aSubject, aTopic, aData);
-        _handleConsoleMessage(aMessage);
-        getResultType(aResult);
-        formatResult(aResult);
-        abbreviateSourceURL(aSourceURL);
+        observe(aSubject?, aTopic?, aData?);
+        _handleConsoleMessage(aMessage?);
+        getResultType(aResult?);
+        formatResult(aResult?);
+        abbreviateSourceURL(aSourceURL?);
     };
 }
