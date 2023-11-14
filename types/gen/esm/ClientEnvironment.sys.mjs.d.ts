@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/components-utils/ClientEnvironment.sys.mjs" {
-    export class ClientEnvironment {
+    export class ClientEnvironment extends ClientEnvironmentBase {
         getClientClassification();
         clearClassifyCache();
         withMockClassify();

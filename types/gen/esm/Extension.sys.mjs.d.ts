@@ -72,7 +72,8 @@ declare module "resource://gre/modules/Extension.sys.mjs" {
         classifyOriginPermissions();
         formatPermissionStrings();
     }
-    export class Extension {
+    import type { ExtensionData } from "resource://gre/modules/Extension.sys.mjs";
+    export class Extension extends ExtensionData {
         constructor(addonData, startupReason, updateReason);
         set state(startupState);
         get state();
@@ -131,13 +132,15 @@ declare module "resource://gre/modules/Extension.sys.mjs" {
         get hasBrowserActionUI();
         getPreferredIcon();
     }
-    export class Dictionary {
+    import type { ExtensionData } from "resource://gre/modules/Extension.sys.mjs";
+    export class Dictionary extends ExtensionData {
         constructor(addonData, startupReason);
         getBootstrapScope();
         startup();
         shutdown();
     }
-    export class Langpack {
+    import type { ExtensionData } from "resource://gre/modules/Extension.sys.mjs";
+    export class Langpack extends ExtensionData {
         constructor(addonData, startupReason);
         getBootstrapScope();
         promiseLocales();
@@ -145,7 +148,8 @@ declare module "resource://gre/modules/Extension.sys.mjs" {
         startup();
         shutdown();
     }
-    export class SitePermission {
+    import type { ExtensionData } from "resource://gre/modules/Extension.sys.mjs";
+    export class SitePermission extends ExtensionData {
         constructor(addonData, startupReason);
         loadManifest();
         getBootstrapScope();

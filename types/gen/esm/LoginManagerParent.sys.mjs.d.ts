@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/LoginManagerParent.sys.mjs" {
-    export class LoginManagerParent {
+    export class LoginManagerParent extends JSWindowActorParent {
         setListenerForTests();
         get _recipeManager();
         getGeneratedPasswordsByPrincipalOrigin();

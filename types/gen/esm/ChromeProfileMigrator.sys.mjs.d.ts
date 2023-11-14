@@ -1,5 +1,6 @@
 declare module "resource://app/modules/ChromeProfileMigrator.sys.mjs" {
-    export class ChromeProfileMigrator {
+    import type { MigratorBase } from "resource://app/modules/MigratorBase.sys.mjs";
+    export class ChromeProfileMigrator extends MigratorBase {
         get key();
         get displayNameL10nID();
         get brandImage();
@@ -11,12 +12,14 @@ declare module "resource://app/modules/ChromeProfileMigrator.sys.mjs" {
         _GetPasswordsResource();
         _GetPaymentMethodsResource();
     }
-    export class ChromiumProfileMigrator {
+    import type { ChromeProfileMigrator } from "resource://app/modules/ChromeProfileMigrator.sys.mjs";
+    export class ChromiumProfileMigrator extends ChromeProfileMigrator {
         get key();
         get displayNameL10nID();
         get brandImage();
     }
-    export class CanaryProfileMigrator {
+    import type { ChromeProfileMigrator } from "resource://app/modules/ChromeProfileMigrator.sys.mjs";
+    export class CanaryProfileMigrator extends ChromeProfileMigrator {
         get key();
         get displayNameL10nID();
         get brandImage();
@@ -24,47 +27,56 @@ declare module "resource://app/modules/ChromeProfileMigrator.sys.mjs" {
         get _keychainServiceName();
         get _keychainAccountName();
     }
-    export class ChromeDevMigrator {
+    import type { ChromeProfileMigrator } from "resource://app/modules/ChromeProfileMigrator.sys.mjs";
+    export class ChromeDevMigrator extends ChromeProfileMigrator {
         get key();
         get displayNameL10nID();
     }
-    export class ChromeBetaMigrator {
+    import type { ChromeProfileMigrator } from "resource://app/modules/ChromeProfileMigrator.sys.mjs";
+    export class ChromeBetaMigrator extends ChromeProfileMigrator {
         get key();
         get displayNameL10nID();
     }
-    export class BraveProfileMigrator {
-        get key();
-        get displayNameL10nID();
-        get brandImage();
-    }
-    export class ChromiumEdgeMigrator {
-        get key();
-        get displayNameL10nID();
-        get brandImage();
-    }
-    export class ChromiumEdgeBetaMigrator {
+    import type { ChromeProfileMigrator } from "resource://app/modules/ChromeProfileMigrator.sys.mjs";
+    export class BraveProfileMigrator extends ChromeProfileMigrator {
         get key();
         get displayNameL10nID();
         get brandImage();
     }
-    export class Chromium360seMigrator {
+    import type { ChromeProfileMigrator } from "resource://app/modules/ChromeProfileMigrator.sys.mjs";
+    export class ChromiumEdgeMigrator extends ChromeProfileMigrator {
         get key();
         get displayNameL10nID();
         get brandImage();
     }
-    export class OperaProfileMigrator {
+    import type { ChromeProfileMigrator } from "resource://app/modules/ChromeProfileMigrator.sys.mjs";
+    export class ChromiumEdgeBetaMigrator extends ChromeProfileMigrator {
+        get key();
+        get displayNameL10nID();
+        get brandImage();
+    }
+    import type { ChromeProfileMigrator } from "resource://app/modules/ChromeProfileMigrator.sys.mjs";
+    export class Chromium360seMigrator extends ChromeProfileMigrator {
+        get key();
+        get displayNameL10nID();
+        get brandImage();
+    }
+    import type { ChromeProfileMigrator } from "resource://app/modules/ChromeProfileMigrator.sys.mjs";
+    export class OperaProfileMigrator extends ChromeProfileMigrator {
         get key();
         get displayNameL10nID();
         get brandImage();
         getSourceProfiles();
     }
-    export class OperaGXProfileMigrator {
+    import type { ChromeProfileMigrator } from "resource://app/modules/ChromeProfileMigrator.sys.mjs";
+    export class OperaGXProfileMigrator extends ChromeProfileMigrator {
         get key();
         get displayNameL10nID();
         get brandImage();
         getSourceProfiles();
     }
-    export class VivaldiProfileMigrator {
+    import type { ChromeProfileMigrator } from "resource://app/modules/ChromeProfileMigrator.sys.mjs";
+    export class VivaldiProfileMigrator extends ChromeProfileMigrator {
         get key();
         get displayNameL10nID();
         get brandImage();

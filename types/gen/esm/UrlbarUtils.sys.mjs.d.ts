@@ -92,6 +92,7 @@ declare module "resource://app/modules/UrlbarUtils.sys.mjs" {
         stripPublicSuffixFromHost(host?);
         stripUnsafeProtocolOnPaste(pasteData?);
         addToInputHistory(url?, input?);
+        removeInputHistory(url?, input?);
         isPasteEvent(event?);
         looksLikeSingleWordHost(value?);
         substringAt(sourceStr?, targetStr?);

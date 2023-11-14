@@ -14,7 +14,6 @@ declare module "resource://gre/modules/PlacesDBUtils.sys.mjs" {
         vacuum();
         expire();
         stats();
-        originFrecencyStats();
         telemetry();
         removeOldCorruptDBs();
         getEntitiesStats();

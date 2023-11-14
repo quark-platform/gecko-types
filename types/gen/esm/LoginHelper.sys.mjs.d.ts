@@ -23,7 +23,6 @@ declare module "resource://gre/modules/LoginHelper.sys.mjs" {
         schemeUpgrades;
         showAutoCompleteFooter;
         showAutoCompleteImport;
-        signupDectectionConfidenceThreshold;
         testOnlyUserHasInteractedWithDocument;
         userInputRequiredToCapture;
         captureInputChanges;

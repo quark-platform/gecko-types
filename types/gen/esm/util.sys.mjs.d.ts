@@ -49,7 +49,7 @@ declare module "resource://app/modules/syncedtabs/util.sys.mjs" {
         formatTimestamp(date?);
         walkTree(tree?, parent?);
     };
-    export class SerializableSet {
+    export class SerializableSet extends Set {
         toJSON();
     }
     var Svc: {};

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/AsyncPrefs.sys.mjs" {
-    export class AsyncPrefsChild {
+    export class AsyncPrefsChild extends JSProcessActorChild {
         set();
         reset();
     }
@@ -7,7 +7,7 @@ declare module "resource://gre/modules/AsyncPrefs.sys.mjs" {
         set(pref?, value?);
         reset(pref?, value?);
     };
-    export class AsyncPrefsParent {
+    export class AsyncPrefsParent extends JSProcessActorParent {
         set();
         reset();
         receiveMessage();

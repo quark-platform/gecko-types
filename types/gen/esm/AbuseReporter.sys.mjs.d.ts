@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/AbuseReporter.sys.mjs" {
-    export class AbuseReportError {
+    export class AbuseReportError extends Error {
         constructor(errorType);
     }
     var AbuseReporter: {

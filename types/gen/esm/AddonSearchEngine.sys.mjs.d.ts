@@ -1,5 +1,6 @@
 declare module "resource://gre/modules/AddonSearchEngine.sys.mjs" {
-    export class AddonSearchEngine {
+    import type { SearchEngine } from "resource://gre/modules/SearchEngine.sys.mjs";
+    export class AddonSearchEngine extends SearchEngine {
         constructor();
         _initWithJSON();
         init();

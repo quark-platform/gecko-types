@@ -53,6 +53,9 @@ declare module "resource://app/modules/policies/Policies.sys.mjs" {
         DefaultDownloadDirectory: {
             onBeforeAddons(manager?, param?);
         };
+        DisableAccounts: {
+            onBeforeAddons(manager?, param?);
+        };
         DisableAppUpdate: {
             onBeforeAddons(manager?, param?);
         };

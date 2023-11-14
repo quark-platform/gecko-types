@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ExtensionShortcuts.sys.mjs" {
-    export class ExtensionShortcutKeyMap {
+    export class ExtensionShortcutKeyMap extends DefaultMap {
         buildForAddonIds();
         recordShortcut();
         removeShortcut();

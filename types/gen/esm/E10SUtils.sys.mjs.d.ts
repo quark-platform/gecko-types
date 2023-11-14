@@ -21,7 +21,6 @@ declare module "resource://gre/modules/E10SUtils.sys.mjs" {
         canLoadURIInRemoteType(aURL?, aRemoteSubframes?, aRemoteType?, aOriginAttributes?);
         getRemoteTypeForURI(aURL?, aMultiProcess?, aRemoteSubframes?, aPreferredRemoteType?, aCurrentUri?, aOriginAttributes?);
         getRemoteTypeForURIObject(aURI?, options?);
-        getRemoteTypeForWorkerPrincipal(aPrincipal?, aWorkerType?, aIsMultiProcess?, aIsFission?, aPreferredRemoteType?);
         makeInputStream(data?);
         serializePrincipal(principal?);
         deserializePrincipal(serializedPincipal?, fallbackPrincipalCallback?);

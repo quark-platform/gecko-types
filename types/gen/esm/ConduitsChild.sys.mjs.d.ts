@@ -4,13 +4,13 @@ declare module "resource://gre/modules/ConduitsChild.sys.mjs" {
         _send();
         _recv();
     }
-    export class ConduitsChild {
+    export class ConduitsChild extends JSWindowActorChild {
         constructor();
         openConduit();
         receiveMessage();
         didDestroy();
     }
-    export class ProcessConduitsChild {
+    export class ProcessConduitsChild extends JSProcessActorChild {
         constructor();
     }
 }

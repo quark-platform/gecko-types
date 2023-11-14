@@ -17,8 +17,11 @@ import { writeFileSync } from 'fs'
 
 const exportMods: { name: string; path: string }[] = []
 const mods: { name: string; path: string }[] = []
+const classes = new Map<string, string>()
+const mozbuildFiles = await getMozBuildFiles()
 
-for (const { isGRE, modules } of await getMozBuildFiles()) {
+// Initialize resolution data (e.g. class index)
+for (const { isGRE, modules } of mozbuildFiles) {
   const resourcePrefix = isGRE
     ? 'resource://gre/modules'
     : 'resource://app/modules'
@@ -31,21 +34,42 @@ for (const { isGRE, modules } of await getMozBuildFiles()) {
       const esm = await getESM(moduleName)
 
       exportMods.push(...esm.map((exp) => ({ name: exp.id, path: modPath })))
-
       mods.push({ name: `${moduleName}.d.ts`, path: modPath })
+
+      for (const exp of esm) {
+        if (exp.type === 'class') {
+          classes.set(exp.id, modPath)
+        }
+      }
+    }
+  }
+}
+
+for (const { isGRE, modules } of mozbuildFiles) {
+  const resourcePrefix = isGRE
+    ? 'resource://gre/modules'
+    : 'resource://app/modules'
+
+  for (const path in modules) {
+    for (const moduleName of modules[path]) {
+      if (!hasESM(moduleName)) continue
+
+      const modPath = resourcePrefix + path + moduleName
+      const esm = await getESM(moduleName)
+
       const moduleDefBuilder = ts.createSourceFile(
         `${moduleName}.d.ts`,
         '',
         ts.ScriptTarget.Latest,
         /*setParentNodes*/ false,
-        ts.ScriptKind.TS,
+        ts.ScriptKind.TS
       )
       const moduleDef = printNode(
         ts.factory.createModuleDeclaration(
           [ts.factory.createToken(ts.SyntaxKind.DeclareKeyword)],
           ts.factory.createStringLiteral(modPath),
           ts.factory.createModuleBlock(
-            esm.map((exp) => {
+            esm.flatMap((exp) => {
               switch (exp.type) {
                 case 'class':
                   return handleClass(exp)
@@ -54,10 +78,10 @@ for (const { isGRE, modules } of await getMozBuildFiles()) {
                 case 'variable-declaration':
                   return handleVariable(exp)
               }
-            }),
-          ),
+            })
+          )
         ),
-        moduleDefBuilder,
+        moduleDefBuilder
       )
 
       writeFileSync(`./types/gen/esm/${moduleName}.d.ts`, moduleDef)
@@ -81,15 +105,14 @@ declare interface MozESMExportFile {
 declare interface MozESMExportType {
   ${exportMods
     .map(
-      (exp) =>
-        `['${exp.name}']: (typeof import('${exp.path}'))['${exp.name}'];`,
+      (exp) => `['${exp.name}']: (typeof import('${exp.path}'))['${exp.name}'];`
     )
     .join('\n  ')}
-}`,
+}`
   )
 }
 
-function handleClass(c: ClassExport): ts.Statement {
+function handleClass(c: ClassExport): ts.Statement[] {
   function createParam(param: string) {
     return ts.factory.createParameterDeclaration(
       undefined,
@@ -97,54 +120,85 @@ function handleClass(c: ClassExport): ts.Statement {
       ts.factory.createIdentifier(param),
       undefined,
       undefined,
-      undefined,
+      undefined
     )
   }
 
-  return ts.factory.createClassDeclaration(
-    [ts.factory.createToken(ts.SyntaxKind.ExportKeyword)],
-    ts.factory.createIdentifier(c.id),
-    undefined,
-    undefined,
-    c.methods.map((m) => {
-      switch (m.kind) {
-        case 'constructor':
-          return ts.factory.createConstructorDeclaration(
-            undefined,
-            m.params.map((param) => createParam(param.id)),
-            undefined,
-          )
-        case 'method':
-          return ts.factory.createMethodDeclaration(
-            undefined,
-            undefined,
-            ts.factory.createIdentifier(m.id),
-            undefined,
-            undefined,
-            [],
-            undefined,
-            undefined,
-          )
-        case 'get':
-          return ts.factory.createGetAccessorDeclaration(
-            undefined,
-            ts.factory.createIdentifier(m.id),
-            [],
-            undefined,
-            undefined,
-          )
-        case 'set':
-          return ts.factory.createSetAccessorDeclaration(
-            undefined,
-            ts.factory.createIdentifier(m.id),
-            m.params.map((param) => createParam(param.id)),
-            undefined,
-          )
-        default:
-          throw new Error(`Unknown method kind: ${m.kind}`)
-      }
-    }),
-  )
+  const superClassPath = classes.get(c.superClass ?? '')
+
+  return [
+    superClassPath &&
+      ts.factory.createImportDeclaration(
+        undefined,
+        ts.factory.createImportClause(
+          true,
+          undefined,
+          ts.factory.createNamedImports([
+            ts.factory.createImportSpecifier(
+              false,
+              undefined,
+              ts.factory.createIdentifier(c.superClass!)
+            ),
+          ])
+        ),
+        ts.factory.createStringLiteral(superClassPath),
+        undefined
+      ),
+
+    ts.factory.createClassDeclaration(
+      [ts.factory.createToken(ts.SyntaxKind.ExportKeyword)],
+      ts.factory.createIdentifier(c.id),
+      undefined,
+      c.superClass
+        ? [
+            ts.factory.createHeritageClause(ts.SyntaxKind.ExtendsKeyword, [
+              ts.factory.createExpressionWithTypeArguments(
+                ts.factory.createIdentifier(c.superClass),
+                undefined
+              ),
+            ]),
+          ]
+        : undefined,
+      c.methods.map((m) => {
+        switch (m.kind) {
+          case 'constructor':
+            return ts.factory.createConstructorDeclaration(
+              undefined,
+              m.params.map((param) => createParam(param.id)),
+              undefined
+            )
+          case 'method':
+            return ts.factory.createMethodDeclaration(
+              undefined,
+              undefined,
+              ts.factory.createIdentifier(m.id),
+              undefined,
+              undefined,
+              [],
+              undefined,
+              undefined
+            )
+          case 'get':
+            return ts.factory.createGetAccessorDeclaration(
+              undefined,
+              ts.factory.createIdentifier(m.id),
+              [],
+              undefined,
+              undefined
+            )
+          case 'set':
+            return ts.factory.createSetAccessorDeclaration(
+              undefined,
+              ts.factory.createIdentifier(m.id),
+              m.params.map((param) => createParam(param.id)),
+              undefined
+            )
+          default:
+            throw new Error(`Unknown method kind: ${m.kind}`)
+        }
+      })
+    ),
+  ].filter(Boolean)
 }
 
 function handleFunction(c: FunctionDeclarationExport) {
@@ -160,11 +214,11 @@ function handleFunction(c: FunctionDeclarationExport) {
         ts.factory.createIdentifier(param),
         ts.factory.createToken(ts.SyntaxKind.QuestionToken),
         undefined,
-        undefined,
-      ),
+        undefined
+      )
     ),
     undefined,
-    undefined,
+    undefined
   )
 }
 
@@ -175,9 +229,9 @@ function handleVariable(c: VariableDeclarationExport) {
       ts.factory.createVariableDeclaration(
         ts.factory.createIdentifier(c.id),
         undefined,
-        c.typeEstimation ? root(c.typeEstimation) : undefined,
+        c.typeEstimation ? root(c.typeEstimation) : undefined
       ),
-    ]),
+    ])
   )
 }
 
@@ -201,7 +255,7 @@ function objectEstimation(type: ObjectEstimation): ts.TypeNode {
   return ts.factory.createTypeLiteralNode(
     type.keys
       ? type.keys.map((key) => objectPropertyEstimation(key))
-      : undefined,
+      : undefined
   )
 }
 
@@ -212,7 +266,7 @@ function objectPropertyEstimation(type: ParsedObjectProperty): ts.TypeElement {
         undefined,
         ts.factory.createIdentifier(type.id),
         undefined,
-        type.typeEstimation ? root(type.typeEstimation) : undefined,
+        type.typeEstimation ? root(type.typeEstimation) : undefined
       )
     case 'object-method':
       return objectPropertyMethod(type)
@@ -234,10 +288,10 @@ function objectPropertyMethod(type: ObjectPropertyMethod): ts.TypeElement {
             ts.factory.createIdentifier(param),
             ts.factory.createToken(ts.SyntaxKind.QuestionToken),
             undefined,
-            undefined,
-          ),
+            undefined
+          )
         ),
-        undefined,
+        undefined
       )
     case 'get':
       return ts.factory.createGetAccessorDeclaration(
@@ -245,7 +299,7 @@ function objectPropertyMethod(type: ObjectPropertyMethod): ts.TypeElement {
         ts.factory.createIdentifier(type.id),
         [],
         ts.factory.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword),
-        undefined,
+        undefined
       )
     case 'set':
       return ts.factory.createSetAccessorDeclaration(
@@ -258,10 +312,10 @@ function objectPropertyMethod(type: ObjectPropertyMethod): ts.TypeElement {
             ts.factory.createIdentifier(param),
             undefined,
             undefined,
-            undefined,
-          ),
+            undefined
+          )
         ),
-        undefined,
+        undefined
       )
     default:
       throw new Error(`Unknown method kind: ${type.kind}`)

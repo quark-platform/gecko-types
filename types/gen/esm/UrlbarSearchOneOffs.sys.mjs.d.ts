@@ -1,5 +1,6 @@
 declare module "resource://app/modules/UrlbarSearchOneOffs.sys.mjs" {
-    export class UrlbarSearchOneOffs {
+    import type { SearchOneOffs } from "resource://app/modules/SearchOneOffs.sys.mjs";
+    export class UrlbarSearchOneOffs extends SearchOneOffs {
         constructor(view);
         get localButtons();
         updateWebEngines();

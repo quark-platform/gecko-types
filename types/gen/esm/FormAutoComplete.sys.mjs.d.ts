@@ -33,7 +33,6 @@ declare module "resource://gre/modules/FormAutoComplete.sys.mjs" {
         get wrappedJSObject();
         log();
         autoCompleteSearchAsync();
-        getScenarioName();
         getDataListSuggestions();
         stopAutoCompleteSearch();
         getAutoCompleteValues();

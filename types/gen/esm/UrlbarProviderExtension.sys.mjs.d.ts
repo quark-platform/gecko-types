@@ -1,5 +1,6 @@
 declare module "resource://app/modules/UrlbarProviderExtension.sys.mjs" {
-    export class UrlbarProviderExtension {
+    import type { UrlbarProvider } from "resource://app/modules/UrlbarUtils.sys.mjs";
+    export class UrlbarProviderExtension extends UrlbarProvider {
         getOrCreate();
         constructor(name);
         get name();

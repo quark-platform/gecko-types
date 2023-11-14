@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ExtensionActions.sys.mjs" {
-    export class PageActionBase {
+    export class PageActionBase extends PanelActionBase {
         constructor(tabContext, extension);
         handleLocationChange();
         isShownForTab();
@@ -8,7 +8,7 @@ declare module "resource://gre/modules/ExtensionActions.sys.mjs" {
         getTargetFromDetails();
         api();
     }
-    export class BrowserActionBase {
+    export class BrowserActionBase extends PanelActionBase {
         constructor(tabContext, extension);
         loadIconData();
         handleLocationChange();

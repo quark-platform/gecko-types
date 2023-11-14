@@ -1,5 +1,6 @@
 declare module "resource://gre/modules/GeckoViewSettings.sys.mjs" {
-    export class GeckoViewSettings {
+    import type { GeckoViewModule } from "resource://gre/modules/GeckoViewModule.sys.mjs";
+    export class GeckoViewSettings extends GeckoViewModule {
         onInit();
         onEvent();
         onSettingsUpdate();

@@ -1,5 +1,6 @@
 declare module "resource://app/modules/SearchSERPTelemetry.sys.mjs" {
     var TELEMETRY_SETTINGS_KEY;
+    var TELEMETRY_CATEGORIZATION_KEY;
     var SearchSERPTelemetryUtils: {
         ACTIONS: {
             CLICKED;
@@ -26,6 +27,11 @@ declare module "resource://app/modules/SearchSERPTelemetry.sys.mjs" {
             REFINE_ON_SERP;
             SEARCHBOX;
         };
+        CATEGORIZATION: {
+            INCONCLUSIVE: number;
+        };
     };
+    var SearchSERPDomainToCategoriesMap;
     var SearchSERPTelemetry;
+    var SearchSERPCategorization;
 }

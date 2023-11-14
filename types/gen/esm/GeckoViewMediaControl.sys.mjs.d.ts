@@ -1,5 +1,6 @@
 declare module "resource://gre/modules/GeckoViewMediaControl.sys.mjs" {
-    export class GeckoViewMediaControl {
+    import type { GeckoViewModule } from "resource://gre/modules/GeckoViewModule.sys.mjs";
+    export class GeckoViewMediaControl extends GeckoViewModule {
         onInit();
         onInitBrowser();
         onDestroyBrowser();

@@ -10,7 +10,8 @@ declare module "resource://gre/modules/DownloadList.sys.mjs" {
         _notifyAllViews();
         removeFinished();
     }
-    export class DownloadCombinedList {
+    import type { DownloadList } from "resource://gre/modules/DownloadList.sys.mjs";
+    export class DownloadCombinedList extends DownloadList {
         constructor(publicList, privateList);
         add();
         remove();

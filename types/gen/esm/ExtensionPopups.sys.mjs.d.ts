@@ -15,13 +15,15 @@ declare module "resource://app/modules/ExtensionPopups.sys.mjs" {
         resizeBrowser();
         setBackground();
     }
-    export class PanelPopup {
+    import type { BasePopup } from "resource://app/modules/ExtensionPopups.sys.mjs";
+    export class PanelPopup extends BasePopup {
         constructor(extension, document, popupURL, browserStyle);
         get DESTROY_EVENT();
         destroy();
         closePopup();
     }
-    export class ViewPopup {
+    import type { BasePopup } from "resource://app/modules/ExtensionPopups.sys.mjs";
+    export class ViewPopup extends BasePopup {
         constructor(extension, window, popupURL, browserStyle, fixedWidth, blockParser);
         attach();
         removeTempPanel();

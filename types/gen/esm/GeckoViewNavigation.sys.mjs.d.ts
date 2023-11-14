@@ -1,5 +1,6 @@
 declare module "resource://gre/modules/GeckoViewNavigation.sys.mjs" {
-    export class GeckoViewNavigation {
+    import type { GeckoViewModule } from "resource://gre/modules/GeckoViewModule.sys.mjs";
+    export class GeckoViewNavigation extends GeckoViewModule {
         onInitBrowser();
         onInit();
         validateHeader();
@@ -15,6 +16,7 @@ declare module "resource://gre/modules/GeckoViewNavigation.sys.mjs" {
         onEnable();
         onDisable();
         serializePermission();
+        isProductURL();
         onLocationChange();
     }
 }

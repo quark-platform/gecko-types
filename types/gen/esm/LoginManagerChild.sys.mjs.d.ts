@@ -22,7 +22,6 @@ declare module "resource://gre/modules/LoginManagerChild.sys.mjs" {
         storeUserInput();
         isProbablyAnEmailField();
         isProbablyAUsernameField();
-        isProbablyASignUpForm();
         _togglePasswordFieldMasking();
         _treatAsGeneratedPasswordField();
         _formHasModifiedFields();
@@ -37,7 +36,7 @@ declare module "resource://gre/modules/LoginManagerChild.sys.mjs" {
         getUserNameAndPasswordFields();
         getFieldContext();
     }
-    export class LoginManagerChild {
+    export class LoginManagerChild extends JSWindowActorChild {
         forWindow();
         receiveMessage();
         repopulateAutocompletePopup();

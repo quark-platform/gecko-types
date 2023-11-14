@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ContentPrefServiceChild.sys.mjs" {
-    export class ContentPrefsChild {
+    export class ContentPrefsChild extends JSProcessActorChild {
         constructor();
         _getRandomId();
         receiveMessage();

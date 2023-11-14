@@ -1943,27 +1943,6 @@ declare var Cc: {
         private typeName: "nsNSSDialogs";
         private interfaceName: "nsINSSDialogs";
     };
-    ["@mozilla.org/nsClientAuthDialogs;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/nsClientAuthDialogs;1";
-        number: "{518e071f-1dd2-11b2-937e-c45f14def778}";
-        private typeName: "nsNSSDialogs";
-        private interfaceName: "nsINSSDialogs";
-    };
-    ["@mozilla.org/nsGeneratingKeypairInfoDialogs;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/nsGeneratingKeypairInfoDialogs;1";
-        number: "{518e071f-1dd2-11b2-937e-c45f14def778}";
-        private typeName: "nsNSSDialogs";
-        private interfaceName: "nsINSSDialogs";
-    };
-    ["@mozilla.org/nsTokenDialogs;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/nsTokenDialogs;1";
-        number: "{518e071f-1dd2-11b2-937e-c45f14def778}";
-        private typeName: "nsNSSDialogs";
-        private interfaceName: "nsINSSDialogs";
-    };
     ["@mozilla.org/nsTokenPasswordDialogs;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/nsTokenPasswordDialogs;1";
@@ -2115,6 +2094,11 @@ declare var Cc: {
         number: "{71b49926-fd4e-43e2-ab8d-d9b049413c0b}";
         private typeName: "mozilla::DataStorageManager";
         private interfaceName: "mozIilla";
+    };
+    ["@mozilla.org/security/ClientAuthDialogService;1"]: {
+        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
+        name: "@mozilla.org/security/ClientAuthDialogService;1";
+        number: "{d7d2490d-2640-411b-9f09-a538803c11ee}";
     };
     ["@mozilla.org/sandbox/sandbox-settings;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];

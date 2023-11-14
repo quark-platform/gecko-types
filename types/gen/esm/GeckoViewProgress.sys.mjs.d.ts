@@ -1,5 +1,6 @@
 declare module "resource://gre/modules/GeckoViewProgress.sys.mjs" {
-    export class GeckoViewProgress {
+    import type { GeckoViewModule } from "resource://gre/modules/GeckoViewModule.sys.mjs";
+    export class GeckoViewProgress extends GeckoViewModule {
         onEnable();
         onDisable();
         receiveMessage();

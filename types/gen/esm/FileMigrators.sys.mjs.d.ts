@@ -10,7 +10,8 @@ declare module "resource://app/modules/FileMigrators.sys.mjs" {
         get displayedResourceTypes();
         migrate();
     }
-    export class PasswordFileMigrator {
+    import type { FileMigratorBase } from "resource://app/modules/FileMigrators.sys.mjs";
+    export class PasswordFileMigrator extends FileMigratorBase {
         get key();
         get displayNameL10nID();
         get brandImage();
@@ -21,7 +22,8 @@ declare module "resource://app/modules/FileMigrators.sys.mjs" {
         getFilePickerConfig();
         migrate();
     }
-    export class BookmarksFileMigrator {
+    import type { FileMigratorBase } from "resource://app/modules/FileMigrators.sys.mjs";
+    export class BookmarksFileMigrator extends FileMigratorBase {
         get key();
         get displayNameL10nID();
         get brandImage();

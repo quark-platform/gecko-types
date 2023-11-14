@@ -1,11 +1,13 @@
 declare module "resource://gre/modules/Bits.sys.mjs" {
-    export class BitsError {
+    export class BitsError extends Error {
         constructor(type, action, stage, codeType, code);
     }
-    export class BitsVerificationError {
+    import type { BitsError } from "resource://gre/modules/Bits.sys.mjs";
+    export class BitsVerificationError extends BitsError {
         constructor();
     }
-    export class BitsUnknownError {
+    import type { BitsError } from "resource://gre/modules/Bits.sys.mjs";
+    export class BitsUnknownError extends BitsError {
         constructor();
     }
     export class BitsRequest {

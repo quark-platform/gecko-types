@@ -7,11 +7,16 @@ declare module "resource://app/modules/FeatureCallout.sys.mjs" {
         get _loadPageEventManager();
         _addPositionListeners();
         _removePositionListeners();
+        _addPanelConflictListeners();
+        _removePanelConflictListeners();
+        onViewOpen();
         _handlePrefChange();
         _maybeAdvanceScreens();
         handleEvent();
         _addCalloutLinkElements();
         _getAnchor();
+        _getPanelPositionString();
+        _setPanelMethods();
         _createContainer();
         _positionCallout();
         _setupWindowFunctions();

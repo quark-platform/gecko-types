@@ -1,11 +1,11 @@
 declare module "resource://gre/modules/PictureInPicture.sys.mjs" {
-    export class PictureInPictureLauncherParent {
+    export class PictureInPictureLauncherParent extends JSWindowActorParent {
         receiveMessage();
     }
-    export class PictureInPictureToggleParent {
+    export class PictureInPictureToggleParent extends JSWindowActorParent {
         receiveMessage();
     }
-    export class PictureInPictureParent {
+    export class PictureInPictureParent extends JSWindowActorParent {
         receiveMessage();
     }
     var PictureInPicture: {

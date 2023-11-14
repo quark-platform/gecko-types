@@ -1,5 +1,5 @@
 declare module "resource://app/modules/TabsList.sys.mjs" {
-    export class TabsPanel {
+    export class TabsPanel extends TabsListBase {
         constructor(opts);
         handleEvent();
         _populate();

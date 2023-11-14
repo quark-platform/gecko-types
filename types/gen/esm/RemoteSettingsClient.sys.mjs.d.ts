@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/services-settings/RemoteSettingsClient.sys.mjs" {
-    export class RemoteSettingsClient {
+    export class RemoteSettingsClient extends EventEmitter {
         get APIError();
         get NetworkError();
         get NetworkOfflineError();
