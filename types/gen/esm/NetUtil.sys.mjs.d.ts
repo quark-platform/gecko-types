@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/NetUtil.sys.mjs" {
-    var NetUtil: {
+    export var NetUtil: {
         asyncCopy;
         asyncFetch;
         newURI;

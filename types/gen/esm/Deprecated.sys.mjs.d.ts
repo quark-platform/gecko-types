@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/Deprecated.sys.mjs" {
-    var Deprecated: {
+    export var Deprecated: {
         warning(aText?, aUrl?, aStack?);
     };
 }

@@ -1,4 +1,4 @@
 declare module "resource://gre/modules/TaggingService.sys.mjs" {
-    function TaggingService();
-    function TagAutoCompleteSearch();
+    export function TaggingService();
+    export function TagAutoCompleteSearch();
 }

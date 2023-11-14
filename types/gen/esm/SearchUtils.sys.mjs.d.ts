@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/SearchUtils.sys.mjs" {
-    var SearchUtils: {
+    export var SearchUtils: {
         BROWSER_SEARCH_PREF;
         SETTINGS_KEY;
         SETTINGS_IGNORELIST_KEY;

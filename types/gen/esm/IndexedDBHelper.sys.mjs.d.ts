@@ -1,3 +1,3 @@
 declare module "resource://gre/modules/IndexedDBHelper.sys.mjs" {
-    function IndexedDBHelper();
+    export function IndexedDBHelper();
 }

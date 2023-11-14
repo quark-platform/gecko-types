@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/UpdateListener.sys.mjs" {
-    var UpdateListener: {
+    export var UpdateListener: {
         timeouts;
         restartDoorhangerShown;
         updateFirstReadyTime;

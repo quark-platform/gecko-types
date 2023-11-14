@@ -1,5 +1,5 @@
 declare module "resource://app/modules/sessionstore/SessionStore.sys.mjs" {
-    var SessionStore: {
+    export var SessionStore: {
         get promiseInitialized(): any;
         get promiseAllWindowsRestored(): any;
         get canRestoreLastSession(): any;
@@ -73,5 +73,5 @@ declare module "resource://app/modules/sessionstore/SessionStore.sys.mjs" {
         prepareToChangeRemoteness(aTab?);
         finishTabRemotenessChange(aTab?, aSwitchId?);
     };
-    var _LastSession;
+    export var _LastSession;
 }

@@ -1,5 +1,5 @@
 declare module "resource://app/modules/DragPositionManager.sys.mjs" {
-    var DragPositionManager: {
+    export var DragPositionManager: {
         start(aWindow?);
         stop();
         getManagerForArea(aArea?);

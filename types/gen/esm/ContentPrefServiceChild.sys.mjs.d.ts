@@ -7,7 +7,7 @@ declare module "resource://gre/modules/ContentPrefServiceChild.sys.mjs" {
         addObserverForName(name?, observer?);
         removeObserverForName(name?, observer?);
     }
-    var ContentPrefServiceChild: {
+    export var ContentPrefServiceChild: {
         QueryInterface;
         addObserverForName;
         removeObserverForName;

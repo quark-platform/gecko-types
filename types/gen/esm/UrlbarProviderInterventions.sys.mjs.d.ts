@@ -6,5 +6,5 @@ declare module "resource://app/modules/UrlbarProviderInterventions.sys.mjs" {
         _buildPhraseTree(node?, doc?, phrase?, wordIndex?);
         _traverse(param0?);
     }
-    var UrlbarProviderInterventions;
+    export var UrlbarProviderInterventions;
 }

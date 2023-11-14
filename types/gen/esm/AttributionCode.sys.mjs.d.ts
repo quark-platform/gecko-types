@@ -1,11 +1,11 @@
 declare module "resource://app/modules/AttributionCode.sys.mjs" {
-    var AttributionIOUtils: {
+    export var AttributionIOUtils: {
         write;
         read;
         readUTF8;
         exists;
     };
-    var AttributionCode: {
+    export var AttributionCode: {
         get msixCampaignId(): any;
         get attributionFile(): any;
         writeAttributionFile(code?);

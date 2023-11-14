@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/Downloads.sys.mjs" {
-    var Downloads: {
+    export var Downloads: {
         get PUBLIC(): any;
         get PRIVATE(): any;
         get ALL(): any;

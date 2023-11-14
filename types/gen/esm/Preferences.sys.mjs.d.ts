@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/Preferences.sys.mjs" {
-    var Preferences: {
+    export var Preferences: {
         init(libDir?);
         configurations: {};
     };

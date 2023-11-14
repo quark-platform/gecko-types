@@ -1,5 +1,5 @@
 declare module "resource://app/modules/BrowserUIUtils.sys.mjs" {
-    var BrowserUIUtils: {
+    export var BrowserUIUtils: {
         checkEmptyPageOrigin(browser?, uri?);
         getLocalizedFragment(doc?, msg?);
         removeSingleTrailingSlashFromURL(aURL?);

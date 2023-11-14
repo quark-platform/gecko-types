@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/subprocess/subprocess_common.sys.mjs" {
-    var SubprocessConstants;
+    export var SubprocessConstants;
     export class PromiseWorker extends ChromeWorker {
         constructor(url);
         onClose();

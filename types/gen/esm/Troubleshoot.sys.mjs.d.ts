@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/Troubleshoot.sys.mjs" {
-    var Troubleshoot: {
+    export var Troubleshoot: {
         snapshot();
         kMaxCrashAge;
     };

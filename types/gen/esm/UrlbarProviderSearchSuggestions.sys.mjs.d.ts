@@ -1,3 +1,3 @@
 declare module "resource://app/modules/UrlbarProviderSearchSuggestions.sys.mjs" {
-    var UrlbarProviderSearchSuggestions;
+    export var UrlbarProviderSearchSuggestions;
 }

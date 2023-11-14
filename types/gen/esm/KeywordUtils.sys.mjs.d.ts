@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/KeywordUtils.sys.mjs" {
-    var KeywordUtils: {
+    export var KeywordUtils: {
         parseUrlAndPostData(url?, postData?, param?);
         getBindableKeyword(keyword?, searchString?);
     };

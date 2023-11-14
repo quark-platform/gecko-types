@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ExtensionPermissions.sys.mjs" {
-    var ExtensionPermissions: {
+    export var ExtensionPermissions: {
         _update(extensionId?, perms?);
         _get(extensionId?);
         _getCached(extensionId?);
@@ -16,7 +16,7 @@ declare module "resource://gre/modules/ExtensionPermissions.sys.mjs" {
         addListener(listener?);
         removeListener(listener?);
     };
-    var OriginControls: {
+    export var OriginControls: {
         allDomains;
         getState(policy?, nativeTab?);
         getAttentionState(policy?, window?);
@@ -24,7 +24,7 @@ declare module "resource://gre/modules/ExtensionPermissions.sys.mjs" {
         setWhenClicked(policy?, uri?);
         getStateMessageIDs(param0?);
     };
-    var QuarantinedDomains: {
+    export var QuarantinedDomains: {
         getUserAllowedAddonIdPrefName(addonId?);
         isUserAllowedAddonId(addonId?);
         setUserAllowedAddonIdPref(addonId?, userAllowed?);

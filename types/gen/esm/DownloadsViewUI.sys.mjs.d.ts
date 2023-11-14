@@ -1,5 +1,5 @@
 declare module "resource://app/modules/DownloadsViewUI.sys.mjs" {
-    var DownloadsViewUI: {
+    export var DownloadsViewUI: {
         isCommandName(name?);
         getStrippedUrl(download?);
         getDisplayName(download?);

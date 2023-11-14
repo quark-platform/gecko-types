@@ -1,5 +1,5 @@
 declare module "resource://app/modules/PlacesUIUtils.sys.mjs" {
-    var PlacesUIUtils: {
+    export var PlacesUIUtils: {
         BookmarkState;
         _bookmarkToolbarTelemetryListening;
         LAST_USED_FOLDERS_META_KEY;

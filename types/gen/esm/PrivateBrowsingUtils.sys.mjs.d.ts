@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/PrivateBrowsingUtils.sys.mjs" {
-    var PrivateBrowsingUtils: {
+    export var PrivateBrowsingUtils: {
         get enabled(): any;
         isWindowPrivate;
         isContentWindowPrivate;

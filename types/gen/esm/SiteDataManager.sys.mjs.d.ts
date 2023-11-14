@@ -1,5 +1,5 @@
 declare module "resource://app/modules/SiteDataManager.sys.mjs" {
-    var SiteDataManager: {
+    export var SiteDataManager: {
         _sites;
         _getCacheSizeObserver;
         _getCacheSizePromise;

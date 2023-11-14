@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/PushServiceHttp2.sys.mjs" {
-    var PushServiceHttp2: {
+    export var PushServiceHttp2: {
         _mainPushService;
         _serverURI;
         _conns: {};

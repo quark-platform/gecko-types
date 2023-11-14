@@ -5,5 +5,5 @@ declare module "resource://gre/modules/FillHelpers.sys.mjs" {
         style;
         value;
     }
-    function showConfirmation(browser?, messageId?, anchorId?);
+    export function showConfirmation(browser?, messageId?, anchorId?);
 }

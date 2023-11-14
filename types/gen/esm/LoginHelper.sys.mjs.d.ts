@@ -7,7 +7,7 @@ declare module "resource://gre/modules/LoginHelper.sys.mjs" {
         fillMessageName;
         fillMessageData;
     }
-    var LoginHelper: {
+    export var LoginHelper: {
         debug;
         enabled;
         storageEnabled;

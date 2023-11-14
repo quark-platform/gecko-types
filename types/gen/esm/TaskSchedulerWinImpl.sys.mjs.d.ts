@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/TaskSchedulerWinImpl.sys.mjs" {
-    var WinImpl: {
+    export var WinImpl: {
         registerTask(id?, command?, intervalSeconds?, options?);
         deleteTask(id?);
         deleteAllTasks();

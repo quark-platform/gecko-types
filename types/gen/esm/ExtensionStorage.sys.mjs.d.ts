@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ExtensionStorage.sys.mjs" {
-    var ExtensionStorage: {
+    export var ExtensionStorage: {
         jsonFilePromises;
         listeners;
         _readFile(extensionId?);
@@ -23,7 +23,7 @@ declare module "resource://gre/modules/ExtensionStorage.sys.mjs" {
         serializeForContext(context?, items?);
         deserializeForContext(context?, items?);
     };
-    var extensionStorageSession: {
+    export var extensionStorageSession: {
         buckets;
         listeners;
         get(extension?, items?);

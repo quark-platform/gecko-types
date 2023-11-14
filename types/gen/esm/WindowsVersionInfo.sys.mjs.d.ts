@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/components-utils/WindowsVersionInfo.sys.mjs" {
-    var WindowsVersionInfo: {
+    export var WindowsVersionInfo: {
         UNKNOWN_VERSION_INFO: {
             servicePackMajor;
             servicePackMinor;

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/DownloadUIHelper.sys.mjs" {
-    var DownloadUIHelper: {
+    export var DownloadUIHelper: {
         getPrompter(aParent?);
         loadFileIn(file?);
     };

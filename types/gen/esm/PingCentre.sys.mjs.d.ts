@@ -11,7 +11,7 @@ declare module "resource://app/modules/PingCentre.sys.mjs" {
         sendStructuredIngestionPing(data?, endpoint?, param2?);
         uninit();
     }
-    var PingCentreConstants: {
+    export var PingCentreConstants: {
         FHR_UPLOAD_ENABLED_PREF;
         TELEMETRY_PREF;
         LOGGING_PREF;

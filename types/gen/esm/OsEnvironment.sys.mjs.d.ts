@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/OsEnvironment.sys.mjs" {
-    var OsEnvironment: {
+    export var OsEnvironment: {
         Policy: {
             getAllowedAppSources;
             windowsVersionHasAppSourcesFeature;

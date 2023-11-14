@@ -1,7 +1,7 @@
 declare module "resource://app/modules/SearchSERPTelemetry.sys.mjs" {
-    var TELEMETRY_SETTINGS_KEY;
-    var TELEMETRY_CATEGORIZATION_KEY;
-    var SearchSERPTelemetryUtils: {
+    export var TELEMETRY_SETTINGS_KEY;
+    export var TELEMETRY_CATEGORIZATION_KEY;
+    export var SearchSERPTelemetryUtils: {
         ACTIONS: {
             CLICKED;
             EXPANDED;
@@ -31,7 +31,7 @@ declare module "resource://app/modules/SearchSERPTelemetry.sys.mjs" {
             INCONCLUSIVE: number;
         };
     };
-    var SearchSERPDomainToCategoriesMap;
-    var SearchSERPTelemetry;
-    var SearchSERPCategorization;
+    export var SearchSERPDomainToCategoriesMap;
+    export var SearchSERPTelemetry;
+    export var SearchSERPCategorization;
 }

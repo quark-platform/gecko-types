@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/FirstStartup.sys.mjs" {
-    var FirstStartup: {
+    export var FirstStartup: {
         NOT_STARTED: number;
         IN_PROGRESS: number;
         TIMED_OUT: number;

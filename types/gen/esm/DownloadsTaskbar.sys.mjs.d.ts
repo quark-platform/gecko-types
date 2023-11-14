@@ -1,5 +1,5 @@
 declare module "resource://app/modules/DownloadsTaskbar.sys.mjs" {
-    var DownloadsTaskbar: {
+    export var DownloadsTaskbar: {
         _summary;
         _taskbarProgress;
         registerIndicator(aBrowserWindow?);

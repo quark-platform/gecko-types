@@ -1,3 +1,3 @@
 declare module "resource://app/modules/ProfileMigrator.sys.mjs" {
-    function ProfileMigrator();
+    export function ProfileMigrator();
 }

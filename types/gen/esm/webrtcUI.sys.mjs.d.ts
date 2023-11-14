@@ -1,5 +1,5 @@
 declare module "resource://app/modules/webrtcUI.sys.mjs" {
-    var webrtcUI: {
+    export var webrtcUI: {
         initialized;
         peerConnectionBlockers;
         emitter;
@@ -48,7 +48,7 @@ declare module "resource://app/modules/webrtcUI.sys.mjs" {
         recordEvent(type?, object?, args?);
         _setSharedData();
     };
-    function showStreamSharingMenu(win?, event?, inclWindow?);
+    export function showStreamSharingMenu(win?, event?, inclWindow?);
     export class MacOSWebRTCStatusbarIndicator {
         constructor();
         updateIndicatorState();

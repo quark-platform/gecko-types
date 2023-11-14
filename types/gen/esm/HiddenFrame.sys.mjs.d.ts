@@ -1,3 +1,3 @@
 declare module "resource://gre/modules/HiddenFrame.sys.mjs" {
-    function HiddenFrame();
+    export function HiddenFrame();
 }

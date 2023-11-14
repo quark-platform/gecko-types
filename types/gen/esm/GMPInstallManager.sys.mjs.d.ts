@@ -1,6 +1,6 @@
 declare module "resource://gre/modules/GMPInstallManager.sys.mjs" {
-    function GMPInstallManager();
-    function GMPAddon(addon?);
-    function GMPExtractor(zipPath?, relativeInstallPath?);
-    function GMPDownloader(gmpAddon?);
+    export function GMPInstallManager();
+    export function GMPAddon(addon?);
+    export function GMPExtractor(zipPath?, relativeInstallPath?);
+    export function GMPDownloader(gmpAddon?);
 }

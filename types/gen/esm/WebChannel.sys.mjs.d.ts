@@ -1,4 +1,4 @@
 declare module "resource://gre/modules/WebChannel.sys.mjs" {
-    var WebChannelBroker;
-    var WebChannel;
+    export var WebChannelBroker;
+    export var WebChannel;
 }

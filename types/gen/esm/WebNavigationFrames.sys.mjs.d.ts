@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/WebNavigationFrames.sys.mjs" {
-    var WebNavigationFrames: {
+    export var WebNavigationFrames: {
         getFrame(bc?, frameId?);
         getFrameId;
         getParentFrameId;

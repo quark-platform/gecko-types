@@ -1,5 +1,5 @@
 declare module "resource://app/modules/ExtensionsUI.sys.mjs" {
-    var ExtensionsUI: {
+    export var ExtensionsUI: {
         sideloaded;
         updates;
         sideloadListener;

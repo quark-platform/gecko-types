@@ -1,4 +1,4 @@
 declare module "resource://gre/modules/PlacesPreviews.sys.mjs" {
-    var PlacesPreviews;
-    function PlacesPreviewsHelperService();
+    export var PlacesPreviews;
+    export function PlacesPreviewsHelperService();
 }

@@ -1,5 +1,5 @@
 declare module "resource://app/modules/EveryWindow.sys.mjs" {
-    var EveryWindow: {
+    export var EveryWindow: {
         registerCallback;
         unregisterCallback;
     };

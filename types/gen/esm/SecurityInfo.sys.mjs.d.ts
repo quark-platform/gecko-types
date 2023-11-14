@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/SecurityInfo.sys.mjs" {
-    var SecurityInfo: {
+    export var SecurityInfo: {
         getSecurityInfo(channel?, options?);
         getCertificateChain(certChain?, options?);
         parseCertificateInfo(cert?, options?);

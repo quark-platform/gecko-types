@@ -1,3 +1,3 @@
 declare module "resource://app/modules/UrlbarProviderQuickActions.sys.mjs" {
-    var UrlbarProviderQuickActions;
+    export var UrlbarProviderQuickActions;
 }

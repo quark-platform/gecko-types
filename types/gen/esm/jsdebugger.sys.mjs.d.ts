@@ -1,4 +1,4 @@
 declare module "resource://gre/modules/jsdebugger.sys.mjs" {
-    function addDebuggerToGlobal(global?);
-    function addSandboxedDebuggerToGlobal(global?);
+    export function addDebuggerToGlobal(global?);
+    export function addSandboxedDebuggerToGlobal(global?);
 }

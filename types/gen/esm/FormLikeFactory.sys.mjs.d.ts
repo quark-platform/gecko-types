@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/FormLikeFactory.sys.mjs" {
-    var FormLikeFactory: {
+    export var FormLikeFactory: {
         _propsFromForm;
         createFromForm(aForm?);
         createFromField(aField?);

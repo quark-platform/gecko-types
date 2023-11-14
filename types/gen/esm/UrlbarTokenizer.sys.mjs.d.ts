@@ -1,5 +1,5 @@
 declare module "resource://app/modules/UrlbarTokenizer.sys.mjs" {
-    var UrlbarTokenizer: {
+    export var UrlbarTokenizer: {
         REGEXP_SPACES;
         REGEXP_SPACES_START;
         REGEXP_LIKE_PROTOCOL;

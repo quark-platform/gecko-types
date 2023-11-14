@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ExtensionChild.sys.mjs" {
-    var ExtensionActivityLogChild: {
+    export var ExtensionActivityLogChild: {
         _initialized;
         enabledExtensions;
         init();
@@ -7,7 +7,7 @@ declare module "resource://gre/modules/ExtensionChild.sys.mjs" {
         log(context?, type?, name?, data?);
         _sendActivity(data?);
     };
-    var ExtensionChild: {
+    export var ExtensionChild: {
         BrowserExtensionContent;
         ChildAPIManager;
         ChildLocalAPIImplementation;

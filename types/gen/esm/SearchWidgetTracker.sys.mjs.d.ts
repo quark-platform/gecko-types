@@ -1,5 +1,5 @@
 declare module "resource://app/modules/SearchWidgetTracker.sys.mjs" {
-    var SearchWidgetTracker: {
+    export var SearchWidgetTracker: {
         init();
         onWidgetAdded(widgetId?, area?);
         onWidgetRemoved(aWidgetId?, aArea?);

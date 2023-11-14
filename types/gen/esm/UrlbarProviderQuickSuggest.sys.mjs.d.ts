@@ -1,3 +1,3 @@
 declare module "resource://app/modules/UrlbarProviderQuickSuggest.sys.mjs" {
-    var UrlbarProviderQuickSuggest;
+    export var UrlbarProviderQuickSuggest;
 }

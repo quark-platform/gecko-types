@@ -1,5 +1,5 @@
 declare module "resource://app/modules/ProcessHangMonitor.sys.mjs" {
-    var ProcessHangMonitor: {
+    export var ProcessHangMonitor: {
         get WAIT_EXPIRATION_TIME(): any;
         _shuttingDown;
         _activeReports;

@@ -1,5 +1,5 @@
 declare module "resource://app/modules/policies/WebsiteFilter.sys.mjs" {
-    var WebsiteFilter: {
+    export var WebsiteFilter: {
         init(blocklist?, exceptionlist?);
         shouldLoad(contentLocation?, loadInfo?, mimeTypeGuess?);
         shouldProcess(contentLocation?, loadInfo?, mimeTypeGuess?);

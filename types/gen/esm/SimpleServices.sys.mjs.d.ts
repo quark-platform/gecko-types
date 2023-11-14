@@ -1,4 +1,4 @@
 declare module "resource://gre/modules/SimpleServices.sys.mjs" {
-    function AddonLocalizationConverter();
-    function HttpIndexViewer();
+    export function AddonLocalizationConverter();
+    export function HttpIndexViewer();
 }

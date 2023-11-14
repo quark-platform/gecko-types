@@ -1,10 +1,10 @@
 declare module "resource://gre/modules/addons/siteperms-addon-utils.sys.mjs" {
-    var GATED_PERMISSIONS;
-    var SITEPERMS_ADDON_PROVIDER_PREF;
-    var SITEPERMS_ADDON_TYPE;
-    var SITEPERMS_ADDON_BLOCKEDLIST_PREF;
-    function isGatedPermissionType(type?);
-    function isKnownPublicSuffix(siteOrigin?);
-    function addGatedPermissionTypesForXpcShellTests(permissionTypes?);
-    function isPrincipalInSitePermissionsBlocklist(principal?);
+    export var GATED_PERMISSIONS;
+    export var SITEPERMS_ADDON_PROVIDER_PREF;
+    export var SITEPERMS_ADDON_TYPE;
+    export var SITEPERMS_ADDON_BLOCKEDLIST_PREF;
+    export function isGatedPermissionType(type?);
+    export function isKnownPublicSuffix(siteOrigin?);
+    export function addGatedPermissionTypesForXpcShellTests(permissionTypes?);
+    export function isPrincipalInSitePermissionsBlocklist(principal?);
 }

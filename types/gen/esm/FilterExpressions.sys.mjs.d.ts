@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/components-utils/FilterExpressions.sys.mjs" {
-    var FilterExpressions: {
+    export var FilterExpressions: {
         getAvailableTransforms();
         eval(expr?, context?);
     };

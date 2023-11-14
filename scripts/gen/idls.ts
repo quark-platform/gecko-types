@@ -195,8 +195,6 @@ function handleConst(
   } else {
     return addConstant(interfaceName, key, value)
   }
-
-  return []
 }
 
 function handleEnum(code: enum_code, interfaceName: string): ts.TypeElement[] {

@@ -1,3 +1,3 @@
 declare module "resource://gre/modules/PlacesExpiration.sys.mjs" {
-    function nsPlacesExpiration();
+    export function nsPlacesExpiration();
 }

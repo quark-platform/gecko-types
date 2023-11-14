@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/InsecurePasswordUtils.sys.mjs" {
-    var InsecurePasswordUtils: {
+    export var InsecurePasswordUtils: {
         _formRootsWarned;
         _getInnerWindowId(window?);
         _sendWebConsoleMessage(messageTag?, domDoc?);

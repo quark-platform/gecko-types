@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/LoginManagerContextMenu.sys.mjs" {
-    var LoginManagerContextMenu: {
+    export var LoginManagerContextMenu: {
         addLoginsToMenu(inputElementIdentifier?, browser?, formOrigin?);
         clearLoginsFromMenu(document?);
         useGeneratedPassword(inputElementIdentifier?, documentURI?, browser?);

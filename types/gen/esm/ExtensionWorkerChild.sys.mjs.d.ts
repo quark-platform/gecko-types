@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ExtensionWorkerChild.sys.mjs" {
-    var ExtensionWorkerChild: {
+    export var ExtensionWorkerChild: {
         extensionWorkerContexts;
         apiManager;
         initExtensionWorkerContext(extension?, serviceWorkerInfo?);

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/LangPackMatcher.sys.mjs" {
-    var LangPackMatcher: {
+    export var LangPackMatcher: {
         negotiateLangPackForLanguageMismatch;
         ensureLangPackInstalled;
         getAppAndSystemLocaleInfo;

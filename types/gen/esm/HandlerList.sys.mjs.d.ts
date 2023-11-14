@@ -1,6 +1,6 @@
 declare module "resource://gre/modules/handlers/HandlerList.sys.mjs" {
-    var kHandlerListVersion: number;
-    var kHandlerList: {
+    export var kHandlerListVersion: number;
+    export var kHandlerList: {
         default: {
             schemes: {
                 mailto: {

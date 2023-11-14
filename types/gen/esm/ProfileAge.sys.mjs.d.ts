@@ -1,3 +1,3 @@
 declare module "resource://gre/modules/ProfileAge.sys.mjs" {
-    function ProfileAge(profile?);
+    export function ProfileAge(profile?);
 }

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/Schemas.sys.mjs" {
-    var Schemas;
+    export var Schemas;
     export class SchemaRoot extends Namespace {
         constructor(base, schemaJSON);
         getNamespaces(path?);

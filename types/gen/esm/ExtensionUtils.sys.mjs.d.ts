@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ExtensionUtils.sys.mjs" {
-    var ExtensionUtils: {
+    export var ExtensionUtils: {
         flushJarCache;
         getInnerWindowID;
         getMessageManager;

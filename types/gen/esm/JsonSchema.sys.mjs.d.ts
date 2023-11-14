@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/JsonSchema.sys.mjs" {
-    var JsonSchema: {
+    export var JsonSchema: {
         Validator;
         validate;
         detectSchemaDraft;

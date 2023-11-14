@@ -1,5 +1,5 @@
 declare module "resource://app/modules/HomePage.sys.mjs" {
-    var HomePage: {
+    export var HomePage: {
         _ignoreList;
         _initializationPromise;
         delayedStartup();

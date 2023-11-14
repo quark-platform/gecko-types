@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ExtensionStorageSyncKinto.sys.mjs" {
-    var extensionStorageSyncKinto;
+    export var extensionStorageSyncKinto;
     export class ExtensionStorageSyncKinto {
         constructor(fxaService);
         getExtensions();
@@ -26,7 +26,7 @@ declare module "resource://gre/modules/ExtensionStorageSyncKinto.sys.mjs" {
         removeOnChangedListener(extension?, listener?);
         notifyListeners(extension?, changes?);
     }
-    var KintoStorageTestUtils: {
+    export var KintoStorageTestUtils: {
         CollectionKeyEncryptionRemoteTransformer;
         CryptoCollection;
         EncryptionRemoteTransformer;

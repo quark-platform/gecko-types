@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/netwerk-dns/PublicSuffixList.sys.mjs" {
-    var PublicSuffixList: {
+    export var PublicSuffixList: {
         CLIENT;
         init();
         getFilePath(fileURI?);

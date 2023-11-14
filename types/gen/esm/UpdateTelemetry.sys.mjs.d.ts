@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/UpdateTelemetry.sys.mjs" {
-    var AUSTLMY: {
+    export var AUSTLMY: {
         EXTERNAL;
         NOTIFY;
         SUBSEQUENT;

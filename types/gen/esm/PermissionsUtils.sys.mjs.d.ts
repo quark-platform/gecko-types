@@ -1,8 +1,8 @@
 declare module "resource://gre/modules/PermissionsUtils.sys.mjs" {
-    var PermissionsUtils: {
+    export var PermissionsUtils: {
         importFromPrefs(aPrefBranch?, aPermission?);
     };
-    var PermissionsTestUtils: {
+    export var PermissionsTestUtils: {
         clearImportedPrefBranches();
     };
 }

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/FxAccountsWebChannel.sys.mjs" {
-    function FxAccountsWebChannel(options?);
-    function FxAccountsWebChannelHelpers(options?);
-    var EnsureFxAccountsWebChannel;
+    export function FxAccountsWebChannel(options?);
+    export function FxAccountsWebChannelHelpers(options?);
+    export var EnsureFxAccountsWebChannel;
 }

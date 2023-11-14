@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/PlacesUtils.sys.mjs" {
-    var PlacesUtils: {
+    export var PlacesUtils: {
         TYPE_X_MOZ_PLACE_CONTAINER;
         TYPE_X_MOZ_PLACE_SEPARATOR;
         TYPE_X_MOZ_PLACE;

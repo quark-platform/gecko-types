@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/WebNavigation.sys.mjs" {
-    var WebNavigationManager: {
+    export var WebNavigationManager: {
         listeners;
         init();
         uninit();
@@ -18,5 +18,5 @@ declare module "resource://gre/modules/WebNavigation.sys.mjs" {
         onDOMContentLoaded(bc?, documentURI?);
         fire(type?, browser?, bc?, extra?);
     };
-    var WebNavigation: {};
+    export var WebNavigation: {};
 }

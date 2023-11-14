@@ -1,5 +1,5 @@
 declare module "resource://app/modules/UITour.sys.mjs" {
-    var UITour: {
+    export var UITour: {
         url;
         tourBrowsersByWindow;
         noautohideMenus;

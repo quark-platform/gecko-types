@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ExtensionChildDevToolsUtils.sys.mjs" {
-    var ExtensionChildDevToolsUtils: {
+    export var ExtensionChildDevToolsUtils: {
         initThemeChangeObserver(themeName?, context?);
         getThemeChangeObserver();
     };

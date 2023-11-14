@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/psm/RemoteSecuritySettings.sys.mjs" {
-    var RemoteSecuritySettings: {
+    export var RemoteSecuritySettings: {
         _initialized;
         OneCRLBlocklistClient;
         IntermediatePreloadsClient;

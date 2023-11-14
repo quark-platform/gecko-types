@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/addons/ProductAddonChecker.sys.mjs" {
-    var ProductAddonChecker: {
+    export var ProductAddonChecker: {
         NETWORK_REQUEST_ERR;
         NETWORK_TIMEOUT_ERR;
         ABORT_ERR;
@@ -10,7 +10,7 @@ declare module "resource://gre/modules/addons/ProductAddonChecker.sys.mjs" {
         getProductAddonList(url?, allowNonBuiltIn?, allowedCerts?, verifyContentSignature?);
         downloadAddon(addon?, options?);
     };
-    var ProductAddonCheckerTestUtils: {
+    export var ProductAddonCheckerTestUtils: {
         overrideServiceRequest(mockRequest?, callback?);
     };
 }

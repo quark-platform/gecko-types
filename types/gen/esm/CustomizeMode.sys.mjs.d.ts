@@ -1,5 +1,5 @@
 declare module "resource://app/modules/CustomizeMode.sys.mjs" {
-    var CustomizeMode: {
+    export var CustomizeMode: {
         init(libDir?);
         configurations: {
             notCustomizing: {

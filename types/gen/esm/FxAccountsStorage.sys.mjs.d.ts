@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/FxAccountsStorage.sys.mjs" {
-    function FxAccountsStorageManagerCanStoreField(fieldName?);
-    var FxAccountsStorageManager;
-    function LoginManagerStorage();
+    export function FxAccountsStorageManagerCanStoreField(fieldName?);
+    export var FxAccountsStorageManager;
+    export function LoginManagerStorage();
 }

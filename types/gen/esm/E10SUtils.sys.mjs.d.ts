@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/E10SUtils.sys.mjs" {
-    var E10SUtils: {
+    export var E10SUtils: {
         DEFAULT_REMOTE_TYPE;
         NOT_REMOTE;
         WEB_REMOTE_TYPE;

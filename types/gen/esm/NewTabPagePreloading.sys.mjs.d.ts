@@ -1,5 +1,5 @@
 declare module "resource://app/modules/NewTabPagePreloading.sys.mjs" {
-    var NewTabPagePreloading: {
+    export var NewTabPagePreloading: {
         MAX_COUNT: number;
         browserCounts: {
             normal: number;

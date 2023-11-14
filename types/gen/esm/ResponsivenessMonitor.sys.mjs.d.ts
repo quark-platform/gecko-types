@@ -1,3 +1,3 @@
 declare module "resource://gre/modules/ResponsivenessMonitor.sys.mjs" {
-    function ResponsivenessMonitor(intervalMS?);
+    export function ResponsivenessMonitor(intervalMS?);
 }

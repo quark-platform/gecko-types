@@ -1,5 +1,5 @@
 declare module "resource://app/modules/TransientPrefs.sys.mjs" {
-    var TransientPrefs: {
+    export var TransientPrefs: {
         prefShouldBeVisible(prefName?);
     };
 }

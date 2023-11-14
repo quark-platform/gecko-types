@@ -1,5 +1,5 @@
 declare module "resource://app/modules/Sanitizer.sys.mjs" {
-    var Sanitizer: {
+    export var Sanitizer: {
         PREF_SANITIZE_ON_SHUTDOWN;
         PREF_PENDING_SANITIZATIONS;
         PREF_CPD_BRANCH;

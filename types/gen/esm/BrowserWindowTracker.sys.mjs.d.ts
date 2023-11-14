@@ -1,5 +1,5 @@
 declare module "resource://app/modules/BrowserWindowTracker.sys.mjs" {
-    var BrowserWindowTracker: {
+    export var BrowserWindowTracker: {
         pendingWindows;
         getTopWindow(options?);
         getPendingWindow(options?);

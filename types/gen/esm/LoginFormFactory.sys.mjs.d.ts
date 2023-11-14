@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/LoginFormFactory.sys.mjs" {
-    var LoginFormFactory: {
+    export var LoginFormFactory: {
         _loginFormsByRootElement;
         _loginFormRootElementsByDocument;
         createFromForm(aForm?);

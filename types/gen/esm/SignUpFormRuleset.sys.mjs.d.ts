@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/SignUpFormRuleset.sys.mjs" {
-    var SignUpFormRuleset: {
+    export var SignUpFormRuleset: {
         type;
         rules;
     };

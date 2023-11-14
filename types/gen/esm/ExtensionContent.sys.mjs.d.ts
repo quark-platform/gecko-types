@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ExtensionContent.sys.mjs" {
-    var ExtensionContent: {
+    export var ExtensionContent: {
         BrowserExtensionContent;
         contentScripts;
         shutdownExtension(extension?);

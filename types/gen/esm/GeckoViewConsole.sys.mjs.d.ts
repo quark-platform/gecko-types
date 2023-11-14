@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/GeckoViewConsole.sys.mjs" {
-    var GeckoViewConsole: {
+    export var GeckoViewConsole: {
         _isEnabled;
         get enabled(): any;
         set enabled(aVal);

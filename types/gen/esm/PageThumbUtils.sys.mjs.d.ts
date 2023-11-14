@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/PageThumbUtils.sys.mjs" {
-    var PageThumbUtils: {
+    export var PageThumbUtils: {
         THUMBNAIL_DEFAULT_SIZE: number;
         THUMBNAIL_BG_COLOR;
         HTML_NAMESPACE;

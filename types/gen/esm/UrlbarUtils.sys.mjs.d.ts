@@ -1,5 +1,5 @@
 declare module "resource://app/modules/UrlbarUtils.sys.mjs" {
-    var UrlbarUtils: {
+    export var UrlbarUtils: {
         RESULT_GROUP: {
             ABOUT_PAGES;
             GENERAL;

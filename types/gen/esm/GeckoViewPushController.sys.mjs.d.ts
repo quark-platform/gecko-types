@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/GeckoViewPushController.sys.mjs" {
-    var GeckoViewPushController: {
+    export var GeckoViewPushController: {
         onEvent(aEvent?, aData?, aCallback?);
     };
 }

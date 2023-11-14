@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/UpdateUtils.sys.mjs" {
-    var UpdateUtils: {
+    export var UpdateUtils: {
         _locale;
         _configFilePath;
         getUpdateChannel(aIncludePartners?);

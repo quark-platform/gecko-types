@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/XPCOMUtils.sys.mjs" {
-    var XPCOMUtils: {
+    export var XPCOMUtils: {
         defineLazyGetter(aObject?, aName?, aLambda?);
         defineLazyScriptGetter(aObject?, aNames?, aResource?);
         overrideScriptLoaderForTests(aObject?);

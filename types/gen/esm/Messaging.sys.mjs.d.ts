@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/Messaging.sys.mjs" {
-    var EventDispatcher: {
+    export var EventDispatcher: {
         instance;
         for(aWindow?);
         byName(aName?);

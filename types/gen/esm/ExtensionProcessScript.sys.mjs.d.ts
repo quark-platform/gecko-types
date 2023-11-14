@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ExtensionProcessScript.sys.mjs" {
-    var ExtensionProcessScript: {
+    export var ExtensionProcessScript: {
         extensions;
         initExtension(extension?);
         initExtensionDocument(policy?, doc?, privileged?);
@@ -7,7 +7,7 @@ declare module "resource://gre/modules/ExtensionProcessScript.sys.mjs" {
         preloadContentScript(contentScript?);
         loadContentScript(contentScript?, window?);
     };
-    var ExtensionAPIRequestHandler: {
+    export var ExtensionAPIRequestHandler: {
         initExtensionWorker(policy?, serviceWorkerInfo?);
         onExtensionWorkerLoaded(policy?, serviceWorkerDescriptorId?);
         onExtensionWorkerDestroyed(policy?, serviceWorkerDescriptorId?);

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/NativeManifests.sys.mjs" {
-    var NativeManifests: {
+    export var NativeManifests: {
         _initializePromise;
         _lookup;
         init();

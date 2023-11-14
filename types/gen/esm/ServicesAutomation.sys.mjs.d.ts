@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/services-automation/ServicesAutomation.sys.mjs" {
-    var Authentication: {
+    export var Authentication: {
         isLoggedIn();
         isReady();
         getSignedInUser();
@@ -9,7 +9,7 @@ declare module "resource://gre/modules/services-automation/ServicesAutomation.sy
         signIn(username?, password?);
         signOut();
     };
-    var Sync: {
+    export var Sync: {
         getSyncLogsDirectory();
         init();
         observe(subject?, topic?, data?);
@@ -18,6 +18,6 @@ declare module "resource://gre/modules/services-automation/ServicesAutomation.sy
         wipeLogs();
         getLogs();
     };
-    function initConfig(autoconfig?);
-    function triggerSync(username?, password?, autoconfig?);
+    export function initConfig(autoconfig?);
+    export function triggerSync(username?, password?, autoconfig?);
 }

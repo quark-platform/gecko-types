@@ -1,7 +1,7 @@
 declare module "resource://gre/modules/PushService.sys.mjs" {
-    var PushServiceWebSocket;
-    var PushServiceHttp2;
-    var PushService: {
+    export var PushServiceWebSocket;
+    export var PushServiceHttp2;
+    export var PushService: {
         _service;
         _state;
         _db;

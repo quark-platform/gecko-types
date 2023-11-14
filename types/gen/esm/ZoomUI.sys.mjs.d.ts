@@ -1,5 +1,5 @@
 declare module "resource://app/modules/ZoomUI.sys.mjs" {
-    var ZoomUI: {
+    export var ZoomUI: {
         init(aWindow?);
         getGlobalValue();
     };

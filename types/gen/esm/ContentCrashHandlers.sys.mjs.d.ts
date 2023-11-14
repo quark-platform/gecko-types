@@ -1,5 +1,5 @@
 declare module "resource://app/modules/ContentCrashHandlers.sys.mjs" {
-    var TabCrashHandler: {
+    export var TabCrashHandler: {
         _crashedTabCount: number;
         childMap;
         browserMap;
@@ -29,7 +29,7 @@ declare module "resource://app/modules/ContentCrashHandlers.sys.mjs" {
         getDumpID(browser?);
         get queuedCrashedBrowsers(): any;
     };
-    var UnsubmittedCrashHandler: {
+    export var UnsubmittedCrashHandler: {
         get prefs(): any;
         get enabled(): any;
         showingNotification;

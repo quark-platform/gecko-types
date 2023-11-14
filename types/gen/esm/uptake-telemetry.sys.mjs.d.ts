@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/services-common/uptake-telemetry.sys.mjs" {
-    var Policy: {
+    export var Policy: {
         _clientIDHash;
         getClientID();
         getClientIDHash();

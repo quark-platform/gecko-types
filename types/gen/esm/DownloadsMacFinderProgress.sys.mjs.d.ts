@@ -1,5 +1,5 @@
 declare module "resource://app/modules/DownloadsMacFinderProgress.sys.mjs" {
-    var DownloadsMacFinderProgress: {
+    export var DownloadsMacFinderProgress: {
         _finderProgresses;
         register();
         onDownloadAdded(download?);

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/PromiseUtils.sys.mjs" {
-    var PromiseUtils: {
+    export var PromiseUtils: {
         defer();
         idleDispatch(callback?, timeout?);
     };

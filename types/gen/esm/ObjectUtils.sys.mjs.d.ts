@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ObjectUtils.sys.mjs" {
-    var ObjectUtils: {
+    export var ObjectUtils: {
         deepEqual(a?, b?);
         strict(obj?);
         isEmpty(obj?);

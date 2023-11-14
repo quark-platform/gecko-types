@@ -1,5 +1,5 @@
 declare module "resource://app/modules/AboutNewTab.sys.mjs" {
-    var AboutNewTab: {
+    export var AboutNewTab: {
         QueryInterface;
         initialized;
         willNotifyUser;

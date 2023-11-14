@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/DownloadUtils.sys.mjs" {
-    var DownloadUtils: {
+    export var DownloadUtils: {
         getDownloadStatus;
         getDownloadStatusNoRate;
         _deriveTransferRate;

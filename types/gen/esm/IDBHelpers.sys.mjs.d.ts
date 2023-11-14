@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/services-settings/IDBHelpers.sys.mjs" {
-    var IDBHelpers: {
+    export var IDBHelpers: {
         bulkOperationHelper;
         executeIDB;
         openIDB;

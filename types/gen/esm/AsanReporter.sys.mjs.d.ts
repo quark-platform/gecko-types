@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/AsanReporter.sys.mjs" {
-    var AsanReporter: {
+    export var AsanReporter: {
         init();
         observe(aSubject?, aTopic?, aData?);
     };

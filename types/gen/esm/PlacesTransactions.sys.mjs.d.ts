@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/PlacesTransactions.sys.mjs" {
-    var PlacesTransactions: {
+    export var PlacesTransactions: {
         batch(transactionsToBatch?);
         undo();
         redo();

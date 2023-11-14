@@ -1,8 +1,8 @@
 declare module "resource://gre/modules/ContentPrefUtils.sys.mjs" {
-    function ContentPref(domain?, name?, value?);
-    function cbHandleResult(callback?, pref?);
-    function cbHandleCompletion(callback?, reason?);
-    function cbHandleError(callback?, nsresult?);
-    function safeCallback(callbackObj?, methodName?, args?);
-    var _methodsCallableFromChild;
+    export function ContentPref(domain?, name?, value?);
+    export function cbHandleResult(callback?, pref?);
+    export function cbHandleCompletion(callback?, reason?);
+    export function cbHandleError(callback?, nsresult?);
+    export function safeCallback(callbackObj?, methodName?, args?);
+    export var _methodsCallableFromChild;
 }

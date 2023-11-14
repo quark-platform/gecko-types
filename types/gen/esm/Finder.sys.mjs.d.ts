@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/Finder.sys.mjs" {
-    function Finder(docShell?);
-    function GetClipboardSearchString(aLoadContext?);
-    function SetClipboardSearchString(aSearchString?);
+    export function Finder(docShell?);
+    export function GetClipboardSearchString(aLoadContext?);
+    export function SetClipboardSearchString(aSearchString?);
 }

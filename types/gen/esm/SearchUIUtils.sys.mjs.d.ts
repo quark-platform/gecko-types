@@ -1,5 +1,5 @@
 declare module "resource://app/modules/SearchUIUtils.sys.mjs" {
-    var SearchUIUtils: {
+    export var SearchUIUtils: {
         initialized;
         init();
         observe(engine?, topic?, data?);

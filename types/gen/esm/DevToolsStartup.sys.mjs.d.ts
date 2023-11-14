@@ -1,4 +1,4 @@
 declare module "resource://gre/modules/DevToolsStartup.sys.mjs" {
-    function validateProfilerWebChannelUrl(targetUrl?);
-    function DevToolsStartup();
+    export function validateProfilerWebChannelUrl(targetUrl?);
+    export function DevToolsStartup();
 }

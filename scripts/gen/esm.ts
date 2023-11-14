@@ -15,6 +15,8 @@ import ts from 'typescript'
 import { printNode } from './shared.js'
 import { writeFileSync } from 'fs'
 
+const EXPORT_TOKEN = ts.factory.createToken(ts.SyntaxKind.ExportKeyword)
+
 const exportMods: { name: string; path: string }[] = []
 const mods: { name: string; path: string }[] = []
 const classes = new Map<string, string>()
@@ -148,7 +150,7 @@ function handleClass(c: ClassExport): ts.Statement[] {
       ),
 
     ts.factory.createClassDeclaration(
-      [ts.factory.createToken(ts.SyntaxKind.ExportKeyword)],
+      [EXPORT_TOKEN],
       ts.factory.createIdentifier(c.id),
       undefined,
       c.superClass
@@ -216,7 +218,7 @@ function handleClass(c: ClassExport): ts.Statement[] {
 
 function handleFunction(c: FunctionDeclarationExport) {
   return ts.factory.createFunctionDeclaration(
-    undefined,
+    [EXPORT_TOKEN],
     undefined,
     ts.factory.createIdentifier(c.id),
     undefined,
@@ -237,7 +239,7 @@ function handleFunction(c: FunctionDeclarationExport) {
 
 function handleVariable(c: VariableDeclarationExport) {
   return ts.factory.createVariableStatement(
-    undefined,
+    [EXPORT_TOKEN],
     ts.factory.createVariableDeclarationList([
       ts.factory.createVariableDeclaration(
         ts.factory.createIdentifier(c.id),

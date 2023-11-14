@@ -1,4 +1,4 @@
 declare module "resource://gre/modules/PushBroadcastService.sys.mjs" {
-    var BroadcastService;
-    var pushBroadcastService;
+    export var BroadcastService;
+    export var pushBroadcastService;
 }

@@ -1,3 +1,3 @@
 declare module "resource://gre/modules/CommonDialog.sys.mjs" {
-    function CommonDialog(args?, ui?);
+    export function CommonDialog(args?, ui?);
 }

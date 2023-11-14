@@ -1,5 +1,5 @@
 declare module "resource://app/modules/pagedata/PageDataSchema.sys.mjs" {
-    var PageDataSchema: {
+    export var PageDataSchema: {
         DATA_TYPE;
         nameForType(type?);
         validateData(type?, data?);

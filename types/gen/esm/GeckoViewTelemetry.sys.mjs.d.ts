@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/GeckoViewTelemetry.sys.mjs" {
-    var InitializationTracker: {
+    export var InitializationTracker: {
         initialized;
         onInitialized(profilerTime?);
     };

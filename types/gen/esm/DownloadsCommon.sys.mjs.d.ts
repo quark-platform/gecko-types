@@ -1,5 +1,5 @@
 declare module "resource://app/modules/DownloadsCommon.sys.mjs" {
-    var DownloadsCommon: {
+    export var DownloadsCommon: {
         DOWNLOAD_NOTSTARTED;
         DOWNLOAD_DOWNLOADING: number;
         DOWNLOAD_FINISHED: number;

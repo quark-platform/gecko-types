@@ -1,5 +1,5 @@
 declare module "resource://app/modules/DoHHeuristics.sys.mjs" {
-    var Heuristics: {
+    export var Heuristics: {
         ENABLE_DOH;
         DISABLE_DOH;
         run();
@@ -30,5 +30,5 @@ declare module "resource://app/modules/DoHHeuristics.sys.mjs" {
             fromResults(results?);
         };
     };
-    function parentalControls();
+    export function parentalControls();
 }

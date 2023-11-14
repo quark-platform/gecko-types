@@ -1,5 +1,5 @@
 declare module "resource://app/modules/ShoppingUtils.sys.mjs" {
-    var ShoppingUtils: {
+    export var ShoppingUtils: {
         initialized;
         registered;
         handledAutoActivate;

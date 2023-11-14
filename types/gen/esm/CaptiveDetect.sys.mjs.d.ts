@@ -1,3 +1,3 @@
 declare module "resource://gre/modules/CaptiveDetect.sys.mjs" {
-    function CaptivePortalDetector();
+    export function CaptivePortalDetector();
 }

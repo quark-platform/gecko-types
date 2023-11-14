@@ -1,5 +1,5 @@
 declare module "resource://app/modules/PermissionUI.sys.mjs" {
-    var PermissionUI: {
+    export var PermissionUI: {
         PermissionPromptForRequest;
         GeolocationPermissionPrompt;
         XRPermissionPrompt;

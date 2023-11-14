@@ -1,4 +1,4 @@
 declare module "resource://app/modules/backgroundtasks/BackgroundTask_install.sys.mjs" {
-    var backgroundTaskTimeoutSec: number;
-    function runBackgroundTask(commandLine?);
+    export var backgroundTaskTimeoutSec: number;
+    export function runBackgroundTask(commandLine?);
 }

@@ -6,7 +6,7 @@ declare module "resource://gre/modules/BackgroundTasksManager.sys.mjs" {
         classID;
         QueryInterface;
     }
-    var EXIT_CODE: {
+    export var EXIT_CODE: {
         SUCCESS: number;
         NOT_FOUND: number;
         EXCEPTION: number;

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ExtensionDNR.sys.mjs" {
-    var ExtensionDNR: {
+    export var ExtensionDNR: {
         RuleValidator;
         RuleQuotaCounter;
         clearRuleManager;

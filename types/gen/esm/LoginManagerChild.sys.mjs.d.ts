@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/LoginManagerChild.sys.mjs" {
-    var AUTOFILL_RESULT: {
+    export var AUTOFILL_RESULT: {
         FILLED;
         NO_PASSWORD_FIELD;
         PASSWORD_DISABLED_READONLY;

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/SubDialog.sys.mjs" {
-    function SubDialog(param0?);
+    export function SubDialog(param0?);
     export class SubDialogManager {
         constructor(param0);
         get _topDialog();

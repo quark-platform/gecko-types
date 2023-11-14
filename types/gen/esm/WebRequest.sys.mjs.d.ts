@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/WebRequest.sys.mjs" {
-    var WebRequest: {
+    export var WebRequest: {
         setDNRHandlingEnabled;
         getTabIdForChannelWrapper;
         onBeforeRequest;

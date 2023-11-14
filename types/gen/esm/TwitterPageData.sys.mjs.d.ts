@@ -1,5 +1,5 @@
 declare module "resource://app/modules/pagedata/TwitterPageData.sys.mjs" {
-    var TwitterPageData: {
+    export var TwitterPageData: {
         collect(document?);
     };
 }

@@ -1,10 +1,10 @@
 declare module "resource://gre/modules/Timer.sys.mjs" {
-    function setTimeout(aCallback?, aMilliseconds?);
-    function setTimeoutWithTarget(aCallback?, aMilliseconds?, aTarget?);
-    function setInterval(aCallback?, aMilliseconds?);
-    function setIntervalWithTarget(aCallback?, aMilliseconds?, aTarget?);
-    var clearInterval;
-    var clearTimeout;
-    function requestIdleCallback(aCallback?, aOptions?);
-    function cancelIdleCallback(aId?);
+    export function setTimeout(aCallback?, aMilliseconds?);
+    export function setTimeoutWithTarget(aCallback?, aMilliseconds?, aTarget?);
+    export function setInterval(aCallback?, aMilliseconds?);
+    export function setIntervalWithTarget(aCallback?, aMilliseconds?, aTarget?);
+    export var clearInterval;
+    export var clearTimeout;
+    export function requestIdleCallback(aCallback?, aOptions?);
+    export function cancelIdleCallback(aId?);
 }

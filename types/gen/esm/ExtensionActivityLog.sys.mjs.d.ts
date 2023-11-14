@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ExtensionActivityLog.sys.mjs" {
-    var ExtensionActivityLog: {
+    export var ExtensionActivityLog: {
         initialized;
         listeners;
         watchedIds;

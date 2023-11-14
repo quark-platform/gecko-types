@@ -1,3 +1,3 @@
 declare module "resource://gre/modules/FxAccountsProfile.sys.mjs" {
-    var FxAccountsProfile;
+    export var FxAccountsProfile;
 }

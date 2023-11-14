@@ -1,3 +1,3 @@
 declare module "resource://app/modules/InstallerPrefs.sys.mjs" {
-    function InstallerPrefs(prefsList?);
+    export function InstallerPrefs(prefsList?);
 }

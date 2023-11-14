@@ -1,3 +1,3 @@
 declare module "resource://app/modules/BuiltInThemes.sys.mjs" {
-    var BuiltInThemes;
+    export var BuiltInThemes;
 }

@@ -1,3 +1,3 @@
 declare module "resource://gre/modules/amInstallTrigger.sys.mjs" {
-    function InstallTrigger();
+    export function InstallTrigger();
 }

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/services-common/async.sys.mjs" {
-    var Async: {
+    export var Async: {
         chain;
         checkAppReady;
         isAppReady();

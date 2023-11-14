@@ -1,5 +1,5 @@
 declare module "resource://app/modules/WindowsPreviewPerTab.sys.mjs" {
-    var AeroPeek: {
+    export var AeroPeek: {
         available;
         __prefenabled;
         _enabled;

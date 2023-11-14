@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/FxAccountsConfig.sys.mjs" {
-    var FxAccountsConfig: {
+    export var FxAccountsConfig: {
         promiseEmailURI(email?, entrypoint?, extraParams?);
         promiseConnectAccountURI(entrypoint?, extraParams?);
         promiseForceSigninURI(entrypoint?, extraParams?);

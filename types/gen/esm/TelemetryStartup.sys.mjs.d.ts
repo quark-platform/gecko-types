@@ -1,3 +1,3 @@
 declare module "resource://gre/modules/TelemetryStartup.sys.mjs" {
-    function TelemetryStartup();
+    export function TelemetryStartup();
 }

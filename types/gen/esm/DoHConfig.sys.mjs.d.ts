@@ -1,5 +1,5 @@
 declare module "resource://app/modules/DoHConfig.sys.mjs" {
-    var DoHConfigController: {
+    export var DoHConfigController: {
         initComplete;
         _resolveInitComplete;
         currentConfig;

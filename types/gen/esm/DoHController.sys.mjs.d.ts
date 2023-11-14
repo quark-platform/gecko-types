@@ -1,5 +1,5 @@
 declare module "resource://app/modules/DoHController.sys.mjs" {
-    var DoHController: {
+    export var DoHController: {
         _heuristicsAreEnabled;
         init();
         _uninit();

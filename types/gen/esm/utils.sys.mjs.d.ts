@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/services-common/utils.sys.mjs" {
-    var CryptoUtils: {
+    export var CryptoUtils: {
         xor(a?, b?);
         generateRandomBytesLegacy(length?);
         generateRandomBytes(length?);

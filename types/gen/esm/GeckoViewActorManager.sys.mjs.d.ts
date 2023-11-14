@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/GeckoViewActorManager.sys.mjs" {
-    var GeckoViewActorManager: {
+    export var GeckoViewActorManager: {
         addJSWindowActors(actors?);
         _register(actorName?, actor?);
     };

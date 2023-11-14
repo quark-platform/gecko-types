@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ExtensionSettingsStore.sys.mjs" {
-    var ExtensionSettingsStore: {
+    export var ExtensionSettingsStore: {
         SETTING_USER_SET;
         initialize();
         addSetting(id?, type?, key?, value?, initialValueCallback?, callbackArgument?, settingDataUpdate?);

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/NewTabUtils.sys.mjs" {
-    var NewTabUtils: {
+    export var NewTabUtils: {
         _initialized;
         extractSite;
         init;

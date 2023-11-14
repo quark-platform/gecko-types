@@ -1,3 +1,3 @@
 declare module "resource://app/modules/syncedtabs/TabListComponent.sys.mjs" {
-    function TabListComponent(param0?);
+    export function TabListComponent(param0?);
 }

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/Extension.sys.mjs" {
-    var ExtensionProcessCrashObserver: {
+    export var ExtensionProcessCrashObserver: {
         initialized;
         _appInForeground;
         _isAndroid;

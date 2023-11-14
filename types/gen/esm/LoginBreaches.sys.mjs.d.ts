@@ -1,5 +1,5 @@
 declare module "resource://app/modules/LoginBreaches.sys.mjs" {
-    var LoginBreaches: {
+    export var LoginBreaches: {
         REMOTE_SETTINGS_COLLECTION;
         update(breaches?);
         getPotentialBreachesByLoginGUID(logins?, breaches?);

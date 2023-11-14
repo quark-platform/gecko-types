@@ -1,5 +1,5 @@
 declare module "resource://app/modules/URILoadingHelper.sys.mjs" {
-    var URILoadingHelper: {
+    export var URILoadingHelper: {
         openLinkIn(window?, url?, where?, params?);
         getTargetWindow(window?);
         openUILink(window?, url?, event?, aIgnoreButton?, aIgnoreAlt?, aAllowThirdPartyFixup?, aPostData?, aReferrerInfo?);

@@ -1,9 +1,9 @@
 declare module "resource://gre/modules/DownloadCore.sys.mjs" {
-    var Download;
-    var DownloadSource;
-    var DownloadTarget;
-    var DownloadError;
-    var DownloadSaver;
-    var DownloadCopySaver;
-    var DownloadLegacySaver;
+    export var Download;
+    export var DownloadSource;
+    export var DownloadTarget;
+    export var DownloadError;
+    export var DownloadSaver;
+    export var DownloadCopySaver;
+    export var DownloadLegacySaver;
 }

@@ -1,3 +1,3 @@
 declare module "resource://app/modules/UrlbarProviderTopSites.sys.mjs" {
-    var UrlbarProviderTopSites;
+    export var UrlbarProviderTopSites;
 }

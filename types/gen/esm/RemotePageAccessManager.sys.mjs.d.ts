@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/RemotePageAccessManager.sys.mjs" {
-    var RemotePageAccessManager: {
+    export var RemotePageAccessManager: {
         accessMap: {};
         checkAllowAccess(aDocument?, aFeature?, aValue?);
         checkAllowAccessWithPrincipal(aPrincipal?, aFeature?, aValue?, aDocument?);

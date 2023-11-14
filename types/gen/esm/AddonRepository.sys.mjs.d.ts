@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/addons/AddonRepository.sys.mjs" {
-    var AddonRepository: {
+    export var AddonRepository: {
         get homepageURL(): any;
         getSearchURL(aSearchTerms?);
         get cacheEnabled(): any;

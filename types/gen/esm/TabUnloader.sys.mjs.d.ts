@@ -1,5 +1,5 @@
 declare module "resource://app/modules/TabUnloader.sys.mjs" {
-    var TabUnloader: {
+    export var TabUnloader: {
         init();
         isDiscardable(tab?);
         unloadTabAsync(minInactiveDuration?);

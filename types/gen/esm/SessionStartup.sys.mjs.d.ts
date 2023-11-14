@@ -1,5 +1,5 @@
 declare module "resource://app/modules/sessionstore/SessionStartup.sys.mjs" {
-    var SessionStartup: {
+    export var SessionStartup: {
         NO_SESSION;
         RECOVER_SESSION;
         RESUME_SESSION;

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ResetProfile.sys.mjs" {
-    var ResetProfile: {
+    export var ResetProfile: {
         resetSupported();
         openConfirmationDialog(window?);
     };

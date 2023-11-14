@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/MediaUtils.sys.mjs" {
-    var MediaUtils: {
+    export var MediaUtils: {
         getMetadata(aElement?);
         isVideoElement(aElement?);
         isAudioElement(aElement?);

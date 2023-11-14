@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ManifestProcessor.sys.mjs" {
-    var ManifestProcessor: {
+    export var ManifestProcessor: {
         get defaultDisplayMode(): any;
         get displayModes(): any;
         get orientationTypes(): any;

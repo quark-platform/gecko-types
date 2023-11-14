@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/backgroundtasks/BackgroundTask_backgroundupdate.sys.mjs" {
-    var backgroundTaskTimeoutSec;
-    function maybeSubmitBackgroundUpdatePing();
-    function runBackgroundTask(commandLine?);
+    export var backgroundTaskTimeoutSec;
+    export function maybeSubmitBackgroundUpdatePing();
+    export function runBackgroundTask(commandLine?);
 }

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/Blocklist.sys.mjs" {
-    var Blocklist: {
+    export var Blocklist: {
         _init();
         isLoaded;
         shutdown();
@@ -12,7 +12,7 @@ declare module "resource://gre/modules/Blocklist.sys.mjs" {
         _chooseExtensionBlocklistImplementationFromPref();
         _blocklistUpdated();
     };
-    var BlocklistPrivate: {
+    export var BlocklistPrivate: {
         BlocklistTelemetry;
         ExtensionBlocklistMLBF;
         ExtensionBlocklistRS;

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/subprocess/subprocess_win.sys.mjs" {
-    var libc;
-    var win32;
-    var SubprocessImpl;
+    export var libc;
+    export var win32;
+    export var SubprocessImpl;
 }

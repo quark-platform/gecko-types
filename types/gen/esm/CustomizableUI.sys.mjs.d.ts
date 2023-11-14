@@ -1,5 +1,5 @@
 declare module "resource://app/modules/CustomizableUI.sys.mjs" {
-    var CustomizableUI: {
+    export var CustomizableUI: {
         AREA_NAVBAR;
         AREA_MENUBAR;
         AREA_TABSTRIP;

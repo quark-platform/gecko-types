@@ -1,6 +1,6 @@
 declare module "resource://app/modules/ESEDBReader.sys.mjs" {
-    var KERNEL: {};
-    var COLUMN_TYPES: {
+    export var KERNEL: {};
+    export var COLUMN_TYPES: {
         JET_coltypBit: number;
         JET_coltypUnsignedByte: number;
         JET_coltypShort: number;
@@ -17,11 +17,11 @@ declare module "resource://app/modules/ESEDBReader.sys.mjs" {
         JET_coltypLongLong: number;
         JET_coltypGUID: number;
     };
-    var ESE: {};
-    var gLibs: {};
-    function declareESEFunction(methodName?);
-    function loadLibraries();
-    var ESEDBReader: {
+    export var ESE: {};
+    export var gLibs: {};
+    export function declareESEFunction(methodName?);
+    export function loadLibraries();
+    export var ESEDBReader: {
         openDB(rootDir?, dbFile?, logDir?);
         dbLocked(dbFile?);
         closeDB(db?);

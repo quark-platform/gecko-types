@@ -1,5 +1,5 @@
 declare module "resource://app/modules/ChromeMigrationUtils.sys.mjs" {
-    var ChromeMigrationUtils: {
+    export var ChromeMigrationUtils: {
         CONTEXTUAL_LOGIN_IMPORT_BROWSERS;
         _extensionVersionDirectoryNames: {};
         _extensionLocaleStrings: {};

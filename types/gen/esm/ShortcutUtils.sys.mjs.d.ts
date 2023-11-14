@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ShortcutUtils.sys.mjs" {
-    var ShortcutUtils: {
+    export var ShortcutUtils: {
         IS_VALID;
         INVALID_KEY;
         INVALID_MODIFIER;

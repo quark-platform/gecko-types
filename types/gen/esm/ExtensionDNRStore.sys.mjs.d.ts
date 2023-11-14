@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ExtensionDNRStore.sys.mjs" {
-    var ExtensionDNRStore: {
+    export var ExtensionDNRStore: {
         clearOnUninstall(extensionUUID?);
         initExtension(extension?);
         updateDynamicRules(extension?, updateRuleOptions?);

@@ -1,3 +1,3 @@
 declare module "resource://gre/modules/Bookmarks.sys.mjs" {
-    var Bookmarks;
+    export var Bookmarks;
 }

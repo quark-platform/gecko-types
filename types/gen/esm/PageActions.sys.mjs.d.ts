@@ -1,5 +1,5 @@
 declare module "resource://app/modules/PageActions.sys.mjs" {
-    var PageActions: {
+    export var PageActions: {
         init(addShutdownBlocker?);
         _deferredAddActionCalls;
         get actions(): any;

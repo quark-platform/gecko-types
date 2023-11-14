@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/SafeBrowsing.sys.mjs" {
-    var SafeBrowsing: {
+    export var SafeBrowsing: {
         init();
         registerTableWithURLs(listname?);
         registerTables();

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/TaskSchedulerMacOSImpl.sys.mjs" {
-    var MacOSImpl: {
+    export var MacOSImpl: {
         registerTask(id?, command?, intervalSeconds?, options?);
         deleteTask(id?);
         _deleteTaskByLabel(label?);

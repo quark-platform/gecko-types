@@ -1,3 +1,3 @@
 declare module "resource://gre/modules/nsCrashMonitor.sys.mjs" {
-    function CrashMonitor();
+    export function CrashMonitor();
 }

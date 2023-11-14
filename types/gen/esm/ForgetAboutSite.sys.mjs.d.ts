@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ForgetAboutSite.sys.mjs" {
-    var ForgetAboutSite: {
+    export var ForgetAboutSite: {
         removeDataFromBaseDomain(aDomainOrHost?);
         removeDataFromDomain(aDomain?);
     };

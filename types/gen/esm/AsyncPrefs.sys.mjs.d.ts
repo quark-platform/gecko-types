@@ -3,7 +3,7 @@ declare module "resource://gre/modules/AsyncPrefs.sys.mjs" {
         set(pref?, value?);
         reset(pref?);
     }
-    var AsyncPrefs: {
+    export var AsyncPrefs: {
         set(pref?, value?);
         reset(pref?, value?);
     };

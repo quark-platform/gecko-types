@@ -1,5 +1,5 @@
 declare module "resource://app/modules/syncedtabs/util.sys.mjs" {
-    var Utils: {
+    export var Utils: {
         generateRandomBytesLegacy;
         computeHTTPMACSHA1;
         digestUTF8;
@@ -52,5 +52,5 @@ declare module "resource://app/modules/syncedtabs/util.sys.mjs" {
     export class SerializableSet extends Set {
         toJSON();
     }
-    var Svc: {};
+    export var Svc: {};
 }

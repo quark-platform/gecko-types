@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ComponentUtils.sys.mjs" {
-    var ComponentUtils: {
+    export var ComponentUtils: {
         generateSingletonFactory(aServiceConstructor?);
     };
 }

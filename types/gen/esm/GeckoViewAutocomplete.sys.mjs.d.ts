@@ -23,7 +23,7 @@ declare module "resource://gre/modules/GeckoViewAutocomplete.sys.mjs" {
         constructor(param0);
         Hint;
     }
-    var GeckoViewAutocomplete: {
+    export var GeckoViewAutocomplete: {
         _prompt;
         fetchLogins(aDomain?);
         fetchCreditCards();

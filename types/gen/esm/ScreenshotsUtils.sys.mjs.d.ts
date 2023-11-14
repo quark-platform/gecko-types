@@ -3,13 +3,13 @@ declare module "resource://app/modules/ScreenshotsUtils.sys.mjs" {
         receiveMessage(message?);
         didDestroy();
     }
-    var UIPhases: {
+    export var UIPhases: {
         CLOSED: number;
         INITIAL: number;
         OVERLAYSELECTION: number;
         PREVIEW: number;
     };
-    var ScreenshotsUtils: {
+    export var ScreenshotsUtils: {
         browserToScreenshotsState;
         initialized;
         getUIPhase(browser?);

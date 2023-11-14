@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/GeckoViewUtils.sys.mjs" {
-    var GeckoViewUtils: {
+    export var GeckoViewUtils: {
         addLazyGetter(scope?, name?, param2?);
         _addLazyListeners(events?, handler?, scope?, name?, addFn?, handleFn?);
         addLazyEventListener(target?, events?, param2?);

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ReaderMode.sys.mjs" {
-    var ReaderMode: {
+    export var ReaderMode: {
         DEBUG: number;
         enterTime;
         leaveTime;

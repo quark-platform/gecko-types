@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/DownloadPaths.sys.mjs" {
-    var DownloadPaths: {
+    export var DownloadPaths: {
         sanitize(leafName?);
         createNiceUniqueFile(templateFile?);
         splitBaseNameAndExtension(leafName?);

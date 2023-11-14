@@ -1,8 +1,8 @@
 declare module "resource://gre/modules/GMPUtils.sys.mjs" {
-    var OPEN_H264_ID;
-    var WIDEVINE_ID;
-    var GMP_PLUGIN_IDS;
-    var GMPUtils: {
+    export var OPEN_H264_ID;
+    export var WIDEVINE_ID;
+    export var GMP_PLUGIN_IDS;
+    export var GMPUtils: {
         isPluginHidden(aPlugin?);
         _isPluginSupported(aPlugin?);
         _isPluginVisible(aPlugin?);
@@ -10,7 +10,7 @@ declare module "resource://gre/modules/GMPUtils.sys.mjs" {
         _isWindowsOnARM64();
         _expectedABI(aPlugin?);
     };
-    var GMPPrefs: {
+    export var GMPPrefs: {
         KEY_EME_ENABLED;
         KEY_PLUGIN_ENABLED;
         KEY_PLUGIN_LAST_DOWNLOAD;

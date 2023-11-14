@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/CreditCard.sys.mjs" {
-    var NETWORK_NAMES: {};
+    export var NETWORK_NAMES: {};
     export class CreditCard {
         constructor(param0);
         set name(value);

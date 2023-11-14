@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/AndroidLog.sys.mjs" {
-    var AndroidLog: {
+    export var AndroidLog: {
         MAX_TAG_LENGTH;
         v;
         d;

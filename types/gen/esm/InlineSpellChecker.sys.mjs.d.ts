@@ -1,6 +1,6 @@
 declare module "resource://gre/modules/InlineSpellChecker.sys.mjs" {
-    function InlineSpellChecker(aEditor?);
-    var SpellCheckHelper: {
+    export function InlineSpellChecker(aEditor?);
+    export var SpellCheckHelper: {
         EDITABLE: number;
         INPUT: number;
         TEXTAREA: number;

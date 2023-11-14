@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/psm/DER.sys.mjs" {
-    var DER: {
+    export var DER: {
         UNIVERSAL;
         CONSTRUCTED;
         CONTEXT_SPECIFIC;

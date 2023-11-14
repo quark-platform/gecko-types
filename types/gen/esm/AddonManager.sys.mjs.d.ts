@@ -1,8 +1,8 @@
 declare module "resource://gre/modules/AddonManager.sys.mjs" {
-    var AMTelemetry;
-    var AMRemoteSettings;
-    var AMBrowserExtensionsImport;
-    var AddonManagerPrivate: {
+    export var AMTelemetry;
+    export var AMRemoteSettings;
+    export var AMBrowserExtensionsImport;
+    export var AddonManagerPrivate: {
         startup();
         addonIsActive(addonId?);
         getNewSideloads();
@@ -46,7 +46,7 @@ declare module "resource://gre/modules/AddonManager.sys.mjs" {
         overrideAddonRepository(mockRepo?);
         overrideAsyncShutdown(mockAsyncShutdown?);
     };
-    var AddonManager: {
+    export var AddonManager: {
         _installHostSource;
         _states;
         _errors;

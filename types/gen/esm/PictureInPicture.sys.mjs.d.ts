@@ -8,7 +8,7 @@ declare module "resource://gre/modules/PictureInPicture.sys.mjs" {
     export class PictureInPictureParent extends JSWindowActorParent {
         receiveMessage(aMessage?);
     }
-    var PictureInPicture: {
+    export var PictureInPicture: {
         weakPipToWin;
         weakWinToBrowser;
         browserWeakMap;

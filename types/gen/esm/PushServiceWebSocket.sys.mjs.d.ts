@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/PushServiceWebSocket.sys.mjs" {
-    var PushServiceWebSocket: {
+    export var PushServiceWebSocket: {
         QueryInterface;
         name;
         _mainPushService;

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ExtensionParent.sys.mjs" {
-    var ExtensionParent: {
+    export var ExtensionParent: {
         GlobalManager;
         HiddenExtensionPage;
         IconDetails;

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/BrowserUtils.sys.mjs" {
-    var BrowserUtils: {
+    export var BrowserUtils: {
         principalWithMatchingOA(principal?, existingPrincipal?);
         mimeTypeIsTextBased(mimeType?);
         canFindInPage(location?);

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/DownloadHistory.sys.mjs" {
-    var DownloadHistory: {
+    export var DownloadHistory: {
         getList();
         _listPromises: {};
         addDownloadToHistory(download?);

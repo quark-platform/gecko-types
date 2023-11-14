@@ -1,9 +1,9 @@
 declare module "resource://app/modules/DownloadsViewableInternally.sys.mjs" {
-    var PREF_ENABLED_TYPES;
-    var PREF_BRANCH_WAS_REGISTERED;
-    var PREF_BRANCH_PREVIOUS_ACTION;
-    var PREF_BRANCH_PREVIOUS_ASK;
-    var DownloadsViewableInternally: {
+    export var PREF_ENABLED_TYPES;
+    export var PREF_BRANCH_WAS_REGISTERED;
+    export var PREF_BRANCH_PREVIOUS_ACTION;
+    export var PREF_BRANCH_PREVIOUS_ASK;
+    export var DownloadsViewableInternally: {
         register();
         _downloadTypesViewableInternally;
         _shouldViewDownloadInternally(aMimeType?, aExtension?);

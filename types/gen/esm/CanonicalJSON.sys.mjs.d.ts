@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/CanonicalJSON.sys.mjs" {
-    var CanonicalJSON: {
+    export var CanonicalJSON: {
         stringify;
     };
 }

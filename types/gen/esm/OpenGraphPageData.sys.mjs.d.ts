@@ -1,5 +1,5 @@
 declare module "resource://app/modules/pagedata/OpenGraphPageData.sys.mjs" {
-    var OpenGraphPageData: {
+    export var OpenGraphPageData: {
         collect(document?);
     };
 }

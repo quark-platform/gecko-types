@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/DownloadIntegration.sys.mjs" {
-    var DownloadIntegration: {
+    export var DownloadIntegration: {
         _store;
         shouldKeepBlockedData();
         initializePublicDownloadList(list?);

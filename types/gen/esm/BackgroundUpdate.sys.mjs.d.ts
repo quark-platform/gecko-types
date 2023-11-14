@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/BackgroundUpdate.sys.mjs" {
-    var BackgroundUpdate: {
+    export var BackgroundUpdate: {
         QueryInterface;
         name;
         _initialized;

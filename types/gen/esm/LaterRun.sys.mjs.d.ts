@@ -1,5 +1,5 @@
 declare module "resource://app/modules/LaterRun.sys.mjs" {
-    var LaterRun: {
+    export var LaterRun: {
         init();
         get enabled(): any;
         set enabled(val);

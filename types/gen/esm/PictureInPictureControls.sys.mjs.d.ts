@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/PictureInPictureControls.sys.mjs" {
-    var KEYBOARD_CONTROLS: {
+    export var KEYBOARD_CONTROLS: {
         ALL: number;
         PLAY_PAUSE;
         MUTE_UNMUTE;
@@ -8,7 +8,7 @@ declare module "resource://gre/modules/PictureInPictureControls.sys.mjs" {
         CLOSE;
         LIVE_SEEK;
     };
-    var TOGGLE_POLICIES: {
+    export var TOGGLE_POLICIES: {
         DEFAULT: number;
         HIDDEN: number;
         TOP: number;
@@ -17,5 +17,5 @@ declare module "resource://gre/modules/PictureInPictureControls.sys.mjs" {
         THREE_QUARTERS: number;
         BOTTOM: number;
     };
-    var TOGGLE_POLICY_STRINGS: {};
+    export var TOGGLE_POLICY_STRINGS: {};
 }

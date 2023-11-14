@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ContentBlockingAllowList.sys.mjs" {
-    var ContentBlockingAllowList: {
+    export var ContentBlockingAllowList: {
         _observingLastPBContext;
         _maybeSetupLastPBContextObserver();
         _basePrincipalForAntiTrackingCommon(browser?);

@@ -1,4 +1,4 @@
 declare module "resource://gre/modules/URIFixup.sys.mjs" {
-    function URIFixup();
-    function URIFixupInfo(originalInput?);
+    export function URIFixup();
+    export function URIFixupInfo(originalInput?);
 }

@@ -1,6 +1,6 @@
 declare module "resource://gre/modules/LoginRecipes.sys.mjs" {
-    function LoginRecipesParent(aOptions?);
-    var LoginRecipesContent: {
+    export function LoginRecipesParent(aOptions?);
+    export var LoginRecipesContent: {
         _recipeCache;
         _clearRecipeCache();
         cacheRecipes(aHost?, win?, recipes?);

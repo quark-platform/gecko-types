@@ -1,12 +1,12 @@
 declare module "resource://app/modules/BrowserGlue.sys.mjs" {
-    var BrowserInitState: {};
-    function BrowserGlue();
-    function ContentPermissionPrompt();
-    var DefaultBrowserCheck: {
+    export var BrowserInitState: {};
+    export function BrowserGlue();
+    export function ContentPermissionPrompt();
+    export var DefaultBrowserCheck: {
         prompt(win?);
         willCheckDefaultBrowser(isStartupCheck?);
     };
-    var AboutHomeStartupCache: {
+    export var AboutHomeStartupCache: {
         ABOUT_HOME_URI_STRING;
         SCRIPT_EXTENSION;
         ENABLED_PREF;

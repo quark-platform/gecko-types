@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ContentDOMReference.sys.mjs" {
-    var ContentDOMReference: {
+    export var ContentDOMReference: {
         _init();
         observe(subject?, topic?, data?);
         get(element?);

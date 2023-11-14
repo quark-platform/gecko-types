@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/GeckoViewTestUtils.sys.mjs" {
-    var GeckoViewTabUtil: {
+    export var GeckoViewTabUtil: {
         createNewTab(url?);
     };
 }

@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/txEXSLTRegExFunctions.sys.mjs" {
-    function match(str?, regex?, flags?, doc?);
-    function replace(str?, regex?, flags?, replace?);
-    function test(str?, regex?, flags?);
+    export function match(str?, regex?, flags?, doc?);
+    export function replace(str?, regex?, flags?, replace?);
+    export function test(str?, regex?, flags?);
 }

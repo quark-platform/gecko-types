@@ -12,5 +12,5 @@ declare module "resource://gre/modules/ExtensionStorageSync.sys.mjs" {
         removeOnChangedListener(extension?, listener?);
         notifyListeners(extId?, changes?);
     }
-    var extensionStorageSync;
+    export var extensionStorageSync;
 }

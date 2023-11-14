@@ -1,6 +1,6 @@
 declare module "resource://gre/modules/UpdateService.sys.mjs" {
-    function UpdateService();
-    function UpdateManager();
+    export function UpdateService();
+    export function UpdateManager();
     export class CheckerService {
         getUpdateURL(checkType?);
         checkForUpdates(checkType?);

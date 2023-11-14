@@ -1,5 +1,5 @@
 declare module "resource://app/modules/policies/Policies.sys.mjs" {
-    var Policies: {
+    export var Policies: {
         _cleanup: {
             onBeforeAddons(manager?);
             onProfileAfterChange(manager?);
@@ -289,9 +289,9 @@ declare module "resource://app/modules/policies/Policies.sys.mjs" {
             onBeforeAddons(manager?, param?);
         };
     };
-    function setAndLockPref(prefName?, prefValue?);
-    var PoliciesUtils: {
+    export function setAndLockPref(prefName?, prefValue?);
+    export var PoliciesUtils: {
         setDefaultPref(prefName?, prefValue?, locked?);
     };
-    function runOnce(actionName?, callback?);
+    export function runOnce(actionName?, callback?);
 }

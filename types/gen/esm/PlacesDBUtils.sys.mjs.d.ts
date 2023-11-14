@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/PlacesDBUtils.sys.mjs" {
-    var PlacesDBUtils: {
+    export var PlacesDBUtils: {
         _isShuttingDown;
         _clearTaskQueue;
         clearPendingTasks();
@@ -20,5 +20,5 @@ declare module "resource://gre/modules/PlacesDBUtils.sys.mjs" {
         getEntitiesStatsAndCounts();
         runTasks(tasks?);
     };
-    function PlacesDBUtilsIdleMaintenance();
+    export function PlacesDBUtilsIdleMaintenance();
 }

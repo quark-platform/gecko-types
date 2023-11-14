@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/OSKeyStore.sys.mjs" {
-    var OSKeyStore: {
+    export var OSKeyStore: {
         STORE_LABEL;
         _isLocked;
         _pendingUnlockPromise;

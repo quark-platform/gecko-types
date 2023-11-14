@@ -1,5 +1,5 @@
 declare module "resource://app/modules/WindowsJumpLists.sys.mjs" {
-    var WinTaskbarJumpList: {
+    export var WinTaskbarJumpList: {
         _builder;
         _pbBuilder;
         _builtPb;

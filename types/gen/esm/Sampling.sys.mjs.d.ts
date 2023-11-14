@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/components-utils/Sampling.sys.mjs" {
-    var Sampling: {
+    export var Sampling: {
         fractionToKey(frac?);
         bufferToHex(buffer?);
         isHashInBucket(inputHash?, minBucket?, maxBucket?, bucketCount?);

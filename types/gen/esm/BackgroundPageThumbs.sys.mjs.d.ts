@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/BackgroundPageThumbs.sys.mjs" {
-    var BackgroundPageThumbs: {
+    export var BackgroundPageThumbs: {
         capture(url?, options?);
         captureIfMissing(url?, options?);
         renewThumbnailBrowser();

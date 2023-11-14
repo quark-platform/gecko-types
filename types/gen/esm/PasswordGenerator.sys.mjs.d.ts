@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/PasswordGenerator.sys.mjs" {
-    var PasswordGenerator: {
+    export var PasswordGenerator: {
         generatePassword(param0?);
         _addRequiredClassesAndCharacters(rules?, requiredClasses?);
         _randomUInt8Index(range?);

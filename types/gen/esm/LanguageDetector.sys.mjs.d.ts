@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/translation/LanguageDetector.sys.mjs" {
-    var workerManager: {
+    export var workerManager: {
         LARGE_STRING;
         IDLE_TIMEOUT;
         detectionQueue;
@@ -11,7 +11,7 @@ declare module "resource://gre/modules/translation/LanguageDetector.sys.mjs" {
         flushWorker();
         _flushWorker();
     };
-    var LanguageDetector: {
+    export var LanguageDetector: {
         detectLanguage(aParams?);
         detectLanguageFromDocument(aDocument?);
     };

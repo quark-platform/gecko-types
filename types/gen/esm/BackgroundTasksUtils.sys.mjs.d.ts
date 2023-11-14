@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/BackgroundTasksUtils.sys.mjs" {
-    var BackgroundTasksUtils: {
+    export var BackgroundTasksUtils: {
         _defaultProfileInitialized;
         _defaultProfile;
         getDefaultProfile();

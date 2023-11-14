@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/InlineSpellCheckerContent.sys.mjs" {
-    var InlineSpellCheckerContent: {
+    export var InlineSpellCheckerContent: {
         _spellChecker;
         _actor;
         initContextMenu(event?, editFlags?, actor?);

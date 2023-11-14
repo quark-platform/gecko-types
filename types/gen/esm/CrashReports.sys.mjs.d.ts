@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/CrashReports.sys.mjs" {
-    var CrashReports: {
+    export var CrashReports: {
         pendingDir;
         reportsDir;
         submittedDir;

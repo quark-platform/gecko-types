@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/PageThumbs.sys.mjs" {
-    var PageThumbs: {
+    export var PageThumbs: {
         _initialized;
         _thumbnailWidth: number;
         _thumbnailHeight: number;
@@ -24,7 +24,7 @@ declare module "resource://gre/modules/PageThumbs.sys.mjs" {
         createCanvas;
         _prefEnabled;
     };
-    var PageThumbsStorage: {
+    export var PageThumbsStorage: {
         ensurePath;
         _revisionTable: {};
         updateRevision(aURL?);
@@ -38,7 +38,7 @@ declare module "resource://gre/modules/PageThumbs.sys.mjs" {
         isFileRecentForURL;
         _eatNoOverwriteError;
     };
-    var PageThumbsExpiration: {
+    export var PageThumbsExpiration: {
         _filters;
         init;
         addFilter;

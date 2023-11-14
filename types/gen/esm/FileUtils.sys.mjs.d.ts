@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/FileUtils.sys.mjs" {
-    var FileUtils: {
+    export var FileUtils: {
         MODE_RDONLY: number;
         MODE_WRONLY: number;
         MODE_RDWR: number;

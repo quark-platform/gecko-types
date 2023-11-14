@@ -1,5 +1,5 @@
 declare module "resource://app/modules/SitePermissions.sys.mjs" {
-    var SitePermissions: {
+    export var SitePermissions: {
         UNKNOWN;
         ALLOW;
         BLOCK;

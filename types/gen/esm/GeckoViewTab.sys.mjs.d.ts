@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/GeckoViewTab.sys.mjs" {
-    var GeckoViewTabBridge: {
+    export var GeckoViewTabBridge: {
         windowIdToTabId(windowId?);
         tabIdToWindowId(tabId?);
         openOptionsPage(extensionId?);

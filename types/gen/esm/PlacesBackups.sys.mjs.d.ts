@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/PlacesBackups.sys.mjs" {
-    var PlacesBackups: {
+    export var PlacesBackups: {
         get filenamesRegex(): any;
         getBackupFolder;
         get profileRelativeFolderPath(): any;

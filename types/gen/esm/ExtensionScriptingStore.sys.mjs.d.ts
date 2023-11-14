@@ -1,7 +1,7 @@
 declare module "resource://gre/modules/ExtensionScriptingStore.sys.mjs" {
-    var makeInternalContentScript;
-    var makePublicContentScript;
-    var ExtensionScriptingStore: {
+    export var makeInternalContentScript;
+    export var makePublicContentScript;
+    export var ExtensionScriptingStore: {
         initExtension(extension?);
         getInitialScriptIdsMap(extension?);
         persistAll(extension?);

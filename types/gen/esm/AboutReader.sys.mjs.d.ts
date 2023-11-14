@@ -1,3 +1,3 @@
 declare module "resource://gre/modules/AboutReader.sys.mjs" {
-    var AboutReader;
+    export var AboutReader;
 }

@@ -1,4 +1,4 @@
 declare module "resource://gre/modules/LoginManagerAuthPrompter.sys.mjs" {
-    function LoginManagerAuthPromptFactory();
-    function LoginManagerAuthPrompter();
+    export function LoginManagerAuthPromptFactory();
+    export function LoginManagerAuthPrompter();
 }

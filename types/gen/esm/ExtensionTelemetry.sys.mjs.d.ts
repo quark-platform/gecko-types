@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/ExtensionTelemetry.sys.mjs" {
-    function getTrimmedString(str?);
-    function getErrorNameForTelemetry(error?);
-    var ExtensionTelemetry;
+    export function getTrimmedString(str?);
+    export function getErrorNameForTelemetry(error?);
+    export var ExtensionTelemetry;
 }

@@ -1,5 +1,5 @@
 declare module "resource://app/modules/sessionstore/StartupPerformance.sys.mjs" {
-    var StartupPerformance: {
+    export var StartupPerformance: {
         RESTORED_TOPIC;
         _startTimeStamp;
         _latestRestoredTimeStamp;

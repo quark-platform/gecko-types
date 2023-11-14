@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/LoginCSVImport.sys.mjs" {
-    var ImportFailedErrorType;
+    export var ImportFailedErrorType;
     export class ImportFailedException extends Error {
         constructor(errorType, message);
     }

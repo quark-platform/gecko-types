@@ -1,5 +1,5 @@
 declare module "resource://gre/modules/AppMenuNotifications.sys.mjs" {
-    var AppMenuNotifications: {
+    export var AppMenuNotifications: {
         _notifications;
         _hasInitialized;
         get notifications(): any;
