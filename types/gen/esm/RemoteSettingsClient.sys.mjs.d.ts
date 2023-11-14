@@ -19,16 +19,16 @@ declare module "resource://gre/modules/services-settings/RemoteSettingsClient.sy
         httpClient();
         getLastModified();
         get();
-        sync();
-        maybeSync();
-        _adjustedError();
-        _telemetryFromError();
+        sync(options?);
+        maybeSync(expectedTimestamp?);
+        _adjustedError(e?);
+        _telemetryFromError(e?);
         _importJSONDump();
-        _validateCollectionSignature();
-        _importChanges();
-        _fetchChangeset();
-        _filterSyncResult();
-        _filterEntries();
-        _cleanLocalFields();
+        _validateCollectionSignature(records?, timestamp?, metadata?);
+        _importChanges(localRecords?, localTimestamp?, localMetadata?, expectedTimestamp?);
+        _fetchChangeset(expectedTimestamp?, since?);
+        _filterSyncResult(syncResult?);
+        _filterEntries(data?);
+        _cleanLocalFields(record?);
     }
 }

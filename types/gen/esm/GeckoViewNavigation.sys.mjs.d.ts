@@ -3,20 +3,20 @@ declare module "resource://gre/modules/GeckoViewNavigation.sys.mjs" {
     export class GeckoViewNavigation extends GeckoViewModule {
         onInitBrowser();
         onInit();
-        validateHeader();
-        onEvent();
-        waitAndSetupWindow();
-        handleNewSession();
-        createContentWindow();
-        createContentWindowInFrame();
+        validateHeader(key?, value?, filter?);
+        onEvent(aEvent?, aData?, aCallback?);
+        waitAndSetupWindow(aSessionId?, aOpenWindowInfo?, aName?);
+        handleNewSession(aUri?, aOpenWindowInfo?, aWhere?, aFlags?, aName?);
+        createContentWindow(aUri?, aOpenWindowInfo?, aWhere?, aFlags?, aTriggeringPrincipal?, aCsp?);
+        createContentWindowInFrame(aUri?, aParams?, aWhere?, aFlags?, aName?);
         handleOpenUri();
-        openURI();
-        openURIInFrame();
+        openURI(aUri?, aOpenWindowInfo?, aWhere?, aFlags?, aTriggeringPrincipal?, aCsp?);
+        openURIInFrame(aUri?, aParams?, aWhere?, aFlags?, aName?);
         canClose();
         onEnable();
         onDisable();
         serializePermission();
-        isProductURL();
-        onLocationChange();
+        isProductURL(aLocationURI?);
+        onLocationChange(aWebProgress?, aRequest?, aLocationURI?, aFlags?);
     }
 }

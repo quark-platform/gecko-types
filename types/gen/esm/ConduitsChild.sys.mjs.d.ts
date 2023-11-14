@@ -1,12 +1,12 @@
 declare module "resource://gre/modules/ConduitsChild.sys.mjs" {
     export class BaseConduit {
         constructor(subject, address);
-        _send();
-        _recv();
+        _send(method?, query?, actor?, data?);
+        _recv(name?, arg?, meta?);
     }
     export class ConduitsChild extends JSWindowActorChild {
         constructor();
-        openConduit();
+        openConduit(subject?, address?);
         receiveMessage();
         didDestroy();
     }

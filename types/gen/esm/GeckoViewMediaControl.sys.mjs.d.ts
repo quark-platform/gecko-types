@@ -7,11 +7,11 @@ declare module "resource://gre/modules/GeckoViewMediaControl.sys.mjs" {
         onEnable();
         onDisable();
         get controller();
-        onEvent();
-        handleEvent();
+        onEvent(aEvent?, aData?, aCallback?);
+        handleEvent(aEvent?);
         handleActivated();
         handleDeactivated();
-        handlePositionStateChanged();
+        handlePositionStateChanged(aEvent?);
         handleSupportedKeysChanged();
         handleMetadataChanged();
         handlePlaybackStateChanged();

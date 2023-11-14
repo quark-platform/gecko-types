@@ -2,7 +2,7 @@ declare module "resource://gre/modules/AddonSearchEngine.sys.mjs" {
     import type { SearchEngine } from "resource://gre/modules/SearchEngine.sys.mjs";
     export class AddonSearchEngine extends SearchEngine {
         constructor();
-        _initWithJSON();
+        _initWithJSON(json?);
         init();
         update();
         updateIfNoNameChange();
@@ -11,6 +11,6 @@ declare module "resource://gre/modules/AddonSearchEngine.sys.mjs" {
         get isGeneralPurposeEngine();
         toJSON();
         checkAndReportIfSettingsValid();
-        getWebExtensionPolicy();
+        getWebExtensionPolicy(id?);
     }
 }

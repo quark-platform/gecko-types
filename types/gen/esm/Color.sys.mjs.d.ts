@@ -3,7 +3,7 @@ declare module "resource://gre/modules/Color.sys.mjs" {
         constructor(r, g, b);
         get relativeLuminance();
         get useBrightText();
-        contrastRatio();
-        isContrastRatioAcceptable();
+        contrastRatio(otherColor?);
+        isContrastRatioAcceptable(otherColor?);
     }
 }

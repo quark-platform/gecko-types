@@ -2,10 +2,10 @@ declare module "resource://app/modules/sessionstore/ContentSessionStore.sys.mjs"
     export class ContentSessionStore {
         constructor(mm);
         receiveMessage();
-        restoreHistory();
+        restoreHistory(data?);
         restoreTabContent();
         flush();
-        handleEvent();
+        handleEvent(event?);
         onUnload();
     }
 }

@@ -1,11 +1,11 @@
 declare module "resource://gre/modules/GeckoViewModule.sys.mjs" {
     export class GeckoViewModule {
-        initLogging();
+        initLogging(aModuleName?);
         constructor(aModuleInfo);
         get name();
         get enabled();
         get window();
-        getActor();
+        getActor(aActorName?);
         get browser();
         get messageManager();
         get eventDispatcher();
@@ -20,7 +20,7 @@ declare module "resource://gre/modules/GeckoViewModule.sys.mjs" {
         onDisable();
         onLoadContentModule();
         onContentModuleLoaded();
-        registerListener();
-        unregisterListener();
+        registerListener(aEventList?);
+        unregisterListener(aEventList?);
     }
 }

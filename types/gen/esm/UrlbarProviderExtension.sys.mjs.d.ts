@@ -1,19 +1,19 @@
 declare module "resource://app/modules/UrlbarProviderExtension.sys.mjs" {
     import type { UrlbarProvider } from "resource://app/modules/UrlbarUtils.sys.mjs";
     export class UrlbarProviderExtension extends UrlbarProvider {
-        getOrCreate();
+        getOrCreate(name?);
         constructor(name);
         get name();
         get type();
-        isActive();
-        getPriority();
-        setEventListener();
-        updateBehavior();
-        getViewUpdate();
-        startQuery();
-        cancelQuery();
-        onEngagement();
-        _notifyListener();
-        _makeUrlbarResult();
+        isActive(context?);
+        getPriority(context?);
+        setEventListener(eventName?, listener?);
+        updateBehavior(context?);
+        getViewUpdate(result?, idsByName?);
+        startQuery(context?, addCallback?);
+        cancelQuery(context?);
+        onEngagement(state?, queryContext?, details?, controller?);
+        _notifyListener(eventName?);
+        _makeUrlbarResult(context?, extResult?);
     }
 }

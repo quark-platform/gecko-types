@@ -3,8 +3,8 @@ declare module "resource://app/modules/UrlbarSearchOneOffs.sys.mjs" {
     export class UrlbarSearchOneOffs extends SearchOneOffs {
         constructor(view);
         get localButtons();
-        updateWebEngines();
-        enable();
+        updateWebEngines(engines?);
+        enable(enable?);
         onViewOpen();
         onViewClose();
         get hasView();
@@ -14,13 +14,13 @@ declare module "resource://app/modules/UrlbarSearchOneOffs.sys.mjs" {
         get selectedViewIndex();
         set selectedViewIndex(val);
         closeView();
-        handleSearchCommand();
-        setTooltipForEngineButton();
+        handleSearchCommand(event?, searchMode?);
+        setTooltipForEngineButton(button?);
         willHide();
-        onPrefChanged();
+        onPrefChanged(changedPref?);
         _getAddEngines();
-        _rebuildEngineList();
-        _on_click();
-        _on_contextmenu();
+        _rebuildEngineList(engines?, addEngines?);
+        _on_click(event?);
+        _on_contextmenu(event?);
     }
 }

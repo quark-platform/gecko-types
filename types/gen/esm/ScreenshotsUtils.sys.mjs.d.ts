@@ -1,6 +1,6 @@
 declare module "resource://app/modules/ScreenshotsUtils.sys.mjs" {
     export class ScreenshotsComponentParent extends JSWindowActorParent {
-        receiveMessage();
+        receiveMessage(message?);
         didDestroy();
     }
     var UIPhases: {

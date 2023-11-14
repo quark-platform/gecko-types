@@ -1,11 +1,11 @@
 declare module "resource://gre/modules/ServiceRequest.sys.mjs" {
     export class ServiceRequest extends XMLHttpRequest {
         constructor(options);
-        open();
+        open(method?, url?, options?);
         get bypassProxy();
         get isProxied();
         get bypassProxyEnabled();
-        logProxySource();
+        logProxySource(channel?, service?);
         get isOffline();
     }
 }

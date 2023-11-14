@@ -4,8 +4,8 @@ declare module "resource://gre/modules/Log.sys.mjs" {
         destructor();
         enable();
         disable();
-        _getLogCategory();
-        observe();
+        _getLogCategory(category?);
+        observe(message?);
         get QueryInterface();
     }
 }

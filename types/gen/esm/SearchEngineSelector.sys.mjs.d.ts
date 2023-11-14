@@ -5,10 +5,10 @@ declare module "resource://gre/modules/SearchEngineSelector.sys.mjs" {
         _getConfiguration();
         _onConfigurationUpdated();
         fetchEngineConfiguration();
-        _sort();
-        _sortIndex();
-        _isDefault();
-        _copyObject();
-        _isInSection();
+        _sort(defaultEngine?, privateEngine?, a?, b?);
+        _sortIndex(obj?, defaultEngine?, privateEngine?);
+        _isDefault(obj?);
+        _copyObject(target?, source?);
+        _isInSection(region?, locale?, config?);
     }
 }

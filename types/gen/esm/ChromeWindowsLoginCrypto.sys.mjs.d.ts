@@ -2,13 +2,13 @@ declare module "resource://app/modules/ChromeWindowsLoginCrypto.sys.mjs" {
     export class ChromeWindowsLoginCrypto {
         constructor(userDataPathSuffix);
         finalize();
-        arrayToString();
-        stringToArray();
-        decryptData();
-        _decryptUnversioned();
-        _decryptV10();
-        encryptData();
-        _encryptUnversioned();
-        _encryptV10();
+        arrayToString(arr?);
+        stringToArray(binary_string?);
+        decryptData(ciphertext?);
+        _decryptUnversioned(ciphertext?);
+        _decryptV10(ciphertext?);
+        encryptData(plaintext?);
+        _encryptUnversioned(plaintext?);
+        _encryptV10(plaintext?);
     }
 }

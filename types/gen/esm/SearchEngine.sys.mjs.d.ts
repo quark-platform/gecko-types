@@ -1,33 +1,33 @@
 declare module "resource://gre/modules/SearchEngine.sys.mjs" {
     export class EngineURL {
         constructor(mimeType, requestMethod, template);
-        addParam();
-        _addMozParam();
-        getSubmission();
+        addParam(name?, value?, purpose?);
+        _addMozParam(param?);
+        getSubmission(searchTerms?, engine?, purpose?);
         _getTermsParameterName();
-        _hasRelation();
-        _initWithJSON();
+        _hasRelation(rel?);
+        _initWithJSON(json?);
         toJSON();
     }
     export class SearchEngine {
         constructor();
         get _searchForm();
         set _searchForm(value);
-        _getURLOfType();
-        _getIconKey();
-        _addIconToMap();
-        _setIcon();
-        _getEngineURLFromMetaData();
-        _initWithDetails();
-        _setUrls();
-        checkSearchUrlMatchesManifest();
-        overrideWithExtension();
+        _getURLOfType(type?, rel?);
+        _getIconKey(width?, height?);
+        _addIconToMap(width?, height?, uriSpec?);
+        _setIcon(iconURL?, isPreferred?, width?, height?);
+        _getEngineURLFromMetaData(type?, params?);
+        _initWithDetails(details?);
+        _setUrls(details?);
+        checkSearchUrlMatchesManifest(details?);
+        overrideWithExtension(extensionID?, manifest?);
         removeExtensionOverride();
-        _initWithJSON();
+        _initWithJSON(json?);
         toJSON();
-        setAttr();
-        getAttr();
-        clearAttr();
+        setAttr(name?, val?);
+        getAttr(name?);
+        clearAttr(name?);
         get alias();
         set alias(val);
         get aliases();
@@ -49,18 +49,18 @@ declare module "resource://gre/modules/SearchEngine.sys.mjs" {
         get searchForm();
         get sendAttributionRequest();
         get queryCharset();
-        getSubmission();
+        getSubmission(searchTerms?, responseType?, purpose?);
         get searchURLWithNoTerms();
-        searchTermFromResult();
+        searchTermFromResult(uri?);
         get searchUrlQueryParamName();
         get searchUrlPublicSuffix();
-        supportsResponseType();
+        supportsResponseType(type?);
         get searchUrlDomain();
         getURLParsingInfo();
         get wrappedJSObject();
-        getIconURLBySize();
+        getIconURLBySize(width?, height?);
         getIcons();
-        speculativeConnect();
+        speculativeConnect(options?);
         get id();
     }
 }

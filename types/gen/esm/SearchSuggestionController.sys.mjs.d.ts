@@ -1,9 +1,9 @@
 declare module "resource://gre/modules/SearchSuggestionController.sys.mjs" {
     export class SearchSuggestionController {
         constructor();
-        engineOffersSuggestions();
+        engineOffersSuggestions(engine?, fetchTrending?);
         get firstPartyDomains();
-        fetch();
+        fetch(searchTerm?, privateMode?, engine?);
         stop();
     }
 }

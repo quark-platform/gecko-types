@@ -2,16 +2,16 @@ declare module "resource://app/modules/ExtensionControlledPopup.sys.mjs" {
     export class ExtensionControlledPopup {
         constructor(opts);
         get topWindow();
-        userHasConfirmed();
-        setConfirmation();
-        clearConfirmation();
-        observe();
+        userHasConfirmed(id?);
+        setConfirmation(id?);
+        clearConfirmation(id?);
+        observe(subject?, topic?, data?);
         removeObserver();
-        addObserver();
-        open();
-        getAddonDetails();
-        populateDescription();
-        _ensureWindowReady();
-        _getAndMaybeCreatePanel();
+        addObserver(extensionId?);
+        open(targetWindow?, extensionId?);
+        getAddonDetails(doc?, addon?);
+        populateDescription(doc?, addon?);
+        _ensureWindowReady(win?);
+        _getAndMaybeCreatePanel(doc?);
     }
 }

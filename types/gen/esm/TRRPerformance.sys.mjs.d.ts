@@ -2,7 +2,7 @@ declare module "resource://app/modules/TRRPerformance.sys.mjs" {
     export class DNSLookup {
         constructor(domain, trrServer, callback);
         doLookup();
-        onLookupComplete();
+        onLookupComplete(request?, record?, status?);
     }
     export class LookupAggregator {
         constructor(onCompleteCallback, trrList);
@@ -17,8 +17,8 @@ declare module "resource://app/modules/TRRPerformance.sys.mjs" {
         run();
         onComplete();
         getFastestTRR();
-        _getFastestTRRFromResults();
+        _getFastestTRRFromResults(results?);
         _runNewAggregator();
-        observe();
+        observe(subject?, topic?, data?);
     }
 }

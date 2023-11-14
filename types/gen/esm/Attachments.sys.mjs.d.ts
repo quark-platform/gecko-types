@@ -5,17 +5,17 @@ declare module "resource://gre/modules/services-settings/Attachments.sys.mjs" {
         get ServerInfoError();
         constructor();
         get cacheImpl();
-        download();
-        isDownloaded();
-        deleteDownloaded();
-        prune();
-        downloadToDisk();
-        downloadAsBytes();
-        deleteFromDisk();
+        download(record?, options?);
+        isDownloaded(record?);
+        deleteDownloaded(record?, options?);
+        prune(excludeIds?);
+        downloadToDisk(record?);
+        downloadAsBytes(record?);
+        deleteFromDisk(record?);
         _baseAttachmentsURL();
-        _fetchAttachment();
-        _readAttachmentCache();
-        _readAttachmentDump();
+        _fetchAttachment(url?);
+        _readAttachmentCache(attachmentId?);
+        _readAttachmentDump(attachmentId?);
         _makeDirs();
         _rmDirs();
     }

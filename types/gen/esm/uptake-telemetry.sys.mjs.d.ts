@@ -9,6 +9,6 @@ declare module "resource://gre/modules/services-common/uptake-telemetry.sys.mjs"
     export class UptakeTelemetry {
         get STATUS();
         get Policy();
-        report();
+        report(component?, status?);
     }
 }

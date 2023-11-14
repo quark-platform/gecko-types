@@ -1,8 +1,8 @@
 declare module "resource://gre/modules/BackgroundTasksManager.sys.mjs" {
     export class BackgroundTasksManager {
         get helpInfo();
-        handle();
-        runBackgroundTaskNamed();
+        handle(commandLine?);
+        runBackgroundTaskNamed(name?, commandLine?);
     }
     var EXIT_CODE: {
         SUCCESS: number;

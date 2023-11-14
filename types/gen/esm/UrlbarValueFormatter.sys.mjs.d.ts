@@ -4,15 +4,15 @@ declare module "resource://app/modules/UrlbarValueFormatter.sys.mjs" {
         get inputField();
         get scheme();
         update();
-        _ensureFormattedHostVisible();
+        _ensureFormattedHostVisible(urlMetaData?);
         _getUrlMetaData();
         _removeURLFormat();
         _formatURL();
-        _formatScheme();
+        _formatScheme(selectionType?, clear?);
         _removeSearchAliasFormat();
         _formatSearchAlias();
         _getSearchAlias();
-        handleEvent();
-        _on_resize();
+        handleEvent(event?);
+        _on_resize(event?);
     }
 }

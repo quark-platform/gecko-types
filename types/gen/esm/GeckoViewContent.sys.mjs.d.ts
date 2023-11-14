@@ -6,19 +6,19 @@ declare module "resource://gre/modules/GeckoViewContent.sys.mjs" {
         onDisable();
         get actor();
         get isPdfJs();
-        sendToAllChildren();
-        onEvent();
-        handleEvent();
-        observe();
-        _containsFormData();
-        _requestAnalysis();
-        _requestCreateAnalysis();
-        _requestAnalysisCreationStatus();
-        _pollForAnalysisCompleted();
-        _requestRecommendations();
-        _hasCookieBannerRuleForBrowsingContextTree();
-        _findInPage();
+        sendToAllChildren(aEvent?, aData?);
+        onEvent(aEvent?, aData?, aCallback?);
+        handleEvent(aEvent?);
+        observe(aSubject?, aTopic?, aData?);
+        _containsFormData(aCallback?);
+        _requestAnalysis(aData?, aCallback?);
+        _requestCreateAnalysis(aData?, aCallback?);
+        _requestAnalysisCreationStatus(aData?, aCallback?);
+        _pollForAnalysisCompleted(aData?, aCallback?);
+        _requestRecommendations(aData?, aCallback?);
+        _hasCookieBannerRuleForBrowsingContextTree(aCallback?);
+        _findInPage(aData?, aCallback?);
         _clearMatches();
-        _displayMatches();
+        _displayMatches(aData?);
     }
 }

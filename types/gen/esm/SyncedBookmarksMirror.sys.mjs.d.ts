@@ -1,25 +1,25 @@
 declare module "resource://gre/modules/SyncedBookmarksMirror.sys.mjs" {
     export class SyncedBookmarksMirror {
         constructor(db);
-        open();
+        open(options?);
         getCollectionHighWaterMark();
-        setCollectionLastModified();
+        setCollectionLastModified(lastModifiedSeconds?);
         getSyncId();
-        ensureCurrentSyncId();
-        store();
+        ensureCurrentSyncId(newSyncId?);
+        store(records?);
         apply();
-        tryApply();
-        merge();
+        tryApply(signal?, localTimeSeconds?, remoteTimeSeconds?);
+        merge(signal?);
         reset();
         fetchUnmergedGuids();
-        storeRemoteBookmark();
-        storeRemoteQuery();
-        storeRemoteFolder();
-        storeRemoteLivemark();
-        storeRemoteSeparator();
-        storeRemoteTombstone();
-        maybeStoreRemoteURL();
-        fetchLocalChangeRecords();
+        storeRemoteBookmark(record?);
+        storeRemoteQuery(record?);
+        storeRemoteFolder(record?);
+        storeRemoteLivemark(record?);
+        storeRemoteSeparator(record?);
+        storeRemoteTombstone(record?);
+        maybeStoreRemoteURL(url?);
+        fetchLocalChangeRecords(signal?);
         finalize();
     }
 }

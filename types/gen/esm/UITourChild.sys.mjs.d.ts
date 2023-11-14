@@ -1,10 +1,10 @@
 declare module "resource://app/modules/UITourChild.sys.mjs" {
     export class UITourChild extends JSWindowActorChild {
-        handleEvent();
-        isTestingOrigin();
-        isSafeScheme();
+        handleEvent(event?);
+        isTestingOrigin(aURI?);
+        isSafeScheme(aURI?);
         ensureTrustedOrigin();
-        receiveMessage();
-        sendPageEvent();
+        receiveMessage(aMessage?);
+        sendPageEvent(type?, detail?);
     }
 }

@@ -5,8 +5,8 @@ declare module "resource://gre/modules/LoginCSVImport.sys.mjs" {
     }
     export class LoginCSVImport {
         _getCSVColumnToFieldMap();
-        _getVanillaLoginFromCSVObject();
-        _recordHistogramTelemetry();
-        importFromCSV();
+        _getVanillaLoginFromCSVObject(csvObject?, csvColumnToFieldMap?);
+        _recordHistogramTelemetry(histogram?, report?);
+        importFromCSV(filePath?);
     }
 }

@@ -3,16 +3,16 @@ declare module "resource://gre/modules/SubDialog.sys.mjs" {
     export class SubDialogManager {
         constructor();
         get _topDialog();
-        open();
+        open(aURL?);
         close();
-        hideDialog();
+        hideDialog(aBrowser?);
         abortDialogs();
         get hasDialogs();
         get dialogs();
         focusTopDialog();
-        handleEvent();
-        _onDialogOpen();
-        _onDialogClose();
+        handleEvent(aEvent?);
+        _onDialogOpen(dialog?);
+        _onDialogClose(dialog?);
         _ensureStackEventListeners();
         _removeStackEventListeners();
     }

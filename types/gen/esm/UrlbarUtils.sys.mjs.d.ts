@@ -112,50 +112,50 @@ declare module "resource://app/modules/UrlbarUtils.sys.mjs" {
     };
     export class UrlbarQueryContext {
         constructor();
-        _checkRequiredOptions();
+        _checkRequiredOptions(options?, optionNames?);
         get fixupInfo();
         get fixupError();
         allowRemoteResults();
     }
     export class UrlbarMuxer {
         get name();
-        sort();
+        sort(queryContext?);
     }
     export class UrlbarProvider {
         constructor();
         get name();
         get type();
-        tryMethod();
-        isActive();
-        getPriority();
-        startQuery();
-        cancelQuery();
-        onEngagement();
-        onSelection();
-        getViewUpdate();
-        getResultCommands();
+        tryMethod(methodName?);
+        isActive(queryContext?);
+        getPriority(queryContext?);
+        startQuery(queryContext?, addCallback?);
+        cancelQuery(queryContext?);
+        onEngagement(state?, queryContext?, details?, controller?);
+        onSelection(result?, element?);
+        getViewUpdate(result?, idsByName?);
+        getResultCommands(result?);
         get deferUserSelection();
     }
     export class SkippableTimer {
         constructor();
         cancel();
-        _log();
+        _log(msg?);
     }
     export class L10nCache {
         constructor(l10n);
         get();
         add();
         ensure();
-        ensureAll();
+        ensureAll(objects?);
         delete();
         clear();
         size();
-        observe();
+        observe(subject?, topic?, data?);
         _key();
     }
     export class TaskQueue {
         get emptyPromise();
-        queue();
+        queue(callback?);
         _doNextTask();
     }
 }

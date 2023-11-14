@@ -1,15 +1,15 @@
 declare module "resource://gre/modules/GeckoViewPrompt.sys.mjs" {
     export class PromptFactory {
         constructor();
-        handleEvent();
-        _handleClick();
-        _generateSelectItems();
-        _handleSelect();
-        _handleDateTime();
-        _dispatchEvents();
-        _handlePopupBlocked();
-        getPrompt();
-        callProxy();
+        handleEvent(aEvent?);
+        _handleClick(aEvent?);
+        _generateSelectItems(aElement?);
+        _handleSelect(aElement?, aIsDropDown?);
+        _handleDateTime(aElement?);
+        _dispatchEvents(aElement?);
+        _handlePopupBlocked(aEvent?);
+        getPrompt(aDOMWin?, aIID?);
+        callProxy(aMethod?, aArguments?);
         alert();
         alertBC();
         alertCheck();

@@ -6,10 +6,10 @@ declare module "resource://app/modules/FirefoxProfileMigrator.sys.mjs" {
         get brandImage();
         _getAllProfiles();
         getSourceProfiles();
-        _getFileObject();
-        getResources();
+        _getFileObject(dir?, fileName?);
+        getResources(aProfile?);
         getLastUsedDate();
-        _getResourcesInternal();
+        _getResourcesInternal(sourceProfileDir?, currentProfileDir?);
         get startupOnlyMigrator();
     }
 }

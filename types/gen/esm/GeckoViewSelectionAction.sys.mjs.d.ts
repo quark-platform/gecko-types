@@ -4,6 +4,6 @@ declare module "resource://gre/modules/GeckoViewSelectionAction.sys.mjs" {
         onEnable();
         onDisable();
         get actor();
-        onEvent();
+        onEvent(aEvent?, aData?, aCallback?);
     }
 }

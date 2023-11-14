@@ -1,7 +1,7 @@
 declare module "resource://gre/modules/LoginRelatedRealms.sys.mjs" {
     export class LoginRelatedRealmsParent extends JSWindowActorParent {
-        onRemoteSettingsSync();
+        onRemoteSettingsSync(aEvent?);
         getSharedCredentialsCollection();
-        findRelatedRealms();
+        findRelatedRealms(formOrigin?);
     }
 }

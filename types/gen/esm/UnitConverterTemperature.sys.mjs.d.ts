@@ -1,11 +1,11 @@
 declare module "resource://app/modules/UnitConverterTemperature.sys.mjs" {
     export class UnitConverterTemperature {
-        convert();
-        c2k();
-        c2f();
-        k2c();
-        k2f();
-        f2c();
-        f2k();
+        convert(searchString?);
+        c2k(t?);
+        c2f(t?);
+        k2c(t?);
+        k2f(t?);
+        f2c(t?);
+        f2k(t?);
     }
 }

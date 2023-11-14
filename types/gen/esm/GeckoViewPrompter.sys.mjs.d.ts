@@ -3,18 +3,18 @@ declare module "resource://gre/modules/GeckoViewPrompter.sys.mjs" {
         constructor(aParent);
         get domWin();
         get prompterActor();
-        _changeModalState();
+        _changeModalState(aEntering?);
         _dismissUi();
         accept();
         dismiss();
         getPromptType();
         getPromptText();
         getInputText();
-        setInputText();
-        showPrompt();
+        setInputText(aInput?);
+        showPrompt(aMsg?);
         checkInnerWindow();
-        asyncShowPromptPromise();
-        asyncShowPrompt();
-        update();
+        asyncShowPromptPromise(aMsg?);
+        asyncShowPrompt(aMsg?, aCallback?);
+        update(aMsg?);
     }
 }

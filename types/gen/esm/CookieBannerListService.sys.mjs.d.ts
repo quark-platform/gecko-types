@@ -6,6 +6,6 @@ declare module "resource://gre/modules/CookieBannerListService.sys.mjs" {
         importAllRules();
         shutdown();
         onSync();
-        observe();
+        observe(subject?, topic?, prefName?);
     }
 }

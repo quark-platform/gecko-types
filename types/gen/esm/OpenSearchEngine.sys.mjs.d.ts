@@ -3,14 +3,14 @@ declare module "resource://gre/modules/OpenSearchEngine.sys.mjs" {
     export class OpenSearchEngine extends SearchEngine {
         constructor();
         toJSON();
-        install();
-        _onLoad();
+        install(uri?, callback?);
+        _onLoad(callback?, bytes?);
         _initFromData();
-        _parseURL();
-        _parseImage();
+        _parseURL(element?);
+        _parseImage(element?);
         _parse();
         get _hasUpdates();
         get _updateURI();
-        getAnonymizedLoadPath();
+        getAnonymizedLoadPath(shortName?, uri?);
     }
 }

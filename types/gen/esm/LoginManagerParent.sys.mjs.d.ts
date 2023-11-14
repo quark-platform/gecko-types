@@ -1,23 +1,23 @@
 declare module "resource://gre/modules/LoginManagerParent.sys.mjs" {
     export class LoginManagerParent extends JSWindowActorParent {
-        setListenerForTests();
+        setListenerForTests(listener?);
         get _recipeManager();
         getGeneratedPasswordsByPrincipalOrigin();
         getRootBrowser();
-        searchAndDedupeLogins();
-        receiveMessage();
-        decreaseSuggestImportCount();
+        searchAndDedupeLogins(formOrigin?);
+        receiveMessage(msg?);
+        decreaseSuggestImportCount(count?);
         fillForm();
-        sendLoginDataToChild();
-        doAutocompleteSearch();
+        sendLoginDataToChild(formOrigin?, actionOrigin?);
+        doAutocompleteSearch(formOrigin?);
         get _browsingContextGlobal();
         useBrowsingContext();
         getBrowsingContextToUse();
         getGeneratedPassword();
-        maybeRecordPasswordGenerationShownTelemetryEvent();
+        maybeRecordPasswordGenerationShownTelemetryEvent(autocompleteResults?);
         _getPrompter();
-        showDoorhanger();
-        _onPasswordEditedOrGenerated();
+        showDoorhanger(browser?, formOrigin?);
+        _onPasswordEditedOrGenerated(browser?, formOrigin?);
         get recipeParentPromise();
     }
 }

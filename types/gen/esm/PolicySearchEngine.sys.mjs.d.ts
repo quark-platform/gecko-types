@@ -4,7 +4,7 @@ declare module "resource://gre/modules/PolicySearchEngine.sys.mjs" {
         constructor();
         get inMemory();
         get telemetryId();
-        update();
+        update(details?);
         toJSON();
     }
 }

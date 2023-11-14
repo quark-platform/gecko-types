@@ -1,31 +1,31 @@
 declare module "resource://gre/modules/ExtensionShortcuts.sys.mjs" {
     export class ExtensionShortcutKeyMap extends DefaultMap {
-        buildForAddonIds();
-        recordShortcut();
-        removeShortcut();
-        getFirstAddonName();
-        has();
+        buildForAddonIds(addonIds?);
+        recordShortcut(shortcutString?, addonName?, commandName?);
+        removeShortcut(shortcutString?, addonName?, commandName?);
+        getFirstAddonName(shortcutString?);
+        has(shortcutString?);
         constructor();
         defaultConstructor();
-        getPlatformShortcutString();
-        get();
-        add();
-        delete();
+        getPlatformShortcutString(shortcutString?);
+        get(shortcutString?);
+        add(shortcutString?, addonCommandValue?);
+        delete(shortcutString?);
     }
     export class ExtensionShortcuts {
-        removeCommandsFromStorage();
+        removeCommandsFromStorage(extensionId?);
         constructor();
         allCommands();
         updateCommand();
-        resetCommand();
+        resetCommand(name?);
         loadCommands();
-        registerKeys();
+        registerKeys(commands?);
         register();
         unregister();
-        loadCommandsFromManifest();
-        loadCommandsFromStorage();
-        registerKeysToDocument();
-        buildKey();
-        buildKeyFromShortcut();
+        loadCommandsFromManifest(manifest?);
+        loadCommandsFromStorage(extensionId?);
+        registerKeysToDocument(window?, commands?);
+        buildKey(doc?, name?, shortcut?);
+        buildKeyFromShortcut(doc?, name?, shortcut?);
     }
 }

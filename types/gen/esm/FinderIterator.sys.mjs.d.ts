@@ -5,20 +5,20 @@ declare module "resource://gre/modules/FinderIterator.sys.mjs" {
         get params();
         start();
         stop();
-        restart();
+        restart(finder?);
         reset();
         continueRunning();
-        isAlreadyRunning();
-        _notifyListeners();
+        isAlreadyRunning(paramSet?);
+        _notifyListeners(callback?, params?);
         _previousResultAvailable();
-        _areParamsEqual();
-        _yieldResult();
-        _yieldPreviousResult();
-        _yieldIntermediateResult();
-        _findAllRanges();
-        _iterateDocument();
-        _collectFrames();
-        _getDocShell();
-        _rangeStartsInLink();
+        _areParamsEqual(paramSet1?, paramSet2?);
+        _yieldResult(listener?, rangeSource?, window?);
+        _yieldPreviousResult(listener?, window?);
+        _yieldIntermediateResult(listener?, window?);
+        _findAllRanges(finder?, spawnId?);
+        _iterateDocument(window?);
+        _collectFrames(window?, finder?);
+        _getDocShell(windowOrRange?);
+        _rangeStartsInLink(range?);
     }
 }

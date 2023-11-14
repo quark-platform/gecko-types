@@ -4,17 +4,17 @@ declare module "resource://gre/modules/subprocess/subprocess_common.sys.mjs" {
         constructor(url);
         onClose();
         shutdown();
-        addListener();
-        removeListener();
-        onmessage();
+        addListener(msg?, listener?);
+        removeListener(msg?, listener?);
+        onmessage(event?);
         onFailure();
         onSuccess();
         onDebug();
-        call();
+        call(method?, args?);
     }
     export class BaseProcess {
         constructor(worker, processId, fds, pid);
-        create();
+        create(options?);
         get WORKER_URL();
         get WorkerClass();
         getWorker();

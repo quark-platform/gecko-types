@@ -1,12 +1,12 @@
 declare module "resource://gre/modules/amWebAPI.sys.mjs" {
     export class WebAPI extends APIObject {
         constructor();
-        init();
-        getAddonByID();
-        createInstall();
-        reportAbuse();
+        init(window?);
+        getAddonByID(id?);
+        createInstall(options?);
+        reportAbuse(id?);
         get abuseReportPanelEnabled();
-        eventListenerAdded();
-        eventListenerRemoved();
+        eventListenerAdded(type?);
+        eventListenerRemoved(type?);
     }
 }

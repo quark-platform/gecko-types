@@ -6,11 +6,11 @@ declare module "resource://app/modules/ChromeProfileMigrator.sys.mjs" {
         get brandImage();
         get _chromeUserDataPathSuffix();
         _getChromeUserDataPathIfExists();
-        getResources();
+        getResources(aProfile?);
         getLastUsedDate();
         getSourceProfiles();
-        _GetPasswordsResource();
-        _GetPaymentMethodsResource();
+        _GetPasswordsResource(aProfileFolder?);
+        _GetPaymentMethodsResource(aProfileFolder?);
     }
     import type { ChromeProfileMigrator } from "resource://app/modules/ChromeProfileMigrator.sys.mjs";
     export class ChromiumProfileMigrator extends ChromeProfileMigrator {

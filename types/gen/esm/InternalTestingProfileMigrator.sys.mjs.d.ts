@@ -5,7 +5,7 @@ declare module "resource://app/modules/InternalTestingProfileMigrator.sys.mjs" {
         get displayNameL10nID();
         get sourceID();
         getSourceProfiles();
-        getResources();
+        getResources(aProfile?);
         flushResourceCache();
         get testProfile();
     }

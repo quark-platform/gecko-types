@@ -2,31 +2,31 @@ declare module "resource://gre/modules/DownloadList.sys.mjs" {
     export class DownloadList {
         constructor();
         getAll();
-        add();
-        remove();
-        _change();
-        addView();
-        removeView();
-        _notifyAllViews();
-        removeFinished();
+        add(download?);
+        remove(download?);
+        _change(download?);
+        addView(view?);
+        removeView(view?);
+        _notifyAllViews(methodName?);
+        removeFinished(filterFn?);
     }
     import type { DownloadList } from "resource://gre/modules/DownloadList.sys.mjs";
     export class DownloadCombinedList extends DownloadList {
         constructor(publicList, privateList);
-        add();
-        remove();
-        onDownloadAdded();
-        onDownloadChanged();
-        onDownloadRemoved();
+        add(download?);
+        remove(download?);
+        onDownloadAdded(download?);
+        onDownloadChanged(download?);
+        onDownloadRemoved(download?);
     }
     export class DownloadSummary {
         constructor();
-        bindToList();
-        addView();
-        removeView();
+        bindToList(list?);
+        addView(view?);
+        removeView(view?);
         _onListChanged();
-        onDownloadAdded();
-        onDownloadChanged();
-        onDownloadRemoved();
+        onDownloadAdded(download?);
+        onDownloadChanged(download?);
+        onDownloadRemoved(download?);
     }
 }

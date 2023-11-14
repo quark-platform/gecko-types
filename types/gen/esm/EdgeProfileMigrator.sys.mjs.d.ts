@@ -4,9 +4,9 @@ declare module "resource://app/modules/EdgeProfileMigrator.sys.mjs" {
         get key();
         get displayNameL10nID();
         get brandImage();
-        getBookmarksMigratorForTesting();
-        getReadingListMigratorForTesting();
-        getHistoryDBMigratorForTesting();
+        getBookmarksMigratorForTesting(dbOverride?);
+        getReadingListMigratorForTesting(dbOverride?);
+        getHistoryDBMigratorForTesting(dbOverride?);
         getHistoryRegistryMigratorForTesting();
         getResources();
         getLastUsedDate();

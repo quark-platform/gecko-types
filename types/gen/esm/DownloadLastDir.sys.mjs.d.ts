@@ -5,7 +5,7 @@ declare module "resource://gre/modules/DownloadLastDir.sys.mjs" {
         get file();
         set file(val);
         cleanupPrivateFile();
-        getFileAsync();
-        setFile();
+        getFileAsync(aURI?);
+        setFile(aURI?, aFile?);
     }
 }

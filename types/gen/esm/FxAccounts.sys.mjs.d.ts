@@ -7,21 +7,21 @@ declare module "resource://gre/modules/FxAccounts.sys.mjs" {
         get device();
         get keys();
         get telemetry();
-        _withCurrentAccountState();
-        _withVerifiedAccountState();
-        _withSessionToken();
+        _withCurrentAccountState(func?);
+        _withVerifiedAccountState(func?);
+        _withSessionToken(func?);
         listAttachedOAuthClients();
         getOAuthToken();
-        removeCachedOAuthToken();
+        removeCachedOAuthToken(options?);
         getSignedInUser();
         checkAccountStatus();
         hasLocalSession();
         canConnectAccount();
-        notifyDevices();
+        notifyDevices(deviceIds?, excludedIds?, payload?, TTL?);
         resendVerificationEmail();
-        signOut();
+        signOut(localOnly?);
         updateDeviceRegistration();
-        whenVerified();
+        whenVerified(data?);
         flushLogFile();
     }
     function getFxAccountsSingleton();

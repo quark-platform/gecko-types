@@ -7,6 +7,6 @@ declare module "resource://gre/modules/PlacesFrecencyRecalculator.sys.mjs" {
         get isRecalculationPending();
         maybeStartFrecencyRecalculation();
         decay();
-        observe();
+        observe(subject?, topic?, data?);
     }
 }

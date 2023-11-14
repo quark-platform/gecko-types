@@ -7,7 +7,7 @@ declare module "resource://app/modules/SafariProfileMigrator.sys.mjs" {
         getResources();
         getLastUsedDate();
         hasPermissions();
-        getPermissions();
+        getPermissions(win?);
         get mainPreferencesPropertyList();
     }
 }

@@ -113,12 +113,14 @@ declare interface MozESMExportType {
 }
 
 function handleClass(c: ClassExport): ts.Statement[] {
-  function createParam(param: string) {
+  function createParam(param: string, optional = false) {
     return ts.factory.createParameterDeclaration(
       undefined,
       undefined,
       ts.factory.createIdentifier(param),
-      undefined,
+      optional
+        ? ts.factory.createToken(ts.SyntaxKind.QuestionToken)
+        : undefined,
       undefined,
       undefined
     )
@@ -174,7 +176,7 @@ function handleClass(c: ClassExport): ts.Statement[] {
               ts.factory.createIdentifier(m.id),
               undefined,
               undefined,
-              [],
+              m.params.map((param) => createParam(param.id, true)),
               undefined,
               undefined
             )

@@ -2,7 +2,7 @@ declare module "resource://gre/modules/components-utils/ClientEnvironment.sys.mj
     export class ClientEnvironment extends ClientEnvironmentBase {
         getClientClassification();
         clearClassifyCache();
-        withMockClassify();
+        withMockClassify(data?, testFunction?);
         get userId();
         get country();
         get request_time();

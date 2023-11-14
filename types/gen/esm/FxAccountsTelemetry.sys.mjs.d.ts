@@ -1,13 +1,13 @@
 declare module "resource://gre/modules/FxAccountsTelemetry.sys.mjs" {
     export class FxAccountsTelemetry {
         constructor(fxai);
-        recordEvent();
+        recordEvent(object?, method?, value?);
         generateUUID();
         generateFlowID();
-        _setHashedUID();
+        _setHashedUID(hashedUID?);
         getSanitizedUID();
-        sanitizeDeviceId();
-        recordConnection();
+        sanitizeDeviceId(deviceId?);
+        recordConnection(services?);
         recordDisconnection();
     }
 }

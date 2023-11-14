@@ -3,13 +3,13 @@ declare module "resource://gre/modules/PlacesQuery.sys.mjs" {
         getHistory();
         initializeCache();
         fetchHistory();
-        appendToCache();
-        insertSortedIntoCache();
-        observeHistory();
+        appendToCache(visit?);
+        insertSortedIntoCache(visit?);
+        observeHistory(callback?);
         close();
-        handlePageVisited();
-        handlePageTitleChanged();
-        getStartOfDayTimestamp();
-        getStartOfMonthTimestamp();
+        handlePageVisited(event?);
+        handlePageTitleChanged(event?);
+        getStartOfDayTimestamp(date?);
+        getStartOfMonthTimestamp(date?);
     }
 }

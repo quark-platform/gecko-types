@@ -4,14 +4,14 @@ declare module "resource://app/modules/MigratorBase.sys.mjs" {
         get displayNameL10nID();
         get brandImage();
         getSourceProfiles();
-        getResources();
+        getResources(aProfile?);
         getLastUsedDate();
         get startupOnlyMigrator();
         get enabled();
         hasPermissions();
-        getPermissions();
-        getMigrateData();
-        migrate();
+        getPermissions(win?);
+        getMigrateData(aProfile?);
+        migrate(aItems?, aStartup?, aProfile?);
         isSourceAvailable();
     }
 }

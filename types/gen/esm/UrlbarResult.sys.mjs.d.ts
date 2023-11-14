@@ -6,11 +6,11 @@ declare module "resource://app/modules/UrlbarResult.sys.mjs" {
         get _titleAndHighlights();
         get icon();
         get hasSuggestedIndex();
-        validatePayload();
-        payloadAndSimpleHighlights();
-        addDynamicResultType();
-        removeDynamicResultType();
-        getDynamicResultType();
+        validatePayload(payload?);
+        payloadAndSimpleHighlights(tokens?, payloadInfo?);
+        addDynamicResultType(name?);
+        removeDynamicResultType(name?);
+        getDynamicResultType(name?);
         toString();
     }
 }

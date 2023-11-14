@@ -17,7 +17,7 @@ declare module "resource://gre/modules/Bits.sys.mjs" {
         get name();
         isPending();
         get status();
-        cancel();
+        cancel(status?);
         suspend();
         resume();
         get loadGroup();
@@ -26,11 +26,11 @@ declare module "resource://gre/modules/Bits.sys.mjs" {
         set loadFlags(flags);
         get bitsId();
         get transferError();
-        changeMonitorInterval();
-        cancelAsync();
+        changeMonitorInterval(monitorIntervalMs?);
+        cancelAsync(status?);
         setPriorityHigh();
         setPriorityLow();
-        setNoProgressTimeout();
+        setNoProgressTimeout(timeoutSecs?);
         complete();
         suspendAsync();
         resumeAsync();

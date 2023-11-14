@@ -4,24 +4,24 @@ declare module "resource://gre/modules/FxAccountsDevice.sys.mjs" {
         getLocalId();
         getDefaultLocalName();
         getLocalName();
-        setLocalName();
+        setLocalName(newName?);
         getLocalType();
         get recentDeviceList();
         refreshDeviceList();
-        _refreshRemoteDevice();
+        _refreshRemoteDevice(currentState?, accountData?, remoteDevices?);
         updateDeviceRegistration();
         updateDeviceRegistrationIfNecessary();
         reset();
-        _withCurrentAccountState();
-        _withVerifiedAccountState();
-        _checkDeviceUpdateNeeded();
-        _checkRemoteCommandsUpdateNeeded();
-        _updateDeviceRegistrationIfNecessary();
-        _registerOrUpdateDevice();
-        _handleDeviceError();
-        _recoverFromUnknownDevice();
-        _recoverFromDeviceSessionConflict();
-        _logErrorAndResetDeviceRegistrationVersion();
-        observe();
+        _withCurrentAccountState(func?);
+        _withVerifiedAccountState(func?);
+        _checkDeviceUpdateNeeded(device?);
+        _checkRemoteCommandsUpdateNeeded(remoteAvailableCommands?);
+        _updateDeviceRegistrationIfNecessary(currentState?);
+        _registerOrUpdateDevice(currentState?, signedInUser?);
+        _handleDeviceError(currentState?, error?, sessionToken?);
+        _recoverFromUnknownDevice(currentState?);
+        _recoverFromDeviceSessionConflict(currentState?, error?, sessionToken?);
+        _logErrorAndResetDeviceRegistrationVersion(currentState?, error?);
+        observe(subject?, topic?, data?);
     }
 }

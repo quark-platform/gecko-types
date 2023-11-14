@@ -4,18 +4,18 @@ declare module "resource://gre/modules/LoginAutoComplete.sys.mjs" {
         get logins();
         get wrappedJSObject();
         get matchCount();
-        getValueAt();
-        getLabelAt();
-        getCommentAt();
-        getStyleAt();
-        getImageAt();
-        getFinalCompleteValueAt();
-        isRemovableAt();
-        removeValueAt();
+        getValueAt(index?);
+        getLabelAt(index?);
+        getCommentAt(index?);
+        getStyleAt(index?);
+        getImageAt(index?);
+        getFinalCompleteValueAt(index?);
+        isRemovableAt(index?);
+        removeValueAt(index?);
     }
     export class LoginAutoComplete {
-        startSearch();
+        startSearch(aSearchString?, aPreviousResult?, aElement?, aCallback?);
         stopSearch();
-        isProbablyANewPasswordField();
+        isProbablyANewPasswordField(inputElement?);
     }
 }

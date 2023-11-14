@@ -1,16 +1,16 @@
 declare module "resource://gre/modules/FilePickerDelegate.sys.mjs" {
     export class FilePickerDelegate {
-        init();
+        init(aParent?, aTitle?, aMode?);
         get mode();
-        appendRawFilter();
+        appendRawFilter(aFilter?);
         show();
-        open();
-        _resolveFiles();
+        open(aFilePickerShownCallback?);
+        _resolveFiles(aFiles?, aCallback?);
         get file();
         get fileURL();
-        _getEnumerator();
+        _getEnumerator(aDOMFile?);
         get files();
-        _getDOMFile();
+        _getDOMFile(aPath?);
         get domFileOrDirectory();
         get domFileOrDirectoryEnumerator();
         get defaultString();

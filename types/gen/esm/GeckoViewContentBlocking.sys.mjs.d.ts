@@ -3,7 +3,7 @@ declare module "resource://gre/modules/GeckoViewContentBlocking.sys.mjs" {
     export class GeckoViewContentBlocking extends GeckoViewModule {
         onEnable();
         onDisable();
-        onEvent();
-        onContentBlockingEvent();
+        onEvent(aEvent?, aData?, aCallback?);
+        onContentBlockingEvent(aWebProgress?, aRequest?, aEvent?);
     }
 }

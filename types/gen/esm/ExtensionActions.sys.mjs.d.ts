@@ -1,21 +1,21 @@
 declare module "resource://gre/modules/ExtensionActions.sys.mjs" {
     export class PageActionBase extends PanelActionBase {
         constructor(tabContext, extension);
-        handleLocationChange();
-        isShownForTab();
+        handleLocationChange(eventType?, tab?, fromBrowse?);
+        isShownForTab(tab?);
         loadIconData();
         getPinned();
         getTargetFromDetails();
-        api();
+        api(context?);
     }
     export class BrowserActionBase extends PanelActionBase {
         constructor(tabContext, extension);
         loadIconData();
-        handleLocationChange();
+        handleLocationChange(eventType?, tab?, fromBrowse?);
         getTargetFromDetails();
         getDefaultArea();
-        getTextColor();
-        isShownForTab();
-        api();
+        getTextColor(values?);
+        isShownForTab(tab?);
+        api(context?);
     }
 }

@@ -10,10 +10,10 @@ declare module "resource://app/modules/MacTouchBar.sys.mjs" {
         toggleFocusUrlbar();
         unfocusUrlbar();
         get baseWindow();
-        getTouchBarInput();
+        getTouchBarInput(inputName?);
         _updateTouchBarInputs();
-        insertRestrictionInUrlbar();
-        observe();
+        insertRestrictionInUrlbar(restrictionToken?);
+        observe(subject?, topic?, data?);
     }
     export class TouchBarInput {
         constructor(input);
@@ -31,6 +31,6 @@ declare module "resource://app/modules/MacTouchBar.sys.mjs" {
         get disabled();
         set disabled(disabled);
         get children();
-        _localizeChildren();
+        _localizeChildren(children?);
     }
 }

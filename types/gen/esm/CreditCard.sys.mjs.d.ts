@@ -14,25 +14,25 @@ declare module "resource://gre/modules/CreditCard.sys.mjs" {
         get network();
         set network(value);
         isValidNumber();
-        normalizeCardNumber();
-        getType();
-        getNetworkFromName();
+        normalizeCardNumber(number?);
+        getType(ccNumber?);
+        getNetworkFromName(name?);
         isValid();
         get maskedNumber();
         get longMaskedNumber();
         getLabelInfo();
         getLabel();
-        normalizeExpirationMonth();
-        normalizeExpirationYear();
-        parseExpirationString();
+        normalizeExpirationMonth(month?);
+        normalizeExpirationYear(year?);
+        parseExpirationString(expirationString?);
         normalizeExpiration();
-        formatMaskedNumber();
-        getCreditCardLogo();
-        getMaskedNumber();
-        getLongMaskedNumber();
-        isValidNumber();
-        isValidNetwork();
+        formatMaskedNumber(maskedNumber?);
+        getCreditCardLogo(network?);
+        getMaskedNumber(number?);
+        getLongMaskedNumber(number?);
+        isValidNumber(number?);
+        isValidNetwork(network?);
         getSupportedNetworks();
-        getNetworkL10nId();
+        getNetworkL10nId(network?);
     }
 }

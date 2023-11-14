@@ -2,21 +2,21 @@ declare module "resource://gre/modules/GeckoViewAutocomplete.sys.mjs" {
     export class LoginEntry {
         constructor();
         toLoginInfo();
-        parse();
-        fromLoginInfo();
+        parse(aObj?);
+        fromLoginInfo(aInfo?);
     }
     export class Address {
         constructor();
         isValid();
-        fromGecko();
-        parse();
+        fromGecko(aObj?);
+        parse(aObj?);
         toGecko();
     }
     export class CreditCard {
         constructor();
         isValid();
-        fromGecko();
-        parse();
+        fromGecko(aObj?);
+        parse(aObj?);
         toGecko();
     }
     export class SelectOption {

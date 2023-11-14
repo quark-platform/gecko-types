@@ -7,17 +7,17 @@ declare module "resource://gre/modules/SearchSettings.sys.mjs" {
         _delayedWrite();
         _ensurePendingWritesCompleted();
         _write();
-        setMetaDataAttribute();
-        setVerifiedMetaDataAttribute();
-        getMetaDataAttribute();
+        setMetaDataAttribute(name?, val?);
+        setVerifiedMetaDataAttribute(name?, val?);
+        getMetaDataAttribute(name?);
         getSettingsMetaData();
-        getVerifiedMetaDataAttribute();
-        setEngineMetaDataAttribute();
-        getEngineMetaDataAttribute();
-        getHashName();
-        shutdown();
-        observe();
+        getVerifiedMetaDataAttribute(name?, isAppProvided?);
+        setEngineMetaDataAttribute(engineName?, property?, value?);
+        getEngineMetaDataAttribute(engineName?, property?);
+        getHashName(name?);
+        shutdown(state?);
+        observe(engine?, topic?, verb?);
         isCurrentAndCachedSettingsEqual();
-        migrateEngineIds();
+        migrateEngineIds(clonedSettings?);
     }
 }

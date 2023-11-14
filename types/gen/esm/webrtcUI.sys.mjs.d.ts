@@ -53,10 +53,10 @@ declare module "resource://app/modules/webrtcUI.sys.mjs" {
         constructor();
         updateIndicatorState();
         close();
-        handleEvent();
-        _command();
-        _popupShowing();
-        _popupHiding();
-        _setIndicatorState();
+        handleEvent(event?);
+        _command(aEvent?);
+        _popupShowing(aEvent?);
+        _popupHiding(aEvent?);
+        _setIndicatorState(aName?, aState?);
     }
 }

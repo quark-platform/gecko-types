@@ -3,15 +3,15 @@ declare module "resource://gre/modules/services-settings/Database.sys.mjs" {
         destroy();
         constructor(identifier);
         list();
-        importChanges();
+        importChanges(metadata?, timestamp?);
         getLastModified();
         getMetadata();
-        getAttachment();
-        saveAttachment();
-        pruneAttachments();
+        getAttachment(attachmentId?);
+        saveAttachment(attachmentId?, attachment?);
+        pruneAttachments(excludeIds?);
         clear();
-        create();
-        update();
-        delete();
+        create(record?);
+        update(record?);
+        delete(recordId?);
     }
 }

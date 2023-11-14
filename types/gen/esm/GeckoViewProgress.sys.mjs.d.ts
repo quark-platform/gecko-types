@@ -3,12 +3,12 @@ declare module "resource://gre/modules/GeckoViewProgress.sys.mjs" {
     export class GeckoViewProgress extends GeckoViewModule {
         onEnable();
         onDisable();
-        receiveMessage();
-        onEvent();
+        receiveMessage(aMsg?);
+        onEvent(aEvent?, aData?, aCallback?);
         onStateChange();
         onSecurityChange();
         onLocationChange();
         _fireInitialLoad();
-        observe();
+        observe(aSubject?, aTopic?, aData?);
     }
 }

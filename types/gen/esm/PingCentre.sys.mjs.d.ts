@@ -2,13 +2,13 @@ declare module "resource://app/modules/PingCentre.sys.mjs" {
     export class PingCentre {
         constructor(options);
         get enabled();
-        _onLoggingPrefChange();
-        _onTelemetryPrefChange();
-        _onFhrPrefChange();
+        _onLoggingPrefChange(aSubject?, aTopic?, prefKey?);
+        _onTelemetryPrefChange(aSubject?, aTopic?, prefKey?);
+        _onFhrPrefChange(aSubject?, aTopic?, prefKey?);
         _createExperimentsPayload();
-        _createStructuredIngestionPing();
-        _sendStandalonePing();
-        sendStructuredIngestionPing();
+        _createStructuredIngestionPing(data?);
+        _sendStandalonePing(endpoint?, payload?);
+        sendStructuredIngestionPing(data?, endpoint?);
         uninit();
     }
     var PingCentreConstants: {

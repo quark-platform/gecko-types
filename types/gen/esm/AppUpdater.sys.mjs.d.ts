@@ -6,8 +6,8 @@ declare module "resource://gre/modules/AppUpdater.sys.mjs" {
         allowUpdateDownload();
         stop();
         get status();
-        addListener();
-        removeListener();
-        observe();
+        addListener(listener?);
+        removeListener(listener?);
+        observe(subject?, topic?, status?);
     }
 }

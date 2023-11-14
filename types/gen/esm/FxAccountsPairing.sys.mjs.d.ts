@@ -1,20 +1,20 @@
 declare module "resource://gre/modules/FxAccountsPairing.sys.mjs" {
     export class FxAccountsPairingFlow {
-        get();
+        get(channelId?);
         finalizeAll();
-        start();
+        start(options?);
         constructor(options);
         _onFlowTimeout();
         _closeChannel();
         finalize();
         _setupListeners();
         _onAbort();
-        _onError();
-        _onPairingChannelError();
-        onWebChannelMessage();
-        onPairingChannelMessage();
+        _onError(error?);
+        _onPairingChannelError(error?);
+        onWebChannelMessage(command?);
+        onPairingChannelMessage(sender?, payload?);
         onPrefViewClosed();
-        _authorizeOAuthCode();
-        _createKeysJWE();
+        _authorizeOAuthCode(options?);
+        _createKeysJWE(sessionToken?, clientId?, scopes?, jwk?);
     }
 }

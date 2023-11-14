@@ -2,21 +2,21 @@ declare module "resource://gre/modules/FxAccountsCommands.sys.mjs" {
     export class FxAccountsCommands {
         constructor(fxAccountsInternal);
         availableCommands();
-        invoke();
+        invoke(command?, device?, payload?);
         pollDeviceCommands();
-        _fetchDeviceCommands();
-        _getReason();
-        _handleCommands();
-        _notifyFxATabsReceived();
+        _fetchDeviceCommands(index?);
+        _getReason(notifiedIndex?, messageIndex?);
+        _handleCommands(messages?, notifiedIndex?);
+        _notifyFxATabsReceived(tabsReceived?);
     }
     export class SendTab {
         constructor(commands, fxAccountsInternal);
-        send();
-        isDeviceCompatible();
-        handle();
-        _encrypt();
+        send(to?, tab?);
+        isDeviceCompatible(device?);
+        handle(senderID?, reason?);
+        _encrypt(bytes?, device?);
         _getPersistedSendTabKeys();
-        _decrypt();
+        _decrypt(ciphertext?);
         _generateAndPersistSendTabKeys();
         _getPersistedEncryptedSendTabKey();
         _generateAndPersistEncryptedSendTabKey();

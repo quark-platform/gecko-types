@@ -1,12 +1,12 @@
 declare module "resource://gre/modules/IndexedDB.sys.mjs" {
     export class IndexedDB {
-        open();
-        openForPrincipal();
-        _wrapOpenRequest();
+        open(dbName?, options?);
+        openForPrincipal(principal?, dbName?, options?);
+        _wrapOpenRequest(request?);
         constructor(db);
         onupgradeneeded();
-        transaction();
-        objectStore();
+        transaction(storeNames?, mode?);
+        objectStore(storeName?, mode?);
         createObjectStore();
     }
 }

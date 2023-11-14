@@ -8,7 +8,7 @@ declare module "resource://app/modules/FileMigrators.sys.mjs" {
         get successHeaderL10nID();
         getFilePickerConfig();
         get displayedResourceTypes();
-        migrate();
+        migrate(filePath?);
     }
     import type { FileMigratorBase } from "resource://app/modules/FileMigrators.sys.mjs";
     export class PasswordFileMigrator extends FileMigratorBase {
@@ -20,7 +20,7 @@ declare module "resource://app/modules/FileMigrators.sys.mjs" {
         get progressHeaderL10nID();
         get successHeaderL10nID();
         getFilePickerConfig();
-        migrate();
+        migrate(filePath?);
     }
     import type { FileMigratorBase } from "resource://app/modules/FileMigrators.sys.mjs";
     export class BookmarksFileMigrator extends FileMigratorBase {
@@ -32,6 +32,6 @@ declare module "resource://app/modules/FileMigrators.sys.mjs" {
         get progressHeaderL10nID();
         get successHeaderL10nID();
         getFilePickerConfig();
-        migrate();
+        migrate(filePath?);
     }
 }

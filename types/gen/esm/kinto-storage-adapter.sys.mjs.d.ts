@@ -1,18 +1,18 @@
 declare module "resource://gre/modules/services-common/kinto-storage-adapter.sys.mjs" {
     export class FirefoxAdapter {
         constructor(collection);
-        _init();
-        _executeStatement();
-        openConnection();
+        _init(connection?);
+        _executeStatement(statement?, params?);
+        openConnection(options?);
         clear();
-        execute();
-        get();
+        execute(callback?);
+        get(id?);
         list();
-        loadDump();
-        importBulk();
-        saveLastModified();
+        loadDump(records?);
+        importBulk(records?);
+        saveLastModified(lastModified?);
         getLastModified();
-        saveMetadata();
+        saveMetadata(metadata?);
         getMetadata();
         calculateStorage();
         resetSyncStatus();

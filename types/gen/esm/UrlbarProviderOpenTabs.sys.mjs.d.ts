@@ -4,11 +4,11 @@ declare module "resource://app/modules/UrlbarProviderOpenTabs.sys.mjs" {
         constructor();
         get name();
         get type();
-        isActive();
-        getOpenTabs();
-        getUserContextIdForOpenPagesTable();
-        registerOpenTab();
-        unregisterOpenTab();
-        startQuery();
+        isActive(queryContext?);
+        getOpenTabs(userContextId?, isInPrivateWindow?);
+        getUserContextIdForOpenPagesTable(userContextId?, isInPrivateWindow?);
+        registerOpenTab(url?, userContextId?, isInPrivateWindow?);
+        unregisterOpenTab(url?, userContextId?, isInPrivateWindow?);
+        startQuery(queryContext?, addCallback?);
     }
 }

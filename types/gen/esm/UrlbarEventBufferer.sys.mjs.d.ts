@@ -1,18 +1,18 @@
 declare module "resource://app/modules/UrlbarEventBufferer.sys.mjs" {
     export class UrlbarEventBufferer {
         constructor(input);
-        onQueryStarted();
-        onQueryCancelled();
-        onQueryFinished();
-        onQueryResults();
-        handleEvent();
-        maybeDeferEvent();
-        deferEvent();
-        replayDeferredEvents();
-        shouldDeferEvent();
+        onQueryStarted(queryContext?);
+        onQueryCancelled(queryContext?);
+        onQueryFinished(queryContext?);
+        onQueryResults(queryContext?);
+        handleEvent(event?);
+        maybeDeferEvent(event?, callback?);
+        deferEvent(event?, callback?);
+        replayDeferredEvents(onlyIfSafe?);
+        shouldDeferEvent(event?);
         get isDeferringEvents();
         get waitingDeferUserSelectionProviders();
-        isSafeToPlayDeferredEvent();
+        isSafeToPlayDeferredEvent(event?);
         get lastResultIsSelected();
     }
 }

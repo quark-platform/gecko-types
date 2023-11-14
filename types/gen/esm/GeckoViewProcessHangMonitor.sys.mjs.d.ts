@@ -6,13 +6,13 @@ declare module "resource://gre/modules/GeckoViewProcessHangMonitor.sys.mjs" {
         onDestroy();
         onEnable();
         onDisable();
-        onEvent();
-        observe();
+        onEvent(aEvent?, aData?, aCallback?);
+        observe(aSubject?, aTopic?, aData?);
         get WAIT_EXPIRATION_TIME();
-        stopHang();
-        pauseHang();
-        notifyReport();
-        reportHang();
-        clearHang();
+        stopHang(report?);
+        pauseHang(report?);
+        notifyReport(report?);
+        reportHang(report?);
+        clearHang(report?);
     }
 }
