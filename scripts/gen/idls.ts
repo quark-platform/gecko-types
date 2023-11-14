@@ -164,10 +164,23 @@ function handleFunc(
   ]
 }
 
-function addConstant(interfaceName: string, key: string, value?: string) {
+function addConstant(
+  interfaceName: string,
+  key: string,
+  value?: string
+): ts.TypeElement[] {
   const constants = idlConstants.get(interfaceName) || []
   constants.push({ key, value })
   idlConstants.set(interfaceName, constants)
+
+  return [
+    ts.factory.createPropertySignature(
+      [READ_ONLY_MODIFIER],
+      key,
+      undefined,
+      value ? ts.factory.createTypeReferenceNode('string') : undefined
+    ),
+  ]
 }
 
 function handleConst(
@@ -178,12 +191,11 @@ function handleConst(
   if (typeof key !== 'string') return []
 
   if (typeof value !== 'string') {
-    addConstant(interfaceName, key)
+    return addConstant(interfaceName, key)
   } else {
-    addConstant(interfaceName, key, value)
+    return addConstant(interfaceName, key, value)
   }
 
-  // We do not emit anything here. We add it to Ci further down
   return []
 }
 
@@ -192,13 +204,14 @@ function handleEnum(code: enum_code, interfaceName: string): ts.TypeElement[] {
     code.values?.first_value,
     ...(code.values?.other_values.map((e) => e.value) || []),
   ].filter(Boolean)
+  const enumConstants = []
 
   for (const value of values) {
     if (typeof value.identifier != 'string') continue
-    addConstant(interfaceName, value.identifier)
+    enumConstants.push(...addConstant(interfaceName, value.identifier))
   }
 
-  return []
+  return enumConstants
 }
 
 function interfaceBody(
