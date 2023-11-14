@@ -4,20 +4,20 @@ declare module "resource://gre/modules/LoginManagerParent.sys.mjs" {
         get _recipeManager();
         getGeneratedPasswordsByPrincipalOrigin();
         getRootBrowser();
-        searchAndDedupeLogins(formOrigin?);
+        searchAndDedupeLogins(formOrigin?, param1?);
         receiveMessage(msg?);
         decreaseSuggestImportCount(count?);
-        fillForm();
-        sendLoginDataToChild(formOrigin?, actionOrigin?);
-        doAutocompleteSearch(formOrigin?);
+        fillForm(param0?);
+        sendLoginDataToChild(formOrigin?, actionOrigin?, param2?);
+        doAutocompleteSearch(formOrigin?, param1?);
         get _browsingContextGlobal();
-        useBrowsingContext();
+        useBrowsingContext(param0?);
         getBrowsingContextToUse();
-        getGeneratedPassword();
+        getGeneratedPassword(param0?);
         maybeRecordPasswordGenerationShownTelemetryEvent(autocompleteResults?);
         _getPrompter();
-        showDoorhanger(browser?, formOrigin?);
-        _onPasswordEditedOrGenerated(browser?, formOrigin?);
+        showDoorhanger(browser?, formOrigin?, param2?);
+        _onPasswordEditedOrGenerated(browser?, formOrigin?, param2?);
         get recipeParentPromise();
     }
 }

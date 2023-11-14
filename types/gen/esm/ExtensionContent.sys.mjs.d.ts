@@ -12,6 +12,6 @@ declare module "resource://gre/modules/ExtensionContent.sys.mjs" {
         handleActorExecute(param0?);
     };
     export class ExtensionContentChild extends JSProcessActorChild {
-        receiveMessage();
+        receiveMessage(param0?);
     }
 }

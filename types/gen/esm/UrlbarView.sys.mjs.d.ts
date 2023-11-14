@@ -15,12 +15,12 @@ declare module "resource://app/modules/UrlbarView.sys.mjs" {
         getResultFromElement(element?);
         getResultAtIndex(index?);
         resultIsSelected(result?);
-        selectBy(amount?);
+        selectBy(amount?, param1?);
         acknowledgeFeedback(result?);
         removeAccessibleFocus();
         clear();
-        close();
-        autoOpen();
+        close(param0?);
+        autoOpen(param0?);
         onQueryStarted(queryContext?);
         onQueryCancelled(queryContext?);
         onQueryFinished(queryContext?);

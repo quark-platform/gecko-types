@@ -1,6 +1,6 @@
 declare module "resource://app/modules/UrlbarController.sys.mjs" {
     export class UrlbarController {
-        constructor();
+        constructor(param0);
         get NOTIFICATIONS();
         setView(view?);
         startQuery(queryContext?);
@@ -9,12 +9,12 @@ declare module "resource://app/modules/UrlbarController.sys.mjs" {
         addQueryListener(listener?);
         removeQueryListener(listener?);
         keyEventMovesCaret(event?);
-        handleKeyNavigation(event?);
+        handleKeyNavigation(event?, param1?);
         speculativeConnect(result?, context?, reason?);
         set userSelectionBehavior(behavior);
         recordSelectedResult(event?, result?);
         removeResult(result?);
         clearLastQueryContextCache();
-        notify(name?);
+        notify(name?, param1?);
     }
 }

@@ -1,13 +1,13 @@
 declare module "resource://app/modules/SearchOneOffs.sys.mjs" {
     export class SearchOneOffs {
         constructor(container);
-        addEventListener();
-        removeEventListener();
-        dispatchEvent();
-        getAttribute();
-        hasAttribute();
-        setAttribute();
-        querySelector();
+        addEventListener(param0?);
+        removeEventListener(param0?);
+        dispatchEvent(param0?);
+        getAttribute(param0?);
+        hasAttribute(param0?);
+        setAttribute(param0?);
+        querySelector(param0?);
         handleEvent(event?);
         willHide();
         invalidateCache();
@@ -32,7 +32,7 @@ declare module "resource://app/modules/SearchOneOffs.sys.mjs" {
         _rebuildEngineList(engines?, addEngines?);
         _buttonIDForEngine(engine?);
         getSelectableButtons(aIncludeNonEngineButtons?);
-        _whereToOpen(aEvent?);
+        _whereToOpen(aEvent?, param1?);
         advanceSelection(aForward?, aIncludeNonEngineButtons?, aWrapAround?);
         handleKeyDown(event?, numListItems?, allowEmptySelection?, textboxUserValue?);
         _handleKeyDown(event?, numListItems?, allowEmptySelection?, textboxUserValue?);
@@ -42,7 +42,7 @@ declare module "resource://app/modules/SearchOneOffs.sys.mjs" {
         get selectedViewIndex();
         set selectedViewIndex(val);
         closeView();
-        handleSearchCommand(event?, engine?);
+        handleSearchCommand(event?, engine?, param2?);
         setTooltipForEngineButton(button?);
         _on_mousedown(event?);
         _on_click(event?);

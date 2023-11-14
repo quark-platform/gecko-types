@@ -2,11 +2,11 @@ declare module "resource://gre/modules/RemoteWebNavigation.sys.mjs" {
     export class RemoteWebNavigation {
         constructor(aBrowser);
         swapBrowser(aBrowser?);
-        maybeCancelContentJSExecution(aNavigationType?);
+        maybeCancelContentJSExecution(aNavigationType?, param1?);
         get canGoBack();
         get canGoForward();
-        goBack();
-        goForward();
+        goBack(param0?);
+        goForward(param0?);
         gotoIndex(aIndex?);
         _speculativeConnect(uri?, loadURIOptions?);
         loadURI(uri?, loadURIOptions?);

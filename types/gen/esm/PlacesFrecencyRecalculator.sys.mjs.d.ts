@@ -2,7 +2,7 @@ declare module "resource://gre/modules/PlacesFrecencyRecalculator.sys.mjs" {
     export class PlacesFrecencyRecalculator {
         get alternativeFrecencyInfo();
         constructor();
-        recalculateSomeFrecencies();
+        recalculateSomeFrecencies(param0?);
         recalculateAnyOutdatedFrecencies();
         get isRecalculationPending();
         maybeStartFrecencyRecalculation();

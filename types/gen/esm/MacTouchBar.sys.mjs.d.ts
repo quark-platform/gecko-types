@@ -11,7 +11,7 @@ declare module "resource://app/modules/MacTouchBar.sys.mjs" {
         unfocusUrlbar();
         get baseWindow();
         getTouchBarInput(inputName?);
-        _updateTouchBarInputs();
+        _updateTouchBarInputs(param0?);
         insertRestrictionInUrlbar(restrictionToken?);
         observe(subject?, topic?, data?);
     }

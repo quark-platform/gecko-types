@@ -42,7 +42,7 @@ declare module "resource://gre/modules/SearchService.sys.mjs" {
         _reloadEngines(settings?, changeReason?);
         _fetchEngineSelectorEngines();
         _sortEnginesByDefaults(engines?);
-        _createAndAddEngine();
+        _createAndAddEngine(param0?);
         _removeObservers();
         observe(engine?, topic?, verb?);
         _makeEngineFromConfig(config?);

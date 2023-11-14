@@ -1,6 +1,6 @@
 declare module "resource://app/modules/FeatureCallout.sys.mjs" {
     export class FeatureCallout {
-        constructor();
+        constructor(param0);
         setupFeatureTourProgress();
         teardownFeatureTourProgress();
         get featureTourProgress();
@@ -22,7 +22,7 @@ declare module "resource://app/modules/FeatureCallout.sys.mjs" {
         _setupWindowFunctions();
         _clearWindowFunctions();
         _emitEvent(name?, data?);
-        endTour();
+        endTour(param0?);
         _dismiss();
         _addScriptsAndRender();
         _observeRender(container?);

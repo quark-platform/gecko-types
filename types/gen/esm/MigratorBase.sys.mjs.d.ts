@@ -11,7 +11,7 @@ declare module "resource://app/modules/MigratorBase.sys.mjs" {
         hasPermissions();
         getPermissions(win?);
         getMigrateData(aProfile?);
-        migrate(aItems?, aStartup?, aProfile?);
+        migrate(aItems?, aStartup?, aProfile?, param3?);
         isSourceAvailable();
     }
 }

@@ -1,14 +1,14 @@
 declare module "resource://app/modules/MerinoClient.sys.mjs" {
     export class MerinoClient {
         get SEARCH_PARAMS();
-        constructor();
+        constructor(param0);
         get name();
         get sessionTimeoutMs();
         set sessionTimeoutMs(value);
         get sessionID();
         get sequenceNumber();
         get lastFetchStatus();
-        fetch();
+        fetch(param0?);
         resetSession();
         cancelTimeoutTimer();
         waitForNextResponse();

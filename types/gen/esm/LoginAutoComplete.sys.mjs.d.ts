@@ -1,6 +1,6 @@
 declare module "resource://gre/modules/LoginAutoComplete.sys.mjs" {
     export class LoginAutoCompleteResult {
-        constructor(aSearchString, matchingLogins, autocompleteItems, formOrigin);
+        constructor(aSearchString, matchingLogins, autocompleteItems, formOrigin, param4);
         get logins();
         get wrappedJSObject();
         get matchCount();

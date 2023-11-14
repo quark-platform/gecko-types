@@ -43,13 +43,13 @@ declare module "resource://app/modules/AsyncTabSwitcher.sys.mjs" {
         requestTab(tab?);
         queueUnload(unloadTimeout?);
         onQueueUnload(unloadTimeout?);
-        handleEvent(event?);
+        handleEvent(event?, param1?);
         startTabSwitch();
         maybeFinishTabSwitch();
         logging();
         tinfo(tab?);
         log(s?);
-        addLogFlag(flag?);
+        addLogFlag(flag?, param1?);
         logState(suffix?);
         noteMakingTabVisibleWithoutLayers();
         notePaint(event?);

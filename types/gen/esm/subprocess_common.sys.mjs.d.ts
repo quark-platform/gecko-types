@@ -7,10 +7,10 @@ declare module "resource://gre/modules/subprocess/subprocess_common.sys.mjs" {
         addListener(msg?, listener?);
         removeListener(msg?, listener?);
         onmessage(event?);
-        onFailure();
-        onSuccess();
-        onDebug();
-        call(method?, args?);
+        onFailure(param0?);
+        onSuccess(param0?);
+        onDebug(param0?);
+        call(method?, args?, param2?);
     }
     export class BaseProcess {
         constructor(worker, processId, fds, pid);
@@ -18,7 +18,7 @@ declare module "resource://gre/modules/subprocess/subprocess_common.sys.mjs" {
         get WORKER_URL();
         get WorkerClass();
         getWorker();
-        kill();
+        kill(param0?);
         wait();
     }
 }

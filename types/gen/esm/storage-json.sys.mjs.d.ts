@@ -11,7 +11,7 @@ declare module "resource://gre/modules/storage-json.sys.mjs" {
         setLastSync(timestamp?);
         resetSyncCounter(guid?, value?);
         loginIsDeleted(guid?);
-        addLoginsAsync(logins?);
+        addLoginsAsync(logins?, param1?);
         removeLogin(login?, fromSync?);
         modifyLogin(oldLogin?, newLoginData?, fromSync?);
         recordPasswordUse(login?);
@@ -20,7 +20,7 @@ declare module "resource://gre/modules/storage-json.sys.mjs" {
         getAllLogins(includeDeleted?);
         searchLoginsAsync(matchData?, includeDeleted?);
         searchLogins(matchData?, includeDeleted?);
-        _searchLogins(matchData?);
+        _searchLogins(matchData?, param1?, param2?, param3?);
         removeAllLogins();
         removeAllUserFacingLogins(fullyRemove?);
         findLogins(origin?, formActionOrigin?, httpRealm?);

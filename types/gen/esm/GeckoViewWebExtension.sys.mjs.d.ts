@@ -1,7 +1,7 @@
 declare module "resource://gre/modules/GeckoViewWebExtension.sys.mjs" {
     var DownloadTracker;
     export class ExtensionActionHelper {
-        constructor();
+        constructor(param0);
         getTab(aTabId?);
         getWindow(aWindowId?);
         extractProperties(aAction?);
@@ -11,7 +11,7 @@ declare module "resource://gre/modules/GeckoViewWebExtension.sys.mjs" {
     export class GeckoViewConnection {
         constructor(sender, target, nativeApp, allowContentMessaging);
         get dispatcher();
-        _sendMessage();
+        _sendMessage(param0?);
         sendMessage(data?);
         onConnect(portId?, messenger?);
     }

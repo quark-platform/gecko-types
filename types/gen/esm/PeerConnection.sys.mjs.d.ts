@@ -6,7 +6,7 @@ declare module "resource://gre/modules/media/PeerConnection.sys.mjs" {
         findPC(globalPCListId?);
         removeNullRefs(winID?);
         handleGMPCrash(data?);
-        receiveMessage();
+        receiveMessage(param0?);
         observe(subject?, topic?, data?);
         _registerPeerConnectionLifecycleCallback(winID?, cb?);
     }
@@ -16,7 +16,7 @@ declare module "resource://gre/modules/media/PeerConnection.sys.mjs" {
     }
     export class RTCSessionDescription {
         init(win?);
-        __init();
+        __init(param0?);
         get type();
         set type(type);
         get sdp();
@@ -38,7 +38,7 @@ declare module "resource://gre/modules/media/PeerConnection.sys.mjs" {
         _initIdp();
         _chain(operation?);
         _async(func?);
-        _legacy();
+        _legacy(param0?);
         _auto(onSucc?, onErr?, func?);
         _closeWrapper(func?);
         _legacyCloseWrapper(onSucc?, onErr?, func?);
@@ -59,27 +59,27 @@ declare module "resource://gre/modules/media/PeerConnection.sys.mjs" {
         _ensureOfferToReceive(kind?);
         _ensureTransceiversForOfferToReceive(options?);
         _createOffer(options?);
-        _createAnOffer();
+        _createAnOffer(param0?);
         createAnswer(optionsOrOnSucc?, onErr?);
         _createAnswer(options?);
         _createAnAnswer();
         _getPermission();
         _sanityCheckSdp(sdp?);
         setLocalDescription(desc?, onSucc?, onErr?);
-        _setLocalDescription();
+        _setLocalDescription(param0?);
         _validateIdentity(sdp?, origin?);
         setRemoteDescription(desc?, onSucc?, onErr?);
-        _setRemoteDescription();
-        setIdentityProvider(provider?);
+        _setRemoteDescription(param0?);
+        setIdentityProvider(provider?, param1?);
         _getIdentityAssertion();
         getIdentityAssertion();
         get canTrickleIceCandidates();
         _updateCanTrickle();
         addIceCandidate(cand?, onSucc?, onErr?);
-        _addIceCandidate();
+        _addIceCandidate(param0?);
         restartIce();
         addStream(stream?);
-        addTrack(track?);
+        addTrack(track?, param1?);
         removeTrack(sender?);
         _addTransceiverNoEvents(sendTrackOrKind?, init?, addTrackMagic?);
         addTransceiver(sendTrackOrKind?, init?);
@@ -111,12 +111,12 @@ declare module "resource://gre/modules/media/PeerConnection.sys.mjs" {
         changeIceConnectionState(state?);
         getStats(selector?, onSucc?, onErr?);
         get sctp();
-        createDataChannel(label?);
+        createDataChannel(label?, param1?);
     }
     export class PeerConnectionObserver {
         init(win?);
         __init(dompc?);
-        newError();
+        newError(param0?);
         dispatchEvent(event?);
         onCreateOfferSuccess(sdp?);
         onCreateOfferError(error?);

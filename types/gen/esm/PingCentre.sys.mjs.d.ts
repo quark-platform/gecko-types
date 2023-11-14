@@ -8,7 +8,7 @@ declare module "resource://app/modules/PingCentre.sys.mjs" {
         _createExperimentsPayload();
         _createStructuredIngestionPing(data?);
         _sendStandalonePing(endpoint?, payload?);
-        sendStructuredIngestionPing(data?, endpoint?);
+        sendStructuredIngestionPing(data?, endpoint?, param2?);
         uninit();
     }
     var PingCentreConstants: {

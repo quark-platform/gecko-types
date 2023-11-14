@@ -13,7 +13,7 @@ declare module "resource://app/modules/UrlbarProviderExtension.sys.mjs" {
         startQuery(context?, addCallback?);
         cancelQuery(context?);
         onEngagement(state?, queryContext?, details?, controller?);
-        _notifyListener(eventName?);
+        _notifyListener(eventName?, param1?);
         _makeUrlbarResult(context?, extResult?);
     }
 }

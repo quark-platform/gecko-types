@@ -5,7 +5,7 @@ declare module "resource://gre/modules/GeckoViewPrompter.sys.mjs" {
         get prompterActor();
         _changeModalState(aEntering?);
         _dismissUi();
-        accept();
+        accept(param0?);
         dismiss();
         getPromptType();
         getPromptText();

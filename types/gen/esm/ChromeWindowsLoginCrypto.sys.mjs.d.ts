@@ -7,7 +7,7 @@ declare module "resource://app/modules/ChromeWindowsLoginCrypto.sys.mjs" {
         decryptData(ciphertext?);
         _decryptUnversioned(ciphertext?);
         _decryptV10(ciphertext?);
-        encryptData(plaintext?);
+        encryptData(plaintext?, param1?);
         _encryptUnversioned(plaintext?);
         _encryptV10(plaintext?);
     }

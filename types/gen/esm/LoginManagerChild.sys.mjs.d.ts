@@ -28,11 +28,11 @@ declare module "resource://gre/modules/LoginManagerChild.sys.mjs" {
         _stopTreatingAsGeneratedPasswordField(passwordField?);
         onFocus(field?, focusedField?);
         _highlightFilledField(element?);
-        getUsernameFieldFromUsernameOnlyForm(formElement?);
-        _getPasswordFields(form?);
-        compareAndUpdatePreviouslySentValues(formLikeRoot?, usernameValue?, passwordValue?);
+        getUsernameFieldFromUsernameOnlyForm(formElement?, param1?);
+        _getPasswordFields(form?, param1?);
+        compareAndUpdatePreviouslySentValues(formLikeRoot?, usernameValue?, passwordValue?, param3?, param4?);
         fillConfirmFieldWithGeneratedPassword(passwordField?);
-        _getFormFields(form?, isSubmission?, recipes?);
+        _getFormFields(form?, isSubmission?, recipes?, param3?);
         getUserNameAndPasswordFields(aField?);
         getFieldContext(aField?);
     }
@@ -53,22 +53,22 @@ declare module "resource://gre/modules/LoginManagerChild.sys.mjs" {
         _fetchLoginsFromParentAndFillForm(form?);
         isPasswordGenerationForcedOn(passwordField?);
         stateForDocument(document?);
-        fillForm();
-        loginsFound();
+        fillForm(param0?);
+        loginsFound(param0?);
         onFieldAutoComplete(acInputField?, loginGUID?);
-        onUsernameAutocompleted(acInputField?);
+        onUsernameAutocompleted(acInputField?, param1?);
         _isAutocompleteDisabled(element?);
         _onDocumentRestored(aDocument?);
         _onNavigation(aDocument?);
         _onFormSubmit(form?, reason?);
-        _maybeSendFormInteractionMessage(form?, messageName?);
-        _maybeSendFormInteractionMessageContinue(form?, messageName?);
-        _doesEventClearPrevFieldValue();
+        _maybeSendFormInteractionMessage(form?, messageName?, param2?);
+        _maybeSendFormInteractionMessageContinue(form?, messageName?, param2?);
+        _doesEventClearPrevFieldValue(param0?);
         _filledWithGeneratedPassword(passwordField?);
         _ignorePasswordEdit();
-        _passwordEditedOrGenerated(passwordField?);
+        _passwordEditedOrGenerated(passwordField?, param1?);
         _filterForExactFormOriginLogins(logins?, form?);
-        _fillForm(form?, foundLogins?, recipes?);
+        _fillForm(form?, foundLogins?, recipes?, param3?);
         getScenario(inputElement?);
     }
 }

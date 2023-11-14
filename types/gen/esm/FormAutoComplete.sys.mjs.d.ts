@@ -1,6 +1,6 @@
 declare module "resource://gre/modules/FormAutoComplete.sys.mjs" {
     export class FormHistoryClient {
-        constructor();
+        constructor(param0);
         getActor();
         requestAutoCompleteResults(searchString?, params?, scenarioName?, callback?);
         handleAutoCompleteResults(results?, callback?);

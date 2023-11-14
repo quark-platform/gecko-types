@@ -2,8 +2,8 @@ declare module "resource://gre/modules/services-settings/Database.sys.mjs" {
     export class Database {
         destroy();
         constructor(identifier);
-        list();
-        importChanges(metadata?, timestamp?);
+        list(param0?);
+        importChanges(metadata?, timestamp?, param2?, param3?);
         getLastModified();
         getMetadata();
         getAttachment(attachmentId?);

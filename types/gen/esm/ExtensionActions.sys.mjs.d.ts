@@ -5,14 +5,14 @@ declare module "resource://gre/modules/ExtensionActions.sys.mjs" {
         isShownForTab(tab?);
         loadIconData();
         getPinned();
-        getTargetFromDetails();
+        getTargetFromDetails(param0?);
         api(context?);
     }
     export class BrowserActionBase extends PanelActionBase {
         constructor(tabContext, extension);
         loadIconData();
         handleLocationChange(eventType?, tab?, fromBrowse?);
-        getTargetFromDetails();
+        getTargetFromDetails(param0?);
         getDefaultArea();
         getTextColor(values?);
         isShownForTab(tab?);

@@ -7,7 +7,7 @@ declare module "resource://gre/modules/ConduitsChild.sys.mjs" {
     export class ConduitsChild extends JSWindowActorChild {
         constructor();
         openConduit(subject?, address?);
-        receiveMessage();
+        receiveMessage(param0?);
         didDestroy();
     }
     export class ProcessConduitsChild extends JSProcessActorChild {

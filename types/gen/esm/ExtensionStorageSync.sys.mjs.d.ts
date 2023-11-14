@@ -1,7 +1,7 @@
 declare module "resource://gre/modules/ExtensionStorageSync.sys.mjs" {
     export class ExtensionStorageSync {
         constructor();
-        _promisify(fnName?, extension?, context?);
+        _promisify(fnName?, extension?, context?, param3?);
         set(extension?, items?, context?);
         remove(extension?, keys?, context?);
         clear(extension?, context?);

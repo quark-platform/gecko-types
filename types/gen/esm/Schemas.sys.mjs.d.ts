@@ -3,9 +3,9 @@ declare module "resource://gre/modules/Schemas.sys.mjs" {
     export class SchemaRoot extends Namespace {
         constructor(base, schemaJSON);
         getNamespaces(path?);
-        getNamespace(name?);
+        getNamespace(name?, param1?);
         getOwnNamespace(name?);
-        parseSchema(schema?, path?);
+        parseSchema(schema?, path?, param2?);
         parseSchemas();
         loadSchema(json?);
         checkPermissions(namespace?, wrapperFuncs?);

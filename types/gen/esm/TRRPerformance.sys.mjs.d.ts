@@ -16,8 +16,8 @@ declare module "resource://app/modules/TRRPerformance.sys.mjs" {
         constructor(onCompleteCallback, trrList);
         run();
         onComplete();
-        getFastestTRR();
-        _getFastestTRRFromResults(results?);
+        getFastestTRR(param0?);
+        _getFastestTRRFromResults(results?, param1?);
         _runNewAggregator();
         observe(subject?, topic?, data?);
     }

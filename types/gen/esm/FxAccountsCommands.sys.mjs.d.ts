@@ -3,8 +3,8 @@ declare module "resource://gre/modules/FxAccountsCommands.sys.mjs" {
         constructor(fxAccountsInternal);
         availableCommands();
         invoke(command?, device?, payload?);
-        pollDeviceCommands();
-        _fetchDeviceCommands(index?);
+        pollDeviceCommands(param0?);
+        _fetchDeviceCommands(index?, param1?);
         _getReason(notifiedIndex?, messageIndex?);
         _handleCommands(messages?, notifiedIndex?);
         _notifyFxATabsReceived(tabsReceived?);
@@ -13,7 +13,7 @@ declare module "resource://gre/modules/FxAccountsCommands.sys.mjs" {
         constructor(commands, fxAccountsInternal);
         send(to?, tab?);
         isDeviceCompatible(device?);
-        handle(senderID?, reason?);
+        handle(senderID?, param1?, reason?);
         _encrypt(bytes?, device?);
         _getPersistedSendTabKeys();
         _decrypt(ciphertext?);

@@ -5,9 +5,9 @@ declare module "resource://gre/modules/GeckoViewProgress.sys.mjs" {
         onDisable();
         receiveMessage(aMsg?);
         onEvent(aEvent?, aData?, aCallback?);
-        onStateChange();
-        onSecurityChange();
-        onLocationChange();
+        onStateChange(param0?);
+        onSecurityChange(param0?);
+        onLocationChange(param0?);
         _fireInitialLoad();
         observe(aSubject?, aTopic?, aData?);
     }

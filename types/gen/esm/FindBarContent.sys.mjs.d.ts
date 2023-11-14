@@ -2,7 +2,7 @@ declare module "resource://gre/modules/FindBarContent.sys.mjs" {
     export class FindBarContent {
         constructor(actor);
         start(event?);
-        startQuickFind(event?);
+        startQuickFind(event?, param1?);
         updateState(data?);
         handleEvent(event?);
         onKeypress(event?);

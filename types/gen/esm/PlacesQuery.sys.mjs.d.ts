@@ -1,7 +1,7 @@
 declare module "resource://gre/modules/PlacesQuery.sys.mjs" {
     export class PlacesQuery {
-        getHistory();
-        initializeCache();
+        getHistory(param0?);
+        initializeCache(param0?);
         fetchHistory();
         appendToCache(visit?);
         insertSortedIntoCache(visit?);

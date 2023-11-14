@@ -1,6 +1,6 @@
 declare module "resource://gre/modules/AbuseReporter.sys.mjs" {
     export class AbuseReportError extends Error {
-        constructor(errorType);
+        constructor(errorType, param1);
     }
     var AbuseReporter: {
         _lastReportTimestamp;

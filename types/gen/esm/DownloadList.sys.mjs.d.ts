@@ -7,7 +7,7 @@ declare module "resource://gre/modules/DownloadList.sys.mjs" {
         _change(download?);
         addView(view?);
         removeView(view?);
-        _notifyAllViews(methodName?);
+        _notifyAllViews(methodName?, param1?);
         removeFinished(filterFn?);
     }
     import type { DownloadList } from "resource://gre/modules/DownloadList.sys.mjs";

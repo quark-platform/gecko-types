@@ -14,7 +14,7 @@ declare module "resource://gre/modules/FxAccountsKeys.sys.mjs" {
         _deriveScopedKeys(uid?, kBbytes?, scopedKeysMetadata?);
         _deriveScopedKey(uid?, kBbytes?, scope?, scopedKeyMetadata?);
         _deriveLegacyScopedKey(uid?, kBbytes?, scope?, scopedKeyMetadata?);
-        _formatLegacyScopedKey(kid?, key?, scope?);
+        _formatLegacyScopedKey(kid?, key?, scope?, param3?);
         _deriveSyncKey(kBbytes?);
         _deriveXClientState(kBbytes?);
         _sha256(bytes?);

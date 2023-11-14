@@ -111,11 +111,11 @@ declare module "resource://app/modules/UrlbarUtils.sys.mjs" {
         _getQuickSuggestTelemetryType(result?);
     };
     export class UrlbarQueryContext {
-        constructor();
+        constructor(param0);
         _checkRequiredOptions(options?, optionNames?);
         get fixupInfo();
         get fixupError();
-        allowRemoteResults();
+        allowRemoteResults(param0?, param1?);
     }
     export class UrlbarMuxer {
         get name();
@@ -125,7 +125,7 @@ declare module "resource://app/modules/UrlbarUtils.sys.mjs" {
         constructor();
         get name();
         get type();
-        tryMethod(methodName?);
+        tryMethod(methodName?, param1?);
         isActive(queryContext?);
         getPriority(queryContext?);
         startQuery(queryContext?, addCallback?);
@@ -137,21 +137,21 @@ declare module "resource://app/modules/UrlbarUtils.sys.mjs" {
         get deferUserSelection();
     }
     export class SkippableTimer {
-        constructor();
+        constructor(param0);
         cancel();
-        _log(msg?);
+        _log(msg?, param1?);
     }
     export class L10nCache {
         constructor(l10n);
-        get();
-        add();
-        ensure();
+        get(param0?);
+        add(param0?);
+        ensure(param0?);
         ensureAll(objects?);
-        delete();
+        delete(param0?);
         clear();
         size();
         observe(subject?, topic?, data?);
-        _key();
+        _key(param0?);
     }
     export class TaskQueue {
         get emptyPromise();

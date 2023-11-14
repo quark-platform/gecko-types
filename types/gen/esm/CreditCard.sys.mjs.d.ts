@@ -1,7 +1,7 @@
 declare module "resource://gre/modules/CreditCard.sys.mjs" {
     var NETWORK_NAMES: {};
     export class CreditCard {
-        constructor();
+        constructor(param0);
         set name(value);
         set expirationMonth(value);
         get expirationMonth();
@@ -20,12 +20,12 @@ declare module "resource://gre/modules/CreditCard.sys.mjs" {
         isValid();
         get maskedNumber();
         get longMaskedNumber();
-        getLabelInfo();
-        getLabel();
+        getLabelInfo(param0?);
+        getLabel(param0?);
         normalizeExpirationMonth(month?);
         normalizeExpirationYear(year?);
         parseExpirationString(expirationString?);
-        normalizeExpiration();
+        normalizeExpiration(param0?);
         formatMaskedNumber(maskedNumber?);
         getCreditCardLogo(network?);
         getMaskedNumber(number?);

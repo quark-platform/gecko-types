@@ -3,9 +3,9 @@ declare module "resource://gre/modules/SearchSettings.sys.mjs" {
         constructor(searchService);
         addObservers();
         removeObservers();
-        get();
+        get(param0?);
         _delayedWrite();
-        _ensurePendingWritesCompleted();
+        _ensurePendingWritesCompleted(param0?);
         _write();
         setMetaDataAttribute(name?, val?);
         setVerifiedMetaDataAttribute(name?, val?);

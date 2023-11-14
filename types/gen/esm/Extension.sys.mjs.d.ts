@@ -16,9 +16,9 @@ declare module "resource://gre/modules/Extension.sys.mjs" {
         get processSpawningDisabled(): any;
     };
     export class ExtensionData {
-        constructor(rootURI);
-        constructAsync();
-        getIsPrivileged();
+        constructor(rootURI, param1);
+        constructAsync(param0?);
+        getIsPrivileged(param0?);
         get builtinMessages();
         get logger();
         manifestError(message?);
@@ -29,11 +29,11 @@ declare module "resource://gre/modules/Extension.sys.mjs" {
         logError(message?);
         _logMessage(message?, severity?);
         ensureNoErrors();
-        getURL();
-        _readDirectory(path?);
+        getURL(param0?);
+        _readDirectory(path?, param1?);
         readJSON(path?);
         get restrictSchemes();
-        permissionsObject();
+        permissionsObject(param0?, param1?);
         get manifestPermissions();
         getManifestOrigins();
         get manifestOptionalPermissions();
@@ -54,9 +54,9 @@ declare module "resource://gre/modules/Extension.sys.mjs" {
         initializeAddonTypeAndID();
         parseManifest();
         loadManifest();
-        hasPermission(perm?);
+        hasPermission(perm?, param1?);
         getAPIManager();
-        localizeMessage();
+        localizeMessage(param0?);
         localize(str?, locale?);
         get defaultLocale();
         get isAppProvided();
@@ -67,10 +67,10 @@ declare module "resource://gre/modules/Extension.sys.mjs" {
         _setupLocaleData(locales?);
         promiseLocales();
         initAllLocales();
-        initLocale();
+        initLocale(param0?);
         isAllSitesPermission(origin?);
-        classifyOriginPermissions();
-        formatPermissionStrings();
+        classifyOriginPermissions(param0?, param1?);
+        formatPermissionStrings(param0?, param1?);
     }
     import type { ExtensionData } from "resource://gre/modules/Extension.sys.mjs";
     export class Extension extends ExtensionData {
@@ -85,13 +85,13 @@ declare module "resource://gre/modules/Extension.sys.mjs" {
         on(hook?, f?);
         off(hook?, f?);
         once(hook?, f?);
-        emit(event?);
-        receiveMessage();
-        testMessage();
-        createPrincipal();
+        emit(event?, param1?);
+        receiveMessage(param0?);
+        testMessage(param0?);
+        createPrincipal(param0?, param1?);
         isExtensionURL(url?);
-        checkLoadURI(uri?);
-        checkLoadURL(url?);
+        checkLoadURI(uri?, param1?);
+        checkLoadURL(url?, param1?);
         promiseLocales(locale?);
         readLocaleFile(locale?);
         get manifestCacheKey();
@@ -119,7 +119,7 @@ declare module "resource://gre/modules/Extension.sys.mjs" {
         callOnClose(obj?);
         forgetOnClose(obj?);
         get builtinMessages();
-        initLocale();
+        initLocale(param0?);
         clearCache(reason?);
         updatePermissions(reason?);
         startup();
@@ -130,7 +130,7 @@ declare module "resource://gre/modules/Extension.sys.mjs" {
         get name();
         get optionalOrigins();
         get hasBrowserActionUI();
-        getPreferredIcon();
+        getPreferredIcon(param0?);
     }
     import type { ExtensionData } from "resource://gre/modules/Extension.sys.mjs";
     export class Dictionary extends ExtensionData {

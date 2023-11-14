@@ -3,6 +3,6 @@ declare module "resource://gre/modules/ManifestMessagesChild.sys.mjs" {
         receiveMessage(message?);
         hasManifestLink();
         obtainManifest(options?);
-        fetchIcon();
+        fetchIcon(param0?);
     }
 }

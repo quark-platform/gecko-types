@@ -14,9 +14,9 @@ declare module "resource://gre/modules/ExtensionShortcuts.sys.mjs" {
     }
     export class ExtensionShortcuts {
         removeCommandsFromStorage(extensionId?);
-        constructor();
+        constructor(param0);
         allCommands();
-        updateCommand();
+        updateCommand(param0?);
         resetCommand(name?);
         loadCommands();
         registerKeys(commands?);

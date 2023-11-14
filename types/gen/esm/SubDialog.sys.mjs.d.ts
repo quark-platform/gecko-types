@@ -1,12 +1,12 @@
 declare module "resource://gre/modules/SubDialog.sys.mjs" {
     function SubDialog(param0?);
     export class SubDialogManager {
-        constructor();
+        constructor(param0);
         get _topDialog();
-        open(aURL?);
+        open(aURL?, param1?, param2?);
         close();
         hideDialog(aBrowser?);
-        abortDialogs();
+        abortDialogs(param0?);
         get hasDialogs();
         get dialogs();
         focusTopDialog();

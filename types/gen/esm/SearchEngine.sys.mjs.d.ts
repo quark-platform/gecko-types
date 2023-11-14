@@ -10,7 +10,7 @@ declare module "resource://gre/modules/SearchEngine.sys.mjs" {
         toJSON();
     }
     export class SearchEngine {
-        constructor();
+        constructor(param0);
         get _searchForm();
         set _searchForm(value);
         _getURLOfType(type?, rel?);
@@ -18,8 +18,8 @@ declare module "resource://gre/modules/SearchEngine.sys.mjs" {
         _addIconToMap(width?, height?, uriSpec?);
         _setIcon(iconURL?, isPreferred?, width?, height?);
         _getEngineURLFromMetaData(type?, params?);
-        _initWithDetails(details?);
-        _setUrls(details?);
+        _initWithDetails(details?, param1?);
+        _setUrls(details?, param1?);
         checkSearchUrlMatchesManifest(details?);
         overrideWithExtension(extensionID?, manifest?);
         removeExtensionOverride();

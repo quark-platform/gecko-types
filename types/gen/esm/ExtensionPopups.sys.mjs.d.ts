@@ -1,18 +1,18 @@
 declare module "resource://app/modules/ExtensionPopups.sys.mjs" {
     export class BasePopup {
-        constructor(extension, viewNode, popupURL, browserStyle);
+        constructor(extension, viewNode, popupURL, browserStyle, param4, param5);
         for(extension?, window?);
         close();
         destroy();
-        destroyBrowser(browser?);
+        destroyBrowser(browser?, param1?);
         get DESTROY_EVENT();
         get STYLESHEETS();
         get panel();
-        receiveMessage();
+        receiveMessage(param0?);
         handleEvent(event?);
-        createBrowser(viewNode?);
+        createBrowser(viewNode?, param1?);
         unblockParser();
-        resizeBrowser();
+        resizeBrowser(param0?);
         setBackground(background?);
     }
     import type { BasePopup } from "resource://app/modules/ExtensionPopups.sys.mjs";

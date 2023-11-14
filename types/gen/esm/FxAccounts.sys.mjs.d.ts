@@ -1,7 +1,7 @@
 declare module "resource://gre/modules/FxAccounts.sys.mjs" {
     function AccountState(storageManager?);
     export class FxAccounts {
-        constructor();
+        constructor(param0);
         get commands();
         get config();
         get device();
@@ -9,9 +9,9 @@ declare module "resource://gre/modules/FxAccounts.sys.mjs" {
         get telemetry();
         _withCurrentAccountState(func?);
         _withVerifiedAccountState(func?);
-        _withSessionToken(func?);
+        _withSessionToken(func?, param1?);
         listAttachedOAuthClients();
-        getOAuthToken();
+        getOAuthToken(param0?);
         removeCachedOAuthToken(options?);
         getSignedInUser();
         checkAccountStatus();

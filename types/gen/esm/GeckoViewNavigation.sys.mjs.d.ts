@@ -9,13 +9,13 @@ declare module "resource://gre/modules/GeckoViewNavigation.sys.mjs" {
         handleNewSession(aUri?, aOpenWindowInfo?, aWhere?, aFlags?, aName?);
         createContentWindow(aUri?, aOpenWindowInfo?, aWhere?, aFlags?, aTriggeringPrincipal?, aCsp?);
         createContentWindowInFrame(aUri?, aParams?, aWhere?, aFlags?, aName?);
-        handleOpenUri();
+        handleOpenUri(param0?);
         openURI(aUri?, aOpenWindowInfo?, aWhere?, aFlags?, aTriggeringPrincipal?, aCsp?);
         openURIInFrame(aUri?, aParams?, aWhere?, aFlags?, aName?);
         canClose();
         onEnable();
         onDisable();
-        serializePermission();
+        serializePermission(param0?);
         isProductURL(aLocationURI?);
         onLocationChange(aWebProgress?, aRequest?, aLocationURI?, aFlags?);
     }

@@ -1,7 +1,7 @@
 declare module "resource://gre/modules/OpenSearchEngine.sys.mjs" {
     import type { SearchEngine } from "resource://gre/modules/SearchEngine.sys.mjs";
     export class OpenSearchEngine extends SearchEngine {
-        constructor();
+        constructor(param0);
         toJSON();
         install(uri?, callback?);
         _onLoad(callback?, bytes?);

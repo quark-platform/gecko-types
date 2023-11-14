@@ -7,7 +7,7 @@ declare module "resource://gre/modules/FxAccountsDevice.sys.mjs" {
         setLocalName(newName?);
         getLocalType();
         get recentDeviceList();
-        refreshDeviceList();
+        refreshDeviceList(param0?);
         _refreshRemoteDevice(currentState?, accountData?, remoteDevices?);
         updateDeviceRegistration();
         updateDeviceRegistrationIfNecessary();

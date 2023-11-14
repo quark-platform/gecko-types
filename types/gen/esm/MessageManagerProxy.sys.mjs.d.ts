@@ -4,9 +4,9 @@ declare module "resource://gre/modules/MessageManagerProxy.sys.mjs" {
         dispose();
         observe(subject?, topic?, data?);
         matches(target?, messageManager?);
-        sendAsyncMessage();
+        sendAsyncMessage(param0?);
         get isDisconnected();
-        addMessageListener(message?, listener?);
+        addMessageListener(message?, listener?, param2?);
         removeMessageListener(message?, listener?);
         iterListeners();
         addListeners(target?);
