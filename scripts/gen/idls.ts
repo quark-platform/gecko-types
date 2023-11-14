@@ -107,7 +107,8 @@ function handleFunc(
         ...(rawParams?.other.map((val) => val.param) || []),
       ].map((val) => {
         let name = 'invalid',
-          type = 'invalid'
+          type = 'invalid',
+          optional = false
 
         if (typeof val.name == 'string') name = val.name
         // TODO: Array<...> support
@@ -121,22 +122,25 @@ function handleFunc(
         // Support type attributes
         if (val.attribute) {
           const attrs = arrayifyAttributes(val.attribute)
-          if (
-            attrs.some(({ name }) => typeof name == 'string' && name == 'array')
-          )
-            type += '[]'
+          const names = attrs
+            .map(({ name }) => name)
+            .filter((name) => typeof name == 'string')
+            .map((n) => n as string)
+
+          if (names.includes('array')) type += '[]'
+          if (names.includes('optional')) optional = true
         }
 
         const matchingDocSpec = getJSDocNamedSpec(parsed, name)
-        if (matchingDocSpec) {
-          if (matchingDocSpec.optional) type += '?'
-        }
+        if (matchingDocSpec && matchingDocSpec.optional) optional = true
 
         return ts.factory.createParameterDeclaration(
           undefined,
           undefined,
           name,
-          undefined,
+          optional
+            ? ts.factory.createToken(ts.SyntaxKind.QuestionToken)
+            : undefined,
           ts.factory.createTypeReferenceNode(type)
         )
       })
