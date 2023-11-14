@@ -9,6 +9,7 @@ import {
   ifacebody_$0_$0_$0,
   interface_main,
   member_$0_$0,
+  enum_code,
 } from 'gecko-index/lib/parser.js'
 import ts from 'typescript'
 import { parse as jsdocParse } from 'comment-parser'
@@ -37,7 +38,7 @@ const idlDefFileBuilder = ts.createSourceFile(
   '',
   ts.ScriptTarget.Latest,
   /*setParentNodes*/ false,
-  ts.ScriptKind.TS,
+  ts.ScriptKind.TS
 )
 
 const arrayifyAttributes = ({
@@ -50,7 +51,7 @@ const arrayifyAttributes = ({
 
 function handleAttribute(
   code: attribute_code,
-  docComment: string,
+  docComment: string
 ): ts.TypeElement[] {
   let modifiers = []
 
@@ -67,18 +68,18 @@ function handleAttribute(
         modifiers,
         code.name,
         undefined,
-        ts.factory.createTypeReferenceNode(code.type.replaceAll(' ', '_')),
+        ts.factory.createTypeReferenceNode(code.type.replaceAll(' ', '_'))
       ),
       ts.SyntaxKind.MultiLineCommentTrivia,
       formatDocCommentString(docComment),
-      true,
+      true
     ),
   ]
 }
 
 function handleFunc(
   code: func,
-  docCommentRaw: member_$0_$0[],
+  docCommentRaw: member_$0_$0[]
 ): ts.TypeElement[] {
   const { return_type: returnType, name, params: rawParams, attributes } = code
   const docComment = generateDocCommentType(docCommentRaw)
@@ -88,7 +89,7 @@ function handleFunc(
   if (attributes) {
     const attrs = arrayifyAttributes(attributes)
     const isNoScript = attrs.some(
-      ({ name }) => typeof name == 'string' && name == 'noscript',
+      ({ name }) => typeof name == 'string' && name == 'noscript'
     )
     if (isNoScript) return []
   }
@@ -136,9 +137,9 @@ function handleFunc(
           undefined,
           name,
           undefined,
-          ts.factory.createTypeReferenceNode(type),
+          ts.factory.createTypeReferenceNode(type)
         )
-      }),
+      })
     )
   }
 
@@ -150,39 +151,55 @@ function handleFunc(
         undefined,
         undefined,
         params,
-        ts.factory.createTypeReferenceNode(returnType.replaceAll(' ', '_')),
+        ts.factory.createTypeReferenceNode(returnType.replaceAll(' ', '_'))
       ),
       ts.SyntaxKind.MultiLineCommentTrivia,
       docComment,
-      true,
+      true
     ),
   ]
 }
 
+function addConstant(interfaceName: string, key: string, value?: string) {
+  const constants = idlConstants.get(interfaceName) || []
+  constants.push({ key, value })
+  idlConstants.set(interfaceName, constants)
+}
+
 function handleConst(
   code: const_code,
-  interfaceName: string,
+  interfaceName: string
 ): ts.TypeElement[] {
-  const constants = idlConstants.get(interfaceName) || []
-
   const { name: key, value } = code
   if (typeof key !== 'string') return []
 
   if (typeof value !== 'string') {
-    constants.push({ key, value: undefined })
+    addConstant(interfaceName, key)
   } else {
-    constants.push({ key, value })
+    addConstant(interfaceName, key, value)
   }
-
-  idlConstants.set(interfaceName, constants)
 
   // We do not emit anything here. We add it to Ci further down
   return []
 }
 
+function handleEnum(code: enum_code, interfaceName: string): ts.TypeElement[] {
+  const values = [
+    code.values?.first_value,
+    ...(code.values?.other_values.map((e) => e.value) || []),
+  ].filter(Boolean)
+
+  for (const value of values) {
+    if (typeof value.identifier != 'string') continue
+    addConstant(interfaceName, value.identifier)
+  }
+
+  return []
+}
+
 function interfaceBody(
   contents: ifacebody_$0_$0_$0,
-  interfaceName: string,
+  interfaceName: string
 ): ts.TypeElement[] {
   if (typeof contents == 'string') return []
   if (
@@ -209,6 +226,10 @@ function interfaceBody(
 
   if (contents.code.kind == 'const_code') {
     return handleConst(contents.code, interfaceName)
+  }
+
+  if (contents.code.kind == 'enum_code') {
+    return handleEnum(contents.code, interfaceName)
   }
 
   return []
@@ -269,18 +290,18 @@ function interfaceMain(node: interface_main) {
               ts.factory.createHeritageClause(ts.SyntaxKind.ExtendsKeyword, [
                 ts.factory.createExpressionWithTypeArguments(
                   parentInterface,
-                  undefined,
+                  undefined
                 ),
               ]),
             ]
           : [],
-        members,
+        members
       ),
       ts.SyntaxKind.MultiLineCommentTrivia,
       generateDocCommentType(docComments),
-      true,
+      true
     ),
-    idlDefFileBuilder,
+    idlDefFileBuilder
   )
   idlDefFile += '\n\n'
 }
@@ -319,11 +340,11 @@ idlDefFile += printNode(
     undefined,
     ts.factory.createUnionTypeNode(
       [...idlTypes].map((iface) =>
-        ts.factory.createLiteralTypeNode(ts.factory.createStringLiteral(iface)),
-      ),
-    ),
+        ts.factory.createLiteralTypeNode(ts.factory.createStringLiteral(iface))
+      )
+    )
   ),
-  idlDefFileBuilder,
+  idlDefFileBuilder
 )
 idlDefFile += '\n'
 
@@ -341,12 +362,12 @@ idlDefFile += printNode(
         undefined,
         ts.factory.createTypeReferenceNode(
           ts.factory.createIdentifier(`${iface}Type`),
-          undefined,
-        ),
-      ),
-    ),
+          undefined
+        )
+      )
+    )
   ),
-  idlDefFileBuilder,
+  idlDefFileBuilder
 )
 
 idlDefFile += '\n\n'
@@ -373,11 +394,11 @@ idlDefFile += '\n\n'
       if (typeof value === 'undefined') {
       } else if (value.startsWith('0x') || !isNaN(value as unknown as number)) {
         type = ts.factory.createLiteralTypeNode(
-          ts.factory.createNumericLiteral(value),
+          ts.factory.createNumericLiteral(value)
         )
       } else {
         type = ts.factory.createLiteralTypeNode(
-          ts.factory.createStringLiteral(value),
+          ts.factory.createStringLiteral(value)
         )
       }
 
@@ -385,7 +406,7 @@ idlDefFile += '\n\n'
         [READ_ONLY_MODIFIER],
         key,
         undefined,
-        type,
+        type
       )
     })
 
@@ -395,16 +416,16 @@ idlDefFile += '\n\n'
         'name',
         undefined,
         ts.factory.createLiteralTypeNode(
-          ts.factory.createStringLiteral(iface, true),
-        ),
+          ts.factory.createStringLiteral(iface, true)
+        )
       ),
       ts.factory.createPropertySignature(
         [READ_ONLY_MODIFIER],
         'number',
         undefined,
         ts.factory.createLiteralTypeNode(
-          ts.factory.createStringLiteral(num, true),
-        ),
+          ts.factory.createStringLiteral(num, true)
+        )
       ),
       ...constants,
     ])
@@ -415,8 +436,8 @@ idlDefFile += '\n\n'
         'name',
         undefined,
         ts.factory.createLiteralTypeNode(
-          ts.factory.createStringLiteral(iface, true),
-        ),
+          ts.factory.createStringLiteral(iface, true)
+        )
       ),
       ts.factory.createPropertySignature(
         [READ_ONLY_MODIFIER],
@@ -424,8 +445,8 @@ idlDefFile += '\n\n'
         undefined,
         ts.factory.createTypeReferenceNode(
           ts.factory.createIdentifier(`${iface}Type`),
-          undefined,
-        ),
+          undefined
+        )
       ),
     ])
 
@@ -434,11 +455,11 @@ idlDefFile += '\n\n'
         undefined,
         ts.factory.createStringLiteral(`{${num}}`),
         undefined,
-        numberBinding,
-      ),
+        numberBinding
+      )
     )
     members.push(
-      ts.factory.createPropertySignature(undefined, iface, undefined, type),
+      ts.factory.createPropertySignature(undefined, iface, undefined, type)
     )
   }
 
@@ -448,9 +469,9 @@ idlDefFile += '\n\n'
       ts.factory.createIdentifier('CiType'),
       undefined,
       undefined,
-      members,
+      members
     ),
-    idlDefFileBuilder,
+    idlDefFileBuilder
   )
   idlDefFile += '\n'
   idlDefFile += printNode(
@@ -459,9 +480,9 @@ idlDefFile += '\n\n'
       ts.factory.createIdentifier('CiNumberBinding'),
       undefined,
       undefined,
-      numberBindings,
+      numberBindings
     ),
-    idlDefFileBuilder,
+    idlDefFileBuilder
   )
   idlDefFile += '\n'
   idlDefFile += printNode(
@@ -471,11 +492,11 @@ idlDefFile += '\n\n'
         ts.factory.createVariableDeclaration(
           'Ci',
           undefined,
-          ts.factory.createTypeReferenceNode('CiType'),
+          ts.factory.createTypeReferenceNode('CiType')
         ),
-      ],
+      ]
     ),
-    idlDefFileBuilder,
+    idlDefFileBuilder
   )
 
   idlDefFile += '\n\n'
@@ -496,20 +517,20 @@ idlDefFile += '\n\n'
               c.js_name,
               undefined,
               ts.factory.createTypeReferenceNode(
-                c.interfaces.map((int) => `${int}Type`).join(' & '),
-              ),
+                c.interfaces.map((int) => `${int}Type`).join(' & ')
+              )
             ),
-          ],
-        ),
+          ]
+        )
       )
 
   idlDefFile += printNode(
     ts.factory.createModuleDeclaration(
       [DECLARE_MODIFIER],
       ts.factory.createIdentifier('Services'),
-      ts.factory.createModuleBlock(members),
+      ts.factory.createModuleBlock(members)
     ),
-    idlDefFileBuilder,
+    idlDefFileBuilder
   )
 }
 

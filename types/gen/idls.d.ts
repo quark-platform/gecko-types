@@ -59559,6 +59559,9 @@ interface CiType {
         readonly FRAME_FIRST: 0;
         readonly FRAME_CURRENT: 1;
         readonly FRAME_MAX_VALUE: 1;
+        readonly DECODE_SURFACE_AVAILABLE;
+        readonly DECODE_REQUESTED;
+        readonly DECODE_REQUEST_FAILED;
         readonly kNormalAnimMode: 0;
         readonly kDontAnimMode: 1;
         readonly kLoopOnceAnimMode: 2;
@@ -59685,6 +59688,10 @@ interface CiType {
     mozIExtensionListenerCallOptions: {
         readonly name: 'mozIExtensionListenerCallOptions';
         readonly number: '876d45db-5c1b-4c9b-9148-1c86b33d120b';
+        readonly NONE;
+        readonly RUNTIME_PORT;
+        readonly CALLBACK_NONE;
+        readonly CALLBACK_SEND_RESPONSE;
     };
     mozIExtensionEventListener: {
         readonly name: 'mozIExtensionEventListener';
@@ -59693,10 +59700,18 @@ interface CiType {
     mozIExtensionAPIRequest: {
         readonly name: 'mozIExtensionAPIRequest';
         readonly number: '0fee1c8f-e363-46a6-bd0c-d3c3338e2534';
+        readonly CALL_FUNCTION;
+        readonly CALL_FUNCTION_NO_RETURN;
+        readonly CALL_FUNCTION_ASYNC;
+        readonly ADD_LISTENER;
+        readonly REMOVE_LISTENER;
+        readonly GET_PROPERTY;
     };
     mozIExtensionAPIRequestResult: {
         readonly name: 'mozIExtensionAPIRequestResult';
         readonly number: '59fd4097-d88e-40fd-8664-fedd8ab67ab6';
+        readonly RETURN_VALUE;
+        readonly EXTENSION_ERROR;
     };
     mozIExtensionAPIRequestHandler: {
         readonly name: 'mozIExtensionAPIRequestHandler';
@@ -60121,6 +60136,15 @@ interface CiType {
         readonly eForceQuit: 0x03;
         readonly eRestart: 0x10;
         readonly eSilently: 0x100;
+        readonly SHUTDOWN_PHASE_NOTINSHUTDOWN;
+        readonly SHUTDOWN_PHASE_APPSHUTDOWNCONFIRMED;
+        readonly SHUTDOWN_PHASE_APPSHUTDOWNNETTEARDOWN;
+        readonly SHUTDOWN_PHASE_APPSHUTDOWNTEARDOWN;
+        readonly SHUTDOWN_PHASE_APPSHUTDOWN;
+        readonly SHUTDOWN_PHASE_APPSHUTDOWNQM;
+        readonly SHUTDOWN_PHASE_APPSHUTDOWNRELEMETRY;
+        readonly SHUTDOWN_PHASE_XPCOMWILLSHUTDOWN;
+        readonly SHUTDOWN_PHASE_XPCOMSHUTDOWN;
     };
     nsIAppWindow: {
         readonly name: 'nsIAppWindow';
@@ -60639,6 +60663,9 @@ interface CiType {
     nsICacheInfoChannel: {
         readonly name: 'nsICacheInfoChannel';
         readonly number: '';
+        readonly NONE;
+        readonly ASYNC;
+        readonly SERIALIZE;
     };
     nsICachePurgeLock: {
         readonly name: 'nsICachePurgeLock';
@@ -60866,6 +60893,24 @@ interface CiType {
     nsIClassifiedChannel: {
         readonly name: 'nsIClassifiedChannel';
         readonly number: '70cf6091-a1de-4aa8-8224-058f8964be31';
+        readonly CLASSIFIED_FINGERPRINTING;
+        readonly CLASSIFIED_FINGERPRINTING_CONTENT;
+        readonly CLASSIFIED_CRYPTOMINING;
+        readonly CLASSIFIED_CRYPTOMINING_CONTENT;
+        readonly CLASSIFIED_TRACKING;
+        readonly CLASSIFIED_TRACKING_AD;
+        readonly CLASSIFIED_TRACKING_ANALYTICS;
+        readonly CLASSIFIED_TRACKING_SOCIAL;
+        readonly CLASSIFIED_TRACKING_CONTENT;
+        readonly CLASSIFIED_SOCIALTRACKING;
+        readonly CLASSIFIED_SOCIALTRACKING_FACEBOOK;
+        readonly CLASSIFIED_SOCIALTRACKING_LINKEDIN;
+        readonly CLASSIFIED_SOCIALTRACKING_TWITTER;
+        readonly CLASSIFIED_EMAILTRACKING;
+        readonly CLASSIFIED_EMAILTRACKING_CONTENT;
+        readonly CLASSIFIED_ANY_BASIC_TRACKING;
+        readonly CLASSIFIED_ANY_STRICT_TRACKING;
+        readonly CLASSIFIED_ANY_SOCIAL_TRACKING;
     };
     nsIClearDataService: {
         readonly name: 'nsIClearDataService';
@@ -60907,6 +60952,9 @@ interface CiType {
     nsIClickRule: {
         readonly name: 'nsIClickRule';
         readonly number: '7e104b32-b6db-43f3-b887-573c01acef39';
+        readonly RUN_TOP;
+        readonly RUN_CHILD;
+        readonly RUN_ALL;
     };
     nsIClientAuthDialogCallback: {
         readonly name: 'nsIClientAuthDialogCallback';
@@ -60947,6 +60995,8 @@ interface CiType {
     nsIClipboardHelper: {
         readonly name: 'nsIClipboardHelper';
         readonly number: '438307fd-0c68-4d79-922a-f6cc9550cd02';
+        readonly NotSensitive;
+        readonly Sensitive;
     };
     nsIClipboardOwner: {
         readonly name: 'nsIClipboardOwner';
@@ -61037,6 +61087,8 @@ interface CiType {
     nsIConsoleService: {
         readonly name: 'nsIConsoleService';
         readonly number: '0eb81d20-c37e-42d4-82a8-ca9ae96bdf52';
+        readonly SuppressLog;
+        readonly OutputToLog;
     };
     nsIContentBlockingAllowList: {
         readonly name: 'nsIContentBlockingAllowList';
@@ -61065,6 +61117,65 @@ interface CiType {
     nsIContentPolicy: {
         readonly name: 'nsIContentPolicy';
         readonly number: 'caad4f1f-d047-46ac-ae9d-dc598e4fb91b';
+        readonly TYPE_INVALID;
+        readonly TYPE_OTHER;
+        readonly TYPE_SCRIPT;
+        readonly TYPE_IMAGE;
+        readonly TYPE_STYLESHEET;
+        readonly TYPE_OBJECT;
+        readonly TYPE_DOCUMENT;
+        readonly TYPE_SUBDOCUMENT;
+        readonly TYPE_PING;
+        readonly TYPE_XMLHTTPREQUEST;
+        readonly TYPE_OBJECT_SUBREQUEST;
+        readonly TYPE_DTD;
+        readonly TYPE_FONT;
+        readonly TYPE_MEDIA;
+        readonly TYPE_WEBSOCKET;
+        readonly TYPE_CSP_REPORT;
+        readonly TYPE_XSLT;
+        readonly TYPE_BEACON;
+        readonly TYPE_FETCH;
+        readonly TYPE_IMAGESET;
+        readonly TYPE_WEB_MANIFEST;
+        readonly TYPE_INTERNAL_SCRIPT;
+        readonly TYPE_INTERNAL_WORKER;
+        readonly TYPE_INTERNAL_SHARED_WORKER;
+        readonly TYPE_INTERNAL_EMBED;
+        readonly TYPE_INTERNAL_OBJECT;
+        readonly TYPE_INTERNAL_FRAME;
+        readonly TYPE_INTERNAL_IFRAME;
+        readonly TYPE_INTERNAL_AUDIO;
+        readonly TYPE_INTERNAL_VIDEO;
+        readonly TYPE_INTERNAL_TRACK;
+        readonly TYPE_INTERNAL_XMLHTTPREQUEST;
+        readonly TYPE_INTERNAL_EVENTSOURCE;
+        readonly TYPE_INTERNAL_SERVICE_WORKER;
+        readonly TYPE_INTERNAL_SCRIPT_PRELOAD;
+        readonly TYPE_INTERNAL_IMAGE;
+        readonly TYPE_INTERNAL_IMAGE_PRELOAD;
+        readonly TYPE_INTERNAL_STYLESHEET;
+        readonly TYPE_INTERNAL_STYLESHEET_PRELOAD;
+        readonly TYPE_INTERNAL_IMAGE_FAVICON;
+        readonly TYPE_INTERNAL_WORKER_IMPORT_SCRIPTS;
+        readonly TYPE_SAVEAS_DOWNLOAD;
+        readonly TYPE_SPECULATIVE;
+        readonly TYPE_INTERNAL_MODULE;
+        readonly TYPE_INTERNAL_MODULE_PRELOAD;
+        readonly TYPE_INTERNAL_DTD;
+        readonly TYPE_INTERNAL_FORCE_ALLOWED_DTD;
+        readonly TYPE_INTERNAL_AUDIOWORKLET;
+        readonly TYPE_INTERNAL_PAINTWORKLET;
+        readonly TYPE_INTERNAL_FONT_PRELOAD;
+        readonly TYPE_INTERNAL_CHROMEUTILS_COMPILED_SCRIPT;
+        readonly TYPE_INTERNAL_FRAME_MESSAGEMANAGER_SCRIPT;
+        readonly TYPE_INTERNAL_FETCH_PRELOAD;
+        readonly TYPE_UA_FONT;
+        readonly TYPE_PROXIED_WEBRTC_MEDIA;
+        readonly TYPE_WEB_IDENTITY;
+        readonly TYPE_INTERNAL_WORKER_STATIC_MODULE;
+        readonly TYPE_WEB_TRANSPORT;
+        readonly TYPE_END;
         readonly REJECT_REQUEST;
         readonly REJECT_TYPE;
         readonly REJECT_SERVER;
@@ -61107,6 +61218,32 @@ interface CiType {
     nsIContentSecurityPolicy: {
         readonly name: 'nsIContentSecurityPolicy';
         readonly number: '';
+        readonly NO_DIRECTIVE;
+        readonly DEFAULT_SRC_DIRECTIVE;
+        readonly SCRIPT_SRC_DIRECTIVE;
+        readonly OBJECT_SRC_DIRECTIVE;
+        readonly STYLE_SRC_DIRECTIVE;
+        readonly IMG_SRC_DIRECTIVE;
+        readonly MEDIA_SRC_DIRECTIVE;
+        readonly FRAME_SRC_DIRECTIVE;
+        readonly FONT_SRC_DIRECTIVE;
+        readonly CONNECT_SRC_DIRECTIVE;
+        readonly REPORT_URI_DIRECTIVE;
+        readonly FRAME_ANCESTORS_DIRECTIVE;
+        readonly REFLECTED_XSS_DIRECTIVE;
+        readonly BASE_URI_DIRECTIVE;
+        readonly FORM_ACTION_DIRECTIVE;
+        readonly WEB_MANIFEST_SRC_DIRECTIVE;
+        readonly UPGRADE_IF_INSECURE_DIRECTIVE;
+        readonly CHILD_SRC_DIRECTIVE;
+        readonly BLOCK_ALL_MIXED_CONTENT;
+        readonly SANDBOX_DIRECTIVE;
+        readonly WORKER_SRC_DIRECTIVE;
+        readonly NAVIGATE_TO_DIRECTIVE;
+        readonly SCRIPT_SRC_ELEM_DIRECTIVE;
+        readonly SCRIPT_SRC_ATTR_DIRECTIVE;
+        readonly STYLE_SRC_ELEM_DIRECTIVE;
+        readonly STYLE_SRC_ATTR_DIRECTIVE;
         readonly VIOLATION_TYPE_EVAL: 1;
         readonly VIOLATION_TYPE_WASM_EVAL: 2;
     };
@@ -61129,6 +61266,11 @@ interface CiType {
     nsIContentViewer: {
         readonly name: 'nsIContentViewer';
         readonly number: '';
+        readonly ePrompt;
+        readonly eDontPromptAndDontUnload;
+        readonly eDontPromptAndUnload;
+        readonly eAllowNavigation;
+        readonly eRequestBlockNavigation;
         readonly eDelayResize: 1;
     };
     nsIContentViewerEdit: {
@@ -61179,6 +61321,10 @@ interface CiType {
         readonly SAMESITE_NONE: 0;
         readonly SAMESITE_LAX: 1;
         readonly SAMESITE_STRICT: 2;
+        readonly SCHEME_UNSET;
+        readonly SCHEME_HTTP;
+        readonly SCHEME_HTTPS;
+        readonly SCHEME_FILE;
     };
     nsICookieBannerListService: {
         readonly name: 'nsICookieBannerListService';
@@ -61191,6 +61337,10 @@ interface CiType {
     nsICookieBannerService: {
         readonly name: 'nsICookieBannerService';
         readonly number: 'eac9cdc4-ecee-49f2-91da-7627e15c1f3c';
+        readonly MODE_DISABLED;
+        readonly MODE_REJECT;
+        readonly MODE_REJECT_OR_ACCEPT;
+        readonly MODE_UNSET;
     };
     nsICookieJarSettings: {
         readonly name: 'nsICookieJarSettings';
@@ -61203,6 +61353,11 @@ interface CiType {
     nsICookieNotification: {
         readonly name: 'nsICookieNotification';
         readonly number: '5b3490f2-75f0-4e36-9f3d-47c857ecdfbb';
+        readonly COOKIE_DELETED;
+        readonly COOKIE_ADDED;
+        readonly COOKIE_CHANGED;
+        readonly ALL_COOKIES_CLEARED;
+        readonly COOKIES_BATCH_DELETED;
     };
     nsICookiePermission: {
         readonly name: 'nsICookiePermission';
@@ -61337,6 +61492,39 @@ interface CiType {
     nsIDNSService: {
         readonly name: 'nsIDNSService';
         readonly number: 'de5642c6-61fc-4fcf-9a47-03226b0d4e21';
+        readonly RESOLVE_TYPE_DEFAULT;
+        readonly RESOLVE_TYPE_TXT;
+        readonly RESOLVE_TYPE_HTTPSSVC;
+        readonly MODE_NATIVEONLY;
+        readonly MODE_RESERVED1;
+        readonly MODE_TRRFIRST;
+        readonly MODE_TRRONLY;
+        readonly MODE_RESERVED4;
+        readonly MODE_TRROFF;
+        readonly RESOLVE_DEFAULT_FLAGS;
+        readonly RESOLVE_BYPASS_CACHE;
+        readonly RESOLVE_CANONICAL_NAME;
+        readonly RESOLVE_PRIORITY_MEDIUM;
+        readonly RESOLVE_PRIORITY_LOW;
+        readonly RESOLVE_SPECULATE;
+        readonly RESOLVE_DISABLE_IPV6;
+        readonly RESOLVE_OFFLINE;
+        readonly RESOLVE_DISABLE_IPV4;
+        readonly RESOLVE_ALLOW_NAME_COLLISION;
+        readonly RESOLVE_DISABLE_TRR;
+        readonly RESOLVE_REFRESH_CACHE;
+        readonly RESOLVE_TRR_MODE_MASK;
+        readonly RESOLVE_TRR_DISABLED_MODE;
+        readonly RESOLVE_IGNORE_SOCKS_DNS;
+        readonly RESOLVE_IP_HINT;
+        readonly RESOLVE_WANT_RECORD_ON_ERROR;
+        readonly ALL_DNSFLAGS_BITS;
+        readonly CONFIRM_OFF;
+        readonly CONFIRM_TRYING_OK;
+        readonly CONFIRM_OK;
+        readonly CONFIRM_FAILED;
+        readonly CONFIRM_TRYING_FAILED;
+        readonly CONFIRM_DISABLED;
     };
     nsIDOMChromeWindow: {
         readonly name: 'nsIDOMChromeWindow';
@@ -61587,10 +61775,15 @@ interface CiType {
     nsIDataStorageManager: {
         readonly name: 'nsIDataStorageManager';
         readonly number: '71b49926-fd4e-43e2-ab8d-d9b049413c0b';
+        readonly AlternateServices;
+        readonly ClientAuthRememberList;
+        readonly SiteSecurityServiceState;
     };
     nsIDataStorage: {
         readonly name: 'nsIDataStorage';
         readonly number: 'fcbb5ec4-7134-4069-91c6-9378eff51e03';
+        readonly Persistent;
+        readonly Private;
     };
     nsIDataStorageItem: {
         readonly name: 'nsIDataStorageItem';
@@ -61663,6 +61856,22 @@ interface CiType {
     nsIDocShell: {
         readonly name: 'nsIDocShell';
         readonly number: '';
+        readonly ENUMERATE_FORWARDS;
+        readonly ENUMERATE_BACKWARDS;
+        readonly APP_TYPE_UNKNOWN;
+        readonly APP_TYPE_MAIL;
+        readonly APP_TYPE_EDITOR;
+        readonly BUSY_FLAGS_NONE;
+        readonly BUSY_FLAGS_BUSY;
+        readonly BUSY_FLAGS_BEFORE_PAGE_LOAD;
+        readonly BUSY_FLAGS_PAGE_LOADING;
+        readonly LOAD_CMD_NORMAL;
+        readonly LOAD_CMD_RELOAD;
+        readonly LOAD_CMD_HISTORY;
+        readonly LOAD_CMD_PUSHSTATE;
+        readonly META_VIEWPORT_OVERRIDE_DISABLED;
+        readonly META_VIEWPORT_OVERRIDE_ENABLED;
+        readonly META_VIEWPORT_OVERRIDE_NONE;
     };
     nsIDocShellTreeItem: {
         readonly name: 'nsIDocShellTreeItem';
@@ -61761,6 +61970,8 @@ interface CiType {
     nsIE10SUtils: {
         readonly name: 'nsIE10SUtils';
         readonly number: '1e18680e-052d-4509-a17e-678f5c495e02';
+        readonly REMOTE_WORKER_TYPE_SHARED;
+        readonly REMOTE_WORKER_TYPE_SERVICE;
     };
     nsIEarlyHintObserver: {
         readonly name: 'nsIEarlyHintObserver';
@@ -61960,6 +62171,13 @@ interface CiType {
     nsIFilePicker: {
         readonly name: 'nsIFilePicker';
         readonly number: '9285b984-02d3-46b4-9514-7da8c471a747';
+        readonly modeOpen;
+        readonly modeSave;
+        readonly modeGetFolder;
+        readonly modeOpenMultiple;
+        readonly returnOK;
+        readonly returnCancel;
+        readonly returnReplace;
         readonly filterAll: 0x001;
         readonly filterHTML: 0x002;
         readonly filterText: 0x004;
@@ -61971,6 +62189,10 @@ interface CiType {
         readonly filterAudio: 0x100;
         readonly filterVideo: 0x200;
         readonly filterPDF: 0x400;
+        readonly captureNone;
+        readonly captureDefault;
+        readonly captureUser;
+        readonly captureEnv;
     };
     nsIFilePickerShownCallback: {
         readonly name: 'nsIFilePickerShownCallback';
@@ -62706,6 +62928,9 @@ interface CiType {
         readonly HTTPS_ONLY_UPGRADED_HTTPS_FIRST;
         readonly HTTPS_ONLY_BYPASS_ORB;
         readonly HTTPS_FIRST_EXEMPT_NEXT_LOAD;
+        readonly NoStoragePermission;
+        readonly HasStoragePermission;
+        readonly StoragePermissionAllowListed;
         readonly TAINTING_BASIC: 0;
         readonly TAINTING_CORS: 1;
         readonly TAINTING_OPAQUE: 2;
@@ -62745,6 +62970,14 @@ interface CiType {
         readonly BLOCKING_REASON_CONTENT_POLICY_PRELOAD: 4006;
         readonly BLOCKING_REASON_NOT_SAME_ORIGIN: 5000;
         readonly BLOCKING_REASON_EXTENSION_WEBREQUEST: 6000;
+        readonly OPENER_POLICY_UNSAFE_NONE;
+        readonly OPENER_POLICY_SAME_ORIGIN;
+        readonly OPENER_POLICY_SAME_ORIGIN_ALLOW_POPUPS;
+        readonly OPENER_POLICY_EMBEDDER_POLICY_REQUIRE_CORP_FLAG;
+        readonly OPENER_POLICY_SAME_ORIGIN_EMBEDDER_POLICY_REQUIRE_CORP;
+        readonly EMBEDDER_POLICY_NULL;
+        readonly EMBEDDER_POLICY_REQUIRE_CORP;
+        readonly EMBEDDER_POLICY_CREDENTIALLESS;
     };
     nsILoadURIDelegate: {
         readonly name: 'nsILoadURIDelegate';
@@ -63217,6 +63450,9 @@ interface CiType {
     nsINetworkConnectivityService: {
         readonly name: 'nsINetworkConnectivityService';
         readonly number: '2693457e-3ba5-4455-991f-5350946adb12';
+        readonly UNKNOWN;
+        readonly OK;
+        readonly NOT_AVAILABLE;
     };
     nsIListNetworkAddressesListener: {
         readonly name: 'nsIListNetworkAddressesListener';
@@ -63712,6 +63948,9 @@ interface CiType {
         readonly kLandscapeOrientation: 1;
         readonly kOutputFormatNative: 0;
         readonly kOutputFormatPDF: 2;
+        readonly kOutputDestinationPrinter;
+        readonly kOutputDestinationFile;
+        readonly kOutputDestinationStream;
         readonly kDuplexNone: 0;
         readonly kDuplexFlipOnLongEdge: 1;
         readonly kDuplexFlipOnShortEdge: 2;
@@ -64077,6 +64316,15 @@ interface CiType {
     nsIReferrerInfo: {
         readonly name: 'nsIReferrerInfo';
         readonly number: '';
+        readonly EMPTY;
+        readonly NO_REFERRER_WHEN_DOWNGRADE;
+        readonly NO_REFERRER;
+        readonly ORIGIN;
+        readonly ORIGIN_WHEN_CROSS_ORIGIN;
+        readonly UNSAFE_URL;
+        readonly SAME_ORIGIN;
+        readonly STRICT_ORIGIN;
+        readonly STRICT_ORIGIN_WHEN_CROSS_ORIGIN;
     };
     nsIReflowObserver: {
         readonly name: 'nsIReflowObserver';
@@ -64101,6 +64349,10 @@ interface CiType {
     nsIRemoteTab: {
         readonly name: 'nsIRemoteTab';
         readonly number: '';
+        readonly NAVIGATE_BACK;
+        readonly NAVIGATE_FORWARD;
+        readonly NAVIGATE_INDEX;
+        readonly NAVIGATE_URL;
     };
     nsIRequest: {
         readonly name: 'nsIRequest';
@@ -64110,6 +64362,10 @@ interface CiType {
         readonly LOAD_BACKGROUND;
         readonly LOAD_HTML_OBJECT_DATA;
         readonly LOAD_DOCUMENT_NEEDS_COOKIE;
+        readonly TRR_DEFAULT_MODE;
+        readonly TRR_DISABLED_MODE;
+        readonly TRR_FIRST_MODE;
+        readonly TRR_ONLY_MODE;
         readonly LOAD_TRR_MASK;
         readonly LOAD_TRR_DISABLED_MODE;
         readonly LOAD_TRR_FIRST_MODE;
@@ -64259,6 +64515,10 @@ interface CiType {
     nsIScriptableContentIterator: {
         readonly name: 'nsIScriptableContentIterator';
         readonly number: '9f25fb2a-265f-44f9-a122-62bbf443239e';
+        readonly NOT_INITIALIZED;
+        readonly POST_ORDER_ITERATOR;
+        readonly PRE_ORDER_ITERATOR;
+        readonly SUBTREE_ITERATOR;
     };
     nsIScriptableInputStream: {
         readonly name: 'nsIScriptableInputStream';
@@ -64521,6 +64781,9 @@ interface CiType {
         readonly ERROR_MULTIPLE_INCLUDE_SUBDOMAINS: 7;
         readonly ERROR_INVALID_INCLUDE_SUBDOMAINS: 8;
         readonly ERROR_COULD_NOT_SAVE_STATE: 13;
+        readonly ExactDomain;
+        readonly RootDomain;
+        readonly BaseDomain;
     };
     nsISlowScriptDebugCallback: {
         readonly name: 'nsISlowScriptDebugCallback';
@@ -65009,6 +65272,55 @@ interface CiType {
     nsITRRSkipReason: {
         readonly name: 'nsITRRSkipReason';
         readonly number: 'e61b5d39-f6d6-4ed3-aead-1213b24c6f27';
+        readonly TRR_UNSET;
+        readonly TRR_OK;
+        readonly TRR_NO_GSERVICE;
+        readonly TRR_PARENTAL_CONTROL;
+        readonly TRR_OFF_EXPLICIT;
+        readonly TRR_REQ_MODE_DISABLED;
+        readonly TRR_MODE_NOT_ENABLED;
+        readonly TRR_FAILED;
+        readonly TRR_MODE_UNHANDLED_DEFAULT;
+        readonly TRR_MODE_UNHANDLED_DISABLED;
+        readonly TRR_DISABLED_FLAG;
+        readonly TRR_TIMEOUT;
+        readonly TRR_CHANNEL_DNS_FAIL;
+        readonly TRR_IS_OFFLINE;
+        readonly TRR_NOT_CONFIRMED;
+        readonly TRR_DID_NOT_MAKE_QUERY;
+        readonly TRR_UNKNOWN_CHANNEL_FAILURE;
+        readonly TRR_HOST_BLOCKED_TEMPORARY;
+        readonly TRR_SEND_FAILED;
+        readonly TRR_NET_RESET;
+        readonly TRR_NET_TIMEOUT;
+        readonly TRR_NET_REFUSED;
+        readonly TRR_NET_INTERRUPT;
+        readonly TRR_NET_INADEQ_SEQURITY;
+        readonly TRR_NO_ANSWERS;
+        readonly TRR_DECODE_FAILED;
+        readonly TRR_EXCLUDED;
+        readonly TRR_SERVER_RESPONSE_ERR;
+        readonly TRR_RCODE_FAIL;
+        readonly TRR_NO_CONNECTIVITY;
+        readonly TRR_NXDOMAIN;
+        readonly TRR_REQ_CANCELLED;
+        readonly ODOH_KEY_NOT_USABLE;
+        readonly ODOH_UPDATE_KEY_FAILED;
+        readonly ODOH_KEY_NOT_AVAILABLE;
+        readonly ODOH_ENCRYPTION_FAILED;
+        readonly ODOH_DECRYPTION_FAILED;
+        readonly TRR_HEURISTIC_TRIPPED_GOOGLE_SAFESEARCH;
+        readonly TRR_HEURISTIC_TRIPPED_YOUTUBE_SAFESEARCH;
+        readonly TRR_HEURISTIC_TRIPPED_ZSCALER_CANARY;
+        readonly TRR_HEURISTIC_TRIPPED_CANARY;
+        readonly TRR_HEURISTIC_TRIPPED_MODIFIED_ROOTS;
+        readonly TRR_HEURISTIC_TRIPPED_PARENTAL_CONTROLS;
+        readonly TRR_HEURISTIC_TRIPPED_THIRD_PARTY_ROOTS;
+        readonly TRR_HEURISTIC_TRIPPED_ENTERPRISE_POLICY;
+        readonly TRR_HEURISTIC_TRIPPED_VPN;
+        readonly TRR_HEURISTIC_TRIPPED_PROXY;
+        readonly TRR_HEURISTIC_TRIPPED_NRPT;
+        readonly TRR_BAD_URL;
     };
     nsITXTToHTMLConv: {
         readonly name: 'nsITXTToHTMLConv';
@@ -65124,6 +65436,8 @@ interface CiType {
     nsIThread: {
         readonly name: 'nsIThread';
         readonly number: '';
+        readonly QOS_PRIORITY_NORMAL;
+        readonly QOS_PRIORITY_LOW;
     };
     nsIThreadInternal: {
         readonly name: 'nsIThreadInternal';
@@ -65222,6 +65536,12 @@ interface CiType {
     nsIToolkitProfileService: {
         readonly name: 'nsIToolkitProfileService';
         readonly number: '1947899b-f369-48fa-89da-f7c37bb1e6bc';
+        readonly hasSync;
+        readonly quit;
+        readonly createNewProfile;
+        readonly exit;
+        readonly launchWithProfile;
+        readonly restart;
     };
     nsIToolkitShellService: {
         readonly name: 'nsIToolkitShellService';
@@ -65307,6 +65627,10 @@ interface CiType {
     nsITransportSecurityInfo: {
         readonly name: 'nsITransportSecurityInfo';
         readonly number: '';
+        readonly ERROR_UNSET;
+        readonly ERROR_TRUST;
+        readonly ERROR_DOMAIN;
+        readonly ERROR_TIME;
         readonly SSL_VERSION_3: 0;
         readonly TLS_VERSION_1: 1;
         readonly TLS_VERSION_1_1: 2;
@@ -65554,6 +65878,11 @@ interface CiType {
     nsIUrlClassifierFeature: {
         readonly name: 'nsIUrlClassifierFeature';
         readonly number: 'a6c9b24e-b4f1-426e-af58-2c976c3943a8';
+        readonly blocklist;
+        readonly entitylist;
+        readonly blocklistURI;
+        readonly entitylistURI;
+        readonly pairwiseEntitylistURI;
     };
     nsIUrlClassifierFeatureResult: {
         readonly name: 'nsIUrlClassifierFeatureResult';
@@ -65985,10 +66314,15 @@ interface CiType {
     nsIWebTransport: {
         readonly name: 'nsIWebTransport';
         readonly number: 'c20d6e77-8cb1-4838-a88d-fff826080aa3';
+        readonly UNKNOWN_ERROR;
+        readonly INVALID_STATE_ERROR;
     };
     WebTransportSessionEventListener: {
         readonly name: 'WebTransportSessionEventListener';
         readonly number: '0e3cb269-f318-43c8-959e-897f57894b71';
+        readonly UNKNOWN;
+        readonly DROPPED_TOO_MUCH_DATA;
+        readonly SENT;
     };
     nsIWebTransportStreamCallback: {
         readonly name: 'nsIWebTransportStreamCallback';
@@ -66221,6 +66555,41 @@ interface CiType {
     nsIXULRuntime: {
         readonly name: 'nsIXULRuntime';
         readonly number: '03602fac-fa3f-4a50-9baa-b88456fb4a0f';
+        readonly eExperimentStatusUnenrolled;
+        readonly eExperimentStatusControl;
+        readonly eExperimentStatusTreatment;
+        readonly eExperimentStatusDisqualified;
+        readonly eExperimentStatusRollout;
+        readonly eExperimentStatusCount;
+        readonly LockdownEnabled;
+        readonly MissingWebRender;
+        readonly OperatingSystemNotSupported;
+        readonly PrefNotSet;
+        readonly MissingRemoteWebGL;
+        readonly MissingNonNativeTheming;
+        readonly DisabledByEnvVar;
+        readonly DisabledBySafeMode;
+        readonly DisabledByE10S;
+        readonly DisabledByUserPref;
+        readonly EnabledByUserPref;
+        readonly DisabledByControlGroup;
+        readonly EnabledByTreatmentGroup;
+        readonly DisabledByDefault;
+        readonly EnabledByDefault;
+        readonly DecodersArentRemote;
+        readonly IncompatibleMitigationPolicy;
+        readonly eFissionStatusUnknown;
+        readonly eFissionExperimentControl;
+        readonly eFissionExperimentTreatment;
+        readonly eFissionDisabledByE10sEnv;
+        readonly eFissionEnabledByEnv;
+        readonly eFissionDisabledByEnv;
+        readonly eFissionEnabledByDefault;
+        readonly eFissionDisabledByDefault;
+        readonly eFissionEnabledByUserPref;
+        readonly eFissionDisabledByUserPref;
+        readonly eFissionDisabledByE10sOther;
+        readonly eFissionEnabledByRollout;
         readonly PROCESS_TYPE_DEFAULT: 0;
         readonly PROCESS_TYPE_CONTENT: 2;
         readonly PROCESS_TYPE_IPDLUNITTEST: 3;
@@ -66277,6 +66646,9 @@ interface CiType {
     nsPIWindowWatcher: {
         readonly name: 'nsPIWindowWatcher';
         readonly number: 'd162f9c4-19d5-4723-931f-f1e51bfa9f68';
+        readonly PRINT_NONE;
+        readonly PRINT_INTERNAL;
+        readonly PRINT_WINDOW_DOT_PRINT;
     };
     txIEXSLTFunctions: {
         readonly name: 'txIEXSLTFunctions';
@@ -66342,6 +66714,19 @@ interface CiType {
         readonly name: 'nsIXPCTestCEnums';
         readonly number: '6a2f918e-cda2-11e8-bc9a-a34c716d1f2a';
         readonly testConst: 1;
+        readonly shouldBe1Explicit;
+        readonly shouldBe2Explicit;
+        readonly shouldBe4Explicit;
+        readonly shouldBe8Explicit;
+        readonly shouldBe12Explicit;
+        readonly shouldBe0Implicit;
+        readonly shouldBe1Implicit;
+        readonly shouldBe2Implicit;
+        readonly shouldBe3Implicit;
+        readonly shouldBe5Implicit;
+        readonly shouldBe6Implicit;
+        readonly shouldBe2AgainImplicit;
+        readonly shouldBe3AgainImplicit;
     };
     nsIXPCTestESMReturnCodeParent: {
         readonly name: 'nsIXPCTestESMReturnCodeParent';
