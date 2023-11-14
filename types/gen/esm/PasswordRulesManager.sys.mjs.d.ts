@@ -3,5 +3,6 @@ declare module "resource://gre/modules/PasswordRulesManager.sys.mjs" {
         initPasswordRulesCollection();
         _transformRulesToMap(rules?);
         generatePassword(uri?, param1?);
+        _passwordRulesClient;
     }
 }

@@ -20,5 +20,6 @@ declare module "resource://gre/modules/FinderIterator.sys.mjs" {
         _collectFrames(window?, finder?);
         _getDocShell(windowOrRange?);
         _rangeStartsInLink(range?);
+        _timeout;
     }
 }

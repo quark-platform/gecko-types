@@ -28,5 +28,10 @@ declare module "resource://gre/modules/DownloadList.sys.mjs" {
         onDownloadAdded(download?);
         onDownloadChanged(download?);
         onDownloadRemoved(download?);
+        _list;
+        allHaveStopped;
+        allUnknownSize;
+        progressTotalBytes;
+        progressCurrentBytes;
     }
 }

@@ -140,6 +140,7 @@ declare module "resource://app/modules/UrlbarUtils.sys.mjs" {
         constructor(param0);
         cancel();
         _log(msg?, param1?);
+        done;
     }
     export class L10nCache {
         constructor(l10n);
@@ -152,10 +153,13 @@ declare module "resource://app/modules/UrlbarUtils.sys.mjs" {
         size();
         observe(subject?, topic?, data?);
         _key(param0?);
+        _messagesByKey;
     }
     export class TaskQueue {
         get emptyPromise();
         queue(callback?);
         _doNextTask();
+        _queue;
+        _emptyCallbacks;
     }
 }

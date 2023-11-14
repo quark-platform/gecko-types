@@ -161,44 +161,55 @@ function handleClass(c: ClassExport): ts.Statement[] {
             ]),
           ]
         : undefined,
-      c.methods.map((m) => {
-        switch (m.kind) {
-          case 'constructor':
-            return ts.factory.createConstructorDeclaration(
-              undefined,
-              m.params.map((param) => createParam(param.id)),
-              undefined
-            )
-          case 'method':
-            return ts.factory.createMethodDeclaration(
-              undefined,
-              undefined,
-              ts.factory.createIdentifier(m.id),
-              undefined,
-              undefined,
-              m.params.map((param) => createParam(param.id, true)),
-              undefined,
-              undefined
-            )
-          case 'get':
-            return ts.factory.createGetAccessorDeclaration(
-              undefined,
-              ts.factory.createIdentifier(m.id),
-              [],
-              undefined,
-              undefined
-            )
-          case 'set':
-            return ts.factory.createSetAccessorDeclaration(
-              undefined,
-              ts.factory.createIdentifier(m.id),
-              m.params.map((param) => createParam(param.id)),
-              undefined
-            )
-          default:
-            throw new Error(`Unknown method kind: ${m.kind}`)
-        }
-      })
+      [
+        ...c.methods.map((m) => {
+          switch (m.kind) {
+            case 'constructor':
+              return ts.factory.createConstructorDeclaration(
+                undefined,
+                m.params.map((param) => createParam(param.id)),
+                undefined
+              )
+            case 'method':
+              return ts.factory.createMethodDeclaration(
+                undefined,
+                undefined,
+                ts.factory.createIdentifier(m.id),
+                undefined,
+                undefined,
+                m.params.map((param) => createParam(param.id, true)),
+                undefined,
+                undefined
+              )
+            case 'get':
+              return ts.factory.createGetAccessorDeclaration(
+                undefined,
+                ts.factory.createIdentifier(m.id),
+                [],
+                undefined,
+                undefined
+              )
+            case 'set':
+              return ts.factory.createSetAccessorDeclaration(
+                undefined,
+                ts.factory.createIdentifier(m.id),
+                m.params.map((param) => createParam(param.id)),
+                undefined
+              )
+            default:
+              throw new Error(`Unknown method kind: ${m.kind}`)
+          }
+        }),
+        ...c.properties.map((p) =>
+          ts.factory.createPropertyDeclaration(
+            undefined,
+            ts.factory.createIdentifier(p),
+            undefined,
+            undefined,
+            undefined
+          )
+        ),
+      ]
     ),
   ].filter(Boolean)
 }

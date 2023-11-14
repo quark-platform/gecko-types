@@ -11,5 +11,11 @@ declare module "resource://gre/modules/mozIntl.sys.mjs" {
         getScriptDirection(locale?);
         get DateTimeFormat();
         get DisplayNames();
+        Collator;
+        ListFormat;
+        Locale;
+        NumberFormat;
+        PluralRules;
+        RelativeTimeFormat;
     }
 }

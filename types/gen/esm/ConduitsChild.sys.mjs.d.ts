@@ -12,5 +12,9 @@ declare module "resource://gre/modules/ConduitsChild.sys.mjs" {
     }
     export class ProcessConduitsChild extends JSProcessActorChild {
         constructor();
+        openConduit;
+        receiveMessage;
+        willDestroy;
+        didDestroy;
     }
 }

@@ -5,5 +5,6 @@ declare module "resource://app/modules/DownloadSpamProtection.sys.mjs" {
         removeDownloadSpamForWindow(url?, window?);
         register(view?, window?);
         unregister(window?);
+        _forWindowMap;
     }
 }

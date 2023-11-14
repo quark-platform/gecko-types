@@ -19,5 +19,8 @@ declare module "resource://gre/modules/SearchSettings.sys.mjs" {
         observe(engine?, topic?, verb?);
         isCurrentAndCachedSettingsEqual();
         migrateEngineIds(clonedSettings?);
+        QueryInterface;
+        SETTINGS_INVALIDATION_DELAY;
+        _batchTask;
     }
 }

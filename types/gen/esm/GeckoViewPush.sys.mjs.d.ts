@@ -10,5 +10,8 @@ declare module "resource://gre/modules/GeckoViewPush.sys.mjs" {
         notificationForOriginShown(origin?);
         notificationForOriginClosed(origin?);
         reportDeliveryError(messageId?, reason?);
+        pushTopic;
+        subscriptionChangeTopic;
+        subscriptionModifiedTopic;
     }
 }

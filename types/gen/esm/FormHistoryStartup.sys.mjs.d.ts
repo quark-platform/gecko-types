@@ -3,5 +3,7 @@ declare module "resource://gre/modules/FormHistoryStartup.sys.mjs" {
         observe(_subject?, topic?, _data?);
         init();
         receiveMessage(message?);
+        classID;
+        QueryInterface;
     }
 }

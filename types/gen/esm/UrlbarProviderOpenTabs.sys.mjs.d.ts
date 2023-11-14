@@ -10,5 +10,8 @@ declare module "resource://app/modules/UrlbarProviderOpenTabs.sys.mjs" {
         registerOpenTab(url?, userContextId?, isInPrivateWindow?);
         unregisterOpenTab(url?, userContextId?, isInPrivateWindow?);
         startQuery(queryContext?, addCallback?);
+        memoryTableInitialized;
+        _openTabs;
+        promiseDBPopulated;
     }
 }

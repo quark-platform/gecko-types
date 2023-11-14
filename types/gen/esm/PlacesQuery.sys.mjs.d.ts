@@ -11,5 +11,7 @@ declare module "resource://gre/modules/PlacesQuery.sys.mjs" {
         handlePageTitleChanged(event?);
         getStartOfDayTimestamp(date?);
         getStartOfMonthTimestamp(date?);
+        cachedHistory;
+        cachedHistoryOptions;
     }
 }

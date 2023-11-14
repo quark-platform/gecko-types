@@ -15,5 +15,7 @@ declare module "resource://gre/modules/URLQueryStrippingListService.sys.mjs" {
         observe(subject?, topic?, data?);
         handleEvent(event?);
         testWaitForInit();
+        classId;
+        QueryInterface;
     }
 }

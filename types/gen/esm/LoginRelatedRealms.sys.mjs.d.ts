@@ -3,5 +3,7 @@ declare module "resource://gre/modules/LoginRelatedRealms.sys.mjs" {
         onRemoteSettingsSync(aEvent?);
         getSharedCredentialsCollection();
         findRelatedRealms(formOrigin?);
+        _sharedCredentialsClient;
+        _relatedDomainsList;
     }
 }

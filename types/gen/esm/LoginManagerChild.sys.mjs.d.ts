@@ -35,6 +35,17 @@ declare module "resource://gre/modules/LoginManagerChild.sys.mjs" {
         _getFormFields(form?, isSubmission?, recipes?, param3?);
         getUserNameAndPasswordFields(aField?);
         getFieldContext(aField?);
+        fillsByRootElement;
+        generatedPasswordFields;
+        lastSubmittedValuesByRootElement;
+        fieldModificationsByRootElement;
+        possibleUsernames;
+        possiblePasswords;
+        formLikeByObservedNode;
+        formlessModifiedPasswordFields;
+        mockUsernameOnlyField;
+        numFormHasPossibleUsernameEvent;
+        captureLoginTimeStamp;
     }
     export class LoginManagerChild extends JSWindowActorChild {
         forWindow(window?);

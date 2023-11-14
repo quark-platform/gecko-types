@@ -8,5 +8,6 @@ declare module "resource://gre/modules/PlacesFrecencyRecalculator.sys.mjs" {
         maybeStartFrecencyRecalculation();
         decay();
         observe(subject?, topic?, data?);
+        classID;
     }
 }

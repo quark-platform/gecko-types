@@ -37,5 +37,9 @@ declare module "resource://app/modules/FeatureCallout.sys.mjs" {
         _initTheme(theme?);
         _applyTheme();
         _setThemeVariable(name?, value?);
+        _popupAttachmentPoints;
+        _HTMLArrowPositions;
+        themePropNames;
+        themePresets;
     }
 }

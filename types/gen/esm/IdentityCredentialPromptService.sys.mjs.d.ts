@@ -5,5 +5,7 @@ declare module "resource://gre/modules/IdentityCredentialPromptService.sys.mjs" 
         showPolicyPrompt(browsingContext?, identityProvider?, identityManifest?, identityCredentialMetadata?);
         showAccountListPrompt(browsingContext?, accountList?, provider?, providerManifest?);
         close(browsingContext?);
+        classID;
+        QueryInterface;
     }
 }

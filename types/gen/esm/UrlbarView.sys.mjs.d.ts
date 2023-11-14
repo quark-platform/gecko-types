@@ -41,5 +41,7 @@ declare module "resource://app/modules/UrlbarView.sys.mjs" {
         on_command(event?);
         on_popupshowing(event?);
         onPrefChanged(pref?);
+        removeStaleRowsTimeout;
+        dynamicViewTemplatesByName;
     }
 }

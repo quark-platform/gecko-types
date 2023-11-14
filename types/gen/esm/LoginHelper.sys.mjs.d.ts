@@ -1,6 +1,11 @@
 declare module "resource://gre/modules/LoginHelper.sys.mjs" {
     export class ParentAutocompleteOption {
         constructor(icon, title, subtitle, fillMessageName, fillMessageData);
+        icon;
+        title;
+        subtitle;
+        fillMessageName;
+        fillMessageData;
     }
     var LoginHelper: {
         debug;
@@ -71,5 +76,10 @@ declare module "resource://gre/modules/LoginHelper.sys.mjs" {
         markAsOffered();
         markAsEnabled();
         markAsDisabled();
+        implementation;
+        PREF_AVAILABLE_VALUE;
+        PREF_OFFERED_VALUE;
+        PREF_ENABLED_VALUE;
+        PREF_DISABLED_VALUE;
     }
 }

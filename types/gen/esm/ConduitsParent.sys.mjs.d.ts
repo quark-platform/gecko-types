@@ -14,5 +14,8 @@ declare module "resource://gre/modules/ConduitsParent.sys.mjs" {
         didDestroy();
     }
     export class ProcessConduitsParent extends JSProcessActorParent {
+        receiveMessage;
+        willDestroy;
+        didDestroy;
     }
 }

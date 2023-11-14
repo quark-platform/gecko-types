@@ -12,5 +12,9 @@ declare module "resource://gre/modules/OpenSearchEngine.sys.mjs" {
         get _hasUpdates();
         get _updateURI();
         getAnonymizedLoadPath(shortName?, uri?);
+        _data;
+        _updateInterval;
+        _updateURL;
+        _iconUpdateURL;
     }
 }

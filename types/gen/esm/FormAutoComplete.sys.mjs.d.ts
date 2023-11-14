@@ -7,6 +7,10 @@ declare module "resource://gre/modules/FormAutoComplete.sys.mjs" {
         cancel();
         remove(value?, guid?);
         receiveMessage(msg?);
+        nextRequestID;
+        SEARCHBAR_ID;
+        cancelled;
+        inputName;
     }
     export class FormAutoCompleteResult {
         constructor(client, entries, fieldName, searchString);
@@ -27,6 +31,13 @@ declare module "resource://gre/modules/FormAutoComplete.sys.mjs" {
         getFinalCompleteValueAt(index?);
         isRemovableAt(index?);
         removeValueAt(index?);
+        QueryInterface;
+        client;
+        entries;
+        fieldName;
+        externalEntries;
+        searchString;
+        errorDescription;
     }
     export class FormAutoComplete {
         constructor();
@@ -38,5 +49,9 @@ declare module "resource://gre/modules/FormAutoComplete.sys.mjs" {
         getAutoCompleteValues(client?, fieldname?, searchString?, scenarioName?, callback?);
         observe(subject?, topic?, data?);
         sendFillRequestToFormHistoryParent(input?, comment?);
+        classID;
+        QueryInterface;
+        fillRequestId;
+        observer;
     }
 }

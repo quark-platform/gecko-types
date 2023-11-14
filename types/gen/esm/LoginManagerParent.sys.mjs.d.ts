@@ -19,5 +19,6 @@ declare module "resource://gre/modules/LoginManagerParent.sys.mjs" {
         showDoorhanger(browser?, formOrigin?, param2?);
         _onPasswordEditedOrGenerated(browser?, formOrigin?, param2?);
         get recipeParentPromise();
+        possibleValues;
     }
 }

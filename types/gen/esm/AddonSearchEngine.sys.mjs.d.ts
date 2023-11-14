@@ -12,5 +12,7 @@ declare module "resource://gre/modules/AddonSearchEngine.sys.mjs" {
         toJSON();
         checkAndReportIfSettingsValid();
         getWebExtensionPolicy(id?);
+        _extensionID;
+        _locale;
     }
 }

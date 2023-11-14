@@ -14,5 +14,6 @@ declare module "resource://app/modules/UrlbarEventBufferer.sys.mjs" {
         get waitingDeferUserSelectionProviders();
         isSafeToPlayDeferredEvent(event?);
         get lastResultIsSelected();
+        DEFERRING_TIMEOUT_MS;
     }
 }

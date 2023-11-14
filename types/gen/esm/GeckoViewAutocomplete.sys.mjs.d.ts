@@ -21,6 +21,7 @@ declare module "resource://gre/modules/GeckoViewAutocomplete.sys.mjs" {
     }
     export class SelectOption {
         constructor(param0);
+        Hint;
     }
     var GeckoViewAutocomplete: {
         _prompt;

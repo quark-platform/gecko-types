@@ -47,5 +47,12 @@ declare module "resource://gre/modules/SearchService.sys.mjs" {
         observe(engine?, topic?, verb?);
         _makeEngineFromConfig(config?);
         _showRemovalOfSearchEngineNotificationBox(prevCurrentEngineName?, newCurrentEngineName?);
+        classID;
+        willThrowErrorDuringInitInTest;
+        _reloadingEngines;
+        _engines;
+        _cachedSortedEngines;
+        _searchDefault;
+        QueryInterface;
     }
 }

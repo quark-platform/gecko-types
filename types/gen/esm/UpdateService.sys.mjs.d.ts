@@ -6,5 +6,7 @@ declare module "resource://gre/modules/UpdateService.sys.mjs" {
         checkForUpdates(checkType?);
         stopCheck(checkId?);
         stopAllChecks();
+        classID;
+        QueryInterface;
     }
 }

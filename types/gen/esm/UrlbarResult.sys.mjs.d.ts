@@ -12,5 +12,6 @@ declare module "resource://app/modules/UrlbarResult.sys.mjs" {
         removeDynamicResultType(name?);
         getDynamicResultType(name?);
         toString();
+        _dynamicResultTypesByName;
     }
 }

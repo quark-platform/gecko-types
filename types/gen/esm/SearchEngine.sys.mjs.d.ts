@@ -8,6 +8,8 @@ declare module "resource://gre/modules/SearchEngine.sys.mjs" {
         _hasRelation(rel?);
         _initWithJSON(json?);
         toJSON();
+        params;
+        rels;
     }
     export class SearchEngine {
         constructor(param0);
@@ -62,5 +64,21 @@ declare module "resource://gre/modules/SearchEngine.sys.mjs" {
         getIcons();
         speculativeConnect(options?);
         get id();
+        QueryInterface;
+        _metaData;
+        _loadPath;
+        _description;
+        _engineToUpdate;
+        _hasPreferredIcon;
+        _name;
+        _queryCharset;
+        _sendAttributionRequest;
+        _orderHint;
+        _telemetryId;
+        _engineAddedToStore;
+        _definedAliases;
+        _urls;
+        _searchUrlQueryParamName;
+        _searchUrlPublicSuffix;
     }
 }

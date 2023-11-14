@@ -4,5 +4,6 @@ declare module "resource://gre/modules/AutoCompleteSimpleSearch.sys.mjs" {
         overrideNextResult(result?);
         startSearch(searchString?, searchParam?, previousResult?, listener?);
         stopSearch();
+        _result;
     }
 }

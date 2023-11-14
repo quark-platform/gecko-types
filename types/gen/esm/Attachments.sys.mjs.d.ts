@@ -18,5 +18,6 @@ declare module "resource://gre/modules/services-settings/Attachments.sys.mjs" {
         _readAttachmentDump(attachmentId?);
         _makeDirs();
         _rmDirs();
+        _RESOURCE_BASE_URL;
     }
 }

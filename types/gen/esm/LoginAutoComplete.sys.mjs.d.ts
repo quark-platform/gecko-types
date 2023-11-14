@@ -12,10 +12,17 @@ declare module "resource://gre/modules/LoginAutoComplete.sys.mjs" {
         getFinalCompleteValueAt(index?);
         isRemovableAt(index?);
         removeValueAt(index?);
+        QueryInterface;
+        searchString;
+        searchResult;
+        defaultIndex;
+        errorDescription;
     }
     export class LoginAutoComplete {
         startSearch(aSearchString?, aPreviousResult?, aElement?, aCallback?);
         stopSearch();
         isProbablyANewPasswordField(inputElement?);
+        classID;
+        QueryInterface;
     }
 }

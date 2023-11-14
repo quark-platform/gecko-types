@@ -3,6 +3,8 @@ declare module "resource://gre/modules/BackgroundTasksManager.sys.mjs" {
         get helpInfo();
         handle(commandLine?);
         runBackgroundTaskNamed(name?, commandLine?);
+        classID;
+        QueryInterface;
     }
     var EXIT_CODE: {
         SUCCESS: number;
