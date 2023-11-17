@@ -4,6 +4,7 @@
 ///<reference path="./custom/idlTypes.d.ts" />
 ///<reference path="./custom/other.d.ts" />
 ///<reference path="./custom/webidlTypes.d.ts" />
+///<reference path="./custom/WindowGlobalActors.d.ts" />
 ///<reference path="./custom/xulElements.d.ts" />
 
 ///<reference path="./gen/idls.d.ts" />
