@@ -1,4 +1,4 @@
-interface WindowContext {
+declare interface WindowContext {
   readonly browsingContext?: BrowsingContext | null
 
   readonly windowGlobalChild?: WindowGlobalChild | null // in-process only
@@ -42,7 +42,7 @@ interface WindowContext {
   allowJavascript: boolean
 }
 
-interface WindowGlobalParent extends WindowContext {
+declare interface WindowGlobalParent extends WindowContext {
   readonly isClosed: boolean
 
   readonly isCurrentGlobal: boolean
@@ -148,7 +148,7 @@ interface WindowGlobalParent extends WindowContext {
   hasActivePeerConnections(): boolean
 }
 
-interface WindowGlobalChild {
+declare interface WindowGlobalChild {
   readonly isClosed: boolean
   readonly isInProcess: boolean
   readonly browsingContext: BrowsingContext
