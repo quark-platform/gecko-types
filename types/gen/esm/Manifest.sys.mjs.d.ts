@@ -1,8 +1,7 @@
-declare module "resource://gre/modules/Manifest.sys.mjs" {
-    export var Manifests: {
-        _initialize();
-        manifestInstalled(manifest?);
-        findManifestUrl(url?);
-        getManifest(browser?, manifestUrl?);
-    };
+declare module "resource://gre/modules/Manifest.sys.mjs" {export namespace Manifests {
+    function _initialize(): Promise<any>;
+    function manifestInstalled(manifest: any): void;
+    function findManifestUrl(url: any): any;
+    function getManifest(browser: any, manifestUrl: any): Promise<any>;
+}
 }

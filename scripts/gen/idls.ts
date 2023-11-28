@@ -205,7 +205,7 @@ function handleEnum(code: enum_code, interfaceName: string): ts.TypeElement[] {
   const enumConstants = []
 
   for (const value of values) {
-    if (typeof value.identifier != 'string') continue
+    if (!value || typeof value.identifier != 'string') continue
     enumConstants.push(...addConstant(interfaceName, value.identifier))
   }
 

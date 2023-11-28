@@ -1,9 +1,12 @@
-declare module "resource://gre/modules/ContentPrefServiceParent.sys.mjs" {
-    export class ContentPrefsParent extends JSProcessActorParent {
-        constructor();
-        didDestroy();
-        receiveMessage(msg?);
-        onContentPrefSet(group?, name?, value?, isPrivate?);
-        onContentPrefRemoved(group?, name?, isPrivate?);
-    }
+declare module "resource://gre/modules/ContentPrefServiceParent.sys.mjs" {export class ContentPrefsParent {
+    _prefsToObserve: Set<any>;
+    _observer: {
+        onContentPrefSet(group: any, name: any, value: any, isPrivate: any): void;
+        onContentPrefRemoved(group: any, name: any, isPrivate: any): void;
+    };
+    didDestroy(): void;
+    receiveMessage(msg: any): Promise<any>;
+    onContentPrefSet(group: any, name: any, value: any, isPrivate: any): void;
+    onContentPrefRemoved(group: any, name: any, isPrivate: any): void;
+}
 }

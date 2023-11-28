@@ -1,3 +1,2 @@
-declare module "resource://gre/modules/ExtensionStorageIDB.sys.mjs" {
-    export var ExtensionStorageIDB;
+declare module "resource://gre/modules/ExtensionStorageIDB.sys.mjs" {export let ExtensionStorageIDB: any;
 }

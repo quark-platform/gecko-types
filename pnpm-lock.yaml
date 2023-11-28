@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
+  '@total-typescript/ts-reset':
+    specifier: ^0.5.1
+    version: 0.5.1
   '@types/node':
     specifier: ^18.16.9
     version: 18.18.5
@@ -13,7 +16,7 @@ devDependencies:
     version: 1.4.0
   gecko-index:
     specifier: github:quark-platform/gecko-index
-    version: github.com/quark-platform/gecko-index/7362e6cf991e085497fc42e2289c1763a96000d1
+    version: github.com/quark-platform/gecko-index/1e57152c38780804880ed2df67d52a9076d2b5c8
   ts-node:
     specifier: ^10.9.1
     version: 10.9.1(@types/node@18.18.5)(typescript@4.9.5)
@@ -25,33 +28,6 @@ devDependencies:
     version: 4.9.5
 
 packages:
-
-  /@babel/helper-string-parser@7.22.5:
-    resolution: {integrity: sha512-mM4COjgZox8U+JcXQwPijIZLElkgEpO5rsERVDJTc2qfCDfERyob6k5WegS14SX18IIjv+XD+GrqNumY5JRCDw==}
-    engines: {node: '>=6.9.0'}
-    dev: true
-
-  /@babel/helper-validator-identifier@7.22.20:
-    resolution: {integrity: sha512-Y4OZ+ytlatR8AI+8KZfKuL5urKp7qey08ha31L8b3BwewJAoJamTzyvxPR/5D+KkdJCGPq/+8TukHBlY10FX9A==}
-    engines: {node: '>=6.9.0'}
-    dev: true
-
-  /@babel/parser@7.23.0:
-    resolution: {integrity: sha512-vvPKKdMemU85V9WE/l5wZEmImpCtLqbnTvqDS2U1fJ96KrxoW7KrXhNsNCblQlg8Ck4b85yxdTyelsMUgFUXiw==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
-    dependencies:
-      '@babel/types': 7.23.0
-    dev: true
-
-  /@babel/types@7.23.0:
-    resolution: {integrity: sha512-0oIyUfKoI3mSqMvsxBdclDwxXKXAUA8v/apZbc+iSyARYou1o8ZGDxbUYyLFoW2arqS2jDGqJuZvv1d/io1axg==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/helper-string-parser': 7.22.5
-      '@babel/helper-validator-identifier': 7.22.20
-      to-fast-properties: 2.0.0
-    dev: true
 
   /@cspotcode/source-map-support@0.8.1:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -99,6 +75,10 @@ packages:
 
   /@total-typescript/ts-reset@0.4.2:
     resolution: {integrity: sha512-vqd7ZUDSrXFVT1n8b2kc3LnklncDQFPvR58yUS1kEP23/nHPAO9l1lMjUfnPrXYYk4Hj54rrLKMW5ipwk7k09A==}
+    dev: true
+
+  /@total-typescript/ts-reset@0.5.1:
+    resolution: {integrity: sha512-AqlrT8YA1o7Ff5wPfMOL0pvL+1X+sw60NN6CcOCqs658emD6RfiXhF7Gu9QcfKBH7ELY2nInLhKSCWVoNL70MQ==}
     dev: true
 
   /@tsconfig/node10@1.0.9:
@@ -300,11 +280,6 @@ packages:
       vscode-textmate: 8.0.0
     dev: true
 
-  /to-fast-properties@2.0.0:
-    resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
-    engines: {node: '>=4'}
-    dev: true
-
   /to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
@@ -363,6 +338,12 @@ packages:
     hasBin: true
     dev: true
 
+  /typescript@5.3.2:
+    resolution: {integrity: sha512-6l+RyNy7oAHDfxC4FzSJcz9vnjTKxrLpDG5M2Vu4SHRVNg6xzqZp6LYSR9zjqQTu8DU/f5xwxUdADOkbrIX2gQ==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: true
+
   /v8-compile-cache-lib@3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
     dev: true
@@ -380,13 +361,11 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  github.com/quark-platform/gecko-index/7362e6cf991e085497fc42e2289c1763a96000d1:
-    resolution: {tarball: https://codeload.github.com/quark-platform/gecko-index/tar.gz/7362e6cf991e085497fc42e2289c1763a96000d1}
+  github.com/quark-platform/gecko-index/1e57152c38780804880ed2df67d52a9076d2b5c8:
+    resolution: {tarball: https://codeload.github.com/quark-platform/gecko-index/tar.gz/1e57152c38780804880ed2df67d52a9076d2b5c8}
     name: gecko-index
     version: 1.0.0
     dependencies:
-      '@babel/parser': 7.23.0
-      '@babel/types': 7.23.0
       '@total-typescript/ts-reset': 0.4.2
       '@types/globrex': 0.1.2
       '@types/node': 18.18.5
@@ -394,4 +373,5 @@ packages:
       '@types/workerpool': 6.4.4
       comment-parser: 1.4.0
       fast-glob: 3.3.1
+      typescript: 5.3.2
     dev: true

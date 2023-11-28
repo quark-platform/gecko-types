@@ -1,8 +1,6 @@
-declare module "resource://gre/modules/CrashReports.sys.mjs" {
-    export var CrashReports: {
-        pendingDir;
-        reportsDir;
-        submittedDir;
-        getReports;
-    };
+declare module "resource://gre/modules/CrashReports.sys.mjs" {export namespace CrashReports {
+    let pendingDir: any;
+    let reportsDir: any;
+    let submittedDir: any;
+}
 }

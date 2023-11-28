@@ -1,9 +1,7 @@
-declare module "resource://gre/modules/GeckoViewSelectionAction.sys.mjs" {
-    import type { GeckoViewModule } from "resource://gre/modules/GeckoViewModule.sys.mjs";
-    export class GeckoViewSelectionAction extends GeckoViewModule {
-        onEnable();
-        onDisable();
-        get actor();
-        onEvent(aEvent?, aData?, aCallback?);
-    }
+declare module "resource://gre/modules/GeckoViewSelectionAction.sys.mjs" {export class GeckoViewSelectionAction {
+    onEnable(): void;
+    onDisable(): void;
+    get actor(): any;
+    onEvent(aEvent: any, aData: any, aCallback: any): void;
+}
 }

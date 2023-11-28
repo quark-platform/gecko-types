@@ -1,6 +1,5 @@
-declare module "resource://gre/modules/DelayedInit.sys.mjs" {
-    export var DelayedInit: {
-        schedule(fn?, object?, name?, maxWait?);
-        scheduleList(fns?, maxWait?);
-    };
+declare module "resource://gre/modules/DelayedInit.sys.mjs" {export namespace DelayedInit {
+    function schedule(fn: any, object: any, name: any, maxWait: any): void;
+    function scheduleList(fns: any, maxWait: any): void;
+}
 }

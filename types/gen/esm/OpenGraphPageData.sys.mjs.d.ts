@@ -1,5 +1,12 @@
-declare module "resource://app/modules/pagedata/OpenGraphPageData.sys.mjs" {
-    export var OpenGraphPageData: {
-        collect(document?);
-    };
+declare module "resource://app/modules/pagedata/OpenGraphPageData.sys.mjs" {export namespace OpenGraphPageData {
+    /**
+     * Collects the opengraph data from the page.
+     *
+     * @param {Document} document
+     *   The document to collect from
+     *
+     * @returns {PageData}
+     */
+    function collect(document: Document): PageData;
+}
 }

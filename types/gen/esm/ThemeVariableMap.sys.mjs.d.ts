@@ -1,4 +1,14 @@
-declare module "resource://app/modules/ThemeVariableMap.sys.mjs" {
-    export var ThemeVariableMap;
-    export var ThemeContentPropertyList;
+declare module "resource://app/modules/ThemeVariableMap.sys.mjs" {export const ThemeVariableMap: ((string | {
+    lwtProperty: string;
+})[] | (string | {
+    isColor: boolean;
+    lwtProperty: string;
+})[] | (string | {
+    lwtProperty: string;
+    optionalElementID: string;
+})[] | (string | {
+    lwtProperty: string;
+    processColor(rgbaChannels: any): string;
+})[])[];
+export const ThemeContentPropertyList: string[];
 }

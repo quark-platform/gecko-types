@@ -1,18 +1,25 @@
-declare module "resource://gre/modules/ExtensionProcessScript.sys.mjs" {
-    export var ExtensionProcessScript: {
-        extensions;
-        initExtension(extension?);
-        initExtensionDocument(policy?, doc?, privileged?);
-        getExtensionChild(id?);
-        preloadContentScript(contentScript?);
-        loadContentScript(contentScript?, window?);
-    };
-    export var ExtensionAPIRequestHandler: {
-        initExtensionWorker(policy?, serviceWorkerInfo?);
-        onExtensionWorkerLoaded(policy?, serviceWorkerDescriptorId?);
-        onExtensionWorkerDestroyed(policy?, serviceWorkerDescriptorId?);
-        handleAPIRequest(policy?, request?);
-        getExtensionContextForAPIRequest(param0?);
-        validateAndNormalizeRequestArgs(param0?);
-    };
+declare module "resource://gre/modules/ExtensionProcessScript.sys.mjs" {export namespace ExtensionProcessScript {
+    export { extensions };
+    export function initExtension(extension: any): any;
+    export function initExtensionDocument(policy: any, doc: any, privileged: any): void;
+    export function getExtensionChild(id: any): any;
+    export function preloadContentScript(contentScript: any): void;
+    export function loadContentScript(contentScript: any, window: any): any;
+}
+export namespace ExtensionAPIRequestHandler {
+    function initExtensionWorker(policy: any, serviceWorkerInfo: any): void;
+    function onExtensionWorkerLoaded(policy: any, serviceWorkerDescriptorId: any): void;
+    function onExtensionWorkerDestroyed(policy: any, serviceWorkerDescriptorId: any): void;
+    function handleAPIRequest(policy: any, request: any): any;
+    function getExtensionContextForAPIRequest({ extension, request }: {
+        extension: any;
+        request: any;
+    }): any;
+    function validateAndNormalizeRequestArgs({ context, request }: {
+        context: any;
+        request: any;
+    }): any;
+}
+declare var extensions: any;
+export {};
 }

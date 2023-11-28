@@ -610,9 +610,9 @@ declare var Cc: {
         name: "@mozilla.org/geolocation/mls-provider;1";
         number: "{77DA64D3-7458-4920-9491-86CC9914F904}";
     };
-    ["@mozilla.org/webauthn/transport;1"]: {
+    ["@mozilla.org/webauthn/service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/webauthn/transport;1";
+        name: "@mozilla.org/webauthn/service;1";
         number: "{ebe8a51d-bd54-4838-b031-cd2289990e14}";
     };
     ["@mozilla.org/dom/test-interface-js;1"]: {
@@ -2766,6 +2766,23 @@ declare var Cc: {
         number: "{1a817186-357a-47cd-8aea-2850d60e959e}";
         private typeName: "mozilla::reflect::Module";
         private interfaceName: "reflect";
+    };
+    ["@mozilla.org/rfp-service;1"]: {
+        getService(): nsIRFPServiceType;
+        name: "@mozilla.org/rfp-service;1";
+        number: "{20093b2e-d5d5-4ce0-8355-96b8d2dc7ff5}";
+        private typeName: "mozilla::nsRFPService";
+        private interfaceName: "mozIilla";
+    };
+    ["@mozilla.org/fingerprinting-override;1"]: {
+        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
+        name: "@mozilla.org/fingerprinting-override;1";
+        number: "{07f45442-1806-44be-9230-12eb79de9bac}";
+    };
+    ["@mozilla.org/fingerprinting-webcompat-service;1"]: {
+        getService(): unknown;
+        name: "@mozilla.org/fingerprinting-webcompat-service;1";
+        number: "{e7b1da06-2594-4670-aea4-131070baca4c}";
     };
     ["@mozilla.org/satchel/form-fill-controller;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];

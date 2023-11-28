@@ -1,3 +1,2 @@
-declare module "resource://gre/modules/WebRequestUpload.sys.mjs" {
-    export var WebRequestUpload;
+declare module "resource://gre/modules/WebRequestUpload.sys.mjs" {export const WebRequestUpload: any;
 }

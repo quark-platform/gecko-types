@@ -1,16 +1,16 @@
-declare module "resource://gre/modules/ExtensionStorageSync.sys.mjs" {
-    export class ExtensionStorageSync {
-        constructor();
-        _promisify(fnName?, extension?, context?, param3?);
-        set(extension?, items?, context?);
-        remove(extension?, keys?, context?);
-        clear(extension?, context?);
-        clearOnUninstall(extensionId?);
-        get(extension?, spec?, context?);
-        getBytesInUse(extension?, keys?, context?);
-        addOnChangedListener(extension?, listener?, context?);
-        removeOnChangedListener(extension?, listener?);
-        notifyListeners(extId?, changes?);
-    }
-    export var extensionStorageSync;
+declare module "resource://gre/modules/ExtensionStorageSync.sys.mjs" {export class ExtensionStorageSync {
+    listeners: Map<any, any>;
+    migrationOk: boolean;
+    _promisify(fnName: any, extension: any, context: any, ...args: any[]): Promise<any>;
+    set(extension: any, items: any, context: any): Promise<any>;
+    remove(extension: any, keys: any, context: any): Promise<any>;
+    clear(extension: any, context: any): Promise<any>;
+    clearOnUninstall(extensionId: any): Promise<any>;
+    get(extension: any, spec: any, context: any): Promise<any>;
+    getBytesInUse(extension: any, keys: any, context: any): Promise<any>;
+    addOnChangedListener(extension: any, listener: any, context: any): void;
+    removeOnChangedListener(extension: any, listener: any): void;
+    notifyListeners(extId: any, changes: any): void;
+}
+export const extensionStorageSync: ExtensionStorageSync;
 }

@@ -1,4 +1,3 @@
-declare module "resource://gre/modules/AboutCertViewerChild.sys.mjs" {
-    export class AboutCertViewerChild extends RemotePageChild {
-    }
+declare module "resource://gre/modules/AboutCertViewerChild.sys.mjs" {export class AboutCertViewerChild {
+}
 }

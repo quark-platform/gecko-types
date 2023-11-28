@@ -1,7 +1,12 @@
-declare module "resource://gre/modules/PromptCollection.sys.mjs" {
-    export class PromptCollection {
-        confirmRepost(browsingContext?);
-        asyncBeforeUnloadCheck(browsingContext?);
-        confirmFolderUpload();
-    }
+declare module "resource://gre/modules/PromptCollection.sys.mjs" {export class PromptCollection {
+    confirmRepost(browsingContext: any): boolean;
+    asyncBeforeUnloadCheck(browsingContext: any): Promise<boolean>;
+    confirmFolderUpload(): boolean;
+    QueryInterface: any;
+}
+ean>;
+    confirmFolderUpload(browsingContext: any, directoryName: any): boolean;
+    stringBundles: {};
+    QueryInterface: any;
+}
 }

@@ -1,7 +1,9 @@
-declare module "resource://gre/modules/ShareDelegate.sys.mjs" {
-    export class ShareDelegate {
-        init(aParent?);
-        get openerWindow();
-        share(aTitle?, aText?, aUri?);
-    }
+declare module "resource://gre/modules/ShareDelegate.sys.mjs" {export class ShareDelegate {
+    init(aParent: any): void;
+    _openerWindow: any;
+    get openerWindow(): any;
+    share(aTitle: any, aText: any, aUri: any): Promise<void>;
+    classID: any;
+    QueryInterface: any;
+}
 }

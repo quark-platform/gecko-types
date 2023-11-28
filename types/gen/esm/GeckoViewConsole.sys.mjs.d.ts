@@ -1,12 +1,10 @@
-declare module "resource://gre/modules/GeckoViewConsole.sys.mjs" {
-    export var GeckoViewConsole: {
-        _isEnabled;
-        get enabled(): any;
-        set enabled(aVal);
-        observe(aSubject?, aTopic?, aData?);
-        _handleConsoleMessage(aMessage?);
-        getResultType(aResult?);
-        formatResult(aResult?);
-        abbreviateSourceURL(aSourceURL?);
-    };
+declare module "resource://gre/modules/GeckoViewConsole.sys.mjs" {export namespace GeckoViewConsole {
+    let _isEnabled: boolean;
+    let enabled: boolean;
+    function observe(aSubject: any, aTopic: any, aData: any): void;
+    function _handleConsoleMessage(aMessage: any): void;
+    function getResultType(aResult: any): string;
+    function formatResult(aResult: any): string;
+    function abbreviateSourceURL(aSourceURL: any): any;
+}
 }

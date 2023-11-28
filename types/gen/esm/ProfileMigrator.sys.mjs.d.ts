@@ -1,3 +1,9 @@
-declare module "resource://app/modules/ProfileMigrator.sys.mjs" {
-    export function ProfileMigrator();
+declare module "resource://app/modules/ProfileMigrator.sys.mjs" {export function ProfileMigrator(): void;
+export class ProfileMigrator {
+    migrate: any;
+    QueryInterface: any;
+    classDescription: string;
+    contractID: string;
+    classID: any;
+}
 }

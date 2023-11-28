@@ -1,8 +1,20 @@
-declare module "resource://gre/modules/LoginStorageDelegate.sys.mjs" {
-    export class LoginStorageDelegate {
-        _createMessage(param0?, aLogins?);
-        promptToSavePassword(aBrowser?, aLogin?, param2?, param3?);
-        promptToChangePassword(aBrowser?, aOldLogin?, aNewLogin?, param3?, param4?, param5?);
-        promptToChangePasswordWithUsernames(aBrowser?, aLogins?, aNewLogin?);
-    }
+declare module "resource://gre/modules/LoginStorageDelegate.sys.mjs" {export class LoginStorageDelegate {
+    _createMessage({ dismissed, autoSavedLoginGuid }: {
+        dismissed: any;
+        autoSavedLoginGuid: any;
+    }, aLogins: any): {
+        type: string;
+        hint: number;
+        logins: any;
+    };
+    promptToSavePassword(aBrowser: any, aLogin: any, dismissed?: boolean, notifySaved?: boolean): {
+        dismiss(): void;
+    };
+    promptToChangePassword(aBrowser: any, aOldLogin: any, aNewLogin: any, dismissed?: boolean, notifySaved?: boolean, autoSavedLoginGuid?: string): {
+        dismiss(): void;
+    };
+    promptToChangePasswordWithUsernames(aBrowser: any, aLogins: any, aNewLogin: any): void;
+    classID: any;
+    QueryInterface: any;
+}
 }

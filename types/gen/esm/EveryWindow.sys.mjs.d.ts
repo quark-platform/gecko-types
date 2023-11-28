@@ -1,6 +1,5 @@
-declare module "resource://app/modules/EveryWindow.sys.mjs" {
-    export var EveryWindow: {
-        registerCallback;
-        unregisterCallback;
-    };
+declare module "resource://app/modules/EveryWindow.sys.mjs" {export namespace EveryWindow {
+    function registerCallback(id: string, init: Function, uninit: Function): boolean;
+    function unregisterCallback(id: string, callUninit?: boolean): void;
+}
 }

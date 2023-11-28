@@ -940,6 +940,12 @@ declare module InspectorUtils {
      */
     function containingBlockOf(): Element ?;
     /**
+     * If the element is styled as display:block, returns an array of numbers giving
+     * the number of lines in each fragment.
+     * Returns null if the element is not a block.
+     */
+    function getBlockLineCounts(): sequence<unsigned_long> ?;
+    /**
      *
      */
     function getOverflowingChildrenOfElement(): NodeList ;
@@ -947,6 +953,10 @@ declare module InspectorUtils {
      *
      */
     function getRegisteredCssHighlights(): sequence<DOMString> ;
+    /**
+     *
+     */
+    function getCSSRegisteredProperties(): sequence<InspectorCSSPropertyDefinition> ;
 }
 
 declare module L10nOverlays {

@@ -1,8 +1,7 @@
-declare module "resource://gre/modules/GeckoViewSessionStore.sys.mjs" {
-    export var GeckoViewSessionStore: {
-        _browserSHistoryListener;
-        observe(aSubject?, aTopic?, aData?);
-        onTabStateUpdate(permanentKey?, win?, data?);
-        getOrCreateSHistoryListener(permanentKey?, browsingContext?, collectImmediately?);
-    };
+declare module "resource://gre/modules/GeckoViewSessionStore.sys.mjs" {export namespace GeckoViewSessionStore {
+    let _browserSHistoryListener: WeakMap<object, any>;
+    function observe(aSubject: any, aTopic: any, aData: any): void;
+    function onTabStateUpdate(permanentKey: any, win: any, data: any): void;
+    function getOrCreateSHistoryListener(permanentKey: any, browsingContext: any, collectImmediately?: boolean): any;
+}
 }

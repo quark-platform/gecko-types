@@ -1,8 +1,7 @@
-declare module "resource://app/modules/HeadlessShell.sys.mjs" {
-    export class ScreenshotParent extends JSWindowActorParent {
-        getDimensions(params?);
-    }
-    export var HeadlessShell: {
-        handleCmdLineArgs(cmdLine?, URLlist?);
-    };
+declare module "resource://app/modules/HeadlessShell.sys.mjs" {export class ScreenshotParent {
+    getDimensions(params: any): any;
+}
+export namespace HeadlessShell {
+    function handleCmdLineArgs(cmdLine: any, URLlist: any): Promise<void>;
+}
 }

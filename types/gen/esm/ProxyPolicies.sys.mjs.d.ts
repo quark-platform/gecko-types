@@ -1,6 +1,5 @@
-declare module "resource://app/modules/policies/ProxyPolicies.sys.mjs" {
-    export var PROXY_TYPES_MAP;
-    export var ProxyPolicies: {
-        configureProxySettings(param?, setPref?);
-    };
+declare module "resource://app/modules/policies/ProxyPolicies.sys.mjs" {export const PROXY_TYPES_MAP: Map<string, any>;
+export namespace ProxyPolicies {
+    function configureProxySettings(param: any, setPref: any): void;
+}
 }
