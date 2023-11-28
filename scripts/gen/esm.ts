@@ -6,7 +6,7 @@ import {
 } from 'gecko-index'
 import { writeFileSync } from 'fs'
 
-const exportMods: { name: string; path: string }[] = await getExports()
+let exportMods: { name: string; path: string }[] = await getExports()
 const mods: { name: string; path: string }[] = []
 const mozbuildFiles = await getMozBuildFiles()
 
@@ -25,11 +25,15 @@ for (const { isGRE, modules } of mozbuildFiles) {
       )}}`
 
       mods.push({ name: moduleName, path: modPath })
-
+      exportMods = exportMods.map((exp) =>
+        exp.path === moduleName ? { name: exp.name, path: modPath } : exp
+      )
       writeFileSync(`./types/gen/esm/${moduleName}.d.ts`, moduleDef)
     }
   }
 }
+
+exportMods = exportMods.filter((exp) => exp.path.includes('resource://'))
 
 {
   writeFileSync(
