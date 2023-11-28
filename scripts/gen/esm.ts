@@ -1,7 +1,12 @@
-import { getMozBuildFiles, getTypeDef, hasTypeDef } from 'gecko-index'
+import {
+  getMozBuildFiles,
+  getTypeDef,
+  hasTypeDef,
+  getExports,
+} from 'gecko-index'
 import { writeFileSync } from 'fs'
 
-const exportMods: { name: string; path: string }[] = []
+const exportMods: { name: string; path: string }[] = await getExports()
 const mods: { name: string; path: string }[] = []
 const mozbuildFiles = await getMozBuildFiles()
 
@@ -18,6 +23,8 @@ for (const { isGRE, modules } of mozbuildFiles) {
       const moduleDef = `declare module "${modPath}" {${await getTypeDef(
         moduleName
       )}}`
+
+      mods.push({ name: moduleName, path: modPath })
 
       writeFileSync(`./types/gen/esm/${moduleName}.d.ts`, moduleDef)
     }
