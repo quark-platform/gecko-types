@@ -38,11 +38,11 @@ exportMods = exportMods.filter((exp) => exp.path.includes('resource://'))
 {
   writeFileSync(
     `./types/gen/esm/index.d.ts`,
-    mods.map((mod) => `///<reference path="./${mod.name}" />`).join('\n') +
+    mods.map((mod) => `///<reference path="./${mod.name}.d.ts" />`).join('\n') +
       `
 declare interface MozESMFiles {
   ${mods
-    .map((mod) => `['${mod.path}']: typeof import('${mod.path}');`)
+    .map((mod) => `['${mod.path}']: typeof import('${mod.path}.d.ts');`)
     .join('\n  ')}
 }\n
 declare interface MozESMExportFile {
@@ -51,7 +51,8 @@ declare interface MozESMExportFile {
 declare interface MozESMExportType {
   ${exportMods
     .map(
-      (exp) => `['${exp.name}']: (typeof import('${exp.path}'))['${exp.name}'];`
+      (exp) =>
+        `['${exp.name}']: (typeof import('${exp.path}.d.ts'))['${exp.name}'];`
     )
     .join('\n  ')}
 }`
