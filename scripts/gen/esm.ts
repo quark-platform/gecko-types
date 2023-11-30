@@ -51,7 +51,7 @@ declare interface MozESMExportFile {
 declare interface MozESMExportType {
   ${exportMods
     .map(
-      (exp) => `['${exp.path}']: (typeof import('${exp.path}'))['${exp.name}'];`
+      (exp) => `['${exp.name}']: (typeof import('${exp.path}'))['${exp.name}'];`
     )
     .join('\n  ')}
 }`
