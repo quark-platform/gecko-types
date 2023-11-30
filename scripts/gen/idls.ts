@@ -117,7 +117,7 @@ function handleFunc(
 
         // If a type starts with nsI, it is probibly an interface, and we should
         // append the 'Type' postfix
-        if (type.startsWith('nsI')) type += 'Type'
+        if (type.startsWith('nsI') || type.startsWith('mozI')) type += 'Type'
         if (name == 'debugger' || name == 'function') name = `_${name}`
 
         // Support type attributes
@@ -148,7 +148,8 @@ function handleFunc(
     )
   }
 
-  if (returnType.startsWith('nsI')) returnType += 'Type'
+  if (returnType.startsWith('nsI') || returnType.startsWith('mozI'))
+    returnType += 'Type'
 
   return [
     ts.addSyntheticLeadingComment(

@@ -1028,7 +1028,7 @@ declare interface mozIAppServicesLoggerType extends nsISupportsType {
     /**
      *
      */
-    register(target: AString, logger: mozIServicesLogSink): void;
+    register(target: AString, logger: mozIServicesLogSinkType): void;
 }
 
 /**
@@ -1099,14 +1099,14 @@ declare interface mozIVisitInfoCallbackType extends nsISupportsType {
      * @param aPlaceInfo
      * The information that was given to the caller for the place.
      */
-    handleError(aResultCode: nsresult, aPlaceInfo: mozIPlaceInfo): void;
+    handleError(aResultCode: nsresult, aPlaceInfo: mozIPlaceInfoType): void;
     /**
      * Called for each place processed successfully.
      *
      * @param aPlaceInfo
      * The current info stored for the place.
      */
-    handleResult(aPlaceInfo: mozIPlaceInfo): void;
+    handleResult(aPlaceInfo: mozIPlaceInfoType): void;
     /**
      * Called when all records were processed.
      * @param aUpdatedItems
@@ -1174,7 +1174,7 @@ declare interface mozIAsyncHistoryType extends nsISupportsType {
      * mozIVisitInfo.
      * - Providing an invalid transitionType for a mozIVisitInfo.
      */
-    updatePlaces(aPlaceInfo: jsval, aCallback?: mozIVisitInfoCallback): void;
+    updatePlaces(aPlaceInfo: jsval, aCallback?: mozIVisitInfoCallbackType): void;
     /**
      * Checks if a given URI has been visited.
      *
@@ -1183,7 +1183,7 @@ declare interface mozIAsyncHistoryType extends nsISupportsType {
      * @param aCallback
      * A mozIVisitStatusCallback object which receives the visited status.
      */
-    isURIVisited(aURI: nsIURIType, aCallback: mozIVisitedStatusCallback): void;
+    isURIVisited(aURI: nsIURIType, aCallback: mozIVisitedStatusCallbackType): void;
     /**
      * Helper to clear any internal state caches, like the recent URIs list.
      * This may be useful in testing code.
@@ -1238,51 +1238,51 @@ declare interface mozIBridgedSyncEngineType extends nsISupportsType {
     /**
      *
      */
-    getLastSync(callback: mozIBridgedSyncEngineCallback): void;
+    getLastSync(callback: mozIBridgedSyncEngineCallbackType): void;
     /**
      *
      */
-    setLastSync(lastSyncMillis: long_long, callback: mozIBridgedSyncEngineCallback): void;
+    setLastSync(lastSyncMillis: long_long, callback: mozIBridgedSyncEngineCallbackType): void;
     /**
      *
      */
-    getSyncId(callback: mozIBridgedSyncEngineCallback): void;
+    getSyncId(callback: mozIBridgedSyncEngineCallbackType): void;
     /**
      *
      */
-    resetSyncId(callback: mozIBridgedSyncEngineCallback): void;
+    resetSyncId(callback: mozIBridgedSyncEngineCallbackType): void;
     /**
      *
      */
-    ensureCurrentSyncId(newSyncId: AUTF8String, callback: mozIBridgedSyncEngineCallback): void;
+    ensureCurrentSyncId(newSyncId: AUTF8String, callback: mozIBridgedSyncEngineCallbackType): void;
     /**
      *
      */
-    syncStarted(callback: mozIBridgedSyncEngineCallback): void;
+    syncStarted(callback: mozIBridgedSyncEngineCallbackType): void;
     /**
      *
      */
-    storeIncoming(incomingEnvelopesAsJSON: invalid, callback: mozIBridgedSyncEngineCallback): void;
+    storeIncoming(incomingEnvelopesAsJSON: invalid, callback: mozIBridgedSyncEngineCallbackType): void;
     /**
      *
      */
-    apply(callback: mozIBridgedSyncEngineApplyCallback): void;
+    apply(callback: mozIBridgedSyncEngineApplyCallbackType): void;
     /**
      *
      */
-    setUploaded(newTimestampMillis: long_long, uploadedIds: invalid, callback: mozIBridgedSyncEngineCallback): void;
+    setUploaded(newTimestampMillis: long_long, uploadedIds: invalid, callback: mozIBridgedSyncEngineCallbackType): void;
     /**
      *
      */
-    syncFinished(callback: mozIBridgedSyncEngineCallback): void;
+    syncFinished(callback: mozIBridgedSyncEngineCallbackType): void;
     /**
      *
      */
-    reset(callback: mozIBridgedSyncEngineCallback): void;
+    reset(callback: mozIBridgedSyncEngineCallbackType): void;
     /**
      *
      */
-    wipe(callback: mozIBridgedSyncEngineCallback): void;
+    wipe(callback: mozIBridgedSyncEngineCallbackType): void;
 }
 
 /**
@@ -1400,7 +1400,7 @@ declare interface mozIExtensionEventListenerType extends nsISupportsType {
     /**
      *
      */
-    callListener(args: invalid, listenerCallOptions?: mozIExtensionListenerCallOptions): Promise;
+    callListener(args: invalid, listenerCallOptions?: mozIExtensionListenerCallOptionsType): Promise;
 }
 
 /**
@@ -1492,7 +1492,7 @@ declare interface mozIExtensionAPIRequestHandlerType extends nsISupportsType {
      * initialize WebIDL-based API object, e.g. ExtensionPort) or
      * an Error to be throw on the thread that originated the request.
      */
-    handleAPIRequest(extension: nsISupportsType, apiRequest: mozIExtensionAPIRequest, apiRequestResult?: mozIExtensionAPIRequestResult): void;
+    handleAPIRequest(extension: nsISupportsType, apiRequest: mozIExtensionAPIRequestType, apiRequestResult?: mozIExtensionAPIRequestResultType): void;
     /**
      * A method called when an extension background service worker is initialized and
      * ready to execute its main script.
@@ -1500,7 +1500,7 @@ declare interface mozIExtensionAPIRequestHandlerType extends nsISupportsType {
      * @param extension An instance of the WebExtensionPolicy webidl interface.
      * @param serviceWorkerInfo
      */
-    initExtensionWorker(extension: nsISupportsType, serviceWorkerInfo: mozIExtensionServiceWorkerInfo): void;
+    initExtensionWorker(extension: nsISupportsType, serviceWorkerInfo: mozIExtensionServiceWorkerInfoType): void;
     /**
      * A method called when an extension background service worker has loaded its
      * main script.
@@ -1529,7 +1529,7 @@ declare interface mozIExtensionProcessScriptType extends nsISupportsType {
     /**
      *
      */
-    loadContentScript(contentScript: WebExtensionContentScript, window: mozIDOMWindow): Promise;
+    loadContentScript(contentScript: WebExtensionContentScript, window: mozIDOMWindowType): Promise;
     /**
      *
      */
@@ -1546,27 +1546,27 @@ declare interface mozIExtensionStorageAreaType extends nsISupportsType {
     /**
      *
      */
-    set(extensionId: AUTF8String, json: AUTF8String, callback: mozIExtensionStorageCallback): void;
+    set(extensionId: AUTF8String, json: AUTF8String, callback: mozIExtensionStorageCallbackType): void;
     /**
      *
      */
-    get(extensionId: AUTF8String, key: AUTF8String, callback: mozIExtensionStorageCallback): void;
+    get(extensionId: AUTF8String, key: AUTF8String, callback: mozIExtensionStorageCallbackType): void;
     /**
      *
      */
-    remove(extensionId: AUTF8String, key: AUTF8String, callback: mozIExtensionStorageCallback): void;
+    remove(extensionId: AUTF8String, key: AUTF8String, callback: mozIExtensionStorageCallbackType): void;
     /**
      *
      */
-    clear(extensionId: AUTF8String, callback: mozIExtensionStorageCallback): void;
+    clear(extensionId: AUTF8String, callback: mozIExtensionStorageCallbackType): void;
     /**
      *
      */
-    getBytesInUse(extensionId: AUTF8String, keys: AUTF8String, callback: mozIExtensionStorageCallback): void;
+    getBytesInUse(extensionId: AUTF8String, keys: AUTF8String, callback: mozIExtensionStorageCallbackType): void;
     /**
      *
      */
-    takeMigrationInfo(callback: mozIExtensionStorageCallback): void;
+    takeMigrationInfo(callback: mozIExtensionStorageCallbackType): void;
 }
 
 /**
@@ -1580,7 +1580,7 @@ declare interface mozIConfigurableExtensionStorageAreaType extends nsISupportsTy
     /**
      *
      */
-    teardown(callback: mozIExtensionStorageCallback): void;
+    teardown(callback: mozIExtensionStorageCallbackType): void;
 }
 
 /**
@@ -1590,7 +1590,7 @@ declare interface mozISyncedExtensionStorageAreaType extends nsISupportsType {
     /**
      *
      */
-    fetchPendingSyncChanges(callback: mozIExtensionStorageCallback): void;
+    fetchPendingSyncChanges(callback: mozIExtensionStorageCallbackType): void;
 }
 
 /**
@@ -2130,7 +2130,7 @@ declare interface mozISandboxReportArrayType extends nsISupportsType {
     /**
      *
      */
-    getElement(aIndex: uint64_t): mozISandboxReport;
+    getElement(aIndex: uint64_t): mozISandboxReportType;
 }
 
 /**
@@ -2140,7 +2140,7 @@ declare interface mozISandboxReporterType extends nsISupportsType {
     /**
      *
      */
-    snapshot(): mozISandboxReportArray;
+    snapshot(): mozISandboxReportArrayType;
 }
 
 /**
@@ -2346,7 +2346,7 @@ declare interface mozIStorageAsyncConnectionType extends nsISupportsType {
      * to the main thread despite the returned error.
      * @note If this call should fail, the callback won't be invoked.
      */
-    asyncClose(aCallback?: mozIStorageCompletionCallback): void;
+    asyncClose(aCallback?: mozIStorageCompletionCallbackType): void;
     /**
      * Clone a database and make the clone read only if needed.
      * SQL Functions and attached on-disk databases are applied to the new clone.
@@ -2389,7 +2389,7 @@ declare interface mozIStorageAsyncConnectionType extends nsISupportsType {
      * For temporary tables, only the schemas are copied, not their
      * contents.
      */
-    asyncClone(aReadOnly: boolean, aCallback: mozIStorageCompletionCallback): void;
+    asyncClone(aReadOnly: boolean, aCallback: mozIStorageCompletionCallbackType): void;
     /**
      * The current database nsIFile.  Null if the database
      * connection refers to an in-memory database.
@@ -2431,7 +2431,7 @@ declare interface mozIStorageAsyncConnectionType extends nsISupportsType {
      * @note Vacuum will fail inside a transaction, or if there is an ongoing
      * read statement.
      */
-    asyncVacuum(aCallback?: mozIStorageCompletionCallback, aUseIncremental?: boolean, aSetPageSize?: long): void;
+    asyncVacuum(aCallback?: mozIStorageCompletionCallbackType, aUseIncremental?: boolean, aSetPageSize?: long): void;
     /**
      * Create an asynchronous statement for the given SQL. An
      * asynchronous statement can only be used to dispatch asynchronous
@@ -2447,7 +2447,7 @@ declare interface mozIStorageAsyncConnectionType extends nsISupportsType {
      * @return a new mozIStorageAsyncStatement
      * @note The statement is created lazily on first execution.
      */
-    createAsyncStatement(aSQLStatement: AUTF8String): mozIStorageAsyncStatement;
+    createAsyncStatement(aSQLStatement: AUTF8String): mozIStorageAsyncStatementType;
     /**
      * Execute an array of statements created with this connection using
      * any currently bound parameters. When the array contains multiple
@@ -2466,7 +2466,7 @@ declare interface mozIStorageAsyncConnectionType extends nsISupportsType {
      * @note If you have any custom defined functions, they must be
      * re-entrant since they can be called on multiple threads.
      */
-    executeAsync(aStatements: invalid, aCallback?: mozIStorageStatementCallback): mozIStoragePendingStatement;
+    executeAsync(aStatements: invalid, aCallback?: mozIStorageStatementCallbackType): mozIStoragePendingStatementType;
     /**
      * Execute asynchronously an SQL expression, expecting no arguments.
      *
@@ -2477,7 +2477,7 @@ declare interface mozIStorageAsyncConnectionType extends nsISupportsType {
      * completion.
      * @return an object that can be used to cancel the statement execution.
      */
-    executeSimpleSQLAsync(aSQLStatement: AUTF8String, aCallback?: mozIStorageStatementCallback): mozIStoragePendingStatement;
+    executeSimpleSQLAsync(aSQLStatement: AUTF8String, aCallback?: mozIStorageStatementCallbackType): mozIStoragePendingStatementType;
     /**
      * Create a new SQL function.  If you use your connection on multiple threads,
      * your function needs to be threadsafe, or it should only be called on one
@@ -2492,7 +2492,7 @@ declare interface mozIStorageAsyncConnectionType extends nsISupportsType {
      * The instance of mozIStorageFunction, which implements the function
      * in question.
      */
-    createFunction(aFunctionName: AUTF8String, aNumArguments: long, aFunction: mozIStorageFunction): void;
+    createFunction(aFunctionName: AUTF8String, aNumArguments: long, aFunction: mozIStorageFunctionType): void;
     /**
      * Delete custom SQL function.
      *
@@ -2513,13 +2513,13 @@ declare interface mozIStorageAsyncConnectionType extends nsISupportsType {
      * The instance of mozIStorageProgressHandler.
      * @return previous registered handler.
      */
-    setProgressHandler(aGranularity: int32_t, aHandler: mozIStorageProgressHandler): mozIStorageProgressHandler;
+    setProgressHandler(aGranularity: int32_t, aHandler: mozIStorageProgressHandlerType): mozIStorageProgressHandlerType;
     /**
      * Remove a progress handler.
      *
      * @return previous registered handler.
      */
-    removeProgressHandler(): mozIStorageProgressHandler;
+    removeProgressHandler(): mozIStorageProgressHandlerType;
 }
 
 /**
@@ -2569,7 +2569,7 @@ declare interface mozIStorageBaseStatementType extends mozIStorageBindingParamsT
      *
      * @note This is only works on statements being used asynchronously.
      */
-    bindParameters(aParameters: mozIStorageBindingParamsArray): void;
+    bindParameters(aParameters: mozIStorageBindingParamsArrayType): void;
     /**
      * Creates a new mozIStorageBindingParamsArray that can be used to bind
      * multiple sets of data to a statement with bindParameters.
@@ -2579,7 +2579,7 @@ declare interface mozIStorageBaseStatementType extends mozIStorageBindingParamsT
      *
      * @note This is only useful for statements being used asynchronously.
      */
-    newBindingParamsArray(): mozIStorageBindingParamsArray;
+    newBindingParamsArray(): mozIStorageBindingParamsArrayType;
     /**
      * Execute a query asynchronously using any currently bound parameters.  This
      * statement can be reused immediately, and reset does not need to be called.
@@ -2592,7 +2592,7 @@ declare interface mozIStorageBaseStatementType extends mozIStorageBindingParamsT
      * completion.
      * @return an object that can be used to cancel the statements execution.
      */
-    executeAsync(aCallback?: mozIStorageStatementCallback): mozIStoragePendingStatement;
+    executeAsync(aCallback?: mozIStorageStatementCallbackType): mozIStoragePendingStatementType;
     readonly MOZ_STORAGE_STATEMENT_INVALID: long;
     readonly MOZ_STORAGE_STATEMENT_READY: long;
     readonly MOZ_STORAGE_STATEMENT_EXECUTING: long;
@@ -2681,14 +2681,14 @@ declare interface mozIStorageBindingParamsArrayType extends nsISupportsType {
      * @return a mozIStorageBindingParams object that can be used to specify
      * parameters that need to be bound.
      */
-    newBindingParams(): mozIStorageBindingParams;
+    newBindingParams(): mozIStorageBindingParamsType;
     /**
      * Adds the parameters to the end of this array.
      *
      * @param aParameters
      * The parameters to add to this array.
      */
-    addParams(aParameters: mozIStorageBindingParams): void;
+    addParams(aParameters: mozIStorageBindingParamsType): void;
     /**
      * The number of mozIStorageBindingParams this object contains.
      */
@@ -2770,7 +2770,7 @@ declare interface mozIStorageConnectionType extends mozIStorageAsyncConnectionTy
      * For temporary tables, only the schemas are copied, not their
      * contents.
      */
-    clone(aReadOnly?: boolean): mozIStorageConnection;
+    clone(aReadOnly?: boolean): mozIStorageConnectionType;
     /**
      * The default size for SQLite database pages used by mozStorage for new
      * databases.
@@ -2815,7 +2815,7 @@ declare interface mozIStorageConnectionType extends mozIStorageAsyncConnectionTy
      * The SQL statement to execute.
      * @return a new mozIStorageStatement
      */
-    createStatement(aSQLStatement: AUTF8String): mozIStorageStatement;
+    createStatement(aSQLStatement: AUTF8String): mozIStorageStatementType;
     /**
      * Execute a SQL expression, expecting no arguments.
      *
@@ -2969,7 +2969,7 @@ declare interface mozIStorageFunctionType extends nsISupportsType {
      *
      * @returns any value as Variant type.
      */
-    onFunctionCall(aFunctionArguments: mozIStorageValueArray): nsIVariantType;
+    onFunctionCall(aFunctionArguments: mozIStorageValueArrayType): nsIVariantType;
 }
 
 /**
@@ -2999,7 +2999,7 @@ declare interface mozIStorageProgressHandlerType extends nsISupportsType {
      *
      * @return true to abort request, false to continue work.
      */
-    onProgress(aConnection: mozIStorageConnection): boolean;
+    onProgress(aConnection: mozIStorageConnectionType): boolean;
 }
 
 /**
@@ -3013,7 +3013,7 @@ declare interface mozIStorageResultSetType extends nsISupportsType {
      * @returns the next row from the result set.  This will be null when there
      * are no more results.
      */
-    getNextRow(): mozIStorageRow;
+    getNextRow(): mozIStorageRowType;
 }
 
 /**
@@ -3101,7 +3101,7 @@ declare interface mozIStorageServiceType extends nsISupportsType {
      * @throws NS_ERROR_NOT_SAME_THREAD if called from a thread other than the
      * main thread.
      */
-    openAsyncDatabase(aDatabaseStore: nsIVariantType, aOpenFlags?: unsigned_long, aConnectionFlags?: unsigned_long, aCallback: mozIStorageCompletionCallback): void;
+    openAsyncDatabase(aDatabaseStore: nsIVariantType, aOpenFlags?: unsigned_long, aConnectionFlags?: unsigned_long, aCallback: mozIStorageCompletionCallbackType): void;
     /**
      * Get a connection to a named special database storage.
      *
@@ -3131,7 +3131,7 @@ declare interface mozIStorageServiceType extends nsISupportsType {
      *
      * @throws NS_ERROR_INVALID_ARG if aStorageKey is invalid.
      */
-    openSpecialDatabase(aStorageKey: ACString, aName?: ACString, aConnectionFlags?: unsigned_long): mozIStorageConnection;
+    openSpecialDatabase(aStorageKey: ACString, aName?: ACString, aConnectionFlags?: unsigned_long): mozIStorageConnectionType;
     /**
      * Open a connection to the specified file.
      *
@@ -3167,7 +3167,7 @@ declare interface mozIStorageServiceType extends nsISupportsType {
      * @throws NS_ERROR_FILE_CORRUPTED
      * If the database file is corrupted.
      */
-    openDatabase(aDatabaseFile: nsIFileType, aConnectionFlags?: unsigned_long): mozIStorageConnection;
+    openDatabase(aDatabaseFile: nsIFileType, aConnectionFlags?: unsigned_long): mozIStorageConnectionType;
     /**
      * Open a connection to the specified file that doesn't share a sqlite cache.
      *
@@ -3205,7 +3205,7 @@ declare interface mozIStorageServiceType extends nsISupportsType {
      * @throws NS_ERROR_FILE_CORRUPTED
      * If the database file is corrupted.
      */
-    openUnsharedDatabase(aDatabaseFile: nsIFileType, aConnectionFlags?: unsigned_long): mozIStorageConnection;
+    openUnsharedDatabase(aDatabaseFile: nsIFileType, aConnectionFlags?: unsigned_long): mozIStorageConnectionType;
     /**
      * See openDatabase(). Exactly the same only initialized with a file URL.
      * Custom parameters can be passed to SQLite and VFS implementations through
@@ -3222,7 +3222,7 @@ declare interface mozIStorageServiceType extends nsISupportsType {
      * Currently supports CONNECTION_INTERRUPTIBLE flag.
      * For full details, please refer to the documentation of the flag.
      */
-    openDatabaseWithFileURL(aFileURL: nsIFileURLType, aTelemetryFilename?: ACString, aConnectionFlags?: unsigned_long): mozIStorageConnection;
+    openDatabaseWithFileURL(aFileURL: nsIFileURLType, aTelemetryFilename?: ACString, aConnectionFlags?: unsigned_long): mozIStorageConnectionType;
     /**
      * Utilities
      *
@@ -3254,7 +3254,7 @@ declare interface mozIStorageStatementType extends mozIStorageBaseStatementType 
      * being executed when it is cloned, the new statement will not be
      * executing.
      */
-    clone(): mozIStorageStatement;
+    clone(): mozIStorageStatementType;
     /**
      * Number of parameters
      */
@@ -3438,7 +3438,7 @@ declare interface mozIStorageStatementCallbackType extends nsISupportsType {
      * @param aResultSet
      * The result set containing the data from the database.
      */
-    handleResult(aResultSet: mozIStorageResultSet): void;
+    handleResult(aResultSet: mozIStorageResultSetType): void;
     /**
      * Called when some error occurs while executing the statement.  This function
      * may be called more than once with a different storageIError each time for
@@ -3447,7 +3447,7 @@ declare interface mozIStorageStatementCallbackType extends nsISupportsType {
      * @param aError
      * An object containing information about the error.
      */
-    handleError(aError: mozIStorageError): void;
+    handleError(aError: mozIStorageErrorType): void;
     readonly REASON_FINISHED: unsigned_short;
     readonly REASON_CANCELED: unsigned_short;
     readonly REASON_ERROR: unsigned_short;
@@ -3668,7 +3668,7 @@ declare interface mozISyncedBookmarksMergerType extends nsISupportsType {
     /**
      *
      */
-    merge(localTimeSeconds: long_long, remoteTimeSeconds: long_long, callback: mozISyncedBookmarksMirrorCallback): mozIPlacesPendingOperation;
+    merge(localTimeSeconds: long_long, remoteTimeSeconds: long_long, callback: mozISyncedBookmarksMirrorCallbackType): mozIPlacesPendingOperationType;
     /**
      *
      */
@@ -3819,7 +3819,7 @@ declare interface mozIThirdPartyUtilType extends nsISupportsType {
      *
      * @see isThirdPartyURI
      */
-    isThirdPartyWindow(aWindow: mozIDOMWindowProxy, aURI?: nsIURIType): boolean;
+    isThirdPartyWindow(aWindow: mozIDOMWindowProxyType, aURI?: nsIURIType): boolean;
     /**
      * isThirdPartyChannel
      *
@@ -3906,13 +3906,13 @@ declare interface mozIThirdPartyUtilType extends nsISupportsType {
      * Returns the URI associated with the script object principal for the
      * window.
      */
-    getURIFromWindow(aWindow: mozIDOMWindowProxy): nsIURIType;
+    getURIFromWindow(aWindow: mozIDOMWindowProxyType): nsIURIType;
     /**
      * getPrincipalFromWindow
      *
      * Returns the script object principal for the window.
      */
-    getPrincipalFromWindow(aWindow: mozIDOMWindowProxy): nsIPrincipalType;
+    getPrincipalFromWindow(aWindow: mozIDOMWindowProxyType): nsIPrincipalType;
 }
 
 /**
@@ -4906,7 +4906,7 @@ declare interface nsIApplicationChooserType extends nsISupportsType {
      * on this parent. parent must be non-null.
      * @param      title    The title for the file widget
      */
-    init(parent: mozIDOMWindowProxy, title: ACString): void;
+    init(parent: mozIDOMWindowProxyType, title: ACString): void;
     /**
      * Open application chooser dialog.
      *
@@ -5653,7 +5653,7 @@ declare interface nsIAudioChannelAgentType extends nsISupportsType {
      * 3. The AudioChannelAgent keeps a strong reference to the callback
      * object.
      */
-    init(window: mozIDOMWindow, callback: nsIAudioChannelAgentCallbackType): void;
+    init(window: mozIDOMWindowType, callback: nsIAudioChannelAgentCallbackType): void;
     /**
      * This method is just like init(), except the audio channel agent keeps a
      * weak reference to the callback object.
@@ -5661,7 +5661,7 @@ declare interface nsIAudioChannelAgentType extends nsISupportsType {
      * In order for this to work, |callback| must implement
      * nsISupportsWeakReference.
      */
-    initWithWeakCallback(window: mozIDOMWindow, callback: nsIAudioChannelAgentCallbackType): void;
+    initWithWeakCallback(window: mozIDOMWindowType, callback: nsIAudioChannelAgentCallbackType): void;
     /**
      * Notify the agent that we want to start playing.
      * Note: Gecko component SHOULD call this function first then start to
@@ -10767,7 +10767,7 @@ declare interface nsIColorPickerType extends nsISupportsType {
      * parameter has to follow the format specified on top
      * of this file.
      */
-    init(parent: mozIDOMWindowProxy, title: AString, initialColor: AString, defaultColors: invalid): void;
+    init(parent: mozIDOMWindowProxyType, title: AString, initialColor: AString, defaultColors: invalid): void;
     /**
      * Opens the color dialog asynchrounously.
      * The results are provided via the callback object.
@@ -11030,13 +11030,13 @@ declare interface nsICommandManagerType extends nsISupportsType {
      * Ask the command manager if the specified command is supported.
      * If aTargetWindow is null, the focused window is used.
      */
-    isCommandSupported(aCommandName: string, aTargetWindow: mozIDOMWindowProxy): boolean;
+    isCommandSupported(aCommandName: string, aTargetWindow: mozIDOMWindowProxyType): boolean;
     /**
      * Ask the command manager if the specified command is currently.
      * enabled.
      * If aTargetWindow is null, the focused window is used.
      */
-    isCommandEnabled(aCommandName: string, aTargetWindow: mozIDOMWindowProxy): boolean;
+    isCommandEnabled(aCommandName: string, aTargetWindow: mozIDOMWindowProxyType): boolean;
     /**
      * Get the state of the specified commands.
      *
@@ -11052,7 +11052,7 @@ declare interface nsICommandManagerType extends nsISupportsType {
      * On output: aCommandParams: values set by the caller filled in with
      * state from the command.
      */
-    getCommandState(aCommandName: string, aTargetWindow: mozIDOMWindowProxy, aCommandParams: nsICommandParamsType): void;
+    getCommandState(aCommandName: string, aTargetWindow: mozIDOMWindowProxyType, aCommandParams: nsICommandParamsType): void;
     /**
      * Execute the specified command.
      * The command will be executed in aTargetWindow if it is specified.
@@ -11061,7 +11061,7 @@ declare interface nsICommandManagerType extends nsISupportsType {
      * param: aCommandParams, a list of name-value pairs of command parameters,
      * may be null for parameter-less commands.
      */
-    doCommand(aCommandName: string, aCommandParams: nsICommandParamsType, aTargetWindow: mozIDOMWindowProxy): void;
+    doCommand(aCommandName: string, aCommandParams: nsICommandParamsType, aTargetWindow: mozIDOMWindowProxyType): void;
 }
 
 /**
@@ -14613,7 +14613,7 @@ declare interface nsIDOMGlobalPropertyInitializerType extends nsISupportsType {
      *
      * @returns a JS Object to use use as the property's value.
      */
-    init(window: mozIDOMWindow): jsval;
+    init(window: mozIDOMWindowType): jsval;
 }
 
 /**
@@ -14716,7 +14716,7 @@ declare interface nsIDOMRequestServiceType extends nsISupportsType {
     /**
      *
      */
-    createRequest(window: mozIDOMWindow): DOMRequest;
+    createRequest(window: mozIDOMWindowType): DOMRequest;
     /**
      *
      */
@@ -14768,7 +14768,7 @@ declare interface nsIDOMStorageManagerType extends nsISupportsType {
      * @param aPrivate
      * Whether the demanding document is running in Private Browsing mode or not.
      */
-    createStorage(aWindow: mozIDOMWindow, aPrincipal: nsIPrincipalType, aStoragePrincipal: nsIPrincipalType, aDocumentURI: AString, aPrivate?: bool): Storage;
+    createStorage(aWindow: mozIDOMWindowType, aPrincipal: nsIPrincipalType, aStoragePrincipal: nsIPrincipalType, aDocumentURI: AString, aPrivate?: bool): Storage;
     /**
      * DEPRECATED.  The only good reason to use this was if you were writing a
      * test and wanted to hackily determine if a preload happened.  That's now
@@ -14789,7 +14789,7 @@ declare interface nsIDOMStorageManagerType extends nsISupportsType {
      * @param aPrivate
      * Whether the demanding document is running in Private Browsing mode or not.
      */
-    getStorage(aWindow: mozIDOMWindow, aPrincipal: nsIPrincipalType, aStoragePrincipal: nsIPrincipalType, aPrivate?: bool): Storage;
+    getStorage(aWindow: mozIDOMWindowType, aPrincipal: nsIPrincipalType, aStoragePrincipal: nsIPrincipalType, aPrivate?: bool): Storage;
     /**
      * Clones given storage into this storage manager.
      *
@@ -18776,7 +18776,7 @@ declare interface nsIEditingSessionType extends nsISupportsType {
      * (or part of it) editable.
      * @param aInteractive if PR_FALSE turn off scripting and plugins
      */
-    makeWindowEditable(window: mozIDOMWindowProxy, aEditorType: string, doAfterUriLoad: boolean, aMakeWholeDocumentEditable: boolean, aInteractive: boolean): void;
+    makeWindowEditable(window: mozIDOMWindowProxyType, aEditorType: string, doAfterUriLoad: boolean, aMakeWholeDocumentEditable: boolean, aInteractive: boolean): void;
     /**
      * Test whether a specific window has had its editable flag set; it may have an editor
      * now, or will get one after the uri load.
@@ -18784,11 +18784,11 @@ declare interface nsIEditingSessionType extends nsISupportsType {
      * Use this, passing the content root window, to test if we've set up editing
      * for this content.
      */
-    windowIsEditable(window: mozIDOMWindowProxy): boolean;
+    windowIsEditable(window: mozIDOMWindowProxyType): boolean;
     /**
      * Get the editor for this window. May return null
      */
-    getEditorForWindow(window: mozIDOMWindowProxy): nsIEditorType;
+    getEditorForWindow(window: mozIDOMWindowProxyType): nsIEditorType;
 }
 
 /**
@@ -20756,7 +20756,7 @@ declare interface nsIFaviconServiceType extends nsISupportsType {
      *
      * @see nsIFaviconDataCallback in nsIFaviconService.idl.
      */
-    setAndFetchFaviconForPage(aPageURI: nsIURIType, aFaviconURI: nsIURIType, aForceReload: boolean, aFaviconLoadType: unsigned_long, aCallback?: nsIFaviconDataCallbackType, aLoadingPrincipal?: nsIPrincipalType, aRequestContextID?: unsigned_long_long): mozIPlacesPendingOperation;
+    setAndFetchFaviconForPage(aPageURI: nsIURIType, aFaviconURI: nsIURIType, aForceReload: boolean, aFaviconLoadType: unsigned_long, aCallback?: nsIFaviconDataCallbackType, aLoadingPrincipal?: nsIPrincipalType, aRequestContextID?: unsigned_long_long): mozIPlacesPendingOperationType;
     /**
      * Sets the data for a given favicon URI either by replacing existing data in
      * the database or taking the place of otherwise fetched icon data when
@@ -21463,7 +21463,7 @@ declare interface nsIFilePickerType extends nsISupportsType {
      * @param      title    The title for the file widget
      * @param      mode     load, save, or get folder
      */
-    init(parent: mozIDOMWindowProxy, title: AString, mode: nsIFilePicker_ModeType): void;
+    init(parent: mozIDOMWindowProxyType, title: AString, mode: nsIFilePicker_ModeType): void;
     /**
      * Returns a Promise that resolves to true if the passed nsIFilePicker mode
      * is supported on the current platform, and false otherwise. The Promise may
@@ -22012,7 +22012,7 @@ declare interface nsIFocusManagerType extends nsISupportsType {
      * of retrieving the method that was used to focus the currently focused
      * element.
      */
-    getLastFocusMethod(window: mozIDOMWindowProxy): uint32_t;
+    getLastFocusMethod(window: mozIDOMWindowProxyType): uint32_t;
     /**
      * Changes the focused element reference within the window containing
      * aElement to aElement or potentially redirects it to an anonymous
@@ -22038,14 +22038,14 @@ declare interface nsIFocusManagerType extends nsISupportsType {
      * Returns the element that was focused (see setFocus). The return value
      * may be null if focus was moved into a child process.
      */
-    moveFocus(aWindow: mozIDOMWindowProxy, aStartElement: Element, aType: unsigned_long, aFlags: unsigned_long): Element;
+    moveFocus(aWindow: mozIDOMWindowProxyType, aStartElement: Element, aType: unsigned_long, aFlags: unsigned_long): Element;
     /**
      * Clears the focused element within aWindow. If the current focusedWindow
      * is a descendant of aWindow, sets the current focusedWindow to aWindow.
      *
      * @throws NS_ERROR_INVALID_ARG if aWindow is null
      */
-    clearFocus(aWindow: mozIDOMWindowProxy): void;
+    clearFocus(aWindow: mozIDOMWindowProxyType): void;
     /**
      * Returns the currently focused element within aWindow. If aWindow is equal
      * to the current value of focusedWindow, then the returned element will be
@@ -22063,11 +22063,11 @@ declare interface nsIFocusManagerType extends nsISupportsType {
      *
      * @throws NS_ERROR_INVALID_ARG if aWindow is null
      */
-    getFocusedElementForWindow(aWindow: mozIDOMWindowProxy, aDeep: boolean, aFocusedWindow: mozIDOMWindowProxy): Element;
+    getFocusedElementForWindow(aWindow: mozIDOMWindowProxyType, aDeep: boolean, aFocusedWindow: mozIDOMWindowProxyType): Element;
     /**
      * Moves the selection caret within aWindow to the current focus.
      */
-    moveCaretToFocus(aWindow: mozIDOMWindowProxy): void;
+    moveCaretToFocus(aWindow: mozIDOMWindowProxyType): void;
     /**
      * *
      * Check if given element (or potentially a descendant, see setFocus) is
@@ -23474,7 +23474,7 @@ declare interface nsIGtkTaskbarProgressType extends nsITaskbarProgressType {
      * Sets the window that is considered primary for purposes of
      * setting the XApp progress property.
      */
-    setPrimaryWindow(aWindow: mozIDOMWindowProxy): void;
+    setPrimaryWindow(aWindow: mozIDOMWindowProxyType): void;
 }
 
 /**
@@ -27749,7 +27749,7 @@ declare interface nsILayoutDebuggingToolsType extends nsISupportsType {
     /**
      * Initialize debugger object to act on a docshell.
      */
-    init(win: mozIDOMWindow): void;
+    init(win: mozIDOMWindowType): void;
     /**
      *
      */
@@ -31315,7 +31315,7 @@ declare interface nsIMemoryReporterManagerType extends nsISupportsType {
      * The time taken for the measurement (split into JS and non-JS parts) is
      * also returned.
      */
-    sizeOfTab(window: mozIDOMWindowProxy, jsObjectsSize: int64_t, jsStringsSize: int64_t, jsOtherSize: int64_t, domSize: int64_t, styleSize: int64_t, otherSize: int64_t, totalSize: int64_t, jsMilliseconds: double, nonJSMilliseconds: double): void;
+    sizeOfTab(window: mozIDOMWindowProxyType, jsObjectsSize: int64_t, jsStringsSize: int64_t, jsOtherSize: int64_t, domSize: int64_t, styleSize: int64_t, otherSize: int64_t, totalSize: int64_t, jsMilliseconds: double, nonJSMilliseconds: double): void;
 }
 
 /**
@@ -32816,7 +32816,7 @@ declare interface nsINavHistoryServiceType extends nsISupportsType {
      * are absolutely sure that the returned results are fine for
      * your use-case.
      */
-    asyncExecuteLegacyQuery(aQuery: nsINavHistoryQueryType, aOptions: nsINavHistoryQueryOptionsType, aCallback: mozIStorageStatementCallback): mozIStoragePendingStatement;
+    asyncExecuteLegacyQuery(aQuery: nsINavHistoryQueryType, aOptions: nsINavHistoryQueryOptionsType, aCallback: mozIStorageStatementCallbackType): mozIStoragePendingStatementType;
     /**
      * Hook for clients who need to perform actions during/by the end of
      * the shutdown of the database.
@@ -33695,7 +33695,7 @@ declare interface nsIOSReauthenticatorType extends nsISupportsType {
      * @return Promise resolving to true if the user successfully authenticated
      * and false otherwise.
      */
-    asyncReauthenticateUser(prompt: AString, caption: AString, parentWindow: mozIDOMWindow): Promise;
+    asyncReauthenticateUser(prompt: AString, caption: AString, parentWindow: mozIDOMWindowType): Promise;
 }
 
 /**
@@ -35762,7 +35762,7 @@ declare interface nsIPowerManagerServiceType extends nsISupportsType {
      * A wake lock without associated window, e.g. used in chrome, is
      * always considered invisible.
      */
-    newWakeLock(aTopic: AString, aWindow?: mozIDOMWindow): nsIWakeLockType;
+    newWakeLock(aTopic: AString, aWindow?: mozIDOMWindowType): nsIWakeLockType;
 }
 
 /**
@@ -36684,7 +36684,7 @@ declare interface nsIPrincipalType extends nsISupportsType {
      *
      * NOTE: Main-Thread Only.
      */
-    hasFirstpartyStorageAccess(aWindow: mozIDOMWindow, rejectedReason: uint32_t): bool;
+    hasFirstpartyStorageAccess(aWindow: mozIDOMWindowType, rejectedReason: uint32_t): bool;
     /**
      * Returns a Key for the LocalStorage Manager, used to
      * check the Principals Origin Storage usage.
@@ -36957,7 +36957,7 @@ declare interface nsIPrintDialogServiceType extends nsISupportsType {
      * @return NS_ERROR_ABORT if the user indicated not to proceed
      * @return a suitable error for failures to show the print dialog.
      */
-    showPrintDialog(aParent: mozIDOMWindowProxy, aHaveSelection: boolean, aPrintSettings: nsIPrintSettingsType): void;
+    showPrintDialog(aParent: mozIDOMWindowProxyType, aHaveSelection: boolean, aPrintSettings: nsIPrintSettingsType): void;
     /**
      * Show the page setup dialog. Note that there is no way to tell whether the
      * user clicked OK or Cancel on the dialog.
@@ -36967,7 +36967,7 @@ declare interface nsIPrintDialogServiceType extends nsISupportsType {
      * cancelled, then this has been updated with the settings
      * that the user selected in the dialog.
      */
-    showPageSetupDialog(aParent: mozIDOMWindowProxy, aPrintSettings: nsIPrintSettingsType): void;
+    showPageSetupDialog(aParent: mozIDOMWindowProxyType, aPrintSettings: nsIPrintSettingsType): void;
 }
 
 /**
@@ -38130,7 +38130,7 @@ declare interface nsIPromptFactoryType extends nsISupportsType {
      * Returns an object implementing the specified interface that creates
      * prompts parented to aParent.
      */
-    getPrompt(aParent: mozIDOMWindowProxy, iid: nsIIDRefType, result: nsQIResult): void;
+    getPrompt(aParent: mozIDOMWindowProxyType, iid: nsIIDRefType, result: nsQIResult): void;
 }
 
 /**
@@ -38184,7 +38184,7 @@ declare interface nsIPromptServiceType extends nsISupportsType {
      * @param aText
      * Text to appear in the body of the dialog.
      */
-    alert(aParent: mozIDOMWindowProxy, aDialogTitle: wstring, aText: wstring): void;
+    alert(aParent: mozIDOMWindowProxyType, aDialogTitle: wstring, aText: wstring): void;
     /**
      * Like alert, but with a BrowsingContext as parent.
      *
@@ -38215,7 +38215,7 @@ declare interface nsIPromptServiceType extends nsISupportsType {
      * Contains the initial checked state of the checkbox when this method
      * is called and the final checked state after this method returns.
      */
-    alertCheck(aParent: mozIDOMWindowProxy, aDialogTitle: wstring, aText: wstring, aCheckMsg: wstring, aCheckState: boolean): void;
+    alertCheck(aParent: mozIDOMWindowProxyType, aDialogTitle: wstring, aText: wstring, aCheckMsg: wstring, aCheckState: boolean): void;
     /**
      * Like alertCheck, but with a BrowsingContext as parent.
      *
@@ -38245,7 +38245,7 @@ declare interface nsIPromptServiceType extends nsISupportsType {
      *
      * @return true for OK, false for Cancel
      */
-    confirm(aParent: mozIDOMWindowProxy, aDialogTitle: wstring, aText: wstring): boolean;
+    confirm(aParent: mozIDOMWindowProxyType, aDialogTitle: wstring, aText: wstring): boolean;
     /**
      * Like confirm, but with a BrowsingContext as parent.
      *
@@ -38280,7 +38280,7 @@ declare interface nsIPromptServiceType extends nsISupportsType {
      *
      * @return true for OK, false for Cancel
      */
-    confirmCheck(aParent: mozIDOMWindowProxy, aDialogTitle: wstring, aText: wstring, aCheckMsg: wstring, aCheckState: boolean): boolean;
+    confirmCheck(aParent: mozIDOMWindowProxyType, aDialogTitle: wstring, aText: wstring, aCheckMsg: wstring, aCheckState: boolean): boolean;
     /**
      * Like confirmCheck, but with a BrowsingContext as parent.
      *
@@ -38362,7 +38362,7 @@ declare interface nsIPromptServiceType extends nsISupportsType {
      *
      * where "AAA" and "BBB" correspond to one of the button titles.
      */
-    confirmEx(aParent: mozIDOMWindowProxy, aDialogTitle: wstring, aText: wstring, aButtonFlags: unsigned_long, aButton0Title: wstring, aButton1Title: wstring, aButton2Title: wstring, aCheckMsg: wstring, aCheckState: boolean): int32_t;
+    confirmEx(aParent: mozIDOMWindowProxyType, aDialogTitle: wstring, aText: wstring, aButtonFlags: unsigned_long, aButton0Title: wstring, aButton1Title: wstring, aButton2Title: wstring, aCheckMsg: wstring, aCheckState: boolean): int32_t;
     /**
      * Like confirmEx, but with a BrowsingContext as parent.
      *
@@ -38402,7 +38402,7 @@ declare interface nsIPromptServiceType extends nsISupportsType {
      *
      * @return true for OK, false for Cancel.
      */
-    prompt(aParent: mozIDOMWindowProxy, aDialogTitle: wstring, aText: wstring, aValue: wstring, aCheckMsg: wstring, aCheckState: boolean): boolean;
+    prompt(aParent: mozIDOMWindowProxyType, aDialogTitle: wstring, aText: wstring, aValue: wstring, aCheckMsg: wstring, aCheckState: boolean): boolean;
     /**
      * Like prompt, but with a BrowsingContext as parent.
      *
@@ -38442,7 +38442,7 @@ declare interface nsIPromptServiceType extends nsISupportsType {
      *
      * @return true for OK, false for Cancel.
      */
-    promptUsernameAndPassword(aParent: mozIDOMWindowProxy, aDialogTitle: wstring, aText: wstring, aUsername: wstring, aPassword: wstring): boolean;
+    promptUsernameAndPassword(aParent: mozIDOMWindowProxyType, aDialogTitle: wstring, aText: wstring, aUsername: wstring, aPassword: wstring): boolean;
     /**
      * Like promptUsernameAndPassword, but with a BrowsingContext as parent.
      *
@@ -38477,7 +38477,7 @@ declare interface nsIPromptServiceType extends nsISupportsType {
      *
      * @return true for OK, false for Cancel.
      */
-    promptPassword(aParent: mozIDOMWindowProxy, aDialogTitle: wstring, aText: wstring, aPassword: wstring): boolean;
+    promptPassword(aParent: mozIDOMWindowProxyType, aDialogTitle: wstring, aText: wstring, aPassword: wstring): boolean;
     /**
      * Like promptPassword, but with a BrowsingContext as parent.
      *
@@ -38513,7 +38513,7 @@ declare interface nsIPromptServiceType extends nsISupportsType {
      *
      * @return true for OK, false for Cancel.
      */
-    select(aParent: mozIDOMWindowProxy, aDialogTitle: wstring, aText: wstring, aSelectList: invalid, aOutSelection: long): boolean;
+    select(aParent: mozIDOMWindowProxyType, aDialogTitle: wstring, aText: wstring, aSelectList: invalid, aOutSelection: long): boolean;
     /**
      * Like select, but with a BrowsingContext as parent.
      *
@@ -38534,7 +38534,7 @@ declare interface nsIPromptServiceType extends nsISupportsType {
     /**
      *
      */
-    promptAuth(aParent: mozIDOMWindowProxy, aChannel: nsIChannelType, level: uint32_t, authInfo: nsIAuthInformationType): boolean;
+    promptAuth(aParent: mozIDOMWindowProxyType, aChannel: nsIChannelType, level: uint32_t, authInfo: nsIAuthInformationType): boolean;
     /**
      * Like promptAuth, but with a BrowsingContext as parent.
      *
@@ -43827,7 +43827,7 @@ declare interface nsISharePickerType extends nsISupportsType {
      * Initialize the share picker widget.
      * @param nsIDOMWindow openerWindow.
      */
-    init(openerWindow: mozIDOMWindowProxy): void;
+    init(openerWindow: mozIDOMWindowProxyType): void;
     /**
      * Returns the parent window this was initialized with.
      */
@@ -48440,7 +48440,7 @@ declare interface nsITextInputProcessorType extends nsISupportsType {
      * when this returns true.  If this returns false,
      * your TIP should wait next chance.
      */
-    beginInputTransaction(aWindow: mozIDOMWindow, aCallback: nsITextInputProcessorCallbackType): boolean;
+    beginInputTransaction(aWindow: mozIDOMWindowType, aCallback: nsITextInputProcessorCallbackType): boolean;
     /**
      * When you create an instance for automated test, you must call
      * beginInputTransaction(), first.  See beginInputTransaction() for more
@@ -48448,7 +48448,7 @@ declare interface nsITextInputProcessorType extends nsISupportsType {
      * Note that aCallback can be null.  If it's null, nsITextInputProcessor
      * implementation will handle them automatically.
      */
-    beginInputTransactionForTests(aWindow: mozIDOMWindow, aCallback?: nsITextInputProcessorCallbackType): boolean;
+    beginInputTransactionForTests(aWindow: mozIDOMWindowType, aCallback?: nsITextInputProcessorCallbackType): boolean;
     /**
      * startComposition() dispatches compositionstart event explicitly.
      * IME does NOT need to call this typically since compositionstart event
@@ -57150,7 +57150,7 @@ declare interface nsIWebVTTParserWrapperType extends nsISupportsType {
      * @param window The window that the parser will use to create VTTCues and
      * VTTRegions.
      */
-    loadParser(window: mozIDOMWindow): void;
+    loadParser(window: mozIDOMWindowType): void;
     /**
      * Attempts to parse the stream's data as WebVTT format. When it successfully
      * parses a WebVTT region or WebVTT cue it will create a VTTRegion or VTTCue
@@ -57186,7 +57186,7 @@ declare interface nsIWebVTTParserWrapperType extends nsISupportsType {
      * @param cue    The cue whose content will be converted to a document
      * fragment.
      */
-    convertCueToDOMTree(window: mozIDOMWindow, cue: nsISupportsType): DocumentFragment;
+    convertCueToDOMTree(window: mozIDOMWindowType, cue: nsISupportsType): DocumentFragment;
     /**
      * Compute the display state of the VTTCues in cues along with any VTTRegions
      * that they might be in. First, it computes the positioning and styling of
@@ -57202,7 +57202,7 @@ declare interface nsIWebVTTParserWrapperType extends nsISupportsType {
      * @param overlay The HTMLElement that the cues will be displayed within.
      * @param controls The video control element that will affect cues position.
      */
-    processCues(window: mozIDOMWindow, cues: nsIVariantType, overlay: nsISupportsType, controls: nsISupportsType): void;
+    processCues(window: mozIDOMWindowType, cues: nsIVariantType, overlay: nsISupportsType, controls: nsISupportsType): void;
 }
 
 /**
@@ -57495,7 +57495,7 @@ declare interface nsIWinTaskbarType extends nsISupportsType {
      * @throw NS_ERROR_FAILURE if the property on the window could not be set.
      * @throw NS_ERROR_UNEXPECTED for general failures.
      */
-    setGroupIdForWindow(aParent: mozIDOMWindow, aIdentifier: AString): void;
+    setGroupIdForWindow(aParent: mozIDOMWindowType, aIdentifier: AString): void;
 }
 
 /**
@@ -57565,29 +57565,29 @@ declare interface nsIWindowMediatorType extends nsISupportsType {
      * If null, return the topmost window of any type.
      * @return the topmost window
      */
-    getMostRecentWindow(aWindowType: wstring): mozIDOMWindowProxy;
+    getMostRecentWindow(aWindowType: wstring): mozIDOMWindowProxyType;
     /**
      * This is a shortcut for getMostRecentWindow('navigator:browser'), but
      * if that fails it also tries 'navigator:geckoview' and 'mail:3pane'.
      *
      * @return the topmost browser window
      */
-    getMostRecentBrowserWindow(): mozIDOMWindowProxy;
+    getMostRecentBrowserWindow(): mozIDOMWindowProxyType;
     /**
      * Same as getMostRecentWindow, but ignores private browsing
      * windows.
      */
-    getMostRecentNonPBWindow(aWindowType: wstring): mozIDOMWindowProxy;
+    getMostRecentNonPBWindow(aWindowType: wstring): mozIDOMWindowProxyType;
     /**
      * Return the outer window with the given ID, if any.  Can return null.
      */
-    getOuterWindowWithId(aOuterWindowID: unsigned_long_long): mozIDOMWindowProxy;
+    getOuterWindowWithId(aOuterWindowID: unsigned_long_long): mozIDOMWindowProxyType;
     /**
      * Return the inner window with the given current window ID, if any.
      * Can return null if no inner window with the ID exists or if it's not
      * a current inner anymore.
      */
-    getCurrentInnerWindowWithId(aInnerWindowID: unsigned_long_long): mozIDOMWindow;
+    getCurrentInnerWindowWithId(aInnerWindowID: unsigned_long_long): mozIDOMWindowType;
     readonly zLevelTop: unsigned_long;
     readonly zLevelBottom: unsigned_long;
     readonly zLevelBelow: unsigned_long;
@@ -57675,7 +57675,7 @@ declare interface nsIWindowWatcherType extends nsISupportsType {
      * @note This method may dispatch a "toplevel-window-ready" notification
      * via nsIObserverService if the window did not already exist.
      */
-    openWindow(aParent: mozIDOMWindowProxy, aUrl: ACString, aName: ACString, aFeatures: ACString, aArguments: nsISupportsType): mozIDOMWindowProxy;
+    openWindow(aParent: mozIDOMWindowProxyType, aUrl: ACString, aName: ACString, aFeatures: ACString, aArguments: nsISupportsType): mozIDOMWindowProxyType;
     /**
      * Clients of this service can register themselves to be notified
      * when a window is opened or closed (added to or removed from this
@@ -57712,13 +57712,13 @@ declare interface nsIWindowWatcherType extends nsISupportsType {
      * @param aParent the parent window used for posing alerts. can be null.
      * @return a new nsIPrompt object
      */
-    getNewPrompter(aParent: mozIDOMWindowProxy): nsIPromptType;
+    getNewPrompter(aParent: mozIDOMWindowProxyType): nsIPromptType;
     /**
      * Return a newly created nsIAuthPrompt implementation.
      * @param aParent the parent window used for posing alerts. can be null.
      * @return a new nsIAuthPrompt object
      */
-    getNewAuthPrompter(aParent: mozIDOMWindowProxy): nsIAuthPromptType;
+    getNewAuthPrompter(aParent: mozIDOMWindowProxyType): nsIAuthPromptType;
     /**
      * Set the window creator callback. It must be filled in by the app.
      * openWindow will use it to create new windows.
@@ -57739,7 +57739,7 @@ declare interface nsIWindowWatcherType extends nsISupportsType {
      * @param aWindow the DOM window whose chrome window the caller needs
      * @return the corresponding chrome window
      */
-    getChromeForWindow(aWindow: mozIDOMWindowProxy): nsIWebBrowserChromeType;
+    getChromeForWindow(aWindow: mozIDOMWindowProxyType): nsIWebBrowserChromeType;
     /**
      * Retrieve an existing chrome window (or frame).
      * @param aTargetName the window name
@@ -57751,7 +57751,7 @@ declare interface nsIWindowWatcherType extends nsISupportsType {
      * frame with the given window name. Make sure you understand the
      * security implications of this before using this method!
      */
-    getWindowByName(aTargetName: AString): mozIDOMWindowProxy;
+    getWindowByName(aTargetName: AString): mozIDOMWindowProxyType;
     /**
      * Retrieves the active window from the focus manager.
      */
@@ -58295,15 +58295,15 @@ declare interface nsIWindowsUIUtilsType extends nsISupportsType {
     /**
      *
      */
-    setWindowIcon(aWindow: mozIDOMWindowProxy, aSmallIcon: imgIContainer, aLargeIcon: imgIContainer): void;
+    setWindowIcon(aWindow: mozIDOMWindowProxyType, aSmallIcon: imgIContainer, aLargeIcon: imgIContainer): void;
     /**
      *
      */
-    setWindowIconFromExe(aWindow: mozIDOMWindowProxy, aExe: AString, aIndex: unsigned_short): void;
+    setWindowIconFromExe(aWindow: mozIDOMWindowProxyType, aExe: AString, aIndex: unsigned_short): void;
     /**
      *
      */
-    setWindowIconNoData(aWindow: mozIDOMWindowProxy): void;
+    setWindowIconNoData(aWindow: mozIDOMWindowProxyType): void;
     /**
      * Whether the OS is currently in tablet mode. Always false on
      * non-Windows and on versions of Windows before win10
@@ -59900,12 +59900,12 @@ declare interface nsPIWindowWatcherType extends nsISupportsType {
      * method getChromeForWindow. If null, any extant mapping
      * will be cleared.
      */
-    addWindow(aWindow: mozIDOMWindowProxy, aChrome: nsIWebBrowserChromeType): void;
+    addWindow(aWindow: mozIDOMWindowProxyType, aChrome: nsIWebBrowserChromeType): void;
     /**
      * A window has been closed. Remove it from our list.
      * @param aWindow the window to remove
      */
-    removeWindow(aWindow: mozIDOMWindowProxy): void;
+    removeWindow(aWindow: mozIDOMWindowProxyType): void;
     readonly PRINT_NONE;
     readonly PRINT_INTERNAL;
     readonly PRINT_WINDOW_DOT_PRINT;
