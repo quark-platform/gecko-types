@@ -42,7 +42,7 @@ exportMods = exportMods.filter((exp) => exp.path.includes('resource://'))
       `
 declare interface MozESMFiles {
   ${mods
-    .map((mod) => `['${mod.path}']: typeof import('${mod.path}.d.ts');`)
+    .map((mod) => `['${mod.path}']: typeof import('${mod.path}');`)
     .join('\n  ')}
 }\n
 declare interface MozESMExportFile {
@@ -51,8 +51,7 @@ declare interface MozESMExportFile {
 declare interface MozESMExportType {
   ${exportMods
     .map(
-      (exp) =>
-        `['${exp.name}']: (typeof import('${exp.path}.d.ts'))['${exp.name}'];`
+      (exp) => `['${exp.path}']: (typeof import('${exp.path}'))['${exp.name}'];`
     )
     .join('\n  ')}
 }`
