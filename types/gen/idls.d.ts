@@ -1198,7 +1198,7 @@ declare interface mozIBridgedSyncEngineCallbackType extends nsISupportsType {
     /**
      *
      */
-    handleSuccess(result: nsIVariantType): void;
+    handleSuccess(result: any): void;
     /**
      *
      */
@@ -1610,7 +1610,7 @@ declare interface mozIExtensionStorageCallbackType extends nsISupportsType {
     /**
      *
      */
-    handleSuccess(result: nsIVariantType): void;
+    handleSuccess(result: any): void;
     /**
      *
      */
@@ -2634,7 +2634,7 @@ declare interface mozIStorageBindingParamsType extends nsISupportsType {
      * @param aValue
      * The value to bind.
      */
-    bindByName(aName: AUTF8String, aValue: nsIVariantType): void;
+    bindByName(aName: AUTF8String, aValue: any): void;
     /**
      *
      */
@@ -2655,7 +2655,7 @@ declare interface mozIStorageBindingParamsType extends nsISupportsType {
      * @param aValue
      * The value to bind.
      */
-    bindByIndex(aIndex: unsigned_long, aValue: nsIVariantType): void;
+    bindByIndex(aIndex: unsigned_long, aValue: any): void;
     /**
      *
      */
@@ -2969,7 +2969,7 @@ declare interface mozIStorageFunctionType extends nsISupportsType {
      *
      * @returns any value as Variant type.
      */
-    onFunctionCall(aFunctionArguments: mozIStorageValueArrayType): nsIVariantType;
+    onFunctionCall(aFunctionArguments: mozIStorageValueArrayType): any;
 }
 
 /**
@@ -3027,7 +3027,7 @@ declare interface mozIStorageRowType extends mozIStorageValueArrayType {
      * Zero-based index of the result to get from the tuple.
      * @returns the result of the specified column.
      */
-    getResultByIndex(aIndex: unsigned_long): nsIVariantType;
+    getResultByIndex(aIndex: unsigned_long): any;
     /**
      * Obtains the result of a given column specified by aName.
      *
@@ -3038,7 +3038,7 @@ declare interface mozIStorageRowType extends mozIStorageValueArrayType {
      * column.  If there is no AS clause then the name of the column is
      * unspecified and may change from one release to the next.
      */
-    getResultByName(aName: AUTF8String): nsIVariantType;
+    getResultByName(aName: AUTF8String): any;
 }
 
 /**
@@ -3101,7 +3101,7 @@ declare interface mozIStorageServiceType extends nsISupportsType {
      * @throws NS_ERROR_NOT_SAME_THREAD if called from a thread other than the
      * main thread.
      */
-    openAsyncDatabase(aDatabaseStore: nsIVariantType, aOpenFlags?: unsigned_long, aConnectionFlags?: unsigned_long, aCallback: mozIStorageCompletionCallbackType): void;
+    openAsyncDatabase(aDatabaseStore: any, aOpenFlags?: unsigned_long, aConnectionFlags?: unsigned_long, aCallback: mozIStorageCompletionCallbackType): void;
     /**
      * Get a connection to a named special database storage.
      *
@@ -3340,7 +3340,7 @@ declare interface mozIStorageStatementType extends mozIStorageBaseStatementType 
      * 0-based colummn index.
      * @return A variant with the type of the column value.
      */
-    getVariant(aIndex: unsigned_long): nsIVariantType;
+    getVariant(aIndex: unsigned_long): any;
     /**
      * Retrieve the contents of a column from the current result row as an
      * integer.
@@ -9278,7 +9278,7 @@ declare interface nsICertStorageCallbackType extends nsISupportsType {
     /**
      *
      */
-    done(rv: nsresult, result: nsIVariantType): void;
+    done(rv: nsresult, result: any): void;
 }
 
 /**
@@ -11740,7 +11740,7 @@ declare interface nsIContentPrefObserverType extends nsISupportsType {
      * @param    aIsPrivate  an optional flag determining whether the
      * original context is private or not
      */
-    onContentPrefSet(aGroup: AString, aName: AString, aValue: nsIVariantType, aIsPrivate?: boolean): void;
+    onContentPrefSet(aGroup: AString, aName: AString, aValue: any, aIsPrivate?: boolean): void;
     /**
      * Called when a content pref is removed.
      *
@@ -11896,7 +11896,7 @@ declare interface nsIContentPrefService2Type extends nsISupportsType {
      * @param callback  handleCompletion is called when the preference has been
      * stored.
      */
-    set(domain: AString, name: AString, value: nsIVariantType, context: nsILoadContextType, callback?: nsIContentPrefCallback2Type): void;
+    set(domain: AString, name: AString, value: any, context: nsILoadContextType, callback?: nsIContentPrefCallback2Type): void;
     /**
      * Sets a preference with no domain.
      *
@@ -11906,7 +11906,7 @@ declare interface nsIContentPrefService2Type extends nsISupportsType {
      * @param callback  handleCompletion is called when the preference has been
      * stored.
      */
-    setGlobal(name: AString, value: nsIVariantType, context: nsILoadContextType, callback?: nsIContentPrefCallback2Type): void;
+    setGlobal(name: AString, value: any, context: nsILoadContextType, callback?: nsIContentPrefCallback2Type): void;
     /**
      * Removes the preference with the given domain and name.
      *
@@ -27553,7 +27553,7 @@ declare interface nsIKeyValueDatabaseType extends nsISupportsType {
     /**
      * Write the specified key/value pair to the database.
      */
-    put(callback: nsIKeyValueVoidCallbackType, key: AUTF8String, value: nsIVariantType): void;
+    put(callback: nsIKeyValueVoidCallbackType, key: AUTF8String, value: any): void;
     /**
      * Write multiple key/value pairs to the database.
      *
@@ -27585,7 +27585,7 @@ declare interface nsIKeyValueDatabaseType extends nsISupportsType {
      * the callback's resolve() method will be called with a variant
      * of type VTYPE_EMPTY, which translates to the JS `null` value.
      */
-    get(callback: nsIKeyValueVariantCallbackType, key: AUTF8String, defaultValue?: nsIVariantType): void;
+    get(callback: nsIKeyValueVariantCallbackType, key: AUTF8String, defaultValue?: any): void;
     /**
      * Determine whether or not the key exists in the database.
      */
@@ -27707,7 +27707,7 @@ declare interface nsIKeyValueVariantCallbackType extends nsISupportsType {
     /**
      *
      */
-    resolve(result: nsIVariantType): void;
+    resolve(result: any): void;
     /**
      *
      */
@@ -38609,7 +38609,7 @@ declare interface nsIPropertyBagType extends nsISupportsType {
      * @throws NS_ERROR_FAILURE if a property with that name doesn't
      * exist.
      */
-    getProperty(name: AString): nsIVariantType;
+    getProperty(name: AString): any;
 }
 
 /**
@@ -38663,7 +38663,7 @@ declare interface nsIPropertyBag2Type extends nsIPropertyBagType {
      * This method returns null if the value does not exist,
      * or exists but is null.
      */
-    get(prop: AString): nsIVariantType;
+    get(prop: AString): any;
     /**
      * Check for the existence of a key.
      */
@@ -47270,7 +47270,7 @@ declare interface nsITaggingServiceType extends nsISupportsType {
      * A change source constant from nsINavBookmarksService::SOURCE_*.
      * Defaults to SOURCE_DEFAULT if omitted.
      */
-    tagURI(aURI: nsIURIType, aTags: nsIVariantType, aSource?: unsigned_short): void;
+    tagURI(aURI: nsIURIType, aTags: any, aSource?: unsigned_short): void;
     /**
      * Removes tags from a URL. Tags from aTags which are not set for the
      * given URL are ignored.
@@ -47285,7 +47285,7 @@ declare interface nsITaggingServiceType extends nsISupportsType {
      * A change source constant from nsINavBookmarksService::SOURCE_*.
      * Defaults to SOURCE_DEFAULT if omitted.
      */
-    untagURI(aURI: nsIURIType, aTags: nsIVariantType, aSource?: unsigned_short): void;
+    untagURI(aURI: nsIURIType, aTags: any, aSource?: unsigned_short): void;
 }
 
 /**
@@ -54622,7 +54622,7 @@ declare interface nsIWritableVariantType extends nsIVariantType {
     /**
      *
      */
-    setFromVariant(aValue: nsIVariantType): void;
+    setFromVariant(aValue: any): void;
 }
 
 /**
@@ -57202,7 +57202,7 @@ declare interface nsIWebVTTParserWrapperType extends nsISupportsType {
      * @param overlay The HTMLElement that the cues will be displayed within.
      * @param controls The video control element that will affect cues position.
      */
-    processCues(window: mozIDOMWindowType, cues: nsIVariantType, overlay: nsISupportsType, controls: nsISupportsType): void;
+    processCues(window: mozIDOMWindowType, cues: any, overlay: nsISupportsType, controls: nsISupportsType): void;
 }
 
 /**
@@ -58471,7 +58471,7 @@ declare interface nsIWritablePropertyBagType extends nsIPropertyBagType {
      * a property already exists with the given name, it is
      * overwritten.
      */
-    setProperty(name: AString, value: nsIVariantType): void;
+    setProperty(name: AString, value: any): void;
     /**
      * Delete a property with the given name.
      * @throws NS_ERROR_FAILURE if a property with that name doesn't

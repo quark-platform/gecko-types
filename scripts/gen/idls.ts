@@ -115,6 +115,9 @@ function handleFunc(
         // TODO: Array<...> support
         if (typeof val.type == 'string') type = val.type.replaceAll(' ', '_')
 
+        // nsIVariant is just equivalent to the correct JS type when inside of
+        // js. The only reason this exists is for c++ code
+        if (type === 'nsIVariant') type = 'any'
         // If a type starts with nsI, it is probibly an interface, and we should
         // append the 'Type' postfix
         if (type.startsWith('nsI') || type.startsWith('mozI')) type += 'Type'
@@ -148,6 +151,7 @@ function handleFunc(
     )
   }
 
+  if (returnType === 'nsIVariant') returnType = 'any'
   if (returnType.startsWith('nsI') || returnType.startsWith('mozI'))
     returnType += 'Type'
 
