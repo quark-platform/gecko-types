@@ -170,7 +170,8 @@ function handleFunc(
 function addConstant(
   interfaceName: string,
   key: string,
-  value?: string
+  value?: string,
+  type?: string
 ): ts.TypeElement[] {
   const constants = idlConstants.get(interfaceName) || []
   constants.push({ key, value })
@@ -181,7 +182,9 @@ function addConstant(
       [READ_ONLY_MODIFIER],
       key,
       undefined,
-      value ? ts.factory.createTypeReferenceNode('string') : undefined
+      (type && ts.factory.createTypeReferenceNode(type)) ||
+        (value && ts.factory.createTypeReferenceNode('string')) ||
+        undefined
     ),
   ]
 }
@@ -190,13 +193,18 @@ function handleConst(
   code: const_code,
   interfaceName: string
 ): ts.TypeElement[] {
-  const { name: key, value } = code
+  const { name: key, value, type } = code
   if (typeof key !== 'string') return []
 
   if (typeof value !== 'string') {
     return addConstant(interfaceName, key)
   } else {
-    return addConstant(interfaceName, key, value)
+    return addConstant(
+      interfaceName,
+      key,
+      value,
+      (typeof type === 'string' && type.replaceAll(' ', '_')) || undefined
+    )
   }
 }
 

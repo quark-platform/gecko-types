@@ -26,75 +26,75 @@ declare interface IPeerConnectionObserverType extends nsISupportsType {
  *
  */
 declare interface IPeerConnectionType extends nsISupportsType {
-    readonly kHintAudio: string;
-    readonly kHintVideo: string;
+    readonly kHintAudio: unsigned_long;
+    readonly kHintVideo: unsigned_long;
     readonly kActionNone;
-    readonly kActionOffer: string;
-    readonly kActionAnswer: string;
-    readonly kActionPRAnswer: string;
-    readonly kActionRollback: string;
-    readonly kIceGathering: string;
-    readonly kIceWaiting: string;
-    readonly kIceChecking: string;
-    readonly kIceConnected: string;
-    readonly kIceFailed: string;
-    readonly kNew: string;
-    readonly kNegotiating: string;
-    readonly kActive: string;
-    readonly kClosing: string;
-    readonly kClosed: string;
-    readonly kDataChannelReliable: string;
-    readonly kDataChannelPartialReliableRexmit: string;
-    readonly kDataChannelPartialReliableTimed: string;
-    readonly kNoError: string;
-    readonly kInvalidCandidate: string;
-    readonly kInvalidMediastreamTrack: string;
-    readonly kInvalidState: string;
-    readonly kInvalidSessionDescription: string;
-    readonly kIncompatibleSessionDescription: string;
-    readonly kIncompatibleMediaStreamTrack: string;
-    readonly kInternalError: string;
-    readonly kTypeError: string;
-    readonly kOperationError: string;
-    readonly kMaxErrorType: string;
+    readonly kActionOffer: long;
+    readonly kActionAnswer: long;
+    readonly kActionPRAnswer: long;
+    readonly kActionRollback: long;
+    readonly kIceGathering: long;
+    readonly kIceWaiting: long;
+    readonly kIceChecking: long;
+    readonly kIceConnected: long;
+    readonly kIceFailed: long;
+    readonly kNew: long;
+    readonly kNegotiating: long;
+    readonly kActive: long;
+    readonly kClosing: long;
+    readonly kClosed: long;
+    readonly kDataChannelReliable: unsigned_short;
+    readonly kDataChannelPartialReliableRexmit: unsigned_short;
+    readonly kDataChannelPartialReliableTimed: unsigned_short;
+    readonly kNoError: unsigned_long;
+    readonly kInvalidCandidate: unsigned_long;
+    readonly kInvalidMediastreamTrack: unsigned_long;
+    readonly kInvalidState: unsigned_long;
+    readonly kInvalidSessionDescription: unsigned_long;
+    readonly kIncompatibleSessionDescription: unsigned_long;
+    readonly kIncompatibleMediaStreamTrack: unsigned_long;
+    readonly kInternalError: unsigned_long;
+    readonly kTypeError: unsigned_long;
+    readonly kOperationError: unsigned_long;
+    readonly kMaxErrorType: unsigned_long;
 }
 
 /**
  *
  */
 declare interface IUrlClassifierUITelemetryType extends nsISupportsType {
-    readonly WARNING_MALWARE_PAGE_TOP: string;
-    readonly WARNING_MALWARE_PAGE_TOP_WHY_BLOCKED: string;
-    readonly WARNING_MALWARE_PAGE_TOP_GET_ME_OUT_OF_HERE: string;
-    readonly WARNING_MALWARE_PAGE_TOP_IGNORE_WARNING: string;
-    readonly WARNING_MALWARE_PAGE_FRAME: string;
-    readonly WARNING_MALWARE_PAGE_FRAME_WHY_BLOCKED: string;
-    readonly WARNING_MALWARE_PAGE_FRAME_GET_ME_OUT_OF_HERE: string;
-    readonly WARNING_MALWARE_PAGE_FRAME_IGNORE_WARNING: string;
-    readonly WARNING_PHISHING_PAGE_TOP: string;
-    readonly WARNING_PHISHING_PAGE_TOP_WHY_BLOCKED: string;
-    readonly WARNING_PHISHING_PAGE_TOP_GET_ME_OUT_OF_HERE: string;
-    readonly WARNING_PHISHING_PAGE_TOP_IGNORE_WARNING: string;
-    readonly WARNING_PHISHING_PAGE_FRAME: string;
-    readonly WARNING_PHISHING_PAGE_FRAME_WHY_BLOCKED: string;
-    readonly WARNING_PHISHING_PAGE_FRAME_GET_ME_OUT_OF_HERE: string;
-    readonly WARNING_PHISHING_PAGE_FRAME_IGNORE_WARNING: string;
-    readonly WARNING_UNWANTED_PAGE_TOP: string;
-    readonly WARNING_UNWANTED_PAGE_TOP_WHY_BLOCKED: string;
-    readonly WARNING_UNWANTED_PAGE_TOP_GET_ME_OUT_OF_HERE: string;
-    readonly WARNING_UNWANTED_PAGE_TOP_IGNORE_WARNING: string;
-    readonly WARNING_UNWANTED_PAGE_FRAME: string;
-    readonly WARNING_UNWANTED_PAGE_FRAME_WHY_BLOCKED: string;
-    readonly WARNING_UNWANTED_PAGE_FRAME_GET_ME_OUT_OF_HERE: string;
-    readonly WARNING_UNWANTED_PAGE_FRAME_IGNORE_WARNING: string;
-    readonly WARNING_HARMFUL_PAGE_TOP: string;
-    readonly WARNING_HARMFUL_PAGE_TOP_WHY_BLOCKED: string;
-    readonly WARNING_HARMFUL_PAGE_TOP_GET_ME_OUT_OF_HERE: string;
-    readonly WARNING_HARMFUL_PAGE_TOP_IGNORE_WARNING: string;
-    readonly WARNING_HARMFUL_PAGE_FRAME: string;
-    readonly WARNING_HARMFUL_PAGE_FRAME_WHY_BLOCKED: string;
-    readonly WARNING_HARMFUL_PAGE_FRAME_GET_ME_OUT_OF_HERE: string;
-    readonly WARNING_HARMFUL_PAGE_FRAME_IGNORE_WARNING: string;
+    readonly WARNING_MALWARE_PAGE_TOP: uint32_t;
+    readonly WARNING_MALWARE_PAGE_TOP_WHY_BLOCKED: uint32_t;
+    readonly WARNING_MALWARE_PAGE_TOP_GET_ME_OUT_OF_HERE: uint32_t;
+    readonly WARNING_MALWARE_PAGE_TOP_IGNORE_WARNING: uint32_t;
+    readonly WARNING_MALWARE_PAGE_FRAME: uint32_t;
+    readonly WARNING_MALWARE_PAGE_FRAME_WHY_BLOCKED: uint32_t;
+    readonly WARNING_MALWARE_PAGE_FRAME_GET_ME_OUT_OF_HERE: uint32_t;
+    readonly WARNING_MALWARE_PAGE_FRAME_IGNORE_WARNING: uint32_t;
+    readonly WARNING_PHISHING_PAGE_TOP: uint32_t;
+    readonly WARNING_PHISHING_PAGE_TOP_WHY_BLOCKED: uint32_t;
+    readonly WARNING_PHISHING_PAGE_TOP_GET_ME_OUT_OF_HERE: uint32_t;
+    readonly WARNING_PHISHING_PAGE_TOP_IGNORE_WARNING: uint32_t;
+    readonly WARNING_PHISHING_PAGE_FRAME: uint32_t;
+    readonly WARNING_PHISHING_PAGE_FRAME_WHY_BLOCKED: uint32_t;
+    readonly WARNING_PHISHING_PAGE_FRAME_GET_ME_OUT_OF_HERE: uint32_t;
+    readonly WARNING_PHISHING_PAGE_FRAME_IGNORE_WARNING: uint32_t;
+    readonly WARNING_UNWANTED_PAGE_TOP: uint32_t;
+    readonly WARNING_UNWANTED_PAGE_TOP_WHY_BLOCKED: uint32_t;
+    readonly WARNING_UNWANTED_PAGE_TOP_GET_ME_OUT_OF_HERE: uint32_t;
+    readonly WARNING_UNWANTED_PAGE_TOP_IGNORE_WARNING: uint32_t;
+    readonly WARNING_UNWANTED_PAGE_FRAME: uint32_t;
+    readonly WARNING_UNWANTED_PAGE_FRAME_WHY_BLOCKED: uint32_t;
+    readonly WARNING_UNWANTED_PAGE_FRAME_GET_ME_OUT_OF_HERE: uint32_t;
+    readonly WARNING_UNWANTED_PAGE_FRAME_IGNORE_WARNING: uint32_t;
+    readonly WARNING_HARMFUL_PAGE_TOP: uint32_t;
+    readonly WARNING_HARMFUL_PAGE_TOP_WHY_BLOCKED: uint32_t;
+    readonly WARNING_HARMFUL_PAGE_TOP_GET_ME_OUT_OF_HERE: uint32_t;
+    readonly WARNING_HARMFUL_PAGE_TOP_IGNORE_WARNING: uint32_t;
+    readonly WARNING_HARMFUL_PAGE_FRAME: uint32_t;
+    readonly WARNING_HARMFUL_PAGE_FRAME_WHY_BLOCKED: uint32_t;
+    readonly WARNING_HARMFUL_PAGE_FRAME_GET_ME_OUT_OF_HERE: uint32_t;
+    readonly WARNING_HARMFUL_PAGE_FRAME_IGNORE_WARNING: uint32_t;
 }
 
 /**
@@ -332,9 +332,9 @@ declare interface imgIContainerType extends nsISupportsType {
      * @param aFlags Flags of the FLAG_* variety
      */
     optimalImageSizeForDest(aDest: gfxSize, aWhichFrame: uint32_t, aSamplingFilter: SamplingFilter, aFlags: uint32_t): nsIntSizeByValType;
-    readonly TYPE_RASTER: string;
-    readonly TYPE_VECTOR: string;
-    readonly TYPE_REQUEST: string;
+    readonly TYPE_RASTER: unsigned_short;
+    readonly TYPE_VECTOR: unsigned_short;
+    readonly TYPE_REQUEST: unsigned_short;
     /**
      * The type of this image (one of the TYPE_* values above).
      */
@@ -350,25 +350,25 @@ declare interface imgIContainerType extends nsISupportsType {
      * Provider ID for image providers created by this image.
      */
     readonly providerId: unsigned_long;
-    readonly FLAG_NONE: string;
-    readonly FLAG_SYNC_DECODE: string;
-    readonly FLAG_SYNC_DECODE_IF_FAST: string;
-    readonly FLAG_ASYNC_NOTIFY: string;
-    readonly FLAG_DECODE_NO_PREMULTIPLY_ALPHA: string;
-    readonly FLAG_DECODE_NO_COLORSPACE_CONVERSION: string;
-    readonly FLAG_CLAMP: string;
-    readonly FLAG_HIGH_QUALITY_SCALING: string;
-    readonly FLAG_BYPASS_SURFACE_CACHE: string;
-    readonly FLAG_FORCE_PRESERVEASPECTRATIO_NONE: string;
-    readonly FLAG_FORCE_UNIFORM_SCALING: string;
-    readonly FLAG_AVOID_REDECODE_FOR_SIZE: string;
-    readonly FLAG_DECODE_TO_SRGB_COLORSPACE: string;
-    readonly FLAG_RECORD_BLOB: string;
-    readonly DECODE_FLAGS_DEFAULT: string;
+    readonly FLAG_NONE: unsigned_long;
+    readonly FLAG_SYNC_DECODE: unsigned_long;
+    readonly FLAG_SYNC_DECODE_IF_FAST: unsigned_long;
+    readonly FLAG_ASYNC_NOTIFY: unsigned_long;
+    readonly FLAG_DECODE_NO_PREMULTIPLY_ALPHA: unsigned_long;
+    readonly FLAG_DECODE_NO_COLORSPACE_CONVERSION: unsigned_long;
+    readonly FLAG_CLAMP: unsigned_long;
+    readonly FLAG_HIGH_QUALITY_SCALING: unsigned_long;
+    readonly FLAG_BYPASS_SURFACE_CACHE: unsigned_long;
+    readonly FLAG_FORCE_PRESERVEASPECTRATIO_NONE: unsigned_long;
+    readonly FLAG_FORCE_UNIFORM_SCALING: unsigned_long;
+    readonly FLAG_AVOID_REDECODE_FOR_SIZE: unsigned_long;
+    readonly FLAG_DECODE_TO_SRGB_COLORSPACE: unsigned_long;
+    readonly FLAG_RECORD_BLOB: unsigned_long;
+    readonly DECODE_FLAGS_DEFAULT: unsigned_long;
     readonly DECODE_FLAGS_FOR_REENCODE;
-    readonly FRAME_FIRST: string;
-    readonly FRAME_CURRENT: string;
-    readonly FRAME_MAX_VALUE: string;
+    readonly FRAME_FIRST: unsigned_long;
+    readonly FRAME_CURRENT: unsigned_long;
+    readonly FRAME_MAX_VALUE: unsigned_long;
     readonly DECODE_SURFACE_AVAILABLE;
     readonly DECODE_REQUESTED;
     readonly DECODE_REQUEST_FAILED;
@@ -401,9 +401,9 @@ declare interface imgIContainerType extends nsISupportsType {
      * from within nsImageFrame or objects of similar type.
      */
     requestRefresh(aTime: TimeStamp): void;
-    readonly kNormalAnimMode: string;
-    readonly kDontAnimMode: string;
-    readonly kLoopOnceAnimMode: string;
+    readonly kNormalAnimMode: short;
+    readonly kDontAnimMode: short;
+    readonly kLoopOnceAnimMode: short;
     /**
      *
      */
@@ -502,9 +502,9 @@ declare interface imgIContainerDebugType extends nsISupportsType {
  * imgIEncoder interface
  */
 declare interface imgIEncoderType extends nsIAsyncInputStreamType {
-    readonly INPUT_FORMAT_RGB: string;
-    readonly INPUT_FORMAT_RGBA: string;
-    readonly INPUT_FORMAT_HOSTARGB: string;
+    readonly INPUT_FORMAT_RGB: uint32_t;
+    readonly INPUT_FORMAT_RGBA: uint32_t;
+    readonly INPUT_FORMAT_HOSTARGB: uint32_t;
     /**
      * data - list of bytes in the format specified by inputFormat
      * width  - width in pixels
@@ -594,15 +594,15 @@ declare interface imgILoaderType extends nsISupportsType {
  *
  */
 declare interface imgINotificationObserverType extends nsISupportsType {
-    readonly SIZE_AVAILABLE: string;
-    readonly FRAME_UPDATE: string;
-    readonly FRAME_COMPLETE: string;
-    readonly LOAD_COMPLETE: string;
-    readonly DECODE_COMPLETE: string;
-    readonly DISCARD: string;
-    readonly UNLOCKED_DRAW: string;
-    readonly IS_ANIMATED: string;
-    readonly HAS_TRANSPARENCY: string;
+    readonly SIZE_AVAILABLE: long;
+    readonly FRAME_UPDATE: long;
+    readonly FRAME_COMPLETE: long;
+    readonly LOAD_COMPLETE: long;
+    readonly DECODE_COMPLETE: long;
+    readonly DISCARD: long;
+    readonly UNLOCKED_DRAW: long;
+    readonly IS_ANIMATED: long;
+    readonly HAS_TRANSPARENCY: long;
 }
 
 /**
@@ -628,14 +628,14 @@ declare interface imgIRequestType extends nsIRequestType {
      * validate a CORS image load.
      */
     readonly triggeringPrincipal: nsIPrincipal;
-    readonly STATUS_NONE: string;
-    readonly STATUS_SIZE_AVAILABLE: string;
-    readonly STATUS_LOAD_COMPLETE: string;
-    readonly STATUS_ERROR: string;
-    readonly STATUS_FRAME_COMPLETE: string;
-    readonly STATUS_DECODE_COMPLETE: string;
-    readonly STATUS_IS_ANIMATED: string;
-    readonly STATUS_HAS_TRANSPARENCY: string;
+    readonly STATUS_NONE: long;
+    readonly STATUS_SIZE_AVAILABLE: long;
+    readonly STATUS_LOAD_COMPLETE: long;
+    readonly STATUS_ERROR: long;
+    readonly STATUS_FRAME_COMPLETE: long;
+    readonly STATUS_DECODE_COMPLETE: long;
+    readonly STATUS_IS_ANIMATED: long;
+    readonly STATUS_HAS_TRANSPARENCY: long;
     /**
      * Status flags of the STATUS_* variety.
      */
@@ -1328,11 +1328,11 @@ declare interface mozIDownloadPlatformType extends nsISupportsType {
      * @return Promise that resolves once operations have completed.
      */
     downloadDone(aSource: nsIURIType, aReferrer: nsIURIType, aTarget: nsIFileType, aContentType: ACString, aIsPrivate: boolean): Promise;
-    readonly ZONE_MY_COMPUTER: string;
-    readonly ZONE_INTRANET: string;
-    readonly ZONE_TRUSTED: string;
-    readonly ZONE_INTERNET: string;
-    readonly ZONE_RESTRICTED: string;
+    readonly ZONE_MY_COMPUTER: unsigned_long;
+    readonly ZONE_INTRANET: unsigned_long;
+    readonly ZONE_TRUSTED: unsigned_long;
+    readonly ZONE_INTERNET: unsigned_long;
+    readonly ZONE_RESTRICTED: unsigned_long;
     /**
      * Proxy for IInternetSecurityManager::MapUrlToZone().
      *
@@ -1540,9 +1540,9 @@ declare interface mozIExtensionProcessScriptType extends nsISupportsType {
  *
  */
 declare interface mozIExtensionStorageAreaType extends nsISupportsType {
-    readonly SYNC_QUOTA_BYTES: string;
-    readonly SYNC_QUOTA_BYTES_PER_ITEM: string;
-    readonly SYNC_MAX_ITEMS: string;
+    readonly SYNC_QUOTA_BYTES: unsigned_long;
+    readonly SYNC_QUOTA_BYTES_PER_ITEM: unsigned_long;
+    readonly SYNC_MAX_ITEMS: unsigned_long;
     /**
      *
      */
@@ -1728,9 +1728,9 @@ declare interface mozIJSSubScriptLoaderType extends nsISupportsType {
  *
  */
 declare interface mozILocaleServiceType extends nsISupportsType {
-    readonly langNegStrategyFiltering: string;
-    readonly langNegStrategyMatching: string;
-    readonly langNegStrategyLookup: string;
+    readonly langNegStrategyFiltering: long;
+    readonly langNegStrategyMatching: long;
+    readonly langNegStrategyLookup: long;
     /**
      * Default locale of the browser. The locale we are guaranteed to have
      * resources for that should be used as a last resort fallack in cases
@@ -1951,11 +1951,11 @@ declare interface mozIMozIntlHelperType extends nsISupportsType {
  *
  */
 declare interface mozIOSPreferencesType extends nsISupportsType {
-    readonly dateTimeFormatStyleNone: string;
-    readonly dateTimeFormatStyleShort: string;
-    readonly dateTimeFormatStyleMedium: string;
-    readonly dateTimeFormatStyleLong: string;
-    readonly dateTimeFormatStyleFull: string;
+    readonly dateTimeFormatStyleNone: long;
+    readonly dateTimeFormatStyleShort: long;
+    readonly dateTimeFormatStyleMedium: long;
+    readonly dateTimeFormatStyleLong: long;
+    readonly dateTimeFormatStyleFull: long;
     /**
      * Returns the best locale that the host environment is localized to.
      *
@@ -2039,12 +2039,12 @@ declare interface mozIPersonalDictionaryType extends nsISupportsType {
  * purposes.
  */
 declare interface mozIPlacesAutoCompleteType extends nsISupportsType {
-    readonly MATCH_ANYWHERE: string;
-    readonly MATCH_BOUNDARY_ANYWHERE: string;
-    readonly MATCH_BOUNDARY: string;
-    readonly MATCH_BEGINNING: string;
-    readonly MATCH_ANYWHERE_UNMODIFIED: string;
-    readonly MATCH_BEGINNING_CASE_SENSITIVE: string;
+    readonly MATCH_ANYWHERE: long;
+    readonly MATCH_BOUNDARY_ANYWHERE: long;
+    readonly MATCH_BOUNDARY: long;
+    readonly MATCH_BEGINNING: long;
+    readonly MATCH_ANYWHERE_UNMODIFIED: long;
+    readonly MATCH_BEGINNING_CASE_SENSITIVE: long;
     readonly BEHAVIOR_HISTORY;
     readonly BEHAVIOR_BOOKMARK;
     readonly BEHAVIOR_TAG;
@@ -2180,12 +2180,12 @@ declare interface mozISandboxTestType extends nsISupportsType {
  *
  */
 declare interface mozIServicesLogSinkType extends nsISupportsType {
-    readonly LEVEL_OFF: string;
-    readonly LEVEL_ERROR: string;
-    readonly LEVEL_WARN: string;
-    readonly LEVEL_INFO: string;
-    readonly LEVEL_DEBUG: string;
-    readonly LEVEL_TRACE: string;
+    readonly LEVEL_OFF: short;
+    readonly LEVEL_ERROR: short;
+    readonly LEVEL_WARN: short;
+    readonly LEVEL_INFO: short;
+    readonly LEVEL_DEBUG: short;
+    readonly LEVEL_TRACE: short;
     /**
      *
      */
@@ -2262,9 +2262,9 @@ declare interface mozISpellCheckingEngineType extends nsISupportsType {
  */
 declare interface mozIStorageAsyncConnectionType extends nsISupportsType {
     readonly TRANSACTION_DEFAULT;
-    readonly TRANSACTION_DEFERRED: string;
-    readonly TRANSACTION_IMMEDIATE: string;
-    readonly TRANSACTION_EXCLUSIVE: string;
+    readonly TRANSACTION_DEFERRED: int32_t;
+    readonly TRANSACTION_IMMEDIATE: int32_t;
+    readonly TRANSACTION_EXCLUSIVE: int32_t;
     /**
      * The default behavior for all transactions run on this connection. Defaults
      * to `TRANSACTION_DEFERRED`, and can be overridden for individual
@@ -2593,9 +2593,9 @@ declare interface mozIStorageBaseStatementType extends mozIStorageBindingParamsT
      * @return an object that can be used to cancel the statements execution.
      */
     executeAsync(aCallback?: mozIStorageStatementCallback): mozIStoragePendingStatement;
-    readonly MOZ_STORAGE_STATEMENT_INVALID: string;
-    readonly MOZ_STORAGE_STATEMENT_READY: string;
-    readonly MOZ_STORAGE_STATEMENT_EXECUTING: string;
+    readonly MOZ_STORAGE_STATEMENT_INVALID: long;
+    readonly MOZ_STORAGE_STATEMENT_READY: long;
+    readonly MOZ_STORAGE_STATEMENT_EXECUTING: long;
     /**
      * Find out whether the statement is usable (has not been finalized).
      */
@@ -2913,30 +2913,30 @@ declare interface mozIStorageConnectionType extends mozIStorageAsyncConnectionTy
  *
  */
 declare interface mozIStorageErrorType extends nsISupportsType {
-    readonly ERROR: string;
-    readonly INTERNAL: string;
-    readonly PERM: string;
-    readonly ABORT: string;
-    readonly BUSY: string;
-    readonly LOCKED: string;
-    readonly NOMEM: string;
-    readonly READONLY: string;
-    readonly INTERRUPT: string;
-    readonly IOERR: string;
-    readonly CORRUPT: string;
-    readonly FULL: string;
-    readonly CANTOPEN: string;
-    readonly EMPTY: string;
-    readonly SCHEMA: string;
-    readonly TOOBIG: string;
-    readonly CONSTRAINT: string;
-    readonly MISMATCH: string;
-    readonly MISUSE: string;
-    readonly NOLFS: string;
-    readonly AUTH: string;
-    readonly FORMAT: string;
-    readonly RANGE: string;
-    readonly NOTADB: string;
+    readonly ERROR: long;
+    readonly INTERNAL: long;
+    readonly PERM: long;
+    readonly ABORT: long;
+    readonly BUSY: long;
+    readonly LOCKED: long;
+    readonly NOMEM: long;
+    readonly READONLY: long;
+    readonly INTERRUPT: long;
+    readonly IOERR: long;
+    readonly CORRUPT: long;
+    readonly FULL: long;
+    readonly CANTOPEN: long;
+    readonly EMPTY: long;
+    readonly SCHEMA: long;
+    readonly TOOBIG: long;
+    readonly CONSTRAINT: long;
+    readonly MISMATCH: long;
+    readonly MISUSE: long;
+    readonly NOLFS: long;
+    readonly AUTH: long;
+    readonly FORMAT: long;
+    readonly RANGE: long;
+    readonly NOTADB: long;
     /**
      * Indicates what type of error occurred.
      */
@@ -3052,11 +3052,11 @@ declare interface mozIStorageRowType extends mozIStorageValueArrayType {
  * thread.
  */
 declare interface mozIStorageServiceType extends nsISupportsType {
-    readonly OPEN_DEFAULT: string;
+    readonly OPEN_DEFAULT: unsigned_long;
     readonly OPEN_SHARED;
     readonly OPEN_READONLY;
     readonly OPEN_IGNORE_LOCKING_MODE;
-    readonly CONNECTION_DEFAULT: string;
+    readonly CONNECTION_DEFAULT: unsigned_long;
     readonly CONNECTION_INTERRUPTIBLE;
     /**
      * Open an asynchronous connection to a database.
@@ -3310,11 +3310,11 @@ declare interface mozIStorageStatementType extends mozIStorageBaseStatementType 
      * the statement.
      */
     executeStep(): boolean;
-    readonly VALUE_TYPE_NULL: string;
-    readonly VALUE_TYPE_INTEGER: string;
-    readonly VALUE_TYPE_FLOAT: string;
-    readonly VALUE_TYPE_TEXT: string;
-    readonly VALUE_TYPE_BLOB: string;
+    readonly VALUE_TYPE_NULL: long;
+    readonly VALUE_TYPE_INTEGER: long;
+    readonly VALUE_TYPE_FLOAT: long;
+    readonly VALUE_TYPE_TEXT: long;
+    readonly VALUE_TYPE_BLOB: long;
     /**
      * The number of entries in the array (each corresponding to a column in the
      * database row)
@@ -3448,9 +3448,9 @@ declare interface mozIStorageStatementCallbackType extends nsISupportsType {
      * An object containing information about the error.
      */
     handleError(aError: mozIStorageError): void;
-    readonly REASON_FINISHED: string;
-    readonly REASON_CANCELED: string;
-    readonly REASON_ERROR: string;
+    readonly REASON_FINISHED: unsigned_short;
+    readonly REASON_CANCELED: unsigned_short;
+    readonly REASON_ERROR: unsigned_short;
     /**
      *
      */
@@ -3513,11 +3513,11 @@ declare interface mozIStorageVacuumParticipantType extends nsISupportsType {
  * row.
  */
 declare interface mozIStorageValueArrayType extends nsISupportsType {
-    readonly VALUE_TYPE_NULL: string;
-    readonly VALUE_TYPE_INTEGER: string;
-    readonly VALUE_TYPE_FLOAT: string;
-    readonly VALUE_TYPE_TEXT: string;
-    readonly VALUE_TYPE_BLOB: string;
+    readonly VALUE_TYPE_NULL: long;
+    readonly VALUE_TYPE_INTEGER: long;
+    readonly VALUE_TYPE_FLOAT: long;
+    readonly VALUE_TYPE_TEXT: long;
+    readonly VALUE_TYPE_BLOB: long;
     /**
      * numEntries
      *
@@ -3618,11 +3618,11 @@ declare interface mozISyncedBookmarksMirrorCallbackType extends nsISupportsType 
  *
  */
 declare interface mozISyncedBookmarksMirrorLoggerType extends nsISupportsType {
-    readonly LEVEL_OFF: string;
-    readonly LEVEL_ERROR: string;
-    readonly LEVEL_WARN: string;
-    readonly LEVEL_DEBUG: string;
-    readonly LEVEL_TRACE: string;
+    readonly LEVEL_OFF: short;
+    readonly LEVEL_ERROR: short;
+    readonly LEVEL_WARN: short;
+    readonly LEVEL_DEBUG: short;
+    readonly LEVEL_TRACE: short;
     /**
      *
      */
@@ -3649,14 +3649,14 @@ declare interface mozISyncedBookmarksMirrorLoggerType extends nsISupportsType {
  *
  */
 declare interface mozISyncedBookmarksMergerType extends nsISupportsType {
-    readonly KIND_BOOKMARK: string;
-    readonly KIND_QUERY: string;
-    readonly KIND_FOLDER: string;
-    readonly KIND_LIVEMARK: string;
-    readonly KIND_SEPARATOR: string;
-    readonly VALIDITY_VALID: string;
-    readonly VALIDITY_REUPLOAD: string;
-    readonly VALIDITY_REPLACE: string;
+    readonly KIND_BOOKMARK: short;
+    readonly KIND_QUERY: short;
+    readonly KIND_FOLDER: short;
+    readonly KIND_LIVEMARK: short;
+    readonly KIND_SEPARATOR: short;
+    readonly VALIDITY_VALID: short;
+    readonly VALIDITY_REUPLOAD: short;
+    readonly VALIDITY_REPLACE: short;
     /**
      *
      */
@@ -3679,7 +3679,7 @@ declare interface mozISyncedBookmarksMergerType extends nsISupportsType {
  *
  */
 declare interface mozITXTToHTMLConvType extends nsIStreamConverterType {
-    readonly kEntities: string;
+    readonly kEntities: unsigned_long;
     readonly kURLs;
     readonly kGlyphSubstitution;
     readonly kStructPhrase;
@@ -4106,7 +4106,7 @@ declare interface nsIAddonPolicyServiceType extends nsISupportsType {
  * enforcement.
  */
 declare interface nsIAddonContentPolicyType extends nsISupportsType {
-    readonly CSP_ALLOW_ANY: string;
+    readonly CSP_ALLOW_ANY: unsigned_long;
     readonly CSP_ALLOW_LOCALHOST;
     readonly CSP_ALLOW_EVAL;
     readonly CSP_ALLOW_REMOTE;
@@ -4660,11 +4660,11 @@ declare interface nsIAppStartupType extends nsISupportsType {
      * tracking past crashes.
      */
     trackStartupCrashEnd(): void;
-    readonly eConsiderQuit: string;
-    readonly eAttemptQuit: string;
-    readonly eForceQuit: string;
-    readonly eRestart: string;
-    readonly eSilently: string;
+    readonly eConsiderQuit: uint32_t;
+    readonly eAttemptQuit: uint32_t;
+    readonly eForceQuit: uint32_t;
+    readonly eRestart: uint32_t;
+    readonly eSilently: uint32_t;
     /**
      * Exit the event loop, and shut down the app.
      *
@@ -4842,11 +4842,11 @@ declare interface nsIAppWindowType extends nsISupportsType {
      * @param aShouldLock boolean
      */
     lockAspectRatio(aShouldLock: bool): void;
-    readonly lowestZ: string;
-    readonly loweredZ: string;
-    readonly normalZ: string;
-    readonly raisedZ: string;
-    readonly highestZ: string;
+    readonly lowestZ: unsigned_long;
+    readonly loweredZ: unsigned_long;
+    readonly normalZ: unsigned_long;
+    readonly raisedZ: unsigned_long;
+    readonly highestZ: unsigned_long;
     /**
      *
      */
@@ -4921,11 +4921,11 @@ declare interface nsIApplicationChooserType extends nsISupportsType {
  * based on metadata of the downloaded file.
  */
 declare interface nsIApplicationReputationServiceType extends nsISupportsType {
-    readonly VERDICT_SAFE: string;
-    readonly VERDICT_DANGEROUS: string;
-    readonly VERDICT_UNCOMMON: string;
-    readonly VERDICT_POTENTIALLY_UNWANTED: string;
-    readonly VERDICT_DANGEROUS_HOST: string;
+    readonly VERDICT_SAFE: unsigned_long;
+    readonly VERDICT_DANGEROUS: unsigned_long;
+    readonly VERDICT_UNCOMMON: unsigned_long;
+    readonly VERDICT_POTENTIALLY_UNWANTED: unsigned_long;
+    readonly VERDICT_DANGEROUS_HOST: unsigned_long;
     /**
      * Start querying the application reputation service.
      *
@@ -5604,8 +5604,8 @@ declare interface nsIAsyncVerifyRedirectCallbackType extends nsISupportsType {
  *
  */
 declare interface nsISuspendedTypesType extends nsISupportsType {
-    readonly NONE_SUSPENDED: string;
-    readonly SUSPENDED_BLOCK: string;
+    readonly NONE_SUSPENDED: uint32_t;
+    readonly SUSPENDED_BLOCK: uint32_t;
 }
 
 /**
@@ -5636,9 +5636,9 @@ declare interface nsIAudioChannelAgentCallbackType extends nsISupportsType {
  * 1. Changes to the playable status of this channel.
  */
 declare interface nsIAudioChannelAgentType extends nsISupportsType {
-    readonly AUDIO_AGENT_STATE_NORMAL: string;
-    readonly AUDIO_AGENT_STATE_MUTED: string;
-    readonly AUDIO_AGENT_STATE_FADED: string;
+    readonly AUDIO_AGENT_STATE_NORMAL: long;
+    readonly AUDIO_AGENT_STATE_MUTED: long;
+    readonly AUDIO_AGENT_STATE_FADED: long;
     /**
      * Initialize the agent with a channel type.
      * Note: This function should only be called once.
@@ -5703,33 +5703,33 @@ declare interface nsIAudioDeviceInfoType extends nsISupportsType {
      *
      */
     readonly vendor: AString;
-    readonly TYPE_UNKNOWN: string;
-    readonly TYPE_INPUT: string;
-    readonly TYPE_OUTPUT: string;
+    readonly TYPE_UNKNOWN: unsigned_short;
+    readonly TYPE_INPUT: unsigned_short;
+    readonly TYPE_OUTPUT: unsigned_short;
     /**
      *
      */
     readonly type: unsigned_short;
-    readonly STATE_DISABLED: string;
-    readonly STATE_UNPLUGGED: string;
-    readonly STATE_ENABLED: string;
+    readonly STATE_DISABLED: unsigned_short;
+    readonly STATE_UNPLUGGED: unsigned_short;
+    readonly STATE_ENABLED: unsigned_short;
     /**
      *
      */
     readonly state: unsigned_short;
-    readonly PREF_NONE: string;
-    readonly PREF_MULTIMEDIA: string;
-    readonly PREF_VOICE: string;
-    readonly PREF_NOTIFICATION: string;
-    readonly PREF_ALL: string;
+    readonly PREF_NONE: unsigned_short;
+    readonly PREF_MULTIMEDIA: unsigned_short;
+    readonly PREF_VOICE: unsigned_short;
+    readonly PREF_NOTIFICATION: unsigned_short;
+    readonly PREF_ALL: unsigned_short;
     /**
      *
      */
     readonly preferred: unsigned_short;
-    readonly FMT_S16LE: string;
-    readonly FMT_S16BE: string;
-    readonly FMT_F32LE: string;
-    readonly FMT_F32BE: string;
+    readonly FMT_S16LE: unsigned_short;
+    readonly FMT_S16BE: unsigned_short;
+    readonly FMT_F32LE: unsigned_short;
+    readonly FMT_F32BE: unsigned_short;
     /**
      *
      */
@@ -5774,12 +5774,12 @@ declare interface nsIAudioDeviceInfoType extends nsISupportsType {
  * by the user.
  */
 declare interface nsIAuthInformationType extends nsISupportsType {
-    readonly AUTH_HOST: string;
-    readonly AUTH_PROXY: string;
-    readonly NEED_DOMAIN: string;
-    readonly ONLY_PASSWORD: string;
-    readonly PREVIOUS_FAILED: string;
-    readonly CROSS_ORIGIN_SUB_RESOURCE: string;
+    readonly AUTH_HOST: uint32_t;
+    readonly AUTH_PROXY: uint32_t;
+    readonly NEED_DOMAIN: uint32_t;
+    readonly ONLY_PASSWORD: uint32_t;
+    readonly PREVIOUS_FAILED: uint32_t;
+    readonly CROSS_ORIGIN_SUB_RESOURCE: uint32_t;
     /**
      * @}
      * Flags describing this dialog. A bitwise OR of the flag values
@@ -5834,18 +5834,18 @@ declare interface nsIAuthInformationType extends nsISupportsType {
  *
  */
 declare interface nsIAuthModuleType extends nsISupportsType {
-    readonly REQ_DEFAULT: string;
+    readonly REQ_DEFAULT: unsigned_long;
     readonly REQ_MUTUAL_AUTH;
     readonly REQ_DELEGATE;
     readonly REQ_PROXY_AUTH;
-    readonly NTLM_MODULE_SAMBA_AUTH_PROXY: string;
-    readonly NTLM_MODULE_SAMBA_AUTH_DIRECT: string;
-    readonly NTLM_MODULE_WIN_API_PROXY: string;
-    readonly NTLM_MODULE_WIN_API_DIRECT: string;
-    readonly NTLM_MODULE_GENERIC_PROXY: string;
-    readonly NTLM_MODULE_GENERIC_DIRECT: string;
-    readonly NTLM_MODULE_KERBEROS_PROXY: string;
-    readonly NTLM_MODULE_KERBEROS_DIRECT: string;
+    readonly NTLM_MODULE_SAMBA_AUTH_PROXY: unsigned_long;
+    readonly NTLM_MODULE_SAMBA_AUTH_DIRECT: unsigned_long;
+    readonly NTLM_MODULE_WIN_API_PROXY: unsigned_long;
+    readonly NTLM_MODULE_WIN_API_DIRECT: unsigned_long;
+    readonly NTLM_MODULE_GENERIC_PROXY: unsigned_long;
+    readonly NTLM_MODULE_GENERIC_DIRECT: unsigned_long;
+    readonly NTLM_MODULE_KERBEROS_PROXY: unsigned_long;
+    readonly NTLM_MODULE_KERBEROS_DIRECT: unsigned_long;
     /**
      * Other flags may be defined in the future
      *
@@ -5928,9 +5928,9 @@ declare interface nsIAuthModuleType extends nsISupportsType {
  *
  */
 declare interface nsIAuthPromptType extends nsISupportsType {
-    readonly SAVE_PASSWORD_NEVER: string;
-    readonly SAVE_PASSWORD_FOR_SESSION: string;
-    readonly SAVE_PASSWORD_PERMANENTLY: string;
+    readonly SAVE_PASSWORD_NEVER: uint32_t;
+    readonly SAVE_PASSWORD_FOR_SESSION: uint32_t;
+    readonly SAVE_PASSWORD_PERMANENTLY: uint32_t;
     /**
      * Puts up a text input dialog with OK and Cancel buttons.
      * Note: prompt uses separate args for the "in" and "out" values of the
@@ -6017,9 +6017,9 @@ declare interface nsIAuthPromptType extends nsISupportsType {
  * synchronously or asynchronously.
  */
 declare interface nsIAuthPrompt2Type extends nsISupportsType {
-    readonly LEVEL_NONE: string;
-    readonly LEVEL_PW_ENCRYPTED: string;
-    readonly LEVEL_SECURE: string;
+    readonly LEVEL_NONE: uint32_t;
+    readonly LEVEL_PW_ENCRYPTED: uint32_t;
+    readonly LEVEL_SECURE: uint32_t;
     /**
      * @}
      *
@@ -6131,8 +6131,8 @@ declare interface nsIAuthPromptCallbackType extends nsISupportsType {
  *
  */
 declare interface nsIAuthPromptProviderType extends nsISupportsType {
-    readonly PROMPT_NORMAL: string;
-    readonly PROMPT_PROXY: string;
+    readonly PROMPT_NORMAL: uint32_t;
+    readonly PROMPT_PROXY: uint32_t;
     /**
      * Request a prompt interface for the given prompt reason;
      * @throws NS_ERROR_NOT_AVAILABLE if no prompt is allowed or
@@ -6151,10 +6151,10 @@ declare interface nsIAuthPromptProviderType extends nsISupportsType {
  *
  */
 declare interface nsIAutoCompleteControllerType extends nsISupportsType {
-    readonly STATUS_NONE: string;
-    readonly STATUS_SEARCHING: string;
-    readonly STATUS_COMPLETE_NO_MATCH: string;
-    readonly STATUS_COMPLETE_MATCH: string;
+    readonly STATUS_NONE: unsigned_short;
+    readonly STATUS_SEARCHING: unsigned_short;
+    readonly STATUS_COMPLETE_NO_MATCH: unsigned_short;
+    readonly STATUS_COMPLETE_MATCH: unsigned_short;
     /**
      * The input widget that is currently being controlled.
      */
@@ -6468,8 +6468,8 @@ declare interface nsIAutoCompletePopupType extends nsISupportsType {
      * INVALIDATE_REASON consts.
      */
     invalidate(reason: unsigned_short): void;
-    readonly INVALIDATE_REASON_NEW_RESULT: string;
-    readonly INVALIDATE_REASON_DELETE: string;
+    readonly INVALIDATE_REASON_NEW_RESULT: unsigned_short;
+    readonly INVALIDATE_REASON_DELETE: unsigned_short;
     /**
      * Change the selection relative to the current selection and make sure
      * the newly selected row is visible
@@ -6485,12 +6485,12 @@ declare interface nsIAutoCompletePopupType extends nsISupportsType {
  *
  */
 declare interface nsIAutoCompleteResultType extends nsISupportsType {
-    readonly RESULT_IGNORED: string;
-    readonly RESULT_FAILURE: string;
-    readonly RESULT_NOMATCH: string;
-    readonly RESULT_SUCCESS: string;
-    readonly RESULT_NOMATCH_ONGOING: string;
-    readonly RESULT_SUCCESS_ONGOING: string;
+    readonly RESULT_IGNORED: unsigned_short;
+    readonly RESULT_FAILURE: unsigned_short;
+    readonly RESULT_NOMATCH: unsigned_short;
+    readonly RESULT_SUCCESS: unsigned_short;
+    readonly RESULT_NOMATCH_ONGOING: unsigned_short;
+    readonly RESULT_SUCCESS_ONGOING: unsigned_short;
     /**
      * indicates success
      * with matches
@@ -6587,8 +6587,8 @@ declare interface nsIAutoCompleteObserverType extends nsISupportsType {
  *
  */
 declare interface nsIAutoCompleteSearchDescriptorType extends nsISupportsType {
-    readonly SEARCH_TYPE_DELAYED: string;
-    readonly SEARCH_TYPE_IMMEDIATE: string;
+    readonly SEARCH_TYPE_DELAYED: unsigned_short;
+    readonly SEARCH_TYPE_IMMEDIATE: unsigned_short;
     /**
      * Identifies the search behavior.
      * Should be one of the SEARCH_TYPE_* constants above.
@@ -6707,9 +6707,9 @@ declare interface nsIAutoCompleteSimpleSearchType extends nsIAutoCompleteSearchT
  *
  */
 declare interface nsIAutoplayType extends nsISupportsType {
-    readonly ALLOWED: string;
-    readonly BLOCKED: string;
-    readonly BLOCKED_ALL: string;
+    readonly ALLOWED: uint32_t;
+    readonly BLOCKED: uint32_t;
+    readonly BLOCKED_ALL: uint32_t;
 }
 
 /**
@@ -7028,8 +7028,8 @@ declare interface nsIBaseWindowType extends nsISupportsType {
      * Gets the width and height of the control.
      */
     getSize(cx: long, cy: long): void;
-    readonly eRepaint: string;
-    readonly eDelayResize: string;
+    readonly eRepaint: unsigned_long;
+    readonly eDelayResize: unsigned_long;
     /**
      * Convenience function combining the SetPosition and SetSize into one call.
      * Also is more efficient than calling both.
@@ -7382,82 +7382,82 @@ declare interface nsIBinaryOutputStreamType extends nsIOutputStreamType {
  * things that should cause methods to directly throw errors are null arguments.
  */
 declare interface nsIBitsType extends nsISupportsType {
-    readonly ERROR_TYPE_SUCCESS: string;
-    readonly ERROR_TYPE_UNKNOWN: string;
-    readonly ERROR_TYPE_METHOD_THREW: string;
-    readonly ERROR_TYPE_METHOD_TIMEOUT: string;
-    readonly ERROR_TYPE_NULL_ARGUMENT: string;
-    readonly ERROR_TYPE_INVALID_ARGUMENT: string;
-    readonly ERROR_TYPE_NOT_INITIALIZED: string;
-    readonly ERROR_TYPE_NO_UTF8_CONVERSION: string;
-    readonly ERROR_TYPE_INVALID_GUID: string;
-    readonly ERROR_TYPE_PIPE_NOT_CONNECTED: string;
-    readonly ERROR_TYPE_PIPE_TIMEOUT: string;
-    readonly ERROR_TYPE_PIPE_BAD_WRITE_COUNT: string;
-    readonly ERROR_TYPE_PIPE_API_ERROR: string;
-    readonly ERROR_TYPE_FAILED_TO_CREATE_BITS_JOB: string;
-    readonly ERROR_TYPE_FAILED_TO_ADD_FILE_TO_JOB: string;
-    readonly ERROR_TYPE_FAILED_TO_APPLY_BITS_JOB_SETTINGS: string;
-    readonly ERROR_TYPE_FAILED_TO_RESUME_BITS_JOB: string;
-    readonly ERROR_TYPE_OTHER_BITS_ERROR: string;
-    readonly ERROR_TYPE_OTHER_BITS_CLIENT_ERROR: string;
-    readonly ERROR_TYPE_BITS_JOB_NOT_FOUND: string;
-    readonly ERROR_TYPE_FAILED_TO_GET_BITS_JOB: string;
-    readonly ERROR_TYPE_FAILED_TO_SUSPEND_BITS_JOB: string;
-    readonly ERROR_TYPE_FAILED_TO_COMPLETE_BITS_JOB: string;
-    readonly ERROR_TYPE_PARTIALLY_COMPLETED_BITS_JOB: string;
-    readonly ERROR_TYPE_FAILED_TO_CANCEL_BITS_JOB: string;
-    readonly ERROR_TYPE_MISSING_RESULT_DATA: string;
-    readonly ERROR_TYPE_MISSING_CALLBACK: string;
-    readonly ERROR_TYPE_CALLBACK_ON_WRONG_THREAD: string;
-    readonly ERROR_TYPE_MISSING_BITS_SERVICE: string;
-    readonly ERROR_TYPE_BITS_SERVICE_ON_WRONG_THREAD: string;
-    readonly ERROR_TYPE_MISSING_BITS_REQUEST: string;
-    readonly ERROR_TYPE_BITS_REQUEST_ON_WRONG_THREAD: string;
-    readonly ERROR_TYPE_MISSING_OBSERVER: string;
-    readonly ERROR_TYPE_OBSERVER_ON_WRONG_THREAD: string;
-    readonly ERROR_TYPE_MISSING_CONTEXT: string;
-    readonly ERROR_TYPE_CONTEXT_ON_WRONG_THREAD: string;
-    readonly ERROR_TYPE_FAILED_TO_START_THREAD: string;
-    readonly ERROR_TYPE_FAILED_TO_CONSTRUCT_TASK_RUNNABLE: string;
-    readonly ERROR_TYPE_FAILED_TO_DISPATCH_RUNNABLE: string;
-    readonly ERROR_TYPE_TRANSFER_ALREADY_COMPLETE: string;
-    readonly ERROR_TYPE_OPERATION_ALREADY_IN_PROGRESS: string;
-    readonly ERROR_TYPE_MISSING_BITS_CLIENT: string;
-    readonly ERROR_TYPE_FAILED_TO_GET_JOB_STATUS: string;
-    readonly ERROR_TYPE_BITS_STATE_ERROR: string;
-    readonly ERROR_TYPE_BITS_STATE_TRANSIENT_ERROR: string;
-    readonly ERROR_TYPE_BITS_STATE_CANCELLED: string;
-    readonly ERROR_TYPE_BITS_STATE_UNEXPECTED: string;
-    readonly ERROR_TYPE_VERIFICATION_FAILURE: string;
-    readonly ERROR_TYPE_ACCESS_DENIED_EXPECTED: string;
-    readonly ERROR_TYPE_FAILED_TO_CONNECT_TO_BCM: string;
-    readonly ERROR_TYPE_USE_AFTER_REQUEST_SHUTDOWN: string;
-    readonly ERROR_TYPE_BROWSER_SHUTTING_DOWN: string;
-    readonly ERROR_ACTION_UNKNOWN: string;
-    readonly ERROR_ACTION_NONE: string;
-    readonly ERROR_ACTION_START_DOWNLOAD: string;
-    readonly ERROR_ACTION_MONITOR_DOWNLOAD: string;
-    readonly ERROR_ACTION_CHANGE_MONITOR_INTERVAL: string;
-    readonly ERROR_ACTION_CANCEL: string;
-    readonly ERROR_ACTION_SET_PRIORITY: string;
-    readonly ERROR_ACTION_COMPLETE: string;
-    readonly ERROR_ACTION_SUSPEND: string;
-    readonly ERROR_ACTION_RESUME: string;
-    readonly ERROR_ACTION_SET_NO_PROGRESS_TIMEOUT: string;
-    readonly ERROR_STAGE_UNKNOWN: string;
-    readonly ERROR_STAGE_PRETASK: string;
-    readonly ERROR_STAGE_COMMAND_THREAD: string;
-    readonly ERROR_STAGE_AGENT_COMMUNICATION: string;
-    readonly ERROR_STAGE_BITS_CLIENT: string;
-    readonly ERROR_STAGE_MAIN_THREAD: string;
-    readonly ERROR_STAGE_MONITOR: string;
-    readonly ERROR_STAGE_VERIFICATION: string;
-    readonly ERROR_CODE_TYPE_NONE: string;
-    readonly ERROR_CODE_TYPE_NSRESULT: string;
-    readonly ERROR_CODE_TYPE_HRESULT: string;
-    readonly ERROR_CODE_TYPE_STRING: string;
-    readonly ERROR_CODE_TYPE_EXCEPTION: string;
+    readonly ERROR_TYPE_SUCCESS: long;
+    readonly ERROR_TYPE_UNKNOWN: long;
+    readonly ERROR_TYPE_METHOD_THREW: long;
+    readonly ERROR_TYPE_METHOD_TIMEOUT: long;
+    readonly ERROR_TYPE_NULL_ARGUMENT: long;
+    readonly ERROR_TYPE_INVALID_ARGUMENT: long;
+    readonly ERROR_TYPE_NOT_INITIALIZED: long;
+    readonly ERROR_TYPE_NO_UTF8_CONVERSION: long;
+    readonly ERROR_TYPE_INVALID_GUID: long;
+    readonly ERROR_TYPE_PIPE_NOT_CONNECTED: long;
+    readonly ERROR_TYPE_PIPE_TIMEOUT: long;
+    readonly ERROR_TYPE_PIPE_BAD_WRITE_COUNT: long;
+    readonly ERROR_TYPE_PIPE_API_ERROR: long;
+    readonly ERROR_TYPE_FAILED_TO_CREATE_BITS_JOB: long;
+    readonly ERROR_TYPE_FAILED_TO_ADD_FILE_TO_JOB: long;
+    readonly ERROR_TYPE_FAILED_TO_APPLY_BITS_JOB_SETTINGS: long;
+    readonly ERROR_TYPE_FAILED_TO_RESUME_BITS_JOB: long;
+    readonly ERROR_TYPE_OTHER_BITS_ERROR: long;
+    readonly ERROR_TYPE_OTHER_BITS_CLIENT_ERROR: long;
+    readonly ERROR_TYPE_BITS_JOB_NOT_FOUND: long;
+    readonly ERROR_TYPE_FAILED_TO_GET_BITS_JOB: long;
+    readonly ERROR_TYPE_FAILED_TO_SUSPEND_BITS_JOB: long;
+    readonly ERROR_TYPE_FAILED_TO_COMPLETE_BITS_JOB: long;
+    readonly ERROR_TYPE_PARTIALLY_COMPLETED_BITS_JOB: long;
+    readonly ERROR_TYPE_FAILED_TO_CANCEL_BITS_JOB: long;
+    readonly ERROR_TYPE_MISSING_RESULT_DATA: long;
+    readonly ERROR_TYPE_MISSING_CALLBACK: long;
+    readonly ERROR_TYPE_CALLBACK_ON_WRONG_THREAD: long;
+    readonly ERROR_TYPE_MISSING_BITS_SERVICE: long;
+    readonly ERROR_TYPE_BITS_SERVICE_ON_WRONG_THREAD: long;
+    readonly ERROR_TYPE_MISSING_BITS_REQUEST: long;
+    readonly ERROR_TYPE_BITS_REQUEST_ON_WRONG_THREAD: long;
+    readonly ERROR_TYPE_MISSING_OBSERVER: long;
+    readonly ERROR_TYPE_OBSERVER_ON_WRONG_THREAD: long;
+    readonly ERROR_TYPE_MISSING_CONTEXT: long;
+    readonly ERROR_TYPE_CONTEXT_ON_WRONG_THREAD: long;
+    readonly ERROR_TYPE_FAILED_TO_START_THREAD: long;
+    readonly ERROR_TYPE_FAILED_TO_CONSTRUCT_TASK_RUNNABLE: long;
+    readonly ERROR_TYPE_FAILED_TO_DISPATCH_RUNNABLE: long;
+    readonly ERROR_TYPE_TRANSFER_ALREADY_COMPLETE: long;
+    readonly ERROR_TYPE_OPERATION_ALREADY_IN_PROGRESS: long;
+    readonly ERROR_TYPE_MISSING_BITS_CLIENT: long;
+    readonly ERROR_TYPE_FAILED_TO_GET_JOB_STATUS: long;
+    readonly ERROR_TYPE_BITS_STATE_ERROR: long;
+    readonly ERROR_TYPE_BITS_STATE_TRANSIENT_ERROR: long;
+    readonly ERROR_TYPE_BITS_STATE_CANCELLED: long;
+    readonly ERROR_TYPE_BITS_STATE_UNEXPECTED: long;
+    readonly ERROR_TYPE_VERIFICATION_FAILURE: long;
+    readonly ERROR_TYPE_ACCESS_DENIED_EXPECTED: long;
+    readonly ERROR_TYPE_FAILED_TO_CONNECT_TO_BCM: long;
+    readonly ERROR_TYPE_USE_AFTER_REQUEST_SHUTDOWN: long;
+    readonly ERROR_TYPE_BROWSER_SHUTTING_DOWN: long;
+    readonly ERROR_ACTION_UNKNOWN: long;
+    readonly ERROR_ACTION_NONE: long;
+    readonly ERROR_ACTION_START_DOWNLOAD: long;
+    readonly ERROR_ACTION_MONITOR_DOWNLOAD: long;
+    readonly ERROR_ACTION_CHANGE_MONITOR_INTERVAL: long;
+    readonly ERROR_ACTION_CANCEL: long;
+    readonly ERROR_ACTION_SET_PRIORITY: long;
+    readonly ERROR_ACTION_COMPLETE: long;
+    readonly ERROR_ACTION_SUSPEND: long;
+    readonly ERROR_ACTION_RESUME: long;
+    readonly ERROR_ACTION_SET_NO_PROGRESS_TIMEOUT: long;
+    readonly ERROR_STAGE_UNKNOWN: long;
+    readonly ERROR_STAGE_PRETASK: long;
+    readonly ERROR_STAGE_COMMAND_THREAD: long;
+    readonly ERROR_STAGE_AGENT_COMMUNICATION: long;
+    readonly ERROR_STAGE_BITS_CLIENT: long;
+    readonly ERROR_STAGE_MAIN_THREAD: long;
+    readonly ERROR_STAGE_MONITOR: long;
+    readonly ERROR_STAGE_VERIFICATION: long;
+    readonly ERROR_CODE_TYPE_NONE: long;
+    readonly ERROR_CODE_TYPE_NSRESULT: long;
+    readonly ERROR_CODE_TYPE_HRESULT: long;
+    readonly ERROR_CODE_TYPE_STRING: long;
+    readonly ERROR_CODE_TYPE_EXCEPTION: long;
     /**
      * Indicates whether init() has been called.
      */
@@ -7520,9 +7520,9 @@ declare interface nsIBitsType extends nsISupportsType {
      * The callback used to relay the response from BITS.
      */
     startDownload(downloadURL: AUTF8String, saveRelativePath: AUTF8String, proxy: nsProxyUsage, noProgressTimeoutSecs: unsigned_long, monitorIntervalMs: unsigned_long, observer: nsIRequestObserverType, context: nsISupportsType, callback: nsIBitsNewRequestCallbackType): void;
-    readonly PROXY_NONE: string;
-    readonly PROXY_PRECONFIG: string;
-    readonly PROXY_AUTODETECT: string;
+    readonly PROXY_NONE: long;
+    readonly PROXY_PRECONFIG: long;
+    readonly PROXY_AUTODETECT: long;
     /**
      * Similar to startDownload, but connects to a BITS transfer that has already
      * been started.
@@ -7721,10 +7721,10 @@ declare interface nsIBitsCallbackType extends nsISupportsType {
  *
  */
 declare interface nsIBlocklistServiceType extends nsISupportsType {
-    readonly STATE_NOT_BLOCKED: string;
-    readonly STATE_SOFTBLOCKED: string;
-    readonly STATE_BLOCKED: string;
-    readonly STATE_MAX: string;
+    readonly STATE_NOT_BLOCKED: unsigned_long;
+    readonly STATE_SOFTBLOCKED: unsigned_long;
+    readonly STATE_BLOCKED: unsigned_long;
+    readonly STATE_MAX: unsigned_long;
     /**
      *
      */
@@ -7965,15 +7965,15 @@ declare interface nsIOpenURIInFrameParamsType extends nsISupportsType {
  * interface.
  */
 declare interface nsIBrowserDOMWindowType extends nsISupportsType {
-    readonly OPEN_DEFAULTWINDOW: string;
-    readonly OPEN_CURRENTWINDOW: string;
-    readonly OPEN_NEWWINDOW: string;
-    readonly OPEN_NEWTAB: string;
-    readonly OPEN_PRINT_BROWSER: string;
-    readonly OPEN_NEW: string;
-    readonly OPEN_EXTERNAL: string;
-    readonly OPEN_NO_OPENER: string;
-    readonly OPEN_NO_REFERRER: string;
+    readonly OPEN_DEFAULTWINDOW: short;
+    readonly OPEN_CURRENTWINDOW: short;
+    readonly OPEN_NEWWINDOW: short;
+    readonly OPEN_NEWTAB: short;
+    readonly OPEN_PRINT_BROWSER: short;
+    readonly OPEN_NEW: long;
+    readonly OPEN_EXTERNAL: long;
+    readonly OPEN_NO_OPENER: long;
+    readonly OPEN_NO_REFERRER: long;
     /**
      * Create the content window for the given URI.
      * @param aURI the URI to be opened in the window (can be null).
@@ -8202,15 +8202,15 @@ declare interface nsIByteRangeRequestType extends nsISupportsType {
  *
  */
 declare interface nsICacheEntryType extends nsISupportsType {
-    readonly CONTENT_TYPE_UNKNOWN: string;
-    readonly CONTENT_TYPE_OTHER: string;
-    readonly CONTENT_TYPE_JAVASCRIPT: string;
-    readonly CONTENT_TYPE_IMAGE: string;
-    readonly CONTENT_TYPE_MEDIA: string;
-    readonly CONTENT_TYPE_STYLESHEET: string;
-    readonly CONTENT_TYPE_WASM: string;
-    readonly CONTENT_TYPE_LAST: string;
-    readonly NO_EXPIRATION_TIME: string;
+    readonly CONTENT_TYPE_UNKNOWN: unsigned_long;
+    readonly CONTENT_TYPE_OTHER: unsigned_long;
+    readonly CONTENT_TYPE_JAVASCRIPT: unsigned_long;
+    readonly CONTENT_TYPE_IMAGE: unsigned_long;
+    readonly CONTENT_TYPE_MEDIA: unsigned_long;
+    readonly CONTENT_TYPE_STYLESHEET: unsigned_long;
+    readonly CONTENT_TYPE_WASM: unsigned_long;
+    readonly CONTENT_TYPE_LAST: unsigned_long;
+    readonly NO_EXPIRATION_TIME: unsigned_long;
     /**
      * Get the key identifying the cache entry.
      */
@@ -8528,10 +8528,10 @@ declare interface nsICacheEntryDoomCallbackType extends nsISupportsType {
  *
  */
 declare interface nsICacheEntryOpenCallbackType extends nsISupportsType {
-    readonly ENTRY_WANTED: string;
-    readonly RECHECK_AFTER_WRITE_FINISHED: string;
-    readonly ENTRY_NEEDS_REVALIDATION: string;
-    readonly ENTRY_NOT_WANTED: string;
+    readonly ENTRY_WANTED: unsigned_long;
+    readonly RECHECK_AFTER_WRITE_FINISHED: unsigned_long;
+    readonly ENTRY_NEEDS_REVALIDATION: unsigned_long;
+    readonly ENTRY_NOT_WANTED: unsigned_long;
     /**
      * Callback to perform any validity checks before the entry should be used.
      * Called before onCacheEntryAvailable callback, depending on the result it
@@ -8760,7 +8760,7 @@ declare interface nsICachePurgeLockType extends nsISupportsType {
  * app-cache storage.
  */
 declare interface nsICacheStorageType extends nsISupportsType {
-    readonly OPEN_NORMALLY: string;
+    readonly OPEN_NORMALLY: uint32_t;
     readonly OPEN_TRUNCATE;
     readonly OPEN_READONLY;
     readonly OPEN_PRIORITY;
@@ -8891,9 +8891,9 @@ declare interface nsICacheStorageServiceType extends nsISupportsType {
      * Evict the whole cache.
      */
     clear(): void;
-    readonly PURGE_DISK_DATA_ONLY: string;
-    readonly PURGE_DISK_ALL: string;
-    readonly PURGE_EVERYTHING: string;
+    readonly PURGE_DISK_DATA_ONLY: uint32_t;
+    readonly PURGE_DISK_ALL: uint32_t;
+    readonly PURGE_EVERYTHING: uint32_t;
     /**
      * Purges data we keep warmed in memory.  Use for tests and for
      * saving memory.
@@ -9102,10 +9102,10 @@ declare interface nsICaptivePortalServiceCallbackType extends nsISupportsType {
  * process.
  */
 declare interface nsICaptivePortalServiceType extends nsISupportsType {
-    readonly UNKNOWN: string;
-    readonly NOT_CAPTIVE: string;
-    readonly UNLOCKED_PORTAL: string;
-    readonly LOCKED_PORTAL: string;
+    readonly UNKNOWN: long;
+    readonly NOT_CAPTIVE: long;
+    readonly UNLOCKED_PORTAL: long;
+    readonly LOCKED_PORTAL: long;
     /**
      * Called from XPCOM to trigger a captive portal recheck.
      * A network request will only be performed if no other checks are currently
@@ -9393,11 +9393,11 @@ declare interface nsICertInfoType extends nsISupportsType {
  *
  */
 declare interface nsICertStorageType extends nsISupportsType {
-    readonly DATA_TYPE_REVOCATION: string;
-    readonly DATA_TYPE_CERTIFICATE: string;
-    readonly DATA_TYPE_CRLITE: string;
-    readonly DATA_TYPE_CRLITE_FILTER_FULL: string;
-    readonly DATA_TYPE_CRLITE_FILTER_INCREMENTAL: string;
+    readonly DATA_TYPE_REVOCATION: octet;
+    readonly DATA_TYPE_CERTIFICATE: octet;
+    readonly DATA_TYPE_CRLITE: octet;
+    readonly DATA_TYPE_CRLITE_FILTER_FULL: octet;
+    readonly DATA_TYPE_CRLITE_FILTER_INCREMENTAL: octet;
     /**
      * Asynchronously check if the backing storage has stored data of the given
      * type in the past. This is useful if the backing storage may have had to
@@ -9406,11 +9406,11 @@ declare interface nsICertStorageType extends nsISupportsType {
      * unreadable, thus necessitating its deletion and recreation).
      */
     hasPriorData(type: octet, callback: nsICertStorageCallbackType): void;
-    readonly STATE_UNSET: string;
-    readonly STATE_ENFORCE: string;
-    readonly STATE_NOT_ENROLLED: string;
-    readonly STATE_NOT_COVERED: string;
-    readonly STATE_NO_FILTER: string;
+    readonly STATE_UNSET: short;
+    readonly STATE_ENFORCE: short;
+    readonly STATE_NOT_ENROLLED: short;
+    readonly STATE_NOT_COVERED: short;
+    readonly STATE_NO_FILTER: short;
     /**
      * Asynchronously set the revocation states of a set of certificates.
      * The given callback is called with the result of the operation when it
@@ -9475,8 +9475,8 @@ declare interface nsICertStorageType extends nsISupportsType {
      * revocation information.
      */
     isCertRevokedByStash(issuerSPKI: invalid, serialNumber: invalid): bool;
-    readonly TRUST_INHERIT: string;
-    readonly TRUST_ANCHOR: string;
+    readonly TRUST_INHERIT: short;
+    readonly TRUST_ANCHOR: short;
     /**
      * Asynchronously add a list of certificates to the backing storage.
      * See the documentation for nsICertInfo.
@@ -9777,9 +9777,9 @@ declare interface nsIChannelType extends nsIRequestType {
      * DISPOSITION_ATTACHMENT if an invalid/noncompliant value is present.
      */
     contentDisposition: unsigned_long;
-    readonly DISPOSITION_INLINE: string;
-    readonly DISPOSITION_ATTACHMENT: string;
-    readonly DISPOSITION_FORCE_INLINE: string;
+    readonly DISPOSITION_INLINE: unsigned_long;
+    readonly DISPOSITION_ATTACHMENT: unsigned_long;
+    readonly DISPOSITION_FORCE_INLINE: unsigned_long;
     /**
      * Access to the filename portion of the Content-Disposition header if
      * available and if applicable. This allows getting the preferred filename
@@ -9842,10 +9842,10 @@ declare interface nsIIdentChannelType extends nsIChannelType {
  *
  */
 declare interface nsIUrlClassifierBlockedChannelType extends nsISupportsType {
-    readonly TRACKING_PROTECTION: string;
-    readonly SOCIAL_TRACKING_PROTECTION: string;
-    readonly FINGERPRINTING_PROTECTION: string;
-    readonly CRYPTOMINING_PROTECTION: string;
+    readonly TRACKING_PROTECTION: unsigned_long;
+    readonly SOCIAL_TRACKING_PROTECTION: unsigned_long;
+    readonly FINGERPRINTING_PROTECTION: unsigned_long;
+    readonly CRYPTOMINING_PROTECTION: unsigned_long;
     /**
      *
      */
@@ -9987,9 +9987,9 @@ declare interface nsIChildChannelType extends nsISupportsType {
  *
  */
 declare interface nsIChromeRegistryType extends nsISupportsType {
-    readonly NONE: string;
-    readonly PARTIAL: string;
-    readonly FULL: string;
+    readonly NONE: int32_t;
+    readonly PARTIAL: int32_t;
+    readonly FULL: int32_t;
     /**
      * Resolve a chrome URL to an loadable URI using the information in the
      * registry. Does not modify aChromeURL.
@@ -10379,7 +10379,7 @@ declare interface nsIClearDataServiceType extends nsISupportsType {
     readonly CLEAR_PREFLIGHT_CACHE;
     readonly CLEAR_CLIENT_AUTH_REMEMBER_SERVICE;
     readonly CLEAR_CREDENTIAL_MANAGER_STATE;
-    readonly CLEAR_ALL: string;
+    readonly CLEAR_ALL: uint32_t;
     readonly CLEAR_ALL_CACHES;
     readonly CLEAR_DOM_STORAGES;
     readonly CLEAR_FORGET_ABOUT_SITE;
@@ -10572,10 +10572,10 @@ declare interface nsIAsyncSetClipboardDataCallbackType extends nsISupportsType {
  *
  */
 declare interface nsIClipboardType extends nsISupportsType {
-    readonly kSelectionClipboard: string;
-    readonly kGlobalClipboard: string;
-    readonly kFindClipboard: string;
-    readonly kSelectionCache: string;
+    readonly kSelectionClipboard: long;
+    readonly kGlobalClipboard: long;
+    readonly kFindClipboard: long;
+    readonly kSelectionCache: long;
     /**
      * Given a transferable, set the data on the native clipboard
      *
@@ -10854,9 +10854,9 @@ declare interface nsICommandLineType extends nsISupportsType {
      * this instance using xremote/windde/appleevents.
      */
     readonly state: unsigned_long;
-    readonly STATE_INITIAL_LAUNCH: string;
-    readonly STATE_REMOTE_AUTO: string;
-    readonly STATE_REMOTE_EXPLICIT: string;
+    readonly STATE_INITIAL_LAUNCH: unsigned_long;
+    readonly STATE_REMOTE_AUTO: unsigned_long;
+    readonly STATE_REMOTE_EXPLICIT: unsigned_long;
     /**
      * There may be a command-line handler which performs a default action if
      * there was no explicit action on the command line (open a default browser
@@ -11068,13 +11068,13 @@ declare interface nsICommandManagerType extends nsISupportsType {
  *
  */
 declare interface nsICommandParamsType extends nsISupportsType {
-    readonly eNoType: string;
-    readonly eBooleanType: string;
-    readonly eLongType: string;
-    readonly eDoubleType: string;
-    readonly eWStringType: string;
-    readonly eISupportsType: string;
-    readonly eStringType: string;
+    readonly eNoType: short;
+    readonly eBooleanType: short;
+    readonly eLongType: short;
+    readonly eDoubleType: short;
+    readonly eWStringType: short;
+    readonly eISupportsType: short;
+    readonly eStringType: short;
     /**
      * getValueType
      *
@@ -11365,10 +11365,10 @@ declare interface nsIConsoleListenerType extends nsISupportsType {
  * message information.
  */
 declare interface nsIConsoleMessageType extends nsISupportsType {
-    readonly debug: string;
-    readonly info: string;
-    readonly warn: string;
-    readonly error: string;
+    readonly debug: uint32_t;
+    readonly info: uint32_t;
+    readonly warn: uint32_t;
+    readonly error: uint32_t;
     /**
      * The log level of this message.
      */
@@ -11663,7 +11663,7 @@ declare interface nsIContentPolicyType extends nsISupportsType {
     readonly REJECT_SERVER;
     readonly REJECT_OTHER;
     readonly REJECT_POLICY;
-    readonly ACCEPT: string;
+    readonly ACCEPT: short;
     /**
      * Should the resource at this location be loaded?
      * ShouldLoad will be called before loading the resource at aContentLocation
@@ -11810,7 +11810,7 @@ declare interface nsIContentPrefObserverType extends nsISupportsType {
  * See nsIContentPrefCallback2 below for more information about callbacks.
  */
 declare interface nsIContentPrefService2Type extends nsISupportsType {
-    readonly GROUP_NAME_MAX_LENGTH: string;
+    readonly GROUP_NAME_MAX_LENGTH: unsigned_short;
     /**
      * Gets all the preferences with the given name.
      *
@@ -12047,8 +12047,8 @@ declare interface nsIContentPrefCallback2Type extends nsISupportsType {
      * the method completed.
      */
     handleCompletion(reason: unsigned_short): void;
-    readonly COMPLETE_OK: string;
-    readonly COMPLETE_ERROR: string;
+    readonly COMPLETE_OK: unsigned_short;
+    readonly COMPLETE_ERROR: unsigned_short;
 }
 
 /**
@@ -12306,8 +12306,8 @@ declare interface nsIContentSecurityPolicyType extends nsISerializableType {
      * reports.
      */
     logViolationDetails(violationType: unsigned_short, triggeringElement: Element, aCSPEventListener: nsICSPEventListenerType, sourceFile: AString, scriptSample: AString, lineNum: int32_t, columnNum: int32_t, nonce?: AString, content?: AString): void;
-    readonly VIOLATION_TYPE_EVAL: string;
-    readonly VIOLATION_TYPE_WASM_EVAL: string;
+    readonly VIOLATION_TYPE_EVAL: unsigned_short;
+    readonly VIOLATION_TYPE_WASM_EVAL: unsigned_short;
     /**
      * Called after the CSP object is created to fill in appropriate request
      * context. Either use
@@ -12414,10 +12414,10 @@ declare interface nsICSPEventListenerType extends nsISupportsType {
  * described here https://github.com/franziskuskiefer/content-signature/tree/pki
  */
 declare interface nsIContentSignatureVerifierType extends nsISupportsType {
-    readonly ContentSignatureProdRoot: string;
-    readonly ContentSignatureStageRoot: string;
-    readonly ContentSignatureDevRoot: string;
-    readonly ContentSignatureLocalRoot: string;
+    readonly ContentSignatureProdRoot: AppTrustedRoot;
+    readonly ContentSignatureStageRoot: AppTrustedRoot;
+    readonly ContentSignatureDevRoot: AppTrustedRoot;
+    readonly ContentSignatureLocalRoot: AppTrustedRoot;
     /**
      * Verifies that the data matches the data that was used to generate the
      * signature.
@@ -12542,7 +12542,7 @@ declare interface nsIContentViewerType extends nsISupportsType {
      * only.  C++ consumers should use getDocument().
      */
     readonly DOMDocument: Document;
-    readonly eDelayResize: string;
+    readonly eDelayResize: unsigned_long;
     /**
      * The previous content viewer, which has been |close|d but not
      * |destroy|ed.
@@ -12672,9 +12672,9 @@ declare interface nsIContentViewerEditType extends nsISupportsType {
      *
      */
     readonly inLink: boolean;
-    readonly COPY_IMAGE_TEXT: string;
-    readonly COPY_IMAGE_HTML: string;
-    readonly COPY_IMAGE_DATA: string;
+    readonly COPY_IMAGE_TEXT: long;
+    readonly COPY_IMAGE_HTML: long;
+    readonly COPY_IMAGE_DATA: long;
     readonly COPY_IMAGE_ALL;
     /**
      *
@@ -12914,8 +12914,8 @@ declare interface nsIControllersType extends nsISupportsType {
  * the bytes from a selected character encoding.
  */
 declare interface nsIConverterInputStreamType extends nsIUnicharInputStreamType {
-    readonly DEFAULT_REPLACEMENT_CHARACTER: string;
-    readonly ERRORS_ARE_FATAL: string;
+    readonly DEFAULT_REPLACEMENT_CHARACTER: char16_t;
+    readonly ERRORS_ARE_FATAL: char16_t;
     /**
      * Initialize this stream.
      * @param aStream
@@ -12958,9 +12958,9 @@ declare interface nsIConverterOutputStreamType extends nsIUnicharOutputStreamTyp
  *
  */
 declare interface nsICookieType extends nsISupportsType {
-    readonly SAMESITE_NONE: string;
-    readonly SAMESITE_LAX: string;
-    readonly SAMESITE_STRICT: string;
+    readonly SAMESITE_NONE: uint32_t;
+    readonly SAMESITE_LAX: uint32_t;
+    readonly SAMESITE_STRICT: uint32_t;
     /**
      * the name of the cookie
      */
@@ -13461,10 +13461,10 @@ declare interface nsICookieNotificationType extends nsISupportsType {
  * An interface to test for cookie permissions
  */
 declare interface nsICookiePermissionType extends nsISupportsType {
-    readonly ACCESS_DEFAULT: string;
-    readonly ACCESS_ALLOW: string;
-    readonly ACCESS_DENY: string;
-    readonly ACCESS_SESSION: string;
+    readonly ACCESS_DEFAULT: nsCookieAccess;
+    readonly ACCESS_ALLOW: nsCookieAccess;
+    readonly ACCESS_DENY: nsCookieAccess;
+    readonly ACCESS_SESSION: nsCookieAccess;
 }
 
 /**
@@ -13535,13 +13535,13 @@ declare interface nsICookieTransactionCallbackType extends nsISupportsType {
  * data   : none.
  */
 declare interface nsICookieServiceType extends nsISupportsType {
-    readonly BEHAVIOR_ACCEPT: string;
-    readonly BEHAVIOR_REJECT_FOREIGN: string;
-    readonly BEHAVIOR_REJECT: string;
-    readonly BEHAVIOR_LIMIT_FOREIGN: string;
-    readonly BEHAVIOR_REJECT_TRACKER: string;
-    readonly BEHAVIOR_REJECT_TRACKER_AND_PARTITION_FOREIGN: string;
-    readonly BEHAVIOR_LAST: string;
+    readonly BEHAVIOR_ACCEPT: uint32_t;
+    readonly BEHAVIOR_REJECT_FOREIGN: uint32_t;
+    readonly BEHAVIOR_REJECT: uint32_t;
+    readonly BEHAVIOR_LIMIT_FOREIGN: uint32_t;
+    readonly BEHAVIOR_REJECT_TRACKER: uint32_t;
+    readonly BEHAVIOR_REJECT_TRACKER_AND_PARTITION_FOREIGN: uint32_t;
+    readonly BEHAVIOR_LAST: uint32_t;
     /**
      * Get the complete cookie string associated with the document's principal.
      * This method is meant to be used for `document.cookie` only. Any security
@@ -13760,8 +13760,8 @@ declare interface nsICrashServiceType extends nsISupportsType {
      * @return A promise that resolves after the crash has been stored
      */
     addCrash(processType: long, crashType: long, id: AString): Promise;
-    readonly CRASH_TYPE_CRASH: string;
-    readonly CRASH_TYPE_HANG: string;
+    readonly CRASH_TYPE_CRASH: long;
+    readonly CRASH_TYPE_HANG: long;
 }
 
 /**
@@ -13769,11 +13769,11 @@ declare interface nsICrashServiceType extends nsISupportsType {
  * This interface provides crytographic hashing algorithms.
  */
 declare interface nsICryptoHashType extends nsISupportsType {
-    readonly MD5: string;
-    readonly SHA1: string;
-    readonly SHA256: string;
-    readonly SHA384: string;
-    readonly SHA512: string;
+    readonly MD5: unsigned_long;
+    readonly SHA1: unsigned_long;
+    readonly SHA256: unsigned_long;
+    readonly SHA384: unsigned_long;
+    readonly SHA512: unsigned_long;
     /**
      * String value: "sha512"
      *
@@ -15064,18 +15064,18 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      * header per https://fetch.spec.whatwg.org/#cors-safelisted-request-header
      */
     isCORSSafelistedRequestHeader(name: ACString, value: ACString): boolean;
-    readonly MODIFIER_ALT: string;
-    readonly MODIFIER_CONTROL: string;
-    readonly MODIFIER_SHIFT: string;
-    readonly MODIFIER_META: string;
-    readonly MODIFIER_ALTGRAPH: string;
-    readonly MODIFIER_CAPSLOCK: string;
-    readonly MODIFIER_FN: string;
-    readonly MODIFIER_FNLOCK: string;
-    readonly MODIFIER_NUMLOCK: string;
-    readonly MODIFIER_SCROLLLOCK: string;
-    readonly MODIFIER_SYMBOL: string;
-    readonly MODIFIER_SYMBOLLOCK: string;
+    readonly MODIFIER_ALT: long;
+    readonly MODIFIER_CONTROL: long;
+    readonly MODIFIER_SHIFT: long;
+    readonly MODIFIER_META: long;
+    readonly MODIFIER_ALTGRAPH: long;
+    readonly MODIFIER_CAPSLOCK: long;
+    readonly MODIFIER_FN: long;
+    readonly MODIFIER_FNLOCK: long;
+    readonly MODIFIER_NUMLOCK: long;
+    readonly MODIFIER_SCROLLLOCK: long;
+    readonly MODIFIER_SYMBOL: long;
+    readonly MODIFIER_SYMBOLLOCK: long;
     /**
      * Synthesize a mouse event. The event types supported are:
      * mousedown, mouseup, mousemove, mouseover, mouseout, mousecancel,
@@ -15167,33 +15167,33 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      * this DOM window or one of its children.
      */
     sendTouchEventToWindow(aType: AString, aIdentifiers: invalid, aXs: invalid, aYs: invalid, aRxs: invalid, aRys: invalid, aRotationAngles: invalid, aForces: invalid, aTiltXs: invalid, aTiltYs: invalid, aTwists: invalid, aModifiers: long, aIgnoreRootScrollFrame?: boolean): boolean;
-    readonly WHEEL_EVENT_CAUSED_BY_NO_LINE_OR_PAGE_DELTA_DEVICE: string;
-    readonly WHEEL_EVENT_CAUSED_BY_MOMENTUM: string;
-    readonly WHEEL_EVENT_CUSTOMIZED_BY_USER_PREFS: string;
-    readonly WHEEL_EVENT_EXPECTED_OVERFLOW_DELTA_X_ZERO: string;
-    readonly WHEEL_EVENT_EXPECTED_OVERFLOW_DELTA_X_POSITIVE: string;
-    readonly WHEEL_EVENT_EXPECTED_OVERFLOW_DELTA_X_NEGATIVE: string;
-    readonly WHEEL_EVENT_EXPECTED_OVERFLOW_DELTA_Y_ZERO: string;
-    readonly WHEEL_EVENT_EXPECTED_OVERFLOW_DELTA_Y_POSITIVE: string;
-    readonly WHEEL_EVENT_EXPECTED_OVERFLOW_DELTA_Y_NEGATIVE: string;
+    readonly WHEEL_EVENT_CAUSED_BY_NO_LINE_OR_PAGE_DELTA_DEVICE: unsigned_long;
+    readonly WHEEL_EVENT_CAUSED_BY_MOMENTUM: unsigned_long;
+    readonly WHEEL_EVENT_CUSTOMIZED_BY_USER_PREFS: unsigned_long;
+    readonly WHEEL_EVENT_EXPECTED_OVERFLOW_DELTA_X_ZERO: unsigned_long;
+    readonly WHEEL_EVENT_EXPECTED_OVERFLOW_DELTA_X_POSITIVE: unsigned_long;
+    readonly WHEEL_EVENT_EXPECTED_OVERFLOW_DELTA_X_NEGATIVE: unsigned_long;
+    readonly WHEEL_EVENT_EXPECTED_OVERFLOW_DELTA_Y_ZERO: unsigned_long;
+    readonly WHEEL_EVENT_EXPECTED_OVERFLOW_DELTA_Y_POSITIVE: unsigned_long;
+    readonly WHEEL_EVENT_EXPECTED_OVERFLOW_DELTA_Y_NEGATIVE: unsigned_long;
     /**
      *
      */
     sendWheelEvent(aX: float, aY: float, aDeltaX: double, aDeltaY: double, aDeltaZ: double, aDeltaMode: unsigned_long, aModifiers: long, aLineOrPageDeltaX: long, aLineOrPageDeltaY: long, aOptions: unsigned_long): void;
-    readonly NATIVE_MODIFIER_CAPS_LOCK: string;
-    readonly NATIVE_MODIFIER_NUM_LOCK: string;
-    readonly NATIVE_MODIFIER_SHIFT_LEFT: string;
-    readonly NATIVE_MODIFIER_SHIFT_RIGHT: string;
-    readonly NATIVE_MODIFIER_CONTROL_LEFT: string;
-    readonly NATIVE_MODIFIER_CONTROL_RIGHT: string;
-    readonly NATIVE_MODIFIER_ALT_LEFT: string;
-    readonly NATIVE_MODIFIER_ALT_RIGHT: string;
-    readonly NATIVE_MODIFIER_COMMAND_LEFT: string;
-    readonly NATIVE_MODIFIER_COMMAND_RIGHT: string;
-    readonly NATIVE_MODIFIER_HELP: string;
-    readonly NATIVE_MODIFIER_ALT_GRAPH: string;
-    readonly NATIVE_MODIFIER_FUNCTION: string;
-    readonly NATIVE_MODIFIER_NUMERIC_KEY_PAD: string;
+    readonly NATIVE_MODIFIER_CAPS_LOCK: unsigned_long;
+    readonly NATIVE_MODIFIER_NUM_LOCK: unsigned_long;
+    readonly NATIVE_MODIFIER_SHIFT_LEFT: unsigned_long;
+    readonly NATIVE_MODIFIER_SHIFT_RIGHT: unsigned_long;
+    readonly NATIVE_MODIFIER_CONTROL_LEFT: unsigned_long;
+    readonly NATIVE_MODIFIER_CONTROL_RIGHT: unsigned_long;
+    readonly NATIVE_MODIFIER_ALT_LEFT: unsigned_long;
+    readonly NATIVE_MODIFIER_ALT_RIGHT: unsigned_long;
+    readonly NATIVE_MODIFIER_COMMAND_LEFT: unsigned_long;
+    readonly NATIVE_MODIFIER_COMMAND_RIGHT: unsigned_long;
+    readonly NATIVE_MODIFIER_HELP: unsigned_long;
+    readonly NATIVE_MODIFIER_ALT_GRAPH: unsigned_long;
+    readonly NATIVE_MODIFIER_FUNCTION: unsigned_long;
+    readonly NATIVE_MODIFIER_NUMERIC_KEY_PAD: unsigned_long;
     /**
      * See nsIWidget::SynthesizeNativeKeyEvent
      *
@@ -15207,11 +15207,11 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      * topic.
      */
     sendNativeKeyEvent(aNativeKeyboardLayout: long, aNativeKeyCode: long, aModifierFlags: unsigned_long, aCharacters: AString, aUnmodifiedCharacters: AString, aObserver?: nsIObserverType): void;
-    readonly NATIVE_MOUSE_MESSAGE_BUTTON_DOWN: string;
-    readonly NATIVE_MOUSE_MESSAGE_BUTTON_UP: string;
-    readonly NATIVE_MOUSE_MESSAGE_MOVE: string;
-    readonly NATIVE_MOUSE_MESSAGE_ENTER_WINDOW: string;
-    readonly NATIVE_MOUSE_MESSAGE_LEAVE_WINDOW: string;
+    readonly NATIVE_MOUSE_MESSAGE_BUTTON_DOWN: unsigned_long;
+    readonly NATIVE_MOUSE_MESSAGE_BUTTON_UP: unsigned_long;
+    readonly NATIVE_MOUSE_MESSAGE_MOVE: unsigned_long;
+    readonly NATIVE_MOUSE_MESSAGE_ENTER_WINDOW: unsigned_long;
+    readonly NATIVE_MOUSE_MESSAGE_LEAVE_WINDOW: unsigned_long;
     /**
      *
      */
@@ -15221,9 +15221,9 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      * resizing, moving, changing size mode, ...
      */
     suppressAnimation(aSuppress: boolean): void;
-    readonly MOUSESCROLL_PREFER_WIDGET_AT_POINT: string;
-    readonly MOUSESCROLL_SCROLL_LINES: string;
-    readonly MOUSESCROLL_WIN_SCROLL_LPARAM_NOT_NULL: string;
+    readonly MOUSESCROLL_PREFER_WIDGET_AT_POINT: unsigned_long;
+    readonly MOUSESCROLL_SCROLL_LINES: unsigned_long;
+    readonly MOUSESCROLL_WIN_SCROLL_LPARAM_NOT_NULL: unsigned_long;
     /**
      * See nsIWidget::SynthesizeNativeMouseScrollEvent
      *
@@ -15240,13 +15240,13 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      * WM_VSCROLL (0x0115) or WM_HSCROLL (0x114).
      */
     sendNativeMouseScrollEvent(aScreenX: long, aScreenY: long, aNativeMessage: unsigned_long, aDeltaX: double, aDeltaY: double, aDeltaZ: double, aModifierFlags: unsigned_long, aAdditionalFlags: unsigned_long, aElement: Element, aObserver?: nsIObserverType): void;
-    readonly TOUCH_HOVER: string;
-    readonly TOUCH_CONTACT: string;
-    readonly TOUCH_REMOVE: string;
-    readonly TOUCH_CANCEL: string;
-    readonly PHASE_BEGIN: string;
-    readonly PHASE_UPDATE: string;
-    readonly PHASE_END: string;
+    readonly TOUCH_HOVER: long;
+    readonly TOUCH_CONTACT: long;
+    readonly TOUCH_REMOVE: long;
+    readonly TOUCH_CANCEL: long;
+    readonly PHASE_BEGIN: long;
+    readonly PHASE_UPDATE: long;
+    readonly PHASE_END: long;
     /**
      * Create a new or update an existing touch point on the digitizer.
      * To trigger os level gestures, individual touch points should
@@ -15549,10 +15549,10 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      * Returns the given element's bounds without flushing pending layout changes.
      */
     getBoundsWithoutFlushing(aElement: Element): DOMRect;
-    readonly UPDATE_TYPE_RESTORE: string;
-    readonly UPDATE_TYPE_MAIN_THREAD: string;
-    readonly SCROLL_MODE_INSTANT: string;
-    readonly SCROLL_MODE_SMOOTH: string;
+    readonly UPDATE_TYPE_RESTORE: long;
+    readonly UPDATE_TYPE_MAIN_THREAD: long;
+    readonly SCROLL_MODE_INSTANT: long;
+    readonly SCROLL_MODE_SMOOTH: long;
     /**
      *
      */
@@ -15592,9 +15592,9 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      */
     setDynamicToolbarMaxHeight(aHeightInScreen: uint32_t): void;
     readonly FLUSH_NONE;
-    readonly FLUSH_STYLE: string;
-    readonly FLUSH_LAYOUT: string;
-    readonly FLUSH_DISPLAY: string;
+    readonly FLUSH_STYLE: long;
+    readonly FLUSH_LAYOUT: long;
+    readonly FLUSH_DISPLAY: long;
     /**
      * Returns true if a flush of the given type is needed.
      */
@@ -15615,9 +15615,9 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      * This property works only when IMEEnabled is IME_STATUS_ENABLED.
      */
     readonly IMEIsOpen: boolean;
-    readonly IME_STATUS_DISABLED: string;
-    readonly IME_STATUS_ENABLED: string;
-    readonly IME_STATUS_PASSWORD: string;
+    readonly IME_STATUS_DISABLED: unsigned_long;
+    readonly IME_STATUS_ENABLED: unsigned_long;
+    readonly IME_STATUS_PASSWORD: unsigned_long;
     /**
      * Get IME status, see above IME_STATUS_* definitions.
      */
@@ -15626,8 +15626,8 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      * Get the document URI which may be retrieved by native IME.
      */
     readonly inputContextURI: nsIURI;
-    readonly INPUT_CONTEXT_ORIGIN_MAIN: string;
-    readonly INPUT_CONTEXT_ORIGIN_CONTENT: string;
+    readonly INPUT_CONTEXT_ORIGIN_MAIN: unsigned_long;
+    readonly INPUT_CONTEXT_ORIGIN_CONTENT: unsigned_long;
     /**
      *
      */
@@ -15677,18 +15677,18 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      * "insertText"
      */
     sendContentCommandEvent(aType: AString, aTransferable?: nsITransferableType, aString?: AString): void;
-    readonly QUERY_CONTENT_FLAG_USE_NATIVE_LINE_BREAK: string;
-    readonly QUERY_CONTENT_FLAG_USE_XP_LINE_BREAK: string;
-    readonly QUERY_CONTENT_FLAG_SELECTION_SPELLCHECK: string;
-    readonly QUERY_CONTENT_FLAG_SELECTION_IME_RAWINPUT: string;
-    readonly QUERY_CONTENT_FLAG_SELECTION_IME_SELECTEDRAWTEXT: string;
-    readonly QUERY_CONTENT_FLAG_SELECTION_IME_CONVERTEDTEXT: string;
-    readonly QUERY_CONTENT_FLAG_SELECTION_IME_SELECTEDCONVERTEDTEXT: string;
-    readonly QUERY_CONTENT_FLAG_SELECTION_ACCESSIBILITY: string;
-    readonly QUERY_CONTENT_FLAG_SELECTION_FIND: string;
-    readonly QUERY_CONTENT_FLAG_SELECTION_URLSECONDARY: string;
-    readonly QUERY_CONTENT_FLAG_SELECTION_URLSTRIKEOUT: string;
-    readonly QUERY_CONTENT_FLAG_OFFSET_RELATIVE_TO_INSERTION_POINT: string;
+    readonly QUERY_CONTENT_FLAG_USE_NATIVE_LINE_BREAK: unsigned_long;
+    readonly QUERY_CONTENT_FLAG_USE_XP_LINE_BREAK: unsigned_long;
+    readonly QUERY_CONTENT_FLAG_SELECTION_SPELLCHECK: unsigned_long;
+    readonly QUERY_CONTENT_FLAG_SELECTION_IME_RAWINPUT: unsigned_long;
+    readonly QUERY_CONTENT_FLAG_SELECTION_IME_SELECTEDRAWTEXT: unsigned_long;
+    readonly QUERY_CONTENT_FLAG_SELECTION_IME_CONVERTEDTEXT: unsigned_long;
+    readonly QUERY_CONTENT_FLAG_SELECTION_IME_SELECTEDCONVERTEDTEXT: unsigned_long;
+    readonly QUERY_CONTENT_FLAG_SELECTION_ACCESSIBILITY: unsigned_long;
+    readonly QUERY_CONTENT_FLAG_SELECTION_FIND: unsigned_long;
+    readonly QUERY_CONTENT_FLAG_SELECTION_URLSECONDARY: unsigned_long;
+    readonly QUERY_CONTENT_FLAG_SELECTION_URLSTRIKEOUT: unsigned_long;
+    readonly QUERY_CONTENT_FLAG_OFFSET_RELATIVE_TO_INSERTION_POINT: unsigned_long;
     /**
      * Synthesize a query content event. Note that the result value returned here
      * is in LayoutDevice pixels rather than CSS pixels.
@@ -15698,13 +15698,13 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      * @param aAdditionalFlags See the description of QUERY_CONTENT_FLAG_*.
      */
     sendQueryContentEvent(aType: unsigned_long, aOffset: long_long, aLength: unsigned_long, aX: long, aY: long, aAdditionalFlags?: unsigned_long): nsIQueryContentEventResultType;
-    readonly QUERY_SELECTED_TEXT: string;
-    readonly QUERY_TEXT_CONTENT: string;
-    readonly QUERY_CARET_RECT: string;
-    readonly QUERY_TEXT_RECT: string;
-    readonly QUERY_EDITOR_RECT: string;
-    readonly QUERY_CHARACTER_AT_POINT: string;
-    readonly QUERY_TEXT_RECT_ARRAY: string;
+    readonly QUERY_SELECTED_TEXT: unsigned_long;
+    readonly QUERY_TEXT_CONTENT: unsigned_long;
+    readonly QUERY_CARET_RECT: unsigned_long;
+    readonly QUERY_TEXT_RECT: unsigned_long;
+    readonly QUERY_EDITOR_RECT: unsigned_long;
+    readonly QUERY_CHARACTER_AT_POINT: unsigned_long;
+    readonly QUERY_TEXT_RECT_ARRAY: unsigned_long;
     /**
      * Called when the remote child frame has changed its fullscreen state,
      * when entering fullscreen, and when the origin which is fullscreen changes.
@@ -15734,9 +15734,9 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      * screen.
      */
     exitFullscreen(aDontRestoreViewSize?: boolean): void;
-    readonly SELECTION_SET_FLAG_USE_NATIVE_LINE_BREAK: string;
-    readonly SELECTION_SET_FLAG_USE_XP_LINE_BREAK: string;
-    readonly SELECTION_SET_FLAG_REVERSE: string;
+    readonly SELECTION_SET_FLAG_USE_NATIVE_LINE_BREAK: unsigned_long;
+    readonly SELECTION_SET_FLAG_USE_XP_LINE_BREAK: unsigned_long;
+    readonly SELECTION_SET_FLAG_REVERSE: unsigned_long;
     /**
      * Synthesize a selection set event to the window.
      *
@@ -15755,14 +15755,14 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      * @return True, if succeeded.  Otherwise, false.
      */
     sendSelectionSetEvent(aOffset: unsigned_long, aLength: unsigned_long, aAdditionalFlags?: unsigned_long): boolean;
-    readonly SELECT_CHARACTER: string;
-    readonly SELECT_CLUSTER: string;
-    readonly SELECT_WORD: string;
-    readonly SELECT_LINE: string;
-    readonly SELECT_BEGINLINE: string;
-    readonly SELECT_ENDLINE: string;
-    readonly SELECT_PARAGRAPH: string;
-    readonly SELECT_WORDNOSPACE: string;
+    readonly SELECT_CHARACTER: unsigned_long;
+    readonly SELECT_CLUSTER: unsigned_long;
+    readonly SELECT_WORD: unsigned_long;
+    readonly SELECT_LINE: unsigned_long;
+    readonly SELECT_BEGINLINE: unsigned_long;
+    readonly SELECT_ENDLINE: unsigned_long;
+    readonly SELECT_PARAGRAPH: unsigned_long;
+    readonly SELECT_WORDNOSPACE: unsigned_long;
     /**
      * Select content at a client point based on a selection behavior if the
      * underlying content is selectable. Selection will accumulate with any
@@ -15850,8 +15850,8 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      * Returns the preferred sample rate of the current audio device.
      */
     readonly currentPreferredSampleRate: unsigned_long;
-    readonly AUDIO_INPUT: string;
-    readonly AUDIO_OUTPUT: string;
+    readonly AUDIO_INPUT: unsigned_short;
+    readonly AUDIO_OUTPUT: unsigned_short;
     /**
      *
      */
@@ -16087,9 +16087,9 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      *
      */
     resetDialogAbuseState(): void;
-    readonly AGENT_SHEET: string;
-    readonly USER_SHEET: string;
-    readonly AUTHOR_SHEET: string;
+    readonly AGENT_SHEET: unsigned_long;
+    readonly USER_SHEET: unsigned_long;
+    readonly AUTHOR_SHEET: unsigned_long;
     /**
      * Synchronously loads a style sheet from |sheetURI| and adds it to the list
      * of additional style sheets of the document.
@@ -16343,10 +16343,10 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      * save them to a folder relative to the current working directory.
      */
     wrCapture(): void;
-    readonly WR_CAPTURE_SCENE: string;
-    readonly WR_CAPTURE_FRAME: string;
-    readonly WR_CAPTURE_TILE_CACHE: string;
-    readonly WR_CAPTURE_EXTERNAL_RESOURCES: string;
+    readonly WR_CAPTURE_SCENE: uint32_t;
+    readonly WR_CAPTURE_FRAME: uint32_t;
+    readonly WR_CAPTURE_TILE_CACHE: uint32_t;
+    readonly WR_CAPTURE_EXTERNAL_RESOURCES: uint32_t;
     /**
      * Start capturing each WebRender frame to disk.
      *
@@ -16436,22 +16436,22 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      * been painted to the screen.
      */
     readonly paintCount: unsigned_long_long;
-    readonly DEFAULT_MOUSE_POINTER_ID: string;
-    readonly DEFAULT_PEN_POINTER_ID: string;
-    readonly DEFAULT_TOUCH_POINTER_ID: string;
-    readonly MOUSE_BUTTON_LEFT_BUTTON: string;
-    readonly MOUSE_BUTTON_MIDDLE_BUTTON: string;
-    readonly MOUSE_BUTTON_RIGHT_BUTTON: string;
-    readonly MOUSE_BUTTONS_NO_BUTTON: string;
-    readonly MOUSE_BUTTONS_LEFT_BUTTON: string;
-    readonly MOUSE_BUTTONS_RIGHT_BUTTON: string;
-    readonly MOUSE_BUTTONS_MIDDLE_BUTTON: string;
-    readonly MOUSE_BUTTONS_4TH_BUTTON: string;
-    readonly MOUSE_BUTTONS_5TH_BUTTON: string;
+    readonly DEFAULT_MOUSE_POINTER_ID: long;
+    readonly DEFAULT_PEN_POINTER_ID: long;
+    readonly DEFAULT_TOUCH_POINTER_ID: long;
+    readonly MOUSE_BUTTON_LEFT_BUTTON: long;
+    readonly MOUSE_BUTTON_MIDDLE_BUTTON: long;
+    readonly MOUSE_BUTTON_RIGHT_BUTTON: long;
+    readonly MOUSE_BUTTONS_NO_BUTTON: long;
+    readonly MOUSE_BUTTONS_LEFT_BUTTON: long;
+    readonly MOUSE_BUTTONS_RIGHT_BUTTON: long;
+    readonly MOUSE_BUTTONS_MIDDLE_BUTTON: long;
+    readonly MOUSE_BUTTONS_4TH_BUTTON: long;
+    readonly MOUSE_BUTTONS_5TH_BUTTON: long;
     readonly MOUSE_BUTTONS_NOT_SPECIFIED;
-    readonly DIRECTION_LTR: string;
-    readonly DIRECTION_RTL: string;
-    readonly DIRECTION_NOT_SET: string;
+    readonly DIRECTION_LTR: long;
+    readonly DIRECTION_RTL: long;
+    readonly DIRECTION_NOT_SET: long;
     /**
      *
      */
@@ -17144,14 +17144,14 @@ declare interface nsIDefaultAgentType extends nsISupportsType {
  *
  */
 declare interface nsIDeviceSensorDataType extends nsISupportsType {
-    readonly TYPE_ORIENTATION: string;
-    readonly TYPE_ACCELERATION: string;
-    readonly TYPE_PROXIMITY: string;
-    readonly TYPE_LINEAR_ACCELERATION: string;
-    readonly TYPE_GYROSCOPE: string;
-    readonly TYPE_LIGHT: string;
-    readonly TYPE_ROTATION_VECTOR: string;
-    readonly TYPE_GAME_ROTATION_VECTOR: string;
+    readonly TYPE_ORIENTATION: unsigned_long;
+    readonly TYPE_ACCELERATION: unsigned_long;
+    readonly TYPE_PROXIMITY: unsigned_long;
+    readonly TYPE_LINEAR_ACCELERATION: unsigned_long;
+    readonly TYPE_GYROSCOPE: unsigned_long;
+    readonly TYPE_LIGHT: unsigned_long;
+    readonly TYPE_ROTATION_VECTOR: unsigned_long;
+    readonly TYPE_GAME_ROTATION_VECTOR: unsigned_long;
     /**
      *
      */
@@ -17219,10 +17219,10 @@ declare interface nsIDialogParamBlockType extends nsISupportsType {
  * changing these attributes won't affect the directory
  */
 declare interface nsIDirIndexType extends nsISupportsType {
-    readonly TYPE_UNKNOWN: string;
-    readonly TYPE_DIRECTORY: string;
-    readonly TYPE_FILE: string;
-    readonly TYPE_SYMLINK: string;
+    readonly TYPE_UNKNOWN: unsigned_long;
+    readonly TYPE_DIRECTORY: unsigned_long;
+    readonly TYPE_FILE: unsigned_long;
+    readonly TYPE_SYMLINK: unsigned_long;
     /**
      * The type of the entry - one of the constants above
      */
@@ -17920,11 +17920,11 @@ declare interface nsIDocShellTreeItemType extends nsISupportsType {
      * `PR_FALSE` otherwise.
      */
     nameEquals(name: AString): boolean;
-    readonly typeChrome: string;
-    readonly typeContent: string;
-    readonly typeContentWrapper: string;
-    readonly typeChromeWrapper: string;
-    readonly typeAll: string;
+    readonly typeChrome: long;
+    readonly typeContent: long;
+    readonly typeContentWrapper: long;
+    readonly typeChromeWrapper: long;
+    readonly typeAll: long;
     /**
      * The type this item is.
      */
@@ -18413,11 +18413,11 @@ declare interface nsIDownloadObserverType extends nsISupportsType {
  *
  */
 declare interface nsIDragServiceType extends nsISupportsType {
-    readonly DRAGDROP_ACTION_NONE: string;
-    readonly DRAGDROP_ACTION_COPY: string;
-    readonly DRAGDROP_ACTION_MOVE: string;
-    readonly DRAGDROP_ACTION_LINK: string;
-    readonly DRAGDROP_ACTION_UNINITIALIZED: string;
+    readonly DRAGDROP_ACTION_NONE: long;
+    readonly DRAGDROP_ACTION_COPY: long;
+    readonly DRAGDROP_ACTION_MOVE: long;
+    readonly DRAGDROP_ACTION_LINK: long;
+    readonly DRAGDROP_ACTION_UNINITIALIZED: long;
     /**
      * Starts a modal drag session with an array of transaferables.
      *
@@ -18755,12 +18755,12 @@ declare interface nsIEditActionListenerType extends nsISupportsType {
  *
  */
 declare interface nsIEditingSessionType extends nsISupportsType {
-    readonly eEditorOK: string;
-    readonly eEditorCreationInProgress: string;
-    readonly eEditorErrorCantEditMimeType: string;
-    readonly eEditorErrorFileNotFound: string;
-    readonly eEditorErrorCantEditFramesets: string;
-    readonly eEditorErrorUnknown: string;
+    readonly eEditorOK: long;
+    readonly eEditorCreationInProgress: long;
+    readonly eEditorErrorCantEditMimeType: long;
+    readonly eEditorErrorFileNotFound: long;
+    readonly eEditorErrorCantEditFramesets: long;
+    readonly eEditorErrorUnknown: long;
     /**
      * Status after editor creation and document loading
      * Value is one of the above error codes
@@ -18795,31 +18795,31 @@ declare interface nsIEditingSessionType extends nsISupportsType {
  *
  */
 declare interface nsIEditorType extends nsISupportsType {
-    readonly eNone: string;
-    readonly eNext: string;
-    readonly ePrevious: string;
-    readonly eNextWord: string;
-    readonly ePreviousWord: string;
-    readonly eToBeginningOfLine: string;
-    readonly eToEndOfLine: string;
-    readonly eStrip: string;
-    readonly eNoStrip: string;
-    readonly eEditorPlaintextMask: string;
-    readonly eEditorSingleLineMask: string;
-    readonly eEditorPasswordMask: string;
-    readonly eEditorReadonlyMask: string;
-    readonly eEditorMailMask: string;
-    readonly eEditorEnableWrapHackMask: string;
-    readonly eEditorAllowInteraction: string;
-    readonly eEditorRightToLeft: string;
-    readonly eEditorLeftToRight: string;
-    readonly eEditorSkipSpellCheck: string;
-    readonly eNewlinesPasteIntact: string;
-    readonly eNewlinesPasteToFirst: string;
-    readonly eNewlinesReplaceWithSpaces: string;
-    readonly eNewlinesStrip: string;
-    readonly eNewlinesReplaceWithCommas: string;
-    readonly eNewlinesStripSurroundingWhitespace: string;
+    readonly eNone: short;
+    readonly eNext: short;
+    readonly ePrevious: short;
+    readonly eNextWord: short;
+    readonly ePreviousWord: short;
+    readonly eToBeginningOfLine: short;
+    readonly eToEndOfLine: short;
+    readonly eStrip: short;
+    readonly eNoStrip: short;
+    readonly eEditorPlaintextMask: long;
+    readonly eEditorSingleLineMask: long;
+    readonly eEditorPasswordMask: long;
+    readonly eEditorReadonlyMask: long;
+    readonly eEditorMailMask: long;
+    readonly eEditorEnableWrapHackMask: long;
+    readonly eEditorAllowInteraction: long;
+    readonly eEditorRightToLeft: long;
+    readonly eEditorLeftToRight: long;
+    readonly eEditorSkipSpellCheck: long;
+    readonly eNewlinesPasteIntact: long;
+    readonly eNewlinesPasteToFirst: long;
+    readonly eNewlinesReplaceWithSpaces: long;
+    readonly eNewlinesStrip: long;
+    readonly eNewlinesReplaceWithCommas: long;
+    readonly eNewlinesStripSurroundingWhitespace: long;
     /**
      *
      */
@@ -19389,8 +19389,8 @@ declare interface nsIEditorSpellCheckType extends nsISupportsType {
      * preference saving will happen.
      */
     UninitSpellChecker(): void;
-    readonly FILTERTYPE_NORMAL: string;
-    readonly FILTERTYPE_MAIL: string;
+    readonly FILTERTYPE_NORMAL: unsigned_long;
+    readonly FILTERTYPE_MAIL: unsigned_long;
     /**
      * Used to filter the content (for example, to skip blockquotes in email from
      * spellchecking. Call this before calling InitSpellChecker; calling it
@@ -19610,13 +19610,13 @@ declare interface nsIEffectiveTLDServiceType extends nsISupportsType {
  * hide or show it and set/get its title.
  */
 declare interface nsIEmbeddingSiteWindowType extends nsISupportsType {
-    readonly DIM_FLAGS_POSITION: string;
-    readonly DIM_FLAGS_SIZE_INNER: string;
-    readonly DIM_FLAGS_SIZE_OUTER: string;
-    readonly DIM_FLAGS_IGNORE_X: string;
-    readonly DIM_FLAGS_IGNORE_Y: string;
-    readonly DIM_FLAGS_IGNORE_CX: string;
-    readonly DIM_FLAGS_IGNORE_CY: string;
+    readonly DIM_FLAGS_POSITION: unsigned_long;
+    readonly DIM_FLAGS_SIZE_INNER: unsigned_long;
+    readonly DIM_FLAGS_SIZE_OUTER: unsigned_long;
+    readonly DIM_FLAGS_IGNORE_X: unsigned_long;
+    readonly DIM_FLAGS_IGNORE_Y: unsigned_long;
+    readonly DIM_FLAGS_IGNORE_CX: unsigned_long;
+    readonly DIM_FLAGS_IGNORE_CY: unsigned_long;
     /**
      * Sets the dimensions for the window; the position & size. The
      * flags to indicate what the caller wants to set and whether the size
@@ -19741,9 +19741,9 @@ declare interface nsIEncodedChannelType extends nsISupportsType {
  */
 declare interface nsIEnterprisePoliciesType extends nsISupportsType {
     readonly UNINITIALIZED;
-    readonly INACTIVE: string;
-    readonly ACTIVE: string;
-    readonly FAILED: string;
+    readonly INACTIVE: short;
+    readonly ACTIVE: short;
+    readonly FAILED: short;
     /**
      *
      */
@@ -19987,10 +19987,10 @@ declare interface nsIEventSourceEventServiceType extends nsISupportsType {
  *
  */
 declare interface nsIEventTargetType extends nsISupportsType {
-    readonly DISPATCH_NORMAL: string;
-    readonly DISPATCH_AT_END: string;
-    readonly DISPATCH_EVENT_MAY_BLOCK: string;
-    readonly DISPATCH_IGNORE_BLOCK_DISPATCH: string;
+    readonly DISPATCH_NORMAL: unsigned_long;
+    readonly DISPATCH_AT_END: unsigned_long;
+    readonly DISPATCH_EVENT_MAY_BLOCK: unsigned_long;
+    readonly DISPATCH_IGNORE_BLOCK_DISPATCH: unsigned_long;
     /**
      *
      */
@@ -20652,9 +20652,9 @@ declare interface nsIFactoryType extends nsISupportsType {
  *
  */
 declare interface nsIFaviconServiceType extends nsISupportsType {
-    readonly FAVICON_LOAD_PRIVATE: string;
-    readonly FAVICON_LOAD_NON_PRIVATE: string;
-    readonly MAX_FAVICON_BUFFER_SIZE: string;
+    readonly FAVICON_LOAD_PRIVATE: unsigned_long;
+    readonly FAVICON_LOAD_NON_PRIVATE: unsigned_long;
+    readonly MAX_FAVICON_BUFFER_SIZE: unsigned_long;
     /**
      * For a given icon URI, this will return a URI that will result in the image.
      * In most cases, this is an annotation URI.  For chrome URIs, this will do
@@ -20946,8 +20946,8 @@ declare interface nsIFaviconDataCallbackType extends nsISupportsType {
  * methods" are not scriptable.
  */
 declare interface nsIFileType extends nsISupportsType {
-    readonly NORMAL_FILE_TYPE: string;
-    readonly DIRECTORY_TYPE: string;
+    readonly NORMAL_FILE_TYPE: unsigned_long;
+    readonly DIRECTORY_TYPE: unsigned_long;
     /**
      * append[Native]
      *
@@ -21316,8 +21316,8 @@ declare interface nsIFileType extends nsISupportsType {
      * the file this becomes equivalent to
      */
     initWithFile(aFile: nsIFileType): void;
-    readonly OS_READAHEAD: string;
-    readonly DELETE_ON_CLOSE: string;
+    readonly OS_READAHEAD: unsigned_long;
+    readonly DELETE_ON_CLOSE: unsigned_long;
     /**
      *
      */
@@ -21439,17 +21439,17 @@ declare interface nsIFilePickerType extends nsISupportsType {
     readonly returnOK;
     readonly returnCancel;
     readonly returnReplace;
-    readonly filterAll: string;
-    readonly filterHTML: string;
-    readonly filterText: string;
-    readonly filterImages: string;
-    readonly filterXML: string;
-    readonly filterXUL: string;
-    readonly filterApps: string;
-    readonly filterAllowURLs: string;
-    readonly filterAudio: string;
-    readonly filterVideo: string;
-    readonly filterPDF: string;
+    readonly filterAll: long;
+    readonly filterHTML: long;
+    readonly filterText: long;
+    readonly filterImages: long;
+    readonly filterXML: long;
+    readonly filterXUL: long;
+    readonly filterApps: long;
+    readonly filterAllowURLs: long;
+    readonly filterAudio: long;
+    readonly filterVideo: long;
+    readonly filterPDF: long;
     readonly captureNone;
     readonly captureDefault;
     readonly captureUser;
@@ -22074,31 +22074,31 @@ declare interface nsIFocusManagerType extends nsISupportsType {
      * focusable.
      */
     elementIsFocusable(aElement: Element, aFlags: unsigned_long): boolean;
-    readonly FLAG_RAISE: string;
-    readonly FLAG_NOSCROLL: string;
-    readonly FLAG_NOSWITCHFRAME: string;
-    readonly FLAG_NOPARENTFRAME: string;
-    readonly FLAG_NONSYSTEMCALLER: string;
-    readonly FLAG_BYMOUSE: string;
-    readonly FLAG_BYKEY: string;
-    readonly FLAG_BYMOVEFOCUS: string;
-    readonly FLAG_NOSHOWRING: string;
-    readonly FLAG_SHOWRING: string;
-    readonly FLAG_BYTOUCH: string;
-    readonly FLAG_BYJS: string;
-    readonly FLAG_BYLONGPRESS: string;
+    readonly FLAG_RAISE: unsigned_long;
+    readonly FLAG_NOSCROLL: unsigned_long;
+    readonly FLAG_NOSWITCHFRAME: unsigned_long;
+    readonly FLAG_NOPARENTFRAME: unsigned_long;
+    readonly FLAG_NONSYSTEMCALLER: unsigned_long;
+    readonly FLAG_BYMOUSE: unsigned_long;
+    readonly FLAG_BYKEY: unsigned_long;
+    readonly FLAG_BYMOVEFOCUS: unsigned_long;
+    readonly FLAG_NOSHOWRING: unsigned_long;
+    readonly FLAG_SHOWRING: unsigned_long;
+    readonly FLAG_BYTOUCH: unsigned_long;
+    readonly FLAG_BYJS: unsigned_long;
+    readonly FLAG_BYLONGPRESS: unsigned_long;
     readonly METHOD_MASK;
     readonly METHODANDRING_MASK;
-    readonly MOVEFOCUS_FORWARD: string;
-    readonly MOVEFOCUS_BACKWARD: string;
-    readonly MOVEFOCUS_FORWARDDOC: string;
-    readonly MOVEFOCUS_BACKWARDDOC: string;
-    readonly MOVEFOCUS_FIRST: string;
-    readonly MOVEFOCUS_LAST: string;
-    readonly MOVEFOCUS_ROOT: string;
-    readonly MOVEFOCUS_CARET: string;
-    readonly MOVEFOCUS_FIRSTDOC: string;
-    readonly MOVEFOCUS_LASTDOC: string;
+    readonly MOVEFOCUS_FORWARD: unsigned_long;
+    readonly MOVEFOCUS_BACKWARD: unsigned_long;
+    readonly MOVEFOCUS_FORWARDDOC: unsigned_long;
+    readonly MOVEFOCUS_BACKWARDDOC: unsigned_long;
+    readonly MOVEFOCUS_FIRST: unsigned_long;
+    readonly MOVEFOCUS_LAST: unsigned_long;
+    readonly MOVEFOCUS_ROOT: unsigned_long;
+    readonly MOVEFOCUS_CARET: unsigned_long;
+    readonly MOVEFOCUS_FIRSTDOC: unsigned_long;
+    readonly MOVEFOCUS_LASTDOC: unsigned_long;
 }
 
 /**
@@ -22281,9 +22281,9 @@ declare interface nsIFormatConverterType extends nsISupportsType {
  *
  */
 declare interface nsIGIOMimeAppType extends nsIHandlerAppType {
-    readonly EXPECTS_URIS: string;
-    readonly EXPECTS_PATHS: string;
-    readonly EXPECTS_URIS_FOR_NON_FILES: string;
+    readonly EXPECTS_URIS: long;
+    readonly EXPECTS_PATHS: long;
+    readonly EXPECTS_URIS_FOR_NON_FILES: long;
     /**
      *
      */
@@ -22626,64 +22626,64 @@ declare interface nsIGfxInfoType extends nsISupportsType {
      * OS X additionally supplies "scale".
      */
     getMonitors(): jsval;
-    readonly FEATURE_DIRECT2D: string;
-    readonly FEATURE_DIRECT3D_9_LAYERS: string;
-    readonly FEATURE_DIRECT3D_10_LAYERS: string;
-    readonly FEATURE_DIRECT3D_10_1_LAYERS: string;
-    readonly FEATURE_OPENGL_LAYERS: string;
-    readonly FEATURE_WEBGL_OPENGL: string;
-    readonly FEATURE_WEBGL_ANGLE: string;
-    readonly UNUSED_FEATURE_WEBGL_MSAA: string;
-    readonly FEATURE_STAGEFRIGHT: string;
-    readonly FEATURE_WEBRTC_HW_ACCELERATION_H264: string;
-    readonly FEATURE_DIRECT3D_11_LAYERS: string;
-    readonly FEATURE_HARDWARE_VIDEO_DECODING: string;
-    readonly FEATURE_DIRECT3D_11_ANGLE: string;
-    readonly FEATURE_WEBRTC_HW_ACCELERATION_ENCODE: string;
-    readonly FEATURE_WEBRTC_HW_ACCELERATION_DECODE: string;
-    readonly FEATURE_CANVAS2D_ACCELERATION: string;
-    readonly FEATURE_VP8_HW_DECODE: string;
-    readonly FEATURE_VP9_HW_DECODE: string;
-    readonly FEATURE_DX_INTEROP2: string;
-    readonly FEATURE_GPU_PROCESS: string;
-    readonly FEATURE_WEBGL2: string;
-    readonly FEATURE_D3D11_KEYED_MUTEX: string;
-    readonly FEATURE_WEBRENDER: string;
-    readonly FEATURE_DX_NV12: string;
-    readonly FEATURE_DX_P010: string;
-    readonly FEATURE_DX_P016: string;
-    readonly FEATURE_GL_SWIZZLE: string;
-    readonly FEATURE_WEBRENDER_COMPOSITOR: string;
-    readonly FEATURE_WEBRENDER_SCISSORED_CACHE_CLEARS: string;
-    readonly FEATURE_ALLOW_WEBGL_OUT_OF_PROCESS: string;
-    readonly FEATURE_THREADSAFE_GL: string;
-    readonly FEATURE_WEBRENDER_OPTIMIZED_SHADERS: string;
-    readonly FEATURE_X11_EGL: string;
-    readonly FEATURE_DMABUF: string;
-    readonly FEATURE_WEBRENDER_SHADER_CACHE: string;
-    readonly FEATURE_WEBRENDER_PARTIAL_PRESENT: string;
-    readonly FEATURE_WEBGPU: string;
-    readonly FEATURE_VIDEO_OVERLAY: string;
-    readonly FEATURE_HW_DECODED_VIDEO_ZERO_COPY: string;
-    readonly FEATURE_DMABUF_SURFACE_EXPORT: string;
-    readonly FEATURE_REUSE_DECODER_DEVICE: string;
-    readonly FEATURE_BACKDROP_FILTER: string;
-    readonly FEATURE_ACCELERATED_CANVAS2D: string;
-    readonly FEATURE_H264_HW_DECODE: string;
-    readonly FEATURE_AV1_HW_DECODE: string;
-    readonly FEATURE_VIDEO_SOFTWARE_OVERLAY: string;
-    readonly FEATURE_MAX_VALUE: string;
-    readonly FEATURE_STATUS_OK: string;
-    readonly FEATURE_STATUS_UNKNOWN: string;
-    readonly FEATURE_BLOCKED_DRIVER_VERSION: string;
-    readonly FEATURE_BLOCKED_DEVICE: string;
-    readonly FEATURE_DISCOURAGED: string;
-    readonly FEATURE_BLOCKED_OS_VERSION: string;
-    readonly FEATURE_BLOCKED_MISMATCHED_VERSION: string;
-    readonly FEATURE_DENIED: string;
-    readonly FEATURE_ALLOW_ALWAYS: string;
-    readonly FEATURE_ALLOW_QUALIFIED: string;
-    readonly FEATURE_BLOCKED_PLATFORM_TEST: string;
+    readonly FEATURE_DIRECT2D: long;
+    readonly FEATURE_DIRECT3D_9_LAYERS: long;
+    readonly FEATURE_DIRECT3D_10_LAYERS: long;
+    readonly FEATURE_DIRECT3D_10_1_LAYERS: long;
+    readonly FEATURE_OPENGL_LAYERS: long;
+    readonly FEATURE_WEBGL_OPENGL: long;
+    readonly FEATURE_WEBGL_ANGLE: long;
+    readonly UNUSED_FEATURE_WEBGL_MSAA: long;
+    readonly FEATURE_STAGEFRIGHT: long;
+    readonly FEATURE_WEBRTC_HW_ACCELERATION_H264: long;
+    readonly FEATURE_DIRECT3D_11_LAYERS: long;
+    readonly FEATURE_HARDWARE_VIDEO_DECODING: long;
+    readonly FEATURE_DIRECT3D_11_ANGLE: long;
+    readonly FEATURE_WEBRTC_HW_ACCELERATION_ENCODE: long;
+    readonly FEATURE_WEBRTC_HW_ACCELERATION_DECODE: long;
+    readonly FEATURE_CANVAS2D_ACCELERATION: long;
+    readonly FEATURE_VP8_HW_DECODE: long;
+    readonly FEATURE_VP9_HW_DECODE: long;
+    readonly FEATURE_DX_INTEROP2: long;
+    readonly FEATURE_GPU_PROCESS: long;
+    readonly FEATURE_WEBGL2: long;
+    readonly FEATURE_D3D11_KEYED_MUTEX: long;
+    readonly FEATURE_WEBRENDER: long;
+    readonly FEATURE_DX_NV12: long;
+    readonly FEATURE_DX_P010: long;
+    readonly FEATURE_DX_P016: long;
+    readonly FEATURE_GL_SWIZZLE: long;
+    readonly FEATURE_WEBRENDER_COMPOSITOR: long;
+    readonly FEATURE_WEBRENDER_SCISSORED_CACHE_CLEARS: long;
+    readonly FEATURE_ALLOW_WEBGL_OUT_OF_PROCESS: long;
+    readonly FEATURE_THREADSAFE_GL: long;
+    readonly FEATURE_WEBRENDER_OPTIMIZED_SHADERS: long;
+    readonly FEATURE_X11_EGL: long;
+    readonly FEATURE_DMABUF: long;
+    readonly FEATURE_WEBRENDER_SHADER_CACHE: long;
+    readonly FEATURE_WEBRENDER_PARTIAL_PRESENT: long;
+    readonly FEATURE_WEBGPU: long;
+    readonly FEATURE_VIDEO_OVERLAY: long;
+    readonly FEATURE_HW_DECODED_VIDEO_ZERO_COPY: long;
+    readonly FEATURE_DMABUF_SURFACE_EXPORT: long;
+    readonly FEATURE_REUSE_DECODER_DEVICE: long;
+    readonly FEATURE_BACKDROP_FILTER: long;
+    readonly FEATURE_ACCELERATED_CANVAS2D: long;
+    readonly FEATURE_H264_HW_DECODE: long;
+    readonly FEATURE_AV1_HW_DECODE: long;
+    readonly FEATURE_VIDEO_SOFTWARE_OVERLAY: long;
+    readonly FEATURE_MAX_VALUE: long;
+    readonly FEATURE_STATUS_OK: long;
+    readonly FEATURE_STATUS_UNKNOWN: long;
+    readonly FEATURE_BLOCKED_DRIVER_VERSION: long;
+    readonly FEATURE_BLOCKED_DEVICE: long;
+    readonly FEATURE_DISCOURAGED: long;
+    readonly FEATURE_BLOCKED_OS_VERSION: long;
+    readonly FEATURE_BLOCKED_MISMATCHED_VERSION: long;
+    readonly FEATURE_DENIED: long;
+    readonly FEATURE_ALLOW_ALWAYS: long;
+    readonly FEATURE_ALLOW_QUALIFIED: long;
+    readonly FEATURE_BLOCKED_PLATFORM_TEST: long;
     /**
      * Ask about a feature, and return the status of that feature.
      * If the feature is not ok then aFailureId will give a unique failure Id
@@ -23501,10 +23501,10 @@ declare interface nsIHTMLAbsPosEditorType extends nsISupportsType {
  *
  */
 declare interface nsIHTMLEditorType extends nsISupportsType {
-    readonly eLeft: string;
-    readonly eCenter: string;
-    readonly eRight: string;
-    readonly eJustify: string;
+    readonly eLeft: short;
+    readonly eCenter: short;
+    readonly eRight: short;
+    readonly eJustify: short;
     /**
      * ------------ Inline property methods --------------
      *
@@ -23786,14 +23786,14 @@ declare interface nsIHTMLInlineTableEditorType extends nsISupportsType {
  *
  */
 declare interface nsIHTMLObjectResizerType extends nsISupportsType {
-    readonly eTopLeft: string;
-    readonly eTop: string;
-    readonly eTopRight: string;
-    readonly eLeft: string;
-    readonly eRight: string;
-    readonly eBottomLeft: string;
-    readonly eBottom: string;
-    readonly eBottomRight: string;
+    readonly eTopLeft: short;
+    readonly eTop: short;
+    readonly eTopRight: short;
+    readonly eLeft: short;
+    readonly eRight: short;
+    readonly eBottomLeft: short;
+    readonly eBottom: short;
+    readonly eBottomRight: short;
     /**
      * a boolean indicating if object resizing is enabled in the editor
      */
@@ -24046,8 +24046,8 @@ declare interface nsIHangReportType extends nsISupportsType {
  *
  */
 declare interface nsIHapticFeedbackType extends nsISupportsType {
-    readonly ShortPress: string;
-    readonly LongPress: string;
+    readonly ShortPress: long;
+    readonly LongPress: long;
     /**
      * Perform haptic feedback
      *
@@ -24071,9 +24071,9 @@ declare interface nsIHapticFeedbackType extends nsISupportsType {
  * in order to cause a "save to disk" or "open using" action.
  */
 declare interface nsIHelperAppLauncherDialogType extends nsISupportsType {
-    readonly REASON_CANTHANDLE: string;
-    readonly REASON_SERVERREQUEST: string;
-    readonly REASON_TYPESNIFFED: string;
+    readonly REASON_CANTHANDLE: unsigned_long;
+    readonly REASON_SERVERREQUEST: unsigned_long;
+    readonly REASON_TYPESNIFFED: unsigned_long;
     /**
      * Show confirmation dialog for launching application (or "save to
      * disk") for content specified by aLauncher.
@@ -24162,20 +24162,20 @@ declare interface nsIHttpActivityObserverType extends nsISupportsType {
      * observeConnection should be set to true.
      */
     observeConnectionActivity(aHost: ACString, aPort: int32_t, aSSL: boolean, aHasECH: boolean, aIsHttp3: boolean, aActivityType: uint32_t, aActivitySubtype: uint32_t, aTimestamp: PRTime, aExtraStringData: ACString): void;
-    readonly ACTIVITY_TYPE_SOCKET_TRANSPORT: string;
-    readonly ACTIVITY_TYPE_HTTP_TRANSACTION: string;
-    readonly ACTIVITY_TYPE_HTTP_CONNECTION: string;
-    readonly ACTIVITY_SUBTYPE_REQUEST_HEADER: string;
-    readonly ACTIVITY_SUBTYPE_REQUEST_BODY_SENT: string;
-    readonly ACTIVITY_SUBTYPE_RESPONSE_START: string;
-    readonly ACTIVITY_SUBTYPE_RESPONSE_HEADER: string;
-    readonly ACTIVITY_SUBTYPE_RESPONSE_COMPLETE: string;
-    readonly ACTIVITY_SUBTYPE_TRANSACTION_CLOSE: string;
-    readonly ACTIVITY_SUBTYPE_PROXY_RESPONSE_HEADER: string;
-    readonly ACTIVITY_SUBTYPE_DNSANDSOCKET_CREATED: string;
-    readonly ACTIVITY_SUBTYPE_SPECULATIVE_DNSANDSOCKET_CREATED: string;
-    readonly ACTIVITY_SUBTYPE_ECH_SET: string;
-    readonly ACTIVITY_SUBTYPE_CONNECTION_CREATED: string;
+    readonly ACTIVITY_TYPE_SOCKET_TRANSPORT: unsigned_long;
+    readonly ACTIVITY_TYPE_HTTP_TRANSACTION: unsigned_long;
+    readonly ACTIVITY_TYPE_HTTP_CONNECTION: unsigned_long;
+    readonly ACTIVITY_SUBTYPE_REQUEST_HEADER: unsigned_long;
+    readonly ACTIVITY_SUBTYPE_REQUEST_BODY_SENT: unsigned_long;
+    readonly ACTIVITY_SUBTYPE_RESPONSE_START: unsigned_long;
+    readonly ACTIVITY_SUBTYPE_RESPONSE_HEADER: unsigned_long;
+    readonly ACTIVITY_SUBTYPE_RESPONSE_COMPLETE: unsigned_long;
+    readonly ACTIVITY_SUBTYPE_TRANSACTION_CLOSE: unsigned_long;
+    readonly ACTIVITY_SUBTYPE_PROXY_RESPONSE_HEADER: unsigned_long;
+    readonly ACTIVITY_SUBTYPE_DNSANDSOCKET_CREATED: unsigned_long;
+    readonly ACTIVITY_SUBTYPE_SPECULATIVE_DNSANDSOCKET_CREATED: unsigned_long;
+    readonly ACTIVITY_SUBTYPE_ECH_SET: unsigned_long;
+    readonly ACTIVITY_SUBTYPE_CONNECTION_CREATED: unsigned_long;
 }
 
 /**
@@ -25287,21 +25287,21 @@ declare interface nsIHttpChannelInternalType extends nsISupportsType {
      * Set by nsCORSListenerProxy to indicate CORS load type. Defaults to CORS_MODE_NO_CORS.
      */
     requestMode: RequestMode;
-    readonly REDIRECT_MODE_FOLLOW: string;
-    readonly REDIRECT_MODE_ERROR: string;
-    readonly REDIRECT_MODE_MANUAL: string;
+    readonly REDIRECT_MODE_FOLLOW: unsigned_long;
+    readonly REDIRECT_MODE_ERROR: unsigned_long;
+    readonly REDIRECT_MODE_MANUAL: unsigned_long;
     /**
      * Set to indicate Request.redirect mode exposed during ServiceWorker
      * interception. No policy enforcement is performed by the channel for this
      * value.
      */
     redirectMode: unsigned_long;
-    readonly FETCH_CACHE_MODE_DEFAULT: string;
-    readonly FETCH_CACHE_MODE_NO_STORE: string;
-    readonly FETCH_CACHE_MODE_RELOAD: string;
-    readonly FETCH_CACHE_MODE_NO_CACHE: string;
-    readonly FETCH_CACHE_MODE_FORCE_CACHE: string;
-    readonly FETCH_CACHE_MODE_ONLY_IF_CACHED: string;
+    readonly FETCH_CACHE_MODE_DEFAULT: unsigned_long;
+    readonly FETCH_CACHE_MODE_NO_STORE: unsigned_long;
+    readonly FETCH_CACHE_MODE_RELOAD: unsigned_long;
+    readonly FETCH_CACHE_MODE_NO_CACHE: unsigned_long;
+    readonly FETCH_CACHE_MODE_FORCE_CACHE: unsigned_long;
+    readonly FETCH_CACHE_MODE_ONLY_IF_CACHED: unsigned_long;
     /**
      * Set to indicate Request.cache mode, which simulates the fetch API
      * semantics, and is also used for exposing this value to the Web page
@@ -26082,10 +26082,10 @@ declare interface nsIHttpResponseType extends nsISupportsType {
  * An interface to test for cookie permissions
  */
 declare interface nsIHttpsOnlyModePermissionType extends nsISupportsType {
-    readonly LOAD_INSECURE_DEFAULT: string;
-    readonly LOAD_INSECURE_ALLOW: string;
-    readonly LOAD_INSECURE_BLOCK: string;
-    readonly LOAD_INSECURE_ALLOW_SESSION: string;
+    readonly LOAD_INSECURE_DEFAULT: uint32_t;
+    readonly LOAD_INSECURE_ALLOW: uint32_t;
+    readonly LOAD_INSECURE_BLOCK: uint32_t;
+    readonly LOAD_INSECURE_ALLOW_SESSION: uint32_t;
 }
 
 /**
@@ -26608,8 +26608,8 @@ declare interface nsIIdlePeriodType extends nsISupportsType {
  */
 declare interface nsIImageLoadingContentType extends imgINotificationObserverType {
     readonly UNKNOWN_REQUEST;
-    readonly CURRENT_REQUEST: string;
-    readonly PENDING_REQUEST: string;
+    readonly CURRENT_REQUEST: long;
+    readonly PENDING_REQUEST: long;
     /**
      * setLoadingEnabled is used to enable and disable loading in
      * situations where loading images is unwanted.  Note that enabling
@@ -27344,10 +27344,10 @@ declare interface nsIJumpListCommittedCallbackType extends nsISupportsType {
  *
  */
 declare interface nsIJumpListBuilderType extends nsISupportsType {
-    readonly JUMPLIST_CATEGORY_TASKS: string;
-    readonly JUMPLIST_CATEGORY_RECENT: string;
-    readonly JUMPLIST_CATEGORY_FREQUENT: string;
-    readonly JUMPLIST_CATEGORY_CUSTOMLIST: string;
+    readonly JUMPLIST_CATEGORY_TASKS: short;
+    readonly JUMPLIST_CATEGORY_RECENT: short;
+    readonly JUMPLIST_CATEGORY_FREQUENT: short;
+    readonly JUMPLIST_CATEGORY_CUSTOMLIST: short;
     /**
      * Indicates whether jump list taskbar features are supported by the current
      * host.
@@ -27430,10 +27430,10 @@ declare interface nsIJumpListBuilderType extends nsISupportsType {
  * and add support to addListBuild & removed items processing.
  */
 declare interface nsIJumpListItemType extends nsISupportsType {
-    readonly JUMPLIST_ITEM_EMPTY: string;
-    readonly JUMPLIST_ITEM_SEPARATOR: string;
-    readonly JUMPLIST_ITEM_LINK: string;
-    readonly JUMPLIST_ITEM_SHORTCUT: string;
+    readonly JUMPLIST_ITEM_EMPTY: short;
+    readonly JUMPLIST_ITEM_SEPARATOR: short;
+    readonly JUMPLIST_ITEM_LINK: short;
+    readonly JUMPLIST_ITEM_SHORTCUT: short;
     /**
      * Retrieves the jump list item type.
      */
@@ -28078,7 +28078,7 @@ declare interface nsILoadGroupChildType extends nsISupportsType {
  * redirect, see documentation on individual properties.
  */
 declare interface nsILoadInfoType extends nsISupportsType {
-    readonly SEC_ONLY_FOR_EXPLICIT_CONTENTSEC_CHECK: string;
+    readonly SEC_ONLY_FOR_EXPLICIT_CONTENTSEC_CHECK: unsigned_long;
     readonly SEC_REQUIRE_SAME_ORIGIN_INHERITS_SEC_CONTEXT;
     readonly SEC_REQUIRE_SAME_ORIGIN_DATA_IS_BLOCKED;
     readonly SEC_ALLOW_CROSS_ORIGIN_INHERITS_SEC_CONTEXT;
@@ -28588,9 +28588,9 @@ declare interface nsILoadInfoType extends nsISupportsType {
      * A C++ friendly getter for the forcePreflight flag.
      */
     readonly isPreflight: boolean;
-    readonly TAINTING_BASIC: string;
-    readonly TAINTING_CORS: string;
-    readonly TAINTING_OPAQUE: string;
+    readonly TAINTING_BASIC: unsigned_long;
+    readonly TAINTING_CORS: unsigned_long;
+    readonly TAINTING_OPAQUE: unsigned_long;
     /**
      * Determine the associated channel's current tainting.  Note, this can
      * change due to a service worker intercept, so it should be checked after
@@ -28706,42 +28706,42 @@ declare interface nsILoadInfoType extends nsISupportsType {
      *
      */
     integrityMetadata: AString;
-    readonly BLOCKING_REASON_NONE: string;
-    readonly BLOCKING_REASON_CORSDISABLED: string;
-    readonly BLOCKING_REASON_CORSDIDNOTSUCCEED: string;
-    readonly BLOCKING_REASON_CORSREQUESTNOTHTTP: string;
-    readonly BLOCKING_REASON_CORSMULTIPLEALLOWORIGINNOTALLOWED: string;
-    readonly BLOCKING_REASON_CORSMISSINGALLOWORIGIN: string;
-    readonly BLOCKING_REASON_CORSNOTSUPPORTINGCREDENTIALS: string;
-    readonly BLOCKING_REASON_CORSALLOWORIGINNOTMATCHINGORIGIN: string;
-    readonly BLOCKING_REASON_CORSMISSINGALLOWCREDENTIALS: string;
-    readonly BLOCKING_REASON_CORSORIGINHEADERNOTADDED: string;
-    readonly BLOCKING_REASON_CORSEXTERNALREDIRECTNOTALLOWED: string;
-    readonly BLOCKING_REASON_CORSPREFLIGHTDIDNOTSUCCEED: string;
-    readonly BLOCKING_REASON_CORSINVALIDALLOWMETHOD: string;
-    readonly BLOCKING_REASON_CORSMETHODNOTFOUND: string;
-    readonly BLOCKING_REASON_CORSINVALIDALLOWHEADER: string;
-    readonly BLOCKING_REASON_CORSMISSINGALLOWHEADERFROMPREFLIGHT: string;
-    readonly BLOCKING_REASON_CLASSIFY_MALWARE_URI: string;
-    readonly BLOCKING_REASON_CLASSIFY_PHISHING_URI: string;
-    readonly BLOCKING_REASON_CLASSIFY_UNWANTED_URI: string;
-    readonly BLOCKING_REASON_CLASSIFY_TRACKING_URI: string;
-    readonly BLOCKING_REASON_CLASSIFY_BLOCKED_URI: string;
-    readonly BLOCKING_REASON_CLASSIFY_HARMFUL_URI: string;
-    readonly BLOCKING_REASON_CLASSIFY_CRYPTOMINING_URI: string;
-    readonly BLOCKING_REASON_CLASSIFY_FINGERPRINTING_URI: string;
-    readonly BLOCKING_REASON_CLASSIFY_SOCIALTRACKING_URI: string;
-    readonly BLOCKING_REASON_CLASSIFY_EMAILTRACKING_URI: string;
-    readonly BLOCKING_REASON_MIXED_BLOCKED: string;
-    readonly BLOCKING_REASON_CONTENT_POLICY_GENERAL: string;
-    readonly BLOCKING_REASON_CONTENT_POLICY_NO_DATA_PROTOCOL: string;
-    readonly BLOCKING_REASON_CONTENT_POLICY_WEBEXT: string;
-    readonly BLOCKING_REASON_CONTENT_POLICY_CONTENT_BLOCKED: string;
-    readonly BLOCKING_REASON_CONTENT_POLICY_DATA_DOCUMENT: string;
-    readonly BLOCKING_REASON_CONTENT_POLICY_WEB_BROWSER: string;
-    readonly BLOCKING_REASON_CONTENT_POLICY_PRELOAD: string;
-    readonly BLOCKING_REASON_NOT_SAME_ORIGIN: string;
-    readonly BLOCKING_REASON_EXTENSION_WEBREQUEST: string;
+    readonly BLOCKING_REASON_NONE: uint32_t;
+    readonly BLOCKING_REASON_CORSDISABLED: uint32_t;
+    readonly BLOCKING_REASON_CORSDIDNOTSUCCEED: uint32_t;
+    readonly BLOCKING_REASON_CORSREQUESTNOTHTTP: uint32_t;
+    readonly BLOCKING_REASON_CORSMULTIPLEALLOWORIGINNOTALLOWED: uint32_t;
+    readonly BLOCKING_REASON_CORSMISSINGALLOWORIGIN: uint32_t;
+    readonly BLOCKING_REASON_CORSNOTSUPPORTINGCREDENTIALS: uint32_t;
+    readonly BLOCKING_REASON_CORSALLOWORIGINNOTMATCHINGORIGIN: uint32_t;
+    readonly BLOCKING_REASON_CORSMISSINGALLOWCREDENTIALS: uint32_t;
+    readonly BLOCKING_REASON_CORSORIGINHEADERNOTADDED: uint32_t;
+    readonly BLOCKING_REASON_CORSEXTERNALREDIRECTNOTALLOWED: uint32_t;
+    readonly BLOCKING_REASON_CORSPREFLIGHTDIDNOTSUCCEED: uint32_t;
+    readonly BLOCKING_REASON_CORSINVALIDALLOWMETHOD: uint32_t;
+    readonly BLOCKING_REASON_CORSMETHODNOTFOUND: uint32_t;
+    readonly BLOCKING_REASON_CORSINVALIDALLOWHEADER: uint32_t;
+    readonly BLOCKING_REASON_CORSMISSINGALLOWHEADERFROMPREFLIGHT: uint32_t;
+    readonly BLOCKING_REASON_CLASSIFY_MALWARE_URI: uint32_t;
+    readonly BLOCKING_REASON_CLASSIFY_PHISHING_URI: uint32_t;
+    readonly BLOCKING_REASON_CLASSIFY_UNWANTED_URI: uint32_t;
+    readonly BLOCKING_REASON_CLASSIFY_TRACKING_URI: uint32_t;
+    readonly BLOCKING_REASON_CLASSIFY_BLOCKED_URI: uint32_t;
+    readonly BLOCKING_REASON_CLASSIFY_HARMFUL_URI: uint32_t;
+    readonly BLOCKING_REASON_CLASSIFY_CRYPTOMINING_URI: uint32_t;
+    readonly BLOCKING_REASON_CLASSIFY_FINGERPRINTING_URI: uint32_t;
+    readonly BLOCKING_REASON_CLASSIFY_SOCIALTRACKING_URI: uint32_t;
+    readonly BLOCKING_REASON_CLASSIFY_EMAILTRACKING_URI: uint32_t;
+    readonly BLOCKING_REASON_MIXED_BLOCKED: uint32_t;
+    readonly BLOCKING_REASON_CONTENT_POLICY_GENERAL: uint32_t;
+    readonly BLOCKING_REASON_CONTENT_POLICY_NO_DATA_PROTOCOL: uint32_t;
+    readonly BLOCKING_REASON_CONTENT_POLICY_WEBEXT: uint32_t;
+    readonly BLOCKING_REASON_CONTENT_POLICY_CONTENT_BLOCKED: uint32_t;
+    readonly BLOCKING_REASON_CONTENT_POLICY_DATA_DOCUMENT: uint32_t;
+    readonly BLOCKING_REASON_CONTENT_POLICY_WEB_BROWSER: uint32_t;
+    readonly BLOCKING_REASON_CONTENT_POLICY_PRELOAD: uint32_t;
+    readonly BLOCKING_REASON_NOT_SAME_ORIGIN: uint32_t;
+    readonly BLOCKING_REASON_EXTENSION_WEBREQUEST: uint32_t;
     /**
      * If the request associated with this load info was blocked by some of
      * our content or load blockers, the reason can be found here.
@@ -29460,8 +29460,8 @@ declare interface nsILoginManagerAuthPrompterType extends nsISupportsType {
  *
  */
 declare interface nsILoginManagerCryptoType extends nsISupportsType {
-    readonly ENCTYPE_BASE64: string;
-    readonly ENCTYPE_SDR: string;
+    readonly ENCTYPE_BASE64: unsigned_long;
+    readonly ENCTYPE_SDR: unsigned_long;
     /**
      * encrypt
      *
@@ -29830,10 +29830,10 @@ declare interface nsILoginMetaInfoType extends nsISupportsType {
  *
  */
 declare interface nsILoginReputationVerdictTypeType extends nsISupportsType {
-    readonly UNSPECIFIED: string;
-    readonly SAFE: string;
-    readonly LOW_REPUTATION: string;
-    readonly PHISHING: string;
+    readonly UNSPECIFIED: unsigned_long;
+    readonly SAFE: unsigned_long;
+    readonly LOW_REPUTATION: unsigned_long;
+    readonly PHISHING: unsigned_long;
 }
 
 /**
@@ -30031,11 +30031,11 @@ declare interface nsIHandlerInfoType extends nsISupportsType {
      * listed below
      */
     preferredAction: nsHandlerInfoAction;
-    readonly saveToDisk: string;
-    readonly alwaysAsk: string;
-    readonly useHelperApp: string;
-    readonly handleInternally: string;
-    readonly useSystemDefault: string;
+    readonly saveToDisk: long;
+    readonly alwaysAsk: long;
+    readonly useHelperApp: long;
+    readonly handleInternally: long;
+    readonly useSystemDefault: long;
     /**
      * alwaysAskBeforeHandling: if true, we should always give the user a
      * dialog asking how to dispose of this content.
@@ -30388,15 +30388,15 @@ declare interface nsIMIMEServiceType extends nsISupportsType {
      * yourself needing to call this from elsewhere, file a bug instead.
      */
     updateDefaultAppInfo(aMIMEInfo: nsIMIMEInfoType): void;
-    readonly VALIDATE_DEFAULT: string;
-    readonly VALIDATE_SANITIZE_ONLY: string;
-    readonly VALIDATE_DONT_COLLAPSE_WHITESPACE: string;
-    readonly VALIDATE_DONT_TRUNCATE: string;
-    readonly VALIDATE_GUESS_FROM_EXTENSION: string;
-    readonly VALIDATE_ALLOW_EMPTY: string;
-    readonly VALIDATE_NO_DEFAULT_FILENAME: string;
-    readonly VALIDATE_FORCE_APPEND_EXTENSION: string;
-    readonly VALIDATE_ALLOW_INVALID_FILENAMES: string;
+    readonly VALIDATE_DEFAULT: long;
+    readonly VALIDATE_SANITIZE_ONLY: long;
+    readonly VALIDATE_DONT_COLLAPSE_WHITESPACE: long;
+    readonly VALIDATE_DONT_TRUNCATE: long;
+    readonly VALIDATE_GUESS_FROM_EXTENSION: long;
+    readonly VALIDATE_ALLOW_EMPTY: long;
+    readonly VALIDATE_NO_DEFAULT_FILENAME: long;
+    readonly VALIDATE_FORCE_APPEND_EXTENSION: long;
+    readonly VALIDATE_ALLOW_INVALID_FILENAMES: long;
     /**
      * Generate a valid filename from the channel that can be used to save
      * the content of the channel to the local disk.
@@ -30724,9 +30724,9 @@ declare interface nsIMediaManagerServiceType extends nsISupportsType {
      * return a array of inner windows that have active captures
      */
     readonly activeMediaCaptureWindows: nsIArray;
-    readonly STATE_NOCAPTURE: string;
-    readonly STATE_CAPTURE_ENABLED: string;
-    readonly STATE_CAPTURE_DISABLED: string;
+    readonly STATE_NOCAPTURE: unsigned_short;
+    readonly STATE_CAPTURE_ENABLED: unsigned_short;
+    readonly STATE_CAPTURE_DISABLED: unsigned_short;
     /**
      * Get the capture state for the given window. This will not check
      * descendants, such as iframes. Callers who need to check descendants should
@@ -31042,13 +31042,13 @@ declare interface nsIMemoryReporterType extends nsISupportsType {
      * - Information about installed extensions.
      */
     collectReports(callback: nsIHandleReportCallbackType, data: nsISupportsType, anonymize: boolean): void;
-    readonly KIND_NONHEAP: string;
-    readonly KIND_HEAP: string;
-    readonly KIND_OTHER: string;
-    readonly UNITS_BYTES: string;
-    readonly UNITS_COUNT: string;
-    readonly UNITS_COUNT_CUMULATIVE: string;
-    readonly UNITS_PERCENTAGE: string;
+    readonly KIND_NONHEAP: int32_t;
+    readonly KIND_HEAP: int32_t;
+    readonly KIND_OTHER: int32_t;
+    readonly UNITS_BYTES: int32_t;
+    readonly UNITS_COUNT: int32_t;
+    readonly UNITS_COUNT_CUMULATIVE: int32_t;
+    readonly UNITS_PERCENTAGE: int32_t;
 }
 
 /**
@@ -31564,8 +31564,8 @@ declare interface nsINSSErrorsServiceType extends nsISupportsType {
      * or ERROR_CLASS_SSL_PROTOCOL
      */
     getErrorClass(aXPCOMErrorCode: nsresult): uint32_t;
-    readonly ERROR_CLASS_SSL_PROTOCOL: string;
-    readonly ERROR_CLASS_BAD_CERT: string;
+    readonly ERROR_CLASS_SSL_PROTOCOL: unsigned_long;
+    readonly ERROR_CLASS_BAD_CERT: unsigned_long;
     readonly NSS_SEC_ERROR_BASE;
     readonly NSS_SEC_ERROR_LIMIT;
     readonly NSS_SSL_ERROR_BASE;
@@ -31891,19 +31891,19 @@ declare interface nsINavBookmarksServiceType extends nsISupportsType {
      */
     readonly totalSyncChanges: long_long;
     readonly DEFAULT_INDEX;
-    readonly TYPE_BOOKMARK: string;
-    readonly TYPE_FOLDER: string;
-    readonly TYPE_SEPARATOR: string;
-    readonly TYPE_DYNAMIC_CONTAINER: string;
-    readonly SOURCE_DEFAULT: string;
-    readonly SOURCE_SYNC: string;
-    readonly SOURCE_IMPORT: string;
-    readonly SOURCE_SYNC_REPARENT_REMOVED_FOLDER_CHILDREN: string;
-    readonly SOURCE_RESTORE: string;
-    readonly SOURCE_RESTORE_ON_STARTUP: string;
-    readonly SYNC_STATUS_UNKNOWN: string;
-    readonly SYNC_STATUS_NEW: string;
-    readonly SYNC_STATUS_NORMAL: string;
+    readonly TYPE_BOOKMARK: unsigned_short;
+    readonly TYPE_FOLDER: unsigned_short;
+    readonly TYPE_SEPARATOR: unsigned_short;
+    readonly TYPE_DYNAMIC_CONTAINER: unsigned_short;
+    readonly SOURCE_DEFAULT: unsigned_short;
+    readonly SOURCE_SYNC: unsigned_short;
+    readonly SOURCE_IMPORT: unsigned_short;
+    readonly SOURCE_SYNC_REPARENT_REMOVED_FOLDER_CHILDREN: unsigned_short;
+    readonly SOURCE_RESTORE: unsigned_short;
+    readonly SOURCE_RESTORE_ON_STARTUP: unsigned_short;
+    readonly SYNC_STATUS_UNKNOWN: unsigned_short;
+    readonly SYNC_STATUS_NEW: unsigned_short;
+    readonly SYNC_STATUS_NORMAL: unsigned_short;
     /**
      * Inserts a child bookmark into the given folder.
      *
@@ -32021,11 +32021,11 @@ declare interface nsINavHistoryResultNodeType extends nsISupportsType {
      * objects like host containers.
      */
     readonly uri: AUTF8String;
-    readonly RESULT_TYPE_URI: string;
-    readonly RESULT_TYPE_QUERY: string;
-    readonly RESULT_TYPE_FOLDER: string;
-    readonly RESULT_TYPE_SEPARATOR: string;
-    readonly RESULT_TYPE_FOLDER_SHORTCUT: string;
+    readonly RESULT_TYPE_URI: unsigned_long;
+    readonly RESULT_TYPE_QUERY: unsigned_long;
+    readonly RESULT_TYPE_FOLDER: unsigned_long;
+    readonly RESULT_TYPE_SEPARATOR: unsigned_long;
+    readonly RESULT_TYPE_FOLDER_SHORTCUT: unsigned_long;
     /**
      *
      */
@@ -32152,9 +32152,9 @@ declare interface nsINavHistoryContainerResultNodeType extends nsINavHistoryResu
      * fully opened.
      */
     readonly state: unsigned_short;
-    readonly STATE_CLOSED: string;
-    readonly STATE_LOADING: string;
-    readonly STATE_OPENED: string;
+    readonly STATE_CLOSED: unsigned_short;
+    readonly STATE_LOADING: unsigned_short;
+    readonly STATE_OPENED: unsigned_short;
     /**
      * This indicates whether this node "may" have children, and can be used
      * when the container is open or closed. When the container is closed, it
@@ -32459,9 +32459,9 @@ declare interface nsINavHistoryResultType extends nsISupportsType {
  * can be non-negligible.
  */
 declare interface nsINavHistoryQueryType extends nsISupportsType {
-    readonly TIME_RELATIVE_EPOCH: string;
-    readonly TIME_RELATIVE_TODAY: string;
-    readonly TIME_RELATIVE_NOW: string;
+    readonly TIME_RELATIVE_EPOCH: unsigned_long;
+    readonly TIME_RELATIVE_TODAY: unsigned_long;
+    readonly TIME_RELATIVE_NOW: unsigned_long;
     /**
      *
      */
@@ -32586,32 +32586,32 @@ declare interface nsINavHistoryQueryType extends nsISupportsType {
  * This object represents the global options for executing a query.
  */
 declare interface nsINavHistoryQueryOptionsType extends nsISupportsType {
-    readonly SORT_BY_NONE: string;
-    readonly SORT_BY_TITLE_ASCENDING: string;
-    readonly SORT_BY_TITLE_DESCENDING: string;
-    readonly SORT_BY_DATE_ASCENDING: string;
-    readonly SORT_BY_DATE_DESCENDING: string;
-    readonly SORT_BY_URI_ASCENDING: string;
-    readonly SORT_BY_URI_DESCENDING: string;
-    readonly SORT_BY_VISITCOUNT_ASCENDING: string;
-    readonly SORT_BY_VISITCOUNT_DESCENDING: string;
-    readonly SORT_BY_DATEADDED_ASCENDING: string;
-    readonly SORT_BY_DATEADDED_DESCENDING: string;
-    readonly SORT_BY_LASTMODIFIED_ASCENDING: string;
-    readonly SORT_BY_LASTMODIFIED_DESCENDING: string;
-    readonly SORT_BY_TAGS_ASCENDING: string;
-    readonly SORT_BY_TAGS_DESCENDING: string;
-    readonly SORT_BY_FRECENCY_ASCENDING: string;
-    readonly SORT_BY_FRECENCY_DESCENDING: string;
-    readonly RESULTS_AS_URI: string;
-    readonly RESULTS_AS_VISIT: string;
-    readonly RESULTS_AS_DATE_QUERY: string;
-    readonly RESULTS_AS_SITE_QUERY: string;
-    readonly RESULTS_AS_DATE_SITE_QUERY: string;
-    readonly RESULTS_AS_TAGS_ROOT: string;
-    readonly RESULTS_AS_TAG_CONTENTS: string;
-    readonly RESULTS_AS_ROOTS_QUERY: string;
-    readonly RESULTS_AS_LEFT_PANE_QUERY: string;
+    readonly SORT_BY_NONE: unsigned_short;
+    readonly SORT_BY_TITLE_ASCENDING: unsigned_short;
+    readonly SORT_BY_TITLE_DESCENDING: unsigned_short;
+    readonly SORT_BY_DATE_ASCENDING: unsigned_short;
+    readonly SORT_BY_DATE_DESCENDING: unsigned_short;
+    readonly SORT_BY_URI_ASCENDING: unsigned_short;
+    readonly SORT_BY_URI_DESCENDING: unsigned_short;
+    readonly SORT_BY_VISITCOUNT_ASCENDING: unsigned_short;
+    readonly SORT_BY_VISITCOUNT_DESCENDING: unsigned_short;
+    readonly SORT_BY_DATEADDED_ASCENDING: unsigned_short;
+    readonly SORT_BY_DATEADDED_DESCENDING: unsigned_short;
+    readonly SORT_BY_LASTMODIFIED_ASCENDING: unsigned_short;
+    readonly SORT_BY_LASTMODIFIED_DESCENDING: unsigned_short;
+    readonly SORT_BY_TAGS_ASCENDING: unsigned_short;
+    readonly SORT_BY_TAGS_DESCENDING: unsigned_short;
+    readonly SORT_BY_FRECENCY_ASCENDING: unsigned_short;
+    readonly SORT_BY_FRECENCY_DESCENDING: unsigned_short;
+    readonly RESULTS_AS_URI: unsigned_short;
+    readonly RESULTS_AS_VISIT: unsigned_short;
+    readonly RESULTS_AS_DATE_QUERY: unsigned_short;
+    readonly RESULTS_AS_SITE_QUERY: unsigned_short;
+    readonly RESULTS_AS_DATE_SITE_QUERY: unsigned_short;
+    readonly RESULTS_AS_TAGS_ROOT: unsigned_short;
+    readonly RESULTS_AS_TAG_CONTENTS: unsigned_short;
+    readonly RESULTS_AS_ROOTS_QUERY: unsigned_short;
+    readonly RESULTS_AS_LEFT_PANE_QUERY: unsigned_short;
     /**
      * The sorting mode to be used for this query.
      * mode is one of SORT_BY_*
@@ -32666,8 +32666,8 @@ declare interface nsINavHistoryQueryOptionsType extends nsISupportsType {
      * ones, and THEN sort by title.
      */
     maxResults: unsigned_long;
-    readonly QUERY_TYPE_HISTORY: string;
-    readonly QUERY_TYPE_BOOKMARKS: string;
+    readonly QUERY_TYPE_HISTORY: unsigned_short;
+    readonly QUERY_TYPE_BOOKMARKS: unsigned_short;
     /**
      * The type of search to use when querying the DB; This attribute is only
      * honored by query nodes. It is silently ignored for simple folder queries.
@@ -32692,25 +32692,25 @@ declare interface nsINavHistoryQueryOptionsType extends nsISupportsType {
  *
  */
 declare interface nsINavHistoryServiceType extends nsISupportsType {
-    readonly DATABASE_SCHEMA_VERSION: string;
-    readonly TRANSITION_LINK: string;
-    readonly TRANSITION_TYPED: string;
-    readonly TRANSITION_BOOKMARK: string;
-    readonly TRANSITION_EMBED: string;
-    readonly TRANSITION_REDIRECT_PERMANENT: string;
-    readonly TRANSITION_REDIRECT_TEMPORARY: string;
-    readonly TRANSITION_DOWNLOAD: string;
-    readonly TRANSITION_FRAMED_LINK: string;
-    readonly TRANSITION_RELOAD: string;
-    readonly DATABASE_STATUS_OK: string;
-    readonly DATABASE_STATUS_CREATE: string;
-    readonly DATABASE_STATUS_CORRUPT: string;
-    readonly DATABASE_STATUS_UPGRADED: string;
-    readonly DATABASE_STATUS_LOCKED: string;
-    readonly VISIT_SOURCE_ORGANIC: string;
-    readonly VISIT_SOURCE_SPONSORED: string;
-    readonly VISIT_SOURCE_BOOKMARKED: string;
-    readonly VISIT_SOURCE_SEARCHED: string;
+    readonly DATABASE_SCHEMA_VERSION: unsigned_long;
+    readonly TRANSITION_LINK: unsigned_long;
+    readonly TRANSITION_TYPED: unsigned_long;
+    readonly TRANSITION_BOOKMARK: unsigned_long;
+    readonly TRANSITION_EMBED: unsigned_long;
+    readonly TRANSITION_REDIRECT_PERMANENT: unsigned_long;
+    readonly TRANSITION_REDIRECT_TEMPORARY: unsigned_long;
+    readonly TRANSITION_DOWNLOAD: unsigned_long;
+    readonly TRANSITION_FRAMED_LINK: unsigned_long;
+    readonly TRANSITION_RELOAD: unsigned_long;
+    readonly DATABASE_STATUS_OK: unsigned_short;
+    readonly DATABASE_STATUS_CREATE: unsigned_short;
+    readonly DATABASE_STATUS_CORRUPT: unsigned_short;
+    readonly DATABASE_STATUS_UPGRADED: unsigned_short;
+    readonly DATABASE_STATUS_LOCKED: unsigned_short;
+    readonly VISIT_SOURCE_ORGANIC: unsigned_short;
+    readonly VISIT_SOURCE_SPONSORED: unsigned_short;
+    readonly VISIT_SOURCE_BOOKMARKED: unsigned_short;
+    readonly VISIT_SOURCE_SEARCHED: unsigned_short;
     /**
      * Returns the current database status
      */
@@ -32934,9 +32934,9 @@ declare interface nsINetAddrType extends nsISupportsType {
      * @throws NS_ERROR_NOT_AVAILABLE if the address family is not FAMILY_INET6
      */
     readonly isV4Mapped: boolean;
-    readonly FAMILY_INET: string;
-    readonly FAMILY_INET6: string;
-    readonly FAMILY_LOCAL: string;
+    readonly FAMILY_INET: unsigned_long;
+    readonly FAMILY_INET6: unsigned_long;
+    readonly FAMILY_LOCAL: unsigned_long;
 }
 
 /**
@@ -32996,16 +32996,16 @@ declare interface nsINetUtilType extends nsISupportsType {
      * in aFlags.
      */
     URIChainHasFlags(aURI: nsIURIType, aFlags: unsigned_long): boolean;
-    readonly ESCAPE_ALL: string;
-    readonly ESCAPE_XALPHAS: string;
-    readonly ESCAPE_XPALPHAS: string;
-    readonly ESCAPE_URL_PATH: string;
-    readonly ESCAPE_URL_APPLE_EXTRA: string;
+    readonly ESCAPE_ALL: unsigned_long;
+    readonly ESCAPE_XALPHAS: unsigned_long;
+    readonly ESCAPE_XPALPHAS: unsigned_long;
+    readonly ESCAPE_URL_PATH: unsigned_long;
+    readonly ESCAPE_URL_APPLE_EXTRA: unsigned_long;
     /**
      * escape a string with %00-style escaping
      */
     escapeString(aString: ACString, aEscapeType: unsigned_long): ACString;
-    readonly ESCAPE_URL_SCHEME: string;
+    readonly ESCAPE_URL_SCHEME: unsigned_long;
     readonly ESCAPE_URL_USERNAME;
     readonly ESCAPE_URL_PASSWORD;
     readonly ESCAPE_URL_HOST;
@@ -33279,12 +33279,12 @@ declare interface nsINetworkInterceptControllerType extends nsISupportsType {
  * Network link status monitoring service.
  */
 declare interface nsINetworkLinkServiceType extends nsISupportsType {
-    readonly LINK_TYPE_UNKNOWN: string;
-    readonly LINK_TYPE_ETHERNET: string;
-    readonly LINK_TYPE_USB: string;
-    readonly LINK_TYPE_WIFI: string;
-    readonly LINK_TYPE_WIMAX: string;
-    readonly LINK_TYPE_MOBILE: string;
+    readonly LINK_TYPE_UNKNOWN: unsigned_long;
+    readonly LINK_TYPE_ETHERNET: unsigned_long;
+    readonly LINK_TYPE_USB: unsigned_long;
+    readonly LINK_TYPE_WIFI: unsigned_long;
+    readonly LINK_TYPE_WIMAX: unsigned_long;
+    readonly LINK_TYPE_MOBILE: unsigned_long;
     /**
      * This is set to true when the system is believed to have a usable
      * network connection.
@@ -33310,7 +33310,7 @@ declare interface nsINetworkLinkServiceType extends nsISupportsType {
      * Empty when there are no active network interfaces.
      */
     readonly networkID: ACString;
-    readonly NONE_DETECTED: string;
+    readonly NONE_DETECTED: unsigned_long;
     readonly VPN_DETECTED;
     readonly PROXY_DETECTED;
     readonly NRPT_DETECTED;
@@ -33328,9 +33328,9 @@ declare interface nsINetworkLinkServiceType extends nsISupportsType {
  * be used on the main thread.
  */
 declare interface nsINetworkPredictorType extends nsISupportsType {
-    readonly PREDICT_LINK: string;
-    readonly PREDICT_LOAD: string;
-    readonly PREDICT_STARTUP: string;
+    readonly PREDICT_LINK: PredictorPredictReason;
+    readonly PREDICT_LOAD: PredictorPredictReason;
+    readonly PREDICT_STARTUP: PredictorPredictReason;
     /**
      * Start taking predictive actions
      *
@@ -33363,10 +33363,10 @@ declare interface nsINetworkPredictorType extends nsISupportsType {
      *
      */
     predictNative(targetURI: nsIURIType, sourceURI: nsIURIType, reason: PredictorPredictReason, originAttributes: OriginAttributes, verifier: nsINetworkPredictorVerifierType): nsresult;
-    readonly LEARN_LOAD_TOPLEVEL: string;
-    readonly LEARN_LOAD_SUBRESOURCE: string;
-    readonly LEARN_LOAD_REDIRECT: string;
-    readonly LEARN_STARTUP: string;
+    readonly LEARN_LOAD_TOPLEVEL: PredictorLearnReason;
+    readonly LEARN_LOAD_SUBRESOURCE: PredictorLearnReason;
+    readonly LEARN_LOAD_REDIRECT: PredictorLearnReason;
+    readonly LEARN_STARTUP: PredictorLearnReason;
     /**
      * Add to our compendium of knowledge
      *
@@ -33617,10 +33617,10 @@ declare interface nsIOSKeyStoreType extends nsISupportsType {
  *
  */
 declare interface nsIOSPermissionRequestType extends nsISupportsType {
-    readonly PERMISSION_STATE_NOTDETERMINED: string;
-    readonly PERMISSION_STATE_RESTRICTED: string;
-    readonly PERMISSION_STATE_DENIED: string;
-    readonly PERMISSION_STATE_AUTHORIZED: string;
+    readonly PERMISSION_STATE_NOTDETERMINED: uint16_t;
+    readonly PERMISSION_STATE_RESTRICTED: uint16_t;
+    readonly PERMISSION_STATE_DENIED: uint16_t;
+    readonly PERMISSION_STATE_AUTHORIZED: uint16_t;
     /**
      * Get the permission state for both audio and video capture
      */
@@ -33734,14 +33734,14 @@ declare interface nsIObjectInputStreamType extends nsIBinaryInputStreamType {
  * mixin to mirror this interface when changing it.
  */
 declare interface nsIObjectLoadingContentType extends nsISupportsType {
-    readonly TYPE_LOADING: string;
-    readonly TYPE_IMAGE: string;
-    readonly TYPE_FALLBACK: string;
-    readonly TYPE_FAKE_PLUGIN: string;
-    readonly TYPE_DOCUMENT: string;
-    readonly TYPE_NULL: string;
-    readonly PLUGIN_ACTIVE: string;
-    readonly PLUGIN_PERMISSION_PROMPT_ACTION_QUIET: string;
+    readonly TYPE_LOADING: unsigned_long;
+    readonly TYPE_IMAGE: unsigned_long;
+    readonly TYPE_FALLBACK: unsigned_long;
+    readonly TYPE_FAKE_PLUGIN: unsigned_long;
+    readonly TYPE_DOCUMENT: unsigned_long;
+    readonly TYPE_NULL: unsigned_long;
+    readonly PLUGIN_ACTIVE: unsigned_long;
+    readonly PLUGIN_PERMISSION_PROMPT_ACTION_QUIET: unsigned_long;
     /**
      * The actual mime type (the one we got back from the network
      * request) for the element.
@@ -34302,12 +34302,12 @@ declare interface nsIPKCS11SlotType extends nsISupportsType {
      * Firmware version of the slot.
      */
     readonly FWVersion: AUTF8String;
-    readonly SLOT_DISABLED: string;
-    readonly SLOT_NOT_PRESENT: string;
-    readonly SLOT_UNINITIALIZED: string;
-    readonly SLOT_NOT_LOGGED_IN: string;
-    readonly SLOT_LOGGED_IN: string;
-    readonly SLOT_READY: string;
+    readonly SLOT_DISABLED: unsigned_long;
+    readonly SLOT_NOT_PRESENT: unsigned_long;
+    readonly SLOT_UNINITIALIZED: unsigned_long;
+    readonly SLOT_NOT_LOGGED_IN: unsigned_long;
+    readonly SLOT_LOGGED_IN: unsigned_long;
+    readonly SLOT_READY: unsigned_long;
     /**
      *
      */
@@ -34470,28 +34470,28 @@ declare interface nsIParentRedirectingChannelType extends nsIParentChannelType {
  *
  */
 declare interface nsIParentalControlsServiceType extends nsISupportsType {
-    readonly DOWNLOAD: string;
-    readonly INSTALL_EXTENSION: string;
-    readonly INSTALL_APP: string;
-    readonly BROWSE: string;
-    readonly SHARE: string;
-    readonly BOOKMARK: string;
-    readonly ADD_CONTACT: string;
-    readonly SET_IMAGE: string;
-    readonly MODIFY_ACCOUNTS: string;
-    readonly REMOTE_DEBUGGING: string;
-    readonly IMPORT_SETTINGS: string;
-    readonly PRIVATE_BROWSING: string;
-    readonly DATA_CHOICES: string;
-    readonly CLEAR_HISTORY: string;
-    readonly MASTER_PASSWORD: string;
-    readonly GUEST_BROWSING: string;
-    readonly ADVANCED_SETTINGS: string;
-    readonly CAMERA_MICROPHONE: string;
-    readonly BLOCK_LIST: string;
-    readonly TELEMETRY: string;
-    readonly HEALTH_REPORT: string;
-    readonly DEFAULT_THEME: string;
+    readonly DOWNLOAD: short;
+    readonly INSTALL_EXTENSION: short;
+    readonly INSTALL_APP: short;
+    readonly BROWSE: short;
+    readonly SHARE: short;
+    readonly BOOKMARK: short;
+    readonly ADD_CONTACT: short;
+    readonly SET_IMAGE: short;
+    readonly MODIFY_ACCOUNTS: short;
+    readonly REMOTE_DEBUGGING: short;
+    readonly IMPORT_SETTINGS: short;
+    readonly PRIVATE_BROWSING: short;
+    readonly DATA_CHOICES: short;
+    readonly CLEAR_HISTORY: short;
+    readonly MASTER_PASSWORD: short;
+    readonly GUEST_BROWSING: short;
+    readonly ADVANCED_SETTINGS: short;
+    readonly CAMERA_MICROPHONE: short;
+    readonly BLOCK_LIST: short;
+    readonly TELEMETRY: short;
+    readonly HEALTH_REPORT: short;
+    readonly DEFAULT_THEME: short;
     /**
      * @returns true if the current user account has parental controls
      * restrictions enabled.
@@ -34516,8 +34516,8 @@ declare interface nsIParentalControlsServiceType extends nsISupportsType {
      * using 'log'.
      */
     readonly loggingEnabled: boolean;
-    readonly ePCLog_URIVisit: string;
-    readonly ePCLog_FileDownload: string;
+    readonly ePCLog_URIVisit: short;
+    readonly ePCLog_FileDownload: short;
     /**
      * File downloads
      *
@@ -34652,8 +34652,8 @@ declare interface nsIPartitioningExceptionListServiceType extends nsISupportsTyp
  * The response data is the content of the PaymentResponse's detail attribute.
  */
 declare interface nsIPaymentResponseDataType extends nsISupportsType {
-    readonly GENERAL_RESPONSE: string;
-    readonly BASICCARD_RESPONSE: string;
+    readonly GENERAL_RESPONSE: uint32_t;
+    readonly BASICCARD_RESPONSE: uint32_t;
     /**
      * The response data type.
      * Using the above defined consts(GENERAL_RESPONSE or BASICCARD_RESPONSE).
@@ -34735,18 +34735,18 @@ declare interface nsIBasicCardResponseDataType extends nsIPaymentResponseDataTyp
  * with the created action to inform the merchant.
  */
 declare interface nsIPaymentActionResponseType extends nsISupportsType {
-    readonly NO_TYPE: string;
-    readonly CANMAKE_ACTION: string;
-    readonly SHOW_ACTION: string;
-    readonly ABORT_ACTION: string;
-    readonly COMPLETE_ACTION: string;
-    readonly ABORT_SUCCEEDED: string;
-    readonly ABORT_FAILED: string;
-    readonly PAYMENT_REJECTED: string;
-    readonly PAYMENT_ACCEPTED: string;
-    readonly PAYMENT_NOTSUPPORTED: string;
-    readonly COMPLETE_SUCCEEDED: string;
-    readonly COMPLETE_FAILED: string;
+    readonly NO_TYPE: uint32_t;
+    readonly CANMAKE_ACTION: uint32_t;
+    readonly SHOW_ACTION: uint32_t;
+    readonly ABORT_ACTION: uint32_t;
+    readonly COMPLETE_ACTION: uint32_t;
+    readonly ABORT_SUCCEEDED: uint32_t;
+    readonly ABORT_FAILED: uint32_t;
+    readonly PAYMENT_REJECTED: uint32_t;
+    readonly PAYMENT_ACCEPTED: uint32_t;
+    readonly PAYMENT_NOTSUPPORTED: uint32_t;
+    readonly COMPLETE_SUCCEEDED: uint32_t;
+    readonly COMPLETE_FAILED: uint32_t;
     /**
      * The payment request identity.
      */
@@ -34863,8 +34863,8 @@ declare interface nsIPaymentCompleteActionResponseType extends nsIPaymentActionR
  *
  */
 declare interface nsIMethodChangeDetailsType extends nsISupportsType {
-    readonly GENERAL_DETAILS: string;
-    readonly BASICCARD_DETAILS: string;
+    readonly GENERAL_DETAILS: uint32_t;
+    readonly BASICCARD_DETAILS: uint32_t;
     /**
      * The method change details data type.
      * Using the above defined consts(GENERAL_DETAILS or BASICCARD_DETAILS).
@@ -35378,14 +35378,14 @@ declare interface nsIPermissionDelegateHandlerType extends nsISupportsType {
  *
  */
 declare interface nsIPermissionManagerType extends nsISupportsType {
-    readonly UNKNOWN_ACTION: string;
-    readonly ALLOW_ACTION: string;
-    readonly DENY_ACTION: string;
-    readonly PROMPT_ACTION: string;
-    readonly EXPIRE_NEVER: string;
-    readonly EXPIRE_SESSION: string;
-    readonly EXPIRE_TIME: string;
-    readonly EXPIRE_POLICY: string;
+    readonly UNKNOWN_ACTION: uint32_t;
+    readonly ALLOW_ACTION: uint32_t;
+    readonly DENY_ACTION: uint32_t;
+    readonly PROMPT_ACTION: uint32_t;
+    readonly EXPIRE_NEVER: uint32_t;
+    readonly EXPIRE_SESSION: uint32_t;
+    readonly EXPIRE_TIME: uint32_t;
+    readonly EXPIRE_POLICY: uint32_t;
     /**
      * Add permission information for a given principal.
      * It is internally calling the other add() method using the nsIURI from the
@@ -35645,9 +35645,9 @@ declare interface nsIPlatformInfoType extends nsISupportsType {
  *
  */
 declare interface nsIPluginTagType extends nsISupportsType {
-    readonly STATE_DISABLED: string;
-    readonly STATE_CLICKTOPLAY: string;
-    readonly STATE_ENABLED: string;
+    readonly STATE_DISABLED: unsigned_long;
+    readonly STATE_CLICKTOPLAY: unsigned_long;
+    readonly STATE_ENABLED: unsigned_long;
     /**
      *
      */
@@ -35781,10 +35781,10 @@ declare interface nsIPowerManagerServiceType extends nsISupportsType {
  * @see nsIPrefService
  */
 declare interface nsIPrefBranchType extends nsISupportsType {
-    readonly PREF_INVALID: string;
-    readonly PREF_STRING: string;
-    readonly PREF_INT: string;
-    readonly PREF_BOOL: string;
+    readonly PREF_INVALID: long;
+    readonly PREF_STRING: long;
+    readonly PREF_INT: long;
+    readonly PREF_BOOL: long;
     /**
      * Called to get the root on which this branch is based, such as
      * "browser.startup."
@@ -37010,46 +37010,46 @@ declare interface nsIPrintPreviewNavigationType extends nsISupportsType {
  * Simplified graphics interface for JS rendering.
  */
 declare interface nsIPrintSettingsType extends nsISupportsType {
-    readonly kInitSaveHeaderLeft: string;
-    readonly kInitSaveHeaderCenter: string;
-    readonly kInitSaveHeaderRight: string;
-    readonly kInitSaveFooterLeft: string;
-    readonly kInitSaveFooterCenter: string;
-    readonly kInitSaveFooterRight: string;
-    readonly kInitSaveBGColors: string;
-    readonly kInitSaveBGImages: string;
-    readonly kInitSavePaperSize: string;
-    readonly kInitSaveDuplex: string;
-    readonly kInitSaveUnwriteableMargins: string;
-    readonly kInitSaveEdges: string;
-    readonly kInitSaveReversed: string;
-    readonly kInitSaveInColor: string;
-    readonly kInitSaveOrientation: string;
-    readonly kInitSavePrinterName: string;
-    readonly kInitSavePrintToFile: string;
-    readonly kInitSaveToFileName: string;
-    readonly kInitSavePageDelay: string;
-    readonly kInitSaveMargins: string;
-    readonly kInitSaveShrinkToFit: string;
-    readonly kInitSaveScaling: string;
-    readonly kInitSaveAll: string;
+    readonly kInitSaveHeaderLeft: unsigned_long;
+    readonly kInitSaveHeaderCenter: unsigned_long;
+    readonly kInitSaveHeaderRight: unsigned_long;
+    readonly kInitSaveFooterLeft: unsigned_long;
+    readonly kInitSaveFooterCenter: unsigned_long;
+    readonly kInitSaveFooterRight: unsigned_long;
+    readonly kInitSaveBGColors: unsigned_long;
+    readonly kInitSaveBGImages: unsigned_long;
+    readonly kInitSavePaperSize: unsigned_long;
+    readonly kInitSaveDuplex: unsigned_long;
+    readonly kInitSaveUnwriteableMargins: unsigned_long;
+    readonly kInitSaveEdges: unsigned_long;
+    readonly kInitSaveReversed: unsigned_long;
+    readonly kInitSaveInColor: unsigned_long;
+    readonly kInitSaveOrientation: unsigned_long;
+    readonly kInitSavePrinterName: unsigned_long;
+    readonly kInitSavePrintToFile: unsigned_long;
+    readonly kInitSaveToFileName: unsigned_long;
+    readonly kInitSavePageDelay: unsigned_long;
+    readonly kInitSaveMargins: unsigned_long;
+    readonly kInitSaveShrinkToFit: unsigned_long;
+    readonly kInitSaveScaling: unsigned_long;
+    readonly kInitSaveAll: unsigned_long;
     readonly kGlobalSettings;
     readonly kPrintDialogPersistSettings;
-    readonly kJustLeft: string;
-    readonly kJustCenter: string;
-    readonly kJustRight: string;
-    readonly kPaperSizeInches: string;
-    readonly kPaperSizeMillimeters: string;
-    readonly kPortraitOrientation: string;
-    readonly kLandscapeOrientation: string;
-    readonly kOutputFormatNative: string;
-    readonly kOutputFormatPDF: string;
+    readonly kJustLeft: long;
+    readonly kJustCenter: long;
+    readonly kJustRight: long;
+    readonly kPaperSizeInches: short;
+    readonly kPaperSizeMillimeters: short;
+    readonly kPortraitOrientation: short;
+    readonly kLandscapeOrientation: short;
+    readonly kOutputFormatNative: short;
+    readonly kOutputFormatPDF: short;
     readonly kOutputDestinationPrinter;
     readonly kOutputDestinationFile;
     readonly kOutputDestinationStream;
-    readonly kDuplexNone: string;
-    readonly kDuplexFlipOnLongEdge: string;
-    readonly kDuplexFlipOnShortEdge: string;
+    readonly kDuplexNone: short;
+    readonly kDuplexFlipOnLongEdge: short;
+    readonly kDuplexFlipOnShortEdge: short;
     /**
      * Get the page size in twips, considering the
      * orientation (portrait or landscape).
@@ -37762,8 +37762,8 @@ declare interface nsIProfileMigratorType extends nsISupportsType {
  *
  */
 declare interface nsIProfileUnlockerType extends nsISupportsType {
-    readonly ATTEMPT_QUIT: string;
-    readonly FORCE_QUIT: string;
+    readonly ATTEMPT_QUIT: unsigned_long;
+    readonly FORCE_QUIT: unsigned_long;
     /**
      * Try to unlock the specified profile by attempting or forcing the
      * process that currently holds the lock to quit.
@@ -38042,27 +38042,27 @@ declare interface nsIPromptType extends nsISupportsType {
      *
      */
     confirmCheck(dialogTitle: wstring, text: wstring, checkMsg: wstring, checkValue: boolean): boolean;
-    readonly BUTTON_POS_0: string;
+    readonly BUTTON_POS_0: unsigned_long;
     readonly BUTTON_POS_1;
     readonly BUTTON_POS_2;
-    readonly BUTTON_TITLE_OK: string;
-    readonly BUTTON_TITLE_CANCEL: string;
-    readonly BUTTON_TITLE_YES: string;
-    readonly BUTTON_TITLE_NO: string;
-    readonly BUTTON_TITLE_SAVE: string;
-    readonly BUTTON_TITLE_DONT_SAVE: string;
-    readonly BUTTON_TITLE_REVERT: string;
-    readonly BUTTON_TITLE_IS_STRING: string;
+    readonly BUTTON_TITLE_OK: unsigned_long;
+    readonly BUTTON_TITLE_CANCEL: unsigned_long;
+    readonly BUTTON_TITLE_YES: unsigned_long;
+    readonly BUTTON_TITLE_NO: unsigned_long;
+    readonly BUTTON_TITLE_SAVE: unsigned_long;
+    readonly BUTTON_TITLE_DONT_SAVE: unsigned_long;
+    readonly BUTTON_TITLE_REVERT: unsigned_long;
+    readonly BUTTON_TITLE_IS_STRING: unsigned_long;
     readonly BUTTON_POS_0_DEFAULT;
     readonly BUTTON_POS_1_DEFAULT;
     readonly BUTTON_POS_2_DEFAULT;
     readonly BUTTON_DELAY_ENABLE;
     readonly STD_OK_CANCEL_BUTTONS;
     readonly STD_YES_NO_BUTTONS;
-    readonly MODAL_TYPE_CONTENT: string;
-    readonly MODAL_TYPE_TAB: string;
-    readonly MODAL_TYPE_WINDOW: string;
-    readonly MODAL_TYPE_INTERNAL_WINDOW: string;
+    readonly MODAL_TYPE_CONTENT: unsigned_long;
+    readonly MODAL_TYPE_TAB: unsigned_long;
+    readonly MODAL_TYPE_WINDOW: unsigned_long;
+    readonly MODAL_TYPE_INTERNAL_WINDOW: unsigned_long;
     /**
      *
      */
@@ -38298,27 +38298,27 @@ declare interface nsIPromptServiceType extends nsISupportsType {
      * @resolves nsIPropertyBag { ok: boolean, checked: boolean }
      */
     asyncConfirmCheck(aBrowsingContext: BrowsingContext, modalType: unsigned_long, aDialogTitle: wstring, aText: wstring, aCheckMsg: wstring, aCheckState: boolean): Promise;
-    readonly BUTTON_POS_0: string;
+    readonly BUTTON_POS_0: unsigned_long;
     readonly BUTTON_POS_1;
     readonly BUTTON_POS_2;
-    readonly BUTTON_TITLE_OK: string;
-    readonly BUTTON_TITLE_CANCEL: string;
-    readonly BUTTON_TITLE_YES: string;
-    readonly BUTTON_TITLE_NO: string;
-    readonly BUTTON_TITLE_SAVE: string;
-    readonly BUTTON_TITLE_DONT_SAVE: string;
-    readonly BUTTON_TITLE_REVERT: string;
-    readonly BUTTON_TITLE_IS_STRING: string;
-    readonly BUTTON_POS_0_DEFAULT: string;
+    readonly BUTTON_TITLE_OK: unsigned_long;
+    readonly BUTTON_TITLE_CANCEL: unsigned_long;
+    readonly BUTTON_TITLE_YES: unsigned_long;
+    readonly BUTTON_TITLE_NO: unsigned_long;
+    readonly BUTTON_TITLE_SAVE: unsigned_long;
+    readonly BUTTON_TITLE_DONT_SAVE: unsigned_long;
+    readonly BUTTON_TITLE_REVERT: unsigned_long;
+    readonly BUTTON_TITLE_IS_STRING: unsigned_long;
+    readonly BUTTON_POS_0_DEFAULT: unsigned_long;
     readonly BUTTON_POS_1_DEFAULT;
     readonly BUTTON_POS_2_DEFAULT;
     readonly BUTTON_DELAY_ENABLE;
     readonly STD_OK_CANCEL_BUTTONS;
     readonly STD_YES_NO_BUTTONS;
-    readonly MODAL_TYPE_CONTENT: string;
-    readonly MODAL_TYPE_TAB: string;
-    readonly MODAL_TYPE_WINDOW: string;
-    readonly MODAL_TYPE_INTERNAL_WINDOW: string;
+    readonly MODAL_TYPE_CONTENT: unsigned_long;
+    readonly MODAL_TYPE_TAB: unsigned_long;
+    readonly MODAL_TYPE_WINDOW: unsigned_long;
+    readonly MODAL_TYPE_INTERNAL_WINDOW: unsigned_long;
     /**
      * Puts up a dialog with up to 3 buttons and an optional, labeled checkbox.
      *
@@ -38737,7 +38737,7 @@ declare interface nsIProtocolHandlerType extends nsISupportsType {
      * protocol handler wants to override the ban.
      */
     allowPort(port: long, scheme: string): boolean;
-    readonly URI_STD: string;
+    readonly URI_STD: unsigned_long;
     readonly URI_NORELATIVE;
     readonly URI_NOAUTH;
     readonly ALLOWS_PROXY;
@@ -39092,11 +39092,11 @@ declare interface nsIProtocolProxyServiceType extends nsISupportsType {
      * This method is used internal only. Called when proxy config is changed.
      */
     notifyProxyConfigChangedInternal(): void;
-    readonly PROXYCONFIG_DIRECT: string;
-    readonly PROXYCONFIG_MANUAL: string;
-    readonly PROXYCONFIG_PAC: string;
-    readonly PROXYCONFIG_WPAD: string;
-    readonly PROXYCONFIG_SYSTEM: string;
+    readonly PROXYCONFIG_DIRECT: unsigned_long;
+    readonly PROXYCONFIG_MANUAL: unsigned_long;
+    readonly PROXYCONFIG_PAC: unsigned_long;
+    readonly PROXYCONFIG_WPAD: unsigned_long;
+    readonly PROXYCONFIG_SYSTEM: unsigned_long;
     /**
      * This attribute specifies the current type of proxy configuration.
      */
@@ -39276,15 +39276,15 @@ declare interface nsIPurgeTrackerServiceType extends nsISupportsType {
  *
  */
 declare interface nsIPushErrorReporterType extends nsISupportsType {
-    readonly ACK_DELIVERED: string;
-    readonly ACK_DECRYPTION_ERROR: string;
-    readonly ACK_NOT_DELIVERED: string;
-    readonly UNSUBSCRIBE_MANUAL: string;
-    readonly UNSUBSCRIBE_QUOTA_EXCEEDED: string;
-    readonly UNSUBSCRIBE_PERMISSION_REVOKED: string;
-    readonly DELIVERY_UNCAUGHT_EXCEPTION: string;
-    readonly DELIVERY_UNHANDLED_REJECTION: string;
-    readonly DELIVERY_INTERNAL_ERROR: string;
+    readonly ACK_DELIVERED: uint16_t;
+    readonly ACK_DECRYPTION_ERROR: uint16_t;
+    readonly ACK_NOT_DELIVERED: uint16_t;
+    readonly UNSUBSCRIBE_MANUAL: uint16_t;
+    readonly UNSUBSCRIBE_QUOTA_EXCEEDED: uint16_t;
+    readonly UNSUBSCRIBE_PERMISSION_REVOKED: uint16_t;
+    readonly DELIVERY_UNCAUGHT_EXCEPTION: uint16_t;
+    readonly DELIVERY_UNHANDLED_REJECTION: uint16_t;
+    readonly DELIVERY_INTERNAL_ERROR: uint16_t;
     /**
      * Reports a `push` event handler error to the Push service. |messageId| is
      * an opaque string passed to `nsIPushNotifier.notifyPush{WithData}`.
@@ -40640,8 +40640,8 @@ declare interface nsIRequestType extends nsISupportsType {
      * the load flags of the load group.
      */
     loadFlags: nsLoadFlags;
-    readonly LOAD_REQUESTMASK: string;
-    readonly LOAD_NORMAL: string;
+    readonly LOAD_REQUESTMASK: unsigned_long;
+    readonly LOAD_NORMAL: unsigned_long;
     readonly LOAD_BACKGROUND;
     readonly LOAD_HTML_OBJECT_DATA;
     readonly LOAD_DOCUMENT_NEEDS_COOKIE;
@@ -40922,15 +40922,15 @@ declare interface nsIRunnableType extends nsISupportsType {
  *
  */
 declare interface nsIRunnablePriorityType extends nsISupportsType {
-    readonly PRIORITY_IDLE: string;
-    readonly PRIORITY_DEFERRED_TIMERS: string;
-    readonly PRIORITY_LOW: string;
-    readonly PRIORITY_NORMAL: string;
-    readonly PRIORITY_MEDIUMHIGH: string;
-    readonly PRIORITY_INPUT_HIGH: string;
-    readonly PRIORITY_VSYNC: string;
-    readonly PRIORITY_RENDER_BLOCKING: string;
-    readonly PRIORITY_CONTROL: string;
+    readonly PRIORITY_IDLE: unsigned_long;
+    readonly PRIORITY_DEFERRED_TIMERS: unsigned_long;
+    readonly PRIORITY_LOW: unsigned_long;
+    readonly PRIORITY_NORMAL: unsigned_long;
+    readonly PRIORITY_MEDIUMHIGH: unsigned_long;
+    readonly PRIORITY_INPUT_HIGH: unsigned_long;
+    readonly PRIORITY_VSYNC: unsigned_long;
+    readonly PRIORITY_RENDER_BLOCKING: unsigned_long;
+    readonly PRIORITY_CONTROL: unsigned_long;
     /**
      *
      */
@@ -41674,8 +41674,8 @@ declare interface nsIScreenManagerType extends nsISupportsType {
  * execution will be forced to happen in a sandbox.
  */
 declare interface nsIScriptChannelType extends nsISupportsType {
-    readonly NO_EXECUTION: string;
-    readonly EXECUTE_NORMAL: string;
+    readonly NO_EXECUTION: unsigned_long;
+    readonly EXECUTE_NORMAL: unsigned_long;
     /**
      * Whether and how the program represented by this channel is to be executed.
      * The default value if this property has never been set on this channel MUST
@@ -41740,9 +41740,9 @@ declare interface nsIScriptErrorNoteType extends nsISupportsType {
  *
  */
 declare interface nsIScriptErrorType extends nsIConsoleMessageType {
-    readonly errorFlag: string;
-    readonly warningFlag: string;
-    readonly infoFlag: string;
+    readonly errorFlag: unsigned_long;
+    readonly warningFlag: unsigned_long;
+    readonly infoFlag: unsigned_long;
     /**
      * The error message without any context/line number information.
      *
@@ -41908,11 +41908,11 @@ declare interface nsIScriptLoaderObserverType extends nsISupportsType {
  *
  */
 declare interface nsIScriptSecurityManagerType extends nsISupportsType {
-    readonly STANDARD: string;
+    readonly STANDARD: unsigned_long;
     readonly LOAD_IS_AUTOMATIC_DOCUMENT_REPLACEMENT;
     readonly ALLOW_CHROME;
     readonly DISALLOW_INHERIT_PRINCIPAL;
-    readonly DISALLOW_SCRIPT_OR_DATA: string;
+    readonly DISALLOW_SCRIPT_OR_DATA: unsigned_long;
     readonly DISALLOW_SCRIPT;
     readonly DONT_REPORT_ERRORS;
     /**
@@ -42038,8 +42038,8 @@ declare interface nsIScriptSecurityManagerType extends nsISupportsType {
      * aChannel must not be null.
      */
     getChannelURIPrincipal(aChannel: nsIChannelType): nsIPrincipalType;
-    readonly DEFAULT_USER_CONTEXT_ID: string;
-    readonly DEFAULT_PRIVATE_BROWSING_ID: string;
+    readonly DEFAULT_USER_CONTEXT_ID: unsigned_long;
+    readonly DEFAULT_PRIVATE_BROWSING_ID: unsigned_long;
     /**
      * Per-domain controls to enable and disable script. This system is designed
      * to be used by at most one consumer, and enforces this with its semantics.
@@ -42459,22 +42459,22 @@ declare interface nsISearchParseSubmissionResultType extends nsISupportsType {
  *
  */
 declare interface nsISearchServiceType extends nsISupportsType {
-    readonly ERROR_DOWNLOAD_FAILURE: string;
-    readonly ERROR_DUPLICATE_ENGINE: string;
-    readonly ERROR_ENGINE_CORRUPTED: string;
-    readonly CHANGE_REASON_UNKNOWN: string;
-    readonly CHANGE_REASON_USER: string;
-    readonly CHANGE_REASON_USER_PRIVATE_SPLIT: string;
-    readonly CHANGE_REASON_USER_SEARCHBAR: string;
-    readonly CHANGE_REASON_USER_SEARCHBAR_CONTEXT: string;
-    readonly CHANGE_REASON_ADDON_INSTALL: string;
-    readonly CHANGE_REASON_ADDON_UNINSTALL: string;
-    readonly CHANGE_REASON_CONFIG: string;
-    readonly CHANGE_REASON_LOCALE: string;
-    readonly CHANGE_REASON_REGION: string;
-    readonly CHANGE_REASON_EXPERIMENT: string;
-    readonly CHANGE_REASON_ENTERPRISE: string;
-    readonly CHANGE_REASON_UITOUR: string;
+    readonly ERROR_DOWNLOAD_FAILURE: unsigned_long;
+    readonly ERROR_DUPLICATE_ENGINE: unsigned_long;
+    readonly ERROR_ENGINE_CORRUPTED: unsigned_long;
+    readonly CHANGE_REASON_UNKNOWN: unsigned_short;
+    readonly CHANGE_REASON_USER: unsigned_short;
+    readonly CHANGE_REASON_USER_PRIVATE_SPLIT: unsigned_short;
+    readonly CHANGE_REASON_USER_SEARCHBAR: unsigned_short;
+    readonly CHANGE_REASON_USER_SEARCHBAR_CONTEXT: unsigned_short;
+    readonly CHANGE_REASON_ADDON_INSTALL: unsigned_short;
+    readonly CHANGE_REASON_ADDON_UNINSTALL: unsigned_short;
+    readonly CHANGE_REASON_CONFIG: unsigned_short;
+    readonly CHANGE_REASON_LOCALE: unsigned_short;
+    readonly CHANGE_REASON_REGION: unsigned_short;
+    readonly CHANGE_REASON_EXPERIMENT: unsigned_short;
+    readonly CHANGE_REASON_ENTERPRISE: unsigned_short;
+    readonly CHANGE_REASON_UITOUR: unsigned_short;
     /**
      * Start asynchronous initialization.
      *
@@ -42854,21 +42854,21 @@ declare interface nsISecurityConsoleMessageType extends nsISupportsType {
  *
  */
 declare interface nsISecurityUITelemetryType extends nsISupportsType {
-    readonly WARNING_ADDON_ASKING_PREVENTED: string;
-    readonly WARNING_ADDON_ASKING_PREVENTED_CLICK_THROUGH: string;
-    readonly WARNING_CONFIRM_ADDON_INSTALL: string;
-    readonly WARNING_CONFIRM_ADDON_INSTALL_CLICK_THROUGH: string;
-    readonly WARNING_CONFIRM_POST_TO_INSECURE_FROM_SECURE: string;
-    readonly WARNING_CONFIRM_POST_TO_INSECURE_FROM_SECURE_CLICK_THROUGH: string;
+    readonly WARNING_ADDON_ASKING_PREVENTED: uint32_t;
+    readonly WARNING_ADDON_ASKING_PREVENTED_CLICK_THROUGH: uint32_t;
+    readonly WARNING_CONFIRM_ADDON_INSTALL: uint32_t;
+    readonly WARNING_CONFIRM_ADDON_INSTALL_CLICK_THROUGH: uint32_t;
+    readonly WARNING_CONFIRM_POST_TO_INSECURE_FROM_SECURE: uint32_t;
+    readonly WARNING_CONFIRM_POST_TO_INSECURE_FROM_SECURE_CLICK_THROUGH: uint32_t;
 }
 
 /**
  *
  */
 declare interface nsISeekableStreamType extends nsITellableStreamType {
-    readonly NS_SEEK_SET: string;
-    readonly NS_SEEK_CUR: string;
-    readonly NS_SEEK_END: string;
+    readonly NS_SEEK_SET: int32_t;
+    readonly NS_SEEK_CUR: int32_t;
+    readonly NS_SEEK_END: int32_t;
     /**
      * seek
      *
@@ -42901,28 +42901,28 @@ declare interface nsISeekableStreamType extends nsITellableStreamType {
  *
  */
 declare interface nsISelectionControllerType extends nsISelectionDisplayType {
-    readonly SELECTION_NONE: string;
-    readonly SELECTION_NORMAL: string;
-    readonly SELECTION_SPELLCHECK: string;
-    readonly SELECTION_IME_RAWINPUT: string;
-    readonly SELECTION_IME_SELECTEDRAWTEXT: string;
-    readonly SELECTION_IME_CONVERTEDTEXT: string;
-    readonly SELECTION_IME_SELECTEDCONVERTEDTEXT: string;
-    readonly SELECTION_ACCESSIBILITY: string;
-    readonly SELECTION_FIND: string;
-    readonly SELECTION_URLSECONDARY: string;
-    readonly SELECTION_URLSTRIKEOUT: string;
-    readonly SELECTION_HIGHLIGHT: string;
-    readonly NUM_SELECTIONTYPES: string;
-    readonly SELECTION_ANCHOR_REGION: string;
-    readonly SELECTION_FOCUS_REGION: string;
-    readonly SELECTION_WHOLE_SELECTION: string;
-    readonly NUM_SELECTION_REGIONS: string;
-    readonly SELECTION_OFF: string;
-    readonly SELECTION_HIDDEN: string;
-    readonly SELECTION_ON: string;
-    readonly SELECTION_DISABLED: string;
-    readonly SELECTION_ATTENTION: string;
+    readonly SELECTION_NONE: short;
+    readonly SELECTION_NORMAL: short;
+    readonly SELECTION_SPELLCHECK: short;
+    readonly SELECTION_IME_RAWINPUT: short;
+    readonly SELECTION_IME_SELECTEDRAWTEXT: short;
+    readonly SELECTION_IME_CONVERTEDTEXT: short;
+    readonly SELECTION_IME_SELECTEDCONVERTEDTEXT: short;
+    readonly SELECTION_ACCESSIBILITY: short;
+    readonly SELECTION_FIND: short;
+    readonly SELECTION_URLSECONDARY: short;
+    readonly SELECTION_URLSTRIKEOUT: short;
+    readonly SELECTION_HIGHLIGHT: short;
+    readonly NUM_SELECTIONTYPES: short;
+    readonly SELECTION_ANCHOR_REGION: short;
+    readonly SELECTION_FOCUS_REGION: short;
+    readonly SELECTION_WHOLE_SELECTION: short;
+    readonly NUM_SELECTION_REGIONS: short;
+    readonly SELECTION_OFF: short;
+    readonly SELECTION_HIDDEN: short;
+    readonly SELECTION_ON: short;
+    readonly SELECTION_DISABLED: short;
+    readonly SELECTION_ATTENTION: short;
     /**
      * SetDisplaySelection will set the display mode for the selection. OFF,ON,DISABLED
      */
@@ -43029,10 +43029,10 @@ declare interface nsISelectionControllerType extends nsISelectionDisplayType {
      * @param aExtend    should it collapse the selection of extend it?
      */
     physicalMove(direction: short, amount: short, extend: boolean): void;
-    readonly MOVE_LEFT: string;
-    readonly MOVE_RIGHT: string;
-    readonly MOVE_UP: string;
-    readonly MOVE_DOWN: string;
+    readonly MOVE_LEFT: short;
+    readonly MOVE_RIGHT: short;
+    readonly MOVE_UP: short;
+    readonly MOVE_DOWN: short;
     /**
      * WordMove will move the selection one word forward/backward in the document.
      * this will also have the effect of collapsing the selection if the aExtend = PR_FALSE
@@ -43105,10 +43105,10 @@ declare interface nsISelectionControllerType extends nsISelectionDisplayType {
  *
  */
 declare interface nsISelectionDisplayType extends nsISupportsType {
-    readonly DISPLAY_TEXT: string;
-    readonly DISPLAY_IMAGES: string;
-    readonly DISPLAY_FRAMES: string;
-    readonly DISPLAY_ALL: string;
+    readonly DISPLAY_TEXT: short;
+    readonly DISPLAY_IMAGES: short;
+    readonly DISPLAY_FRAMES: short;
+    readonly DISPLAY_ALL: short;
     /**
      * SetSelectionFlags used to set whether you want to see HRULES/IMAGES with border.
      * also used to tell if the presshell is an editor right now. this should change
@@ -43132,25 +43132,25 @@ declare interface nsISelectionDisplayType extends nsISupportsType {
  *
  */
 declare interface nsISelectionListenerType extends nsISupportsType {
-    readonly NO_REASON: string;
-    readonly DRAG_REASON: string;
-    readonly MOUSEDOWN_REASON: string;
-    readonly MOUSEUP_REASON: string;
-    readonly KEYPRESS_REASON: string;
-    readonly SELECTALL_REASON: string;
-    readonly COLLAPSETOSTART_REASON: string;
-    readonly COLLAPSETOEND_REASON: string;
-    readonly IME_REASON: string;
-    readonly JS_REASON: string;
-    readonly CHARACTER_AMOUNT: string;
-    readonly CLUSTER_AMOUNT: string;
-    readonly WORD_AMOUNT: string;
-    readonly WORDNOSPACE_AMOUNT: string;
-    readonly LINE_AMOUNT: string;
-    readonly BEGINLINE_AMOUNT: string;
-    readonly ENDLINE_AMOUNT: string;
-    readonly NO_AMOUNT: string;
-    readonly PARAGRAPH_AMOUNT: string;
+    readonly NO_REASON: short;
+    readonly DRAG_REASON: short;
+    readonly MOUSEDOWN_REASON: short;
+    readonly MOUSEUP_REASON: short;
+    readonly KEYPRESS_REASON: short;
+    readonly SELECTALL_REASON: short;
+    readonly COLLAPSETOSTART_REASON: short;
+    readonly COLLAPSETOEND_REASON: short;
+    readonly IME_REASON: short;
+    readonly JS_REASON: short;
+    readonly CHARACTER_AMOUNT: long;
+    readonly CLUSTER_AMOUNT: long;
+    readonly WORD_AMOUNT: long;
+    readonly WORDNOSPACE_AMOUNT: long;
+    readonly LINE_AMOUNT: long;
+    readonly BEGINLINE_AMOUNT: long;
+    readonly ENDLINE_AMOUNT: long;
+    readonly NO_AMOUNT: long;
+    readonly PARAGRAPH_AMOUNT: long;
     /**
      *
      */
@@ -43233,8 +43233,8 @@ declare interface nsISerializationHelperType extends nsISupportsType {
  * An interface to a server socket that can accept incoming connections.
  */
 declare interface nsIServerSocketType extends nsISupportsType {
-    readonly LoopbackOnly: string;
-    readonly KeepWhenOffline: string;
+    readonly LoopbackOnly: nsServerSocketFlag;
+    readonly KeepWhenOffline: nsServerSocketFlag;
     /**
      * @}
      *
@@ -43487,13 +43487,13 @@ declare interface nsIServiceWorkerUnregisterCallbackType extends nsISupportsType
  *
  */
 declare interface nsIServiceWorkerInfoType extends nsISupportsType {
-    readonly STATE_PARSED: string;
-    readonly STATE_INSTALLING: string;
-    readonly STATE_INSTALLED: string;
-    readonly STATE_ACTIVATING: string;
-    readonly STATE_ACTIVATED: string;
-    readonly STATE_REDUNDANT: string;
-    readonly STATE_UNKNOWN: string;
+    readonly STATE_PARSED: unsigned_short;
+    readonly STATE_INSTALLING: unsigned_short;
+    readonly STATE_INSTALLED: unsigned_short;
+    readonly STATE_ACTIVATING: unsigned_short;
+    readonly STATE_ACTIVATED: unsigned_short;
+    readonly STATE_REDUNDANT: unsigned_short;
+    readonly STATE_UNKNOWN: unsigned_short;
     /**
      *
      */
@@ -43562,9 +43562,9 @@ declare interface nsIServiceWorkerRegistrationInfoListenerType extends nsISuppor
  *
  */
 declare interface nsIServiceWorkerRegistrationInfoType extends nsISupportsType {
-    readonly UPDATE_VIA_CACHE_IMPORTS: string;
-    readonly UPDATE_VIA_CACHE_ALL: string;
-    readonly UPDATE_VIA_CACHE_NONE: string;
+    readonly UPDATE_VIA_CACHE_IMPORTS: unsigned_short;
+    readonly UPDATE_VIA_CACHE_ALL: unsigned_short;
+    readonly UPDATE_VIA_CACHE_NONE: unsigned_short;
     /**
      *
      */
@@ -43871,12 +43871,12 @@ declare interface nsIShellServiceType extends nsISupportsType {
      * users on a multi-user system.
      */
     setDefaultBrowser(aForAllUsers: boolean): void;
-    readonly BACKGROUND_TILE: string;
-    readonly BACKGROUND_STRETCH: string;
-    readonly BACKGROUND_CENTER: string;
-    readonly BACKGROUND_FILL: string;
-    readonly BACKGROUND_FIT: string;
-    readonly BACKGROUND_SPAN: string;
+    readonly BACKGROUND_TILE: long;
+    readonly BACKGROUND_STRETCH: long;
+    readonly BACKGROUND_CENTER: long;
+    readonly BACKGROUND_FILL: long;
+    readonly BACKGROUND_FIT: long;
+    readonly BACKGROUND_SPAN: long;
     /**
      * Sets the desktop background image using either the HTML <IMG>
      * element supplied or the background image of the element supplied.
@@ -43991,15 +43991,15 @@ declare interface nsISimpleURIMutatorType extends nsISupportsType {
  *
  */
 declare interface nsISiteSecurityServiceType extends nsISupportsType {
-    readonly Success: string;
-    readonly ERROR_UNKNOWN: string;
-    readonly ERROR_COULD_NOT_PARSE_HEADER: string;
-    readonly ERROR_NO_MAX_AGE: string;
-    readonly ERROR_MULTIPLE_MAX_AGES: string;
-    readonly ERROR_INVALID_MAX_AGE: string;
-    readonly ERROR_MULTIPLE_INCLUDE_SUBDOMAINS: string;
-    readonly ERROR_INVALID_INCLUDE_SUBDOMAINS: string;
-    readonly ERROR_COULD_NOT_SAVE_STATE: string;
+    readonly Success: uint32_t;
+    readonly ERROR_UNKNOWN: uint32_t;
+    readonly ERROR_COULD_NOT_PARSE_HEADER: uint32_t;
+    readonly ERROR_NO_MAX_AGE: uint32_t;
+    readonly ERROR_MULTIPLE_MAX_AGES: uint32_t;
+    readonly ERROR_INVALID_MAX_AGE: uint32_t;
+    readonly ERROR_MULTIPLE_INCLUDE_SUBDOMAINS: uint32_t;
+    readonly ERROR_INVALID_INCLUDE_SUBDOMAINS: uint32_t;
+    readonly ERROR_COULD_NOT_SAVE_STATE: uint32_t;
     /**
      *
      */
@@ -44085,8 +44085,8 @@ declare interface nsISlowScriptDebugType extends nsISupportsType {
  * in order to create a socket.
  */
 declare interface nsISocketFilterType extends nsISupportsType {
-    readonly SF_INCOMING: string;
-    readonly SF_OUTGOING: string;
+    readonly SF_INCOMING: long;
+    readonly SF_OUTGOING: long;
     /**
      *
      */
@@ -44207,17 +44207,17 @@ declare interface nsISocketTransportType extends nsITransportType {
      * True to set addr and port reuse socket options.
      */
     setReuseAddrPort(reuseAddrPort: bool): void;
-    readonly TIMEOUT_CONNECT: string;
-    readonly TIMEOUT_READ_WRITE: string;
-    readonly STATUS_RESOLVING: string;
-    readonly STATUS_RESOLVED: string;
-    readonly STATUS_CONNECTING_TO: string;
-    readonly STATUS_CONNECTED_TO: string;
-    readonly STATUS_SENDING_TO: string;
-    readonly STATUS_WAITING_FOR: string;
-    readonly STATUS_RECEIVING_FROM: string;
-    readonly STATUS_TLS_HANDSHAKE_STARTING: string;
-    readonly STATUS_TLS_HANDSHAKE_ENDED: string;
+    readonly TIMEOUT_CONNECT: unsigned_long;
+    readonly TIMEOUT_READ_WRITE: unsigned_long;
+    readonly STATUS_RESOLVING: unsigned_long;
+    readonly STATUS_RESOLVED: unsigned_long;
+    readonly STATUS_CONNECTING_TO: unsigned_long;
+    readonly STATUS_CONNECTED_TO: unsigned_long;
+    readonly STATUS_SENDING_TO: unsigned_long;
+    readonly STATUS_WAITING_FOR: unsigned_long;
+    readonly STATUS_RECEIVING_FROM: unsigned_long;
+    readonly STATUS_TLS_HANDSHAKE_STARTING: unsigned_long;
+    readonly STATUS_TLS_HANDSHAKE_ENDED: unsigned_long;
     /**
      * connectionFlags is a bitmask that can be used to modify underlying
      * behavior of the socket connection. See the flags below.
@@ -44426,14 +44426,14 @@ declare interface nsISoundType extends nsISupportsType {
      * The various methods on nsISound call Init() if they need to.
      */
     init(): void;
-    readonly EVENT_NEW_MAIL_RECEIVED: string;
-    readonly EVENT_ALERT_DIALOG_OPEN: string;
-    readonly EVENT_CONFIRM_DIALOG_OPEN: string;
-    readonly EVENT_PROMPT_DIALOG_OPEN: string;
-    readonly EVENT_SELECT_DIALOG_OPEN: string;
-    readonly EVENT_MENU_EXECUTE: string;
-    readonly EVENT_MENU_POPUP: string;
-    readonly EVENT_EDITOR_MAX_LEN: string;
+    readonly EVENT_NEW_MAIL_RECEIVED: unsigned_long;
+    readonly EVENT_ALERT_DIALOG_OPEN: unsigned_long;
+    readonly EVENT_CONFIRM_DIALOG_OPEN: unsigned_long;
+    readonly EVENT_PROMPT_DIALOG_OPEN: unsigned_long;
+    readonly EVENT_SELECT_DIALOG_OPEN: unsigned_long;
+    readonly EVENT_MENU_EXECUTE: unsigned_long;
+    readonly EVENT_MENU_POPUP: unsigned_long;
+    readonly EVENT_EDITOR_MAX_LEN: unsigned_long;
     /**
      *
      */
@@ -44695,9 +44695,9 @@ declare interface nsIStandaloneNativeMenuType extends nsISupportsType {
  * some customization on how URLs are normalized.
  */
 declare interface nsIStandardURLType extends nsISupportsType {
-    readonly URLTYPE_STANDARD: string;
-    readonly URLTYPE_AUTHORITY: string;
-    readonly URLTYPE_NO_AUTHORITY: string;
+    readonly URLTYPE_STANDARD: unsigned_long;
+    readonly URLTYPE_AUTHORITY: unsigned_long;
+    readonly URLTYPE_NO_AUTHORITY: unsigned_long;
 }
 
 /**
@@ -45374,12 +45374,12 @@ declare interface nsIStructuredCloneContainerType extends nsISupportsType {
  * a bare item of that type.
  */
 declare interface nsISFVBareItemType extends nsISupportsType {
-    readonly BOOL: string;
-    readonly STRING: string;
-    readonly DECIMAL: string;
-    readonly INTEGER: string;
-    readonly TOKEN: string;
-    readonly BYTE_SEQUENCE: string;
+    readonly BOOL: long;
+    readonly STRING: long;
+    readonly DECIMAL: long;
+    readonly INTEGER: long;
+    readonly TOKEN: long;
+    readonly BYTE_SEQUENCE: long;
     /**
      * Returns value associated with type of bare item.
      * Used to identify type of bare item without querying for interface
@@ -45646,9 +45646,9 @@ declare interface nsISFVServiceType extends nsISupportsType {
  * built-in list of user or agent style sheets.
  */
 declare interface nsIStyleSheetServiceType extends nsISupportsType {
-    readonly AGENT_SHEET: string;
-    readonly USER_SHEET: string;
-    readonly AUTHOR_SHEET: string;
+    readonly AGENT_SHEET: unsigned_long;
+    readonly USER_SHEET: unsigned_long;
+    readonly AUTHOR_SHEET: unsigned_long;
     /**
      * Synchronously loads a style sheet from |sheetURI| and adds it to the list
      * of user or agent style sheets.
@@ -46006,22 +46006,22 @@ declare interface nsIRandomAccessIteratorType extends nsISupportsType {
  * using the nsIMemory. Be careful!
  */
 declare interface nsISupportsPrimitiveType extends nsISupportsType {
-    readonly TYPE_ID: string;
-    readonly TYPE_CSTRING: string;
-    readonly TYPE_STRING: string;
-    readonly TYPE_PRBOOL: string;
-    readonly TYPE_PRUINT8: string;
-    readonly TYPE_PRUINT16: string;
-    readonly TYPE_PRUINT32: string;
-    readonly TYPE_PRUINT64: string;
-    readonly TYPE_PRTIME: string;
-    readonly TYPE_CHAR: string;
-    readonly TYPE_PRINT16: string;
-    readonly TYPE_PRINT32: string;
-    readonly TYPE_PRINT64: string;
-    readonly TYPE_FLOAT: string;
-    readonly TYPE_DOUBLE: string;
-    readonly TYPE_INTERFACE_POINTER: string;
+    readonly TYPE_ID: unsigned_short;
+    readonly TYPE_CSTRING: unsigned_short;
+    readonly TYPE_STRING: unsigned_short;
+    readonly TYPE_PRBOOL: unsigned_short;
+    readonly TYPE_PRUINT8: unsigned_short;
+    readonly TYPE_PRUINT16: unsigned_short;
+    readonly TYPE_PRUINT32: unsigned_short;
+    readonly TYPE_PRUINT64: unsigned_short;
+    readonly TYPE_PRTIME: unsigned_short;
+    readonly TYPE_CHAR: unsigned_short;
+    readonly TYPE_PRINT16: unsigned_short;
+    readonly TYPE_PRINT32: unsigned_short;
+    readonly TYPE_PRINT64: unsigned_short;
+    readonly TYPE_FLOAT: unsigned_short;
+    readonly TYPE_DOUBLE: unsigned_short;
+    readonly TYPE_INTERFACE_POINTER: unsigned_short;
     /**
      *
      */
@@ -46271,9 +46271,9 @@ declare interface nsISupportsInterfacePointerType extends nsISupportsPrimitiveTy
 declare interface nsISupportsPriorityType extends nsISupportsType {
     readonly PRIORITY_HIGHEST;
     readonly PRIORITY_HIGH;
-    readonly PRIORITY_NORMAL: string;
-    readonly PRIORITY_LOW: string;
-    readonly PRIORITY_LOWEST: string;
+    readonly PRIORITY_NORMAL: long;
+    readonly PRIORITY_LOW: long;
+    readonly PRIORITY_LOWEST: long;
     /**
      * This attribute may be modified to change the priority of this object.  The
      * implementation of this interface is free to truncate a given priority
@@ -46458,7 +46458,7 @@ declare interface nsISystemStatusBarType extends nsISupportsType {
  * the socket callbacks as arguments.
  */
 declare interface nsITCPSocketCallbackType extends nsISupportsType {
-    readonly BUFFER_SIZE: string;
+    readonly BUFFER_SIZE: unsigned_long;
     /**
      *
      */
@@ -46504,11 +46504,11 @@ declare interface nsITLSServerSocketType extends nsIServerSocketType {
      * default.
      */
     setSessionTickets(aSessionTickets: boolean): void;
-    readonly REQUEST_NEVER: string;
-    readonly REQUEST_FIRST_HANDSHAKE: string;
-    readonly REQUEST_ALWAYS: string;
-    readonly REQUIRE_FIRST_HANDSHAKE: string;
-    readonly REQUIRE_ALWAYS: string;
+    readonly REQUEST_NEVER: unsigned_long;
+    readonly REQUEST_FIRST_HANDSHAKE: unsigned_long;
+    readonly REQUEST_ALWAYS: unsigned_long;
+    readonly REQUIRE_FIRST_HANDSHAKE: unsigned_long;
+    readonly REQUIRE_ALWAYS: unsigned_long;
     /**
      * setRequestClientCertificate
      *
@@ -46549,11 +46549,11 @@ declare interface nsITLSClientStatusType extends nsISupportsType {
      * above and supplied by the client.
      */
     readonly peerCert: nsIX509Cert;
-    readonly SSL_VERSION_3: string;
-    readonly TLS_VERSION_1: string;
-    readonly TLS_VERSION_1_1: string;
-    readonly TLS_VERSION_1_2: string;
-    readonly TLS_VERSION_1_3: string;
+    readonly SSL_VERSION_3: short;
+    readonly TLS_VERSION_1: short;
+    readonly TLS_VERSION_1_1: short;
+    readonly TLS_VERSION_1_2: short;
+    readonly TLS_VERSION_1_3: short;
     readonly TLS_VERSION_UNKNOWN;
     /**
      * tlsVersionUsed
@@ -46697,11 +46697,11 @@ declare interface nsITLSSocketControlType extends nsISupportsType {
      * The original flags from the socket provider.
      */
     readonly providerFlags: uint32_t;
-    readonly SSL_VERSION_3: string;
-    readonly TLS_VERSION_1: string;
-    readonly TLS_VERSION_1_1: string;
-    readonly TLS_VERSION_1_2: string;
-    readonly TLS_VERSION_1_3: string;
+    readonly SSL_VERSION_3: short;
+    readonly TLS_VERSION_1: short;
+    readonly TLS_VERSION_1_1: short;
+    readonly TLS_VERSION_1_2: short;
+    readonly TLS_VERSION_1_3: short;
     readonly SSL_VERSION_UNKNOWN;
     /**
      *
@@ -46712,13 +46712,13 @@ declare interface nsITLSSocketControlType extends nsISupportsType {
      */
     readonly SSLVersionOffered: short;
     readonly SSL_MAC_UNKNOWN;
-    readonly SSL_MAC_NULL: string;
-    readonly SSL_MAC_MD5: string;
-    readonly SSL_MAC_SHA: string;
-    readonly SSL_HMAC_MD5: string;
-    readonly SSL_HMAC_SHA: string;
-    readonly SSL_HMAC_SHA256: string;
-    readonly SSL_MAC_AEAD: string;
+    readonly SSL_MAC_NULL: short;
+    readonly SSL_MAC_MD5: short;
+    readonly SSL_MAC_SHA: short;
+    readonly SSL_HMAC_MD5: short;
+    readonly SSL_HMAC_SHA: short;
+    readonly SSL_HMAC_SHA256: short;
+    readonly SSL_MAC_AEAD: short;
     /**
      *
      */
@@ -46860,9 +46860,9 @@ declare interface nsITXTToHTMLConvType extends nsIStreamConverterType {
  *
  */
 declare interface nsITableEditorType extends nsISupportsType {
-    readonly eNoSearch: string;
-    readonly ePreviousColumn: string;
-    readonly ePreviousRow: string;
+    readonly eNoSearch: short;
+    readonly ePreviousColumn: short;
+    readonly ePreviousRow: short;
     /**
      * insertTableCell() inserts <td> elements before or after a cell element
      * containing first selection range.  I.e., if the cell spans columns and
@@ -47499,11 +47499,11 @@ declare interface nsITaskbarPreviewControllerType extends nsISupportsType {
  * the taskbar. This class wraps around the native functionality to do this.
  */
 declare interface nsITaskbarProgressType extends nsISupportsType {
-    readonly STATE_NO_PROGRESS: string;
-    readonly STATE_INDETERMINATE: string;
-    readonly STATE_NORMAL: string;
-    readonly STATE_ERROR: string;
-    readonly STATE_PAUSED: string;
+    readonly STATE_NO_PROGRESS: nsTaskbarProgressState;
+    readonly STATE_INDETERMINATE: nsTaskbarProgressState;
+    readonly STATE_NORMAL: nsTaskbarProgressState;
+    readonly STATE_ERROR: nsTaskbarProgressState;
+    readonly STATE_PAUSED: nsTaskbarProgressState;
     /**
      * Sets the taskbar progress state and value for this window. The currentValue
      * and maxValue parameters are optional and should be supplied when |state|
@@ -47594,7 +47594,7 @@ declare interface nsITaskbarTabPreviewType extends nsITaskbarPreviewType {
  * nsITaskbarPreviewButton for more information about button properties.
  */
 declare interface nsITaskbarWindowPreviewType extends nsITaskbarPreviewType {
-    readonly NUM_TOOLBAR_BUTTONS: string;
+    readonly NUM_TOOLBAR_BUTTONS: long;
     /**
      * Gets the nth button for the preview image. By default, all of the buttons
      * are invisible.
@@ -47627,17 +47627,17 @@ declare interface nsIFetchTelemetryDataCallbackType extends nsISupportsType {
  *
  */
 declare interface nsITelemetryType extends nsISupportsType {
-    readonly HISTOGRAM_EXPONENTIAL: string;
-    readonly HISTOGRAM_LINEAR: string;
-    readonly HISTOGRAM_BOOLEAN: string;
-    readonly HISTOGRAM_FLAG: string;
-    readonly HISTOGRAM_COUNT: string;
-    readonly HISTOGRAM_CATEGORICAL: string;
-    readonly SCALAR_TYPE_COUNT: string;
-    readonly SCALAR_TYPE_STRING: string;
-    readonly SCALAR_TYPE_BOOLEAN: string;
-    readonly DATASET_ALL_CHANNELS: string;
-    readonly DATASET_PRERELEASE_CHANNELS: string;
+    readonly HISTOGRAM_EXPONENTIAL: unsigned_long;
+    readonly HISTOGRAM_LINEAR: unsigned_long;
+    readonly HISTOGRAM_BOOLEAN: unsigned_long;
+    readonly HISTOGRAM_FLAG: unsigned_long;
+    readonly HISTOGRAM_COUNT: unsigned_long;
+    readonly HISTOGRAM_CATEGORICAL: unsigned_long;
+    readonly SCALAR_TYPE_COUNT: unsigned_long;
+    readonly SCALAR_TYPE_STRING: unsigned_long;
+    readonly SCALAR_TYPE_BOOLEAN: unsigned_long;
+    readonly DATASET_ALL_CHANNELS: unsigned_long;
+    readonly DATASET_PRERELEASE_CHANNELS: unsigned_long;
     /**
      * Serializes the histogram labels for categorical hitograms.
      * The returned structure looks like:
@@ -48480,10 +48480,10 @@ declare interface nsITextInputProcessorType extends nsISupportsType {
      * commitComposition(), commitCompositionWith() or cancelComposition().
      */
     setPendingCompositionString(aString: AString): void;
-    readonly ATTR_RAW_CLAUSE: string;
-    readonly ATTR_SELECTED_RAW_CLAUSE: string;
-    readonly ATTR_CONVERTED_CLAUSE: string;
-    readonly ATTR_SELECTED_CLAUSE: string;
+    readonly ATTR_RAW_CLAUSE: unsigned_long;
+    readonly ATTR_SELECTED_RAW_CLAUSE: unsigned_long;
+    readonly ATTR_CONVERTED_CLAUSE: unsigned_long;
+    readonly ATTR_SELECTED_CLAUSE: unsigned_long;
     /**
      * Append a clause to the pending composition.
      *
@@ -48606,17 +48606,17 @@ declare interface nsITextInputProcessorType extends nsISupportsType {
      * @param aKeyFlags       See KEY_* constants.
      */
     cancelComposition(aKeyboardEvent?: Event, aKeyFlags?: unsigned_long): void;
-    readonly KEY_DEFAULT_PREVENTED: string;
-    readonly KEY_NON_PRINTABLE_KEY: string;
-    readonly KEY_FORCE_PRINTABLE_KEY: string;
-    readonly KEY_KEEP_KEY_LOCATION_STANDARD: string;
-    readonly KEY_KEEP_KEYCODE_ZERO: string;
-    readonly KEY_DONT_DISPATCH_MODIFIER_KEY_EVENT: string;
-    readonly KEY_DONT_MARK_KEYDOWN_AS_PROCESSED: string;
-    readonly KEY_MARK_KEYUP_AS_PROCESSED: string;
-    readonly KEYEVENT_NOT_CONSUMED: string;
-    readonly KEYDOWN_IS_CONSUMED: string;
-    readonly KEYPRESS_IS_CONSUMED: string;
+    readonly KEY_DEFAULT_PREVENTED: unsigned_long;
+    readonly KEY_NON_PRINTABLE_KEY: unsigned_long;
+    readonly KEY_FORCE_PRINTABLE_KEY: unsigned_long;
+    readonly KEY_KEEP_KEY_LOCATION_STANDARD: unsigned_long;
+    readonly KEY_KEEP_KEYCODE_ZERO: unsigned_long;
+    readonly KEY_DONT_DISPATCH_MODIFIER_KEY_EVENT: unsigned_long;
+    readonly KEY_DONT_MARK_KEYDOWN_AS_PROCESSED: unsigned_long;
+    readonly KEY_MARK_KEYUP_AS_PROCESSED: unsigned_long;
+    readonly KEYEVENT_NOT_CONSUMED: unsigned_long;
+    readonly KEYDOWN_IS_CONSUMED: unsigned_long;
+    readonly KEYPRESS_IS_CONSUMED: unsigned_long;
     /**
      * keydown() may dispatch a keydown event and some keypress events if
      * preceding keydown event isn't consumed and they are necessary.
@@ -49806,12 +49806,12 @@ declare interface nsITimerCallbackType extends nsISupportsType {
  * they've been canceled, and/or not firing after re-initiatization.
  */
 declare interface nsITimerType extends nsISupportsType {
-    readonly TYPE_ONE_SHOT: string;
-    readonly TYPE_REPEATING_SLACK: string;
-    readonly TYPE_REPEATING_PRECISE: string;
-    readonly TYPE_REPEATING_PRECISE_CAN_SKIP: string;
-    readonly TYPE_REPEATING_SLACK_LOW_PRIORITY: string;
-    readonly TYPE_ONE_SHOT_LOW_PRIORITY: string;
+    readonly TYPE_ONE_SHOT: short;
+    readonly TYPE_REPEATING_SLACK: short;
+    readonly TYPE_REPEATING_PRECISE: short;
+    readonly TYPE_REPEATING_PRECISE_CAN_SKIP: short;
+    readonly TYPE_REPEATING_SLACK_LOW_PRIORITY: short;
+    readonly TYPE_ONE_SHOT_LOW_PRIORITY: short;
     /**
      * Initialize a timer that will fire after the said delay.
      * A user must keep a reference to this timer till it is
@@ -50410,12 +50410,12 @@ declare interface nsITrackingDBServiceType extends nsISupportsType {
      * Return the earliest recorded date.
      */
     getEarliestRecordedDate(): Promise;
-    readonly OTHER_COOKIES_BLOCKED_ID: string;
-    readonly TRACKERS_ID: string;
-    readonly TRACKING_COOKIES_ID: string;
-    readonly CRYPTOMINERS_ID: string;
-    readonly FINGERPRINTERS_ID: string;
-    readonly SOCIAL_ID: string;
+    readonly OTHER_COOKIES_BLOCKED_ID: unsigned_long;
+    readonly TRACKERS_ID: unsigned_long;
+    readonly TRACKING_COOKIES_ID: unsigned_long;
+    readonly CRYPTOMINERS_ID: unsigned_long;
+    readonly FINGERPRINTERS_ID: unsigned_long;
+    readonly SOCIAL_ID: unsigned_long;
 }
 
 /**
@@ -50581,9 +50581,9 @@ declare interface nsITransactionManagerType extends nsISupportsType {
  *
  */
 declare interface nsITransferType extends nsIWebProgressListener2Type {
-    readonly DOWNLOAD_ACCEPTABLE: string;
-    readonly DOWNLOAD_FORBIDDEN: string;
-    readonly DOWNLOAD_POTENTIALLY_UNSAFE: string;
+    readonly DOWNLOAD_ACCEPTABLE: unsigned_long;
+    readonly DOWNLOAD_FORBIDDEN: unsigned_long;
+    readonly DOWNLOAD_POTENTIALLY_UNSAFE: unsigned_long;
     /**
      * Initializes the transfer with certain properties.  This function must
      * be called prior to accessing any properties on this interface.
@@ -50879,8 +50879,8 @@ declare interface nsITransportType extends nsISupportsType {
      * any thread.
      */
     setEventSink(aSink: nsITransportEventSinkType, aEventTarget: nsIEventTargetType): void;
-    readonly STATUS_READING: string;
-    readonly STATUS_WRITING: string;
+    readonly STATUS_READING: unsigned_long;
+    readonly STATUS_WRITING: unsigned_long;
 }
 
 /**
@@ -50960,19 +50960,19 @@ declare interface nsITransportSecurityInfoType extends nsISupportsType {
      *
      */
     readonly signatureSchemeName: ACString;
-    readonly SSL_VERSION_3: string;
-    readonly TLS_VERSION_1: string;
-    readonly TLS_VERSION_1_1: string;
-    readonly TLS_VERSION_1_2: string;
-    readonly TLS_VERSION_1_3: string;
+    readonly SSL_VERSION_3: short;
+    readonly TLS_VERSION_1: short;
+    readonly TLS_VERSION_1_1: short;
+    readonly TLS_VERSION_1_2: short;
+    readonly TLS_VERSION_1_3: short;
     /**
      *
      */
     readonly protocolVersion: unsigned_short;
-    readonly CERTIFICATE_TRANSPARENCY_NOT_APPLICABLE: string;
-    readonly CERTIFICATE_TRANSPARENCY_POLICY_COMPLIANT: string;
-    readonly CERTIFICATE_TRANSPARENCY_POLICY_NOT_ENOUGH_SCTS: string;
-    readonly CERTIFICATE_TRANSPARENCY_POLICY_NOT_DIVERSE_SCTS: string;
+    readonly CERTIFICATE_TRANSPARENCY_NOT_APPLICABLE: short;
+    readonly CERTIFICATE_TRANSPARENCY_POLICY_COMPLIANT: short;
+    readonly CERTIFICATE_TRANSPARENCY_POLICY_NOT_ENOUGH_SCTS: short;
+    readonly CERTIFICATE_TRANSPARENCY_POLICY_NOT_DIVERSE_SCTS: short;
     /**
      *
      */
@@ -51187,8 +51187,8 @@ declare interface nsITreeViewType extends nsISupportsType {
      */
     isSorted(): boolean;
     readonly DROP_BEFORE;
-    readonly DROP_ON: string;
-    readonly DROP_AFTER: string;
+    readonly DROP_ON: short;
+    readonly DROP_AFTER: short;
     /**
      * Methods used by the drag feedback code to determine if a drag is allowable at
      * the current location. To get the behavior where drops are only allowed on
@@ -51350,15 +51350,15 @@ declare interface nsITypeAheadFindType extends nsISupportsType {
      *
      */
     readonly currentWindow: mozIDOMWindow;
-    readonly FIND_INITIAL: string;
-    readonly FIND_NEXT: string;
-    readonly FIND_PREVIOUS: string;
-    readonly FIND_FIRST: string;
-    readonly FIND_LAST: string;
-    readonly FIND_FOUND: string;
-    readonly FIND_NOTFOUND: string;
-    readonly FIND_WRAPPED: string;
-    readonly FIND_PENDING: string;
+    readonly FIND_INITIAL: unsigned_long;
+    readonly FIND_NEXT: unsigned_long;
+    readonly FIND_PREVIOUS: unsigned_long;
+    readonly FIND_FIRST: unsigned_long;
+    readonly FIND_LAST: unsigned_long;
+    readonly FIND_FOUND: unsigned_short;
+    readonly FIND_NOTFOUND: unsigned_short;
+    readonly FIND_WRAPPED: unsigned_short;
+    readonly FIND_PENDING: unsigned_short;
 }
 
 /**
@@ -52144,11 +52144,11 @@ declare interface nsIURIFixupInfoType extends nsISupportsType {
  * Interface implemented by objects capable of fixing up strings into URIs
  */
 declare interface nsIURIFixupType extends nsISupportsType {
-    readonly FIXUP_FLAG_NONE: string;
-    readonly FIXUP_FLAG_ALLOW_KEYWORD_LOOKUP: string;
-    readonly FIXUP_FLAGS_MAKE_ALTERNATE_URI: string;
-    readonly FIXUP_FLAG_PRIVATE_CONTEXT: string;
-    readonly FIXUP_FLAG_FIX_SCHEME_TYPOS: string;
+    readonly FIXUP_FLAG_NONE: unsigned_long;
+    readonly FIXUP_FLAG_ALLOW_KEYWORD_LOOKUP: unsigned_long;
+    readonly FIXUP_FLAGS_MAKE_ALTERNATE_URI: unsigned_long;
+    readonly FIXUP_FLAG_PRIVATE_CONTEXT: unsigned_long;
+    readonly FIXUP_FLAG_FIX_SCHEME_TYPOS: unsigned_long;
     /**
      * Tries to converts the specified string into a URI, first attempting
      * to correct any errors in the syntax or other vagaries.
@@ -53108,8 +53108,8 @@ declare interface nsIUpdateCheckType extends nsISupportsType {
  * specified for update checking match.
  */
 declare interface nsIUpdateCheckerType extends nsISupportsType {
-    readonly BACKGROUND_CHECK: string;
-    readonly FOREGROUND_CHECK: string;
+    readonly BACKGROUND_CHECK: long;
+    readonly FOREGROUND_CHECK: long;
     /**
      * Checks for available updates.
      * @param   checkType
@@ -53330,11 +53330,11 @@ declare interface nsIApplicationUpdateServiceType extends nsISupportsType {
      * to stage while the background task is shutting down.
      */
     onlyDownloadUpdatesThisSession: boolean;
-    readonly STATE_IDLE: string;
-    readonly STATE_DOWNLOADING: string;
-    readonly STATE_STAGING: string;
-    readonly STATE_PENDING: string;
-    readonly STATE_SWAP: string;
+    readonly STATE_IDLE: long;
+    readonly STATE_DOWNLOADING: long;
+    readonly STATE_STAGING: long;
+    readonly STATE_PENDING: long;
+    readonly STATE_SWAP: long;
     /**
      * Gets a string describing the state (mostly intended to be make console
      * logs easier to read).
@@ -55272,37 +55272,37 @@ declare interface nsIWebBrowserChromeType extends nsISupportsType {
      * meaning no link is hovered.
      */
     setLinkStatus(status: AString): void;
-    readonly CHROME_DEFAULT: string;
-    readonly CHROME_WINDOW_BORDERS: string;
-    readonly CHROME_WINDOW_CLOSE: string;
-    readonly CHROME_WINDOW_RESIZE: string;
-    readonly CHROME_MENUBAR: string;
-    readonly CHROME_TOOLBAR: string;
-    readonly CHROME_LOCATIONBAR: string;
-    readonly CHROME_STATUSBAR: string;
-    readonly CHROME_PERSONAL_TOOLBAR: string;
-    readonly CHROME_SCROLLBARS: string;
-    readonly CHROME_TITLEBAR: string;
-    readonly CHROME_EXTRA: string;
-    readonly CHROME_WITH_SIZE: string;
-    readonly CHROME_WITH_POSITION: string;
-    readonly CHROME_WINDOW_MIN: string;
-    readonly CHROME_WINDOW_POPUP: string;
-    readonly CHROME_PRIVATE_WINDOW: string;
-    readonly CHROME_NON_PRIVATE_WINDOW: string;
-    readonly CHROME_PRIVATE_LIFETIME: string;
-    readonly CHROME_ALWAYS_ON_TOP: string;
-    readonly CHROME_REMOTE_WINDOW: string;
-    readonly CHROME_FISSION_WINDOW: string;
-    readonly CHROME_SUPPRESS_ANIMATION: string;
-    readonly CHROME_WINDOW_RAISED: string;
-    readonly CHROME_WINDOW_LOWERED: string;
-    readonly CHROME_CENTER_SCREEN: string;
-    readonly CHROME_DEPENDENT: string;
-    readonly CHROME_MODAL: string;
-    readonly CHROME_OPENAS_DIALOG: string;
-    readonly CHROME_OPENAS_CHROME: string;
-    readonly CHROME_ALL: string;
+    readonly CHROME_DEFAULT: unsigned_long;
+    readonly CHROME_WINDOW_BORDERS: unsigned_long;
+    readonly CHROME_WINDOW_CLOSE: unsigned_long;
+    readonly CHROME_WINDOW_RESIZE: unsigned_long;
+    readonly CHROME_MENUBAR: unsigned_long;
+    readonly CHROME_TOOLBAR: unsigned_long;
+    readonly CHROME_LOCATIONBAR: unsigned_long;
+    readonly CHROME_STATUSBAR: unsigned_long;
+    readonly CHROME_PERSONAL_TOOLBAR: unsigned_long;
+    readonly CHROME_SCROLLBARS: unsigned_long;
+    readonly CHROME_TITLEBAR: unsigned_long;
+    readonly CHROME_EXTRA: unsigned_long;
+    readonly CHROME_WITH_SIZE: unsigned_long;
+    readonly CHROME_WITH_POSITION: unsigned_long;
+    readonly CHROME_WINDOW_MIN: unsigned_long;
+    readonly CHROME_WINDOW_POPUP: unsigned_long;
+    readonly CHROME_PRIVATE_WINDOW: unsigned_long;
+    readonly CHROME_NON_PRIVATE_WINDOW: unsigned_long;
+    readonly CHROME_PRIVATE_LIFETIME: unsigned_long;
+    readonly CHROME_ALWAYS_ON_TOP: unsigned_long;
+    readonly CHROME_REMOTE_WINDOW: unsigned_long;
+    readonly CHROME_FISSION_WINDOW: unsigned_long;
+    readonly CHROME_SUPPRESS_ANIMATION: unsigned_long;
+    readonly CHROME_WINDOW_RAISED: unsigned_long;
+    readonly CHROME_WINDOW_LOWERED: unsigned_long;
+    readonly CHROME_CENTER_SCREEN: unsigned_long;
+    readonly CHROME_DEPENDENT: unsigned_long;
+    readonly CHROME_MODAL: unsigned_long;
+    readonly CHROME_OPENAS_DIALOG: unsigned_long;
+    readonly CHROME_OPENAS_CHROME: unsigned_long;
+    readonly CHROME_ALL: unsigned_long;
     readonly CHROME_MINIMAL_POPUP;
     /**
      * The chrome flags for this browser chrome. The implementation should
@@ -55485,32 +55485,32 @@ declare interface nsIWebBrowserFindInFramesType extends nsISupportsType {
  * Interface for persisting DOM documents and URIs to local or remote storage.
  */
 declare interface nsIWebBrowserPersistType extends nsICancelableType {
-    readonly PERSIST_FLAGS_NONE: string;
-    readonly PERSIST_FLAGS_FROM_CACHE: string;
-    readonly PERSIST_FLAGS_BYPASS_CACHE: string;
-    readonly PERSIST_FLAGS_IGNORE_REDIRECTED_DATA: string;
-    readonly PERSIST_FLAGS_IGNORE_IFRAMES: string;
-    readonly PERSIST_FLAGS_NO_CONVERSION: string;
-    readonly PERSIST_FLAGS_REPLACE_EXISTING_FILES: string;
-    readonly PERSIST_FLAGS_NO_BASE_TAG_MODIFICATIONS: string;
-    readonly PERSIST_FLAGS_FIXUP_ORIGINAL_DOM: string;
-    readonly PERSIST_FLAGS_FIXUP_LINKS_TO_DESTINATION: string;
-    readonly PERSIST_FLAGS_DONT_FIXUP_LINKS: string;
-    readonly PERSIST_FLAGS_SERIALIZE_OUTPUT: string;
-    readonly PERSIST_FLAGS_DONT_CHANGE_FILENAMES: string;
-    readonly PERSIST_FLAGS_FAIL_ON_BROKEN_LINKS: string;
-    readonly PERSIST_FLAGS_CLEANUP_ON_FAILURE: string;
-    readonly PERSIST_FLAGS_AUTODETECT_APPLY_CONVERSION: string;
-    readonly PERSIST_FLAGS_APPEND_TO_FILE: string;
+    readonly PERSIST_FLAGS_NONE: unsigned_long;
+    readonly PERSIST_FLAGS_FROM_CACHE: unsigned_long;
+    readonly PERSIST_FLAGS_BYPASS_CACHE: unsigned_long;
+    readonly PERSIST_FLAGS_IGNORE_REDIRECTED_DATA: unsigned_long;
+    readonly PERSIST_FLAGS_IGNORE_IFRAMES: unsigned_long;
+    readonly PERSIST_FLAGS_NO_CONVERSION: unsigned_long;
+    readonly PERSIST_FLAGS_REPLACE_EXISTING_FILES: unsigned_long;
+    readonly PERSIST_FLAGS_NO_BASE_TAG_MODIFICATIONS: unsigned_long;
+    readonly PERSIST_FLAGS_FIXUP_ORIGINAL_DOM: unsigned_long;
+    readonly PERSIST_FLAGS_FIXUP_LINKS_TO_DESTINATION: unsigned_long;
+    readonly PERSIST_FLAGS_DONT_FIXUP_LINKS: unsigned_long;
+    readonly PERSIST_FLAGS_SERIALIZE_OUTPUT: unsigned_long;
+    readonly PERSIST_FLAGS_DONT_CHANGE_FILENAMES: unsigned_long;
+    readonly PERSIST_FLAGS_FAIL_ON_BROKEN_LINKS: unsigned_long;
+    readonly PERSIST_FLAGS_CLEANUP_ON_FAILURE: unsigned_long;
+    readonly PERSIST_FLAGS_AUTODETECT_APPLY_CONVERSION: unsigned_long;
+    readonly PERSIST_FLAGS_APPEND_TO_FILE: unsigned_long;
     /**
      * Flags governing how data is fetched and saved from the network.
      * It is best to set this value explicitly unless you are prepared
      * to accept the default values.
      */
     persistFlags: unsigned_long;
-    readonly PERSIST_STATE_READY: string;
-    readonly PERSIST_STATE_SAVING: string;
-    readonly PERSIST_STATE_FINISHED: string;
+    readonly PERSIST_STATE_READY: unsigned_long;
+    readonly PERSIST_STATE_SAVING: unsigned_long;
+    readonly PERSIST_STATE_FINISHED: unsigned_long;
     /**
      * Current state of the persister object.
      */
@@ -55570,19 +55570,19 @@ declare interface nsIWebBrowserPersistType extends nsICancelableType {
      * @see saveURI
      */
     saveChannel(aChannel: nsIChannelType, aFile: nsISupportsType): void;
-    readonly ENCODE_FLAGS_SELECTION_ONLY: string;
-    readonly ENCODE_FLAGS_FORMATTED: string;
-    readonly ENCODE_FLAGS_RAW: string;
-    readonly ENCODE_FLAGS_BODY_ONLY: string;
-    readonly ENCODE_FLAGS_PREFORMATTED: string;
-    readonly ENCODE_FLAGS_WRAP: string;
-    readonly ENCODE_FLAGS_FORMAT_FLOWED: string;
-    readonly ENCODE_FLAGS_ABSOLUTE_LINKS: string;
-    readonly ENCODE_FLAGS_CR_LINEBREAKS: string;
-    readonly ENCODE_FLAGS_LF_LINEBREAKS: string;
-    readonly ENCODE_FLAGS_NOSCRIPT_CONTENT: string;
-    readonly ENCODE_FLAGS_NOFRAMES_CONTENT: string;
-    readonly ENCODE_FLAGS_ENCODE_BASIC_ENTITIES: string;
+    readonly ENCODE_FLAGS_SELECTION_ONLY: unsigned_long;
+    readonly ENCODE_FLAGS_FORMATTED: unsigned_long;
+    readonly ENCODE_FLAGS_RAW: unsigned_long;
+    readonly ENCODE_FLAGS_BODY_ONLY: unsigned_long;
+    readonly ENCODE_FLAGS_PREFORMATTED: unsigned_long;
+    readonly ENCODE_FLAGS_WRAP: unsigned_long;
+    readonly ENCODE_FLAGS_FORMAT_FLOWED: unsigned_long;
+    readonly ENCODE_FLAGS_ABSOLUTE_LINKS: unsigned_long;
+    readonly ENCODE_FLAGS_CR_LINEBREAKS: unsigned_long;
+    readonly ENCODE_FLAGS_LF_LINEBREAKS: unsigned_long;
+    readonly ENCODE_FLAGS_NOSCRIPT_CONTENT: unsigned_long;
+    readonly ENCODE_FLAGS_NOFRAMES_CONTENT: unsigned_long;
+    readonly ENCODE_FLAGS_ENCODE_BASIC_ENTITIES: unsigned_long;
     /**
      * Save the specified DOM document to file and optionally all linked files
      * (e.g. images, CSS, JS & subframes). Do not call this method until the
@@ -55842,11 +55842,11 @@ declare interface nsIWebBrowserPersistDocumentReceiverType extends nsISupportsTy
  * for printing an embedded Gecko web browser window/document
  */
 declare interface nsIWebBrowserPrintType extends nsISupportsType {
-    readonly PRINTPREVIEW_GOTO_PAGENUM: string;
-    readonly PRINTPREVIEW_PREV_PAGE: string;
-    readonly PRINTPREVIEW_NEXT_PAGE: string;
-    readonly PRINTPREVIEW_HOME: string;
-    readonly PRINTPREVIEW_END: string;
+    readonly PRINTPREVIEW_GOTO_PAGENUM: short;
+    readonly PRINTPREVIEW_PREV_PAGE: short;
+    readonly PRINTPREVIEW_NEXT_PAGE: short;
+    readonly PRINTPREVIEW_HOME: short;
+    readonly PRINTPREVIEW_END: short;
     /**
      * Returns whether it is in Print mode
      */
@@ -55973,31 +55973,31 @@ declare interface nsIWebNavigationType extends nsISupportsType {
      * that session history entry at the given index does not exist.
      */
     gotoIndex(index: long, aUserActivation?: boolean): void;
-    readonly LOAD_FLAGS_MASK: string;
-    readonly LOAD_FLAGS_NONE: string;
-    readonly LOAD_FLAGS_IS_REFRESH: string;
-    readonly LOAD_FLAGS_IS_LINK: string;
-    readonly LOAD_FLAGS_BYPASS_HISTORY: string;
-    readonly LOAD_FLAGS_REPLACE_HISTORY: string;
-    readonly LOAD_FLAGS_BYPASS_CACHE: string;
-    readonly LOAD_FLAGS_BYPASS_PROXY: string;
-    readonly LOAD_FLAGS_CHARSET_CHANGE: string;
-    readonly LOAD_FLAGS_STOP_CONTENT: string;
-    readonly LOAD_FLAGS_FROM_EXTERNAL: string;
-    readonly LOAD_FLAGS_FIRST_LOAD: string;
-    readonly LOAD_FLAGS_ALLOW_POPUPS: string;
-    readonly LOAD_FLAGS_BYPASS_CLASSIFIER: string;
-    readonly LOAD_FLAGS_FORCE_ALLOW_COOKIES: string;
-    readonly LOAD_FLAGS_DISALLOW_INHERIT_PRINCIPAL: string;
-    readonly LOAD_FLAGS_ERROR_LOAD_CHANGES_RV: string;
-    readonly LOAD_FLAGS_ALLOW_THIRD_PARTY_FIXUP: string;
-    readonly LOAD_FLAGS_FIXUP_SCHEME_TYPOS: string;
-    readonly LOAD_FLAGS_FORCE_ALLOW_DATA_URI: string;
-    readonly LOAD_FLAGS_IS_REDIRECT: string;
-    readonly LOAD_FLAGS_DISABLE_TRR: string;
-    readonly LOAD_FLAGS_FORCE_TRR: string;
-    readonly LOAD_FLAGS_BYPASS_LOAD_URI_DELEGATE: string;
-    readonly LOAD_FLAGS_USER_ACTIVATION: string;
+    readonly LOAD_FLAGS_MASK: unsigned_long;
+    readonly LOAD_FLAGS_NONE: unsigned_long;
+    readonly LOAD_FLAGS_IS_REFRESH: unsigned_long;
+    readonly LOAD_FLAGS_IS_LINK: unsigned_long;
+    readonly LOAD_FLAGS_BYPASS_HISTORY: unsigned_long;
+    readonly LOAD_FLAGS_REPLACE_HISTORY: unsigned_long;
+    readonly LOAD_FLAGS_BYPASS_CACHE: unsigned_long;
+    readonly LOAD_FLAGS_BYPASS_PROXY: unsigned_long;
+    readonly LOAD_FLAGS_CHARSET_CHANGE: unsigned_long;
+    readonly LOAD_FLAGS_STOP_CONTENT: unsigned_long;
+    readonly LOAD_FLAGS_FROM_EXTERNAL: unsigned_long;
+    readonly LOAD_FLAGS_FIRST_LOAD: unsigned_long;
+    readonly LOAD_FLAGS_ALLOW_POPUPS: unsigned_long;
+    readonly LOAD_FLAGS_BYPASS_CLASSIFIER: unsigned_long;
+    readonly LOAD_FLAGS_FORCE_ALLOW_COOKIES: unsigned_long;
+    readonly LOAD_FLAGS_DISALLOW_INHERIT_PRINCIPAL: unsigned_long;
+    readonly LOAD_FLAGS_ERROR_LOAD_CHANGES_RV: unsigned_long;
+    readonly LOAD_FLAGS_ALLOW_THIRD_PARTY_FIXUP: unsigned_long;
+    readonly LOAD_FLAGS_FIXUP_SCHEME_TYPOS: unsigned_long;
+    readonly LOAD_FLAGS_FORCE_ALLOW_DATA_URI: unsigned_long;
+    readonly LOAD_FLAGS_IS_REDIRECT: unsigned_long;
+    readonly LOAD_FLAGS_DISABLE_TRR: unsigned_long;
+    readonly LOAD_FLAGS_FORCE_TRR: unsigned_long;
+    readonly LOAD_FLAGS_BYPASS_LOAD_URI_DELEGATE: unsigned_long;
+    readonly LOAD_FLAGS_USER_ACTIVATION: unsigned_long;
     /**
      * Loads a given URI.  This will give priority to loading the requested URI
      * in the object implementing this interface.  If it can't be loaded here
@@ -56055,9 +56055,9 @@ declare interface nsIWebNavigationType extends nsISupportsType {
      * Indicating that the user canceled the reload.
      */
     reload(aReloadFlags: unsigned_long): void;
-    readonly STOP_NETWORK: string;
-    readonly STOP_CONTENT: string;
-    readonly STOP_ALL: string;
+    readonly STOP_NETWORK: unsigned_long;
+    readonly STOP_CONTENT: unsigned_long;
+    readonly STOP_ALL: unsigned_long;
     /**
      * Stops a load of a URI.
      *
@@ -56095,9 +56095,9 @@ declare interface nsIWebNavigationType extends nsISupportsType {
  * on the capabilities of Gecko webnavigation objects.
  */
 declare interface nsIWebNavigationInfoType extends nsISupportsType {
-    readonly UNSUPPORTED: string;
-    readonly IMAGE: string;
-    readonly FALLBACK: string;
+    readonly UNSUPPORTED: unsigned_long;
+    readonly IMAGE: unsigned_long;
+    readonly FALLBACK: unsigned_long;
     readonly OTHER;
     /**
      * Query whether aType is supported.
@@ -56147,18 +56147,18 @@ declare interface nsIWebPageDescriptorType extends nsISupportsType {
  * nsIWebProgress instance.
  */
 declare interface nsIWebProgressType extends nsISupportsType {
-    readonly NOTIFY_STATE_REQUEST: string;
-    readonly NOTIFY_STATE_DOCUMENT: string;
-    readonly NOTIFY_STATE_NETWORK: string;
-    readonly NOTIFY_STATE_WINDOW: string;
-    readonly NOTIFY_STATE_ALL: string;
-    readonly NOTIFY_PROGRESS: string;
-    readonly NOTIFY_STATUS: string;
-    readonly NOTIFY_SECURITY: string;
-    readonly NOTIFY_LOCATION: string;
-    readonly NOTIFY_REFRESH: string;
-    readonly NOTIFY_CONTENT_BLOCKING: string;
-    readonly NOTIFY_ALL: string;
+    readonly NOTIFY_STATE_REQUEST: unsigned_long;
+    readonly NOTIFY_STATE_DOCUMENT: unsigned_long;
+    readonly NOTIFY_STATE_NETWORK: unsigned_long;
+    readonly NOTIFY_STATE_WINDOW: unsigned_long;
+    readonly NOTIFY_STATE_ALL: unsigned_long;
+    readonly NOTIFY_PROGRESS: unsigned_long;
+    readonly NOTIFY_STATUS: unsigned_long;
+    readonly NOTIFY_SECURITY: unsigned_long;
+    readonly NOTIFY_LOCATION: unsigned_long;
+    readonly NOTIFY_REFRESH: unsigned_long;
+    readonly NOTIFY_CONTENT_BLOCKING: unsigned_long;
+    readonly NOTIFY_ALL: unsigned_long;
     /**
      * Registers a listener to receive web progress events.
      *
@@ -56237,57 +56237,57 @@ declare interface nsIWebProgressType extends nsISupportsType {
  * relationship of nsIWebProgress instances.
  */
 declare interface nsIWebProgressListenerType extends nsISupportsType {
-    readonly STATE_START: string;
-    readonly STATE_REDIRECTING: string;
-    readonly STATE_TRANSFERRING: string;
-    readonly STATE_NEGOTIATING: string;
-    readonly STATE_STOP: string;
-    readonly STATE_IS_REQUEST: string;
-    readonly STATE_IS_DOCUMENT: string;
-    readonly STATE_IS_NETWORK: string;
-    readonly STATE_IS_WINDOW: string;
-    readonly STATE_IS_REDIRECTED_DOCUMENT: string;
-    readonly STATE_RESTORING: string;
-    readonly STATE_IS_INSECURE: string;
-    readonly STATE_IS_BROKEN: string;
-    readonly STATE_IS_SECURE: string;
-    readonly STATE_BLOCKED_MIXED_ACTIVE_CONTENT: string;
-    readonly STATE_LOADED_MIXED_ACTIVE_CONTENT: string;
-    readonly STATE_BLOCKED_MIXED_DISPLAY_CONTENT: string;
-    readonly STATE_LOADED_MIXED_DISPLAY_CONTENT: string;
-    readonly STATE_IDENTITY_EV_TOPLEVEL: string;
-    readonly STATE_USES_SSL_3: string;
-    readonly STATE_USES_WEAK_CRYPTO: string;
-    readonly STATE_CERT_USER_OVERRIDDEN: string;
-    readonly STATE_BLOCKED_TRACKING_CONTENT: string;
-    readonly STATE_LOADED_LEVEL_1_TRACKING_CONTENT: string;
-    readonly STATE_LOADED_LEVEL_2_TRACKING_CONTENT: string;
-    readonly STATE_BLOCKED_FINGERPRINTING_CONTENT: string;
-    readonly STATE_LOADED_FINGERPRINTING_CONTENT: string;
-    readonly STATE_REPLACED_FINGERPRINTING_CONTENT: string;
-    readonly STATE_ALLOWED_FINGERPRINTING_CONTENT: string;
-    readonly STATE_BLOCKED_CRYPTOMINING_CONTENT: string;
-    readonly STATE_LOADED_CRYPTOMINING_CONTENT: string;
-    readonly STATE_BLOCKED_UNSAFE_CONTENT: string;
-    readonly STATE_COOKIES_LOADED: string;
-    readonly STATE_COOKIES_LOADED_TRACKER: string;
-    readonly STATE_COOKIES_LOADED_SOCIALTRACKER: string;
-    readonly STATE_COOKIES_BLOCKED_BY_PERMISSION: string;
-    readonly STATE_COOKIES_BLOCKED_TRACKER: string;
-    readonly STATE_COOKIES_BLOCKED_SOCIALTRACKER: string;
-    readonly STATE_COOKIES_BLOCKED_ALL: string;
-    readonly STATE_COOKIES_PARTITIONED_FOREIGN: string;
-    readonly STATE_COOKIES_BLOCKED_FOREIGN: string;
-    readonly STATE_BLOCKED_SOCIALTRACKING_CONTENT: string;
-    readonly STATE_LOADED_SOCIALTRACKING_CONTENT: string;
-    readonly STATE_REPLACED_TRACKING_CONTENT: string;
-    readonly STATE_ALLOWED_TRACKING_CONTENT: string;
-    readonly STATE_BLOCKED_EMAILTRACKING_CONTENT: string;
-    readonly STATE_LOADED_EMAILTRACKING_LEVEL_1_CONTENT: string;
-    readonly STATE_LOADED_EMAILTRACKING_LEVEL_2_CONTENT: string;
-    readonly STATE_HTTPS_ONLY_MODE_UPGRADED: string;
-    readonly STATE_HTTPS_ONLY_MODE_UPGRADE_FAILED: string;
-    readonly STATE_HTTPS_ONLY_MODE_UPGRADED_FIRST: string;
+    readonly STATE_START: unsigned_long;
+    readonly STATE_REDIRECTING: unsigned_long;
+    readonly STATE_TRANSFERRING: unsigned_long;
+    readonly STATE_NEGOTIATING: unsigned_long;
+    readonly STATE_STOP: unsigned_long;
+    readonly STATE_IS_REQUEST: unsigned_long;
+    readonly STATE_IS_DOCUMENT: unsigned_long;
+    readonly STATE_IS_NETWORK: unsigned_long;
+    readonly STATE_IS_WINDOW: unsigned_long;
+    readonly STATE_IS_REDIRECTED_DOCUMENT: unsigned_long;
+    readonly STATE_RESTORING: unsigned_long;
+    readonly STATE_IS_INSECURE: unsigned_long;
+    readonly STATE_IS_BROKEN: unsigned_long;
+    readonly STATE_IS_SECURE: unsigned_long;
+    readonly STATE_BLOCKED_MIXED_ACTIVE_CONTENT: unsigned_long;
+    readonly STATE_LOADED_MIXED_ACTIVE_CONTENT: unsigned_long;
+    readonly STATE_BLOCKED_MIXED_DISPLAY_CONTENT: unsigned_long;
+    readonly STATE_LOADED_MIXED_DISPLAY_CONTENT: unsigned_long;
+    readonly STATE_IDENTITY_EV_TOPLEVEL: unsigned_long;
+    readonly STATE_USES_SSL_3: unsigned_long;
+    readonly STATE_USES_WEAK_CRYPTO: unsigned_long;
+    readonly STATE_CERT_USER_OVERRIDDEN: unsigned_long;
+    readonly STATE_BLOCKED_TRACKING_CONTENT: unsigned_long;
+    readonly STATE_LOADED_LEVEL_1_TRACKING_CONTENT: unsigned_long;
+    readonly STATE_LOADED_LEVEL_2_TRACKING_CONTENT: unsigned_long;
+    readonly STATE_BLOCKED_FINGERPRINTING_CONTENT: unsigned_long;
+    readonly STATE_LOADED_FINGERPRINTING_CONTENT: unsigned_long;
+    readonly STATE_REPLACED_FINGERPRINTING_CONTENT: unsigned_long;
+    readonly STATE_ALLOWED_FINGERPRINTING_CONTENT: unsigned_long;
+    readonly STATE_BLOCKED_CRYPTOMINING_CONTENT: unsigned_long;
+    readonly STATE_LOADED_CRYPTOMINING_CONTENT: unsigned_long;
+    readonly STATE_BLOCKED_UNSAFE_CONTENT: unsigned_long;
+    readonly STATE_COOKIES_LOADED: unsigned_long;
+    readonly STATE_COOKIES_LOADED_TRACKER: unsigned_long;
+    readonly STATE_COOKIES_LOADED_SOCIALTRACKER: unsigned_long;
+    readonly STATE_COOKIES_BLOCKED_BY_PERMISSION: unsigned_long;
+    readonly STATE_COOKIES_BLOCKED_TRACKER: unsigned_long;
+    readonly STATE_COOKIES_BLOCKED_SOCIALTRACKER: unsigned_long;
+    readonly STATE_COOKIES_BLOCKED_ALL: unsigned_long;
+    readonly STATE_COOKIES_PARTITIONED_FOREIGN: unsigned_long;
+    readonly STATE_COOKIES_BLOCKED_FOREIGN: unsigned_long;
+    readonly STATE_BLOCKED_SOCIALTRACKING_CONTENT: unsigned_long;
+    readonly STATE_LOADED_SOCIALTRACKING_CONTENT: unsigned_long;
+    readonly STATE_REPLACED_TRACKING_CONTENT: unsigned_long;
+    readonly STATE_ALLOWED_TRACKING_CONTENT: unsigned_long;
+    readonly STATE_BLOCKED_EMAILTRACKING_CONTENT: unsigned_long;
+    readonly STATE_LOADED_EMAILTRACKING_LEVEL_1_CONTENT: unsigned_long;
+    readonly STATE_LOADED_EMAILTRACKING_LEVEL_2_CONTENT: unsigned_long;
+    readonly STATE_HTTPS_ONLY_MODE_UPGRADED: unsigned_long;
+    readonly STATE_HTTPS_ONLY_MODE_UPGRADE_FAILED: unsigned_long;
+    readonly STATE_HTTPS_ONLY_MODE_UPGRADED_FIRST: unsigned_long;
     /**
      * Notification indicating the state has changed for one of the requests
      * associated with aWebProgress.
@@ -56339,11 +56339,11 @@ declare interface nsIWebProgressListenerType extends nsISupportsType {
      * nsIWebProgressListener2::onProgressChange64 will be called.
      */
     onProgressChange(aWebProgress: nsIWebProgressType, aRequest: nsIRequestType, aCurSelfProgress: long, aMaxSelfProgress: long, aCurTotalProgress: long, aMaxTotalProgress: long): void;
-    readonly LOCATION_CHANGE_SAME_DOCUMENT: string;
-    readonly LOCATION_CHANGE_ERROR_PAGE: string;
-    readonly LOCATION_CHANGE_RELOAD: string;
-    readonly LOCATION_CHANGE_HASHCHANGE: string;
-    readonly LOCATION_CHANGE_SESSION_STORE: string;
+    readonly LOCATION_CHANGE_SAME_DOCUMENT: unsigned_long;
+    readonly LOCATION_CHANGE_ERROR_PAGE: unsigned_long;
+    readonly LOCATION_CHANGE_RELOAD: unsigned_long;
+    readonly LOCATION_CHANGE_HASHCHANGE: unsigned_long;
+    readonly LOCATION_CHANGE_SESSION_STORE: unsigned_long;
     /**
      * Called when the location of the window being watched changes.  This is not
      * when a load is requested, but rather once it is verified that the load is
@@ -56606,18 +56606,18 @@ declare interface nsIWebSocketChannelType extends nsISupportsType {
      * @param aReason the websocket closing handshake close reason
      */
     close(aCode: unsigned_short, aReason: AUTF8String): void;
-    readonly CLOSE_NORMAL: string;
-    readonly CLOSE_GOING_AWAY: string;
-    readonly CLOSE_PROTOCOL_ERROR: string;
-    readonly CLOSE_UNSUPPORTED_DATATYPE: string;
-    readonly CLOSE_NO_STATUS: string;
-    readonly CLOSE_ABNORMAL: string;
-    readonly CLOSE_INVALID_PAYLOAD: string;
-    readonly CLOSE_POLICY_VIOLATION: string;
-    readonly CLOSE_TOO_LARGE: string;
-    readonly CLOSE_EXTENSION_MISSING: string;
-    readonly CLOSE_INTERNAL_ERROR: string;
-    readonly CLOSE_TLS_FAILED: string;
+    readonly CLOSE_NORMAL: unsigned_short;
+    readonly CLOSE_GOING_AWAY: unsigned_short;
+    readonly CLOSE_PROTOCOL_ERROR: unsigned_short;
+    readonly CLOSE_UNSUPPORTED_DATATYPE: unsigned_short;
+    readonly CLOSE_NO_STATUS: unsigned_short;
+    readonly CLOSE_ABNORMAL: unsigned_short;
+    readonly CLOSE_INVALID_PAYLOAD: unsigned_short;
+    readonly CLOSE_POLICY_VIOLATION: unsigned_short;
+    readonly CLOSE_TOO_LARGE: unsigned_short;
+    readonly CLOSE_EXTENSION_MISSING: unsigned_short;
+    readonly CLOSE_INTERNAL_ERROR: unsigned_short;
+    readonly CLOSE_TLS_FAILED: unsigned_short;
     /**
      * Use to send text message down the connection to WebSocket peer.
      *
@@ -56710,12 +56710,12 @@ declare interface nsIWebSocketFrameType extends nsISupportsType {
      *
      */
     readonly payload: ACString;
-    readonly OPCODE_CONTINUATION: string;
-    readonly OPCODE_TEXT: string;
-    readonly OPCODE_BINARY: string;
-    readonly OPCODE_CLOSE: string;
-    readonly OPCODE_PING: string;
-    readonly OPCODE_PONG: string;
+    readonly OPCODE_CONTINUATION: unsigned_short;
+    readonly OPCODE_TEXT: unsigned_short;
+    readonly OPCODE_BINARY: unsigned_short;
+    readonly OPCODE_CLOSE: unsigned_short;
+    readonly OPCODE_PING: unsigned_short;
+    readonly OPCODE_PONG: unsigned_short;
 }
 
 /**
@@ -56730,9 +56730,9 @@ declare interface nsIWebSocketEventListenerType extends nsISupportsType {
      *
      */
     webSocketOpened(aWebSocketSerialID: unsigned_long, aEffectiveURI: AString, aProtocols: ACString, aExtensions: ACString, aHttpChannelId: uint64_t): void;
-    readonly TYPE_STRING: string;
-    readonly TYPE_BLOB: string;
-    readonly TYPE_ARRAYBUFFER: string;
+    readonly TYPE_STRING: unsigned_short;
+    readonly TYPE_BLOB: unsigned_short;
+    readonly TYPE_ARRAYBUFFER: unsigned_short;
     /**
      *
      */
@@ -57588,9 +57588,9 @@ declare interface nsIWindowMediatorType extends nsISupportsType {
      * a current inner anymore.
      */
     getCurrentInnerWindowWithId(aInnerWindowID: unsigned_long_long): mozIDOMWindow;
-    readonly zLevelTop: string;
-    readonly zLevelBottom: string;
-    readonly zLevelBelow: string;
+    readonly zLevelTop: unsigned_long;
+    readonly zLevelBottom: unsigned_long;
+    readonly zLevelBelow: unsigned_long;
     /**
      * Register a listener for window status changes.
      * keeps strong ref? (to be decided)
@@ -57861,25 +57861,25 @@ declare interface nsIWindowsPackageManagerType extends nsISupportsType {
  * This interface is highly Win32 specific.
  */
 declare interface nsIWindowsRegKeyType extends nsISupportsType {
-    readonly ROOT_KEY_CLASSES_ROOT: string;
-    readonly ROOT_KEY_CURRENT_USER: string;
-    readonly ROOT_KEY_LOCAL_MACHINE: string;
-    readonly ACCESS_BASIC: string;
-    readonly ACCESS_QUERY_VALUE: string;
-    readonly ACCESS_SET_VALUE: string;
-    readonly ACCESS_CREATE_SUB_KEY: string;
-    readonly ACCESS_ENUMERATE_SUB_KEYS: string;
-    readonly ACCESS_NOTIFY: string;
+    readonly ROOT_KEY_CLASSES_ROOT: unsigned_long;
+    readonly ROOT_KEY_CURRENT_USER: unsigned_long;
+    readonly ROOT_KEY_LOCAL_MACHINE: unsigned_long;
+    readonly ACCESS_BASIC: unsigned_long;
+    readonly ACCESS_QUERY_VALUE: unsigned_long;
+    readonly ACCESS_SET_VALUE: unsigned_long;
+    readonly ACCESS_CREATE_SUB_KEY: unsigned_long;
+    readonly ACCESS_ENUMERATE_SUB_KEYS: unsigned_long;
+    readonly ACCESS_NOTIFY: unsigned_long;
     readonly ACCESS_READ;
     readonly ACCESS_WRITE;
     readonly ACCESS_ALL;
-    readonly WOW64_32: string;
-    readonly WOW64_64: string;
-    readonly TYPE_NONE: string;
-    readonly TYPE_STRING: string;
-    readonly TYPE_BINARY: string;
-    readonly TYPE_INT: string;
-    readonly TYPE_INT64: string;
+    readonly WOW64_32: unsigned_long;
+    readonly WOW64_64: unsigned_long;
+    readonly TYPE_NONE: unsigned_long;
+    readonly TYPE_STRING: unsigned_long;
+    readonly TYPE_BINARY: unsigned_long;
+    readonly TYPE_INT: unsigned_long;
+    readonly TYPE_INT64: unsigned_long;
     /**
      * This attribute exposes the native HKEY and is available to provide C++
      * consumers with the flexibility of making other Windows registry API calls
@@ -58365,9 +58365,9 @@ declare interface nsIWorkerDebuggerListenerType extends nsISupportsType {
  *
  */
 declare interface nsIWorkerDebuggerType extends nsISupportsType {
-    readonly TYPE_DEDICATED: string;
-    readonly TYPE_SHARED: string;
-    readonly TYPE_SERVICE: string;
+    readonly TYPE_DEDICATED: unsigned_long;
+    readonly TYPE_SHARED: unsigned_long;
+    readonly TYPE_SERVICE: unsigned_long;
     /**
      *
      */
@@ -58616,12 +58616,12 @@ declare interface nsIX509CertType extends nsISupportsType {
      * A human readable identifier to label this certificate.
      */
     readonly displayName: AString;
-    readonly UNKNOWN_CERT: string;
+    readonly UNKNOWN_CERT: unsigned_long;
     readonly CA_CERT;
     readonly USER_CERT;
     readonly EMAIL_CERT;
     readonly SERVER_CERT;
-    readonly ANY_CERT: string;
+    readonly ANY_CERT: unsigned_long;
     /**
      * Type of this certificate
      */
@@ -58681,7 +58681,7 @@ declare interface nsICertVerificationCallbackType extends nsISupportsType {
  * X.509 certificates stored in a database.
  */
 declare interface nsIX509CertDBType extends nsISupportsType {
-    readonly UNTRUSTED: string;
+    readonly UNTRUSTED: unsigned_long;
     readonly TRUSTED_SSL;
     readonly TRUSTED_EMAIL;
     /**
@@ -58769,15 +58769,15 @@ declare interface nsIX509CertDBType extends nsISupportsType {
      * be imported. See type constants in nsIX509Cert.
      */
     importCertsFromFile(aFile: nsIFileType, aType: unsigned_long): void;
-    readonly Success: string;
-    readonly ERROR_UNKNOWN: string;
-    readonly ERROR_PKCS12_NOSMARTCARD_EXPORT: string;
-    readonly ERROR_PKCS12_RESTORE_FAILED: string;
-    readonly ERROR_PKCS12_BACKUP_FAILED: string;
-    readonly ERROR_PKCS12_CERT_COLLISION: string;
-    readonly ERROR_BAD_PASSWORD: string;
-    readonly ERROR_DECODE_ERROR: string;
-    readonly ERROR_PKCS12_DUPLICATE_DATA: string;
+    readonly Success: uint32_t;
+    readonly ERROR_UNKNOWN: uint32_t;
+    readonly ERROR_PKCS12_NOSMARTCARD_EXPORT: uint32_t;
+    readonly ERROR_PKCS12_RESTORE_FAILED: uint32_t;
+    readonly ERROR_PKCS12_BACKUP_FAILED: uint32_t;
+    readonly ERROR_PKCS12_CERT_COLLISION: uint32_t;
+    readonly ERROR_BAD_PASSWORD: uint32_t;
+    readonly ERROR_DECODE_ERROR: uint32_t;
+    readonly ERROR_PKCS12_DUPLICATE_DATA: uint32_t;
     /**
      * Import a PKCS#12 file containing cert(s) and key(s) into the database.
      *
@@ -58814,9 +58814,9 @@ declare interface nsIX509CertDBType extends nsISupportsType {
      * @return The new certificate object.
      */
     constructX509(certDER: invalid): nsIX509CertType;
-    readonly AppXPCShellRoot: string;
-    readonly AddonsPublicRoot: string;
-    readonly AddonsStageRoot: string;
+    readonly AppXPCShellRoot: AppTrustedRoot;
+    readonly AddonsPublicRoot: AppTrustedRoot;
+    readonly AddonsStageRoot: AppTrustedRoot;
     /**
      *
      */
@@ -59157,17 +59157,17 @@ declare interface nsIXULRuntimeType extends nsISupportsType {
      * This is taken from the MOZ_WIDGET_TOOLKIT configure variable.
      */
     readonly widgetToolkit: AUTF8String;
-    readonly PROCESS_TYPE_DEFAULT: string;
-    readonly PROCESS_TYPE_CONTENT: string;
-    readonly PROCESS_TYPE_IPDLUNITTEST: string;
-    readonly PROCESS_TYPE_GMPLUGIN: string;
-    readonly PROCESS_TYPE_GPU: string;
-    readonly PROCESS_TYPE_VR: string;
-    readonly PROCESS_TYPE_RDD: string;
-    readonly PROCESS_TYPE_SOCKET: string;
-    readonly PROCESS_TYPE_REMOTESANDBOXBROKER: string;
-    readonly PROCESS_TYPE_FORKSERVER: string;
-    readonly PROCESS_TYPE_UTILITY: string;
+    readonly PROCESS_TYPE_DEFAULT: unsigned_long;
+    readonly PROCESS_TYPE_CONTENT: unsigned_long;
+    readonly PROCESS_TYPE_IPDLUNITTEST: unsigned_long;
+    readonly PROCESS_TYPE_GMPLUGIN: unsigned_long;
+    readonly PROCESS_TYPE_GPU: unsigned_long;
+    readonly PROCESS_TYPE_VR: unsigned_long;
+    readonly PROCESS_TYPE_RDD: unsigned_long;
+    readonly PROCESS_TYPE_SOCKET: unsigned_long;
+    readonly PROCESS_TYPE_REMOTESANDBOXBROKER: unsigned_long;
+    readonly PROCESS_TYPE_FORKSERVER: unsigned_long;
+    readonly PROCESS_TYPE_UTILITY: unsigned_long;
     /**
      * The type of the caller's process.  Returns one of the values above.
      */
@@ -59200,7 +59200,7 @@ declare interface nsIXULRuntimeType extends nsISupportsType {
      * meaning and e10s should be considered to be "off"!
      */
     readonly maxWebProcessCount: uint32_t;
-    readonly E10S_MULTI_EXPERIMENT: string;
+    readonly E10S_MULTI_EXPERIMENT: uint32_t;
     /**
      * If true, the accessibility service is running.
      */
@@ -59633,10 +59633,10 @@ declare interface nsIZipReaderCacheType extends nsISupportsType {
  * experience problems what that.
  */
 declare interface nsIZipWriterType extends nsISupportsType {
-    readonly COMPRESSION_NONE: string;
-    readonly COMPRESSION_FASTEST: string;
-    readonly COMPRESSION_DEFAULT: string;
-    readonly COMPRESSION_BEST: string;
+    readonly COMPRESSION_NONE: uint32_t;
+    readonly COMPRESSION_FASTEST: uint32_t;
+    readonly COMPRESSION_DEFAULT: uint32_t;
+    readonly COMPRESSION_BEST: uint32_t;
     /**
      * Gets or sets the comment associated with the open zip file.
      *
@@ -60846,7 +60846,7 @@ declare interface nsIXPCTestBug809674Type extends nsISupportsType {
  * This defines the interface for a test object.
  */
 declare interface nsIXPCTestCEnumsType extends nsISupportsType {
-    readonly testConst: string;
+    readonly testConst: long;
     readonly shouldBe1Explicit;
     readonly shouldBe2Explicit;
     readonly shouldBe4Explicit;
@@ -60888,10 +60888,10 @@ declare interface nsIXPCTestESMReturnCodeChildType extends nsISupportsType {
      *
      */
     doIt(behavior: long): void;
-    readonly CHILD_SHOULD_THROW: string;
-    readonly CHILD_SHOULD_RETURN_SUCCESS: string;
-    readonly CHILD_SHOULD_RETURN_RESULTCODE: string;
-    readonly CHILD_SHOULD_NEST_RESULTCODES: string;
+    readonly CHILD_SHOULD_THROW: long;
+    readonly CHILD_SHOULD_RETURN_SUCCESS: long;
+    readonly CHILD_SHOULD_RETURN_RESULTCODE: long;
+    readonly CHILD_SHOULD_NEST_RESULTCODES: long;
 }
 
 /**
@@ -61084,10 +61084,10 @@ declare interface nsIXPCTestReturnCodeChildType extends nsISupportsType {
      *
      */
     doIt(behavior: long): void;
-    readonly CHILD_SHOULD_THROW: string;
-    readonly CHILD_SHOULD_RETURN_SUCCESS: string;
-    readonly CHILD_SHOULD_RETURN_RESULTCODE: string;
-    readonly CHILD_SHOULD_NEST_RESULTCODES: string;
+    readonly CHILD_SHOULD_THROW: long;
+    readonly CHILD_SHOULD_RETURN_SUCCESS: long;
+    readonly CHILD_SHOULD_RETURN_RESULTCODE: long;
+    readonly CHILD_SHOULD_NEST_RESULTCODES: long;
 }
 
 /**
