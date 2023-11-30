@@ -157,7 +157,7 @@ declare interface amIAddonManagerStartupType extends nsISupportsType {
      * - "locale" A locale package entry. Must be a 4-element array.
      * - "override" A URL override entry. Must be a 3-element array.
      */
-    registerChrome(manifestURI: nsIURIType, entries: jsval): nsIJSRAIIHelper;
+    registerChrome(manifestURI: nsIURIType, entries: jsval): nsIJSRAIIHelperType;
     /**
      *
      */
@@ -269,7 +269,7 @@ declare interface imgICacheType extends nsISupportsType {
      * @param doc Optional pointer to the document that the cache entry belongs to.
      * @returns NULL if the URL was not found in the cache
      */
-    findEntryProperties(uri: nsIURIType, doc?: Document): nsIProperties;
+    findEntryProperties(uri: nsIURIType, doc?: Document): nsIPropertiesType;
     /**
      * Make this cache instance respect private browsing notifications. This
      * entails clearing the chrome and content caches whenever the
@@ -331,7 +331,7 @@ declare interface imgIContainerType extends nsISupportsType {
      * @param aSamplingFilter The filter to be used if we're scaling the image.
      * @param aFlags Flags of the FLAG_* variety
      */
-    optimalImageSizeForDest(aDest: gfxSize, aWhichFrame: uint32_t, aSamplingFilter: SamplingFilter, aFlags: uint32_t): nsIntSizeByVal;
+    optimalImageSizeForDest(aDest: gfxSize, aWhichFrame: uint32_t, aSamplingFilter: SamplingFilter, aFlags: uint32_t): nsIntSizeByValType;
     readonly TYPE_RASTER: string;
     readonly TYPE_VECTOR: string;
     readonly TYPE_REQUEST: string;
@@ -464,7 +464,7 @@ declare interface imgIContainerType extends nsISupportsType {
      * differ if the image is wrapped by an ImageWrapper that changes its size
      * or orientation.
      */
-    getImageSpaceInvalidationRect(aRect: nsIntRectType): nsIntRectByVal;
+    getImageSpaceInvalidationRect(aRect: nsIntRectType): nsIntRectByValType;
     /**
      * Removes any ImageWrappers and returns the unwrapped base image.
      */
@@ -885,7 +885,7 @@ declare interface imgIToolsType extends nsISupportsType {
      * @param outputOptions
      * Encoder-specific output options.
      */
-    encodeImage(aContainer: imgIContainer, aMimeType: ACString, outputOptions?: AString): nsIInputStream;
+    encodeImage(aContainer: imgIContainer, aMimeType: ACString, outputOptions?: AString): nsIInputStreamType;
     /**
      * encodeScaledImage
      * Caller provides an image container, and the mime type it should be
@@ -902,7 +902,7 @@ declare interface imgIToolsType extends nsISupportsType {
      * @param outputOptions
      * Encoder-specific output options.
      */
-    encodeScaledImage(aContainer: imgIContainer, aMimeType: ACString, aWidth: long, aHeight: long, outputOptions?: AString): nsIInputStream;
+    encodeScaledImage(aContainer: imgIContainer, aMimeType: ACString, aWidth: long, aHeight: long, outputOptions?: AString): nsIInputStreamType;
     /**
      * getImgLoaderForDocument
      * Retrieve an image loader that reflects the privacy status of the given
@@ -943,7 +943,7 @@ declare interface imgIToolsType extends nsISupportsType {
      * @param outputOptions
      * Encoder-specific output options.
      */
-    encodeCroppedImage(aContainer: imgIContainer, aMimeType: ACString, aOffsetX: long, aOffsetY: long, aWidth: long, aHeight: long, outputOptions?: AString): nsIInputStream;
+    encodeCroppedImage(aContainer: imgIContainer, aMimeType: ACString, aOffsetX: long, aOffsetY: long, aWidth: long, aHeight: long, outputOptions?: AString): nsIInputStreamType;
     /**
      * Create a wrapper around a scripted notification observer (ordinarily
      * imgINotificationObserver cannot be implemented from scripts).
@@ -1657,7 +1657,7 @@ declare interface mozIGeckoMediaPluginChromeServiceType extends nsISupportsType 
     /**
      * Returns the directory to use as the base for storing data about GMPs.
      */
-    getStorageDir(): nsIFile;
+    getStorageDir(): nsIFileType;
 }
 
 /**
@@ -2969,7 +2969,7 @@ declare interface mozIStorageFunctionType extends nsISupportsType {
      *
      * @returns any value as Variant type.
      */
-    onFunctionCall(aFunctionArguments: mozIStorageValueArray): nsIVariant;
+    onFunctionCall(aFunctionArguments: mozIStorageValueArray): nsIVariantType;
 }
 
 /**
@@ -3027,7 +3027,7 @@ declare interface mozIStorageRowType extends mozIStorageValueArrayType {
      * Zero-based index of the result to get from the tuple.
      * @returns the result of the specified column.
      */
-    getResultByIndex(aIndex: unsigned_long): nsIVariant;
+    getResultByIndex(aIndex: unsigned_long): nsIVariantType;
     /**
      * Obtains the result of a given column specified by aName.
      *
@@ -3038,7 +3038,7 @@ declare interface mozIStorageRowType extends mozIStorageValueArrayType {
      * column.  If there is no AS clause then the name of the column is
      * unspecified and may change from one release to the next.
      */
-    getResultByName(aName: AUTF8String): nsIVariant;
+    getResultByName(aName: AUTF8String): nsIVariantType;
 }
 
 /**
@@ -3239,7 +3239,7 @@ declare interface mozIStorageServiceType extends nsISupportsType {
      * The directory you'd like the backup file to be placed.
      * @return The nsIFile representing the backup file.
      */
-    backupDatabaseFile(aDBFile: nsIFileType, aBackupFileName: AString, aBackupParentDirectory?: nsIFileType): nsIFile;
+    backupDatabaseFile(aDBFile: nsIFileType, aBackupFileName: AString, aBackupParentDirectory?: nsIFileType): nsIFileType;
 }
 
 /**
@@ -3340,7 +3340,7 @@ declare interface mozIStorageStatementType extends mozIStorageBaseStatementType 
      * 0-based colummn index.
      * @return A variant with the type of the column value.
      */
-    getVariant(aIndex: unsigned_long): nsIVariant;
+    getVariant(aIndex: unsigned_long): nsIVariantType;
     /**
      * Retrieve the contents of a column from the current result row as an
      * integer.
@@ -3906,13 +3906,13 @@ declare interface mozIThirdPartyUtilType extends nsISupportsType {
      * Returns the URI associated with the script object principal for the
      * window.
      */
-    getURIFromWindow(aWindow: mozIDOMWindowProxy): nsIURI;
+    getURIFromWindow(aWindow: mozIDOMWindowProxy): nsIURIType;
     /**
      * getPrincipalFromWindow
      *
      * Returns the script object principal for the window.
      */
-    getPrincipalFromWindow(aWindow: mozIDOMWindowProxy): nsIPrincipal;
+    getPrincipalFromWindow(aWindow: mozIDOMWindowProxy): nsIPrincipalType;
 }
 
 /**
@@ -3939,7 +3939,7 @@ declare interface nsIAboutModuleType extends nsISupportsType {
      * @param aURI the uri of the new channel
      * @param aLoadInfo the loadinfo of the new channel
      */
-    newChannel(aURI: nsIURIType, aLoadInfo: nsILoadInfoType): nsIChannel;
+    newChannel(aURI: nsIURIType, aLoadInfo: nsILoadInfoType): nsIChannelType;
     readonly URI_SAFE_FOR_UNTRUSTED_CONTENT;
     readonly ALLOW_SCRIPT;
     readonly HIDE_FROM_ABOUTABOUT;
@@ -3961,7 +3961,7 @@ declare interface nsIAboutModuleType extends nsISupportsType {
     /**
      * A method to get the chrome URI that corresponds to a given about URI.
      */
-    getChromeURI(aURI: nsIURIType): nsIURI;
+    getChromeURI(aURI: nsIURIType): nsIURIType;
 }
 
 /**
@@ -3980,7 +3980,7 @@ declare interface nsIAboutNewTabServiceType extends nsISupportsType {
      * no cache exists, the nsIChannel will be for the normal dynamically
      * generated about:home document.
      */
-    aboutHomeChannel(aURI: nsIURIType, aLoadInfo: nsILoadInfoType): nsIChannel;
+    aboutHomeChannel(aURI: nsIURIType, aLoadInfo: nsILoadInfoType): nsIChannelType;
     /**
      * Returns the about:welcome URL.
      */
@@ -4019,7 +4019,7 @@ declare interface nsIAboutThirdPartyType extends nsISupportsType {
      * Returns an object representing an application which includes
      * the given path of a module in its installation.
      */
-    lookupApplication(aModulePath: AString): nsIInstalledApplication;
+    lookupApplication(aModulePath: AString): nsIInstalledApplicationType;
     /**
      * Returns true if DynamicBlocklist is available.
      */
@@ -4293,7 +4293,7 @@ declare interface nsIAlertNotificationType extends nsISupportsType {
      * Not used by the libnotify backend, but the OS X backend
      * passes the pending notification.
      */
-    loadImage(aTimeout: unsigned_long, aListener: nsIAlertNotificationImageListenerType, aUserData?: nsISupportsType): nsICancelable;
+    loadImage(aTimeout: unsigned_long, aListener: nsIAlertNotificationImageListenerType, aUserData?: nsISupportsType): nsICancelableType;
 }
 
 /**
@@ -4461,7 +4461,7 @@ declare interface nsIAndroidBridgeType extends nsIAndroidEventDispatcherType {
     /**
      *
      */
-    getDispatcherByName(name: string): nsIAndroidEventDispatcher;
+    getDispatcherByName(name: string): nsIAndroidEventDispatcherType;
 }
 
 /**
@@ -4518,7 +4518,7 @@ declare interface nsIAppShellServiceType extends nsISupportsType {
     /**
      *
      */
-    createTopLevelWindow(aParent: nsIAppWindowType, aUrl: nsIURIType, aChromeMask: uint32_t, aInitialWidth: long, aInitialHeight: long): nsIAppWindow;
+    createTopLevelWindow(aParent: nsIAppWindowType, aUrl: nsIURIType, aChromeMask: uint32_t, aInitialWidth: long, aInitialHeight: long): nsIAppWindowType;
     /**
      * This is the constructor for creating an invisible DocShell.
      * It is used to simulate DOM windows without an actual physical
@@ -4527,7 +4527,7 @@ declare interface nsIAppShellServiceType extends nsISupportsType {
      * @param aChromeMask Used to specify chrome flags that should be set on the
      * window. See nsIWebBrowserChrome for flag definitions.
      */
-    createWindowlessBrowser(aIsChrome?: bool, aChromeMask?: uint32_t): nsIWindowlessBrowser;
+    createWindowlessBrowser(aIsChrome?: bool, aChromeMask?: uint32_t): nsIWindowlessBrowserType;
     /**
      *
      */
@@ -4867,7 +4867,7 @@ declare interface nsIAppWindowType extends nsISupportsType {
      * to be opened. Will be null for non-content loads.
      * @return the newly minted window
      */
-    createNewWindow(aChromeFlags: int32_t, aOpenWindowInfo: nsIOpenWindowInfoType): nsIAppWindow;
+    createNewWindow(aChromeFlags: int32_t, aOpenWindowInfo: nsIOpenWindowInfoType): nsIAppWindowType;
     /**
      *
      */
@@ -5101,7 +5101,7 @@ declare interface nsIArrayType extends nsISupportsType {
      * @throws NS_ERROR_FAILURE if the array is empty (to make it easy
      * to detect errors), or NS_ERROR_OUT_OF_MEMORY if out of memory.
      */
-    enumerate(aElemIID?: nsIIDRefType): nsISimpleEnumerator;
+    enumerate(aElemIID?: nsIIDRefType): nsISimpleEnumeratorType;
 }
 
 /**
@@ -5160,7 +5160,7 @@ declare interface nsIArrayExtensionsType extends nsIArrayType {
      *
      * @param index position of element
      */
-    GetElementAt(index: uint32_t): nsISupports;
+    GetElementAt(index: uint32_t): nsISupportsType;
 }
 
 /**
@@ -5470,7 +5470,7 @@ declare interface nsIAsyncShutdownServiceType extends nsISupportsType {
      *
      * This attribute is uploaded as part of crash reports.
      */
-    makeBarrier(aName: AString): nsIAsyncShutdownBarrier;
+    makeBarrier(aName: AString): nsIAsyncShutdownBarrierType;
     /**
      * Barrier for notification profile-before-change.
      */
@@ -6080,7 +6080,7 @@ declare interface nsIAuthPrompt2Type extends nsISupportsType {
      * prevent multiple dialogs shown to the user because consumer may fall
      * back to synchronous prompt on synchronous failure of this method.
      */
-    asyncPromptAuth(aChannel: nsIChannelType, aCallback: nsIAuthPromptCallbackType, aContext: nsISupportsType, level: uint32_t, authInfo: nsIAuthInformationType): nsICancelable;
+    asyncPromptAuth(aChannel: nsIChannelType, aCallback: nsIAuthPromptCallbackType, aContext: nsISupportsType, level: uint32_t, authInfo: nsIAuthInformationType): nsICancelableType;
 }
 
 /**
@@ -6092,7 +6092,7 @@ declare interface nsIAuthPromptAdapterFactoryType extends nsISupportsType {
      * Wrap an object implementing nsIAuthPrompt so that it's usable via
      * nsIAuthPrompt2.
      */
-    createAdapter(aPrompt: nsIAuthPromptType): nsIAuthPrompt2;
+    createAdapter(aPrompt: nsIAuthPromptType): nsIAuthPrompt2Type;
 }
 
 /**
@@ -6672,7 +6672,7 @@ declare interface nsIAutoCompleteSimpleResultType extends nsIAutoCompleteResultT
     /**
      * Gets the listener for changes in the result.
      */
-    getListener(): nsIAutoCompleteSimpleResultListener;
+    getListener(): nsIAutoCompleteSimpleResultListenerType;
     /**
      * Sets a listener for changes in the result.
      */
@@ -7216,11 +7216,11 @@ declare interface nsIBinaryHttpType extends nsISupportsType {
     /**
      *
      */
-    decodeRequest(request: invalid): nsIBinaryHttpRequest;
+    decodeRequest(request: invalid): nsIBinaryHttpRequestType;
     /**
      *
      */
-    decodeResponse(response: invalid): nsIBinaryHttpResponse;
+    decodeResponse(response: invalid): nsIBinaryHttpResponseType;
 }
 
 /**
@@ -8142,7 +8142,7 @@ declare interface nsIBrowserWindowTrackerType extends nsISupportsType {
     /**
      * Return browser having given browser id.
      */
-    getBrowserById(aBrowserId: uint64_t): nsISupports;
+    getBrowserById(aBrowserId: uint64_t): nsISupportsType;
 }
 
 /**
@@ -8309,7 +8309,7 @@ declare interface nsICacheEntryType extends nsISupportsType {
      *
      * @return non-blocking, buffered input stream.
      */
-    openInputStream(offset: long_long): nsIInputStream;
+    openInputStream(offset: long_long): nsIInputStreamType;
     /**
      * Open non-blocking output stream to cache data.  The returned stream
      * MAY implement nsISeekableStream.
@@ -8328,7 +8328,7 @@ declare interface nsICacheEntryType extends nsISupportsType {
      *
      * @return blocking, buffered output stream.
      */
-    openOutputStream(offset: long_long, predictedSize: long_long): nsIOutputStream;
+    openOutputStream(offset: long_long, predictedSize: long_long): nsIOutputStreamType;
     /**
      * Get/set security info on the cache entry for this descriptor.
      */
@@ -8406,7 +8406,7 @@ declare interface nsICacheEntryType extends nsISupportsType {
      * - NS_ERROR_NOT_AVAILABLE when the entry cannot be from some reason
      * recreated for write
      */
-    recreate(aMemoryOnly?: boolean): nsICacheEntry;
+    recreate(aMemoryOnly?: boolean): nsICacheEntryType;
     /**
      * Returns the length of data this entry holds.
      * @throws
@@ -8446,7 +8446,7 @@ declare interface nsICacheEntryType extends nsISupportsType {
      *
      * If there is alt-data already saved, it will be overwritten.
      */
-    openAlternativeOutputStream(type: ACString, predictedSize: long_long): nsIAsyncOutputStream;
+    openAlternativeOutputStream(type: ACString, predictedSize: long_long): nsIAsyncOutputStreamType;
     /**
      * Opens and returns an input stream that can be used to read the alternative
      * representation previously saved in the cache.
@@ -8456,7 +8456,7 @@ declare interface nsICacheEntryType extends nsISupportsType {
      * - NS_ERROR_NOT_AVAILABLE if the alt-data representation doesn't exist at
      * all or if alt-data of the given type doesn't exist.
      */
-    openAlternativeInputStream(type: ACString): nsIInputStream;
+    openAlternativeInputStream(type: ACString): nsIInputStreamType;
     /**
      * Get the nsILoadContextInfo of the cache entry
      */
@@ -8721,7 +8721,7 @@ declare interface nsICacheInfoChannelType extends nsISupportsType {
      * an error is thrown. If the size isn't known in advance, -1 should be
      * passed.
      */
-    openAlternativeOutputStream(type: ACString, predictedSize: long_long): nsIAsyncOutputStream;
+    openAlternativeOutputStream(type: ACString, predictedSize: long_long): nsIAsyncOutputStreamType;
 }
 
 /**
@@ -8751,7 +8751,7 @@ declare interface nsICachePurgeLockType extends nsISupportsType {
      * Returns the file used to guarantee single access to a resource.
      * This method is used to remove the lock file when no longer necessary.
      */
-    getLockFile(profileName: AUTF8String): nsIFile;
+    getLockFile(profileName: AUTF8String): nsIFileType;
 }
 
 /**
@@ -8804,7 +8804,7 @@ declare interface nsICacheStorageType extends nsISupportsType {
      * @param aURI @see asyncOpenURI
      * @param aIdExtension @see asyncOpenURI
      */
-    openTruncate(aURI: nsIURIType, aIdExtension: ACString): nsICacheEntry;
+    openTruncate(aURI: nsIURIType, aIdExtension: ACString): nsICacheEntryType;
     /**
      * Synchronously check on existance of an entry.  In case of disk entries
      * this uses information from the cache index.  When the index data are not
@@ -8853,18 +8853,18 @@ declare interface nsICacheStorageServiceType extends nsISupportsType {
      * Information about the loading context, this focuses the storage JAR and
      * respects separate storage for private browsing.
      */
-    memoryCacheStorage(aLoadContextInfo: nsILoadContextInfoType): nsICacheStorage;
+    memoryCacheStorage(aLoadContextInfo: nsILoadContextInfoType): nsICacheStorageType;
     /**
      * Get storage where entries will be written to disk when not forbidden by
      * response headers.
      */
-    diskCacheStorage(aLoadContextInfo: nsILoadContextInfoType): nsICacheStorage;
+    diskCacheStorage(aLoadContextInfo: nsILoadContextInfoType): nsICacheStorageType;
     /**
      * Get storage where entries will be written to disk and marked as pinned.
      * These pinned entries are immune to over limit eviction and call of clear()
      * on this service.
      */
-    pinningCacheStorage(aLoadContextInfo: nsILoadContextInfoType): nsICacheStorage;
+    pinningCacheStorage(aLoadContextInfo: nsILoadContextInfoType): nsICacheStorageType;
     /**
      * Evict any cache entry having the same origin of aPrincipal.
      *
@@ -9198,14 +9198,14 @@ declare interface nsICategoryManagerType extends nsISupportsType {
      * @return a simple enumerator, each result QIs to
      * nsICategoryEntry.
      */
-    enumerateCategory(aCategory: ACString): nsISimpleEnumerator;
+    enumerateCategory(aCategory: ACString): nsISimpleEnumeratorType;
     /**
      * Enumerate all existing categories
      * @param aCategory The category to be enumerated.
      * @return a simple enumerator, each result QIs to
      * nsISupportsCString.
      */
-    enumerateCategories(): nsISimpleEnumerator;
+    enumerateCategories(): nsISimpleEnumeratorType;
 }
 
 /**
@@ -9524,11 +9524,11 @@ declare interface nsICertTreeType extends nsITreeViewType {
     /**
      *
      */
-    getCert(index: unsigned_long): nsIX509Cert;
+    getCert(index: unsigned_long): nsIX509CertType;
     /**
      *
      */
-    getTreeItem(index: unsigned_long): nsICertTreeItem;
+    getTreeItem(index: unsigned_long): nsICertTreeItemType;
     /**
      *
      */
@@ -9710,7 +9710,7 @@ declare interface nsIChannelType extends nsIRequestType {
      * NOTE: Implementations should throw NS_ERROR_IN_PROGRESS if the channel
      * is reopened.
      */
-    open(): nsIInputStream;
+    open(): nsIInputStreamType;
     /**
      * Asynchronously open this channel.  Data is fed to the specified stream
      * listener as it becomes available.  The stream listener's methods are
@@ -10007,7 +10007,7 @@ declare interface nsIChromeRegistryType extends nsISupportsType {
      *
      * @param aChromeURL the URL that is to be converted.
      */
-    convertChromeURL(aChromeURL: nsIURIType): nsIURI;
+    convertChromeURL(aChromeURL: nsIURIType): nsIURIType;
     /**
      * refresh the chrome list at runtime, looking for new packages/etc
      */
@@ -10059,7 +10059,7 @@ declare interface nsIClassInfoType extends nsISupportsType {
      * Return an object to assist XPConnect in supplying JavaScript-specific
      * behavior to callers of the instance object, or null if not needed.
      */
-    getScriptableHelper(): nsIXPCScriptable;
+    getScriptableHelper(): nsIXPCScriptableType;
     /**
      * A contract ID through which an instance of this class can be created
      * (or accessed as a service, if |flags & SINGLETON|), or null/void.
@@ -10599,7 +10599,7 @@ declare interface nsIClipboardType extends nsISupportsType {
      * The write request object. The actual write will occur when the
      * data is provided by calling nsIAsyncSetClipboardData::setData().
      */
-    asyncSetData(aWhichClipboard: long, aCallback?: nsIAsyncSetClipboardDataCallbackType): nsIAsyncSetClipboardData;
+    asyncSetData(aWhichClipboard: long, aCallback?: nsIAsyncSetClipboardDataCallbackType): nsIAsyncSetClipboardDataType;
     /**
      * Filters the flavors aTransferable can import (see
      * `nsITransferable::flavorsTransferableCanImport`) and gets the data for the
@@ -10690,7 +10690,7 @@ declare interface nsICloneableInputStreamType extends nsISupportsType {
     /**
      *
      */
-    clone(): nsIInputStream;
+    clone(): nsIInputStreamType;
 }
 
 /**
@@ -10700,7 +10700,7 @@ declare interface nsICloneableInputStreamWithRangeType extends nsICloneableInput
     /**
      *
      */
-    cloneWithRange(start: uint64_t, length: uint64_t): nsIInputStream;
+    cloneWithRange(start: uint64_t, length: uint64_t): nsIInputStreamType;
 }
 
 /**
@@ -10880,7 +10880,7 @@ declare interface nsICommandLineType extends nsISupportsType {
      *
      * @param aArgument  The path to resolve.
      */
-    resolveFile(aArgument: AString): nsIFile;
+    resolveFile(aArgument: AString): nsIFileType;
     /**
      * Resolves a URI argument into a URI. This method has platform-specific
      * logic for converting an absolute URI or a relative file-path into the
@@ -10889,7 +10889,7 @@ declare interface nsICommandLineType extends nsISupportsType {
      *
      * @param aArgument  The command-line argument to resolve.
      */
-    resolveURI(aArgument: AString): nsIURI;
+    resolveURI(aArgument: AString): nsIURIType;
 }
 
 /**
@@ -11113,7 +11113,7 @@ declare interface nsICommandParamsType extends nsISupportsType {
     /**
      *
      */
-    getISupportsValue(name: string): nsISupports;
+    getISupportsValue(name: string): nsISupportsType;
     /**
      * set_Value
      *
@@ -11199,17 +11199,17 @@ declare interface nsIComponentManagerType extends nsISupportsType {
      *
      * Get an array of nsIURIs of all registered and builtin manifest locations.
      */
-    getManifestLocations(): nsIArray;
+    getManifestLocations(): nsIArrayType;
     /**
      * Returns a list of JSM URLs which are used to create components. This
      * should only be used in automation.
      */
-    getComponentJSMs(): nsIUTF8StringEnumerator;
+    getComponentJSMs(): nsIUTF8StringEnumeratorType;
     /**
      * Returns a list of ESM URLs which are used to create components. This
      * should only be used in automation.
      */
-    getComponentESModules(): nsIUTF8StringEnumerator;
+    getComponentESModules(): nsIUTF8StringEnumeratorType;
 }
 
 /**
@@ -11453,7 +11453,7 @@ declare interface nsIContentBlockingAllowListType extends nsISupportsType {
      * @param aPrincipal the content principal for which the contentBlockingAllowList principal is computed.
      * @return a contentBlockingAllowList principal.
      */
-    computeContentBlockingAllowListPrincipal(aPrincipal: nsIPrincipalType): nsIPrincipal;
+    computeContentBlockingAllowListPrincipal(aPrincipal: nsIPrincipalType): nsIPrincipalType;
 }
 
 /**
@@ -11567,7 +11567,7 @@ declare interface nsIContentPermissionRequestType extends nsISupportsType {
      *
      * @param aType the permission type to get
      */
-    getDelegatePrincipal(aType: ACString): nsIPrincipal;
+    getDelegatePrincipal(aType: ACString): nsIPrincipalType;
     /**
      * allow or cancel the request
      */
@@ -11870,7 +11870,7 @@ declare interface nsIContentPrefService2Type extends nsISupportsType {
      * @return         The preference, or null if no such preference is known to
      * exist.
      */
-    getCachedByDomainAndName(domain: AString, name: AString, context: nsILoadContextType): nsIContentPref;
+    getCachedByDomainAndName(domain: AString, name: AString, context: nsILoadContextType): nsIContentPrefType;
     /**
      * Synchronously retrieves from the in-memory cache the preference with no
      * domain and the given name.
@@ -11885,7 +11885,7 @@ declare interface nsIContentPrefService2Type extends nsISupportsType {
      * @return         The preference, or null if no such preference is known to
      * exist.
      */
-    getCachedGlobal(name: AString, context: nsILoadContextType): nsIContentPref;
+    getCachedGlobal(name: AString, context: nsILoadContextType): nsIContentPrefType;
     /**
      * Sets a preference.
      *
@@ -12133,7 +12133,7 @@ declare interface nsIContentSecurityManagerType extends nsISupportsType {
      * @throws NS_ERROR_CONTENT_BLOCKED
      * If any of the security policies (CSP, Mixed content) is violated
      */
-    performSecurityCheck(aChannel: nsIChannelType, aStreamListener: nsIStreamListenerType): nsIStreamListener;
+    performSecurityCheck(aChannel: nsIChannelType, aStreamListener: nsIStreamListenerType): nsIStreamListenerType;
 }
 
 /**
@@ -12810,7 +12810,7 @@ declare interface nsIControllerCommandTableType extends nsISupportsType {
      *
      * @param aCommandName  the name of the command to find the handler for.
      */
-    findCommandHandler(aCommandName: string): nsIControllerCommand;
+    findCommandHandler(aCommandName: string): nsIControllerCommandType;
     /**
      * Get whether the named command is enabled.
      *
@@ -12872,7 +12872,7 @@ declare interface nsIControllersType extends nsISupportsType {
     /**
      *
      */
-    getControllerForCommand(command: string): nsIController;
+    getControllerForCommand(command: string): nsIControllerType;
     /**
      *
      */
@@ -12880,11 +12880,11 @@ declare interface nsIControllersType extends nsISupportsType {
     /**
      *
      */
-    removeControllerAt(index: unsigned_long): nsIController;
+    removeControllerAt(index: unsigned_long): nsIControllerType;
     /**
      *
      */
-    getControllerAt(index: unsigned_long): nsIController;
+    getControllerAt(index: unsigned_long): nsIControllerType;
     /**
      *
      */
@@ -12901,7 +12901,7 @@ declare interface nsIControllersType extends nsISupportsType {
     /**
      * Get the controller specified by the given ID.
      */
-    getControllerById(controllerID: unsigned_long): nsIController;
+    getControllerById(controllerID: unsigned_long): nsIControllerType;
     /**
      *
      */
@@ -13171,7 +13171,7 @@ declare interface nsICookieBannerServiceType extends nsISupportsType {
      * service mode if there is a site preference for the given URI. Otherwise, it
      * will return MODE_UNSET.
      */
-    getDomainPref(aTopLevelURI: nsIURIType, aIsPrivate: boolean): nsICookieBannerService_Modes;
+    getDomainPref(aTopLevelURI: nsIURIType, aIsPrivate: boolean): nsICookieBannerService_ModesType;
     /**
      * Set the domain preference of the given top-level URI.
      */
@@ -13652,7 +13652,7 @@ declare interface nsICrashReporterType extends nsISupportsType {
      *
      * @throw NS_ERROR_FILE_NOT_FOUND if the minidump could not be found
      */
-    getMinidumpForID(id: AString): nsIFile;
+    getMinidumpForID(id: AString): nsIFileType;
     /**
      * Get the extra file corresponding to the specified ID.
      *
@@ -13663,7 +13663,7 @@ declare interface nsICrashReporterType extends nsISupportsType {
      *
      * @throw NS_ERROR_FILE_NOT_FOUND if the extra file could not be found
      */
-    getExtraFileForID(id: AString): nsIFile;
+    getExtraFileForID(id: AString): nsIFileType;
     /**
      * Add some extra data to be submitted with a crash report.
      *
@@ -13955,7 +13955,7 @@ declare interface nsICycleCollectorListenerType extends nsISupportsType {
     /**
      *
      */
-    allTraces(): nsICycleCollectorListener;
+    allTraces(): nsICycleCollectorListenerType;
     /**
      *
      */
@@ -14166,7 +14166,7 @@ declare interface nsIDNSHTTPSSVCRecordType extends nsISupportsType {
     /**
      *
      */
-    GetServiceModeRecord(aNoHttp2: boolean, aNoHttp3: boolean): nsISVCBRecord;
+    GetServiceModeRecord(aNoHttp2: boolean, aNoHttp3: boolean): nsISVCBRecordType;
     /**
      * Returns true if one of SVCB records has IPv4 or IPv6 hint addresses.
      */
@@ -14237,7 +14237,7 @@ declare interface nsIDNSAddrRecordType extends nsIDNSRecordType {
      * @throws NS_ERROR_NOT_AVAILABLE if there is not another IP address in
      * the record.
      */
-    getScriptableNextAddr(aPort: uint16_t): nsINetAddr;
+    getScriptableNextAddr(aPort: uint16_t): nsINetAddrType;
     /**
      * this function returns the value of the next IP address as a
      * string and increments the internal address iterator.
@@ -14370,7 +14370,7 @@ declare interface nsIDNSServiceType extends nsISupportsType {
      *
      * @return An object that can be used to cancel the host lookup.
      */
-    asyncResolve(aHostName: AUTF8String, aType: nsIDNSService_ResolveTypeType, aFlags: nsIDNSService_DNSFlagsType, aInfo: nsIDNSAdditionalInfoType, aListener: nsIDNSListenerType, aListenerTarget: nsIEventTargetType, aOriginAttributes?: jsval): nsICancelable;
+    asyncResolve(aHostName: AUTF8String, aType: nsIDNSService_ResolveTypeType, aFlags: nsIDNSService_DNSFlagsType, aInfo: nsIDNSAdditionalInfoType, aListener: nsIDNSListenerType, aListenerTarget: nsIEventTargetType, aOriginAttributes?: jsval): nsICancelableType;
     /**
      *
      */
@@ -14378,7 +14378,7 @@ declare interface nsIDNSServiceType extends nsISupportsType {
     /**
      * Returns a new nsIDNSAdditionalInfo object containing the URL we pass to it.
      */
-    newAdditionalInfo(aTrrURL: AUTF8String, aPort: int32_t): nsIDNSAdditionalInfo;
+    newAdditionalInfo(aTrrURL: AUTF8String, aPort: int32_t): nsIDNSAdditionalInfoType;
     /**
      * Attempts to cancel a previously requested async DNS lookup
      *
@@ -14427,7 +14427,7 @@ declare interface nsIDNSServiceType extends nsISupportsType {
      * @throws NS_ERROR_UNKNOWN_HOST if host could not be resolved.
      * @throws NS_ERROR_NOT_AVAILABLE if accessed from the main thread.
      */
-    resolve(aHostName: AUTF8String, aFlags: nsIDNSService_DNSFlagsType, aOriginAttributes?: jsval): nsIDNSRecord;
+    resolve(aHostName: AUTF8String, aFlags: nsIDNSService_DNSFlagsType, aOriginAttributes?: jsval): nsIDNSRecordType;
     /**
      *
      */
@@ -15489,7 +15489,7 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      *
      * This method requires chrome privileges.
      */
-    getTranslationNodes(aRoot: Node): nsITranslationNodeList;
+    getTranslationNodes(aRoot: Node): nsITranslationNodeListType;
     /**
      * Compare the two canvases, returning the number of differing pixels and
      * the maximum difference in a channel.  This will throw an error if
@@ -15697,7 +15697,7 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      * for the other parameters and the result.
      * @param aAdditionalFlags See the description of QUERY_CONTENT_FLAG_*.
      */
-    sendQueryContentEvent(aType: unsigned_long, aOffset: long_long, aLength: unsigned_long, aX: long, aY: long, aAdditionalFlags?: unsigned_long): nsIQueryContentEventResult;
+    sendQueryContentEvent(aType: unsigned_long, aOffset: long_long, aLength: unsigned_long, aX: long, aY: long, aAdditionalFlags?: unsigned_long): nsIQueryContentEventResultType;
     readonly QUERY_SELECTED_TEXT: string;
     readonly QUERY_TEXT_CONTENT: string;
     readonly QUERY_CARET_RECT: string;
@@ -15855,7 +15855,7 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
     /**
      *
      */
-    audioDevices(aSide: unsigned_short): nsIArray;
+    audioDevices(aSide: unsigned_short): nsIArrayType;
     /**
      * Record (and return) frame-intervals for frames which were presented
      * between calling StartFrameTimeRecording and StopFrameTimeRecording.
@@ -16176,7 +16176,7 @@ declare interface nsIDOMWindowUtilsType extends nsISupportsType {
      * Remember to call destruct() on the return value!
      * See also nsIDOMWindowUtils::isHandlingUserInput.
      */
-    setHandlingUserInput(aHandlingInput: boolean): nsIJSRAIIHelper;
+    setHandlingUserInput(aHandlingInput: boolean): nsIJSRAIIHelperType;
     /**
      * Returns true if a keyboard event qualifies as "user activity" such that
      * it would mark the document with the ChromeOnly userHasInteracted
@@ -16564,11 +16564,11 @@ declare interface nsIDOMXULCommandDispatcherType extends nsISupportsType {
     /**
      *
      */
-    getControllerForCommand(command: string): nsIController;
+    getControllerForCommand(command: string): nsIControllerType;
     /**
      *
      */
-    getControllers(): nsIControllers;
+    getControllers(): nsIControllersType;
     /**
      *
      */
@@ -16894,7 +16894,7 @@ declare interface nsIDataStorageManagerType extends nsISupportsType {
     /**
      *
      */
-    get(dataStorage: nsIDataStorageManager_DataStorageType): nsIDataStorage;
+    get(dataStorage: nsIDataStorageManager_DataStorageType): nsIDataStorageType;
 }
 
 /**
@@ -17351,7 +17351,7 @@ declare interface nsIDirectoryServiceProviderType extends nsISupportsType {
      *
      * @return             The file represented by the property.
      */
-    getFile(prop: string, persistent: boolean): nsIFile;
+    getFile(prop: string, persistent: boolean): nsIFileType;
 }
 
 /**
@@ -17374,7 +17374,7 @@ declare interface nsIDirectoryServiceProvider2Type extends nsIDirectoryServicePr
      * @returnCode         NS_SUCCESS_AGGREGATE_RESULT if this result should be
      * aggregated with other "lower" providers.
      */
-    getFiles(prop: string): nsISimpleEnumerator;
+    getFiles(prop: string): nsISimpleEnumeratorType;
 }
 
 /**
@@ -17754,7 +17754,7 @@ declare interface nsIDocShellType extends nsIDocShellTreeItemType {
      *
      * @deprecated: Use `BrowsingContext::GetParent()` in the future.
      */
-    getSameTypeInProcessParentIgnoreBrowserBoundaries(): nsIDocShell;
+    getSameTypeInProcessParentIgnoreBrowserBoundaries(): nsIDocShellType;
     /**
      * True iff asynchronous panning and zooming is enabled for this
      * docshell.
@@ -17997,7 +17997,7 @@ declare interface nsIDocShellTreeItemType extends nsISupportsType {
      *
      * @throws NS_ERROR_UNEXPECTED if the index is out of range
      */
-    getChildAt(index: long): nsIDocShellTreeItem;
+    getChildAt(index: long): nsIDocShellTreeItemType;
     /**
      * BrowsingContext associated with the DocShell.
      */
@@ -18282,11 +18282,11 @@ declare interface nsIDocumentLoaderFactoryType extends nsISupportsType {
     /**
      *
      */
-    createInstance(aCommand: string, aChannel: nsIChannelType, aLoadGroup: nsILoadGroupType, aContentType: ACString, aContainer: nsIDocShellType, aExtraInfo: nsISupportsType, aDocListenerResult: nsIStreamListenerType): nsIContentViewer;
+    createInstance(aCommand: string, aChannel: nsIChannelType, aLoadGroup: nsILoadGroupType, aContentType: ACString, aContainer: nsIDocShellType, aExtraInfo: nsISupportsType, aDocListenerResult: nsIStreamListenerType): nsIContentViewerType;
     /**
      *
      */
-    createInstanceForDocument(aContainer: nsISupportsType, aDocument: Document, aCommand: string): nsIContentViewer;
+    createInstanceForDocument(aContainer: nsISupportsType, aDocument: Document, aCommand: string): nsIContentViewerType;
 }
 
 /**
@@ -18444,7 +18444,7 @@ declare interface nsIDragServiceType extends nsISupportsType {
     /**
      * Returns the current Drag Session
      */
-    getCurrentSession(): nsIDragSession;
+    getCurrentSession(): nsIDragSessionType;
     /**
      * Tells the Drag Service to start a drag session. This is called when
      * an external drag occurs
@@ -18650,11 +18650,11 @@ declare interface nsIDroppedLinkHandlerType extends nsISupportsType {
      * Given a drop event aEvent, determines the triggering principal for the
      * event and returns it.
      */
-    getTriggeringPrincipal(aEvent: DragEvent): nsIPrincipal;
+    getTriggeringPrincipal(aEvent: DragEvent): nsIPrincipalType;
     /**
      * Given a drop event aEvent, determines the CSP for the event and returns it.
      */
-    getCsp(aEvent: DragEvent): nsIContentSecurityPolicy;
+    getCsp(aEvent: DragEvent): nsIContentSecurityPolicyType;
 }
 
 /**
@@ -18788,7 +18788,7 @@ declare interface nsIEditingSessionType extends nsISupportsType {
     /**
      * Get the editor for this window. May return null
      */
-    getEditorForWindow(window: mozIDOMWindowProxy): nsIEditor;
+    getEditorForWindow(window: mozIDOMWindowProxy): nsIEditorType;
 }
 
 /**
@@ -19004,7 +19004,7 @@ declare interface nsIEditorType extends nsISupportsType {
      * and the object has not been created, this function
      * WILL RETURN NULL.
      */
-    getInlineSpellChecker(autoCreate: boolean): nsIInlineSpellChecker;
+    getInlineSpellChecker(autoCreate: boolean): nsIInlineSpellCheckerType;
     /**
      * Called when the user manually overrides the spellchecking state for this
      * editor.
@@ -20213,7 +20213,7 @@ declare interface nsIExternalHelperAppServiceType extends nsISupportsType {
      * in which case dialogs will be parented to aContentContext.
      * @return A nsIStreamListener which the caller should pump the data into.
      */
-    doContent(aMimeContentType: ACString, aChannel: nsIChannelType, aContentContext: nsIInterfaceRequestorType, aForceSave: boolean, aWindowContext?: nsIInterfaceRequestorType): nsIStreamListener;
+    doContent(aMimeContentType: ACString, aChannel: nsIChannelType, aContentContext: nsIInterfaceRequestorType, aForceSave: boolean, aWindowContext?: nsIInterfaceRequestorType): nsIStreamListenerType;
     /**
      * Binds an external helper application to a stream listener. The caller
      * should pump data into the returned stream listener. When the OnStopRequest
@@ -20232,7 +20232,7 @@ declare interface nsIExternalHelperAppServiceType extends nsISupportsType {
      * in which case dialogs will be parented to aContentContext.
      * @return A nsIStreamListener which the caller should pump the data into.
      */
-    createListener(aMimeContentType: ACString, aChannel: nsIChannelType, aContentContext: BrowsingContext, aForceSave: boolean, aWindowContext?: nsIInterfaceRequestorType): nsIStreamListener;
+    createListener(aMimeContentType: ACString, aChannel: nsIChannelType, aContentContext: BrowsingContext, aForceSave: boolean, aWindowContext?: nsIInterfaceRequestorType): nsIStreamListenerType;
     /**
      * Returns true if data from a URL with this extension combination
      * is to be decoded from aEncodingType prior to saving or passing
@@ -20396,7 +20396,7 @@ declare interface nsIExternalProtocolServiceType extends nsISupportsType {
      *
      * @return the handler, if any; otherwise a default handler
      */
-    getProtocolHandlerInfo(aProtocolScheme: ACString): nsIHandlerInfo;
+    getProtocolHandlerInfo(aProtocolScheme: ACString): nsIHandlerInfoType;
     /**
      * Given a scheme, looks up the protocol info from the OS.  This should be
      * overridden by each OS's implementation.
@@ -20405,7 +20405,7 @@ declare interface nsIExternalProtocolServiceType extends nsISupportsType {
      * @param aFound  Was an OS default handler for this scheme found?
      * @return An nsIHanderInfo for the protocol.
      */
-    getProtocolHandlerInfoFromOS(aProtocolScheme: ACString, aFound: boolean): nsIHandlerInfo;
+    getProtocolHandlerInfoFromOS(aProtocolScheme: ACString, aFound: boolean): nsIHandlerInfoType;
     /**
      * Set some sane defaults for a protocol handler object.
      *
@@ -20677,7 +20677,7 @@ declare interface nsIFaviconServiceType extends nsISupportsType {
      * be a chrome URI of the default icon. For chrome URIs, the
      * output will be the same as the input.
      */
-    getFaviconLinkForIcon(aFaviconURI: nsIURIType): nsIURI;
+    getFaviconLinkForIcon(aFaviconURI: nsIURIType): nsIURIType;
     /**
      * Expire all known favicons from the database.
      *
@@ -21271,7 +21271,7 @@ declare interface nsIFileType extends nsISupportsType {
      * A nsIFile which this object will be initialize
      * with.
      */
-    clone(): nsIFile;
+    clone(): nsIFileType;
     /**
      * Will determine if the inFile equals this.
      */
@@ -21618,7 +21618,7 @@ declare interface nsIFileProtocolHandlerType extends nsIProtocolHandlerType {
      * @param aFile nsIFile
      * @return reference to a new nsIURI object
      */
-    newFileURI(aFile: nsIFileType): nsIURI;
+    newFileURI(aFile: nsIFileType): nsIURIType;
     /**
      * This method constructs a new file URI, and returns a URI mutator
      * that has not yet been finalized, allowing the URI to be changed without
@@ -21627,7 +21627,7 @@ declare interface nsIFileProtocolHandlerType extends nsIProtocolHandlerType {
      * @param aFile nsIFile
      * @return reference to a new nsIURIMutator object
      */
-    newFileURIMutator(file: nsIFileType): nsIURIMutator;
+    newFileURIMutator(file: nsIFileType): nsIURIMutatorType;
     /**
      * Converts a non-directory nsIFile to the corresponding URL string.
      * NOTE: under some platforms this is a lossy conversion (e.g., Mac
@@ -21657,7 +21657,7 @@ declare interface nsIFileProtocolHandlerType extends nsIProtocolHandlerType {
      * Converts the URL string into the corresponding nsIFile if possible.
      * A local file will be created if the URL string begins with file://.
      */
-    getFileFromURLSpec(url: AUTF8String): nsIFile;
+    getFileFromURLSpec(url: AUTF8String): nsIFileType;
     /**
      * Takes a local file and tries to interpret it as an internet shortcut
      * (e.g. .url files on windows).
@@ -21667,7 +21667,7 @@ declare interface nsIFileProtocolHandlerType extends nsIProtocolHandlerType {
      * @throw NS_ERROR_NOT_AVAILABLE if the OS does not support such files.
      * @throw NS_ERROR_NOT_AVAILABLE if this file is not an internet shortcut.
      */
-    readURLFile(file: nsIFileType): nsIURI;
+    readURLFile(file: nsIFileType): nsIURIType;
     /**
      * Takes a local file and tries to interpret it as a shell link file
      * (.lnk files on Windows)
@@ -21677,7 +21677,7 @@ declare interface nsIFileProtocolHandlerType extends nsIProtocolHandlerType {
      * @throw NS_ERROR_NOT_AVAILABLE if the OS does not support such files.
      * @throw NS_ERROR_NOT_AVAILABLE if this file is not a shell link.
      */
-    readShellLink(file: nsIFileType): nsIURI;
+    readShellLink(file: nsIFileType): nsIURIType;
 }
 
 /**
@@ -22328,23 +22328,23 @@ declare interface nsIGIOServiceType extends nsISupportsType {
     /**
      * Obtain the preferred application for opening a given URI scheme
      */
-    getAppForURIScheme(aURIScheme: AUTF8String): nsIHandlerApp;
+    getAppForURIScheme(aURIScheme: AUTF8String): nsIHandlerAppType;
     /**
      * Obtain list of application capable of opening given URI scheme
      */
-    getAppsForURIScheme(aURIScheme: AUTF8String): nsIMutableArray;
+    getAppsForURIScheme(aURIScheme: AUTF8String): nsIMutableArrayType;
     /**
      * Obtain the preferred application for opening a given MIME type
      */
-    getAppForMimeType(mimeType: AUTF8String): nsIHandlerApp;
+    getAppForMimeType(mimeType: AUTF8String): nsIHandlerAppType;
     /**
      * Create application info for given command and name
      */
-    createAppFromCommand(cmd: AUTF8String, appName: AUTF8String): nsIGIOMimeApp;
+    createAppFromCommand(cmd: AUTF8String, appName: AUTF8String): nsIGIOMimeAppType;
     /**
      * Find the application info by given command
      */
-    findAppFromCommand(cmd: AUTF8String): nsIGIOMimeApp;
+    findAppFromCommand(cmd: AUTF8String): nsIGIOMimeAppType;
     /**
      * Obtain a description for the given MIME type
      */
@@ -22408,7 +22408,7 @@ declare interface nsIGSettingsCollectionType extends nsISupportsType {
     /**
      *
      */
-    getStringList(key: AUTF8String): nsIArray;
+    getStringList(key: AUTF8String): nsIArrayType;
 }
 
 /**
@@ -22418,7 +22418,7 @@ declare interface nsIGSettingsServiceType extends nsISupportsType {
     /**
      *
      */
-    getCollectionForSchema(schema: AUTF8String): nsIGSettingsCollection;
+    getCollectionForSchema(schema: AUTF8String): nsIGSettingsCollectionType;
 }
 
 /**
@@ -23710,7 +23710,7 @@ declare interface nsIHTMLEditorType extends nsISupportsType {
      * same as aTagName or null.
      * @return            A "selected" element.
      */
-    getSelectedElement(aTagName: AString): nsISupports;
+    getSelectedElement(aTagName: AString): nsISupportsType;
     /**
      * Return a new element with default attribute values
      *
@@ -23821,7 +23821,7 @@ declare interface nsIHandlerServiceType extends nsISupportsType {
      *
      * @returns a list of all handlers in the datastore
      */
-    enumerate(): nsISimpleEnumerator;
+    enumerate(): nsISimpleEnumeratorType;
     /**
      * Fill a handler info object with information from the datastore.
      *
@@ -25707,7 +25707,7 @@ declare interface nsIHttpServerType extends nsISupportsType {
      * Retrieves the object associated with the given key in this in
      * object-valued saved state.  All keys are initially associated with null.
      */
-    getObjectState(key: AString): nsISupports;
+    getObjectState(key: AString): nsISupportsType;
     /**
      * Sets the object associated with the given key in this in object-valued
      * saved state.  The value may be null.
@@ -26158,11 +26158,11 @@ declare interface nsIINIParserType extends nsISupportsType {
     /**
      * Enumerates the [section]s available in the INI file.
      */
-    getSections(): nsIUTF8StringEnumerator;
+    getSections(): nsIUTF8StringEnumeratorType;
     /**
      * Enumerates the keys available within a section.
      */
-    getKeys(aSection: AUTF8String): nsIUTF8StringEnumerator;
+    getKeys(aSection: AUTF8String): nsIUTF8StringEnumeratorType;
     /**
      * Get the value of a string for a particular section and key.
      */
@@ -26194,7 +26194,7 @@ declare interface nsIINIParserFactoryType extends nsISupportsType {
     /**
      * Create an iniparser instance from a local file.
      */
-    createINIParser(aINIFile?: nsIFileType): nsIINIParser;
+    createINIParser(aINIFile?: nsIFileType): nsIINIParserType;
 }
 
 /**
@@ -26213,7 +26213,7 @@ declare interface nsIIOServiceType extends nsISupportsType {
      * @param aScheme the URI scheme
      * @return reference to corresponding nsIProtocolHandler
      */
-    getProtocolHandler(aScheme: string): nsIProtocolHandler;
+    getProtocolHandler(aScheme: string): nsIProtocolHandlerType;
     /**
      * Returns the protocol flags for a given scheme.
      *
@@ -26240,7 +26240,7 @@ declare interface nsIIOServiceType extends nsISupportsType {
      * QueryInterface can be used on the resulting URI object to obtain a more
      * specific type of URI.
      */
-    newURI(aSpec: AUTF8String, aOriginCharset?: string, aBaseURI?: nsIURIType): nsIURI;
+    newURI(aSpec: AUTF8String, aOriginCharset?: string, aBaseURI?: nsIURIType): nsIURIType;
     /**
      * This method constructs a new URI from a nsIFile.
      *
@@ -26251,7 +26251,7 @@ declare interface nsIIOServiceType extends nsISupportsType {
      * callers to specify whether this is a file or directory by
      * splitting this  into newDirURI() and newActualFileURI().
      */
-    newFileURI(aFile: nsIFileType): nsIURI;
+    newFileURI(aFile: nsIFileType): nsIURIType;
     /**
      * Converts an internal URI (e.g. one that has a username and password in
      * it) into one which we can expose to the user, for example on the URL bar.
@@ -26259,7 +26259,7 @@ declare interface nsIIOServiceType extends nsISupportsType {
      * @param  aURI The URI to be converted.
      * @return nsIURI The converted, exposable URI.
      */
-    createExposableURI(aURI: nsIURIType): nsIURI;
+    createExposableURI(aURI: nsIURIType): nsIURIType;
     /**
      * Creates a channel for a given URI.
      *
@@ -26281,19 +26281,19 @@ declare interface nsIIOServiceType extends nsISupportsType {
      * Keep in mind that URIs coming from a webpage should *never* use the
      * systemPrincipal as the loadingPrincipal.
      */
-    newChannelFromURI(aURI: nsIURIType, aLoadingNode: Node, aLoadingPrincipal: nsIPrincipalType, aTriggeringPrincipal: nsIPrincipalType, aSecurityFlags: unsigned_long, aContentPolicyType: nsContentPolicyType): nsIChannel;
+    newChannelFromURI(aURI: nsIURIType, aLoadingNode: Node, aLoadingPrincipal: nsIPrincipalType, aTriggeringPrincipal: nsIPrincipalType, aSecurityFlags: unsigned_long, aContentPolicyType: nsContentPolicyType): nsIChannelType;
     /**
      * Equivalent to newChannelFromURI(aURI, aLoadingNode, ...)
      */
-    newChannelFromURIWithLoadInfo(aURI: nsIURIType, aLoadInfo: nsILoadInfoType): nsIChannel;
+    newChannelFromURIWithLoadInfo(aURI: nsIURIType, aLoadInfo: nsILoadInfoType): nsIChannelType;
     /**
      * Equivalent to newChannelFromURI(newURI(...))
      */
-    newChannel(aSpec: AUTF8String, aOriginCharset: string, aBaseURI: nsIURIType, aLoadingNode: Node, aLoadingPrincipal: nsIPrincipalType, aTriggeringPrincipal: nsIPrincipalType, aSecurityFlags: unsigned_long, aContentPolicyType: nsContentPolicyType): nsIChannel;
+    newChannel(aSpec: AUTF8String, aOriginCharset: string, aBaseURI: nsIURIType, aLoadingNode: Node, aLoadingPrincipal: nsIPrincipalType, aTriggeringPrincipal: nsIPrincipalType, aSecurityFlags: unsigned_long, aContentPolicyType: nsContentPolicyType): nsIChannelType;
     /**
      * Creates a WebTransport.
      */
-    newWebTransport(): nsIWebTransport;
+    newWebTransport(): nsIWebTransportType;
     /**
      * Returns true if networking is in "offline" mode. When in offline mode,
      * attempts to access the network will fail (although this does not
@@ -26384,7 +26384,7 @@ declare interface nsIIOServiceType extends nsISupportsType {
      * then loadingPrincipal must be equal to loadingNode->NodePrincipal().
      * But less error prone is to just supply a loadingNode.
      */
-    newChannelFromURIWithProxyFlags(aURI: nsIURIType, aProxyURI: nsIURIType, aProxyFlags: unsigned_long, aLoadingNode: Node, aLoadingPrincipal: nsIPrincipalType, aTriggeringPrincipal: nsIPrincipalType, aSecurityFlags: unsigned_long, aContentPolicyType: nsContentPolicyType): nsIChannel;
+    newChannelFromURIWithProxyFlags(aURI: nsIURIType, aProxyURI: nsIURIType, aProxyFlags: unsigned_long, aLoadingNode: Node, aLoadingPrincipal: nsIPrincipalType, aTriggeringPrincipal: nsIPrincipalType, aSecurityFlags: unsigned_long, aContentPolicyType: nsContentPolicyType): nsIChannelType;
     /**
      * Return true if socket process is launched.
      */
@@ -26886,7 +26886,7 @@ declare interface nsIInputListAutoCompleteType extends nsISupportsType {
     /**
      * Generate results for a form input autocomplete menu.
      */
-    autoCompleteSearch(aSearchString: AString, aField: HTMLInputElement): nsIAutoCompleteResult;
+    autoCompleteSearch(aSearchString: AString, aField: HTMLInputElement): nsIAutoCompleteResultType;
 }
 
 /**
@@ -27645,7 +27645,7 @@ declare interface nsIKeyValueEnumeratorType extends nsISupportsType {
     /**
      *
      */
-    getNext(): nsIKeyValuePair;
+    getNext(): nsIKeyValuePairType;
 }
 
 /**
@@ -27950,15 +27950,15 @@ declare interface nsILoadContextInfoFactoryType extends nsISupportsType {
     /**
      *
      */
-    custom(aAnonymous: boolean, aOriginAttributes: jsval): nsILoadContextInfo;
+    custom(aAnonymous: boolean, aOriginAttributes: jsval): nsILoadContextInfoType;
     /**
      *
      */
-    fromLoadContext(aLoadContext: nsILoadContextType, aAnonymous: boolean): nsILoadContextInfo;
+    fromLoadContext(aLoadContext: nsILoadContextType, aAnonymous: boolean): nsILoadContextInfoType;
     /**
      *
      */
-    fromWindow(aWindow: nsIDOMWindowType, aAnonymous: boolean): nsILoadContextInfo;
+    fromWindow(aWindow: nsIDOMWindowType, aAnonymous: boolean): nsILoadContextInfoType;
 }
 
 /**
@@ -28838,7 +28838,7 @@ declare interface nsILoadURIDelegateType extends nsISupportsType {
      * Returns an error page URL to load, or null to show the default error page.
      * No error page is shown at all if an error is thrown.
      */
-    handleLoadError(aURI: nsIURIType, aError: nsresult, aErrorModule: short): nsIURI;
+    handleLoadError(aURI: nsIURIType, aError: nsresult, aErrorModule: short): nsIURIType;
 }
 
 /**
@@ -29183,7 +29183,7 @@ declare interface nsILoginInfoType extends nsISupportsType {
      * This allows code to be forwards-compatible, when additional properties
      * are added to nsILoginMetaInfo (or nsILoginInfo) in the future.
      */
-    clone(): nsILoginInfo;
+    clone(): nsILoginInfoType;
 }
 
 /**
@@ -29223,7 +29223,7 @@ declare interface nsILoginManagerType extends nsISupportsType {
      * created. However, if the caller specifies non-default values, they will
      * be used instead.
      */
-    addLogin(aLogin: nsILoginInfoType): nsILoginInfo;
+    addLogin(aLogin: nsILoginInfoType): nsILoginInfoType;
     /**
      * Like addLogin, but asynchronous.
      *
@@ -29556,7 +29556,7 @@ declare interface nsILoginManagerPrompterType extends nsISupportsType {
      * Contains values from anything that we think, but are not sure, might be
      * a username or password.  Has two properties, 'usernames' and 'passwords'.
      */
-    promptToSavePassword(aBrowser: Element, aLogin: nsILoginInfoType, dismissed?: boolean, notifySaved?: boolean, autoFilledLoginGuid?: AString, possibleValues?: jsval): nsIPromptInstance;
+    promptToSavePassword(aBrowser: Element, aLogin: nsILoginInfoType, dismissed?: boolean, notifySaved?: boolean, autoFilledLoginGuid?: AString, possibleValues?: jsval): nsIPromptInstanceType;
     /**
      * Ask the user if they want to change a login's password or username.
      * If the user consents, modifyLogin() will be called.
@@ -29579,7 +29579,7 @@ declare interface nsILoginManagerPrompterType extends nsISupportsType {
      * Contains values from anything that we think, but are not sure, might be
      * a username or password.  Has two properties, 'usernames' and 'passwords'.
      */
-    promptToChangePassword(aBrowser: Element, aOldLogin: nsILoginInfoType, aNewLogin: nsILoginInfoType, dismissed?: boolean, notifySaved?: boolean, autoSavedLoginGuid?: AString, autoFilledLoginGuid?: AString, possibleValues?: jsval): nsIPromptInstance;
+    promptToChangePassword(aBrowser: Element, aOldLogin: nsILoginInfoType, aNewLogin: nsILoginInfoType, dismissed?: boolean, notifySaved?: boolean, autoSavedLoginGuid?: AString, autoFilledLoginGuid?: AString, possibleValues?: jsval): nsIPromptInstanceType;
     /**
      * Ask the user if they want to change the password for one of
      * multiple logins, when the caller can't determine exactly which
@@ -29598,7 +29598,7 @@ declare interface nsILoginManagerPrompterType extends nsISupportsType {
      * will be set (using the user's selection) before modifyLogin()
      * is called.
      */
-    promptToChangePasswordWithUsernames(aBrowser: Element, logins: invalid, aNewLogin: nsILoginInfoType): nsIPromptInstance;
+    promptToChangePasswordWithUsernames(aBrowser: Element, logins: invalid, aNewLogin: nsILoginInfoType): nsIPromptInstanceType;
 }
 
 /**
@@ -29648,7 +29648,7 @@ declare interface nsILoginManagerStorageType extends nsISupportsType {
      * created. However, if the caller specifies non-default values, they will
      * be used instead.
      */
-    addLogin(aLogin: nsILoginInfoType, aPreEncrypted?: boolean, aPlaintextUsername?: jsval, aPlaintextPassword?: jsval): nsILoginInfo;
+    addLogin(aLogin: nsILoginInfoType, aPreEncrypted?: boolean, aPlaintextUsername?: jsval, aPlaintextPassword?: jsval): nsILoginInfoType;
     /**
      * Remove a login from the storage module.
      *
@@ -30059,7 +30059,7 @@ declare interface nsIMIMEInfoType extends nsIHandlerInfoType {
      * @return Number of elements in the array.
      * @return Array of extensions.
      */
-    getFileExtensions(): nsIUTF8StringEnumerator;
+    getFileExtensions(): nsIUTF8StringEnumeratorType;
     /**
      * Set File Extensions. Input is a comma delimited list of extensions.
      */
@@ -30318,7 +30318,7 @@ declare interface nsIMIMEServiceType extends nsISupportsType {
      * can be an empty string. At least one of aMIMEType and aFileExt
      * must be nonempty.
      */
-    getFromTypeAndExtension(aMIMEType: ACString, aFileExt: AUTF8String): nsIMIMEInfo;
+    getFromTypeAndExtension(aMIMEType: ACString, aFileExt: AUTF8String): nsIMIMEInfoType;
     /**
      * Retrieves a ACString representation of the MIME type
      * associated with this file extension.
@@ -30380,7 +30380,7 @@ declare interface nsIMIMEServiceType extends nsISupportsType {
      * only justifiable reason for not returning one is
      * an out-of-memory error.
      */
-    getMIMEInfoFromOS(aType: ACString, aFileExtension: ACString, aFound: boolean): nsIMIMEInfo;
+    getMIMEInfoFromOS(aType: ACString, aFileExtension: ACString, aFound: boolean): nsIMIMEInfoType;
     /**
      * Update the mime info's default app information based on OS
      * lookups.
@@ -31357,7 +31357,7 @@ declare interface nsIInProcessContentFrameMessageManagerType extends nsIMessageS
     /**
      *
      */
-    getOwnerContent(): nsIContent;
+    getOwnerContent(): nsIContentType;
 }
 
 /**
@@ -31433,7 +31433,7 @@ declare interface nsIMultiplexInputStreamType extends nsISupportsType {
      * @param index   return stream at this index, must be < count
      * @return        stream at specified index
      */
-    getStream(index: unsigned_long): nsIInputStream;
+    getStream(index: unsigned_long): nsIInputStreamType;
 }
 
 /**
@@ -32176,7 +32176,7 @@ declare interface nsINavHistoryContainerResultNodeType extends nsINavHistoryResu
     /**
      *
      */
-    getChild(aIndex: unsigned_long): nsINavHistoryResultNode;
+    getChild(aIndex: unsigned_long): nsINavHistoryResultNodeType;
     /**
      * Get the index of a direct child in this container.
      *
@@ -32579,7 +32579,7 @@ declare interface nsINavHistoryQueryType extends nsISupportsType {
     /**
      * Creates a new query item with the same parameters of this one.
      */
-    clone(): nsINavHistoryQuery;
+    clone(): nsINavHistoryQueryType;
 }
 
 /**
@@ -32685,7 +32685,7 @@ declare interface nsINavHistoryQueryOptionsType extends nsISupportsType {
     /**
      * Creates a new options item with the same parameters of this one.
      */
-    clone(): nsINavHistoryQueryOptions;
+    clone(): nsINavHistoryQueryOptionsType;
 }
 
 /**
@@ -32750,16 +32750,16 @@ declare interface nsINavHistoryServiceType extends nsISupportsType {
      * This returns a new query object that you can pass to executeQuer[y/ies].
      * It will be initialized to all empty (so using it will give you all history).
      */
-    getNewQuery(): nsINavHistoryQuery;
+    getNewQuery(): nsINavHistoryQueryType;
     /**
      * This returns a new options object that you can pass to executeQuer[y/ies]
      * after setting the desired options.
      */
-    getNewQueryOptions(): nsINavHistoryQueryOptions;
+    getNewQueryOptions(): nsINavHistoryQueryOptionsType;
     /**
      * Executes a single query.
      */
-    executeQuery(aQuery: nsINavHistoryQueryType, options: nsINavHistoryQueryOptionsType): nsINavHistoryResult;
+    executeQuery(aQuery: nsINavHistoryQueryType, options: nsINavHistoryQueryOptionsType): nsINavHistoryResultType;
     /**
      * Converts a query URI-like string to a query object.
      */
@@ -33712,7 +33712,7 @@ declare interface nsIObjectInputStreamType extends nsIBinaryInputStreamType {
      *
      * @see nsIObjectOutputStream
      */
-    readObject(aIsStrongRef: boolean): nsISupports;
+    readObject(aIsStrongRef: boolean): nsISupportsType;
     /**
      *
      */
@@ -33854,7 +33854,7 @@ declare interface nsIObliviousHttpServerType extends nsISupportsType {
     /**
      *
      */
-    decapsulate(encRequest: invalid): nsIObliviousHttpServerResponse;
+    decapsulate(encRequest: invalid): nsIObliviousHttpServerResponseType;
 }
 
 /**
@@ -33864,11 +33864,11 @@ declare interface nsIObliviousHttpType extends nsISupportsType {
     /**
      *
      */
-    encapsulateRequest(encodedConfig: invalid, request: invalid): nsIObliviousHttpClientRequest;
+    encapsulateRequest(encodedConfig: invalid, request: invalid): nsIObliviousHttpClientRequestType;
     /**
      *
      */
-    server(): nsIObliviousHttpServer;
+    server(): nsIObliviousHttpServerType;
 }
 
 /**
@@ -33878,7 +33878,7 @@ declare interface nsIObliviousHttpServiceType extends nsISupportsType {
     /**
      *
      */
-    newChannel(relayURI: nsIURIType, targetURI: nsIURIType, encodedConfig: invalid): nsIChannel;
+    newChannel(relayURI: nsIURIType, targetURI: nsIURIType, encodedConfig: invalid): nsIChannelType;
     /**
      *
      */
@@ -33986,7 +33986,7 @@ declare interface nsIObserverServiceType extends nsISupportsType {
      *
      * @param aTopic   : The notification topic or subject.
      */
-    enumerateObservers(aTopic: string): nsISimpleEnumerator;
+    enumerateObservers(aTopic: string): nsISimpleEnumeratorType;
 }
 
 /**
@@ -34043,7 +34043,7 @@ declare interface nsIOpenWindowInfoType extends nsISupportsType {
     /**
      * Callback to invoke when the browsing context for a new window is ready.
      */
-    browsingContextReadyCallback(): nsIBrowsingContextReadyCallback;
+    browsingContextReadyCallback(): nsIBrowsingContextReadyCallbackType;
 }
 
 /**
@@ -34227,7 +34227,7 @@ declare interface nsIPK11TokenDBType extends nsISupportsType {
     /**
      * Get the internal key database token
      */
-    getInternalKeyToken(): nsIPK11Token;
+    getInternalKeyToken(): nsIPK11TokenType;
 }
 
 /**
@@ -34245,7 +34245,7 @@ declare interface nsIPKCS11ModuleType extends nsISupportsType {
     /**
      *
      */
-    listSlots(): nsISimpleEnumerator;
+    listSlots(): nsISimpleEnumeratorType;
 }
 
 /**
@@ -34263,7 +34263,7 @@ declare interface nsIPKCS11ModuleDBType extends nsISupportsType {
     /**
      *
      */
-    listModules(): nsISimpleEnumerator;
+    listModules(): nsISimpleEnumeratorType;
     /**
      *
      */
@@ -34317,7 +34317,7 @@ declare interface nsIPKCS11SlotType extends nsISupportsType {
      * (isTokenPresent(), etc.) are in nsIPK11Token.  For now, return the
      * token and handle those things there.
      */
-    getToken(): nsIPK11Token;
+    getToken(): nsIPK11TokenType;
     /**
      * more fun with workarounds - we're referring to everything by token name
      */
@@ -35181,12 +35181,12 @@ declare interface nsIPaymentRequestServiceType extends nsISupportsType {
      * @return           - the requested payment request. null if there is no
      * coressponding nsIPaymentRequest for aRequestId.
      */
-    getPaymentRequestById(aRequestId: AString): nsIPaymentRequest;
+    getPaymentRequestById(aRequestId: AString): nsIPaymentRequestType;
     /**
      * Get the enumerator for all managed nsIPaymentRequests.
      * @return - an enumerator for all managed nsIPaymentRequests.
      */
-    enumerate(): nsISimpleEnumerator;
+    enumerate(): nsISimpleEnumeratorType;
     /**
      * Send the user's response to the merchant.
      * @param aResponse - the user's response.
@@ -35482,7 +35482,7 @@ declare interface nsIPermissionManagerType extends nsISupportsType {
      * need to know the specific stored details.
      * @note This method will always return null for the system principal.
      */
-    getPermissionObject(principal: nsIPrincipalType, type: ACString, exactHost: boolean): nsIPermission;
+    getPermissionObject(principal: nsIPrincipalType, type: ACString, exactHost: boolean): nsIPermissionType;
     /**
      * Remove all permissions that will match the origin pattern.
      */
@@ -35521,7 +35521,7 @@ declare interface nsIPersistentPropertiesType extends nsIPropertiesType {
      * which are read-only (i.e. setting properties on the element will
      * not make changes back into the source nsIPersistentProperties
      */
-    enumerate(): nsISimpleEnumerator;
+    enumerate(): nsISimpleEnumeratorType;
     /**
      * shortcut to nsIProperty's get() which retrieves a string value
      * directly (and thus faster)
@@ -35762,7 +35762,7 @@ declare interface nsIPowerManagerServiceType extends nsISupportsType {
      * A wake lock without associated window, e.g. used in chrome, is
      * always considered invisible.
      */
-    newWakeLock(aTopic: AString, aWindow?: mozIDOMWindow): nsIWakeLock;
+    newWakeLock(aTopic: AString, aWindow?: mozIDOMWindow): nsIWakeLockType;
 }
 
 /**
@@ -36245,7 +36245,7 @@ declare interface nsIPrefServiceType extends nsISupportsType {
      *
      * @see getDefaultBranch
      */
-    getBranch(aPrefRoot: string): nsIPrefBranch;
+    getBranch(aPrefRoot: string): nsIPrefBranchType;
     /**
      * Call to get a Preferences "Branch" which accesses only the default
      * preference data. Using a Set method on this object will always create or
@@ -36269,7 +36269,7 @@ declare interface nsIPrefServiceType extends nsISupportsType {
      *
      * @see getBranch
      */
-    getDefaultBranch(aPrefRoot: string): nsIPrefBranch;
+    getDefaultBranch(aPrefRoot: string): nsIPrefBranchType;
     /**
      * The preference service is 'dirty' if there are changes to user preferences
      * that have not been written to disk
@@ -36729,7 +36729,7 @@ declare interface nsIPrincipalType extends nsISupportsType {
      *
      * May be called from any thread.
      */
-    createReferrerInfo(aReferrerPolicy: ReferrerPolicy): nsIReferrerInfo;
+    createReferrerInfo(aReferrerPolicy: ReferrerPolicy): nsIReferrerInfoType;
     /**
      * The base part of |origin| without the concatenation with |originSuffix|.
      * This doesn't have the important invariants described above with |origin|,
@@ -37058,7 +37058,7 @@ declare interface nsIPrintSettingsType extends nsISupportsType {
     /**
      * Makes a new copy
      */
-    clone(): nsIPrintSettings;
+    clone(): nsIPrintSettingsType;
     /**
      * Assigns the internal values from the "in" arg to the current object
      */
@@ -37317,7 +37317,7 @@ declare interface nsIPrintSettingsServiceType extends nsISupportsType {
      * Initializes the settings object from the unprefixed printer
      * (Note: this may not happen if there is an OS specific implementation.)
      */
-    createNewPrintSettings(): nsIPrintSettings;
+    createNewPrintSettings(): nsIPrintSettingsType;
     /**
      * The name of the last printer used. Note that this may not be set, or may
      * no longer be a valid printer. The caller is responsible for checking and
@@ -38609,7 +38609,7 @@ declare interface nsIPropertyBagType extends nsISupportsType {
      * @throws NS_ERROR_FAILURE if a property with that name doesn't
      * exist.
      */
-    getProperty(name: AString): nsIVariant;
+    getProperty(name: AString): nsIVariantType;
 }
 
 /**
@@ -38663,7 +38663,7 @@ declare interface nsIPropertyBag2Type extends nsIPropertyBagType {
      * This method returns null if the value does not exist,
      * or exists but is null.
      */
-    get(prop: AString): nsIVariant;
+    get(prop: AString): nsIVariantType;
     /**
      * Check for the existence of a key.
      */
@@ -38726,7 +38726,7 @@ declare interface nsIProtocolHandlerType extends nsISupportsType {
      * Constructs a new channel from the given URI for this protocol handler and
      * sets the loadInfo for the constructed channel.
      */
-    newChannel(aURI: nsIURIType, aLoadinfo: nsILoadInfoType): nsIChannel;
+    newChannel(aURI: nsIURIType, aLoadinfo: nsILoadInfoType): nsIChannelType;
     /**
      * Allows a protocol to override blacklisted ports.
      *
@@ -38929,7 +38929,7 @@ declare interface nsIProtocolProxyServiceType extends nsISupportsType {
      *
      * @see nsIProxiedProtocolHandler::newProxiedChannel
      */
-    asyncResolve(aChannelOrURI: nsISupportsType, aFlags: unsigned_long, aCallback: nsIProtocolProxyCallbackType, aMainThreadTarget?: nsISerialEventTargetType): nsICancelable;
+    asyncResolve(aChannelOrURI: nsISupportsType, aFlags: unsigned_long, aCallback: nsIProtocolProxyCallbackType, aMainThreadTarget?: nsISerialEventTargetType): nsICancelableType;
     /**
      * This method may be called to construct a nsIProxyInfo instance from
      * the given parameters.  This method may be useful in conjunction with
@@ -38963,7 +38963,7 @@ declare interface nsIProtocolProxyServiceType extends nsISupportsType {
      * Specifies the next proxy to try if this proxy fails.  This
      * parameter may be null.
      */
-    newProxyInfo(aType: ACString, aHost: AUTF8String, aPort: long, aProxyAuthorizationHeader: ACString, aConnectionIsolationKey: ACString, aFlags: unsigned_long, aFailoverTimeout: unsigned_long, aFailoverProxy: nsIProxyInfoType): nsIProxyInfo;
+    newProxyInfo(aType: ACString, aHost: AUTF8String, aPort: long, aProxyAuthorizationHeader: ACString, aConnectionIsolationKey: ACString, aFlags: unsigned_long, aFailoverTimeout: unsigned_long, aFailoverProxy: nsIProxyInfoType): nsIProxyInfoType;
     /**
      * This method may be called to construct a nsIProxyInfo instance for
      * with the specified username and password.
@@ -38996,7 +38996,7 @@ declare interface nsIProtocolProxyServiceType extends nsISupportsType {
      * Specifies the next proxy to try if this proxy fails.  This
      * parameter may be null.
      */
-    newProxyInfoWithAuth(aType: ACString, aHost: AUTF8String, aPort: long, aUsername: AUTF8String, aPassword: AUTF8String, aProxyAuthorizationHeader: ACString, aConnectionIsolationKey: ACString, aFlags: unsigned_long, aFailoverTimeout: unsigned_long, aFailoverProxy: nsIProxyInfoType): nsIProxyInfo;
+    newProxyInfoWithAuth(aType: ACString, aHost: AUTF8String, aPort: long, aUsername: AUTF8String, aPassword: AUTF8String, aProxyAuthorizationHeader: ACString, aConnectionIsolationKey: ACString, aFlags: unsigned_long, aFailoverTimeout: unsigned_long, aFailoverProxy: nsIProxyInfoType): nsIProxyInfoType;
     /**
      * If the proxy identified by aProxyInfo is unavailable for some reason,
      * this method may be called to access an alternate proxy that may be used
@@ -39013,7 +39013,7 @@ declare interface nsIProtocolProxyServiceType extends nsISupportsType {
      *
      * @throw NS_ERROR_NOT_AVAILABLE if there is no alternate proxy available.
      */
-    getFailoverForProxy(aProxyInfo: nsIProxyInfoType, aURI: nsIURIType, aReason: nsresult): nsIProxyInfo;
+    getFailoverForProxy(aProxyInfo: nsIProxyInfoType, aURI: nsIURIType, aReason: nsresult): nsIProxyInfoType;
     /**
      * This method may be used to register a proxy filter instance.  Each proxy
      * filter is registered with an associated position that determines the
@@ -39123,7 +39123,7 @@ declare interface nsIProtocolProxyService2Type extends nsIProtocolProxyServiceTy
      * of asyncResolve2()) if it is immediately ready to run.
      * The nsICancelable return value will be null in that case.
      */
-    asyncResolve2(aChannel: nsIChannelType, aFlags: unsigned_long, aCallback: nsIProtocolProxyCallbackType, aMainThreadTarget?: nsISerialEventTargetType): nsICancelable;
+    asyncResolve2(aChannel: nsIChannelType, aFlags: unsigned_long, aCallback: nsIProtocolProxyCallbackType, aMainThreadTarget?: nsISerialEventTargetType): nsICancelableType;
 }
 
 /**
@@ -39173,7 +39173,7 @@ declare interface nsIProxiedProtocolHandlerType extends nsIProtocolHandlerType {
      * a ws:// uri.
      * @param aLoadInfo used to evaluate who initated the resource request.
      */
-    newProxiedChannel(uri: nsIURIType, proxyInfo: nsIProxyInfoType, proxyResolveFlags: unsigned_long, proxyURI: nsIURIType, aLoadInfo: nsILoadInfoType): nsIChannel;
+    newProxiedChannel(uri: nsIURIType, proxyInfo: nsIProxyInfoType, proxyResolveFlags: unsigned_long, proxyURI: nsIURIType, aLoadInfo: nsILoadInfoType): nsIChannelType;
 }
 
 /**
@@ -39603,21 +39603,21 @@ declare interface nsIQuotaManagerServiceType extends nsISupportsType {
      * If the dom.quotaManager.testing preference is not true the call will be
      * a no-op.
      */
-    storageName(): nsIQuotaRequest;
+    storageName(): nsIQuotaRequestType;
     /**
      * Check if storage is initialized.
      *
      * If the dom.quotaManager.testing preference is not true the call will be
      * a no-op.
      */
-    storageInitialized(): nsIQuotaRequest;
+    storageInitialized(): nsIQuotaRequestType;
     /**
      * Check if temporary storage is initialized.
      *
      * If the dom.quotaManager.testing preference is not true the call will be
      * a no-op.
      */
-    temporaryStorageInitialized(): nsIQuotaRequest;
+    temporaryStorageInitialized(): nsIQuotaRequestType;
     /**
      * Initializes storage directory. This can be used in tests to verify
      * upgrade methods.
@@ -39625,7 +39625,7 @@ declare interface nsIQuotaManagerServiceType extends nsISupportsType {
      * If the dom.quotaManager.testing preference is not true the call will be
      * a no-op.
      */
-    init(): nsIQuotaRequest;
+    init(): nsIQuotaRequestType;
     /**
      * Initializes temporary storage. This can be used in tests to verify
      * temporary storage initialization.
@@ -39633,7 +39633,7 @@ declare interface nsIQuotaManagerServiceType extends nsISupportsType {
      * If the dom.quotaManager.testing preference is not true the call will be
      * a no-op.
      */
-    initTemporaryStorage(): nsIQuotaRequest;
+    initTemporaryStorage(): nsIQuotaRequestType;
     /**
      * Initializes persistent origin directory for the given origin. This can be
      * used in tests to verify origin initialization.
@@ -39644,7 +39644,7 @@ declare interface nsIQuotaManagerServiceType extends nsISupportsType {
      * @param aPrincipal
      * A principal for the origin whose directory is to be initialized.
      */
-    initializePersistentOrigin(aPrincipal: nsIPrincipalType): nsIQuotaRequest;
+    initializePersistentOrigin(aPrincipal: nsIPrincipalType): nsIQuotaRequestType;
     /**
      * Initializes temporary origin directory for the given origin. This can be
      * used in tests to verify origin initialization.
@@ -39659,7 +39659,7 @@ declare interface nsIQuotaManagerServiceType extends nsISupportsType {
      * @param aPrincipal
      * A principal for the origin whose directory is to be initialized.
      */
-    initializeTemporaryOrigin(aPersistenceType: ACString, aPrincipal: nsIPrincipalType): nsIQuotaRequest;
+    initializeTemporaryOrigin(aPersistenceType: ACString, aPrincipal: nsIPrincipalType): nsIQuotaRequestType;
     /**
      * Initializes persistent client directory for the given origin and client.
      * This can be used in tests to verify client initialization.
@@ -39673,7 +39673,7 @@ declare interface nsIQuotaManagerServiceType extends nsISupportsType {
      * @param aClientType
      * A string that tells what client type will be initialized.
      */
-    initializePersistentClient(aPrincipal: nsIPrincipalType, aClientType: AString): nsIQuotaRequest;
+    initializePersistentClient(aPrincipal: nsIPrincipalType, aClientType: AString): nsIQuotaRequestType;
     /**
      * Initializes temporary client directory for the given origin and client.
      * This can be used in tests to verify client initialization.
@@ -39690,7 +39690,7 @@ declare interface nsIQuotaManagerServiceType extends nsISupportsType {
      * @param aClientType
      * A string that tells what client type will be initialized.
      */
-    initializeTemporaryClient(aPersistenceType: ACString, aPrincipal: nsIPrincipalType, aClientType: AString): nsIQuotaRequest;
+    initializeTemporaryClient(aPersistenceType: ACString, aPrincipal: nsIPrincipalType, aClientType: AString): nsIQuotaRequestType;
     /**
      * Gets full origin metadata cached in memory for the given persistence type
      * and origin.
@@ -39705,7 +39705,7 @@ declare interface nsIQuotaManagerServiceType extends nsISupportsType {
      * A principal that tells which origin will be used for getting the
      * metadata.
      */
-    getFullOriginMetadata(aPersistenceType: ACString, aPrincipal: nsIPrincipalType): nsIQuotaRequest;
+    getFullOriginMetadata(aPersistenceType: ACString, aPrincipal: nsIPrincipalType): nsIQuotaRequestType;
     /**
      * Schedules an asynchronous callback that will inspect all origins and
      * return the total amount of disk space being used by storages for each
@@ -39717,7 +39717,7 @@ declare interface nsIQuotaManagerServiceType extends nsISupportsType {
      * An optional boolean to indicate inspection of all origins,
      * including internal ones.
      */
-    getUsage(aCallback: nsIQuotaUsageCallbackType, aGetAll?: boolean): nsIQuotaUsageRequest;
+    getUsage(aCallback: nsIQuotaUsageCallbackType, aGetAll?: boolean): nsIQuotaUsageRequestType;
     /**
      * Schedules an asynchronous callback that will return the total amount of
      * disk space being used by storages for the given origin.
@@ -39734,11 +39734,11 @@ declare interface nsIQuotaManagerServiceType extends nsISupportsType {
      * Note:  Origin usage here represents total usage of an origin. However,
      * cached usage here represents only non-persistent usage of an origin.
      */
-    getUsageForPrincipal(aPrincipal: nsIPrincipalType, aCallback: nsIQuotaUsageCallbackType, aFromMemory?: boolean): nsIQuotaUsageRequest;
+    getUsageForPrincipal(aPrincipal: nsIPrincipalType, aCallback: nsIQuotaUsageCallbackType, aFromMemory?: boolean): nsIQuotaUsageRequestType;
     /**
      * Asynchronously lists all origins and returns them as plain strings.
      */
-    listOrigins(): nsIQuotaRequest;
+    listOrigins(): nsIQuotaRequestType;
     /**
      * Removes all storages. The files may not be deleted immediately depending
      * on prohibitive concurrent operations.
@@ -39747,14 +39747,14 @@ declare interface nsIQuotaManagerServiceType extends nsISupportsType {
      * If the dom.quotaManager.testing preference is not true the call will be
      * a no-op.
      */
-    clear(): nsIQuotaRequest;
+    clear(): nsIQuotaRequestType;
     /**
      * Removes all storages stored for private browsing. The files may not be
      * deleted immediately depending on prohibitive concurrent operations.  In
      * terms of locks, it will get an exclusive multi directory lock for entire
      * private repository.
      */
-    clearStoragesForPrivateBrowsing(): nsIQuotaRequest;
+    clearStoragesForPrivateBrowsing(): nsIQuotaRequestType;
     /**
      * Removes all storages stored for the given pattern. The files may not be
      * deleted immediately depending on prohibitive concurrent operations.  In
@@ -39771,7 +39771,7 @@ declare interface nsIQuotaManagerServiceType extends nsISupportsType {
      * Currently this is expected to be a JSON representation of the
      * OriginAttributesPatternDictionary defined in ChromeUtils.webidl.
      */
-    clearStoragesForOriginAttributesPattern(aPattern: AString): nsIQuotaRequest;
+    clearStoragesForOriginAttributesPattern(aPattern: AString): nsIQuotaRequestType;
     /**
      * Removes all storages stored for the given principal. The files may not be
      * deleted immediately depending on prohibitive concurrent operations.
@@ -39795,7 +39795,7 @@ declare interface nsIQuotaManagerServiceType extends nsISupportsType {
      * If you want to clear multiple client types (but not all), then you
      * must call this method multiple times.
      */
-    clearStoragesForPrincipal(aPrincipal: nsIPrincipalType, aPersistenceType?: ACString, aClientType?: AString): nsIQuotaRequest;
+    clearStoragesForPrincipal(aPrincipal: nsIPrincipalType, aPersistenceType?: ACString, aClientType?: AString): nsIQuotaRequestType;
     /**
      * Removes all storages stored for the given prefix. The files may not be
      * deleted immediately depending on prohibitive concurrent operations.
@@ -39817,7 +39817,7 @@ declare interface nsIQuotaManagerServiceType extends nsISupportsType {
      * is only for chrome principals.  See bug 1354500 for more info.
      * In general, null is the right thing to pass here.
      */
-    clearStoragesForOriginPrefix(aPrincipal: nsIPrincipalType, aPersistenceType?: ACString): nsIQuotaRequest;
+    clearStoragesForOriginPrefix(aPrincipal: nsIPrincipalType, aPersistenceType?: ACString): nsIQuotaRequestType;
     /**
      * Resets quota and storage management. This can be used to force
      * reinitialization of the temp storage, for example when the pref for
@@ -39827,7 +39827,7 @@ declare interface nsIQuotaManagerServiceType extends nsISupportsType {
      * If the dom.quotaManager.testing preference is not true the call will be
      * a no-op.
      */
-    reset(): nsIQuotaRequest;
+    reset(): nsIQuotaRequestType;
     /**
      * Resets all storages stored for the given principal.
      *
@@ -39853,21 +39853,21 @@ declare interface nsIQuotaManagerServiceType extends nsISupportsType {
      * If you want to clear multiple client types (but not all), then you
      * must call this method multiple times.
      */
-    resetStoragesForPrincipal(aPrincipal: nsIPrincipalType, aPersistenceType?: ACString, aClientType?: AString): nsIQuotaRequest;
+    resetStoragesForPrincipal(aPrincipal: nsIPrincipalType, aPersistenceType?: ACString, aClientType?: AString): nsIQuotaRequestType;
     /**
      * Check if given origin is persisted.
      *
      * @param aPrincipal
      * A principal for the origin which we want to check.
      */
-    persisted(aPrincipal: nsIPrincipalType): nsIQuotaRequest;
+    persisted(aPrincipal: nsIPrincipalType): nsIQuotaRequestType;
     /**
      * Persist given origin.
      *
      * @param aPrincipal
      * A principal for the origin which we want to persist.
      */
-    persist(aPrincipal: nsIPrincipalType): nsIQuotaRequest;
+    persist(aPrincipal: nsIPrincipalType): nsIQuotaRequestType;
     /**
      * Given an origin, asynchronously calculate its group quota usage and quota
      * limit. An origin's group is the set of all origins that share the same
@@ -39884,7 +39884,7 @@ declare interface nsIQuotaManagerServiceType extends nsISupportsType {
      * @param aPrincipal
      * A principal for the origin (group) which we want to estimate.
      */
-    estimate(aPrincipal: nsIPrincipalType): nsIQuotaRequest;
+    estimate(aPrincipal: nsIPrincipalType): nsIQuotaRequestType;
 }
 
 /**
@@ -40135,19 +40135,19 @@ declare interface nsIRandomAccessStreamType extends nsISeekableStreamType {
     /**
      * This method always returns the same object.
      */
-    getInputStream(): nsIInputStream;
+    getInputStream(): nsIInputStreamType;
     /**
      * This method always returns the same object.
      */
-    getOutputStream(): nsIOutputStream;
+    getOutputStream(): nsIOutputStreamType;
     /**
      * Like getInputStream but infallible.
      */
-    inputStream(): nsIInputStream;
+    inputStream(): nsIInputStreamType;
     /**
      * Like getOutputStream but infallible.
      */
-    outputStream(): nsIOutputStream;
+    outputStream(): nsIOutputStreamType;
     /**
      *
      */
@@ -40229,7 +40229,7 @@ declare interface nsIRedirectChannelRegistrarType extends nsISupportsType {
      * in reaction to nsIChildChannel.connectParent(id) called from the child
      * process.
      */
-    linkChannels(id: uint64_t, channel: nsIParentChannelType): nsIChannel;
+    linkChannels(id: uint64_t, channel: nsIParentChannelType): nsIChannelType;
     /**
      * Returns back the channel previously registered under the ID with
      * registerChannel method.
@@ -40237,7 +40237,7 @@ declare interface nsIRedirectChannelRegistrarType extends nsISupportsType {
      * Primarilly used in chrome IPC side of protocols when attaching a redirect
      * target channel to an existing 'real' channel implementation.
      */
-    getRegisteredChannel(id: uint64_t): nsIChannel;
+    getRegisteredChannel(id: uint64_t): nsIChannelType;
     /**
      * Returns the stream listener that shall be attached to the redirect target
      * channel, all notification from the redirect target channel will be
@@ -40246,7 +40246,7 @@ declare interface nsIRedirectChannelRegistrarType extends nsISupportsType {
      * Primarilly used in HttpChannelParent::OnRedirectResult callback to grab
      * the created parent side of the channel and forward notifications to it.
      */
-    getParentChannel(id: uint64_t): nsIParentChannel;
+    getParentChannel(id: uint64_t): nsIParentChannelType;
     /**
      * To not force all channel implementations to support weak reference
      * consumers of this service must ensure release of registered channels them
@@ -40664,7 +40664,7 @@ declare interface nsIRequestType extends nsISupportsType {
      * Requests with TRR_ONLY_MODE will only use TRR, unless not allowed by
      * the same conditions mentioned above.
      */
-    getTRRMode(): nsIRequest_TRRMode;
+    getTRRMode(): nsIRequest_TRRModeType;
     /**
      *
      */
@@ -40800,15 +40800,15 @@ declare interface nsIRequestContextServiceType extends nsISupportsType {
     /**
      * Get an existing request context from its ID
      */
-    getRequestContext(id: unsigned_long_long): nsIRequestContext;
+    getRequestContext(id: unsigned_long_long): nsIRequestContextType;
     /**
      * Shorthand to get request context from a load group
      */
-    getRequestContextFromLoadGroup(lg: nsILoadGroupType): nsIRequestContext;
+    getRequestContextFromLoadGroup(lg: nsILoadGroupType): nsIRequestContextType;
     /**
      * Create a new request context
      */
-    newRequestContext(): nsIRequestContext;
+    newRequestContext(): nsIRequestContextType;
     /**
      * Remove an existing request context from its ID
      */
@@ -40978,23 +40978,23 @@ declare interface nsISDBConnectionType extends nsISupportsType {
     /**
      *
      */
-    open(aName: AString): nsISDBRequest;
+    open(aName: AString): nsISDBRequestType;
     /**
      *
      */
-    seek(offset: unsigned_long_long): nsISDBRequest;
+    seek(offset: unsigned_long_long): nsISDBRequestType;
     /**
      *
      */
-    read(size: unsigned_long_long): nsISDBRequest;
+    read(size: unsigned_long_long): nsISDBRequestType;
     /**
      *
      */
-    write(value: jsval): nsISDBRequest;
+    write(value: jsval): nsISDBRequestType;
     /**
      *
      */
-    close(): nsISDBRequest;
+    close(): nsISDBRequestType;
     /**
      *
      */
@@ -41248,11 +41248,11 @@ declare interface nsISHEntryType extends nsISupportsType {
      * Initialises `layoutHistoryState` if it doesn't already exist
      * and returns a reference to it.
      */
-    initLayoutHistoryState(): nsILayoutHistoryState;
+    initLayoutHistoryState(): nsILayoutHistoryStateType;
     /**
      *
      */
-    clone(): nsISHEntry;
+    clone(): nsISHEntryType;
     /**
      * Returns true if any of the child entries returns true
      * when isDynamicallyAdded is called on it.
@@ -41291,7 +41291,7 @@ declare interface nsISHEntryType extends nsISupportsType {
     /**
      * Get child at an index.
      */
-    GetChildAt(aIndex: long): nsISHEntry;
+    GetChildAt(aIndex: long): nsISHEntryType;
     /**
      * If this entry has no dynamically added child, get the child SHEntry
      * at the given offset. The loadtype of the returned entry is set
@@ -41361,7 +41361,7 @@ declare interface nsISHistoryType extends nsISupportsType {
      * The oldest entry is located at index == 0.
      * @return                  The found entry; never null.
      */
-    getEntryAtIndex(aIndex: long): nsISHEntry;
+    getEntryAtIndex(aIndex: long): nsISHEntryType;
     /**
      * Called to purge older documents from history.
      * Documents can be removed from session history for various
@@ -41467,7 +41467,7 @@ declare interface nsISHistoryType extends nsISupportsType {
     /**
      *
      */
-    createEntry(): nsISHEntry;
+    createEntry(): nsISHEntryType;
 }
 
 /**
@@ -41646,7 +41646,7 @@ declare interface nsIScreenManagerType extends nsISupportsType {
     /**
      *
      */
-    screenForRect(left: long, top: long, width: long, height: long): nsIScreen;
+    screenForRect(left: long, top: long, width: long, height: long): nsIScreenType;
     /**
      *
      */
@@ -41959,34 +41959,34 @@ declare interface nsIScriptSecurityManagerType extends nsISupportsType {
     /**
      * Return the all-powerful system principal.
      */
-    getSystemPrincipal(): nsIPrincipal;
+    getSystemPrincipal(): nsIPrincipalType;
     /**
      * Returns a principal that has the OriginAttributes of the load context.
      * @param loadContext to get the OriginAttributes from.
      */
-    getLoadContextContentPrincipal(uri: nsIURIType, loadContext: nsILoadContextType): nsIPrincipal;
+    getLoadContextContentPrincipal(uri: nsIURIType, loadContext: nsILoadContextType): nsIPrincipalType;
     /**
      * Returns a principal that has the OriginAttributes of the docshell.
      * @param docShell to get the OriginAttributes from.
      */
-    getDocShellContentPrincipal(uri: nsIURIType, docShell: nsIDocShellType): nsIPrincipal;
+    getDocShellContentPrincipal(uri: nsIURIType, docShell: nsIDocShellType): nsIPrincipalType;
     /**
      * If this is a content principal, return a copy with different
      * origin attributes.
      */
-    principalWithOA(principal: nsIPrincipalType, originAttributes: jsval): nsIPrincipal;
+    principalWithOA(principal: nsIPrincipalType, originAttributes: jsval): nsIPrincipalType;
     /**
      * Returns a principal whose origin is composed of |uri| and |originAttributes|.
      * See nsIPrincipal.idl for a description of origin attributes, and
      * ChromeUtils.webidl for a list of origin attributes and their defaults.
      */
-    createContentPrincipal(uri: nsIURIType, originAttributes: jsval): nsIPrincipal;
+    createContentPrincipal(uri: nsIURIType, originAttributes: jsval): nsIPrincipalType;
     /**
      * Returns a principal whose origin is the one we pass in.
      * See nsIPrincipal.idl for a description of origin attributes, and
      * ChromeUtils.webidl for a list of origin attributes and their defaults.
      */
-    createContentPrincipalFromOrigin(origin: ACString): nsIPrincipal;
+    createContentPrincipalFromOrigin(origin: ACString): nsIPrincipalType;
     /**
      * Takes a principal and returns a string representation of it or a nullptr if it can't be serialized.
      * Example output: `{"1": {"0": "https://mozilla.com", "2": "^privateBrowsingId=1"}}`
@@ -41997,13 +41997,13 @@ declare interface nsIScriptSecurityManagerType extends nsISupportsType {
      * `{"1": {"0": "https://mozilla.com", "2": "^privateBrowsingId=1"}}`
      * and turns it into a principal or a nullptr on error.
      */
-    JSONToPrincipal(json: ACString): nsIPrincipal;
+    JSONToPrincipal(json: ACString): nsIPrincipalType;
     /**
      * Returns a unique nonce principal with |originAttributes|.
      * See nsIPrincipal.idl for a description of origin attributes, and
      * ChromeUtils.webidl for a list of origin attributes and their defaults.
      */
-    createNullPrincipal(originAttributes: jsval): nsIPrincipal;
+    createNullPrincipal(originAttributes: jsval): nsIPrincipalType;
     /**
      * Returns OK if aSourceURI and target have the same "origin"
      * (scheme, host, and port).
@@ -42018,13 +42018,13 @@ declare interface nsIScriptSecurityManagerType extends nsISupportsType {
      * channel owner if there is one, and the content principal for the
      * channel's URI otherwise.  aChannel must not be null.
      */
-    getChannelResultPrincipal(aChannel: nsIChannelType): nsIPrincipal;
+    getChannelResultPrincipal(aChannel: nsIChannelType): nsIPrincipalType;
     /**
      * Get the storage principal for the given channel.  This is basically the
      * same of getChannelResultPrincipal() execept for trackers, where we
      * return a principal with a different OriginAttributes.
      */
-    getChannelResultStoragePrincipal(aChannel: nsIChannelType): nsIPrincipal;
+    getChannelResultStoragePrincipal(aChannel: nsIChannelType): nsIPrincipalType;
     /**
      * This method returns 2 principals from a nsIChannel:
      * - aPrincipal is the regular principal.
@@ -42037,7 +42037,7 @@ declare interface nsIScriptSecurityManagerType extends nsISupportsType {
      * Get the content principal for the channel's URI.
      * aChannel must not be null.
      */
-    getChannelURIPrincipal(aChannel: nsIChannelType): nsIPrincipal;
+    getChannelURIPrincipal(aChannel: nsIChannelType): nsIPrincipalType;
     readonly DEFAULT_USER_CONTEXT_ID: string;
     readonly DEFAULT_PRIVATE_BROWSING_ID: string;
     /**
@@ -42051,7 +42051,7 @@ declare interface nsIScriptSecurityManagerType extends nsISupportsType {
      * domainPolicyActive becomes false again, and a new consumer may acquire
      * control of the system by invoking activateDomainPolicy().
      */
-    activateDomainPolicy(): nsIDomainPolicy;
+    activateDomainPolicy(): nsIDomainPolicyType;
     /**
      *
      */
@@ -42281,7 +42281,7 @@ declare interface nsISearchEngineType extends nsISupportsType {
      * The submission data. If no appropriate submission can be determined for
      * the request type, this may be null.
      */
-    getSubmission(searchTerms: AString, responseType?: AString, purpose?: AString): nsISearchSubmission;
+    getSubmission(searchTerms: AString, responseType?: AString, purpose?: AString): nsISearchSubmissionType;
     /**
      * Returns the search term of a possible search result URI if and only if:
      * - The URI has the same scheme, host, and path as the engine.
@@ -42578,7 +42578,7 @@ declare interface nsISearchServiceType extends nsISupportsType {
      * @returns The corresponding nsISearchEngine object, or null if it doesn't
      * exist.
      */
-    getEngineByName(aEngineName: AString): nsISearchEngine;
+    getEngineByName(aEngineName: AString): nsISearchEngineType;
     /**
      * Returns an engine with the specified Id.
      *
@@ -42587,7 +42587,7 @@ declare interface nsISearchServiceType extends nsISupportsType {
      * @returns The corresponding nsISearchEngine object, or null if it doesn't
      * exist.
      */
-    getEngineById(aEngineId: AString): nsISearchEngine;
+    getEngineById(aEngineId: AString): nsISearchEngineType;
     /**
      * Returns an array of all installed search engines.
      * The array is sorted either to the user requirements or the default order.
@@ -42741,7 +42741,7 @@ declare interface nsISearchServiceType extends nsISupportsType {
      * String containing the URL to parse, for example
      * "https://www.google.com/search?q=terms".
      */
-    parseSubmissionURL(url: AString): nsISearchParseSubmissionResult;
+    parseSubmissionURL(url: AString): nsISearchParseSubmissionResultType;
 }
 
 /**
@@ -43224,7 +43224,7 @@ declare interface nsISerializationHelperType extends nsISupportsType {
      * object. Most commonly, input is result of previous call to
      * serializeToString.
      */
-    deserializeObject(input: ACString): nsISupports;
+    deserializeObject(input: ACString): nsISupportsType;
 }
 
 /**
@@ -43612,7 +43612,7 @@ declare interface nsIServiceWorkerRegistrationInfoType extends nsISupportsType {
     /**
      *
      */
-    getWorkerByID(aID: unsigned_long_long): nsIServiceWorkerInfo;
+    getWorkerByID(aID: unsigned_long_long): nsIServiceWorkerInfoType;
     /**
      *
      */
@@ -43713,7 +43713,7 @@ declare interface nsIServiceWorkerManagerType extends nsISupportsType {
     /**
      *
      */
-    getRegistrationByPrincipal(aPrincipal: nsIPrincipalType, aScope: AString): nsIServiceWorkerRegistrationInfo;
+    getRegistrationByPrincipal(aPrincipal: nsIPrincipalType, aScope: AString): nsIServiceWorkerRegistrationInfoType;
     /**
      *
      */
@@ -43725,7 +43725,7 @@ declare interface nsIServiceWorkerManagerType extends nsISupportsType {
     /**
      *
      */
-    getAllRegistrations(): nsIArray;
+    getAllRegistrations(): nsIArrayType;
     /**
      *
      */
@@ -43905,7 +43905,7 @@ declare interface nsIJSEnumeratorType extends nsISupportsType {
     /**
      *
      */
-    iterator(): nsIJSEnumerator;
+    iterator(): nsIJSEnumeratorType;
     /**
      *
      */
@@ -43921,13 +43921,13 @@ declare interface nsISimpleEnumeratorBaseType extends nsISupportsType {
      * Each entry is typically queried to the appropriate interface for the
      * enumerator.
      */
-    iterator(): nsIJSEnumerator;
+    iterator(): nsIJSEnumeratorType;
     /**
      * Returns JavaScript iterator for all remaining entries in the enumerator.
      * Each entry is queried only to the supplied interface. If any element
      * fails to query to that interface, the error is propagated to the caller.
      */
-    entries(aIface: nsIIDRefType): nsIJSEnumerator;
+    entries(aIface: nsIIDRefType): nsIJSEnumeratorType;
 }
 
 /**
@@ -43959,7 +43959,7 @@ declare interface nsISimpleEnumeratorType extends nsISimpleEnumeratorBaseType {
      * to enumerate.
      * @return the next element in the enumeration.
      */
-    getNext(): nsISupports;
+    getNext(): nsISupportsType;
 }
 
 /**
@@ -43984,7 +43984,7 @@ declare interface nsISimpleURIMutatorType extends nsISupportsType {
     /**
      * Same behaviour as nsIURISetSpec.setSpec() but filters whitespace.
      */
-    setSpecAndFilterWhitespace(aSpec: AUTF8String): nsIURIMutator;
+    setSpecAndFilterWhitespace(aSpec: AUTF8String): nsIURIMutatorType;
 }
 
 /**
@@ -44100,7 +44100,7 @@ declare interface nsISocketFilterHandlerType extends nsISupportsType {
     /**
      *
      */
-    newFilter(): nsISocketFilter;
+    newFilter(): nsISocketFilterType;
 }
 
 /**
@@ -44128,7 +44128,7 @@ declare interface nsISocketProviderServiceType extends nsISupportsType {
     /**
      *
      */
-    getSocketProvider(socketType: string): nsISocketProvider;
+    getSocketProvider(socketType: string): nsISocketProviderType;
 }
 
 /**
@@ -44165,12 +44165,12 @@ declare interface nsISocketTransportType extends nsITransportType {
      * Returns a scriptable version of getPeerAddr. This attribute is defined
      * only once a connection has been established.
      */
-    getScriptablePeerAddr(): nsINetAddr;
+    getScriptablePeerAddr(): nsINetAddrType;
     /**
      * Returns a scriptable version of getSelfAddr. This attribute is defined
      * only once a connection has been established.
      */
-    getScriptableSelfAddr(): nsINetAddr;
+    getScriptableSelfAddr(): nsINetAddrType;
     /**
      * TLS socket control object. This attribute is only available once the
      * socket is connected.
@@ -44351,7 +44351,7 @@ declare interface nsISocketTransportServiceType extends nsISupportsType {
      *
      * NOTE: this function can be called from any thread
      */
-    createTransport(aSocketTypes: invalid, aHost: AUTF8String, aPort: long, aProxyInfo: nsIProxyInfoType, dnsRecord: nsIDNSRecordType): nsISocketTransport;
+    createTransport(aSocketTypes: invalid, aHost: AUTF8String, aPort: long, aProxyInfo: nsIProxyInfoType, dnsRecord: nsIDNSRecordType): nsISocketTransportType;
     /**
      * Create a transport built on a Unix domain socket, connecting to the
      * given filename.
@@ -44384,7 +44384,7 @@ declare interface nsISocketTransportServiceType extends nsISupportsType {
      * The file name of the Unix domain socket to which we should
      * connect.
      */
-    createUnixDomainTransport(aPath: nsIFileType): nsISocketTransport;
+    createUnixDomainTransport(aPath: nsIFileType): nsISocketTransportType;
     /**
      * Create a transport built on a Unix domain socket that uses abstract
      * address name.
@@ -44396,7 +44396,7 @@ declare interface nsISocketTransportServiceType extends nsISupportsType {
      * The name of abstract socket adress of the Unix domain socket to
      * which we should connect.
      */
-    createUnixDomainAbstractAddressTransport(aName: ACString): nsISocketTransport;
+    createUnixDomainAbstractAddressTransport(aName: ACString): nsISocketTransportType;
 }
 
 /**
@@ -44406,7 +44406,7 @@ declare interface nsIRoutedSocketTransportServiceType extends nsISocketTransport
     /**
      *
      */
-    createRoutedTransport(aSocketTypes: invalid, aHost: AUTF8String, aPort: long, aHostRoute: AUTF8String, aPortRoute: long, aProxyInfo: nsIProxyInfoType, aDnsRecord: nsIDNSRecordType): nsISocketTransport;
+    createRoutedTransport(aSocketTypes: invalid, aHost: AUTF8String, aPort: long, aHostRoute: AUTF8String, aPortRoute: long, aProxyInfo: nsIProxyInfoType, aDnsRecord: nsIDNSRecordType): nsISocketTransportType;
 }
 
 /**
@@ -44724,7 +44724,7 @@ declare interface nsIStandardURLMutatorType extends nsISupportsType {
      * otherwise, aSpec will be resolved relative
      * to aBaseURI.
      */
-    init(aUrlType: unsigned_long, aDefaultPort: long, aSpec: AUTF8String, aOriginCharset: string, aBaseURI: nsIURIType): nsIURIMutator;
+    init(aUrlType: unsigned_long, aDefaultPort: long, aSpec: AUTF8String, aOriginCharset: string, aBaseURI: nsIURIType): nsIURIMutatorType;
     /**
      * Set the default port.
      *
@@ -44735,7 +44735,7 @@ declare interface nsIStandardURLMutatorType extends nsISupportsType {
      * matches this default, then we won't include a
      * port number in the canonical form of the URL.
      */
-    setDefaultPort(aNewDefaultPort: long): nsIURIMutator;
+    setDefaultPort(aNewDefaultPort: long): nsIURIMutatorType;
 }
 
 /**
@@ -44780,7 +44780,7 @@ declare interface nsIStorageActivityServiceType extends nsISupportsType {
     /**
      *
      */
-    getActiveOrigins(from: PRTime, to: PRTime): nsIArray;
+    getActiveOrigins(from: PRTime, to: PRTime): nsIArrayType;
     /**
      *
      */
@@ -44815,13 +44815,13 @@ declare interface nsIStorageStreamType extends nsISupportsType {
      * current buffer length.  Calling this method has the side-effect of
      * truncating the internal buffer to startPosition bytes.
      */
-    getOutputStream(startPosition: int32_t): nsIOutputStream;
+    getOutputStream(startPosition: int32_t): nsIOutputStreamType;
     /**
      * Create a new input stream to read data (written by the singleton output
      * stream) from the internal buffer.  Multiple, independent input streams
      * can be created.
      */
-    newInputStream(startPosition: int32_t): nsIInputStream;
+    newInputStream(startPosition: int32_t): nsIInputStreamType;
     /**
      * The length attribute indicates the total number of bytes stored in the
      * nsIStorageStream internal buffer, regardless of any consumption by input
@@ -44925,7 +44925,7 @@ declare interface nsIStreamConverterType extends nsIStreamListenerType {
      * implementation will converter data on demand rather than
      * buffering the converted data until it is used.
      */
-    convert(aFromStream: nsIInputStreamType, aFromType: string, aToType: string, aCtxt: nsISupportsType): nsIInputStream;
+    convert(aFromStream: nsIInputStreamType, aFromType: string, aToType: string, aCtxt: nsISupportsType): nsIInputStreamType;
     /**
      * **ASYNCRONOUS VERSION**
      * Converts data arriving via the converter's nsIStreamListener::OnDataAvailable()
@@ -44999,7 +44999,7 @@ declare interface nsIStreamConverterServiceType extends nsISupportsType {
      * demand rather than buffering the converted data
      * until it is used.
      */
-    convert(aFromStream: nsIInputStreamType, aFromType: string, aToType: string, aContext: nsISupportsType): nsIInputStream;
+    convert(aFromStream: nsIInputStreamType, aFromType: string, aToType: string, aContext: nsISupportsType): nsIInputStreamType;
     /**
      * **ASYNCHRONOUS VERSION**
      * Retrieves a nsIStreamListener that receives the original/raw data via its
@@ -45017,7 +45017,7 @@ declare interface nsIStreamConverterServiceType extends nsISupportsType {
      * @return              A nsIStreamListener that receives data via its
      * OnDataAvailable() method.
      */
-    asyncConvertData(aFromType: string, aToType: string, aListener: nsIStreamListenerType, aContext: nsISupportsType): nsIStreamListener;
+    asyncConvertData(aFromType: string, aToType: string, aListener: nsIStreamListenerType, aContext: nsISupportsType): nsIStreamListenerType;
 }
 
 /**
@@ -45160,7 +45160,7 @@ declare interface nsIStreamTransportServiceType extends nsISupportsType {
      *
      * @return nsITransport instance.
      */
-    createInputTransport(aStream: nsIInputStreamType, aCloseWhenDone: boolean): nsITransport;
+    createInputTransport(aStream: nsIInputStreamType, aCloseWhenDone: boolean): nsITransportType;
     /**
      *
      */
@@ -45200,7 +45200,7 @@ declare interface nsIStringBundleType extends nsISupportsType {
     /**
      * Implements nsISimpleEnumerator, replaces nsIEnumerator
      */
-    getSimpleEnumeration(): nsISimpleEnumerator;
+    getSimpleEnumeration(): nsISimpleEnumeratorType;
     /**
      *
      */
@@ -45222,7 +45222,7 @@ declare interface nsIStringBundleServiceType extends nsISupportsType {
     /**
      *
      */
-    createBundle(aURLSpec: string): nsIStringBundle;
+    createBundle(aURLSpec: string): nsIStringBundleType;
     /**
      * Formats a message string from a status code and status arguments.
      * @param aStatus - The status code. This is mapped into a string ID and
@@ -45263,7 +45263,7 @@ declare interface nsIStringEnumeratorBaseType extends nsISupportsType {
     /**
      *
      */
-    iterator(): nsIJSEnumerator;
+    iterator(): nsIJSEnumeratorType;
 }
 
 /**
@@ -45458,7 +45458,7 @@ declare interface nsISFVParamsType extends nsISupportsType {
      *
      * @throws NS_ERROR_UNEXPECTED if the key does not exist in parameters.
      */
-    get(key: ACString): nsISFVBareItem;
+    get(key: ACString): nsISFVBareItemType;
     /**
      * Insert a new key-value pair.
      * If an equivalent key already exists: the key remains and retains in its place in the order,
@@ -45548,7 +45548,7 @@ declare interface nsISFVDictionaryType extends nsISFVSerializeType {
      *
      * @throws NS_ERROR_UNEXPECTED if the key does not exist in parameters.
      */
-    get(key: ACString): nsISFVItemOrInnerList;
+    get(key: ACString): nsISFVItemOrInnerListType;
     /**
      * Insert a new key-value pair.
      * If an equivalent key already exists: the key remains and retains in its place in the order,
@@ -45581,64 +45581,64 @@ declare interface nsISFVServiceType extends nsISupportsType {
      *
      * @throws NS_ERROR_FAILURE if parsing fails.
      */
-    parseDictionary(header: ACString): nsISFVDictionary;
+    parseDictionary(header: ACString): nsISFVDictionaryType;
     /**
      * Parses provided string into List header value (nsISFVList).
      *
      * @throws NS_ERROR_FAILURE if parsing fails.
      */
-    parseList(header: ACString): nsISFVList;
+    parseList(header: ACString): nsISFVListType;
     /**
      * Parses provided string into Item header value (nsISFVItem).
      *
      * @throws NS_ERROR_FAILURE if parsing fails.
      */
-    parseItem(header: ACString): nsISFVItem;
+    parseItem(header: ACString): nsISFVItemType;
     /**
      * The following functions create bare item of specific type.
      */
-    newInteger(value: long_long): nsISFVInteger;
+    newInteger(value: long_long): nsISFVIntegerType;
     /**
      *
      */
-    newBool(value: bool): nsISFVBool;
+    newBool(value: bool): nsISFVBoolType;
     /**
      *
      */
-    newDecimal(value: double): nsISFVDecimal;
+    newDecimal(value: double): nsISFVDecimalType;
     /**
      *
      */
-    newString(value: ACString): nsISFVString;
+    newString(value: ACString): nsISFVStringType;
     /**
      *
      */
-    newByteSequence(value: ACString): nsISFVByteSeq;
+    newByteSequence(value: ACString): nsISFVByteSeqType;
     /**
      *
      */
-    newToken(value: ACString): nsISFVToken;
+    newToken(value: ACString): nsISFVTokenType;
     /**
      * Creates nsISFVParams with no parameters. In other words, it's an empty map byt default.
      */
-    newParameters(): nsISFVParams;
+    newParameters(): nsISFVParamsType;
     /**
      * Creates nsISFVInnerList from nsISFVItem array and nsISFVParams.
      */
-    newInnerList(items: invalid, params: nsISFVParamsType): nsISFVInnerList;
+    newInnerList(items: invalid, params: nsISFVParamsType): nsISFVInnerListType;
     /**
      * Creates nsISFVItem, which represents Item header value, from nsISFVBareItem and associated nsISFVParams.
      */
-    newItem(value: nsISFVBareItemType, params: nsISFVParamsType): nsISFVItem;
+    newItem(value: nsISFVBareItemType, params: nsISFVParamsType): nsISFVItemType;
     /**
      * Creates nsISFVList, which represents List header value, from array of nsISFVItemOrInnerList.
      * nsISFVItemOrInnerList represens either Item (nsISFVItem) or Inner List (nsISFVInnerList).
      */
-    newList(members: invalid): nsISFVList;
+    newList(members: invalid): nsISFVListType;
     /**
      * Creates nsISFVDictionary representing Dictionary header value. It is empty by default.
      */
-    newDictionary(): nsISFVDictionary;
+    newDictionary(): nsISFVDictionaryType;
 }
 
 /**
@@ -45676,7 +45676,7 @@ declare interface nsIStyleSheetServiceType extends nsISupportsType {
      * Synchronously loads a style sheet from |sheetURI| and returns the
      * new style sheet object. Can be used with nsIDOMWindowUtils.addSheet.
      */
-    preloadSheet(sheetURI: nsIURIType, type: unsigned_long): nsIPreloadedStyleSheet;
+    preloadSheet(sheetURI: nsIURIType, type: unsigned_long): nsIPreloadedStyleSheetType;
     /**
      * Asynchronously loads a style sheet from |sheetURI| and returns a Promise
      * which resolves to the new style sheet object, which can be used with
@@ -45717,7 +45717,7 @@ declare interface nsISubstitutingProtocolHandlerType extends nsIProtocolHandlerT
      *
      * @throws NS_ERROR_NOT_AVAILABLE if none exists.
      */
-    getSubstitution(root: ACString): nsIURI;
+    getSubstitution(root: ACString): nsIURIType;
     /**
      * Returns TRUE if the substitution exists and FALSE otherwise.
      */
@@ -45790,7 +45790,7 @@ declare interface nsIInputIteratorType extends nsISupportsType {
      *
      * @result a new reference to the element this iterator currently points to (if any)
      */
-    getElement(): nsISupports;
+    getElement(): nsISupportsType;
     /**
      * Advance this iterator to the next position in the underlying container or sequence.
      */
@@ -45810,7 +45810,7 @@ declare interface nsIInputIteratorType extends nsISupportsType {
      *
      * @result a new iterator pointing at the same position in the same underlying container or sequence as this iterator
      */
-    clone(): nsISupports;
+    clone(): nsISupportsType;
 }
 
 /**
@@ -45825,7 +45825,7 @@ declare interface nsIForwardIteratorType extends nsISupportsType {
      *
      * @result a new reference to the element this iterator currently points to (if any)
      */
-    getElement(): nsISupports;
+    getElement(): nsISupportsType;
     /**
      * Put |anElementToPut| into the underlying container or sequence at the position currently pointed to by this iterator.
      * The iterator and the underlying container or sequence cooperate to |Release()|
@@ -45856,7 +45856,7 @@ declare interface nsIForwardIteratorType extends nsISupportsType {
      *
      * @result a new iterator pointing at the same position in the same underlying container or sequence as this iterator
      */
-    clone(): nsISupports;
+    clone(): nsISupportsType;
 }
 
 /**
@@ -45871,7 +45871,7 @@ declare interface nsIBidirectionalIteratorType extends nsISupportsType {
      *
      * @result a new reference to the element this iterator currently points to (if any)
      */
-    getElement(): nsISupports;
+    getElement(): nsISupportsType;
     /**
      * Put |anElementToPut| into the underlying container or sequence at the position currently pointed to by this iterator.
      * The iterator and the underlying container or sequence cooperate to |Release()|
@@ -45906,7 +45906,7 @@ declare interface nsIBidirectionalIteratorType extends nsISupportsType {
      *
      * @result a new iterator pointing at the same position in the same underlying container or sequence as this iterator
      */
-    clone(): nsISupports;
+    clone(): nsISupportsType;
 }
 
 /**
@@ -45921,7 +45921,7 @@ declare interface nsIRandomAccessIteratorType extends nsISupportsType {
      *
      * @result a new reference to the element this iterator currently points to (if any)
      */
-    getElement(): nsISupports;
+    getElement(): nsISupportsType;
     /**
      * Retrieve (and |AddRef()|) an element at some offset from where this iterator currently points.
      * The offset may be negative.  |getElementAt(0)| is equivalent to |getElement()|.
@@ -45932,7 +45932,7 @@ declare interface nsIRandomAccessIteratorType extends nsISupportsType {
      * @param anOffset a |0|-based offset from the position to which this iterator currently points
      * @result a new reference to the indicated element (if any)
      */
-    getElementAt(anOffset: int32_t): nsISupports;
+    getElementAt(anOffset: int32_t): nsISupportsType;
     /**
      * Put |anElementToPut| into the underlying container or sequence at the position currently pointed to by this iterator.
      * The iterator and the underlying container or sequence cooperate to |Release()|
@@ -45996,7 +45996,7 @@ declare interface nsIRandomAccessIteratorType extends nsISupportsType {
      *
      * @result a new iterator pointing at the same position in the same underlying container or sequence as this iterator
      */
-    clone(): nsISupports;
+    clone(): nsISupportsType;
 }
 
 /**
@@ -47604,7 +47604,7 @@ declare interface nsITaskbarWindowPreviewType extends nsITaskbarPreviewType {
      * @param index The index into the button array. Must be >= 0 and <
      * MAX_TOOLBAR_BUTTONS.
      */
-    getButton(index: unsigned_long): nsITaskbarPreviewButton;
+    getButton(index: unsigned_long): nsITaskbarPreviewButtonType;
     /**
      * Enables/disables custom drawing of thumbnails and previews
      *
@@ -49108,7 +49108,7 @@ declare interface nsIThreadType extends nsISerialEventTargetType {
      * Like `asyncShutdown`, but also returns a nsIThreadShutdown instance to
      * allow observing and controlling the thread's async shutdown progress.
      */
-    beginShutdown(): nsIThreadShutdown;
+    beginShutdown(): nsIThreadShutdownType;
     /**
      * This is set to the end of the last 50+ms event that was executed on
      * this thread (for MainThread only).  Otherwise returns a null TimeStamp.
@@ -49529,7 +49529,7 @@ declare interface nsIInputChannelThrottleQueueType extends nsISupportsType {
      * @param aInputStream the input stream to wrap
      * @return a new input stream that throttles the data.
      */
-    wrapStream(aInputStream: nsIInputStreamType): nsIAsyncInputStream;
+    wrapStream(aInputStream: nsIInputStreamType): nsIAsyncInputStreamType;
 }
 
 /**
@@ -49932,7 +49932,7 @@ declare interface nsIToolkitChromeRegistryType extends nsIXULChromeRegistryType 
     /**
      * Get a list of locales available for the specified package.
      */
-    getLocalesForPackage(aPackage: AUTF8String): nsIUTF8StringEnumerator;
+    getLocalesForPackage(aPackage: AUTF8String): nsIUTF8StringEnumeratorType;
 }
 
 /**
@@ -50010,7 +50010,7 @@ declare interface nsIToolkitProfileType extends nsISupportsType {
      * it.
      * @throws NS_ERROR_FILE_ACCESS_DENIED if the profile was already locked.
      */
-    lock(aUnlocker: nsIProfileUnlockerType): nsIProfileLock;
+    lock(aUnlocker: nsIProfileUnlockerType): nsIProfileLockType;
 }
 
 /**
@@ -50074,7 +50074,7 @@ declare interface nsIToolkitProfileServiceType extends nsISupportsType {
      *
      * @param aName The profile name to find.
      */
-    getProfileByName(aName: AUTF8String): nsIToolkitProfile;
+    getProfileByName(aName: AUTF8String): nsIToolkitProfileType;
     /**
      * Create a new profile.
      *
@@ -50090,7 +50090,7 @@ declare interface nsIToolkitProfileServiceType extends nsISupportsType {
      * @param aName
      * The profile name.
      */
-    createProfile(aRootDir: nsIFileType, aName: AUTF8String): nsIToolkitProfile;
+    createProfile(aRootDir: nsIFileType, aName: AUTF8String): nsIToolkitProfileType;
     /**
      * Create a new profile with a unique name.
      *
@@ -50105,7 +50105,7 @@ declare interface nsIToolkitProfileServiceType extends nsISupportsType {
      * used as the profile name otherwise additional characters will be
      * added to make the name unique.
      */
-    createUniqueProfile(aRootDir: nsIFileType, aNamePrefix: AUTF8String): nsIToolkitProfile;
+    createUniqueProfile(aRootDir: nsIFileType, aNamePrefix: AUTF8String): nsIToolkitProfileType;
     /**
      * Returns the number of profiles.
      * @return the number of profiles.
@@ -50238,7 +50238,7 @@ declare interface nsITouchBarHelperType extends nsISupportsType {
      * Returns the requested TouchBarInput.
      * Exposed for testing.
      */
-    getTouchBarInput(aInputName: string): nsITouchBarInput;
+    getTouchBarInput(aInputName: string): nsITouchBarInputType;
     /**
      * Inserts a search restriction string in the Urlbar.
      * Exposed for testing.
@@ -50366,7 +50366,7 @@ declare interface nsITraceableChannelType extends nsISupportsType {
      * It is not recommended to allow listener replacement after OnStartRequest
      * has been called.
      */
-    setNewListener(aListener: nsIStreamListenerType, aMustApplyContentConversion?: boolean): nsIStreamListener;
+    setNewListener(aListener: nsIStreamListenerType, aMustApplyContentConversion?: boolean): nsIStreamListenerType;
 }
 
 /**
@@ -50567,14 +50567,14 @@ declare interface nsITransactionManagerType extends nsISupportsType {
      * return a null in some implementations if there is a batch at the top
      * of the undo stack.
      */
-    peekUndoStack(): nsITransaction;
+    peekUndoStack(): nsITransactionType;
     /**
      * Returns an AddRef'd pointer to the transaction at the top of the
      * redo stack. Callers should be aware that this method could return
      * return a null in some implementations if there is a batch at the top
      * of the redo stack.
      */
-    peekRedoStack(): nsITransaction;
+    peekRedoStack(): nsITransactionType;
 }
 
 /**
@@ -50828,7 +50828,7 @@ declare interface nsITransportType extends nsISupportsType {
      * if OPEN_UNBUFFERED is not set, then this parameter specifies the
      * maximum number of buffer segments (pass 0 to use default value).
      */
-    openInputStream(aFlags: unsigned_long, aSegmentSize: unsigned_long, aSegmentCount: unsigned_long): nsIInputStream;
+    openInputStream(aFlags: unsigned_long, aSegmentSize: unsigned_long, aSegmentCount: unsigned_long): nsIInputStreamType;
     /**
      * Open an output stream on this transport.
      *
@@ -50860,7 +50860,7 @@ declare interface nsITransportType extends nsISupportsType {
      * if OPEN_UNBUFFERED is not set, then this parameter specifies the
      * maximum number of buffer segments (pass 0 to use default value).
      */
-    openOutputStream(aFlags: unsigned_long, aSegmentSize: unsigned_long, aSegmentCount: unsigned_long): nsIOutputStream;
+    openOutputStream(aFlags: unsigned_long, aSegmentSize: unsigned_long, aSegmentCount: unsigned_long): nsIOutputStreamType;
     /**
      * Close the transport and any open streams.
      *
@@ -51906,7 +51906,7 @@ declare interface nsIURIType extends nsISupportsType {
      * mutator.finalize() to get a new immutable URI with the desired
      * properties.
      */
-    mutate(): nsIURIMutator;
+    mutate(): nsIURIMutatorType;
 }
 
 /**
@@ -51961,12 +51961,12 @@ declare interface nsIURIClassifierType extends nsISupportsType {
     /**
      * Returns a feature named aFeatureName.
      */
-    getFeatureByName(aFeatureName: ACString): nsIUrlClassifierFeature;
+    getFeatureByName(aFeatureName: ACString): nsIUrlClassifierFeatureType;
     /**
      * Create a new feature with a list of tables. This method is just for
      * testing! Don't use it elsewhere.
      */
-    createFeatureWithTables(aName: ACString, aBlocklistTables: invalid, aEntitylistTables: invalid): nsIUrlClassifierFeature;
+    createFeatureWithTables(aName: ACString, aBlocklistTables: invalid, aEntitylistTables: invalid): nsIUrlClassifierFeatureType;
     /**
      * Report to the provider that a Safe Browsing warning was shown.
      *
@@ -52160,7 +52160,7 @@ declare interface nsIURIFixupType extends nsISupportsType {
      * @param aFixupFlags Flags that govern ways the URI may be fixed up.
      * Defaults to FIXUP_FLAG_NONE.
      */
-    getFixupURIInfo(aURIText: AUTF8String, aFixupFlags?: unsigned_long): nsIURIFixupInfo;
+    getFixupURIInfo(aURIText: AUTF8String, aFixupFlags?: unsigned_long): nsIURIFixupInfoType;
     /**
      * Convert load flags from nsIWebNavigation to URI fixup flags for use in
      * getFixupURIInfo.
@@ -52178,7 +52178,7 @@ declare interface nsIURIFixupType extends nsISupportsType {
      * @param aKeyword  The keyword string to convert into a URI
      * @param aIsPrivateContext Whether this is invoked from a private context.
      */
-    keywordToURI(aKeyword: AUTF8String, aIsPrivateContext?: boolean): nsIURIFixupInfo;
+    keywordToURI(aKeyword: AUTF8String, aIsPrivateContext?: boolean): nsIURIFixupInfoType;
     /**
      * Given a uri-like string with a protocol, attempt to fix and convert it
      * into an instance of nsIURIFixupInfo.
@@ -52204,7 +52204,7 @@ declare interface nsIURIFixupType extends nsISupportsType {
      * If aUriString is undefined, or the scheme is not
      * http/https.
      */
-    forceHttpFixup(aUriString: AUTF8String): nsIURIFixupInfo;
+    forceHttpFixup(aUriString: AUTF8String): nsIURIFixupInfoType;
     /**
      * With the host associated with the URI, use nsIDNSService to determine
      * if an IP address can be found for this host. This method will ignore checking
@@ -52326,7 +52326,7 @@ declare interface nsIURILoaderType extends nsISupportsType {
      * to get at the progress event sink interface.
      * **Must not be null!**
      */
-    openChannel(aChannel: nsIChannelType, aFlags: unsigned_long, aWindowContext: nsIInterfaceRequestorType): nsIStreamListener;
+    openChannel(aChannel: nsIChannelType, aFlags: unsigned_long, aWindowContext: nsIInterfaceRequestorType): nsIStreamListenerType;
     /**
      * Stops an in progress load
      */
@@ -52343,7 +52343,7 @@ declare interface nsIURISetSpecType extends nsISupportsType {
      * to define it separately, while the rest of the setters may be simply
      * forwarded to the mutable URI.
      */
-    setSpec(aSpec: AUTF8String): nsIURIMutator;
+    setSpec(aSpec: AUTF8String): nsIURIMutatorType;
 }
 
 /**
@@ -52360,50 +52360,50 @@ declare interface nsIURISettersType extends nsIURISetSpecType {
      * Setting the scheme outside of a protocol handler implementation is highly
      * discouraged since that will generally lead to incorrect results.
      */
-    setScheme(aScheme: AUTF8String): nsIURIMutator;
+    setScheme(aScheme: AUTF8String): nsIURIMutatorType;
     /**
      *
      */
-    setUserPass(aUserPass: AUTF8String): nsIURIMutator;
+    setUserPass(aUserPass: AUTF8String): nsIURIMutatorType;
     /**
      *
      */
-    setUsername(aUsername: AUTF8String): nsIURIMutator;
+    setUsername(aUsername: AUTF8String): nsIURIMutatorType;
     /**
      *
      */
-    setPassword(aPassword: AUTF8String): nsIURIMutator;
+    setPassword(aPassword: AUTF8String): nsIURIMutatorType;
     /**
      * If you setHostPort to a value that only has a host part, the port
      * will not be reset. To reset the port set it to -1 beforehand.
      * If setting the host succeeds, this method will return NS_OK, even if
      * setting the port fails (error in parsing the port, or value out of range)
      */
-    setHostPort(aHostPort: AUTF8String): nsIURIMutator;
+    setHostPort(aHostPort: AUTF8String): nsIURIMutatorType;
     /**
      *
      */
-    setHost(aHost: AUTF8String): nsIURIMutator;
+    setHost(aHost: AUTF8String): nsIURIMutatorType;
     /**
      *
      */
-    setPort(aPort: long): nsIURIMutator;
+    setPort(aPort: long): nsIURIMutatorType;
     /**
      *
      */
-    setPathQueryRef(aPathQueryRef: AUTF8String): nsIURIMutator;
+    setPathQueryRef(aPathQueryRef: AUTF8String): nsIURIMutatorType;
     /**
      *
      */
-    setRef(aRef: AUTF8String): nsIURIMutator;
+    setRef(aRef: AUTF8String): nsIURIMutatorType;
     /**
      *
      */
-    setFilePath(aFilePath: AUTF8String): nsIURIMutator;
+    setFilePath(aFilePath: AUTF8String): nsIURIMutatorType;
     /**
      *
      */
-    setQuery(aQuery: AUTF8String): nsIURIMutator;
+    setQuery(aQuery: AUTF8String): nsIURIMutatorType;
 }
 
 /**
@@ -52413,7 +52413,7 @@ declare interface nsIURIMutatorType extends nsIURISettersType {
     /**
      * Finishes changing or constructing the URI and returns an immutable URI.
      */
-    finalize(): nsIURI;
+    finalize(): nsIURIType;
 }
 
 /**
@@ -52535,15 +52535,15 @@ declare interface nsIURLMutatorType extends nsISupportsType {
     /**
      *
      */
-    setFileName(aFileName: AUTF8String): nsIURIMutator;
+    setFileName(aFileName: AUTF8String): nsIURIMutatorType;
     /**
      *
      */
-    setFileBaseName(aFileBaseName: AUTF8String): nsIURIMutator;
+    setFileBaseName(aFileBaseName: AUTF8String): nsIURIMutatorType;
     /**
      *
      */
-    setFileExtension(aFileExtension: AUTF8String): nsIURIMutator;
+    setFileExtension(aFileExtension: AUTF8String): nsIURIMutatorType;
 }
 
 /**
@@ -52675,7 +52675,7 @@ declare interface nsIURLQueryStringStripperType extends nsISupportsType {
     /**
      *
      */
-    stripForCopyOrShare(aURI: nsIURIType): nsIURI;
+    stripForCopyOrShare(aURI: nsIURIType): nsIURIType;
     /**
      *
      */
@@ -52803,7 +52803,7 @@ declare interface nsIUUIDGeneratorType extends nsISupportsType {
      * @throws NS_ERROR_FAILURE if a UUID cannot be generated (e.g. if
      * an underlying source of randomness is not available)
      */
-    generateUUID(): nsIDPtr;
+    generateUUID(): nsIDPtrType;
 }
 
 /**
@@ -53049,7 +53049,7 @@ declare interface nsIUpdateType extends nsISupportsType {
      * The index of the patch to retrieve.
      * @returns The nsIUpdatePatch at the specified index.
      */
-    getPatchAt(index: unsigned_long): nsIUpdatePatch;
+    getPatchAt(index: unsigned_long): nsIUpdatePatchType;
     /**
      * Serializes this update object into a DOM Element
      * @param   updates
@@ -53134,7 +53134,7 @@ declare interface nsIUpdateCheckerType extends nsISupportsType {
      * @returns An nsIUpdateCheck object that describes the update check and
      * provides a Promise that resolves to the update check results.
      */
-    checkForUpdates(checkType: long): nsIUpdateCheck;
+    checkForUpdates(checkType: long): nsIUpdateCheckType;
     /**
      * Gets the update URL.
      * @param   checkType
@@ -53187,7 +53187,7 @@ declare interface nsIApplicationUpdateServiceType extends nsISupportsType {
      * @param   updates
      * An array of updates that are available
      */
-    selectUpdate(updates: invalid): nsIUpdate;
+    selectUpdate(updates: invalid): nsIUpdateType;
     /**
      * Adds a listener that receives progress and state information about the
      * update that is currently being downloaded, e.g. to update a user
@@ -53457,7 +53457,7 @@ declare interface nsIUpdateManagerType extends nsISupportsType {
      * The index within the updates array
      * @returns The nsIUpdate object at the specified index
      */
-    getUpdateAt(index: long): nsIUpdate;
+    getUpdateAt(index: long): nsIUpdateType;
     /**
      * Gets the total number of updates in the history list.
      */
@@ -54695,7 +54695,7 @@ declare interface nsIViewSourceChannelType extends nsIChannelType {
     /**
      * Get the inner channel wrapped by this nsIViewSourceChannel.
      */
-    getInnerChannel(): nsIChannel;
+    getInnerChannel(): nsIChannelType;
 }
 
 /**
@@ -54755,7 +54755,7 @@ declare interface nsISupportsWeakReferenceType extends nsISupportsType {
      * @see nsWeakPtr
      * @see nsCOMPtr
      */
-    GetWeakReference(): nsIWeakReference;
+    GetWeakReference(): nsIWeakReferenceType;
 }
 
 /**
@@ -57435,7 +57435,7 @@ declare interface nsIWinTaskbarType extends nsISupportsType {
      * is used to find the toplevel window. See the documentation for
      * nsITaskbarTabPreview for more information.
      */
-    createTaskbarTabPreview(shell: nsIDocShellType, controller: nsITaskbarPreviewControllerType): nsITaskbarTabPreview;
+    createTaskbarTabPreview(shell: nsIDocShellType, controller: nsITaskbarPreviewControllerType): nsITaskbarTabPreviewType;
     /**
      * Gets the taskbar preview for a window. The docshell is used to find the
      * toplevel window. See the documentation for nsITaskbarTabPreview for more
@@ -57443,7 +57443,7 @@ declare interface nsIWinTaskbarType extends nsISupportsType {
      *
      * Note: to implement custom drawing or buttons, a controller is required.
      */
-    getTaskbarWindowPreview(shell: nsIDocShellType): nsITaskbarWindowPreview;
+    getTaskbarWindowPreview(shell: nsIDocShellType): nsITaskbarWindowPreviewType;
     /**
      * Taskbar icon progress indicator
      *
@@ -57451,7 +57451,7 @@ declare interface nsIWinTaskbarType extends nsISupportsType {
      * toplevel window. See the documentation for nsITaskbarProgress for more
      * information.
      */
-    getTaskbarProgress(shell: nsIDocShellType): nsITaskbarProgress;
+    getTaskbarProgress(shell: nsIDocShellType): nsITaskbarProgressType;
     /**
      * Taskbar icon overlay
      *
@@ -57459,7 +57459,7 @@ declare interface nsIWinTaskbarType extends nsISupportsType {
      * to find the toplevel window. See the documentation in
      * nsITaskbarOverlayIconController for more details.
      */
-    getOverlayIconController(shell: nsIDocShellType): nsITaskbarOverlayIconController;
+    getOverlayIconController(shell: nsIDocShellType): nsITaskbarOverlayIconControllerType;
     /**
      * Taskbar and start menu jump list management
      *
@@ -57472,7 +57472,7 @@ declare interface nsIWinTaskbarType extends nsISupportsType {
      * @throw NS_ERROR_ALREADY_INITIALIZED if an nsIJumpListBuilder instance is
      * currently building a list.
      */
-    createJumpListBuilder(aPrivateBrowsing: boolean): nsIJumpListBuilder;
+    createJumpListBuilder(aPrivateBrowsing: boolean): nsIJumpListBuilderType;
     /**
      * Application window taskbar group settings
      *
@@ -57518,7 +57518,7 @@ declare interface nsIWindowCreatorType extends nsISupportsType {
      * to any possible backup scheme for creating the window.
      * @return the new window. Will be null if canceled or an error occurred.
      */
-    createChromeWindow(parent: nsIWebBrowserChromeType, chromeFlags: uint32_t, aOpenWindowInfo: nsIOpenWindowInfoType, cancel: boolean): nsIWebBrowserChrome;
+    createChromeWindow(parent: nsIWebBrowserChromeType, chromeFlags: uint32_t, aOpenWindowInfo: nsIOpenWindowInfoType, cancel: boolean): nsIWebBrowserChromeType;
 }
 
 /**
@@ -57536,12 +57536,12 @@ declare interface nsIWindowMediatorType extends nsISupportsType {
      * asynchronously in many cases, so windows returned from this
      * enumerator can have .closed set to true.  Caveat enumerator!
      */
-    getEnumerator(aWindowType: wstring): nsISimpleEnumerator;
+    getEnumerator(aWindowType: wstring): nsISimpleEnumeratorType;
     /**
      * Identical to getEnumerator except:
      * @return an enumerator of nsIAppWindows
      */
-    getAppWindowEnumerator(aWindowType: wstring): nsISimpleEnumerator;
+    getAppWindowEnumerator(aWindowType: wstring): nsISimpleEnumeratorType;
     /**
      * Return an enumerator which iterates over all windows of type aWindowType
      * in their z (front-to-back) order. Note this interface makes
@@ -57555,7 +57555,7 @@ declare interface nsIWindowMediatorType extends nsISupportsType {
      * from front to back. back to front if false.
      * @return an enumerator of nsIAppWindows
      */
-    getZOrderAppWindowEnumerator(aWindowType: wstring, aFrontToBack: boolean): nsISimpleEnumerator;
+    getZOrderAppWindowEnumerator(aWindowType: wstring, aFrontToBack: boolean): nsISimpleEnumeratorType;
     /**
      * This is a shortcut for simply fetching the first window in
      * front to back order.
@@ -57706,19 +57706,19 @@ declare interface nsIWindowWatcherType extends nsISupportsType {
      * @return an enumerator which will itself return nsISupports objects which
      * can be QIed to an nsIDOMWindow
      */
-    getWindowEnumerator(): nsISimpleEnumerator;
+    getWindowEnumerator(): nsISimpleEnumeratorType;
     /**
      * Return a newly created nsIPrompt implementation.
      * @param aParent the parent window used for posing alerts. can be null.
      * @return a new nsIPrompt object
      */
-    getNewPrompter(aParent: mozIDOMWindowProxy): nsIPrompt;
+    getNewPrompter(aParent: mozIDOMWindowProxy): nsIPromptType;
     /**
      * Return a newly created nsIAuthPrompt implementation.
      * @param aParent the parent window used for posing alerts. can be null.
      * @return a new nsIAuthPrompt object
      */
-    getNewAuthPrompter(aParent: mozIDOMWindowProxy): nsIAuthPrompt;
+    getNewAuthPrompter(aParent: mozIDOMWindowProxy): nsIAuthPromptType;
     /**
      * Set the window creator callback. It must be filled in by the app.
      * openWindow will use it to create new windows.
@@ -57739,7 +57739,7 @@ declare interface nsIWindowWatcherType extends nsISupportsType {
      * @param aWindow the DOM window whose chrome window the caller needs
      * @return the corresponding chrome window
      */
-    getChromeForWindow(aWindow: mozIDOMWindowProxy): nsIWebBrowserChrome;
+    getChromeForWindow(aWindow: mozIDOMWindowProxy): nsIWebBrowserChromeType;
     /**
      * Retrieve an existing chrome window (or frame).
      * @param aTargetName the window name
@@ -57936,13 +57936,13 @@ declare interface nsIWindowsRegKeyType extends nsISupportsType {
      *
      * @return nsIWindowsRegKey for the newly opened subkey.
      */
-    openChild(relPath: AString, mode: unsigned_long): nsIWindowsRegKey;
+    openChild(relPath: AString, mode: unsigned_long): nsIWindowsRegKeyType;
     /**
      * This method opens or creates a subkey relative to this key.
      *
      * @return nsIWindowsRegKey for the newly opened or created subkey.
      */
-    createChild(relPath: AString, mode: unsigned_long): nsIWindowsRegKey;
+    createChild(relPath: AString, mode: unsigned_long): nsIWindowsRegKeyType;
     /**
      * This attribute returns the number of child keys.
      */
@@ -58451,7 +58451,7 @@ declare interface nsIWorkerDebuggerManagerType extends nsISupportsType {
     /**
      *
      */
-    getWorkerDebuggerEnumerator(): nsISimpleEnumerator;
+    getWorkerDebuggerEnumerator(): nsISimpleEnumeratorType;
     /**
      *
      */
@@ -58692,7 +58692,7 @@ declare interface nsIX509CertDBType extends nsISupportsType {
      * @param aDBkey Database internal key, as obtained using
      * attribute dbkey in nsIX509Cert.
      */
-    findCertByDBKey(aDBkey: ACString): nsIX509Cert;
+    findCertByDBKey(aDBkey: ACString): nsIX509CertType;
     /**
      * Use this to import a stream sent down as a mime type into
      * the certificate database on the default token.
@@ -58805,7 +58805,7 @@ declare interface nsIX509CertDBType extends nsISupportsType {
      * encoded as Base 64.
      * @return The new certificate object.
      */
-    constructX509FromBase64(base64: ACString): nsIX509Cert;
+    constructX509FromBase64(base64: ACString): nsIX509CertType;
     /**
      * Decode a raw data presentation and instantiate an object in memory.
      *
@@ -58813,7 +58813,7 @@ declare interface nsIX509CertDBType extends nsISupportsType {
      * encoded as raw DER.
      * @return The new certificate object.
      */
-    constructX509(certDER: invalid): nsIX509Cert;
+    constructX509(certDER: invalid): nsIX509CertType;
     readonly AppXPCShellRoot: string;
     readonly AddonsPublicRoot: string;
     readonly AddonsStageRoot: string;
@@ -58834,7 +58834,7 @@ declare interface nsIX509CertDBType extends nsISupportsType {
      * passed to CERT_DecodeTrustString.
      * @return nsIX509Cert the resulting certificate
      */
-    addCert(certDER: ACString, trust: ACString): nsIX509Cert;
+    addCert(certDER: ACString, trust: ACString): nsIX509CertType;
     readonly FLAG_LOCAL_ONLY;
     readonly FLAG_MUST_BE_EV;
     /**
@@ -58871,7 +58871,7 @@ declare interface nsIX509CertDBType extends nsISupportsType {
      * passed to CERT_DecodeTrustString.
      * @return nsIX509Cert the resulting certificate
      */
-    addCertFromBase64(base64: ACString, trust: ACString): nsIX509Cert;
+    addCertFromBase64(base64: ACString, trust: ACString): nsIX509CertType;
     /**
      * Encode the list of certificates as a PKCS#7 SignedData structure. No data
      * is actually signed - this is merely a way of exporting a collection of
@@ -59378,7 +59378,7 @@ declare interface nsIXULStoreType extends nsISupportsType {
      *
      * @param doc - document URI
      */
-    getIDsEnumerator(doc: AString): nsIStringEnumerator;
+    getIDsEnumerator(doc: AString): nsIStringEnumeratorType;
     /**
      * Iterates over all of the attributes associated with a given document uri
      * and id that have stored data.
@@ -59386,7 +59386,7 @@ declare interface nsIXULStoreType extends nsISupportsType {
      * @param doc - document URI
      * @param id - identifier of the node
      */
-    getAttributeEnumerator(doc: AString, id: AString): nsIStringEnumerator;
+    getAttributeEnumerator(doc: AString, id: AString): nsIStringEnumeratorType;
 }
 
 /**
@@ -59491,7 +59491,7 @@ declare interface nsIZipReaderType extends nsISupportsType {
     /**
      * Returns a nsIZipEntry describing a specified zip entry.
      */
-    getEntry(zipEntry: AUTF8String): nsIZipEntry;
+    getEntry(zipEntry: AUTF8String): nsIZipEntryType;
     /**
      * Checks whether the zipfile contains an entry specified by entryName.
      */
@@ -59539,13 +59539,13 @@ declare interface nsIZipReaderType extends nsISupportsType {
      * @throws NS_ERROR_ILLEGAL_VALUE on many but not all invalid aPattern
      * values.
      */
-    findEntries(aPattern: AUTF8String): nsIUTF8StringEnumerator;
+    findEntries(aPattern: AUTF8String): nsIUTF8StringEnumeratorType;
     /**
      * Returns an input stream containing the contents of the specified zip
      * entry.
      * @param zipEntry the name of the entry to open the stream from
      */
-    getInputStream(zipEntry: AUTF8String): nsIInputStream;
+    getInputStream(zipEntry: AUTF8String): nsIInputStreamType;
     /**
      * Returns an input stream containing the contents of the specified zip
      * entry. If the entry refers to a directory (ends with '/'), a directory stream
@@ -59553,7 +59553,7 @@ declare interface nsIZipReaderType extends nsISupportsType {
      * @param aJarSpec the Spec of the URI for the JAR (only used for directory streams)
      * @param zipEntry the name of the entry to open the stream from
      */
-    getInputStreamWithSpec(aJarSpec: AUTF8String, zipEntry: AUTF8String): nsIInputStream;
+    getInputStreamWithSpec(aJarSpec: AUTF8String, zipEntry: AUTF8String): nsIInputStreamType;
 }
 
 /**
@@ -59579,7 +59579,7 @@ declare interface nsIZipReaderCacheType extends nsISupportsType {
      * @note If someone called close() on the shared nsIZipReader, this method
      * will return the closed zip reader.
      */
-    getZip(zipFile: nsIFileType): nsIZipReader;
+    getZip(zipFile: nsIFileType): nsIZipReaderType;
     /**
      * Like getZip(), returns a (possibly shared) nsIZipReader for an nsIFile,
      * but if a zip reader for the given file is not in the cache, returns
@@ -59588,7 +59588,7 @@ declare interface nsIZipReaderCacheType extends nsISupportsType {
      * @note If someone called close() on the shared nsIZipReader, this method
      * will return the closed zip reader.
      */
-    getZipIfCached(zipFile: nsIFileType): nsIZipReader;
+    getZipIfCached(zipFile: nsIFileType): nsIZipReaderType;
     /**
      * returns true if this zipreader already has this file cached
      */
@@ -59598,7 +59598,7 @@ declare interface nsIZipReaderCacheType extends nsISupportsType {
      *
      * See getZip
      */
-    getInnerZip(zipFile: nsIFileType, zipEntry: AUTF8String): nsIZipReader;
+    getInnerZip(zipFile: nsIFileType, zipEntry: AUTF8String): nsIZipReaderType;
     /**
      * Returns the cached NSPR file descriptor of the file.
      * Note: currently not supported on Windows platform.
@@ -59672,7 +59672,7 @@ declare interface nsIZipWriterType extends nsISupportsType {
      *
      * @param aZipEntry the path of the entry
      */
-    getEntry(aZipEntry: AUTF8String): nsIZipEntry;
+    getEntry(aZipEntry: AUTF8String): nsIZipEntryType;
     /**
      * Checks whether the zipfile contains an entry specified by zipEntry.
      *
@@ -59872,11 +59872,11 @@ declare interface nsPIWidgetCocoaType extends nsISupportsType {
     /**
      *
      */
-    GetChildSheet(aShown: boolean): nsIWidget;
+    GetChildSheet(aShown: boolean): nsIWidgetType;
     /**
      *
      */
-    GetRealParent(): nsIWidget;
+    GetRealParent(): nsIWidgetType;
     /**
      *
      */
@@ -59930,7 +59930,7 @@ declare interface nsPIWindowWatcherType extends nsISupportsType {
      * @return the nsIRemoteTab of the initial browser for the newly opened
      * window.
      */
-    openWindowWithRemoteTab(aOpeningTab: nsIRemoteTabType, aFeatures: WindowFeaturesRef, aCalledFromJS: boolean, aOpenerFullZoom: float, aOpenWindowInfo: nsIOpenWindowInfoType): nsIRemoteTab;
+    openWindowWithRemoteTab(aOpeningTab: nsIRemoteTabType, aFeatures: WindowFeaturesRef, aCalledFromJS: boolean, aOpenerFullZoom: float, aOpenWindowInfo: nsIOpenWindowInfoType): nsIRemoteTabType;
 }
 
 /**
@@ -60297,7 +60297,7 @@ declare interface nsIXPCComponents_UtilsType extends nsISupportsType {
      *
      * Create an instance of the built-in cycle collector logger object.
      */
-    createCCLogger(): nsICycleCollectorListener;
+    createCCLogger(): nsICycleCollectorListenerType;
     /**
      * To be called from JS only.
      *
@@ -60532,7 +60532,7 @@ declare interface nsIXPCComponents_UtilsType extends nsISupportsType {
      * Get a DOM classinfo for the given classname.  Only some class
      * names are supported.
      */
-    getDOMClassInfo(aClassName: AString): nsIClassInfo;
+    getDOMClassInfo(aClassName: AString): nsIClassInfoType;
     /**
      * Gets the incument global for the execution of this function. For internal
      * and testing use only.
@@ -60591,12 +60591,12 @@ declare interface nsIXPCComponents_UtilsType extends nsISupportsType {
      * of invocation. Otherwise (i.e. outside of JS-implemented WebIDL), this
      * function throws. If it throws, you probably shouldn't be using it.
      */
-    getWebIDLCallerPrincipal(): nsIPrincipal;
+    getWebIDLCallerPrincipal(): nsIPrincipalType;
     /**
      * Gets the principal of a script object, after unwrapping any cross-
      * compartment wrappers.
      */
-    getObjectPrincipal(obj: jsval): nsIPrincipal;
+    getObjectPrincipal(obj: jsval): nsIPrincipalType;
     /**
      * Gets the URI or identifier string associated with an object's
      * realm (the same one used by the memory reporter machinery).
@@ -60630,7 +60630,7 @@ declare interface nsIXPCComponents_UtilsType extends nsISupportsType {
     /**
      * Create a spellchecker object.
      */
-    createSpellChecker(): nsIEditorSpellCheck;
+    createSpellChecker(): nsIEditorSpellCheckType;
     /**
      * Create a commandline object.
      *
@@ -60645,31 +60645,31 @@ declare interface nsIXPCComponents_UtilsType extends nsISupportsType {
      * `nsICommandLine.STATE_REMOTE_AUTO`, or
      * `nsICommandLine.STATE_REMOTE_EXPLICIT`.
      */
-    createCommandLine(args: invalid, workingDir: nsIFileType, state: unsigned_long): nsISupports;
+    createCommandLine(args: invalid, workingDir: nsIFileType, state: unsigned_long): nsISupportsType;
     /**
      * Create a command params object.
      */
-    createCommandParams(): nsICommandParams;
+    createCommandParams(): nsICommandParamsType;
     /**
      * Create a loadcontext object.
      */
-    createLoadContext(): nsILoadContext;
+    createLoadContext(): nsILoadContextType;
     /**
      * Create a private loadcontext object.
      */
-    createPrivateLoadContext(): nsILoadContext;
+    createPrivateLoadContext(): nsILoadContextType;
     /**
      * Create a persistent property object.
      */
-    createPersistentProperties(): nsIPersistentProperties;
+    createPersistentProperties(): nsIPersistentPropertiesType;
     /**
      * Create a document encoder object.
      */
-    createDocumentEncoder(contentType: string): nsIDocumentEncoder;
+    createDocumentEncoder(contentType: string): nsIDocumentEncoderType;
     /**
      * Create an HTML copy encoder object.
      */
-    createHTMLCopyEncoder(): nsIDocumentEncoder;
+    createHTMLCopyEncoder(): nsIDocumentEncoderType;
     /**
      *
      */
@@ -60867,7 +60867,7 @@ declare interface nsIXPCTestCEnumsType extends nsISupportsType {
     /**
      *
      */
-    testCEnumOutput(): nsIXPCTestCEnums_testFlagsExplicit;
+    testCEnumOutput(): nsIXPCTestCEnums_testFlagsExplicitType;
 }
 
 /**
@@ -61107,7 +61107,7 @@ declare interface nsIXPCTestUtilsType extends nsISupportsType {
     /**
      *
      */
-    doubleWrapFunction(f: nsIXPCTestFunctionInterfaceType): nsIXPCTestFunctionInterface;
+    doubleWrapFunction(f: nsIXPCTestFunctionInterfaceType): nsIXPCTestFunctionInterfaceType;
 }
 
 type CiKeys = "IJSDebugger" | "IPeerConnectionObserver" | "IPeerConnection" | "IUrlClassifierUITelemetry" | "nsIScriptableOK" | "nsIScriptableWithNotXPCOM" | "nsISessionStoreFunctions" | "amIAddonManagerStartup" | "amIWebInstallPrompt" | "extIWebNavigation" | "imgICache" | "imgIContainer" | "imgIContainerDebug" | "imgIEncoder" | "imgILoader" | "imgINotificationObserver" | "imgIRequest" | "imgIScriptedNotificationObserver" | "imgITools" | "imgIContainerCallback" | "inIDeepTreeWalker" | "mozIAppServicesLogger" | "mozIVisitInfo" | "mozIPlaceInfo" | "mozIVisitInfoCallback" | "mozIVisitedStatusCallback" | "mozIAsyncHistory" | "mozIBridgedSyncEngineCallback" | "mozIBridgedSyncEngineApplyCallback" | "mozIBridgedSyncEngine" | "mozIDOMWindow" | "mozIDOMWindowProxy" | "mozIDownloadPlatform" | "mozIExtensionServiceWorkerInfo" | "mozIExtensionListenerCallOptions" | "mozIExtensionEventListener" | "mozIExtensionAPIRequest" | "mozIExtensionAPIRequestResult" | "mozIExtensionAPIRequestHandler" | "mozIExtensionProcessScript" | "mozIExtensionStorageArea" | "mozIConfigurableExtensionStorageArea" | "mozISyncedExtensionStorageArea" | "mozIExtensionStorageListener" | "mozIExtensionStorageCallback" | "mozIGeckoMediaPluginChromeService" | "mozIGeckoMediaPluginService" | "mozIInterruptible" | "mozIJSSubScriptLoader" | "mozILocaleService" | "mozIMozIntl" | "mozIMozIntlHelper" | "mozIOSPreferences" | "mozIPersonalDictionary" | "mozIPlacesAutoComplete" | "mozIPlacesPendingOperation" | "mozIRemoteLazyInputStream" | "mozISandboxReport" | "mozISandboxReportArray" | "mozISandboxReporter" | "mozISandboxSettings" | "mozISandboxTest" | "mozIServicesLogSink" | "mozISpellCheckingEngine" | "mozIStorageAsyncConnection" | "mozIStorageAsyncStatement" | "mozIStorageBaseStatement" | "mozIStorageBindingParams" | "mozIStorageBindingParamsArray" | "mozIStorageCompletionCallback" | "mozIStorageConnection" | "mozIStorageError" | "mozIStorageFunction" | "mozIStoragePendingStatement" | "mozIStorageProgressHandler" | "mozIStorageResultSet" | "mozIStorageRow" | "mozIStorageService" | "mozIStorageStatement" | "mozIStorageStatementCallback" | "mozIStorageVacuumParticipant" | "mozIStorageValueArray" | "mozISyncedBookmarksMirrorProgressListener" | "mozISyncedBookmarksMirrorCallback" | "mozISyncedBookmarksMirrorLogger" | "mozISyncedBookmarksMerger" | "mozITXTToHTMLConv" | "mozITestInterfaceJS" | "mozIThirdPartyUtil" | "nsIASN1Tree" | "nsIAboutModule" | "nsIAboutNewTabService" | "nsIInstalledApplication" | "nsIAboutThirdParty" | "nsIAddonPolicyService" | "nsIAddonContentPolicy" | "nsIAlertNotificationImageListener" | "nsIAlertAction" | "nsIAlertNotification" | "nsIAlertsService" | "nsIAlertsDoNotDisturb" | "nsIAlertsIconData" | "nsIAlertsIconURI" | "nsIAndroidEventCallback" | "nsIAndroidEventFinalizer" | "nsIAndroidEventListener" | "nsIAndroidEventDispatcher" | "nsIAndroidView" | "nsIAndroidBridge" | "nsIAppShell" | "nsIAppShellService" | "nsIAppStartup" | "nsIAppWindow" | "nsIApplicationChooserFinishedCallback" | "nsIApplicationChooser" | "nsIApplicationReputationService" | "nsIApplicationReputationQuery" | "nsIApplicationReputationCallback" | "nsIArray" | "nsIArrayBufferInputStream" | "nsIArrayExtensions" | "nsIAsyncInputStream" | "nsIInputStreamCallback" | "nsIAsyncOutputStream" | "nsIOutputStreamCallback" | "nsIAsyncShutdownBlocker" | "nsIAsyncShutdownClient" | "nsIAsyncShutdownCompletionCallback" | "nsIAsyncShutdownBarrier" | "nsIAsyncShutdownService" | "nsIAsyncStreamCopier" | "nsIAsyncStreamCopier2" | "nsIAsyncVerifyRedirectCallback" | "nsISuspendedTypes" | "nsIAudioChannelAgentCallback" | "nsIAudioChannelAgent" | "nsIAudioDeviceInfo" | "nsIAuthInformation" | "nsIAuthModule" | "nsIAuthPrompt" | "nsIAuthPrompt2" | "nsIAuthPromptAdapterFactory" | "nsIAuthPromptCallback" | "nsIAuthPromptProvider" | "nsIAutoCompleteController" | "nsIAutoCompleteInput" | "nsIAutoCompletePopup" | "nsIAutoCompleteResult" | "nsIAutoCompleteSearch" | "nsIAutoCompleteObserver" | "nsIAutoCompleteSearchDescriptor" | "nsIAutoCompleteSimpleResult" | "nsIAutoCompleteSimpleResultListener" | "nsIAutoCompleteSimpleSearch" | "nsIAutoplay" | "nsITabUnloader" | "nsIAvailableMemoryWatcherBase" | "nsIBFCacheEntry" | "nsIBackgroundChannelRegistrar" | "nsIBackgroundFileSaver" | "nsIBackgroundFileSaverObserver" | "nsIBackgroundTasks" | "nsIBackgroundTasksManager" | "nsIBackgroundTasksRunner" | "nsIBaseWindow" | "nsIBidiKeyboard" | "nsIBinaryHttpRequest" | "nsIBinaryHttpResponse" | "nsIBinaryHttp" | "nsIBinaryInputStream" | "nsIBinaryOutputStream" | "nsIBits" | "nsIBitsNewRequestCallback" | "nsIBitsRequest" | "nsIBitsCallback" | "nsIBlocklistService" | "nsIBounceTrackingProtection" | "nsIBrowser" | "nsIBrowserChild" | "nsIBrowserController" | "nsIOpenURIInFrameParams" | "nsIBrowserDOMWindow" | "nsIBrowserElementAPI" | "nsIBrowserHandler" | "nsIBrowserUsage" | "nsIVisibleTab" | "nsIBrowserWindowTracker" | "nsIBufferedInputStream" | "nsIBufferedOutputStream" | "nsIByteRangeRequest" | "nsICacheEntry" | "nsICacheEntryMetaDataVisitor" | "nsICacheEntryDoomCallback" | "nsICacheEntryOpenCallback" | "nsIInputStreamReceiver" | "nsICacheInfoChannel" | "nsICachePurgeLock" | "nsICacheStorage" | "nsICacheStorageService" | "nsICacheStorageConsumptionObserver" | "nsICacheStorageVisitor" | "nsICacheTesting" | "nsICachingChannel" | "nsICancelable" | "nsICaptivePortalCallback" | "nsICaptivePortalDetector" | "nsICaptivePortalServiceCallback" | "nsICaptivePortalService" | "nsICascadeFilter" | "nsICategoryEntry" | "nsICategoryManager" | "nsICertOverride" | "nsICertOverrideService" | "nsICertStorageCallback" | "nsIRevocationState" | "nsIIssuerAndSerialRevocationState" | "nsISubjectAndPubKeyRevocationState" | "nsICRLiteCoverage" | "nsICRLiteTimestamp" | "nsICertInfo" | "nsICertStorage" | "nsICertTreeItem" | "nsICertTree" | "nsICertificateDialogs" | "nsIChannel" | "nsIIdentChannel" | "nsIUrlClassifierBlockedChannel" | "nsIChannelClassifierService" | "nsIChannelEventSink" | "nsIChildChannel" | "nsIChromeRegistry" | "nsIXULChromeRegistry" | "nsIClassInfo" | "nsIClassOfService" | "nsIClassifiedChannel" | "nsIClearDataService" | "nsIClearDataCallback" | "nsIClickRule" | "nsIClientAuthDialogCallback" | "nsIClientAuthDialogService" | "nsIClientAuthDialogs" | "nsIClientAuthRememberRecord" | "nsIClientAuthRememberService" | "nsIAsyncSetClipboardData" | "nsIAsyncSetClipboardDataCallback" | "nsIClipboard" | "nsIClipboardHelper" | "nsIClipboardOwner" | "nsICloneableInputStream" | "nsICloneableInputStreamWithRange" | "nsICodeCoverage" | "nsIColorPickerShownCallback" | "nsIColorPicker" | "nsICommandLine" | "nsICommandLineHandler" | "nsICommandLineRunner" | "nsICommandLineValidator" | "nsICommandManager" | "nsICommandParams" | "nsIComponentManager" | "nsIComponentRegistrar" | "nsICompressConvStats" | "nsIConsoleAPIStorage" | "nsIConsoleListener" | "nsIConsoleMessage" | "nsIConsoleService" | "nsIContentBlockingAllowList" | "nsIContentDispatchChooser" | "nsIContentHandler" | "nsIContentPermissionType" | "nsIContentPermissionRequest" | "nsIContentPermissionPrompt" | "nsIContentPolicy" | "nsIContentPrefObserver" | "nsIContentPrefService2" | "nsIContentPrefCallback2" | "nsIContentPref" | "nsIContentProcessInfo" | "nsIContentProcessProvider" | "nsIContentSecurityManager" | "nsIContentSecurityPolicy" | "nsICSPEventListener" | "nsIContentSignatureVerifier" | "nsIContentSniffer" | "nsIContentViewer" | "nsIContentViewerEdit" | "nsIController" | "nsICommandController" | "nsIControllerCommand" | "nsIControllerCommandTable" | "nsIControllerContext" | "nsIControllers" | "nsIConverterInputStream" | "nsIConverterOutputStream" | "nsICookie" | "nsICookieBannerListService" | "nsICookieBannerRule" | "nsICookieBannerService" | "nsICookieJarSettings" | "nsICookieManager" | "nsICookieNotification" | "nsICookiePermission" | "nsICookieRule" | "nsICookieTransactionCallback" | "nsICookieService" | "nsICrashReporter" | "nsICrashService" | "nsICryptoHash" | "nsICycleCollectorHandler" | "nsICycleCollectorLogSink" | "nsICycleCollectorListener" | "nsIDAPTelemetry" | "nsIDHCPClient" | "nsIDNSAdditionalInfo" | "nsIDNSByTypeRecord" | "nsIDNSTXTRecord" | "nsISVCParam" | "nsISVCParamAlpn" | "nsISVCParamNoDefaultAlpn" | "nsISVCParamPort" | "nsISVCParamIPv4Hint" | "nsISVCParamEchConfig" | "nsISVCParamIPv6Hint" | "nsISVCParamODoHConfig" | "nsISVCBRecord" | "nsIDNSHTTPSSVCRecord" | "nsIDNSListener" | "nsIDNSRecord" | "nsIDNSAddrRecord" | "nsIDNSService" | "nsIDOMChromeWindow" | "nsIDOMEventListener" | "nsIDOMGeoPosition" | "nsIDOMGeoPositionCallback" | "nsIDOMGeoPositionCoords" | "nsIDOMGeoPositionErrorCallback" | "nsIDOMGlobalPropertyInitializer" | "nsIDOMMozBrowserFrame" | "nsIDOMProcessChild" | "nsIDOMProcessParent" | "nsIDOMRequestService" | "nsIDOMStorageManager" | "nsIDOMSessionStorageManager" | "nsIDOMMozWakeLockListener" | "nsIDOMWindow" | "nsIDOMWindowUtils" | "nsITranslationNodeList" | "nsIJSRAIIHelper" | "nsIDOMXULButtonElement" | "nsIDOMXULCommandDispatcher" | "nsIDOMXULContainerItemElement" | "nsIDOMXULContainerElement" | "nsIDOMXULControlElement" | "nsIDOMXULMenuListElement" | "nsIDOMXULMultiSelectControlElement" | "nsIDOMXULRadioGroupElement" | "nsIDOMXULRelatedElement" | "nsIDOMXULSelectControlElement" | "nsIDOMXULSelectControlItemElement" | "nsINetDashboardCallback" | "nsIDashboard" | "nsIDashboardEventNotifier" | "nsIDataStorageManager" | "nsIDataStorage" | "nsIDataStorageItem" | "nsIDebug2" | "nsIDefaultAgent" | "nsIDeviceSensorData" | "nsIDeviceSensors" | "nsIDialogParamBlock" | "nsIDirIndex" | "nsIDirIndexListener" | "nsIDirIndexParser" | "nsIDirectTaskDispatcher" | "nsIDirectoryEnumerator" | "nsIDirectoryServiceProvider" | "nsIDirectoryServiceProvider2" | "nsIDirectoryService" | "nsIDisplayInfo" | "nsIDocShell" | "nsIDocShellTreeItem" | "nsIDocShellTreeOwner" | "nsIDocumentEncoderNodeFixup" | "nsIDocumentEncoder" | "nsIDocumentLoader" | "nsIDocumentLoaderFactory" | "nsIDocumentStateListener" | "nsIDomainPolicy" | "nsIDomainSet" | "nsIDownloader" | "nsIDownloadObserver" | "nsIDragService" | "nsIDragSession" | "nsIDroppedLinkItem" | "nsIDroppedLinkHandler" | "nsIE10SUtils" | "nsIEarlyHintObserver" | "nsIEdgeMigrationUtils" | "nsIEditActionListener" | "nsIEditingSession" | "nsIEditor" | "nsIEditorMailSupport" | "nsIEditorSpellCheck" | "nsIEditorSpellCheckCallback" | "nsIEffectiveTLDService" | "nsIEmbeddingSiteWindow" | "nsISupports" | "nsIEncodedChannel" | "nsIEnterprisePolicies" | "nsIEnvironment" | "nsIEventListenerChange" | "nsIListenerChangeListener" | "nsIEventListenerInfo" | "nsIEventListenerService" | "nsIEventSourceEventListener" | "nsIEventSourceEventService" | "nsIEventTarget" | "nsIStackFrame" | "nsIException" | "nsIExpatSink" | "nsIExternalHelperAppService" | "nsPIExternalAppLauncher" | "nsIHelperAppLauncher" | "nsIExternalProtocolHandler" | "nsIExternalProtocolService" | "nsIFOG" | "nsIFactory" | "nsIFaviconService" | "nsIFaviconDataCallback" | "nsIFile" | "nsIFileChannel" | "nsIFilePicker" | "nsIFilePickerShownCallback" | "nsIFileProtocolHandler" | "nsIFileInputStream" | "nsIFileOutputStream" | "nsIFileRandomAccessStream" | "nsIFileMetadata" | "nsIAsyncFileMetadata" | "nsIFileMetadataCallback" | "nsIFileURL" | "nsIFileURLMutator" | "nsIFinalizationWitnessService" | "nsIFind" | "nsIFindService" | "nsIFingerprintingOverride" | "nsIFingerprintingWebCompatService" | "nsIFocusManager" | "nsIFontEnumerator" | "nsIFontLoadCompleteCallback" | "nsIForcePendingChannel" | "nsIFormAutoComplete" | "nsIFormAutoCompleteObserver" | "nsIFormFillController" | "nsIFormPOSTActionChannel" | "nsIFormatConverter" | "nsIGIOMimeApp" | "nsIGIOService" | "nsIGNOMEShellService" | "nsIGSettingsCollection" | "nsIGSettingsService" | "nsIGeolocationUpdate" | "nsIGeolocationProvider" | "nsIGfxInfo" | "nsIGfxInfoDebug" | "nsIGleanBoolean" | "nsIGleanDatetime" | "nsIGleanCounter" | "nsIGleanTimingDistribution" | "nsIGleanMemoryDistribution" | "nsIGleanCustomDistribution" | "nsIGleanPingTestCallback" | "nsIGleanPing" | "nsIGleanString" | "nsIGleanStringList" | "nsIGleanTimespan" | "nsIGleanUuid" | "nsIGleanEvent" | "nsIGleanQuantity" | "nsIGleanDenominator" | "nsIGleanNumerator" | "nsIGleanRate" | "nsIGleanUrl" | "nsIGleanText" | "nsIGtkTaskbarProgress" | "nsIHTMLAbsPosEditor" | "nsIHTMLEditor" | "nsIHTMLInlineTableEditor" | "nsIHTMLObjectResizer" | "nsIHandlerService" | "nsIHangDetails" | "nsIHangReport" | "nsIHapticFeedback" | "nsIHelperAppLauncherDialog" | "nsIHttpActivityObserver" | "nsIHttpActivityDistributor" | "nsIHttpAuthManager" | "nsIHttpAuthenticableChannel" | "nsIHttpAuthenticator" | "nsIHttpAuthenticatorCallback" | "nsIHttpChannel" | "nsIHttpChannelAuthProvider" | "nsIHttpChannelChild" | "nsIHttpUpgradeListener" | "nsIHttpChannelInternal" | "nsIHttpHeaderVisitor" | "nsIHttpProtocolHandler" | "nsIHttpPushListener" | "nsIHttpServer" | "nsIHttpServerStoppedCallback" | "nsIHttpServerIdentity" | "nsIHttpRequestHandler" | "nsIHttpRequest" | "nsIHttpResponse" | "nsIHttpsOnlyModePermission" | "nsIIDBPermissionsRequest" | "nsIIDNService" | "nsIINIParser" | "nsIINIParserWriter" | "nsIINIParserFactory" | "nsIIOService" | "nsIIOServiceInternal" | "nsIIOUtil" | "nsIMozIconURI" | "nsIIdentityCredentialPromptService" | "nsIIdentityCredentialStorageService" | "nsIIdlePeriod" | "nsIImageLoadingContent" | "nsIIncrementalDownload" | "nsIIncrementalStreamLoaderObserver" | "nsIIncrementalStreamLoader" | "nsIInlineSpellChecker" | "nsIInputListAutoComplete" | "nsIInputStream" | "nsIInputStreamChannel" | "nsIInputStreamLength" | "nsIAsyncInputStreamLength" | "nsIInputStreamLengthCallback" | "nsIInputStreamPriority" | "nsIInputStreamPump" | "nsIInputStreamTee" | "nsIInterceptionInfo" | "nsIInterfaceRequestor" | "nsIJARChannel" | "nsIJARURI" | "nsIJARURIMutator" | "nsIJSInspector" | "nsIJumpListCommittedCallback" | "nsIJumpListBuilder" | "nsIJumpListItem" | "nsIJumpListSeparator" | "nsIJumpListLink" | "nsIJumpListShortcut" | "nsIKeyValueService" | "nsIKeyValueDatabase" | "nsIKeyValuePair" | "nsIKeyValueEnumerator" | "nsIKeyValueDatabaseCallback" | "nsIKeyValueEnumeratorCallback" | "nsIKeyValuePairCallback" | "nsIKeyValueVariantCallback" | "nsIKeyValueVoidCallback" | "nsIKeychainMigrationUtils" | "nsILayoutDebuggingTools" | "nsILayoutHistoryState" | "nsILineInputStream" | "nsILoadContext" | "nsILoadContextInfo" | "nsILoadContextInfoFactory" | "nsILoadGroup" | "nsILoadGroupChild" | "nsILoadInfo" | "nsILoadURIDelegate" | "nsILocalFileMac" | "nsILocalFileWin" | "nsILocalStorageManager" | "nsILoginAutoCompleteSearch" | "nsILoginDetectionService" | "nsILoginInfo" | "nsILoginSearchCallback" | "nsILoginManager" | "nsILoginManagerAuthPrompter" | "nsILoginManagerCrypto" | "nsILoginManagerPrompter" | "nsILoginManagerStorage" | "nsILoginMetaInfo" | "nsILoginReputationVerdictType" | "nsILoginReputationQuery" | "nsILoginReputationQueryCallback" | "nsILoginReputationService" | "nsIMIMEHeaderParam" | "nsIHandlerInfo" | "nsIMIMEInfo" | "nsIHandlerApp" | "nsILocalHandlerApp" | "nsIWebHandlerApp" | "nsIDBusHandlerApp" | "nsIMIMEInputStream" | "nsIMIMEService" | "nsIMacAttributionService" | "nsIMacDockSupport" | "nsIMacFinderProgressCanceledCallback" | "nsIMacFinderProgress" | "nsIMacPreferencesReader" | "nsIMacSharingService" | "nsIMacShellService" | "nsIMacUserActivityUpdater" | "nsITrashAppCallback" | "nsIMacWebAppUtils" | "nsIMarionette" | "nsIMediaDevice" | "nsIMediaManagerService" | "nsIFinishDumpingCallback" | "nsIDumpGCAndCCLogsCallback" | "nsIMemoryInfoDumper" | "nsIHandleReportCallback" | "nsIMemoryReporter" | "nsIFinishReportingCallback" | "nsIHeapAllocatedCallback" | "nsIMemoryReporterManager" | "nsIMessageLoop" | "nsIMessageSender" | "nsIInProcessContentFrameMessageManager" | "nsIMozBrowserFrame" | "nsIMultiPartChannel" | "nsIMultiPartChannelListener" | "nsIMultiplexInputStream" | "nsIMutableArray" | "nsINSSComponent" | "nsINSSErrorsService" | "nsINSSVersion" | "nsINamed" | "nsINamedPipeDataObserver" | "nsINamedPipeService" | "nsINativeAppSupport" | "nsINativeDNSResolverOverride" | "nsINativeOSFileResult" | "nsINativeOSFileSuccessCallback" | "nsINativeOSFileErrorCallback" | "nsINativeOSFileInternalsService" | "nsINavBookmarksService" | "nsINavHistoryResultNode" | "nsINavHistoryContainerResultNode" | "nsINavHistoryQueryResultNode" | "nsINavHistoryResultObserver" | "nsINavHistoryResult" | "nsINavHistoryQuery" | "nsINavHistoryQueryOptions" | "nsINavHistoryService" | "nsINestedURI" | "nsINestedURIMutator" | "nsINestedAboutURIMutator" | "nsIJSURIMutator" | "nsINetAddr" | "nsINetUtil" | "nsINetworkConnectivityService" | "nsIListNetworkAddressesListener" | "nsIGetHostnameListener" | "nsINetworkInfoService" | "nsIInterceptedBodyCallback" | "nsIInterceptedChannel" | "nsINetworkInterceptController" | "nsINetworkLinkService" | "nsINetworkPredictor" | "nsINetworkPredictorVerifier" | "nsINotificationStorageCallback" | "nsINotificationStorage" | "nsINullChannel" | "nsIOSFileConstantsService" | "nsIOSKeyStore" | "nsIOSPermissionRequest" | "nsIOSReauthenticator" | "nsIObjectInputStream" | "nsIObjectLoadingContent" | "nsIObjectOutputStream" | "nsIObliviousHttpClientResponse" | "nsIObliviousHttpClientRequest" | "nsIObliviousHttpServerResponse" | "nsIObliviousHttpServer" | "nsIObliviousHttp" | "nsIObliviousHttpService" | "nsIObliviousHttpChannel" | "nsIObserver" | "nsIObserverService" | "nsIBrowsingContextReadyCallback" | "nsIOpenWindowInfo" | "nsIOutputStream" | "nsIPK11Token" | "nsIPK11TokenDB" | "nsIPKCS11Module" | "nsIPKCS11ModuleDB" | "nsIPKCS11Slot" | "nsIPageThumbsStorageService" | "nsIPaper" | "nsIPaperMargin" | "nsIParentChannel" | "nsIAsyncVerifyRedirectReadyCallback" | "nsIParentRedirectingChannel" | "nsIParentalControlsService" | "nsIParserUtils" | "nsIPartitioningExceptionListObserver" | "nsIPartitioningExceptionListService" | "nsIPaymentResponseData" | "nsIGeneralResponseData" | "nsIBasicCardResponseData" | "nsIPaymentActionResponse" | "nsIPaymentCanMakeActionResponse" | "nsIPaymentShowActionResponse" | "nsIPaymentAbortActionResponse" | "nsIPaymentCompleteActionResponse" | "nsIMethodChangeDetails" | "nsIGeneralChangeDetails" | "nsIBasicCardChangeDetails" | "nsIPaymentAddress" | "nsIPaymentMethodData" | "nsIPaymentCurrencyAmount" | "nsIPaymentItem" | "nsIPaymentDetailsModifier" | "nsIPaymentShippingOption" | "nsIPaymentDetails" | "nsIPaymentOptions" | "nsIPaymentRequest" | "nsIPaymentRequestService" | "nsIPaymentUIService" | "nsIPermission" | "nsIPermissionDelegateHandler" | "nsIPermissionManager" | "nsIPropertyElement" | "nsIPersistentProperties" | "nsIPipe" | "nsISearchableInputStream" | "nsIPlacesPreviewsHelperService" | "nsIPlatformInfo" | "nsIPluginTag" | "nsIFakePluginTag" | "nsIPowerManagerService" | "nsIPrefBranch" | "nsIPrefLocalizedString" | "nsIPrefStatsCallback" | "nsIPrefObserver" | "nsIPrefService" | "nsIPrefetchService" | "nsIPreloadedStyleSheet" | "nsIPrincipal" | "nsIExpandedPrincipal" | "nsIPrintDialogService" | "nsIPrintPreviewNavigation" | "nsIPrintSettings" | "nsIPrintSettingsService" | "nsIPrintSettingsWin" | "nsIPrinterInfo" | "nsIPrinter" | "nsIPrinterList" | "nsIPrivacyTransitionObserver" | "nsIPrivateBrowsingChannel" | "nsIProcess" | "nsIProcessToolsService" | "nsIProfileStartup" | "nsIProfileMigrator" | "nsIProfileUnlocker" | "nsIProfilerStartParams" | "nsIProfiler" | "nsIProgressEventSink" | "nsIPrompt" | "nsIPromptCollection" | "nsIPromptFactory" | "nsIPromptInstance" | "nsIPromptService" | "nsIProperties" | "nsIProperty" | "nsIPropertyBag" | "nsIPropertyBag2" | "nsIProtectedAuthThread" | "nsIProtocolHandlerWithDynamicFlags" | "nsIProtocolHandler" | "nsIProtocolProxyCallback" | "nsIProxyProtocolFilterResult" | "nsIProtocolProxyFilter" | "nsIProtocolProxyChannelFilter" | "nsIProxyConfigChangedCallback" | "nsIProtocolProxyService" | "nsIProtocolProxyService2" | "nsIProxiedChannel" | "nsIProxiedProtocolHandler" | "nsIProxyInfo" | "nsIPublicKeyPinningService" | "nsIPurgeTrackerService" | "nsIPushErrorReporter" | "nsIPushNotifier" | "nsIPushData" | "nsIPushMessage" | "nsIPushSubscription" | "nsIPushSubscriptionCallback" | "nsIUnsubscribeResultCallback" | "nsIPushClearResultCallback" | "nsIPushService" | "nsIPushQuotaManager" | "nsIQueryContentEventResult" | "nsIQuotaUsageCallback" | "nsIQuotaCallback" | "nsIQuotaManagerService" | "nsIQuotaRequestBase" | "nsIQuotaUsageRequest" | "nsIQuotaRequest" | "nsIQuotaFullOriginMetadataResult" | "nsIQuotaUsageResult" | "nsIQuotaOriginUsageResult" | "nsIQuotaEstimateResult" | "nsIRFPService" | "nsIRaceCacheWithNetwork" | "nsIRandomAccessStream" | "nsIRandomGenerator" | "nsIRddProcessTest" | "nsIRedirectChannelRegistrar" | "nsIRedirectHistoryEntry" | "nsIRedirectResultListener" | "nsIReferrerInfo" | "nsIReflowObserver" | "nsIRefreshURI" | "nsIRegion" | "nsIRelativeFilePref" | "nsIRemoteAgent" | "nsIRemoteTab" | "nsIRequest" | "nsIRequestTailUnblockCallback" | "nsIRequestContext" | "nsIRequestContextService" | "nsIRequestObserver" | "nsIRequestObserverProxy" | "nsIResProtocolHandler" | "nsIResumableChannel" | "nsIRunnable" | "nsIRunnablePriority" | "nsIRunnableIPCMessageType" | "nsISDBCallback" | "nsISDBCloseCallback" | "nsISDBConnection" | "nsISDBRequest" | "nsISDBResult" | "nsISHEntry" | "nsISHistory" | "nsISHistoryListener" | "nsISafeOutputStream" | "nsIScreen" | "nsIScreenManager" | "nsIScriptChannel" | "nsIScriptErrorNote" | "nsIScriptError" | "nsIScriptLoaderObserver" | "nsIScriptSecurityManager" | "nsIScriptableBase64Encoder" | "nsIScriptableContentIterator" | "nsIScriptableInputStream" | "nsIScriptableUnicodeConverter" | "nsISearchSubmission" | "nsISearchEngine" | "nsISearchParseSubmissionResult" | "nsISearchService" | "nsISecCheckWrapChannel" | "nsISecretDecoderRing" | "nsISecureBrowserUI" | "nsISecurityConsoleMessage" | "nsISecurityUITelemetry" | "nsISeekableStream" | "nsISelectionController" | "nsISelectionDisplay" | "nsISelectionListener" | "nsISensitiveInfoHiddenURI" | "nsISerialEventTarget" | "nsISerializable" | "nsISerializationHelper" | "nsIServerSocket" | "nsIServerSocketListener" | "nsIServiceManager" | "nsIServiceWorkerUnregisterCallback" | "nsIServiceWorkerInfo" | "nsIServiceWorkerRegistrationInfoListener" | "nsIServiceWorkerRegistrationInfo" | "nsIServiceWorkerManagerListener" | "nsIServiceWorkerManager" | "nsISessionStorageService" | "nsISessionStoreRestoreData" | "nsISharePicker" | "nsISharingHandlerApp" | "nsIShellService" | "nsIJSEnumerator" | "nsISimpleEnumeratorBase" | "nsISimpleEnumerator" | "nsISimpleStreamListener" | "nsISimpleURIMutator" | "nsISiteSecurityService" | "nsISlowScriptDebugCallback" | "nsISlowScriptDebuggerStartupCallback" | "nsISlowScriptDebugRemoteCallback" | "nsISlowScriptDebug" | "nsISocketFilter" | "nsISocketFilterHandler" | "nsISocketProvider" | "nsISocketProviderService" | "nsISocketTransport" | "nsISTSShutdownObserver" | "nsISocketTransportService" | "nsIRoutedSocketTransportService" | "nsISound" | "nsISpeculativeConnect" | "nsISpeculativeConnectionOverrider" | "nsISpeechGrammarCompilationCallback" | "nsISpeechRecognitionService" | "nsISpeechTaskCallback" | "nsISpeechTask" | "nsISpeechService" | "nsIStandaloneNativeMenu" | "nsIStandardURL" | "nsIStandardURLMutator" | "nsIStartupCacheInfo" | "nsIStorageActivityService" | "nsIStorageStream" | "nsIStreamBufferAccess" | "nsIStreamConverter" | "nsIStreamConverterService" | "nsIStreamListener" | "nsIStreamListenerTee" | "nsIStreamLoaderObserver" | "nsIStreamLoader" | "nsIStreamTransportService" | "nsIInputAvailableCallback" | "nsIStringBundle" | "nsIStringBundleService" | "nsIStringEnumeratorBase" | "nsIStringEnumerator" | "nsIUTF8StringEnumerator" | "nsIStringInputStream" | "nsIStructuredCloneContainer" | "nsISFVBareItem" | "nsISFVInteger" | "nsISFVString" | "nsISFVBool" | "nsISFVDecimal" | "nsISFVToken" | "nsISFVByteSeq" | "nsISFVParams" | "nsISFVParametrizable" | "nsISFVItemOrInnerList" | "nsISFVSerialize" | "nsISFVItem" | "nsISFVInnerList" | "nsISFVList" | "nsISFVDictionary" | "nsISFVService" | "nsIStyleSheetService" | "nsISubstitutingProtocolHandler" | "nsIOutputIterator" | "nsIInputIterator" | "nsIForwardIterator" | "nsIBidirectionalIterator" | "nsIRandomAccessIterator" | "nsISupportsPrimitive" | "nsISupportsID" | "nsISupportsCString" | "nsISupportsString" | "nsISupportsPRBool" | "nsISupportsPRUint8" | "nsISupportsPRUint16" | "nsISupportsPRUint32" | "nsISupportsPRUint64" | "nsISupportsPRTime" | "nsISupportsChar" | "nsISupportsPRInt16" | "nsISupportsPRInt32" | "nsISupportsPRInt64" | "nsISupportsFloat" | "nsISupportsDouble" | "nsISupportsInterfacePointer" | "nsISupportsPriority" | "nsISyncStreamListener" | "nsISynthVoiceRegistry" | "nsISystemInfo" | "nsISystemProxySettings" | "nsISystemStatusBar" | "nsITCPSocketCallback" | "nsITLSServerSocket" | "nsITLSClientStatus" | "nsITLSServerConnectionInfo" | "nsITLSServerSecurityObserver" | "nsITLSSocketControl" | "nsITRRSkipReason" | "nsITXTToHTMLConv" | "nsITableEditor" | "nsITaggingService" | "nsITaskbarOverlayIconController" | "nsITaskbarPreview" | "nsITaskbarPreviewButton" | "nsITaskbarPreviewCallback" | "nsITaskbarPreviewController" | "nsITaskbarProgress" | "nsITaskbarTabPreview" | "nsITaskbarWindowPreview" | "nsIFetchTelemetryDataCallback" | "nsITelemetry" | "nsITellableStream" | "nsITextInputProcessor" | "nsITextInputProcessorNotification" | "nsITextInputProcessorCallback" | "nsITextToSubURI" | "nsIThread" | "nsIThreadInternal" | "nsIThreadObserver" | "nsINestedEventLoopCondition" | "nsIThreadManager" | "nsIThreadPoolListener" | "nsIThreadPool" | "nsIThreadRetargetableRequest" | "nsIThreadRetargetableStreamListener" | "nsIThreadShutdown" | "nsIInputChannelThrottleQueue" | "nsIThrottledInputChannel" | "nsIServerTiming" | "nsITimedChannel" | "nsITimerCallback" | "nsITimer" | "nsITimerManager" | "nsITlsHandshakeCallbackListener" | "nsITokenDialogs" | "nsITokenPasswordDialogs" | "nsIToolkitChromeRegistry" | "nsIProfileLock" | "nsIToolkitProfile" | "nsIToolkitProfileService" | "nsIToolkitShellService" | "nsITooltipListener" | "nsITooltipTextProvider" | "nsITouchBarHelper" | "nsITouchBarInputCallback" | "nsITouchBarInput" | "nsITouchBarUpdater" | "nsITraceableChannel" | "nsITrackingDBService" | "nsITransaction" | "nsITransactionManager" | "nsITransfer" | "nsIFlavorDataProvider" | "nsITransferable" | "nsITransport" | "nsITransportEventSink" | "nsITransportProvider" | "nsITransportSecurityInfo" | "nsITreeSelection" | "nsINativeTreeSelection" | "nsITreeView" | "nsITypeAheadFind" | "nsIU2FTokenManager" | "nsIUDPSocket" | "nsIUDPSocketListener" | "nsIUDPMessage" | "nsIUDPSocketSyncListener" | "nsIUDPSocketInternal" | "nsIURI" | "nsIURIClassifierCallback" | "nsIURIClassifier" | "nsIURIContentListener" | "nsIURIFixupInfo" | "nsIURIFixup" | "nsIURILoader" | "nsIURISetSpec" | "nsIURISetters" | "nsIURIMutator" | "nsIURIWithSpecialOrigin" | "nsIURL" | "nsIURLMutator" | "nsIURLDecorationAnnotationsService" | "nsIURLFormatter" | "nsIURLParser" | "nsIURLQueryStringStripper" | "nsIURLQueryStrippingListObserver" | "nsIURLQueryStrippingListService" | "nsIUUIDGenerator" | "nsIUnicharInputStream" | "nsIUnicharLineInputStream" | "nsIUnicharOutputStream" | "nsIUpdatePatch" | "nsIUpdate" | "nsIUpdateCheckResult" | "nsIUpdateCheck" | "nsIUpdateChecker" | "nsIApplicationUpdateService" | "nsIUpdateProcessor" | "nsIUpdateSyncManager" | "nsIUpdateManager" | "nsIUpdateTimerManager" | "nsIUploadChannel" | "nsIUploadChannel2" | "nsIUrlClassifierCallback" | "nsIUrlClassifierUpdateObserver" | "nsIUrlClassifierDBService" | "nsIUrlClassifierLookupCallback" | "nsIUrlClassifierClassifyCallback" | "nsIUrlClassifierExceptionListObserver" | "nsIUrlClassifierExceptionListService" | "nsIUrlClassifierFeature" | "nsIUrlClassifierFeatureResult" | "nsIUrlClassifierFeatureCallback" | "nsIFullHashMatch" | "nsIUrlClassifierHashCompleterCallback" | "nsIUrlClassifierHashCompleter" | "nsIUrlClassifierPositiveCacheEntry" | "nsIUrlClassifierCacheEntry" | "nsIUrlClassifierCacheInfo" | "nsIUrlClassifierGetCacheCallback" | "nsIUrlClassifierInfo" | "nsIUrlClassifierPrefixSet" | "nsIUrlClassifierRemoteSettingsService" | "nsIUrlClassifierStreamUpdater" | "nsIUrlClassifierParseFindFullHashCallback" | "nsIUrlClassifierUtils" | "nsIUrlListManager" | "nsIUserIdleService" | "nsIUserIdleServiceInternal" | "nsIUtilityProcessTest" | "nsIVariant" | "nsIWritableVariant" | "nsIVersionComparator" | "nsIViewSourceChannel" | "nsIWakeLock" | "nsIWeakReference" | "nsISupportsWeakReference" | "nsIWebAuthnRegisterArgs" | "nsIWebAuthnSignArgs" | "nsIWebAuthnAttObj" | "nsICtapRegisterArgs" | "nsICtapSignArgs" | "nsICtapRegisterResult" | "nsICtapSignResult" | "nsIWebAuthnController" | "nsICredentialParameters" | "nsIWebAuthnTransport" | "nsIWebAuthnRegisterPromise" | "nsIWebAuthnSignPromise" | "nsIWebAuthnRegisterResult" | "nsIWebAuthnSignResult" | "nsIWebAuthnService" | "nsIWebBrowser" | "nsIWebBrowserChrome" | "nsIWebBrowserChromeFocus" | "nsIWebBrowserFind" | "nsIWebBrowserFindInFrames" | "nsIWebBrowserPersist" | "nsIWebBrowserPersistURIMap" | "nsIWebBrowserPersistDocument" | "nsIWebBrowserPersistResourceVisitor" | "nsIWebBrowserPersistWriteCompletion" | "nsIWebBrowserPersistDocumentReceiver" | "nsIWebBrowserPrint" | "nsIWebNavigation" | "nsIWebNavigationInfo" | "nsIWebPageDescriptor" | "nsIWebProgress" | "nsIWebProgressListener" | "nsIWebProgressListener2" | "nsIWebProtocolHandlerRegistrar" | "nsIWebSocketChannel" | "nsIWebSocketFrame" | "nsIWebSocketEventListener" | "nsIWebSocketEventService" | "nsIWebSocketImpl" | "nsIWebSocketListener" | "nsIWebTransport" | "WebTransportSessionEventListener" | "nsIWebTransportStreamCallback" | "nsIWebTransportSendStreamStats" | "nsIWebTransportReceiveStreamStats" | "nsIWebTransportStreamStatsCallback" | "nsIWebTransportReceiveStream" | "nsIWebTransportSendStream" | "nsIWebTransportBidirectionalStream" | "nsIWebVTTListener" | "nsIWebVTTParserWrapper" | "nsIWellKnownOpportunisticUtils" | "nsIWifiAccessPoint" | "nsIWifiListener" | "nsIWifiMonitor" | "nsIWinAppHelper" | "nsIWinTaskSchedulerService" | "nsIWinTaskbar" | "nsIWindowCreator" | "nsIWindowMediator" | "nsIWindowMediatorListener" | "nsIWindowProvider" | "nsIWindowWatcher" | "nsIWindowlessBrowser" | "nsIWindowsAlertsService" | "nsIWindowsPackageManager" | "nsIWindowsRegKey" | "nsIWindowsShellService" | "nsIWindowsUIUtils" | "nsIWorkerChannelLoadInfo" | "nsIWorkerChannelInfo" | "nsIWorkerDebuggerListener" | "nsIWorkerDebugger" | "nsIWorkerDebuggerManagerListener" | "nsIWorkerDebuggerManager" | "nsIWritablePropertyBag" | "nsIWritablePropertyBag2" | "nsIX509Cert" | "nsIOpenSignedAppFileCallback" | "nsIAsyncBoolCallback" | "nsICertVerificationCallback" | "nsIX509CertDB" | "nsIX509CertValidity" | "nsIXPCScriptable" | "nsIXREDirProvider" | "nsIXULAppInfo" | "nsIXULBrowserWindow" | "nsIXULRuntime" | "nsIXULStore" | "nsIZipEntry" | "nsIZipReader" | "nsIZipReaderCache" | "nsIZipWriter" | "nsPIDNSService" | "nsPIPromptService" | "nsPISocketTransportService" | "nsPIWidgetCocoa" | "nsPIWindowWatcher" | "txIEXSLTFunctions" | "xpcIJSWeakReference" | "nsIXPCComponents_Interfaces" | "nsIXPCComponents_Classes" | "nsIXPCComponents_Results" | "nsIXPCComponents_ID" | "nsIXPCComponents_Exception" | "nsIXPCComponents_Constructor" | "nsIXPCComponents_utils_Sandbox" | "nsIScheduledGCCallback" | "nsIXPCComponents_Utils" | "nsIXPCComponents" | "nsIXPCTestObjectReadOnly" | "nsIXPCTestObjectReadWrite" | "nsIXPCTestBug809674" | "nsIXPCTestCEnums" | "nsIXPCTestESMReturnCodeParent" | "nsIXPCTestESMReturnCodeChild" | "nsIXPCTestInterfaceA" | "nsIXPCTestInterfaceB" | "nsIXPCTestInterfaceC" | "nsIXPCTestParams" | "nsIXPCTestReturnCodeParent" | "nsIXPCTestReturnCodeChild" | "nsIXPCTestFunctionInterface" | "nsIXPCTestUtils";

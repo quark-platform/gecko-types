@@ -81,7 +81,8 @@ function handleFunc(
   code: func,
   docCommentRaw: member_$0_$0[]
 ): ts.TypeElement[] {
-  const { return_type: returnType, name, params: rawParams, attributes } = code
+  const { name, params: rawParams, attributes } = code
+  let returnType = code.return_type
   const docComment = generateDocCommentType(docCommentRaw)
   const parsed: Block[] = jsdocParse(`/*${idlDocToJSDocParam(docComment)}*/`)
 
@@ -146,6 +147,8 @@ function handleFunc(
       })
     )
   }
+
+  if (returnType.startsWith('nsI')) returnType += 'Type'
 
   return [
     ts.addSyntheticLeadingComment(
