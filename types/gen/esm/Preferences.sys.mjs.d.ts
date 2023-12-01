@@ -1,8 +1,6 @@
-declare module "resource://gre/modules/Preferences.sys.mjs" {export namespace Preferences {
-    function init(libDir: any): void;
-    let configurations: {};
-}
-;
+declare module "resource://gre/modules/Preferences.sys.mjs" {export function Preferences(args: any): void;
+export class Preferences {
+    constructor(args: any);
     _cachedPrefBranch: any;
     _branchStr: any;
     _defaultBranch: any;

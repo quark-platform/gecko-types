@@ -21,6 +21,6 @@ declare module "resource://gre/modules/GeckoViewSettings.sys.mjs" {export class 
     set useTrackingProtection(aUse: any);
     get customUserAgent(): any;
     get browsingContext(): any;
-    displayModeSettingToValue(aSetting: any): "browser" | "fullscreen" | "standalone" | "minimal-ui";
+    displayModeSettingToValue(aSetting: any): "browser" | "minimal-ui" | "standalone" | "fullscreen";
 }
 }

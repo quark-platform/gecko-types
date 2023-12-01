@@ -1600,7 +1600,6 @@ declare interface MozESMExportFile {
   ['LayoutUtils']: 'resource://gre/modules/LayoutUtils.sys.mjs';
   ['LightweightThemeConsumer']: 'resource://gre/modules/LightweightThemeConsumer.sys.mjs';
   ['LightweightThemeConsumer']: 'resource://gre/modules/LightweightThemeConsumer.sys.mjs';
-  ['Log']: 'resource://gre/modules/Log.sys.mjs';
   ['NLP']: 'resource://gre/modules/NLP.sys.mjs';
   ['OSKeyStore']: 'resource://gre/modules/OSKeyStore.sys.mjs';
   ['ObjectUtils']: 'resource://gre/modules/ObjectUtils.sys.mjs';
@@ -1781,8 +1780,6 @@ declare interface MozESMExportFile {
   ['ScreenshotChild']: 'resource://app/modules/ScreenshotChild.sys.mjs';
   ['ShellService']: 'resource://app/modules/ShellService.sys.mjs';
   ['ShoppingUtils']: 'resource://app/modules/ShoppingUtils.sys.mjs';
-  ['EventEmitter']: 'resource://gre/modules/EventEmitter.sys.mjs';
-  ['EventEmitter']: 'resource://gre/modules/EventEmitter.sys.mjs';
   ['SyncedTabsDeckComponent']: 'resource://app/modules/syncedtabs/SyncedTabsDeckComponent.sys.mjs';
   ['SyncedTabsDeckComponent']: 'resource://app/modules/syncedtabs/SyncedTabsDeckComponent.sys.mjs';
   ['SyncedTabsDeckStore']: 'resource://app/modules/syncedtabs/SyncedTabsDeckStore.sys.mjs';
@@ -1867,23 +1864,6 @@ declare interface MozESMExportFile {
   ['DER']: 'resource://gre/modules/psm/DER.sys.mjs';
   ['RemoteSecuritySettings']: 'resource://gre/modules/psm/RemoteSecuritySettings.sys.mjs';
   ['X509']: 'resource://gre/modules/psm/X509.sys.mjs';
-  ['CryptoUtils']: 'resource://gre/modules/services-common/utils.sys.mjs';
-  ['Utils']: 'resource://app/modules/syncedtabs/util.sys.mjs';
-  ['SerializableSet']: 'resource://app/modules/syncedtabs/util.sys.mjs';
-  ['Svc']: 'resource://app/modules/syncedtabs/util.sys.mjs';
-  ['MockFxaStorageManager']: 'resource://gre/modules/services-common/utils.sys.mjs';
-  ['MockFxaStorageManager']: 'resource://gre/modules/services-common/utils.sys.mjs';
-  ['waitForZeroTimer']: 'resource://gre/modules/services-common/utils.sys.mjs';
-  ['syncTestLogging']: 'resource://gre/modules/services-common/utils.sys.mjs';
-  ['encryptPayload']: 'resource://gre/modules/services-common/utils.sys.mjs';
-  ['promiseZeroTimer']: 'resource://gre/modules/services-common/utils.sys.mjs';
-  ['promiseNamedTimer']: 'resource://gre/modules/services-common/utils.sys.mjs';
-  ['makeIdentityConfig']: 'resource://gre/modules/services-common/utils.sys.mjs';
-  ['makeFxAccountsInternalMock']: 'resource://gre/modules/services-common/utils.sys.mjs';
-  ['configureFxAccountIdentity']: 'resource://gre/modules/services-common/utils.sys.mjs';
-  ['configureIdentity']: 'resource://gre/modules/services-common/utils.sys.mjs';
-  ['SyncTestingInfrastructure']: 'resource://gre/modules/services-common/utils.sys.mjs';
-  ['sumHistogram']: 'resource://gre/modules/services-common/utils.sys.mjs';
   ['ContentBlockingAllowList']: 'resource://gre/modules/ContentBlockingAllowList.sys.mjs';
   ['PartitioningExceptionListService']: 'resource://gre/modules/PartitioningExceptionListService.sys.mjs';
   ['PartitioningExceptionListService']: 'resource://gre/modules/PartitioningExceptionListService.sys.mjs';
@@ -2196,7 +2176,6 @@ declare interface MozESMExportFile {
   ['WindowsVersionInfo']: 'resource://gre/modules/components-utils/WindowsVersionInfo.sys.mjs';
   ['XULStore']: 'resource://gre/modules/XULStore.sys.mjs';
   ['XULStore']: 'resource://gre/modules/XULStore.sys.mjs';
-  ['Utils']: 'resource://gre/modules/services-settings/Utils.sys.mjs';
   ['getSubprocessImplForTest']: 'resource://gre/modules/Subprocess.sys.mjs';
   ['Subprocess']: 'resource://gre/modules/Subprocess.sys.mjs';
   ['SubprocessConstants']: 'resource://gre/modules/subprocess/subprocess_common.sys.mjs';
@@ -2251,7 +2230,6 @@ declare interface MozESMExportFile {
   ['UnitConverterSimple']: 'resource://app/modules/UnitConverterSimple.sys.mjs';
   ['UnitConverterTemperature']: 'resource://app/modules/UnitConverterTemperature.sys.mjs';
   ['UnitConverterTimezone']: 'resource://app/modules/UnitConverterTimezone.sys.mjs';
-  ['BrowsingDataDelegate']: 'resource://app/modules/ExtensionBrowsingData.sys.mjs';
   ['ColorPickerDelegate']: 'resource://gre/modules/ColorPickerDelegate.sys.mjs';
   ['FilePickerDelegate']: 'resource://gre/modules/FilePickerDelegate.sys.mjs';
   ['GeckoViewPermission']: 'resource://gre/modules/GeckoViewPermission.sys.mjs';
@@ -2260,10 +2238,8 @@ declare interface MozESMExportFile {
   ['PushService']: 'resource://gre/modules/GeckoViewPush.sys.mjs';
   ['GeckoViewStartup']: 'resource://gre/modules/GeckoViewStartup.sys.mjs';
   ['LoginStorageDelegate']: 'resource://gre/modules/LoginStorageDelegate.sys.mjs';
-  ['PromptCollection']: 'resource://app/modules/PromptCollection.sys.mjs';
   ['ShareDelegate']: 'resource://gre/modules/ShareDelegate.sys.mjs';
   ['AndroidLog']: 'resource://gre/modules/AndroidLog.sys.mjs';
-  ['getUniqueDomainsVisitedInPast24Hours']: 'resource://app/modules/BrowserUsageTelemetry.sys.mjs';
   ['ChildCrashHandler']: 'resource://gre/modules/ChildCrashHandler.sys.mjs';
   ['DelayedInit']: 'resource://gre/modules/DelayedInit.sys.mjs';
   ['GeckoViewActorChild']: 'resource://gre/modules/GeckoViewActorChild.sys.mjs';
@@ -2306,15 +2282,12 @@ declare interface MozESMExportFile {
   ['LoadURIDelegate']: 'resource://gre/modules/LoadURIDelegate.sys.mjs';
   ['MediaUtils']: 'resource://gre/modules/MediaUtils.sys.mjs';
   ['EventDispatcher']: 'resource://gre/modules/Messaging.sys.mjs';
-  ['Log']: 'resource://gre/modules/Log.sys.mjs';
   ['StorageSyncService']: 'resource://gre/modules/ExtensionStorageComponents.sys.mjs';
   ['StorageSyncService']: 'resource://gre/modules/ExtensionStorageComponents.sys.mjs';
   ['StorageSyncService']: 'resource://gre/modules/ExtensionStorageComponents.sys.mjs';
   ['SecurityInfo']: 'resource://gre/modules/SecurityInfo.sys.mjs';
   ['WebRequest']: 'resource://gre/modules/WebRequest.sys.mjs';
   ['WebRequestUpload']: 'resource://gre/modules/WebRequestUpload.sys.mjs';
-  ['ClientEnvironment']: 'resource://gre/modules/components-utils/ClientEnvironment.sys.mjs';
-  ['EventEmitter']: 'resource://gre/modules/EventEmitter.sys.mjs';
   ['CommonDialog']: 'resource://gre/modules/CommonDialog.sys.mjs';
   ['CommonDialog']: 'resource://gre/modules/CommonDialog.sys.mjs';
   ['Prompter']: 'resource://gre/modules/Prompter.sys.mjs';
@@ -2338,9 +2311,6 @@ declare interface MozESMExportFile {
   ['SITEPERMS_ADDON_PROVIDER_PREF']: 'resource://gre/modules/addons/siteperms-addon-utils.sys.mjs';
   ['SITEPERMS_ADDON_TYPE']: 'resource://gre/modules/addons/siteperms-addon-utils.sys.mjs';
   ['SITEPERMS_ADDON_BLOCKEDLIST_PREF']: 'resource://gre/modules/addons/siteperms-addon-utils.sys.mjs';
-  ['Utils']: 'resource://gre/modules/services-settings/Utils.sys.mjs';
-  ['CustomizeMode']: 'resource://app/modules/CustomizeMode.sys.mjs';
-  ['Preferences']: 'resource://gre/modules/Preferences.sys.mjs';
 }
 
 declare interface MozESMExportType {
@@ -2766,7 +2736,6 @@ declare interface MozESMExportType {
   ['LayoutUtils']: (typeof import('resource://gre/modules/LayoutUtils.sys.mjs'))['LayoutUtils'];
   ['LightweightThemeConsumer']: (typeof import('resource://gre/modules/LightweightThemeConsumer.sys.mjs'))['LightweightThemeConsumer'];
   ['LightweightThemeConsumer']: (typeof import('resource://gre/modules/LightweightThemeConsumer.sys.mjs'))['LightweightThemeConsumer'];
-  ['Log']: (typeof import('resource://gre/modules/Log.sys.mjs'))['Log'];
   ['NLP']: (typeof import('resource://gre/modules/NLP.sys.mjs'))['NLP'];
   ['OSKeyStore']: (typeof import('resource://gre/modules/OSKeyStore.sys.mjs'))['OSKeyStore'];
   ['ObjectUtils']: (typeof import('resource://gre/modules/ObjectUtils.sys.mjs'))['ObjectUtils'];
@@ -2947,8 +2916,6 @@ declare interface MozESMExportType {
   ['ScreenshotChild']: (typeof import('resource://app/modules/ScreenshotChild.sys.mjs'))['ScreenshotChild'];
   ['ShellService']: (typeof import('resource://app/modules/ShellService.sys.mjs'))['ShellService'];
   ['ShoppingUtils']: (typeof import('resource://app/modules/ShoppingUtils.sys.mjs'))['ShoppingUtils'];
-  ['EventEmitter']: (typeof import('resource://gre/modules/EventEmitter.sys.mjs'))['EventEmitter'];
-  ['EventEmitter']: (typeof import('resource://gre/modules/EventEmitter.sys.mjs'))['EventEmitter'];
   ['SyncedTabsDeckComponent']: (typeof import('resource://app/modules/syncedtabs/SyncedTabsDeckComponent.sys.mjs'))['SyncedTabsDeckComponent'];
   ['SyncedTabsDeckComponent']: (typeof import('resource://app/modules/syncedtabs/SyncedTabsDeckComponent.sys.mjs'))['SyncedTabsDeckComponent'];
   ['SyncedTabsDeckStore']: (typeof import('resource://app/modules/syncedtabs/SyncedTabsDeckStore.sys.mjs'))['SyncedTabsDeckStore'];
@@ -3033,23 +3000,6 @@ declare interface MozESMExportType {
   ['DER']: (typeof import('resource://gre/modules/psm/DER.sys.mjs'))['DER'];
   ['RemoteSecuritySettings']: (typeof import('resource://gre/modules/psm/RemoteSecuritySettings.sys.mjs'))['RemoteSecuritySettings'];
   ['X509']: (typeof import('resource://gre/modules/psm/X509.sys.mjs'))['X509'];
-  ['CryptoUtils']: (typeof import('resource://gre/modules/services-common/utils.sys.mjs'))['CryptoUtils'];
-  ['Utils']: (typeof import('resource://app/modules/syncedtabs/util.sys.mjs'))['Utils'];
-  ['SerializableSet']: (typeof import('resource://app/modules/syncedtabs/util.sys.mjs'))['SerializableSet'];
-  ['Svc']: (typeof import('resource://app/modules/syncedtabs/util.sys.mjs'))['Svc'];
-  ['MockFxaStorageManager']: (typeof import('resource://gre/modules/services-common/utils.sys.mjs'))['MockFxaStorageManager'];
-  ['MockFxaStorageManager']: (typeof import('resource://gre/modules/services-common/utils.sys.mjs'))['MockFxaStorageManager'];
-  ['waitForZeroTimer']: (typeof import('resource://gre/modules/services-common/utils.sys.mjs'))['waitForZeroTimer'];
-  ['syncTestLogging']: (typeof import('resource://gre/modules/services-common/utils.sys.mjs'))['syncTestLogging'];
-  ['encryptPayload']: (typeof import('resource://gre/modules/services-common/utils.sys.mjs'))['encryptPayload'];
-  ['promiseZeroTimer']: (typeof import('resource://gre/modules/services-common/utils.sys.mjs'))['promiseZeroTimer'];
-  ['promiseNamedTimer']: (typeof import('resource://gre/modules/services-common/utils.sys.mjs'))['promiseNamedTimer'];
-  ['makeIdentityConfig']: (typeof import('resource://gre/modules/services-common/utils.sys.mjs'))['makeIdentityConfig'];
-  ['makeFxAccountsInternalMock']: (typeof import('resource://gre/modules/services-common/utils.sys.mjs'))['makeFxAccountsInternalMock'];
-  ['configureFxAccountIdentity']: (typeof import('resource://gre/modules/services-common/utils.sys.mjs'))['configureFxAccountIdentity'];
-  ['configureIdentity']: (typeof import('resource://gre/modules/services-common/utils.sys.mjs'))['configureIdentity'];
-  ['SyncTestingInfrastructure']: (typeof import('resource://gre/modules/services-common/utils.sys.mjs'))['SyncTestingInfrastructure'];
-  ['sumHistogram']: (typeof import('resource://gre/modules/services-common/utils.sys.mjs'))['sumHistogram'];
   ['ContentBlockingAllowList']: (typeof import('resource://gre/modules/ContentBlockingAllowList.sys.mjs'))['ContentBlockingAllowList'];
   ['PartitioningExceptionListService']: (typeof import('resource://gre/modules/PartitioningExceptionListService.sys.mjs'))['PartitioningExceptionListService'];
   ['PartitioningExceptionListService']: (typeof import('resource://gre/modules/PartitioningExceptionListService.sys.mjs'))['PartitioningExceptionListService'];
@@ -3362,7 +3312,6 @@ declare interface MozESMExportType {
   ['WindowsVersionInfo']: (typeof import('resource://gre/modules/components-utils/WindowsVersionInfo.sys.mjs'))['WindowsVersionInfo'];
   ['XULStore']: (typeof import('resource://gre/modules/XULStore.sys.mjs'))['XULStore'];
   ['XULStore']: (typeof import('resource://gre/modules/XULStore.sys.mjs'))['XULStore'];
-  ['Utils']: (typeof import('resource://gre/modules/services-settings/Utils.sys.mjs'))['Utils'];
   ['getSubprocessImplForTest']: (typeof import('resource://gre/modules/Subprocess.sys.mjs'))['getSubprocessImplForTest'];
   ['Subprocess']: (typeof import('resource://gre/modules/Subprocess.sys.mjs'))['Subprocess'];
   ['SubprocessConstants']: (typeof import('resource://gre/modules/subprocess/subprocess_common.sys.mjs'))['SubprocessConstants'];
@@ -3417,7 +3366,6 @@ declare interface MozESMExportType {
   ['UnitConverterSimple']: (typeof import('resource://app/modules/UnitConverterSimple.sys.mjs'))['UnitConverterSimple'];
   ['UnitConverterTemperature']: (typeof import('resource://app/modules/UnitConverterTemperature.sys.mjs'))['UnitConverterTemperature'];
   ['UnitConverterTimezone']: (typeof import('resource://app/modules/UnitConverterTimezone.sys.mjs'))['UnitConverterTimezone'];
-  ['BrowsingDataDelegate']: (typeof import('resource://app/modules/ExtensionBrowsingData.sys.mjs'))['BrowsingDataDelegate'];
   ['ColorPickerDelegate']: (typeof import('resource://gre/modules/ColorPickerDelegate.sys.mjs'))['ColorPickerDelegate'];
   ['FilePickerDelegate']: (typeof import('resource://gre/modules/FilePickerDelegate.sys.mjs'))['FilePickerDelegate'];
   ['GeckoViewPermission']: (typeof import('resource://gre/modules/GeckoViewPermission.sys.mjs'))['GeckoViewPermission'];
@@ -3426,10 +3374,8 @@ declare interface MozESMExportType {
   ['PushService']: (typeof import('resource://gre/modules/GeckoViewPush.sys.mjs'))['PushService'];
   ['GeckoViewStartup']: (typeof import('resource://gre/modules/GeckoViewStartup.sys.mjs'))['GeckoViewStartup'];
   ['LoginStorageDelegate']: (typeof import('resource://gre/modules/LoginStorageDelegate.sys.mjs'))['LoginStorageDelegate'];
-  ['PromptCollection']: (typeof import('resource://app/modules/PromptCollection.sys.mjs'))['PromptCollection'];
   ['ShareDelegate']: (typeof import('resource://gre/modules/ShareDelegate.sys.mjs'))['ShareDelegate'];
   ['AndroidLog']: (typeof import('resource://gre/modules/AndroidLog.sys.mjs'))['AndroidLog'];
-  ['getUniqueDomainsVisitedInPast24Hours']: (typeof import('resource://app/modules/BrowserUsageTelemetry.sys.mjs'))['getUniqueDomainsVisitedInPast24Hours'];
   ['ChildCrashHandler']: (typeof import('resource://gre/modules/ChildCrashHandler.sys.mjs'))['ChildCrashHandler'];
   ['DelayedInit']: (typeof import('resource://gre/modules/DelayedInit.sys.mjs'))['DelayedInit'];
   ['GeckoViewActorChild']: (typeof import('resource://gre/modules/GeckoViewActorChild.sys.mjs'))['GeckoViewActorChild'];
@@ -3472,15 +3418,12 @@ declare interface MozESMExportType {
   ['LoadURIDelegate']: (typeof import('resource://gre/modules/LoadURIDelegate.sys.mjs'))['LoadURIDelegate'];
   ['MediaUtils']: (typeof import('resource://gre/modules/MediaUtils.sys.mjs'))['MediaUtils'];
   ['EventDispatcher']: (typeof import('resource://gre/modules/Messaging.sys.mjs'))['EventDispatcher'];
-  ['Log']: (typeof import('resource://gre/modules/Log.sys.mjs'))['Log'];
   ['StorageSyncService']: (typeof import('resource://gre/modules/ExtensionStorageComponents.sys.mjs'))['StorageSyncService'];
   ['StorageSyncService']: (typeof import('resource://gre/modules/ExtensionStorageComponents.sys.mjs'))['StorageSyncService'];
   ['StorageSyncService']: (typeof import('resource://gre/modules/ExtensionStorageComponents.sys.mjs'))['StorageSyncService'];
   ['SecurityInfo']: (typeof import('resource://gre/modules/SecurityInfo.sys.mjs'))['SecurityInfo'];
   ['WebRequest']: (typeof import('resource://gre/modules/WebRequest.sys.mjs'))['WebRequest'];
   ['WebRequestUpload']: (typeof import('resource://gre/modules/WebRequestUpload.sys.mjs'))['WebRequestUpload'];
-  ['ClientEnvironment']: (typeof import('resource://gre/modules/components-utils/ClientEnvironment.sys.mjs'))['ClientEnvironment'];
-  ['EventEmitter']: (typeof import('resource://gre/modules/EventEmitter.sys.mjs'))['EventEmitter'];
   ['CommonDialog']: (typeof import('resource://gre/modules/CommonDialog.sys.mjs'))['CommonDialog'];
   ['CommonDialog']: (typeof import('resource://gre/modules/CommonDialog.sys.mjs'))['CommonDialog'];
   ['Prompter']: (typeof import('resource://gre/modules/Prompter.sys.mjs'))['Prompter'];
@@ -3504,7 +3447,4 @@ declare interface MozESMExportType {
   ['SITEPERMS_ADDON_PROVIDER_PREF']: (typeof import('resource://gre/modules/addons/siteperms-addon-utils.sys.mjs'))['SITEPERMS_ADDON_PROVIDER_PREF'];
   ['SITEPERMS_ADDON_TYPE']: (typeof import('resource://gre/modules/addons/siteperms-addon-utils.sys.mjs'))['SITEPERMS_ADDON_TYPE'];
   ['SITEPERMS_ADDON_BLOCKEDLIST_PREF']: (typeof import('resource://gre/modules/addons/siteperms-addon-utils.sys.mjs'))['SITEPERMS_ADDON_BLOCKEDLIST_PREF'];
-  ['Utils']: (typeof import('resource://gre/modules/services-settings/Utils.sys.mjs'))['Utils'];
-  ['CustomizeMode']: (typeof import('resource://app/modules/CustomizeMode.sys.mjs'))['CustomizeMode'];
-  ['Preferences']: (typeof import('resource://gre/modules/Preferences.sys.mjs'))['Preferences'];
 }

@@ -16,7 +16,7 @@ devDependencies:
     version: 1.4.0
   gecko-index:
     specifier: github:quark-platform/gecko-index
-    version: github.com/quark-platform/gecko-index/95bc776acd33c7eed7e2f93093e2531a7a0dea6d
+    version: github.com/quark-platform/gecko-index/59bae4dea1ee0aa459c92bb794b3f17291207202
   ts-node:
     specifier: ^10.9.1
     version: 10.9.1(@types/node@18.18.5)(typescript@4.9.5)
@@ -361,8 +361,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  github.com/quark-platform/gecko-index/95bc776acd33c7eed7e2f93093e2531a7a0dea6d:
-    resolution: {tarball: https://codeload.github.com/quark-platform/gecko-index/tar.gz/95bc776acd33c7eed7e2f93093e2531a7a0dea6d}
+  github.com/quark-platform/gecko-index/59bae4dea1ee0aa459c92bb794b3f17291207202:
+    resolution: {tarball: https://codeload.github.com/quark-platform/gecko-index/tar.gz/59bae4dea1ee0aa459c92bb794b3f17291207202}
     name: gecko-index
     version: 1.0.0
     dependencies:

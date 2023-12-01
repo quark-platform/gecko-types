@@ -2,7 +2,7 @@ declare module "resource://gre/modules/ContentBlockingAllowList.sys.mjs" {export
     let _observingLastPBContext: boolean;
     function _maybeSetupLastPBContextObserver(): void;
     function _basePrincipalForAntiTrackingCommon(browser: any): any;
-    function _permissionTypeFor(browser: any): "trackingprotection" | "trackingprotection-pb";
+    function _permissionTypeFor(browser: any): "trackingprotection-pb" | "trackingprotection";
     function _expiryFor(browser: any): any;
     /**
      * Returns false if this module cannot handle the current document loaded in
