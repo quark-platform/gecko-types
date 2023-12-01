@@ -1,6 +1,7 @@
-declare module "resource://gre/modules/ExtensionActivityLog.sys.mjs" {export namespace ExtensionActivityLog {
+declare module "resource://gre/modules/ExtensionActivityLog.sys.mjs" {/// <reference types="gecko-types" />
+export namespace ExtensionActivityLog {
     let initialized: boolean;
-    let listeners: any;
+    let listeners: ExtensionUtils.DefaultMap;
     let watchedIds: Set<any>;
     function init(): void;
     /**
@@ -21,4 +22,5 @@ declare module "resource://gre/modules/ExtensionActivityLog.sys.mjs" {export nam
         data: any;
     }): void;
 }
+import { ExtensionUtils } from "resource://gre/modules/ExtensionUtils.sys.mjs";
 }

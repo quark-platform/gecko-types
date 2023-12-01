@@ -8,7 +8,7 @@ declare module "resource://gre/modules/ComponentUtils.sys.mjs" {export namespace
     function generateSingletonFactory(aServiceConstructor: any): {
         _instance: any;
         createInstance(aIID: any): any;
-        QueryInterface: any;
+        QueryInterface: MozQueryInterface;
     };
 }
 }

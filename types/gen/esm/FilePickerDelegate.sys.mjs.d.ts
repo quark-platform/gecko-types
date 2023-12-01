@@ -19,7 +19,7 @@ declare module "resource://gre/modules/FilePickerDelegate.sys.mjs" {export class
         domFile: any;
     }[];
     get file(): any;
-    get fileURL(): any;
+    get fileURL(): nsIURIType;
     _getEnumerator(aDOMFile: any): Generator<any, void, unknown>;
     get files(): Generator<any, void, unknown>;
     _getDOMFile(aPath: any): any;
@@ -41,7 +41,7 @@ declare module "resource://gre/modules/FilePickerDelegate.sys.mjs" {export class
     get okButtonLabel(): string;
     set capture(aValue: any);
     get capture(): any;
-    classID: any;
-    QueryInterface: any;
+    classID: unknown;
+    QueryInterface: MozQueryInterface;
 }
 }

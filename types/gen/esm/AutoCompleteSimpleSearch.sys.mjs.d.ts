@@ -2,8 +2,8 @@ declare module "resource://gre/modules/AutoCompleteSimpleSearch.sys.mjs" {/**
  * See nsIAutoCompleteSimpleSearch
  */
 export class AutoCompleteSimpleSearch {
-    classID: any;
-    QueryInterface: any;
+    classID: unknown;
+    QueryInterface: MozQueryInterface;
     _result: any;
     /**
      * See nsIAutoCompleteSimpleSearch

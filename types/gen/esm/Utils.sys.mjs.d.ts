@@ -2,7 +2,7 @@ declare module "resource://gre/modules/services-settings/Utils.sys.mjs" {export 
     export const SERVER_URL: any;
     export let CHANGES_PATH: string;
     export { log };
-    export const CERT_CHAIN_ROOT_IDENTIFIER: any;
+    export const CERT_CHAIN_ROOT_IDENTIFIER: 2 | 1 | 3 | 4 | 6;
     export const LOAD_DUMPS: any;
     export const PREVIEW_MODE: any;
     /**

@@ -1,7 +1,7 @@
 declare module "resource://app/modules/ScreenshotsUtils.sys.mjs" {export const MAX_CAPTURE_DIMENSION: 32766;
 export const MAX_CAPTURE_AREA: 472907776;
 export const MAX_SNAPSHOT_DIMENSION: 1024;
-export class ScreenshotsComponentParent {
+export class ScreenshotsComponentParent extends JSWindowActorParent {
     receiveMessage(message: any): Promise<void>;
     didDestroy(): void;
 }
@@ -12,7 +12,7 @@ export namespace UIPhases {
     let PREVIEW: number;
 }
 export namespace ScreenshotsUtils {
-    let browserToScreenshotsState: WeakMap<object, any>;
+    let browserToScreenshotsState: WeakMap<WeakKey, any>;
     let initialized: boolean;
     /**
      * Figures out which of various states the screenshots UI is in, for the given browser.

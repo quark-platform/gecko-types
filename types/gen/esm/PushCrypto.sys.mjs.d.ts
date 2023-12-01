@@ -1,7 +1,7 @@
 declare module "resource://gre/modules/PushCrypto.sys.mjs" {export function getCryptoParamsFromHeaders(headers: any): {
-    salt: any;
+    salt: ArrayBuffer;
     rs: number;
-    senderKey: any;
+    senderKey: ArrayBuffer;
 };
 export namespace PushCrypto {
     export { concatArray };

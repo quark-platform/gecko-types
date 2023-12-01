@@ -21,7 +21,7 @@ declare module "resource://gre/modules/FxAccountsConfig.sys.mjs" {export namespa
     function _buildURL(path: any, { includeDefaultParams, extraParams, addAccountIdentifiers, }?: bool): Promise<string>;
     function _buildURLFromString(href: any, extraParams?: {}): Promise<string>;
     function resetConfigURLs(): void;
-    function getAutoConfigURL(): any;
+    function getAutoConfigURL(): string;
     function ensureConfigured(): Promise<void>;
     function isProductionConfig(): boolean;
     function updateConfigURLs(): Promise<void>;

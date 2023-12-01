@@ -3,7 +3,7 @@ export class WellKnownOpportunisticUtils {
     valid: boolean;
     mixed: boolean;
     lifetime: number;
-    QueryInterface: any;
+    QueryInterface: MozQueryInterface;
     verify(aJSON: any, aOrigin: any): void;
 }
 }

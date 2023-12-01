@@ -1,7 +1,7 @@
 declare module "resource://gre/modules/PurgeTrackerService.sys.mjs" {export function PurgeTrackerService(): void;
 export class PurgeTrackerService {
-    classID: any;
-    QueryInterface: any;
+    classID: unknown;
+    QueryInterface: MozQueryInterface;
     _firstIteration: boolean;
     _trackingState: Map<any, any>;
     observe(aSubject: any, aTopic: any, aData: any): void;

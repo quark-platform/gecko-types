@@ -4,7 +4,7 @@ declare module "resource://gre/modules/TaskSchedulerMacOSImpl.sys.mjs" {export n
     function _deleteTaskByLabel(label: any): Promise<boolean>;
     function _listAllLabelsForThisApp(): Promise<any>;
     function deleteAllTasks(): Promise<void>;
-    function taskExists(id: any): Promise<any>;
+    function taskExists(id: any): Promise<boolean>;
     /**
      * Turn an object into a macOS plist.
      *

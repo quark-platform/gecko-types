@@ -1,4 +1,4 @@
-declare module "resource://gre/modules/AboutCertViewerParent.sys.mjs" {export class AboutCertViewerParent {
+declare module "resource://gre/modules/AboutCertViewerParent.sys.mjs" {export class AboutCertViewerParent extends JSWindowActorParent {
     getCertificates(): {
         1: any[];
         2: any[];

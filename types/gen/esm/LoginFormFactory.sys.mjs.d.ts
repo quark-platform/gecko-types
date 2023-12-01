@@ -1,6 +1,6 @@
 declare module "resource://gre/modules/LoginFormFactory.sys.mjs" {export namespace LoginFormFactory {
     let _loginFormsByRootElement: WeakMap<any, any>;
-    let _loginFormRootElementsByDocument: WeakMap<object, any>;
+    let _loginFormRootElementsByDocument: WeakMap<WeakKey, any>;
     /**
      * Create a LoginForm object from a <form>.
      *

@@ -1,4 +1,6 @@
-declare module "resource://gre/modules/ExtensionShortcuts.sys.mjs" {export class ExtensionShortcutKeyMap {
+declare module "resource://gre/modules/ExtensionShortcuts.sys.mjs" {/// <reference types="gecko-types" />
+export class ExtensionShortcutKeyMap extends ExtensionUtils.DefaultMap {
+    constructor();
     buildForAddonIds(addonIds: any): Promise<void>;
     recordShortcut(shortcutString: any, addonName: any, commandName: any): void;
     removeShortcut(shortcutString: any, addonName: any, commandName: any): void;
@@ -27,7 +29,7 @@ export class ExtensionShortcuts {
         onCommand: any;
         onShortcutChanged: any;
     });
-    keysetsMap: WeakMap<object, any>;
+    keysetsMap: WeakMap<WeakKey, any>;
     windowOpenListener: (window: any) => void;
     extension: any;
     onCommand: any;
@@ -97,4 +99,5 @@ export class ExtensionShortcuts {
      */
     buildKeyFromShortcut(doc: Document, name: string, shortcut: string): Document;
 }
+import { ExtensionUtils } from "resource://gre/modules/ExtensionUtils.sys.mjs";
 }

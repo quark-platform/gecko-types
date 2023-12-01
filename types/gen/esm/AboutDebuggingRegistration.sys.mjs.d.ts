@@ -1,11 +1,11 @@
 declare module "resource://gre/modules/AboutDebuggingRegistration.sys.mjs" {export function AboutDebugging(): void;
 export class AboutDebugging {
     classDescription: string;
-    classID: any;
+    classID: unknown;
     contractID: string;
     QueryInterface: any;
-    newChannel(_: any, loadInfo: any): any;
+    newChannel(_: any, loadInfo: any): nsIChannelType;
     getURIFlags(uri: any): number;
-    getChromeURI(_uri: any): any;
+    getChromeURI(_uri: any): nsIURIType;
 }
 }

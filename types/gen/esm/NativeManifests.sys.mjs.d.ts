@@ -8,7 +8,7 @@ declare module "resource://gre/modules/NativeManifests.sys.mjs" {export namespac
     }>;
     function _tryPath(type: any, path: any, name: any, context: any, logIfNotFound: any): Promise<any>;
     function _tryPaths(type: any, name: any, dirs: any, context: any): Promise<{
-        path: any;
+        path: string;
         manifest: any;
     }>;
     /**

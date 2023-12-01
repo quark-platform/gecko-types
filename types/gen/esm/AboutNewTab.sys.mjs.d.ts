@@ -1,5 +1,5 @@
 declare module "resource://app/modules/AboutNewTab.sys.mjs" {export namespace AboutNewTab {
-    export let QueryInterface: any;
+    export let QueryInterface: MozQueryInterface;
     export let initialized: boolean;
     export let willNotifyUser: boolean;
     export let _activityStreamEnabled: boolean;

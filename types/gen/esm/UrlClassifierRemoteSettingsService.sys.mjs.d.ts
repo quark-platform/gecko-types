@@ -1,7 +1,7 @@
 declare module "resource://gre/modules/UrlClassifierRemoteSettingsService.sys.mjs" {export function UrlClassifierRemoteSettingsService(): void;
 export class UrlClassifierRemoteSettingsService {
-    classID: any;
-    QueryInterface: any;
+    classID: unknown;
+    QueryInterface: MozQueryInterface;
     _initialized: boolean;
     _entries: {};
     lazyInit(): Promise<void>;

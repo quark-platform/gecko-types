@@ -7,6 +7,6 @@ export class PromptCollection {
     asyncBeforeUnloadCheck(browsingContext: any): Promise<boolean>;
     confirmFolderUpload(browsingContext: any, directoryName: any): boolean;
     stringBundles: {};
-    QueryInterface: any;
+    QueryInterface: MozQueryInterface;
 }
 }

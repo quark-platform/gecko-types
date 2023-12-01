@@ -1,4 +1,6 @@
-declare module "resource://gre/modules/ExtensionContent.sys.mjs" {export namespace ExtensionContent {
+declare module "resource://gre/modules/ExtensionContent.sys.mjs" {/// <reference types="gecko-types" />
+/// <reference types="gecko-types" />
+export namespace ExtensionContent {
     export { BrowserExtensionContent };
     export { contentScripts };
     export function shutdownExtension(extension: any): void;
@@ -27,7 +29,9 @@ export class ExtensionContentChild {
         data: any;
     }): void | Promise<any>;
 }
-declare const BrowserExtensionContent: any;
-declare var contentScripts: any;
+declare const BrowserExtensionContent: typeof ExtensionChild.BrowserExtensionContent;
+declare var contentScripts: ExtensionUtils.DefaultWeakMap;
+import { ExtensionChild } from "resource://gre/modules/ExtensionChild.sys.mjs";
+import { ExtensionUtils } from "resource://gre/modules/ExtensionUtils.sys.mjs";
 export {};
 }

@@ -1,8 +1,8 @@
 declare module "resource://gre/modules/PlacesDBUtils.sys.mjs" {export function PlacesDBUtilsIdleMaintenance(): void;
 export class PlacesDBUtilsIdleMaintenance {
     observe(subject: any, topic: any, data: any): void;
-    classID: any;
-    QueryInterface: any;
+    classID: unknown;
+    QueryInterface: MozQueryInterface;
 }
 export namespace PlacesDBUtils {
     let _isShuttingDown: boolean;

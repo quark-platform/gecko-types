@@ -11,7 +11,7 @@ declare module "resource://gre/modules/FxAccountsPairing.sys.mjs" {export class 
     _fxaConfig: any;
     _weave: any;
     _stateMachine: PairingStateMachine;
-    _flowTimeoutId: any;
+    _flowTimeoutId: number;
     _onFlowTimeout(): void;
     _closeChannel(): void;
     _closed: boolean;

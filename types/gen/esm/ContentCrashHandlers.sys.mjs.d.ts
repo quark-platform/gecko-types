@@ -7,9 +7,9 @@ declare module "resource://app/modules/ContentCrashHandlers.sys.mjs" {export nam
     let pendingSubFrameCrashes: Map<any, any>;
     let pendingSubFrameCrashesIDs: any[];
     let crashedBrowserQueues: Map<any, any>;
-    let restartRequiredBrowsers: WeakSet<object>;
+    let restartRequiredBrowsers: WeakSet<WeakKey>;
     let testBuildIDMismatch: boolean;
-    const prefs: any;
+    const prefs: nsIPrefBranchType;
     function init(): void;
     function observe(aSubject: any, aTopic: any, aData: any): void;
     /**
@@ -139,8 +139,8 @@ declare module "resource://app/modules/ContentCrashHandlers.sys.mjs" {export nam
      */
     function onAboutTabCrashedLoad(browser: any): {
         hasReport: boolean;
-        sendReport: any;
-        includeURL: any;
+        sendReport: boolean;
+        includeURL: boolean;
         requestAutoSubmit: boolean;
     } | {
         hasReport: boolean;
@@ -158,9 +158,9 @@ declare module "resource://app/modules/ContentCrashHandlers.sys.mjs" {export nam
     const queuedCrashedBrowsers: number;
 }
 export namespace UnsubmittedCrashHandler {
-    const prefs_1: any;
+    const prefs_1: nsIPrefBranchType;
     export { prefs_1 as prefs };
-    export const enabled: any;
+    export const enabled: boolean;
     export let showingNotification: boolean;
     export let suppressed: boolean;
     export let _checkTimeout: any;
@@ -242,7 +242,7 @@ export namespace UnsubmittedCrashHandler {
         reportIDs: any;
         onAction: any;
     }): any;
-    export let autoSubmit: any;
+    export let autoSubmit: boolean;
     /**
      * Attempt to submit reports to the crash report server.
      *
@@ -262,8 +262,8 @@ export namespace UnsubmittedCrashHandler {
  * permanentKey. If, however, the browser has never gotten a permanentKey,
  * it falls back to keying on the <xul:browser> element itself.
  */
-declare class BrowserWeakMap extends WeakMap<object, any> {
-    constructor(entries?: readonly (readonly [object, any])[]);
+declare class BrowserWeakMap extends WeakMap<WeakKey, any> {
+    constructor(entries?: readonly (readonly [WeakKey, any])[]);
     constructor(iterable: Iterable<readonly [any, any]>);
     get(browser: any): any;
     set(browser: any, value: any): this;

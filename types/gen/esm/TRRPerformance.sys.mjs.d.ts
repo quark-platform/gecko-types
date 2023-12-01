@@ -7,7 +7,7 @@ declare module "resource://app/modules/TRRPerformance.sys.mjs" {export class DNS
     doLookup(): void;
     usedDomain: any;
     onLookupComplete(request: any, record: any, status: any): void;
-    QueryInterface: any;
+    QueryInterface: MozQueryInterface;
 }
 export class LookupAggregator {
     constructor(onCompleteCallback: any, trrList: any);

@@ -2,8 +2,8 @@ declare module "resource://gre/modules/BackgroundTasksManager.sys.mjs" {export c
     get helpInfo(): any;
     handle(commandLine: any): void;
     runBackgroundTaskNamed(name: any, commandLine: any): Promise<number>;
-    classID: any;
-    QueryInterface: any;
+    classID: unknown;
+    QueryInterface: MozQueryInterface;
 }
 export namespace EXIT_CODE {
     let SUCCESS: number;

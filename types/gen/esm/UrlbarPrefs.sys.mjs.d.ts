@@ -4,7 +4,7 @@ declare module "resource://app/modules/UrlbarPrefs.sys.mjs" {export const Urlbar
  */
 declare class Preferences {
     _map: Map<any, any>;
-    QueryInterface: any;
+    QueryInterface: MozQueryInterface;
     _observerWeakRefs: any[];
     shouldHandOffToSearchModePrefs: string[];
     _firefoxSuggestScenarioStartupPromise: Promise<any>;

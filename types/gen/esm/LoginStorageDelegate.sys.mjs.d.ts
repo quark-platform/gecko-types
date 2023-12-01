@@ -14,7 +14,7 @@ declare module "resource://gre/modules/LoginStorageDelegate.sys.mjs" {export cla
         dismiss(): void;
     };
     promptToChangePasswordWithUsernames(aBrowser: any, aLogins: any, aNewLogin: any): void;
-    classID: any;
-    QueryInterface: any;
+    classID: unknown;
+    QueryInterface: MozQueryInterface;
 }
 }

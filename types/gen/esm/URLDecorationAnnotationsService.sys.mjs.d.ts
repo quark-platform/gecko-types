@@ -1,7 +1,7 @@
 declare module "resource://gre/modules/URLDecorationAnnotationsService.sys.mjs" {export function URLDecorationAnnotationsService(): void;
 export class URLDecorationAnnotationsService {
-    classID: any;
-    QueryInterface: any;
+    classID: unknown;
+    QueryInterface: MozQueryInterface;
     _initialized: boolean;
     _prefBranch: null;
     onDataAvailable(entries: any): void;

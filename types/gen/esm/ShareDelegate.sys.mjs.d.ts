@@ -3,7 +3,7 @@ declare module "resource://gre/modules/ShareDelegate.sys.mjs" {export class Shar
     _openerWindow: any;
     get openerWindow(): any;
     share(aTitle: any, aText: any, aUri: any): Promise<void>;
-    classID: any;
-    QueryInterface: any;
+    classID: unknown;
+    QueryInterface: MozQueryInterface;
 }
 }

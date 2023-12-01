@@ -7,13 +7,13 @@ declare module "resource://gre/modules/FileUtils.sys.mjs" {export namespace File
     let MODE_TRUNCATE: number;
     let PERMS_FILE: number;
     let PERMS_DIRECTORY: number;
-    function getDir(key: any, pathArray: any): any;
+    function getDir(key: any, pathArray: any): void;
     function openFileOutputStream(file: any, modeFlags: any): any;
     function openAtomicFileOutputStream(file: any, modeFlags: any): any;
     function openSafeFileOutputStream(file: any, modeFlags: any): any;
     function _initFileOutputStream(fos: any, file: any, modeFlags: any): any;
     function closeAtomicFileOutputStream(stream: any): void;
     function closeSafeFileOutputStream(stream: any): void;
-    let File: any;
+    let File: new (...params: never) => unknown;
 }
 }

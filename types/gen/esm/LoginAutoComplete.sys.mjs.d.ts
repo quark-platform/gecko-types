@@ -10,9 +10,9 @@ declare module "resource://gre/modules/LoginAutoComplete.sys.mjs" {export class 
         telemetryEventData: any;
     });
     searchString: any;
-    searchResult: any;
+    searchResult: 3;
     defaultIndex: number;
-    QueryInterface: any;
+    QueryInterface: MozQueryInterface;
     /**
      * Accessed via .wrappedJSObject
      * @private
@@ -32,8 +32,8 @@ declare module "resource://gre/modules/LoginAutoComplete.sys.mjs" {export class 
     #private;
 }
 export class LoginAutoComplete {
-    classID: any;
-    QueryInterface: any;
+    classID: unknown;
+    QueryInterface: MozQueryInterface;
     /**
      * Yuck. This is called directly by satchel:
      * nsFormFillController::StartSearch()

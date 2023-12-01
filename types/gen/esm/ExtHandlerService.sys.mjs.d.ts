@@ -1,6 +1,6 @@
 declare module "resource://gre/modules/ExtHandlerService.sys.mjs" {export function HandlerService(): void;
 export class HandlerService {
-    QueryInterface: any;
+    QueryInterface: MozQueryInterface;
     __store: null;
     get _store(): any;
     __storeInitialized: boolean;

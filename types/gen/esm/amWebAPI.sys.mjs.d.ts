@@ -8,8 +8,8 @@ declare module "resource://gre/modules/amWebAPI.sys.mjs" {export class WebAPI ex
     get abuseReportPanelEnabled(): any;
     eventListenerAdded(type: any): void;
     eventListenerRemoved(type: any): void;
-    QueryInterface: any;
-    classID: any;
+    QueryInterface: MozQueryInterface;
+    classID: unknown;
 }
 declare class APIObject {
     init(window: any, broker: any, properties: any): void;

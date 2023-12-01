@@ -1,4 +1,5 @@
-declare module "resource://gre/modules/GeckoViewTab.sys.mjs" {export namespace GeckoViewTabBridge {
+declare module "resource://gre/modules/GeckoViewTab.sys.mjs" {/// <reference types="gecko-types" />
+export namespace GeckoViewTabBridge {
     /**
      * Converts windowId to tabId as in GeckoView every browser window has exactly one tab.
      *
@@ -67,8 +68,7 @@ declare module "resource://gre/modules/GeckoViewTab.sys.mjs" {export namespace G
         updateProperties: any;
     }): Promise<void>;
 }
-export class GeckoViewTab {
-    onInit(): void;
+export class GeckoViewTab extends GeckoViewModule {
     onEvent(aEvent: any, aData: any, aCallback: any): void;
 }
 declare class Tab {
@@ -80,5 +80,6 @@ declare class Tab {
     getActive(): boolean;
     get userContextId(): any;
 }
+import { GeckoViewModule } from "resource://gre/modules/GeckoViewModule.sys.mjs";
 export {};
 }

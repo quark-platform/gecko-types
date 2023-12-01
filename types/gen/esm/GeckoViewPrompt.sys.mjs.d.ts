@@ -30,7 +30,7 @@ declare module "resource://gre/modules/GeckoViewPrompt.sys.mjs" {export class Pr
     promptAuth(...args: any[]): any;
     promptAuthBC(...args: any[]): any;
     asyncPromptAuth(...args: any[]): any;
-    classID: any;
-    QueryInterface: any;
+    classID: unknown;
+    QueryInterface: MozQueryInterface;
 }
 }

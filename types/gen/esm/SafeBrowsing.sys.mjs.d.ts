@@ -8,7 +8,7 @@ declare module "resource://gre/modules/SafeBrowsing.sys.mjs" {export namespace S
     let updateURL: any;
     let gethashURL: any;
     let reportURL: any;
-    function getReportURL(kind: any, info: any): any;
+    function getReportURL(kind: any, info: any): string;
     function observe(aSubject: any, aTopic: any, aData: any): void;
     function readPrefs(): void;
     function updateProviderURLs(): void;

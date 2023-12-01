@@ -70,7 +70,7 @@ declare module "resource://app/modules/Sanitizer.sys.mjs" {export namespace Sani
      */
     function sanitize(itemsToClear?: any, options?: {}): any;
     function observe(subject: any, topic: any, data: any): void;
-    let QueryInterface: any;
+    let QueryInterface: MozQueryInterface;
     function runSanitizeOnShutdown(): Promise<void>;
     namespace items {
         namespace cache {

@@ -4,7 +4,7 @@ declare module "resource://app/modules/UrlbarSearchUtils.sys.mjs" {export const 
  */
 declare class SearchUtils {
     _refreshEnginesByAliasPromise: Promise<void>;
-    QueryInterface: any;
+    QueryInterface: MozQueryInterface;
     /**
      * Initializes the instance and also Services.search.
      */

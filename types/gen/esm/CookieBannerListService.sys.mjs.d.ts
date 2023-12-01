@@ -2,8 +2,8 @@ declare module "resource://gre/modules/CookieBannerListService.sys.mjs" {/**
  * See nsICookieBannerListService
  */
 export class CookieBannerListService {
-    classId: any;
-    QueryInterface: any;
+    classId: unknown;
+    QueryInterface: MozQueryInterface;
     init(): Promise<void>;
     initForTest(): Promise<void>;
     importAllRules(): Promise<void>;

@@ -8,7 +8,7 @@ declare module "resource://gre/modules/ContentPrefServiceChild.sys.mjs" {export 
     removeObserverForName(name: any, observer: any): void;
 }
 export namespace ContentPrefServiceChild {
-    export let QueryInterface: any;
+    export let QueryInterface: MozQueryInterface;
     export function addObserverForName(name: any, observer: any): void;
     export function removeObserverForName(name: any, observer: any): void;
     export { NYI as getCachedByDomainAndName };

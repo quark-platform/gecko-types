@@ -7,7 +7,7 @@ declare module "resource://gre/modules/UpdateListener.sys.mjs" {export namespace
     let promptMaxFutureVariation: number;
     let latestUpdate: any;
     let availablePromptScheduled: boolean;
-    const badgeWaitTime: any;
+    const badgeWaitTime: number;
     const suppressedPromptDelay: number;
     function maybeShowUnsupportedNotification(): void;
     function reset(): void;

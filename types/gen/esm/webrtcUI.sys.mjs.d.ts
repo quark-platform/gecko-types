@@ -16,9 +16,9 @@ export namespace webrtcUI {
     let SHARING_NONE: number;
     let SHARING_WINDOW: number;
     let SHARING_SCREEN: number;
-    let sharedBrowserWindows: WeakSet<object>;
+    let sharedBrowserWindows: WeakSet<WeakKey>;
     let sharingScreen: boolean;
-    let allowedSharedBrowsers: WeakSet<object>;
+    let allowedSharedBrowsers: WeakSet<WeakKey>;
     let allowTabSwitchesForSession: boolean;
     let tabSwitchCountForSession: number;
     let sharingDisplay: boolean;
@@ -51,8 +51,8 @@ export namespace webrtcUI {
      * the specified top-level browsing context.
      */
     function getCombinedStateForBrowser(aTopBrowsingContext: any): {
-        camera: any;
-        microphone: any;
+        camera: 0 | 2 | 1;
+        microphone: 0 | 2 | 1;
     };
     function streamAddedOrRemoved(aBrowsingContext: any, aData: any): void;
     /**
@@ -88,8 +88,8 @@ export namespace webrtcUI {
      */
     function clearPermissionsAndStopSharing(types: ("screen" | "camera" | "microphone")[], tab: any): void;
     function updateIndicators(aTopBrowsingContext: any): {
-        camera: any;
-        microphone: any;
+        camera: 0 | 2 | 1;
+        microphone: 0 | 2 | 1;
     };
     function swapBrowserForNotification(aOldBrowser: any, aNewBrowser: any): void;
     /**

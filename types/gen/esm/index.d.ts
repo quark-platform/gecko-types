@@ -120,7 +120,9 @@
 ///<reference path="./ContentDOMReference.sys.mjs.d.ts" />
 ///<reference path="./CreditCard.sys.mjs.d.ts" />
 ///<reference path="./DateTimePickerPanel.sys.mjs.d.ts" />
+///<reference path="./DeferredTask.sys.mjs.d.ts" />
 ///<reference path="./Deprecated.sys.mjs.d.ts" />
+///<reference path="./E10SUtils.sys.mjs.d.ts" />
 ///<reference path="./EventEmitter.sys.mjs.d.ts" />
 ///<reference path="./FileUtils.sys.mjs.d.ts" />
 ///<reference path="./FindBarContent.sys.mjs.d.ts" />
@@ -709,7 +711,9 @@ declare interface MozESMFiles {
   ['resource://gre/modules/ContentDOMReference.sys.mjs']: typeof import('resource://gre/modules/ContentDOMReference.sys.mjs');
   ['resource://gre/modules/CreditCard.sys.mjs']: typeof import('resource://gre/modules/CreditCard.sys.mjs');
   ['resource://gre/modules/DateTimePickerPanel.sys.mjs']: typeof import('resource://gre/modules/DateTimePickerPanel.sys.mjs');
+  ['resource://gre/modules/DeferredTask.sys.mjs']: typeof import('resource://gre/modules/DeferredTask.sys.mjs');
   ['resource://gre/modules/Deprecated.sys.mjs']: typeof import('resource://gre/modules/Deprecated.sys.mjs');
+  ['resource://gre/modules/E10SUtils.sys.mjs']: typeof import('resource://gre/modules/E10SUtils.sys.mjs');
   ['resource://gre/modules/EventEmitter.sys.mjs']: typeof import('resource://gre/modules/EventEmitter.sys.mjs');
   ['resource://gre/modules/FileUtils.sys.mjs']: typeof import('resource://gre/modules/FileUtils.sys.mjs');
   ['resource://gre/modules/FindBarContent.sys.mjs']: typeof import('resource://gre/modules/FindBarContent.sys.mjs');
@@ -1312,12 +1316,6 @@ declare interface MozESMExportFile {
   ['LogManager']: 'resource://gre/modules/services-common/logmanager.sys.mjs';
   ['LogManager']: 'resource://gre/modules/services-common/logmanager.sys.mjs';
   ['Observers']: 'resource://gre/modules/services-common/observers.sys.mjs';
-  ['RESTRequest']: 'resource://gre/modules/services-common/rest.sys.mjs';
-  ['RESTRequest']: 'resource://gre/modules/services-common/rest.sys.mjs';
-  ['RESTResponse']: 'resource://gre/modules/services-common/rest.sys.mjs';
-  ['RESTResponse']: 'resource://gre/modules/services-common/rest.sys.mjs';
-  ['TokenAuthenticatedRESTRequest']: 'resource://gre/modules/services-common/rest.sys.mjs';
-  ['TokenAuthenticatedRESTRequest']: 'resource://gre/modules/services-common/rest.sys.mjs';
   ['TokenServerClientError']: 'resource://gre/modules/services-common/tokenserverclient.sys.mjs';
   ['TokenServerClientError']: 'resource://gre/modules/services-common/tokenserverclient.sys.mjs';
   ['TokenServerClientNetworkError']: 'resource://gre/modules/services-common/tokenserverclient.sys.mjs';
@@ -1553,7 +1551,10 @@ declare interface MozESMExportFile {
   ['NETWORK_NAMES']: 'resource://gre/modules/CreditCard.sys.mjs';
   ['CreditCard']: 'resource://gre/modules/CreditCard.sys.mjs';
   ['DateTimePickerPanel']: 'resource://gre/modules/DateTimePickerPanel.sys.mjs';
+  ['DeferredTask']: 'resource://gre/modules/DeferredTask.sys.mjs';
+  ['DeferredTask']: 'resource://gre/modules/DeferredTask.sys.mjs';
   ['Deprecated']: 'resource://gre/modules/Deprecated.sys.mjs';
+  ['E10SUtils']: 'resource://gre/modules/E10SUtils.sys.mjs';
   ['EventEmitter']: 'resource://gre/modules/EventEmitter.sys.mjs';
   ['EventEmitter']: 'resource://gre/modules/EventEmitter.sys.mjs';
   ['EventEmitter']: 'resource://gre/modules/EventEmitter.sys.mjs';
@@ -1571,14 +1572,6 @@ declare interface MozESMExportFile {
   ['FinderParent']: 'resource://gre/modules/FinderParent.sys.mjs';
   ['FirstStartup']: 'resource://gre/modules/FirstStartup.sys.mjs';
   ['FormLikeFactory']: 'resource://gre/modules/FormLikeFactory.sys.mjs';
-  ['GMPInstallManager']: 'resource://gre/modules/GMPInstallManager.sys.mjs';
-  ['GMPInstallManager']: 'resource://gre/modules/GMPInstallManager.sys.mjs';
-  ['GMPAddon']: 'resource://gre/modules/GMPInstallManager.sys.mjs';
-  ['GMPAddon']: 'resource://gre/modules/GMPInstallManager.sys.mjs';
-  ['GMPExtractor']: 'resource://gre/modules/GMPInstallManager.sys.mjs';
-  ['GMPExtractor']: 'resource://gre/modules/GMPInstallManager.sys.mjs';
-  ['GMPDownloader']: 'resource://gre/modules/GMPInstallManager.sys.mjs';
-  ['GMPDownloader']: 'resource://gre/modules/GMPInstallManager.sys.mjs';
   ['OPEN_H264_ID']: 'resource://gre/modules/GMPUtils.sys.mjs';
   ['WIDEVINE_ID']: 'resource://gre/modules/GMPUtils.sys.mjs';
   ['GMP_PLUGIN_IDS']: 'resource://gre/modules/GMPUtils.sys.mjs';
@@ -1612,6 +1605,8 @@ declare interface MozESMExportFile {
   ['PrivateBrowsingUtils']: 'resource://gre/modules/PrivateBrowsingUtils.sys.mjs';
   ['ProcessType']: 'resource://gre/modules/ProcessType.sys.mjs';
   ['ProfileAge']: 'resource://gre/modules/ProfileAge.sys.mjs';
+  ['Deferred']: 'resource://gre/modules/PromiseUtils.sys.mjs';
+  ['Deferred']: 'resource://gre/modules/PromiseUtils.sys.mjs';
   ['PromiseUtils']: 'resource://gre/modules/PromiseUtils.sys.mjs';
   ['PropertyListUtils']: 'resource://gre/modules/PropertyListUtils.sys.mjs';
   ['Region']: 'resource://gre/modules/Region.sys.mjs';
@@ -2448,12 +2443,6 @@ declare interface MozESMExportType {
   ['LogManager']: (typeof import('resource://gre/modules/services-common/logmanager.sys.mjs'))['LogManager'];
   ['LogManager']: (typeof import('resource://gre/modules/services-common/logmanager.sys.mjs'))['LogManager'];
   ['Observers']: (typeof import('resource://gre/modules/services-common/observers.sys.mjs'))['Observers'];
-  ['RESTRequest']: (typeof import('resource://gre/modules/services-common/rest.sys.mjs'))['RESTRequest'];
-  ['RESTRequest']: (typeof import('resource://gre/modules/services-common/rest.sys.mjs'))['RESTRequest'];
-  ['RESTResponse']: (typeof import('resource://gre/modules/services-common/rest.sys.mjs'))['RESTResponse'];
-  ['RESTResponse']: (typeof import('resource://gre/modules/services-common/rest.sys.mjs'))['RESTResponse'];
-  ['TokenAuthenticatedRESTRequest']: (typeof import('resource://gre/modules/services-common/rest.sys.mjs'))['TokenAuthenticatedRESTRequest'];
-  ['TokenAuthenticatedRESTRequest']: (typeof import('resource://gre/modules/services-common/rest.sys.mjs'))['TokenAuthenticatedRESTRequest'];
   ['TokenServerClientError']: (typeof import('resource://gre/modules/services-common/tokenserverclient.sys.mjs'))['TokenServerClientError'];
   ['TokenServerClientError']: (typeof import('resource://gre/modules/services-common/tokenserverclient.sys.mjs'))['TokenServerClientError'];
   ['TokenServerClientNetworkError']: (typeof import('resource://gre/modules/services-common/tokenserverclient.sys.mjs'))['TokenServerClientNetworkError'];
@@ -2689,7 +2678,10 @@ declare interface MozESMExportType {
   ['NETWORK_NAMES']: (typeof import('resource://gre/modules/CreditCard.sys.mjs'))['NETWORK_NAMES'];
   ['CreditCard']: (typeof import('resource://gre/modules/CreditCard.sys.mjs'))['CreditCard'];
   ['DateTimePickerPanel']: (typeof import('resource://gre/modules/DateTimePickerPanel.sys.mjs'))['DateTimePickerPanel'];
+  ['DeferredTask']: (typeof import('resource://gre/modules/DeferredTask.sys.mjs'))['DeferredTask'];
+  ['DeferredTask']: (typeof import('resource://gre/modules/DeferredTask.sys.mjs'))['DeferredTask'];
   ['Deprecated']: (typeof import('resource://gre/modules/Deprecated.sys.mjs'))['Deprecated'];
+  ['E10SUtils']: (typeof import('resource://gre/modules/E10SUtils.sys.mjs'))['E10SUtils'];
   ['EventEmitter']: (typeof import('resource://gre/modules/EventEmitter.sys.mjs'))['EventEmitter'];
   ['EventEmitter']: (typeof import('resource://gre/modules/EventEmitter.sys.mjs'))['EventEmitter'];
   ['EventEmitter']: (typeof import('resource://gre/modules/EventEmitter.sys.mjs'))['EventEmitter'];
@@ -2707,14 +2699,6 @@ declare interface MozESMExportType {
   ['FinderParent']: (typeof import('resource://gre/modules/FinderParent.sys.mjs'))['FinderParent'];
   ['FirstStartup']: (typeof import('resource://gre/modules/FirstStartup.sys.mjs'))['FirstStartup'];
   ['FormLikeFactory']: (typeof import('resource://gre/modules/FormLikeFactory.sys.mjs'))['FormLikeFactory'];
-  ['GMPInstallManager']: (typeof import('resource://gre/modules/GMPInstallManager.sys.mjs'))['GMPInstallManager'];
-  ['GMPInstallManager']: (typeof import('resource://gre/modules/GMPInstallManager.sys.mjs'))['GMPInstallManager'];
-  ['GMPAddon']: (typeof import('resource://gre/modules/GMPInstallManager.sys.mjs'))['GMPAddon'];
-  ['GMPAddon']: (typeof import('resource://gre/modules/GMPInstallManager.sys.mjs'))['GMPAddon'];
-  ['GMPExtractor']: (typeof import('resource://gre/modules/GMPInstallManager.sys.mjs'))['GMPExtractor'];
-  ['GMPExtractor']: (typeof import('resource://gre/modules/GMPInstallManager.sys.mjs'))['GMPExtractor'];
-  ['GMPDownloader']: (typeof import('resource://gre/modules/GMPInstallManager.sys.mjs'))['GMPDownloader'];
-  ['GMPDownloader']: (typeof import('resource://gre/modules/GMPInstallManager.sys.mjs'))['GMPDownloader'];
   ['OPEN_H264_ID']: (typeof import('resource://gre/modules/GMPUtils.sys.mjs'))['OPEN_H264_ID'];
   ['WIDEVINE_ID']: (typeof import('resource://gre/modules/GMPUtils.sys.mjs'))['WIDEVINE_ID'];
   ['GMP_PLUGIN_IDS']: (typeof import('resource://gre/modules/GMPUtils.sys.mjs'))['GMP_PLUGIN_IDS'];
@@ -2748,6 +2732,8 @@ declare interface MozESMExportType {
   ['PrivateBrowsingUtils']: (typeof import('resource://gre/modules/PrivateBrowsingUtils.sys.mjs'))['PrivateBrowsingUtils'];
   ['ProcessType']: (typeof import('resource://gre/modules/ProcessType.sys.mjs'))['ProcessType'];
   ['ProfileAge']: (typeof import('resource://gre/modules/ProfileAge.sys.mjs'))['ProfileAge'];
+  ['Deferred']: (typeof import('resource://gre/modules/PromiseUtils.sys.mjs'))['Deferred'];
+  ['Deferred']: (typeof import('resource://gre/modules/PromiseUtils.sys.mjs'))['Deferred'];
   ['PromiseUtils']: (typeof import('resource://gre/modules/PromiseUtils.sys.mjs'))['PromiseUtils'];
   ['PropertyListUtils']: (typeof import('resource://gre/modules/PropertyListUtils.sys.mjs'))['PropertyListUtils'];
   ['Region']: (typeof import('resource://gre/modules/Region.sys.mjs'))['Region'];

@@ -8,6 +8,6 @@ declare module "resource://gre/modules/ColorPickerDelegate.sys.mjs" {export clas
         predefinedValues: any;
     };
     open(aColorPickerShownCallback: any): void;
-    QueryInterface: any;
+    QueryInterface: MozQueryInterface;
 }
 }

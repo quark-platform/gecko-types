@@ -1,4 +1,5 @@
-declare module "resource://app/modules/ExtensionPopups.sys.mjs" {export class BasePopup {
+declare module "resource://app/modules/ExtensionPopups.sys.mjs" {/// <reference types="gecko-types" />
+export class BasePopup {
     static for(extension: any, window: any): any;
     constructor(extension: any, viewNode: any, popupURL: any, browserStyle: any, fixedWidth?: boolean, blockParser?: boolean);
     extension: any;
@@ -43,7 +44,7 @@ declare module "resource://app/modules/ExtensionPopups.sys.mjs" {export class Ba
     background: any;
 }
 export namespace BasePopup {
-    let instances: any;
+    let instances: ExtensionUtils.DefaultWeakMap;
 }
 export class PanelPopup extends BasePopup {
     constructor(extension: any, document: any, popupURL: any, browserStyle: any);
@@ -79,4 +80,5 @@ export class ViewPopup extends BasePopup {
     get DESTROY_EVENT(): string;
     closePopup(): void;
 }
+import { ExtensionUtils } from "resource://gre/modules/ExtensionUtils.sys.mjs";
 }

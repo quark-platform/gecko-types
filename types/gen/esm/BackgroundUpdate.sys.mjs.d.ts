@@ -15,6 +15,16 @@ declare module "resource://gre/modules/BackgroundUpdate.sys.mjs" {export namespa
         let WINDOWS_CANNOT_USUALLY_USE_BITS: string;
         let APPBASEDIR_NOT_WRITABLE: string;
     }
-    let EXIT_CODE: any;
+    let EXIT_CODE: {
+        DEFAULT_PROFILE_DOES_NOT_EXIST: number;
+        DEFAULT_PROFILE_CANNOT_BE_LOCKED: number;
+        DEFAULT_PROFILE_CANNOT_BE_READ: number;
+        OTHER_INSTANCE: number;
+        SUCCESS: number;
+        NOT_FOUND: number;
+        EXCEPTION: number;
+        TIMEOUT: number;
+        LAST_RESERVED: number;
+    };
 }
 }

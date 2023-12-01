@@ -2,9 +2,9 @@ declare module "resource://app/modules/InstallerPrefs.sys.mjs" {export function 
 export class InstallerPrefs {
     constructor(prefsList: any);
     prefsList: any;
-    classID: any;
+    classID: unknown;
     contractID: string;
-    QueryInterface: any;
+    QueryInterface: MozQueryInterface;
     observe(subject: any, topic: any, data: any): void;
     _registerPrefListeners(): void;
     _cleanRegistryKey(regKey: any): void;

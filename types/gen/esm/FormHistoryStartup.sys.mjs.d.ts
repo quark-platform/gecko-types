@@ -1,6 +1,6 @@
 declare module "resource://gre/modules/FormHistoryStartup.sys.mjs" {export class FormHistoryStartup {
-    classID: any;
-    QueryInterface: any;
+    classID: unknown;
+    QueryInterface: MozQueryInterface;
     observe(_subject: any, topic: any, _data: any): void;
     init(): void;
     inited: boolean;

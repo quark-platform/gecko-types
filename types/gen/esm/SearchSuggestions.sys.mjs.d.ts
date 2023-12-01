@@ -5,7 +5,7 @@ declare module "resource://gre/modules/SearchSuggestions.sys.mjs" {/**
  * @class
  */
 export class SearchSuggestAutoComplete extends SuggestAutoComplete {
-    classID: any;
+    classID: unknown;
     serviceURL: string;
 }
 /**
@@ -49,7 +49,7 @@ declare class SuggestAutoComplete {
      * implementation.
      */
     stopSearch(): void;
-    QueryInterface: any;
+    QueryInterface: MozQueryInterface;
     #private;
 }
 export {};

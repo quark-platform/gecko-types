@@ -1,4 +1,4 @@
-declare module "resource://gre/modules/GeckoViewActorParent.sys.mjs" {export class GeckoViewActorParent {
+declare module "resource://gre/modules/GeckoViewActorParent.sys.mjs" {export class GeckoViewActorParent extends JSWindowActorParent {
     static initLogging(aModuleName: any): any;
     get browser(): any;
     get window(): any;

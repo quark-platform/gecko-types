@@ -55,6 +55,6 @@ declare module "resource://gre/modules/BookmarkHTMLUtils.sys.mjs" {export const 
      * @rejects JavaScript exception.
      */
     exportToFile(aFilePath: any): Promise<any>;
-    readonly defaultPath: any;
+    readonly defaultPath: string;
 }>;
 }

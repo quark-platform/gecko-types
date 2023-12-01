@@ -1,4 +1,4 @@
-declare module "resource://gre/modules/ManifestMessagesChild.sys.mjs" {export class ManifestMessagesChild {
+declare module "resource://gre/modules/ManifestMessagesChild.sys.mjs" {export class ManifestMessagesChild extends JSWindowActorChild {
     receiveMessage(message: any): {
         success: boolean;
         result: any;

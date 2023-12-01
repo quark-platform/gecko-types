@@ -2,7 +2,7 @@ declare module "resource://app/modules/ExtensionsUI.sys.mjs" {export namespace E
     let sideloaded: Set<any>;
     let updates: Set<any>;
     let sideloadListener: any;
-    let pendingNotifications: WeakMap<object, any>;
+    let pendingNotifications: WeakMap<WeakKey, any>;
     function init(): Promise<void>;
     function _checkForSideloaded(): Promise<void>;
     function _updateNotifications(): void;

@@ -1,15 +1,15 @@
-declare module "resource://app/modules/ScreenshotChild.sys.mjs" {export class ScreenshotChild {
+declare module "resource://app/modules/ScreenshotChild.sys.mjs" {export class ScreenshotChild extends JSWindowActorChild {
     receiveMessage(message: any): Promise<{
-        innerWidth: any;
-        innerHeight: any;
+        innerWidth: number;
+        innerHeight: number;
         scrollMinX: any;
         scrollMaxX: any;
         scrollMinY: any;
         scrollMaxY: any;
     }>;
     getDimensions(): Promise<{
-        innerWidth: any;
-        innerHeight: any;
+        innerWidth: number;
+        innerHeight: number;
         scrollMinX: any;
         scrollMaxX: any;
         scrollMinY: any;

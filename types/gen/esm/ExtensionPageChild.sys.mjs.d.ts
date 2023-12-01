@@ -1,5 +1,7 @@
-declare module "resource://gre/modules/ExtensionPageChild.sys.mjs" {export function getContextChildManagerGetter({ envType }: {
+declare module "resource://gre/modules/ExtensionPageChild.sys.mjs" {/// <reference types="gecko-types" />
+export function getContextChildManagerGetter({ envType }: {
     envType: any;
-}, ChildAPIManagerClass?: any): () => any;
+}, ChildAPIManagerClass?: typeof ExtensionChild.ChildAPIManager): () => ExtensionChild.ChildAPIManager;
 export const ExtensionPageChild: any;
+import { ExtensionChild } from "resource://gre/modules/ExtensionChild.sys.mjs";
 }

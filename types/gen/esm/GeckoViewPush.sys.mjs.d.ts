@@ -12,8 +12,8 @@ declare module "resource://gre/modules/GeckoViewPush.sys.mjs" {export class Push
     notificationForOriginShown(origin: any): void;
     notificationForOriginClosed(origin: any): void;
     reportDeliveryError(messageId: any, reason: any): void;
-    classID: any;
+    classID: unknown;
     contractID: string;
-    QueryInterface: any;
+    QueryInterface: MozQueryInterface;
 }
 }

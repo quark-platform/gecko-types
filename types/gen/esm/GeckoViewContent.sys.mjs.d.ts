@@ -1,7 +1,5 @@
-declare module "resource://gre/modules/GeckoViewContent.sys.mjs" {export class GeckoViewContent {
-    onInit(): void;
-    onEnable(): void;
-    onDisable(): void;
+declare module "resource://gre/modules/GeckoViewContent.sys.mjs" {/// <reference types="gecko-types" />
+export class GeckoViewContent extends GeckoViewModule {
     get actor(): any;
     get isPdfJs(): boolean;
     sendToAllChildren(aEvent: any, aData: any): void;
@@ -42,4 +40,5 @@ declare module "resource://gre/modules/GeckoViewContent.sys.mjs" {export class G
     _displayMatches(aData: any): void;
     _matchDisplayOptions: any;
 }
+import { GeckoViewModule } from "resource://gre/modules/GeckoViewModule.sys.mjs";
 }

@@ -1,10 +1,10 @@
 declare module "resource://gre/modules/PlacesFrecencyRecalculator.sys.mjs" {export class PlacesFrecencyRecalculator {
-    classID: any;
+    classID: unknown;
     /**
      * This is useful for testing.
      */
     get alternativeFrecencyInfo(): any;
-    QueryInterface: any;
+    QueryInterface: MozQueryInterface;
     wrappedJSObject: this;
     pendingFrecencyDecayPromise: Promise<void>;
     /**

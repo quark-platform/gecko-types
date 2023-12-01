@@ -67,7 +67,7 @@ declare module "resource://gre/modules/ContentDispatchChooser.sys.mjs" {export c
      * @returns {boolean} - true if we can store permissions, false otherwise.
      */
     _isSupportedPrincipal(aPrincipal: nsIPrincipal): boolean;
-    classID: any;
-    QueryInterface: any;
+    classID: unknown;
+    QueryInterface: MozQueryInterface;
 }
 }

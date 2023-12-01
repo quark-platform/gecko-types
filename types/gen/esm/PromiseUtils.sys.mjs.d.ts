@@ -1,4 +1,14 @@
-declare module "resource://gre/modules/PromiseUtils.sys.mjs" {export namespace PromiseUtils {
+declare module "resource://gre/modules/PromiseUtils.sys.mjs" {/**
+ * The definition of Deferred object which is returned by PromiseUtils.defer(),
+ * It contains a Promise and methods to resolve/reject it.
+ */
+export function Deferred(): void;
+export class Deferred {
+    resolve: (value: any) => void;
+    reject: (reason?: any) => void;
+    promise: Promise<any>;
+}
+export namespace PromiseUtils {
     function defer(): Deferred;
     /**
      * Requests idle dispatch to the main thread for the given callback,
@@ -14,15 +24,4 @@ declare module "resource://gre/modules/PromiseUtils.sys.mjs" {export namespace P
      */
     function idleDispatch(callback: Function, timeout?: integer): Promise<any>;
 }
-/**
- * The definition of Deferred object which is returned by PromiseUtils.defer(),
- * It contains a Promise and methods to resolve/reject it.
- */
-declare function Deferred(): void;
-declare class Deferred {
-    resolve: (value: any) => void;
-    reject: (reason?: any) => void;
-    promise: Promise<any>;
-}
-export {};
 }

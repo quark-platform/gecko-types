@@ -1,12 +1,12 @@
 declare module "resource://gre/modules/AboutDevToolsToolboxRegistration.sys.mjs" {export function AboutDevtoolsToolbox(): void;
 export class AboutDevtoolsToolbox {
-    uri: any;
+    uri: nsIURIType;
     classDescription: string;
-    classID: any;
+    classID: unknown;
     contractID: string;
     QueryInterface: any;
-    newChannel(uri: any, loadInfo: any): any;
+    newChannel(uri: any, loadInfo: any): nsIChannelType;
     getURIFlags(uri: any): number;
-    getChromeURI(_uri: any): any;
+    getChromeURI(_uri: any): nsIURIType;
 }
 }
