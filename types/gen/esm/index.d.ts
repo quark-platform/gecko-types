@@ -484,6 +484,7 @@
 ///<reference path="./TaskSchedulerMacOSImpl.sys.mjs.d.ts" />
 ///<reference path="./TelemetryStartup.sys.mjs.d.ts" />
 ///<reference path="./BackgroundPageThumbs.sys.mjs.d.ts" />
+///<reference path="./PageThumbs.sys.mjs.d.ts" />
 ///<reference path="./PageThumbsStorageService.sys.mjs.d.ts" />
 ///<reference path="./PageThumbUtils.sys.mjs.d.ts" />
 ///<reference path="./TooltipTextProvider.sys.mjs.d.ts" />
@@ -1075,6 +1076,7 @@ declare interface MozESMFiles {
   ['resource://gre/modules/TaskSchedulerMacOSImpl.sys.mjs']: typeof import('resource://gre/modules/TaskSchedulerMacOSImpl.sys.mjs');
   ['resource://gre/modules/TelemetryStartup.sys.mjs']: typeof import('resource://gre/modules/TelemetryStartup.sys.mjs');
   ['resource://gre/modules/BackgroundPageThumbs.sys.mjs']: typeof import('resource://gre/modules/BackgroundPageThumbs.sys.mjs');
+  ['resource://gre/modules/PageThumbs.sys.mjs']: typeof import('resource://gre/modules/PageThumbs.sys.mjs');
   ['resource://gre/modules/PageThumbsStorageService.sys.mjs']: typeof import('resource://gre/modules/PageThumbsStorageService.sys.mjs');
   ['resource://gre/modules/PageThumbUtils.sys.mjs']: typeof import('resource://gre/modules/PageThumbUtils.sys.mjs');
   ['resource://gre/modules/TooltipTextProvider.sys.mjs']: typeof import('resource://gre/modules/TooltipTextProvider.sys.mjs');
@@ -2143,6 +2145,9 @@ declare interface MozESMExportFile {
   ['TelemetryStartup']: 'resource://gre/modules/TelemetryStartup.sys.mjs';
   ['BackgroundPageThumbs']: 'resource://gre/modules/BackgroundPageThumbs.sys.mjs';
   ['PageThumbUtils']: 'resource://gre/modules/PageThumbUtils.sys.mjs';
+  ['PageThumbs']: 'resource://gre/modules/PageThumbs.sys.mjs';
+  ['PageThumbsStorage']: 'resource://gre/modules/PageThumbs.sys.mjs';
+  ['PageThumbsExpiration']: 'resource://gre/modules/PageThumbs.sys.mjs';
   ['PageThumbsStorageService']: 'resource://gre/modules/PageThumbsStorageService.sys.mjs';
   ['PageThumbsStorageService']: 'resource://gre/modules/PageThumbsStorageService.sys.mjs';
   ['TooltipTextProvider']: 'resource://gre/modules/TooltipTextProvider.sys.mjs';
@@ -3270,6 +3275,9 @@ declare interface MozESMExportType {
   ['TelemetryStartup']: (typeof import('resource://gre/modules/TelemetryStartup.sys.mjs'))['TelemetryStartup'];
   ['BackgroundPageThumbs']: (typeof import('resource://gre/modules/BackgroundPageThumbs.sys.mjs'))['BackgroundPageThumbs'];
   ['PageThumbUtils']: (typeof import('resource://gre/modules/PageThumbUtils.sys.mjs'))['PageThumbUtils'];
+  ['PageThumbs']: (typeof import('resource://gre/modules/PageThumbs.sys.mjs'))['PageThumbs'];
+  ['PageThumbsStorage']: (typeof import('resource://gre/modules/PageThumbs.sys.mjs'))['PageThumbsStorage'];
+  ['PageThumbsExpiration']: (typeof import('resource://gre/modules/PageThumbs.sys.mjs'))['PageThumbsExpiration'];
   ['PageThumbsStorageService']: (typeof import('resource://gre/modules/PageThumbsStorageService.sys.mjs'))['PageThumbsStorageService'];
   ['PageThumbsStorageService']: (typeof import('resource://gre/modules/PageThumbsStorageService.sys.mjs'))['PageThumbsStorageService'];
   ['TooltipTextProvider']: (typeof import('resource://gre/modules/TooltipTextProvider.sys.mjs'))['TooltipTextProvider'];
