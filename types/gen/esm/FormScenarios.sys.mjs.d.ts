@@ -2,7 +2,7 @@ declare module "resource://gre/modules/FormScenarios.sys.mjs" {export class Form
     /**
      * Caches the scores when running the SignUpFormRuleset against a form
      */
-    static "__#1263554@#cachedSignUpFormScore": WeakMap<WeakKey, any>;
+    static "__#1263580@#cachedSignUpFormScore": WeakMap<WeakKey, any>;
     /**
      * Detect usage scenarios of the form.
      *
@@ -24,6 +24,6 @@ declare module "resource://gre/modules/FormScenarios.sys.mjs" {export class Form
      * @param {HTMLFormElement} formElement
      * @returns {boolean} returns true if the calculcated score is higher than the confidenceThreshold
      */
-    static "__#1263554@#isProbablyASignUpForm"(formElement: HTMLFormElement): boolean;
+    static "__#1263580@#isProbablyASignUpForm"(formElement: HTMLFormElement): boolean;
 }
 }
