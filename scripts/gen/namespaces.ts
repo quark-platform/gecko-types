@@ -9,6 +9,7 @@ import {
   formatDocCommentString,
   invalidNames,
   printNode,
+  QUESTION_TOKEN,
 } from './shared.js'
 
 let namespaceDefFile = ''
@@ -62,6 +63,21 @@ for (const namespaceKey in namespaces) {
     const { nullable } = returnType
     const idlType = convertIdlType(returnType)
 
+    const args = method.arguments
+      .map((argument) => {
+        const { idlType } = argument.type
+        if (typeof idlType != 'string') return null
+
+        return ts.factory.createParameterDeclaration(
+          undefined,
+          undefined,
+          argument.name,
+          argument.optional ? QUESTION_TOKEN : undefined,
+          ts.factory.createTypeReferenceNode(idlType),
+        )
+      })
+      .filter(Boolean)
+
     attributes.push(
       ts.addSyntheticLeadingComment(
         ts.factory.createFunctionDeclaration(
@@ -69,7 +85,7 @@ for (const namespaceKey in namespaces) {
           undefined,
           name,
           undefined,
-          [],
+          args,
           ts.factory.createTypeReferenceNode(
             `${idlType} ${nullable ? '?' : ''}`,
           ),

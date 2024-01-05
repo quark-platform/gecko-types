@@ -38,7 +38,7 @@ const idlDefFileBuilder = ts.createSourceFile(
   '',
   ts.ScriptTarget.Latest,
   /*setParentNodes*/ false,
-  ts.ScriptKind.TS
+  ts.ScriptKind.TS,
 )
 
 const arrayifyAttributes = ({
@@ -51,7 +51,7 @@ const arrayifyAttributes = ({
 
 function handleAttribute(
   code: attribute_code,
-  docComment: string
+  docComment: string,
 ): ts.TypeElement[] {
   let modifiers = []
 
@@ -68,18 +68,18 @@ function handleAttribute(
         modifiers,
         code.name,
         undefined,
-        ts.factory.createTypeReferenceNode(code.type.replaceAll(' ', '_'))
+        ts.factory.createTypeReferenceNode(code.type.replaceAll(' ', '_')),
       ),
       ts.SyntaxKind.MultiLineCommentTrivia,
       formatDocCommentString(docComment),
-      true
+      true,
     ),
   ]
 }
 
 function handleFunc(
   code: func,
-  docCommentRaw: member_$0_$0[]
+  docCommentRaw: member_$0_$0[],
 ): ts.TypeElement[] {
   const { name, params: rawParams, attributes } = code
   let returnType = code.return_type
@@ -90,7 +90,7 @@ function handleFunc(
   if (attributes) {
     const attrs = arrayifyAttributes(attributes)
     const isNoScript = attrs.some(
-      ({ name }) => typeof name == 'string' && name == 'noscript'
+      ({ name }) => typeof name == 'string' && name == 'noscript',
     )
     if (isNoScript) return []
   }
@@ -145,9 +145,9 @@ function handleFunc(
           optional
             ? ts.factory.createToken(ts.SyntaxKind.QuestionToken)
             : undefined,
-          ts.factory.createTypeReferenceNode(type)
+          ts.factory.createTypeReferenceNode(type),
         )
-      })
+      }),
     )
   }
 
@@ -163,11 +163,11 @@ function handleFunc(
         undefined,
         undefined,
         params,
-        ts.factory.createTypeReferenceNode(returnType.replaceAll(' ', '_'))
+        ts.factory.createTypeReferenceNode(returnType.replaceAll(' ', '_')),
       ),
       ts.SyntaxKind.MultiLineCommentTrivia,
       docComment,
-      true
+      true,
     ),
   ]
 }
@@ -176,7 +176,7 @@ function addConstant(
   interfaceName: string,
   key: string,
   value?: string,
-  type?: string
+  type?: string,
 ): ts.TypeElement[] {
   const constants = idlConstants.get(interfaceName) || []
   constants.push({ key, value })
@@ -189,14 +189,14 @@ function addConstant(
       undefined,
       (type && ts.factory.createTypeReferenceNode(type)) ||
         (value && ts.factory.createTypeReferenceNode('string')) ||
-        undefined
+        undefined,
     ),
   ]
 }
 
 function handleConst(
   code: const_code,
-  interfaceName: string
+  interfaceName: string,
 ): ts.TypeElement[] {
   const { name: key, value, type } = code
   if (typeof key !== 'string') return []
@@ -208,7 +208,7 @@ function handleConst(
       interfaceName,
       key,
       value,
-      (typeof type === 'string' && type.replaceAll(' ', '_')) || undefined
+      (typeof type === 'string' && type.replaceAll(' ', '_')) || undefined,
     )
   }
 }
@@ -230,7 +230,7 @@ function handleEnum(code: enum_code, interfaceName: string): ts.TypeElement[] {
 
 function interfaceBody(
   contents: ifacebody_$0_$0_$0,
-  interfaceName: string
+  interfaceName: string,
 ): ts.TypeElement[] {
   if (typeof contents == 'string') return []
   if (
@@ -321,18 +321,18 @@ function interfaceMain(node: interface_main) {
               ts.factory.createHeritageClause(ts.SyntaxKind.ExtendsKeyword, [
                 ts.factory.createExpressionWithTypeArguments(
                   parentInterface,
-                  undefined
+                  undefined,
                 ),
               ]),
             ]
           : [],
-        members
+        members,
       ),
       ts.SyntaxKind.MultiLineCommentTrivia,
       generateDocCommentType(docComments),
-      true
+      true,
     ),
-    idlDefFileBuilder
+    idlDefFileBuilder,
   )
   idlDefFile += '\n\n'
 }
@@ -371,11 +371,11 @@ idlDefFile += printNode(
     undefined,
     ts.factory.createUnionTypeNode(
       [...idlTypes].map((iface) =>
-        ts.factory.createLiteralTypeNode(ts.factory.createStringLiteral(iface))
-      )
-    )
+        ts.factory.createLiteralTypeNode(ts.factory.createStringLiteral(iface)),
+      ),
+    ),
   ),
-  idlDefFileBuilder
+  idlDefFileBuilder,
 )
 idlDefFile += '\n'
 
@@ -393,12 +393,12 @@ idlDefFile += printNode(
         undefined,
         ts.factory.createTypeReferenceNode(
           ts.factory.createIdentifier(`${iface}Type`),
-          undefined
-        )
-      )
-    )
+          undefined,
+        ),
+      ),
+    ),
   ),
-  idlDefFileBuilder
+  idlDefFileBuilder,
 )
 
 idlDefFile += '\n\n'
@@ -425,11 +425,11 @@ idlDefFile += '\n\n'
       if (typeof value === 'undefined') {
       } else if (value.startsWith('0x') || !isNaN(value as unknown as number)) {
         type = ts.factory.createLiteralTypeNode(
-          ts.factory.createNumericLiteral(value)
+          ts.factory.createNumericLiteral(value),
         )
       } else {
         type = ts.factory.createLiteralTypeNode(
-          ts.factory.createStringLiteral(value)
+          ts.factory.createStringLiteral(value),
         )
       }
 
@@ -437,7 +437,7 @@ idlDefFile += '\n\n'
         [READ_ONLY_MODIFIER],
         key,
         undefined,
-        type
+        type,
       )
     })
 
@@ -447,16 +447,16 @@ idlDefFile += '\n\n'
         'name',
         undefined,
         ts.factory.createLiteralTypeNode(
-          ts.factory.createStringLiteral(iface, true)
-        )
+          ts.factory.createStringLiteral(iface, true),
+        ),
       ),
       ts.factory.createPropertySignature(
         [READ_ONLY_MODIFIER],
         'number',
         undefined,
         ts.factory.createLiteralTypeNode(
-          ts.factory.createStringLiteral(num, true)
-        )
+          ts.factory.createStringLiteral(num, true),
+        ),
       ),
       ...constants,
     ])
@@ -467,8 +467,8 @@ idlDefFile += '\n\n'
         'name',
         undefined,
         ts.factory.createLiteralTypeNode(
-          ts.factory.createStringLiteral(iface, true)
-        )
+          ts.factory.createStringLiteral(iface, true),
+        ),
       ),
       ts.factory.createPropertySignature(
         [READ_ONLY_MODIFIER],
@@ -476,8 +476,8 @@ idlDefFile += '\n\n'
         undefined,
         ts.factory.createTypeReferenceNode(
           ts.factory.createIdentifier(`${iface}Type`),
-          undefined
-        )
+          undefined,
+        ),
       ),
     ])
 
@@ -486,11 +486,11 @@ idlDefFile += '\n\n'
         undefined,
         ts.factory.createStringLiteral(`{${num}}`),
         undefined,
-        numberBinding
-      )
+        numberBinding,
+      ),
     )
     members.push(
-      ts.factory.createPropertySignature(undefined, iface, undefined, type)
+      ts.factory.createPropertySignature(undefined, iface, undefined, type),
     )
   }
 
@@ -500,9 +500,9 @@ idlDefFile += '\n\n'
       ts.factory.createIdentifier('CiType'),
       undefined,
       undefined,
-      members
+      members,
     ),
-    idlDefFileBuilder
+    idlDefFileBuilder,
   )
   idlDefFile += '\n'
   idlDefFile += printNode(
@@ -511,9 +511,9 @@ idlDefFile += '\n\n'
       ts.factory.createIdentifier('CiNumberBinding'),
       undefined,
       undefined,
-      numberBindings
+      numberBindings,
     ),
-    idlDefFileBuilder
+    idlDefFileBuilder,
   )
   idlDefFile += '\n'
   idlDefFile += printNode(
@@ -523,11 +523,11 @@ idlDefFile += '\n\n'
         ts.factory.createVariableDeclaration(
           'Ci',
           undefined,
-          ts.factory.createTypeReferenceNode('CiType')
+          ts.factory.createTypeReferenceNode('CiType'),
         ),
-      ]
+      ],
     ),
-    idlDefFileBuilder
+    idlDefFileBuilder,
   )
 
   idlDefFile += '\n\n'
@@ -548,20 +548,20 @@ idlDefFile += '\n\n'
               c.js_name,
               undefined,
               ts.factory.createTypeReferenceNode(
-                c.interfaces.map((int) => `${int}Type`).join(' & ')
-              )
+                c.interfaces.map((int) => `${int}Type`).join(' & '),
+              ),
             ),
-          ]
-        )
+          ],
+        ),
       )
 
   idlDefFile += printNode(
     ts.factory.createModuleDeclaration(
       [DECLARE_MODIFIER],
       ts.factory.createIdentifier('Services'),
-      ts.factory.createModuleBlock(members)
+      ts.factory.createModuleBlock(members),
     ),
-    idlDefFileBuilder
+    idlDefFileBuilder,
   )
 }
 
