@@ -5,6 +5,7 @@ declare module "resource://app/modules/ScreenshotsOverlayChild.sys.mjs" {export 
     overlayTemplate: any;
     get initialized(): boolean;
     get state(): string;
+    get methodsUsed(): any;
     document: any;
     window: any;
     windowDimensions: any;
@@ -13,7 +14,6 @@ declare module "resource://app/modules/ScreenshotsOverlayChild.sys.mjs" {export 
     get content(): any;
     getElementById(id: any): any;
     initialize(): Promise<void>;
-    _content: any;
     /**
      * Get all the elements that will be used.
      */
@@ -34,11 +34,15 @@ declare module "resource://app/modules/ScreenshotsOverlayChild.sys.mjs" {export 
     rightBackgroundEl: any;
     bottomBackgroundEl: any;
     highlightEl: any;
+    topLeftMover: any;
+    topRightMover: any;
+    bottomLeftMover: any;
+    bottomRightMover: any;
     selectionSize: any;
     /**
      * Removes all event listeners and removes the overlay from the Anonymous Content
      */
-    tearDown(): void;
+    tearDown(options?: {}): void;
     /**
      * Add required event listeners to the overlay
      */
@@ -47,6 +51,7 @@ declare module "resource://app/modules/ScreenshotsOverlayChild.sys.mjs" {export 
      * Remove the events listeners from the overlay
      */
     removeEventListeners(): void;
+    resetMethodsUsed(): void;
     /**
      * Returns the x and y coordinates of the event relative to both the
      * viewport and the page.
@@ -78,6 +83,62 @@ declare module "resource://app/modules/ScreenshotsOverlayChild.sys.mjs" {export 
      * @param {Event} event The pointerup event
      */
     handlePointerUp(event: Event): void;
+    /**
+     * Handles when a keydown occurs in the screenshots component.
+     * @param {Event} event The keydown event
+     */
+    handleKeyDown(event: Event): void;
+    /**
+     * Gets the accel key depending on the platform.
+     * metaKey for macOS. ctrlKey for Windows and Linux.
+     * @param {Event} event The keydown event
+     * @returns {Boolean} True if the accel key is pressed, false otherwise.
+     */
+    getAccelKey(event: Event): boolean;
+    /**
+     * Move the region or its left or right side to the left.
+     * Just the arrow key will move the region by 1px.
+     * Arrow key + shift will move the region by 10px.
+     * Arrow key + control/meta will move to the edge of the window.
+     * @param {Event} event The keydown event
+     */
+    handleArrowLeftKeyDown(event: Event): void;
+    /**
+     * Move the region or its top or bottom side upward.
+     * Just the arrow key will move the region by 1px.
+     * Arrow key + shift will move the region by 10px.
+     * Arrow key + control/meta will move to the edge of the window.
+     * @param {Event} event The keydown event
+     */
+    handleArrowUpKeyDown(event: Event): void;
+    /**
+     * Move the region or its left or right side to the right.
+     * Just the arrow key will move the region by 1px.
+     * Arrow key + shift will move the region by 10px.
+     * Arrow key + control/meta will move to the edge of the window.
+     * @param {Event} event The keydown event
+     */
+    handleArrowRightKeyDown(event: Event): void;
+    /**
+     * Move the region or its top or bottom side downward.
+     * Just the arrow key will move the region by 1px.
+     * Arrow key + shift will move the region by 10px.
+     * Arrow key + control/meta will move to the edge of the window.
+     * @param {Event} event The keydown event
+     */
+    handleArrowDownKeyDown(event: Event): void;
+    /**
+     * We lock focus to the overlay when a region is selected.
+     * Can still escape with shift + F6.
+     * @param {Event} event The keydown event
+     */
+    maybeLockFocus(event: Event): void;
+    /**
+     * Handles when a keydown occurs in the screenshots component.
+     * All we need to do on keyup is set the state to selected.
+     * @param {Event} event The keydown event
+     */
+    handleKeyUp(event: Event): void;
     /**
      * Hide hover element, selection and buttons containers.
      * Show the preview container and the panel.
@@ -165,7 +226,8 @@ declare module "resource://app/modules/ScreenshotsOverlayChild.sys.mjs" {export 
      * @param {Number} pageX The x position relative to the page
      * @param {Number} pageY The y position relative to the page
      */
-    resizingDragEnd(pageX: number, pageY: number, targetId: any): void;
+    resizingDragEnd(pageX: number, pageY: number): void;
+    maybeRecordRegionSelected(): void;
     /**
      * Draw the preview eyes pointer towards the mouse.
      * @param {Number} clientX The x position relative to the viewport
@@ -174,6 +236,7 @@ declare module "resource://app/modules/ScreenshotsOverlayChild.sys.mjs" {export 
     drawPreviewEyes(clientX: number, clientY: number): void;
     showPreviewContainer(): void;
     hidePreviewContainer(): void;
+    updatePreviewContainer(): void;
     /**
      * Update the screenshots overlay container based on the window dimensions.
      */

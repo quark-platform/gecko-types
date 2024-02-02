@@ -11,6 +11,7 @@ declare module "resource://app/modules/ShoppingUtils.sys.mjs" {export namespace 
     function isProductPageNavigation(aLocationURI: any, aFlags: any): number | boolean;
     function maybeRecordExposure(aLocationURI: any, aFlags: any): void;
     function setOnUpdate(_pref: any, _prev: any, current: any): void;
+    function recordUserAdsPreference(): void;
     /**
      * If the user has not opted in, automatically set the sidebar to `active` if:
      * 1. The sidebar has not already been automatically set to `active` twice.

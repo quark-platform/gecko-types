@@ -54,9 +54,6 @@ declare module "resource://gre/modules/RemotePageAccessManager.sys.mjs" {export 
             RPMSendAsyncMessage: string[];
             RPMAddMessageListener: string[];
         };
-        "about:plugins": {
-            RPMSendQuery: string[];
-        };
         "about:pocket-saved": {
             RPMSendAsyncMessage: string[];
             RPMAddMessageListener: string[];

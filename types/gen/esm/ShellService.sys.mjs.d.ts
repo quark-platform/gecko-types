@@ -11,8 +11,8 @@ declare module "resource://app/modules/ShellService.sys.mjs" {export namespace S
     };
     function setAsDefaultUserChoice(): Promise<void>;
     function setAsDefaultPDFHandlerUserChoice(): Promise<void>;
-    function setDefaultBrowser(forAllUsers: any): void;
-    function setAsDefault(): void;
+    function setDefaultBrowser(forAllUsers: any): Promise<void>;
+    function setAsDefault(): Promise<void>;
     function setAsDefaultPDFHandler(onlyIfKnownBrowser?: boolean): void;
     /**
      * Determine if we're the default handler for the given file extension (like

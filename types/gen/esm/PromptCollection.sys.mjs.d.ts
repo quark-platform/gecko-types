@@ -1,5 +1,6 @@
 declare module "resource://gre/modules/PromptCollection.sys.mjs" {/**
  * Implements nsIPromptCollection
+ *
  * @class PromptCollection
  */
 export class PromptCollection {

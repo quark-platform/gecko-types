@@ -12,8 +12,6 @@ declare interface MozEditor extends MozXULElement {
 }
 declare interface MozFindbar extends MozXULElement {
 }
-declare interface MozDropmarker extends MozXULElement {
-}
 declare interface MozCommandSet extends MozXULElement {
 }
 declare interface MozMenuCaption extends MozXULElement {
@@ -88,7 +86,6 @@ type XULElementTypes = {
     ['dialog']: MozDialog;
     ['editor']: MozEditor;
     ['findbar']: MozFindbar;
-    ['dropmarker']: MozDropmarker;
     ['commandset']: MozCommandSet;
     ['menucaption']: MozMenuCaption;
     ['menuitem']: MozMenuItem;

@@ -175,12 +175,6 @@ declare var Cc: {
         number: "{56ebedd4-6ccf-48e8-bdae-adc77f044567}";
         private interfaceName: "nsIAboutRedirector";
     };
-    ["@mozilla.org/network/protocol/about;1?what=plugins"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/network/protocol/about;1?what=plugins";
-        number: "{56ebedd4-6ccf-48e8-bdae-adc77f044567}";
-        private interfaceName: "nsIAboutRedirector";
-    };
     ["@mozilla.org/network/protocol/about;1?what=processes"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/protocol/about;1?what=processes";
@@ -238,6 +232,12 @@ declare var Cc: {
     ["@mozilla.org/network/protocol/about;1?what=profiles"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/network/protocol/about;1?what=profiles";
+        number: "{56ebedd4-6ccf-48e8-bdae-adc77f044567}";
+        private interfaceName: "nsIAboutRedirector";
+    };
+    ["@mozilla.org/network/protocol/about;1?what=webauthn"]: {
+        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
+        name: "@mozilla.org/network/protocol/about;1?what=webauthn";
         number: "{56ebedd4-6ccf-48e8-bdae-adc77f044567}";
         private interfaceName: "nsIAboutRedirector";
     };
@@ -1235,6 +1235,13 @@ declare var Cc: {
         number: "{91455c77-64a1-4c37-be00-f94eb9c7b8e1}";
         private typeName: "GeckoViewExternalAppService";
         private interfaceName: "GeckoViewExternalAppService";
+    };
+    ["@mozilla.org/network/protocol;1?name=content"]: {
+        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
+        name: "@mozilla.org/network/protocol;1?name=content";
+        number: "{a8f4582e-4b47-4e06-970d-b94b76977bf7}";
+        private typeName: "GeckoViewContentProtocolHandler";
+        private interfaceName: "GeckoViewContentProtocolHandler";
     };
     ["@mozilla.org/browser/history;1"]: {
         getService(): unknown;
@@ -2326,13 +2333,6 @@ declare var Cc: {
         private typeName: "mozilla::FinalizationWitnessService";
         private interfaceName: "mozIilla";
     };
-    ["@mozilla.org/reputationservice/login-reputation-service;1"]: {
-        getService(): unknown;
-        name: "@mozilla.org/reputationservice/login-reputation-service;1";
-        number: "{91fa9e67-1427-4ee9-8ee0-1a6ed578bee1}";
-        private typeName: "mozilla::LoginReputationService";
-        private interfaceName: "mozIilla";
-    };
     ["@mozilla.org/alerts-service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
         name: "@mozilla.org/alerts-service;1";
@@ -2452,6 +2452,13 @@ declare var Cc: {
         number: "{00ed5d73-9de5-42cf-868c-e739a94f6b37}";
         private typeName: "mozilla::ContentBlockingAllowList";
         private interfaceName: "mozIilla";
+    };
+    ["@mozilla.org/contentanalysis;1"]: {
+        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
+        name: "@mozilla.org/contentanalysis;1";
+        number: "{61497587-2bba-4a88-acd3-3fbb2cedf163}";
+        private typeName: "mozilla::contentanalysis::ContentAnalysis";
+        private interfaceName: "contentanalysis";
     };
     ["@mozilla.org/content-pref/service;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
@@ -3221,10 +3228,10 @@ declare var Cc: {
         number: "{2d96b3df-c051-11d1-a827-0040959a28c9}";
         private interfaceName: "nsIAppShellConstructor";
     };
-    ["@mozilla.org/parent/sound;1"]: {
+    ["@mozilla.org/sound;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/parent/sound;1";
-        number: "{15cc80a9-5329-4fcb-9a0b-c6cf1440ae51}";
+        name: "@mozilla.org/sound;1";
+        number: "{b148eed2-236d-11d3-b35c-00a0cc3c1cde}";
         private typeName: "nsSound";
         private interfaceName: "nsISound";
     };
@@ -3409,18 +3416,6 @@ declare var Cc: {
         private typeName: "nsFilePickerProxy";
         private interfaceName: "nsIFilePickerProxy";
     };
-    ["@mozilla.org/sound;1"]: {
-        getService(): unknown;
-        name: "@mozilla.org/sound;1";
-        number: "{b148eed2-236d-11d3-b35c-00a0cc3c1cde}";
-    };
-    ["@mozilla.org/content/sound;1"]: {
-        createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/content/sound;1";
-        number: "{b02c2470-6e5a-4865-a202-8b5ebae52632}";
-        private typeName: "nsSoundProxy";
-        private interfaceName: "nsISoundProxy";
-    };
     ["@mozilla.org/gfx/screenmanager;1"]: {
         getService(): unknown;
         name: "@mozilla.org/gfx/screenmanager;1";
@@ -3474,10 +3469,10 @@ declare var Cc: {
         private typeName: "nsHTMLFormatConverter";
         private interfaceName: "nsIHTMLFormatConverter";
     };
-    ["@mozilla.org/parent/sound;1"]: {
+    ["@mozilla.org/sound;1"]: {
         getService(): unknown;
-        name: "@mozilla.org/parent/sound;1";
-        number: "{e711c28b-c1f1-4b87-8448-e1e0da0a7b7d}";
+        name: "@mozilla.org/sound;1";
+        number: "{b148eed2-236d-11d3-b35c-00a0cc3c1cde}";
         private typeName: "nsISound";
         private interfaceName: "nsIISound";
     };
@@ -3578,10 +3573,10 @@ declare var Cc: {
         private typeName: "nsUserIdleServiceWin";
         private interfaceName: "nsIUserIdleServiceWin";
     };
-    ["@mozilla.org/parent/sound;1"]: {
+    ["@mozilla.org/sound;1"]: {
         getService(): unknown;
-        name: "@mozilla.org/parent/sound;1";
-        number: "{919f1217-073a-4a14-b034-67d461eccacc}";
+        name: "@mozilla.org/sound;1";
+        number: "{b148eed2-236d-11d3-b35c-00a0cc3c1cde}";
         private typeName: "nsISound";
         private interfaceName: "nsIISound";
     };
@@ -3599,39 +3594,39 @@ declare var Cc: {
         private typeName: "mozilla::widget::WinTaskbar";
         private interfaceName: "widget";
     };
-    ["@mozilla.org/windows-jumplistbuilder;1"]: {
+    ["@mozilla.org/windows-legacyjumplistbuilder;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/windows-jumplistbuilder;1";
+        name: "@mozilla.org/windows-legacyjumplistbuilder;1";
         number: "{73a5946f-608d-454f-9d33-0b8f8c7294b6}";
-        private typeName: "mozilla::widget::JumpListBuilder";
+        private typeName: "mozilla::widget::LegacyJumpListBuilder";
         private interfaceName: "widget";
     };
-    ["@mozilla.org/windows-jumplistitem;1"]: {
+    ["@mozilla.org/windows-legacyjumplistitem;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/windows-jumplistitem;1";
+        name: "@mozilla.org/windows-legacyjumplistitem;1";
         number: "{2b9a1f2c-27ce-45b6-8d4e-755d0e34f8db}";
-        private typeName: "mozilla::widget::JumpListItem";
+        private typeName: "mozilla::widget::LegacyJumpListItem";
         private interfaceName: "widget";
     };
-    ["@mozilla.org/windows-jumplistseparator;1"]: {
+    ["@mozilla.org/windows-legacyjumplistseparator;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/windows-jumplistseparator;1";
+        name: "@mozilla.org/windows-legacyjumplistseparator;1";
         number: "{21f1f13b-f75a-42ad-867a-d91ad694447e}";
-        private typeName: "mozilla::widget::JumpListSeparator";
+        private typeName: "mozilla::widget::LegacyJumpListSeparator";
         private interfaceName: "widget";
     };
-    ["@mozilla.org/windows-jumplistlink;1"]: {
+    ["@mozilla.org/windows-legacyjumplistlink;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/windows-jumplistlink;1";
+        name: "@mozilla.org/windows-legacyjumplistlink;1";
         number: "{f72c5dc4-5a12-47be-be28-ab105f33b08f}";
-        private typeName: "mozilla::widget::JumpListLink";
+        private typeName: "mozilla::widget::LegacyJumpListLink";
         private interfaceName: "widget";
     };
-    ["@mozilla.org/windows-jumplistshortcut;1"]: {
+    ["@mozilla.org/windows-legacyjumplistshortcut;1"]: {
         createInstance<I extends CiKeys>(req: CiType[I]): CiMap[I];
-        name: "@mozilla.org/windows-jumplistshortcut;1";
+        name: "@mozilla.org/windows-legacyjumplistshortcut;1";
         number: "{b16656b2-5187-498f-abf4-56346126bfdb}";
-        private typeName: "mozilla::widget::JumpListShortcut";
+        private typeName: "mozilla::widget::LegacyJumpListShortcut";
         private interfaceName: "widget";
     };
     ["@mozilla.org/windows-ui-utils;1"]: {

@@ -21,8 +21,8 @@ declare class RuleValidator {
      * @returns {Rule}
      */
     static deserializeRule(rule: object): Rule;
-    static "__#977818@#regexNonASCII": RegExp;
-    static "__#977818@#regexDigitOrBackslash": RegExp;
+    static "__#979637@#regexNonASCII": RegExp;
+    static "__#979637@#regexDigitOrBackslash": RegExp;
     constructor(alreadyValidatedRules: any, { isSessionRuleset }?: {
         isSessionRuleset?: boolean;
     });

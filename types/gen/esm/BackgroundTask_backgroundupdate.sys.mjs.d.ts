@@ -7,6 +7,6 @@ declare module "resource://gre/modules/backgroundtasks/BackgroundTask_background
  * values as appropriate.
  */
 export function maybeSubmitBackgroundUpdatePing(): Promise<void>;
-export function runBackgroundTask(commandLine: any): Promise<any>;
+export function runBackgroundTask(commandLine: any): Promise<number>;
 export const backgroundTaskTimeoutSec: number;
 }

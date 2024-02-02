@@ -2,7 +2,7 @@ declare module "resource://gre/modules/PlacesTransactions.sys.mjs" {export names
     /**
      * @see Batches in the module documentation.
      */
-    function batch(transactionsToBatch: any): Promise<any>;
+    function batch(transactionsToBatch: any, batchName: any): Promise<any>;
     /**
      * Asynchronously undo the transaction immediately after the current undo
      * position in the transactions history in the reverse order, if any, and

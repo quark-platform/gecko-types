@@ -148,8 +148,8 @@ export class SearchEngine {
      * icon's data through getIcons() and getIconURIBySize() APIs.
      *
      * @param {string} iconURL
-     *   A URI string pointing to the engine's icon. Must have a http[s],
-     *   ftp, or data scheme. Icons with HTTP[S] or FTP schemes will be
+     *   A URI string pointing to the engine's icon. Must have a http[s]
+     *   or data scheme. Icons with HTTP[S] schemes will be
      *   downloaded and converted to data URIs for storage in the engine
      *   XML files, if the engine is not built-in.
      * @param {boolean} isPreferred
@@ -278,6 +278,7 @@ export class SearchEngine {
         encoding?: string;
         search_form?: string;
     }, configuration?: object): void;
+    clickUrl: any;
     checkSearchUrlMatchesManifest(details: any): boolean;
     /**
      * Overrides the urls/parameters with those of the provided extension.

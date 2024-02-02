@@ -25,7 +25,7 @@ declare module "resource://gre/modules/LoginAutoComplete.sys.mjs" {export class 
     getLabelAt(index: any): any;
     getCommentAt(index: any): any;
     getStyleAt(index: any): any;
-    getImageAt(index: any): string;
+    getImageAt(index: any): any;
     getFinalCompleteValueAt(index: any): any;
     isRemovableAt(index: any): boolean;
     removeValueAt(index: any): void;

@@ -87,6 +87,7 @@
 ///<reference path="./FxAccountsConfig.sys.mjs.d.ts" />
 ///<reference path="./FxAccountsDevice.sys.mjs.d.ts" />
 ///<reference path="./FxAccountsKeys.sys.mjs.d.ts" />
+///<reference path="./FxAccountsOAuth.sys.mjs.d.ts" />
 ///<reference path="./FxAccountsPairing.sys.mjs.d.ts" />
 ///<reference path="./FxAccountsPairingChannel.sys.mjs.d.ts" />
 ///<reference path="./FxAccountsPush.sys.mjs.d.ts" />
@@ -167,6 +168,7 @@
 ///<reference path="./UpdateUtils.sys.mjs.d.ts" />
 ///<reference path="./AsanReporter.sys.mjs.d.ts" />
 ///<reference path="./PropertyListUtils.sys.mjs.d.ts" />
+///<reference path="./ClipboardContextMenu.sys.mjs.d.ts" />
 ///<reference path="./GMPInstallManager.sys.mjs.d.ts" />
 ///<reference path="./GMPUtils.sys.mjs.d.ts" />
 ///<reference path="./LightweightThemeConsumer.sys.mjs.d.ts" />
@@ -226,6 +228,7 @@
 ///<reference path="./ResetPBMPanel.sys.mjs.d.ts" />
 ///<reference path="./PromptCollection.sys.mjs.d.ts" />
 ///<reference path="./WebProtocolHandlerRegistrar.sys.mjs.d.ts" />
+///<reference path="./ReportBrokenSite.sys.mjs.d.ts" />
 ///<reference path="./ScreenshotsOverlayChild.sys.mjs.d.ts" />
 ///<reference path="./ScreenshotsUtils.sys.mjs.d.ts" />
 ///<reference path="./BrowserSearchTelemetry.sys.mjs.d.ts" />
@@ -290,6 +293,7 @@
 ///<reference path="./UrlbarProviderPrivateSearch.sys.mjs.d.ts" />
 ///<reference path="./UrlbarProviderQuickActions.sys.mjs.d.ts" />
 ///<reference path="./UrlbarProviderQuickSuggest.sys.mjs.d.ts" />
+///<reference path="./UrlbarProviderQuickSuggestContextualOptIn.sys.mjs.d.ts" />
 ///<reference path="./UrlbarProviderRecentSearches.sys.mjs.d.ts" />
 ///<reference path="./UrlbarProviderRemoteTabs.sys.mjs.d.ts" />
 ///<reference path="./UrlbarProviderSearchSuggestions.sys.mjs.d.ts" />
@@ -311,7 +315,7 @@
 ///<reference path="./txEXSLTRegExFunctions.sys.mjs.d.ts" />
 ///<reference path="./ComponentUtils.sys.mjs.d.ts" />
 ///<reference path="./XPCOMUtils.sys.mjs.d.ts" />
-///<reference path="./OHTTPConfigManager.sys.mjs.d.ts" />
+///<reference path="./HPKEConfigManager.sys.mjs.d.ts" />
 ///<reference path="./WellKnownOpportunisticUtils.sys.mjs.d.ts" />
 ///<reference path="./ClientAuthDialogService.sys.mjs.d.ts" />
 ///<reference path="./DER.sys.mjs.d.ts" />
@@ -466,6 +470,7 @@
 ///<reference path="./FormScenarios.sys.mjs.d.ts" />
 ///<reference path="./SignUpFormRuleset.sys.mjs.d.ts" />
 ///<reference path="./AddonSearchEngine.sys.mjs.d.ts" />
+///<reference path="./AppProvidedSearchEngine.sys.mjs.d.ts" />
 ///<reference path="./OpenSearchEngine.sys.mjs.d.ts" />
 ///<reference path="./PolicySearchEngine.sys.mjs.d.ts" />
 ///<reference path="./SearchEngine.sys.mjs.d.ts" />
@@ -553,6 +558,7 @@
 ///<reference path="./GeckoViewAutocomplete.sys.mjs.d.ts" />
 ///<reference path="./GeckoViewAutofill.sys.mjs.d.ts" />
 ///<reference path="./GeckoViewChildModule.sys.mjs.d.ts" />
+///<reference path="./GeckoViewClipboardPermission.sys.mjs.d.ts" />
 ///<reference path="./GeckoViewConsole.sys.mjs.d.ts" />
 ///<reference path="./GeckoViewContent.sys.mjs.d.ts" />
 ///<reference path="./GeckoViewContentBlocking.sys.mjs.d.ts" />
@@ -679,6 +685,7 @@ declare interface MozESMFiles {
   ['resource://gre/modules/FxAccountsConfig.sys.mjs']: typeof import('resource://gre/modules/FxAccountsConfig.sys.mjs');
   ['resource://gre/modules/FxAccountsDevice.sys.mjs']: typeof import('resource://gre/modules/FxAccountsDevice.sys.mjs');
   ['resource://gre/modules/FxAccountsKeys.sys.mjs']: typeof import('resource://gre/modules/FxAccountsKeys.sys.mjs');
+  ['resource://gre/modules/FxAccountsOAuth.sys.mjs']: typeof import('resource://gre/modules/FxAccountsOAuth.sys.mjs');
   ['resource://gre/modules/FxAccountsPairing.sys.mjs']: typeof import('resource://gre/modules/FxAccountsPairing.sys.mjs');
   ['resource://gre/modules/FxAccountsPairingChannel.sys.mjs']: typeof import('resource://gre/modules/FxAccountsPairingChannel.sys.mjs');
   ['resource://gre/modules/FxAccountsPush.sys.mjs']: typeof import('resource://gre/modules/FxAccountsPush.sys.mjs');
@@ -759,6 +766,7 @@ declare interface MozESMFiles {
   ['resource://gre/modules/UpdateUtils.sys.mjs']: typeof import('resource://gre/modules/UpdateUtils.sys.mjs');
   ['resource://gre/modules/AsanReporter.sys.mjs']: typeof import('resource://gre/modules/AsanReporter.sys.mjs');
   ['resource://gre/modules/PropertyListUtils.sys.mjs']: typeof import('resource://gre/modules/PropertyListUtils.sys.mjs');
+  ['resource://gre/modules/ClipboardContextMenu.sys.mjs']: typeof import('resource://gre/modules/ClipboardContextMenu.sys.mjs');
   ['resource://gre/modules/GMPInstallManager.sys.mjs']: typeof import('resource://gre/modules/GMPInstallManager.sys.mjs');
   ['resource://gre/modules/GMPUtils.sys.mjs']: typeof import('resource://gre/modules/GMPUtils.sys.mjs');
   ['resource://gre/modules/LightweightThemeConsumer.sys.mjs']: typeof import('resource://gre/modules/LightweightThemeConsumer.sys.mjs');
@@ -818,6 +826,7 @@ declare interface MozESMFiles {
   ['resource://app/modules/ResetPBMPanel.sys.mjs']: typeof import('resource://app/modules/ResetPBMPanel.sys.mjs');
   ['resource://app/modules/PromptCollection.sys.mjs']: typeof import('resource://app/modules/PromptCollection.sys.mjs');
   ['resource://app/modules/WebProtocolHandlerRegistrar.sys.mjs']: typeof import('resource://app/modules/WebProtocolHandlerRegistrar.sys.mjs');
+  ['resource://app/modules/ReportBrokenSite.sys.mjs']: typeof import('resource://app/modules/ReportBrokenSite.sys.mjs');
   ['resource://app/modules/ScreenshotsOverlayChild.sys.mjs']: typeof import('resource://app/modules/ScreenshotsOverlayChild.sys.mjs');
   ['resource://app/modules/ScreenshotsUtils.sys.mjs']: typeof import('resource://app/modules/ScreenshotsUtils.sys.mjs');
   ['resource://app/modules/BrowserSearchTelemetry.sys.mjs']: typeof import('resource://app/modules/BrowserSearchTelemetry.sys.mjs');
@@ -882,6 +891,7 @@ declare interface MozESMFiles {
   ['resource://app/modules/UrlbarProviderPrivateSearch.sys.mjs']: typeof import('resource://app/modules/UrlbarProviderPrivateSearch.sys.mjs');
   ['resource://app/modules/UrlbarProviderQuickActions.sys.mjs']: typeof import('resource://app/modules/UrlbarProviderQuickActions.sys.mjs');
   ['resource://app/modules/UrlbarProviderQuickSuggest.sys.mjs']: typeof import('resource://app/modules/UrlbarProviderQuickSuggest.sys.mjs');
+  ['resource://app/modules/UrlbarProviderQuickSuggestContextualOptIn.sys.mjs']: typeof import('resource://app/modules/UrlbarProviderQuickSuggestContextualOptIn.sys.mjs');
   ['resource://app/modules/UrlbarProviderRecentSearches.sys.mjs']: typeof import('resource://app/modules/UrlbarProviderRecentSearches.sys.mjs');
   ['resource://app/modules/UrlbarProviderRemoteTabs.sys.mjs']: typeof import('resource://app/modules/UrlbarProviderRemoteTabs.sys.mjs');
   ['resource://app/modules/UrlbarProviderSearchSuggestions.sys.mjs']: typeof import('resource://app/modules/UrlbarProviderSearchSuggestions.sys.mjs');
@@ -903,7 +913,7 @@ declare interface MozESMFiles {
   ['resource://gre/modules/txEXSLTRegExFunctions.sys.mjs']: typeof import('resource://gre/modules/txEXSLTRegExFunctions.sys.mjs');
   ['resource://gre/modules/ComponentUtils.sys.mjs']: typeof import('resource://gre/modules/ComponentUtils.sys.mjs');
   ['resource://gre/modules/XPCOMUtils.sys.mjs']: typeof import('resource://gre/modules/XPCOMUtils.sys.mjs');
-  ['resource://gre/modules/OHTTPConfigManager.sys.mjs']: typeof import('resource://gre/modules/OHTTPConfigManager.sys.mjs');
+  ['resource://gre/modules/HPKEConfigManager.sys.mjs']: typeof import('resource://gre/modules/HPKEConfigManager.sys.mjs');
   ['resource://gre/modules/WellKnownOpportunisticUtils.sys.mjs']: typeof import('resource://gre/modules/WellKnownOpportunisticUtils.sys.mjs');
   ['resource://gre/modules/psm/ClientAuthDialogService.sys.mjs']: typeof import('resource://gre/modules/psm/ClientAuthDialogService.sys.mjs');
   ['resource://gre/modules/psm/DER.sys.mjs']: typeof import('resource://gre/modules/psm/DER.sys.mjs');
@@ -1058,6 +1068,7 @@ declare interface MozESMFiles {
   ['resource://gre/modules/FormScenarios.sys.mjs']: typeof import('resource://gre/modules/FormScenarios.sys.mjs');
   ['resource://gre/modules/SignUpFormRuleset.sys.mjs']: typeof import('resource://gre/modules/SignUpFormRuleset.sys.mjs');
   ['resource://gre/modules/AddonSearchEngine.sys.mjs']: typeof import('resource://gre/modules/AddonSearchEngine.sys.mjs');
+  ['resource://gre/modules/AppProvidedSearchEngine.sys.mjs']: typeof import('resource://gre/modules/AppProvidedSearchEngine.sys.mjs');
   ['resource://gre/modules/OpenSearchEngine.sys.mjs']: typeof import('resource://gre/modules/OpenSearchEngine.sys.mjs');
   ['resource://gre/modules/PolicySearchEngine.sys.mjs']: typeof import('resource://gre/modules/PolicySearchEngine.sys.mjs');
   ['resource://gre/modules/SearchEngine.sys.mjs']: typeof import('resource://gre/modules/SearchEngine.sys.mjs');
@@ -1145,6 +1156,7 @@ declare interface MozESMFiles {
   ['resource://gre/modules/GeckoViewAutocomplete.sys.mjs']: typeof import('resource://gre/modules/GeckoViewAutocomplete.sys.mjs');
   ['resource://gre/modules/GeckoViewAutofill.sys.mjs']: typeof import('resource://gre/modules/GeckoViewAutofill.sys.mjs');
   ['resource://gre/modules/GeckoViewChildModule.sys.mjs']: typeof import('resource://gre/modules/GeckoViewChildModule.sys.mjs');
+  ['resource://gre/modules/GeckoViewClipboardPermission.sys.mjs']: typeof import('resource://gre/modules/GeckoViewClipboardPermission.sys.mjs');
   ['resource://gre/modules/GeckoViewConsole.sys.mjs']: typeof import('resource://gre/modules/GeckoViewConsole.sys.mjs');
   ['resource://gre/modules/GeckoViewContent.sys.mjs']: typeof import('resource://gre/modules/GeckoViewContent.sys.mjs');
   ['resource://gre/modules/GeckoViewContentBlocking.sys.mjs']: typeof import('resource://gre/modules/GeckoViewContentBlocking.sys.mjs');
@@ -1226,7 +1238,6 @@ declare interface MozESMExportFile {
   ['ZoomUI']: 'resource://app/modules/ZoomUI.sys.mjs';
   ['showStreamSharingMenu']: 'resource://app/modules/webrtcUI.sys.mjs';
   ['webrtcUI']: 'resource://app/modules/webrtcUI.sys.mjs';
-  ['MacOSWebRTCStatusbarIndicator']: 'resource://app/modules/webrtcUI.sys.mjs';
   ['_applyColorwayConfig']: 'resource://app/modules/BuiltInThemeConfig.sys.mjs';
   ['BuiltInThemeConfig']: 'resource://app/modules/BuiltInThemeConfig.sys.mjs';
   ['BuiltInThemes']: 'resource://app/modules/BuiltInThemes.sys.mjs';
@@ -1318,6 +1329,12 @@ declare interface MozESMExportFile {
   ['LogManager']: 'resource://gre/modules/services-common/logmanager.sys.mjs';
   ['LogManager']: 'resource://gre/modules/services-common/logmanager.sys.mjs';
   ['Observers']: 'resource://gre/modules/services-common/observers.sys.mjs';
+  ['RESTRequest']: 'resource://gre/modules/services-common/rest.sys.mjs';
+  ['RESTRequest']: 'resource://gre/modules/services-common/rest.sys.mjs';
+  ['RESTResponse']: 'resource://gre/modules/services-common/rest.sys.mjs';
+  ['RESTResponse']: 'resource://gre/modules/services-common/rest.sys.mjs';
+  ['TokenAuthenticatedRESTRequest']: 'resource://gre/modules/services-common/rest.sys.mjs';
+  ['TokenAuthenticatedRESTRequest']: 'resource://gre/modules/services-common/rest.sys.mjs';
   ['TokenServerClientError']: 'resource://gre/modules/services-common/tokenserverclient.sys.mjs';
   ['TokenServerClientError']: 'resource://gre/modules/services-common/tokenserverclient.sys.mjs';
   ['TokenServerClientNetworkError']: 'resource://gre/modules/services-common/tokenserverclient.sys.mjs';
@@ -1367,6 +1384,8 @@ declare interface MozESMExportFile {
   ['SCOPE_OLD_SYNC']: 'resource://gre/modules/FxAccountsCommon.sys.mjs';
   ['DEPRECATED_SCOPE_ECOSYSTEM_TELEMETRY']: 'resource://gre/modules/FxAccountsCommon.sys.mjs';
   ['FX_MONITOR_OAUTH_CLIENT_ID']: 'resource://gre/modules/FxAccountsCommon.sys.mjs';
+  ['FX_RELAY_OAUTH_CLIENT_ID']: 'resource://gre/modules/FxAccountsCommon.sys.mjs';
+  ['VPN_OAUTH_CLIENT_ID']: 'resource://gre/modules/FxAccountsCommon.sys.mjs';
   ['UI_REQUEST_SIGN_IN_FLOW']: 'resource://gre/modules/FxAccountsCommon.sys.mjs';
   ['UI_REQUEST_REFRESH_AUTH']: 'resource://gre/modules/FxAccountsCommon.sys.mjs';
   ['WEBCHANNEL_ID']: 'resource://gre/modules/FxAccountsCommon.sys.mjs';
@@ -1499,6 +1518,12 @@ declare interface MozESMExportFile {
   ['FxAccountsConfig']: 'resource://gre/modules/FxAccountsConfig.sys.mjs';
   ['FxAccountsDevice']: 'resource://gre/modules/FxAccountsDevice.sys.mjs';
   ['FxAccountsKeys']: 'resource://gre/modules/FxAccountsKeys.sys.mjs';
+  ['ERROR_INVALID_SCOPES']: 'resource://gre/modules/FxAccountsOAuth.sys.mjs';
+  ['ERROR_INVALID_STATE']: 'resource://gre/modules/FxAccountsOAuth.sys.mjs';
+  ['ERROR_SYNC_SCOPE_NOT_GRANTED']: 'resource://gre/modules/FxAccountsOAuth.sys.mjs';
+  ['ERROR_NO_KEYS_JWE']: 'resource://gre/modules/FxAccountsOAuth.sys.mjs';
+  ['ERROR_OAUTH_FLOW_ABANDONED']: 'resource://gre/modules/FxAccountsOAuth.sys.mjs';
+  ['FxAccountsOAuth']: 'resource://gre/modules/FxAccountsOAuth.sys.mjs';
   ['FxAccountsPairingFlow']: 'resource://gre/modules/FxAccountsPairing.sys.mjs';
   ['FxAccountsPairingChannel']: 'resource://gre/modules/FxAccountsPairingChannel.sys.mjs';
   ['FxAccountsPushService']: 'resource://gre/modules/FxAccountsPush.sys.mjs';
@@ -1543,6 +1568,7 @@ declare interface MozESMExportFile {
   ['BrowserUtils']: 'resource://gre/modules/BrowserUtils.sys.mjs';
   ['CanonicalJSON']: 'resource://gre/modules/CanonicalJSON.sys.mjs';
   ['CertUtils']: 'resource://gre/modules/CertUtils.sys.mjs';
+  ['ClipboardContextMenu']: 'resource://gre/modules/ClipboardContextMenu.sys.mjs';
   ['Color']: 'resource://gre/modules/Color.sys.mjs';
   ['ConsoleAPI']: 'resource://gre/modules/Console.sys.mjs';
   ['ConsoleAPI']: 'resource://gre/modules/Console.sys.mjs';
@@ -1574,8 +1600,17 @@ declare interface MozESMExportFile {
   ['FinderParent']: 'resource://gre/modules/FinderParent.sys.mjs';
   ['FirstStartup']: 'resource://gre/modules/FirstStartup.sys.mjs';
   ['FormLikeFactory']: 'resource://gre/modules/FormLikeFactory.sys.mjs';
+  ['GMPInstallManager']: 'resource://gre/modules/GMPInstallManager.sys.mjs';
+  ['GMPInstallManager']: 'resource://gre/modules/GMPInstallManager.sys.mjs';
+  ['GMPAddon']: 'resource://gre/modules/GMPInstallManager.sys.mjs';
+  ['GMPAddon']: 'resource://gre/modules/GMPInstallManager.sys.mjs';
+  ['GMPExtractor']: 'resource://gre/modules/GMPInstallManager.sys.mjs';
+  ['GMPExtractor']: 'resource://gre/modules/GMPInstallManager.sys.mjs';
+  ['GMPDownloader']: 'resource://gre/modules/GMPInstallManager.sys.mjs';
+  ['GMPDownloader']: 'resource://gre/modules/GMPInstallManager.sys.mjs';
   ['OPEN_H264_ID']: 'resource://gre/modules/GMPUtils.sys.mjs';
-  ['WIDEVINE_ID']: 'resource://gre/modules/GMPUtils.sys.mjs';
+  ['WIDEVINE_L1_ID']: 'resource://gre/modules/GMPUtils.sys.mjs';
+  ['WIDEVINE_L3_ID']: 'resource://gre/modules/GMPUtils.sys.mjs';
   ['GMP_PLUGIN_IDS']: 'resource://gre/modules/GMPUtils.sys.mjs';
   ['GMPUtils']: 'resource://gre/modules/GMPUtils.sys.mjs';
   ['GMPPrefs']: 'resource://gre/modules/GMPUtils.sys.mjs';
@@ -1736,6 +1771,7 @@ declare interface MozESMExportFile {
   ['PromptCollection']: 'resource://app/modules/PromptCollection.sys.mjs';
   ['WebProtocolHandlerRegistrar']: 'resource://app/modules/WebProtocolHandlerRegistrar.sys.mjs';
   ['WebProtocolHandlerRegistrar']: 'resource://app/modules/WebProtocolHandlerRegistrar.sys.mjs';
+  ['ReportBrokenSite']: 'resource://app/modules/ReportBrokenSite.sys.mjs';
   ['ScreenshotsOverlay']: 'resource://app/modules/ScreenshotsOverlayChild.sys.mjs';
   ['MAX_CAPTURE_DIMENSION']: 'resource://app/modules/ScreenshotsUtils.sys.mjs';
   ['MAX_CAPTURE_AREA']: 'resource://app/modules/ScreenshotsUtils.sys.mjs';
@@ -1745,8 +1781,11 @@ declare interface MozESMExportFile {
   ['ScreenshotsUtils']: 'resource://app/modules/ScreenshotsUtils.sys.mjs';
   ['BrowserSearchTelemetry']: 'resource://app/modules/BrowserSearchTelemetry.sys.mjs';
   ['SearchOneOffs']: 'resource://app/modules/SearchOneOffs.sys.mjs';
+  ['ADLINK_CHECK_TIMEOUT_MS']: 'resource://app/modules/SearchSERPTelemetry.sys.mjs';
   ['TELEMETRY_SETTINGS_KEY']: 'resource://app/modules/SearchSERPTelemetry.sys.mjs';
   ['TELEMETRY_CATEGORIZATION_KEY']: 'resource://app/modules/SearchSERPTelemetry.sys.mjs';
+  ['TELEMETRY_CATEGORIZATION_DOWNLOAD_SETTINGS']: 'resource://app/modules/SearchSERPTelemetry.sys.mjs';
+  ['SEARCH_TELEMETRY_SHARED']: 'resource://app/modules/SearchSERPTelemetry.sys.mjs';
   ['SearchSERPTelemetryUtils']: 'resource://app/modules/SearchSERPTelemetry.sys.mjs';
   ['SearchSERPDomainToCategoriesMap']: 'resource://app/modules/SearchSERPTelemetry.sys.mjs';
   ['SearchSERPTelemetry']: 'resource://app/modules/SearchSERPTelemetry.sys.mjs';
@@ -1823,6 +1862,7 @@ declare interface MozESMExportFile {
   ['UrlbarProviderPrivateSearch']: 'resource://app/modules/UrlbarProviderPrivateSearch.sys.mjs';
   ['UrlbarProviderQuickActions']: 'resource://app/modules/UrlbarProviderQuickActions.sys.mjs';
   ['UrlbarProviderQuickSuggest']: 'resource://app/modules/UrlbarProviderQuickSuggest.sys.mjs';
+  ['UrlbarProviderQuickSuggestContextualOptIn']: 'resource://app/modules/UrlbarProviderQuickSuggestContextualOptIn.sys.mjs';
   ['UrlbarProviderRecentSearches']: 'resource://app/modules/UrlbarProviderRecentSearches.sys.mjs';
   ['UrlbarProviderRemoteTabs']: 'resource://app/modules/UrlbarProviderRemoteTabs.sys.mjs';
   ['UrlbarProviderSearchSuggestions']: 'resource://app/modules/UrlbarProviderSearchSuggestions.sys.mjs';
@@ -1853,7 +1893,7 @@ declare interface MozESMExportFile {
   ['test']: 'resource://gre/modules/txEXSLTRegExFunctions.sys.mjs';
   ['ComponentUtils']: 'resource://gre/modules/ComponentUtils.sys.mjs';
   ['XPCOMUtils']: 'resource://gre/modules/XPCOMUtils.sys.mjs';
-  ['OHTTPConfigManager']: 'resource://gre/modules/OHTTPConfigManager.sys.mjs';
+  ['HPKEConfigManager']: 'resource://gre/modules/HPKEConfigManager.sys.mjs';
   ['WellKnownOpportunisticUtils']: 'resource://gre/modules/WellKnownOpportunisticUtils.sys.mjs';
   ['WellKnownOpportunisticUtils']: 'resource://gre/modules/WellKnownOpportunisticUtils.sys.mjs';
   ['ClientAuthDialogService']: 'resource://gre/modules/psm/ClientAuthDialogService.sys.mjs';
@@ -2123,6 +2163,7 @@ declare interface MozESMExportFile {
   ['FormScenarios']: 'resource://gre/modules/FormScenarios.sys.mjs';
   ['SignUpFormRuleset']: 'resource://gre/modules/SignUpFormRuleset.sys.mjs';
   ['AddonSearchEngine']: 'resource://gre/modules/AddonSearchEngine.sys.mjs';
+  ['AppProvidedSearchEngine']: 'resource://gre/modules/AppProvidedSearchEngine.sys.mjs';
   ['OpenSearchEngine']: 'resource://gre/modules/OpenSearchEngine.sys.mjs';
   ['PolicySearchEngine']: 'resource://gre/modules/PolicySearchEngine.sys.mjs';
   ['EngineURL']: 'resource://gre/modules/SearchEngine.sys.mjs';
@@ -2252,6 +2293,7 @@ declare interface MozESMExportFile {
   ['GeckoViewAutocomplete']: 'resource://gre/modules/GeckoViewAutocomplete.sys.mjs';
   ['gAutofillManager']: 'resource://gre/modules/GeckoViewAutofill.sys.mjs';
   ['GeckoViewChildModule']: 'resource://gre/modules/GeckoViewChildModule.sys.mjs';
+  ['GeckoViewClipboardPermission']: 'resource://gre/modules/GeckoViewClipboardPermission.sys.mjs';
   ['GeckoViewConsole']: 'resource://gre/modules/GeckoViewConsole.sys.mjs';
   ['GeckoViewContent']: 'resource://gre/modules/GeckoViewContent.sys.mjs';
   ['GeckoViewContentBlocking']: 'resource://gre/modules/GeckoViewContentBlocking.sys.mjs';
@@ -2273,6 +2315,7 @@ declare interface MozESMExportFile {
   ['HistogramStopwatch']: 'resource://gre/modules/GeckoViewTelemetry.sys.mjs';
   ['GeckoViewTabUtil']: 'resource://gre/modules/GeckoViewTestUtils.sys.mjs';
   ['GeckoViewTranslations']: 'resource://gre/modules/GeckoViewTranslations.sys.mjs';
+  ['GeckoViewTranslationsSettings']: 'resource://gre/modules/GeckoViewTranslations.sys.mjs';
   ['GeckoViewUtils']: 'resource://gre/modules/GeckoViewUtils.sys.mjs';
   ['DownloadTracker']: 'resource://gre/modules/GeckoViewWebExtension.sys.mjs';
   ['ExtensionActionHelper']: 'resource://gre/modules/GeckoViewWebExtension.sys.mjs';
@@ -2356,7 +2399,6 @@ declare interface MozESMExportType {
   ['ZoomUI']: (typeof import('resource://app/modules/ZoomUI.sys.mjs'))['ZoomUI'];
   ['showStreamSharingMenu']: (typeof import('resource://app/modules/webrtcUI.sys.mjs'))['showStreamSharingMenu'];
   ['webrtcUI']: (typeof import('resource://app/modules/webrtcUI.sys.mjs'))['webrtcUI'];
-  ['MacOSWebRTCStatusbarIndicator']: (typeof import('resource://app/modules/webrtcUI.sys.mjs'))['MacOSWebRTCStatusbarIndicator'];
   ['_applyColorwayConfig']: (typeof import('resource://app/modules/BuiltInThemeConfig.sys.mjs'))['_applyColorwayConfig'];
   ['BuiltInThemeConfig']: (typeof import('resource://app/modules/BuiltInThemeConfig.sys.mjs'))['BuiltInThemeConfig'];
   ['BuiltInThemes']: (typeof import('resource://app/modules/BuiltInThemes.sys.mjs'))['BuiltInThemes'];
@@ -2448,6 +2490,12 @@ declare interface MozESMExportType {
   ['LogManager']: (typeof import('resource://gre/modules/services-common/logmanager.sys.mjs'))['LogManager'];
   ['LogManager']: (typeof import('resource://gre/modules/services-common/logmanager.sys.mjs'))['LogManager'];
   ['Observers']: (typeof import('resource://gre/modules/services-common/observers.sys.mjs'))['Observers'];
+  ['RESTRequest']: (typeof import('resource://gre/modules/services-common/rest.sys.mjs'))['RESTRequest'];
+  ['RESTRequest']: (typeof import('resource://gre/modules/services-common/rest.sys.mjs'))['RESTRequest'];
+  ['RESTResponse']: (typeof import('resource://gre/modules/services-common/rest.sys.mjs'))['RESTResponse'];
+  ['RESTResponse']: (typeof import('resource://gre/modules/services-common/rest.sys.mjs'))['RESTResponse'];
+  ['TokenAuthenticatedRESTRequest']: (typeof import('resource://gre/modules/services-common/rest.sys.mjs'))['TokenAuthenticatedRESTRequest'];
+  ['TokenAuthenticatedRESTRequest']: (typeof import('resource://gre/modules/services-common/rest.sys.mjs'))['TokenAuthenticatedRESTRequest'];
   ['TokenServerClientError']: (typeof import('resource://gre/modules/services-common/tokenserverclient.sys.mjs'))['TokenServerClientError'];
   ['TokenServerClientError']: (typeof import('resource://gre/modules/services-common/tokenserverclient.sys.mjs'))['TokenServerClientError'];
   ['TokenServerClientNetworkError']: (typeof import('resource://gre/modules/services-common/tokenserverclient.sys.mjs'))['TokenServerClientNetworkError'];
@@ -2497,6 +2545,8 @@ declare interface MozESMExportType {
   ['SCOPE_OLD_SYNC']: (typeof import('resource://gre/modules/FxAccountsCommon.sys.mjs'))['SCOPE_OLD_SYNC'];
   ['DEPRECATED_SCOPE_ECOSYSTEM_TELEMETRY']: (typeof import('resource://gre/modules/FxAccountsCommon.sys.mjs'))['DEPRECATED_SCOPE_ECOSYSTEM_TELEMETRY'];
   ['FX_MONITOR_OAUTH_CLIENT_ID']: (typeof import('resource://gre/modules/FxAccountsCommon.sys.mjs'))['FX_MONITOR_OAUTH_CLIENT_ID'];
+  ['FX_RELAY_OAUTH_CLIENT_ID']: (typeof import('resource://gre/modules/FxAccountsCommon.sys.mjs'))['FX_RELAY_OAUTH_CLIENT_ID'];
+  ['VPN_OAUTH_CLIENT_ID']: (typeof import('resource://gre/modules/FxAccountsCommon.sys.mjs'))['VPN_OAUTH_CLIENT_ID'];
   ['UI_REQUEST_SIGN_IN_FLOW']: (typeof import('resource://gre/modules/FxAccountsCommon.sys.mjs'))['UI_REQUEST_SIGN_IN_FLOW'];
   ['UI_REQUEST_REFRESH_AUTH']: (typeof import('resource://gre/modules/FxAccountsCommon.sys.mjs'))['UI_REQUEST_REFRESH_AUTH'];
   ['WEBCHANNEL_ID']: (typeof import('resource://gre/modules/FxAccountsCommon.sys.mjs'))['WEBCHANNEL_ID'];
@@ -2629,6 +2679,12 @@ declare interface MozESMExportType {
   ['FxAccountsConfig']: (typeof import('resource://gre/modules/FxAccountsConfig.sys.mjs'))['FxAccountsConfig'];
   ['FxAccountsDevice']: (typeof import('resource://gre/modules/FxAccountsDevice.sys.mjs'))['FxAccountsDevice'];
   ['FxAccountsKeys']: (typeof import('resource://gre/modules/FxAccountsKeys.sys.mjs'))['FxAccountsKeys'];
+  ['ERROR_INVALID_SCOPES']: (typeof import('resource://gre/modules/FxAccountsOAuth.sys.mjs'))['ERROR_INVALID_SCOPES'];
+  ['ERROR_INVALID_STATE']: (typeof import('resource://gre/modules/FxAccountsOAuth.sys.mjs'))['ERROR_INVALID_STATE'];
+  ['ERROR_SYNC_SCOPE_NOT_GRANTED']: (typeof import('resource://gre/modules/FxAccountsOAuth.sys.mjs'))['ERROR_SYNC_SCOPE_NOT_GRANTED'];
+  ['ERROR_NO_KEYS_JWE']: (typeof import('resource://gre/modules/FxAccountsOAuth.sys.mjs'))['ERROR_NO_KEYS_JWE'];
+  ['ERROR_OAUTH_FLOW_ABANDONED']: (typeof import('resource://gre/modules/FxAccountsOAuth.sys.mjs'))['ERROR_OAUTH_FLOW_ABANDONED'];
+  ['FxAccountsOAuth']: (typeof import('resource://gre/modules/FxAccountsOAuth.sys.mjs'))['FxAccountsOAuth'];
   ['FxAccountsPairingFlow']: (typeof import('resource://gre/modules/FxAccountsPairing.sys.mjs'))['FxAccountsPairingFlow'];
   ['FxAccountsPairingChannel']: (typeof import('resource://gre/modules/FxAccountsPairingChannel.sys.mjs'))['FxAccountsPairingChannel'];
   ['FxAccountsPushService']: (typeof import('resource://gre/modules/FxAccountsPush.sys.mjs'))['FxAccountsPushService'];
@@ -2673,6 +2729,7 @@ declare interface MozESMExportType {
   ['BrowserUtils']: (typeof import('resource://gre/modules/BrowserUtils.sys.mjs'))['BrowserUtils'];
   ['CanonicalJSON']: (typeof import('resource://gre/modules/CanonicalJSON.sys.mjs'))['CanonicalJSON'];
   ['CertUtils']: (typeof import('resource://gre/modules/CertUtils.sys.mjs'))['CertUtils'];
+  ['ClipboardContextMenu']: (typeof import('resource://gre/modules/ClipboardContextMenu.sys.mjs'))['ClipboardContextMenu'];
   ['Color']: (typeof import('resource://gre/modules/Color.sys.mjs'))['Color'];
   ['ConsoleAPI']: (typeof import('resource://gre/modules/Console.sys.mjs'))['ConsoleAPI'];
   ['ConsoleAPI']: (typeof import('resource://gre/modules/Console.sys.mjs'))['ConsoleAPI'];
@@ -2704,8 +2761,17 @@ declare interface MozESMExportType {
   ['FinderParent']: (typeof import('resource://gre/modules/FinderParent.sys.mjs'))['FinderParent'];
   ['FirstStartup']: (typeof import('resource://gre/modules/FirstStartup.sys.mjs'))['FirstStartup'];
   ['FormLikeFactory']: (typeof import('resource://gre/modules/FormLikeFactory.sys.mjs'))['FormLikeFactory'];
+  ['GMPInstallManager']: (typeof import('resource://gre/modules/GMPInstallManager.sys.mjs'))['GMPInstallManager'];
+  ['GMPInstallManager']: (typeof import('resource://gre/modules/GMPInstallManager.sys.mjs'))['GMPInstallManager'];
+  ['GMPAddon']: (typeof import('resource://gre/modules/GMPInstallManager.sys.mjs'))['GMPAddon'];
+  ['GMPAddon']: (typeof import('resource://gre/modules/GMPInstallManager.sys.mjs'))['GMPAddon'];
+  ['GMPExtractor']: (typeof import('resource://gre/modules/GMPInstallManager.sys.mjs'))['GMPExtractor'];
+  ['GMPExtractor']: (typeof import('resource://gre/modules/GMPInstallManager.sys.mjs'))['GMPExtractor'];
+  ['GMPDownloader']: (typeof import('resource://gre/modules/GMPInstallManager.sys.mjs'))['GMPDownloader'];
+  ['GMPDownloader']: (typeof import('resource://gre/modules/GMPInstallManager.sys.mjs'))['GMPDownloader'];
   ['OPEN_H264_ID']: (typeof import('resource://gre/modules/GMPUtils.sys.mjs'))['OPEN_H264_ID'];
-  ['WIDEVINE_ID']: (typeof import('resource://gre/modules/GMPUtils.sys.mjs'))['WIDEVINE_ID'];
+  ['WIDEVINE_L1_ID']: (typeof import('resource://gre/modules/GMPUtils.sys.mjs'))['WIDEVINE_L1_ID'];
+  ['WIDEVINE_L3_ID']: (typeof import('resource://gre/modules/GMPUtils.sys.mjs'))['WIDEVINE_L3_ID'];
   ['GMP_PLUGIN_IDS']: (typeof import('resource://gre/modules/GMPUtils.sys.mjs'))['GMP_PLUGIN_IDS'];
   ['GMPUtils']: (typeof import('resource://gre/modules/GMPUtils.sys.mjs'))['GMPUtils'];
   ['GMPPrefs']: (typeof import('resource://gre/modules/GMPUtils.sys.mjs'))['GMPPrefs'];
@@ -2866,6 +2932,7 @@ declare interface MozESMExportType {
   ['PromptCollection']: (typeof import('resource://app/modules/PromptCollection.sys.mjs'))['PromptCollection'];
   ['WebProtocolHandlerRegistrar']: (typeof import('resource://app/modules/WebProtocolHandlerRegistrar.sys.mjs'))['WebProtocolHandlerRegistrar'];
   ['WebProtocolHandlerRegistrar']: (typeof import('resource://app/modules/WebProtocolHandlerRegistrar.sys.mjs'))['WebProtocolHandlerRegistrar'];
+  ['ReportBrokenSite']: (typeof import('resource://app/modules/ReportBrokenSite.sys.mjs'))['ReportBrokenSite'];
   ['ScreenshotsOverlay']: (typeof import('resource://app/modules/ScreenshotsOverlayChild.sys.mjs'))['ScreenshotsOverlay'];
   ['MAX_CAPTURE_DIMENSION']: (typeof import('resource://app/modules/ScreenshotsUtils.sys.mjs'))['MAX_CAPTURE_DIMENSION'];
   ['MAX_CAPTURE_AREA']: (typeof import('resource://app/modules/ScreenshotsUtils.sys.mjs'))['MAX_CAPTURE_AREA'];
@@ -2875,8 +2942,11 @@ declare interface MozESMExportType {
   ['ScreenshotsUtils']: (typeof import('resource://app/modules/ScreenshotsUtils.sys.mjs'))['ScreenshotsUtils'];
   ['BrowserSearchTelemetry']: (typeof import('resource://app/modules/BrowserSearchTelemetry.sys.mjs'))['BrowserSearchTelemetry'];
   ['SearchOneOffs']: (typeof import('resource://app/modules/SearchOneOffs.sys.mjs'))['SearchOneOffs'];
+  ['ADLINK_CHECK_TIMEOUT_MS']: (typeof import('resource://app/modules/SearchSERPTelemetry.sys.mjs'))['ADLINK_CHECK_TIMEOUT_MS'];
   ['TELEMETRY_SETTINGS_KEY']: (typeof import('resource://app/modules/SearchSERPTelemetry.sys.mjs'))['TELEMETRY_SETTINGS_KEY'];
   ['TELEMETRY_CATEGORIZATION_KEY']: (typeof import('resource://app/modules/SearchSERPTelemetry.sys.mjs'))['TELEMETRY_CATEGORIZATION_KEY'];
+  ['TELEMETRY_CATEGORIZATION_DOWNLOAD_SETTINGS']: (typeof import('resource://app/modules/SearchSERPTelemetry.sys.mjs'))['TELEMETRY_CATEGORIZATION_DOWNLOAD_SETTINGS'];
+  ['SEARCH_TELEMETRY_SHARED']: (typeof import('resource://app/modules/SearchSERPTelemetry.sys.mjs'))['SEARCH_TELEMETRY_SHARED'];
   ['SearchSERPTelemetryUtils']: (typeof import('resource://app/modules/SearchSERPTelemetry.sys.mjs'))['SearchSERPTelemetryUtils'];
   ['SearchSERPDomainToCategoriesMap']: (typeof import('resource://app/modules/SearchSERPTelemetry.sys.mjs'))['SearchSERPDomainToCategoriesMap'];
   ['SearchSERPTelemetry']: (typeof import('resource://app/modules/SearchSERPTelemetry.sys.mjs'))['SearchSERPTelemetry'];
@@ -2953,6 +3023,7 @@ declare interface MozESMExportType {
   ['UrlbarProviderPrivateSearch']: (typeof import('resource://app/modules/UrlbarProviderPrivateSearch.sys.mjs'))['UrlbarProviderPrivateSearch'];
   ['UrlbarProviderQuickActions']: (typeof import('resource://app/modules/UrlbarProviderQuickActions.sys.mjs'))['UrlbarProviderQuickActions'];
   ['UrlbarProviderQuickSuggest']: (typeof import('resource://app/modules/UrlbarProviderQuickSuggest.sys.mjs'))['UrlbarProviderQuickSuggest'];
+  ['UrlbarProviderQuickSuggestContextualOptIn']: (typeof import('resource://app/modules/UrlbarProviderQuickSuggestContextualOptIn.sys.mjs'))['UrlbarProviderQuickSuggestContextualOptIn'];
   ['UrlbarProviderRecentSearches']: (typeof import('resource://app/modules/UrlbarProviderRecentSearches.sys.mjs'))['UrlbarProviderRecentSearches'];
   ['UrlbarProviderRemoteTabs']: (typeof import('resource://app/modules/UrlbarProviderRemoteTabs.sys.mjs'))['UrlbarProviderRemoteTabs'];
   ['UrlbarProviderSearchSuggestions']: (typeof import('resource://app/modules/UrlbarProviderSearchSuggestions.sys.mjs'))['UrlbarProviderSearchSuggestions'];
@@ -2983,7 +3054,7 @@ declare interface MozESMExportType {
   ['test']: (typeof import('resource://gre/modules/txEXSLTRegExFunctions.sys.mjs'))['test'];
   ['ComponentUtils']: (typeof import('resource://gre/modules/ComponentUtils.sys.mjs'))['ComponentUtils'];
   ['XPCOMUtils']: (typeof import('resource://gre/modules/XPCOMUtils.sys.mjs'))['XPCOMUtils'];
-  ['OHTTPConfigManager']: (typeof import('resource://gre/modules/OHTTPConfigManager.sys.mjs'))['OHTTPConfigManager'];
+  ['HPKEConfigManager']: (typeof import('resource://gre/modules/HPKEConfigManager.sys.mjs'))['HPKEConfigManager'];
   ['WellKnownOpportunisticUtils']: (typeof import('resource://gre/modules/WellKnownOpportunisticUtils.sys.mjs'))['WellKnownOpportunisticUtils'];
   ['WellKnownOpportunisticUtils']: (typeof import('resource://gre/modules/WellKnownOpportunisticUtils.sys.mjs'))['WellKnownOpportunisticUtils'];
   ['ClientAuthDialogService']: (typeof import('resource://gre/modules/psm/ClientAuthDialogService.sys.mjs'))['ClientAuthDialogService'];
@@ -3253,6 +3324,7 @@ declare interface MozESMExportType {
   ['FormScenarios']: (typeof import('resource://gre/modules/FormScenarios.sys.mjs'))['FormScenarios'];
   ['SignUpFormRuleset']: (typeof import('resource://gre/modules/SignUpFormRuleset.sys.mjs'))['SignUpFormRuleset'];
   ['AddonSearchEngine']: (typeof import('resource://gre/modules/AddonSearchEngine.sys.mjs'))['AddonSearchEngine'];
+  ['AppProvidedSearchEngine']: (typeof import('resource://gre/modules/AppProvidedSearchEngine.sys.mjs'))['AppProvidedSearchEngine'];
   ['OpenSearchEngine']: (typeof import('resource://gre/modules/OpenSearchEngine.sys.mjs'))['OpenSearchEngine'];
   ['PolicySearchEngine']: (typeof import('resource://gre/modules/PolicySearchEngine.sys.mjs'))['PolicySearchEngine'];
   ['EngineURL']: (typeof import('resource://gre/modules/SearchEngine.sys.mjs'))['EngineURL'];
@@ -3382,6 +3454,7 @@ declare interface MozESMExportType {
   ['GeckoViewAutocomplete']: (typeof import('resource://gre/modules/GeckoViewAutocomplete.sys.mjs'))['GeckoViewAutocomplete'];
   ['gAutofillManager']: (typeof import('resource://gre/modules/GeckoViewAutofill.sys.mjs'))['gAutofillManager'];
   ['GeckoViewChildModule']: (typeof import('resource://gre/modules/GeckoViewChildModule.sys.mjs'))['GeckoViewChildModule'];
+  ['GeckoViewClipboardPermission']: (typeof import('resource://gre/modules/GeckoViewClipboardPermission.sys.mjs'))['GeckoViewClipboardPermission'];
   ['GeckoViewConsole']: (typeof import('resource://gre/modules/GeckoViewConsole.sys.mjs'))['GeckoViewConsole'];
   ['GeckoViewContent']: (typeof import('resource://gre/modules/GeckoViewContent.sys.mjs'))['GeckoViewContent'];
   ['GeckoViewContentBlocking']: (typeof import('resource://gre/modules/GeckoViewContentBlocking.sys.mjs'))['GeckoViewContentBlocking'];
@@ -3403,6 +3476,7 @@ declare interface MozESMExportType {
   ['HistogramStopwatch']: (typeof import('resource://gre/modules/GeckoViewTelemetry.sys.mjs'))['HistogramStopwatch'];
   ['GeckoViewTabUtil']: (typeof import('resource://gre/modules/GeckoViewTestUtils.sys.mjs'))['GeckoViewTabUtil'];
   ['GeckoViewTranslations']: (typeof import('resource://gre/modules/GeckoViewTranslations.sys.mjs'))['GeckoViewTranslations'];
+  ['GeckoViewTranslationsSettings']: (typeof import('resource://gre/modules/GeckoViewTranslations.sys.mjs'))['GeckoViewTranslationsSettings'];
   ['GeckoViewUtils']: (typeof import('resource://gre/modules/GeckoViewUtils.sys.mjs'))['GeckoViewUtils'];
   ['DownloadTracker']: (typeof import('resource://gre/modules/GeckoViewWebExtension.sys.mjs'))['DownloadTracker'];
   ['ExtensionActionHelper']: (typeof import('resource://gre/modules/GeckoViewWebExtension.sys.mjs'))['ExtensionActionHelper'];
