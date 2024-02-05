@@ -1,10 +1,11 @@
 // This file generates types for the gecko/firefox `Cc` object
 
-import { getXPCOMClasses } from 'gecko-index'
+import { ClassDefinition, getXPCOMClasses } from 'gecko-index'
 import ts from 'typescript'
 import { writeFile } from 'fs/promises'
 
 import { printNode } from './shared.js'
+import { type } from 'os'
 
 let ccDefFile = ''
 const ccDefFileBuilder = ts.createSourceFile(
@@ -34,6 +35,68 @@ const guessInterfaceName = (
   }
 }
 
+function guessInterfaceNames(c: ClassDefinition): string[] {
+  const names = new Set<string>()
+
+  if (c.type) {
+    if (c.type.includes('::')) {
+      const lcDecode = guessInterfaceName(undefined, c.type)
+      if (lcDecode) names.add(lcDecode)
+    } else if (c.type.startsWith('moz') || c.type.startsWith('ns')) {
+      names.add(c.type.replace('moz', 'mozI').replace('ns', 'nsI'))
+    } else {
+      const capitalzied =
+        c.type.substring(0, 1).toUpperCase() + c.type.substring(1)
+      names.add(`nsI${capitalzied}`)
+      names.add(c.type)
+    }
+  }
+
+  if (c.interfaces) {
+    for (const iface of c.interfaces) {
+      names.add(iface)
+    }
+  }
+
+  return [...names]
+}
+
+function createInstanceTypeDef(ifaces: string[]): ts.MethodSignature[] {
+  return ifaces.map((name) =>
+    ts.factory.createMethodSignature(
+      undefined,
+      ts.factory.createIdentifier('createInstance'),
+      undefined,
+      [],
+      [
+        ts.factory.createParameterDeclaration(
+          undefined,
+          undefined,
+          ts.factory.createIdentifier('req'),
+          undefined,
+          ts.factory.createIndexedAccessTypeNode(
+            ts.factory.createTypeReferenceNode(
+              ts.factory.createIdentifier('CiType'),
+              undefined,
+            ),
+            ts.factory.createLiteralTypeNode(
+              ts.factory.createStringLiteral(name),
+            ),
+          ),
+          undefined,
+        ),
+      ],
+      ts.factory.createIndexedAccessTypeNode(
+        ts.factory.createTypeReferenceNode(
+          ts.factory.createIdentifier('CiMap'),
+          undefined,
+        ),
+        ts.factory.createLiteralTypeNode(ts.factory.createStringLiteral(name)),
+      ),
+    ),
+  )
+}
+
 const { classes } = await getXPCOMClasses()
 const types: ts.TypeElement[] = classes.flatMap(
   (c) =>
@@ -47,6 +110,7 @@ const types: ts.TypeElement[] = classes.flatMap(
         : ts.factory.createKeywordTypeNode(ts.SyntaxKind.UnknownKeyword)
 
       const ifaceNameGuess = guessInterfaceName(c.type, c.legacy_constructor)
+      const ifaceNamesGuess = guessInterfaceNames(c)
 
       return ts.factory.createPropertySignature(
         undefined,
@@ -65,48 +129,7 @@ const types: ts.TypeElement[] = classes.flatMap(
                 [],
                 ifaceType,
               ),
-            !c.singleton &&
-              ts.factory.createMethodSignature(
-                undefined,
-                ts.factory.createIdentifier('createInstance'),
-                undefined,
-                [
-                  ts.factory.createTypeParameterDeclaration(
-                    undefined,
-                    ts.factory.createIdentifier('I'),
-                    ts.factory.createTypeReferenceNode('CiKeys'),
-                  ),
-                ],
-                [
-                  ts.factory.createParameterDeclaration(
-                    undefined,
-                    undefined,
-                    ts.factory.createIdentifier('req'),
-                    undefined,
-                    ts.factory.createIndexedAccessTypeNode(
-                      ts.factory.createTypeReferenceNode(
-                        ts.factory.createIdentifier('CiType'),
-                        undefined,
-                      ),
-                      ts.factory.createTypeReferenceNode(
-                        ts.factory.createIdentifier('I'),
-                        undefined,
-                      ),
-                    ),
-                    undefined,
-                  ),
-                ],
-                ts.factory.createIndexedAccessTypeNode(
-                  ts.factory.createTypeReferenceNode(
-                    ts.factory.createIdentifier('CiMap'),
-                    undefined,
-                  ),
-                  ts.factory.createTypeReferenceNode(
-                    ts.factory.createIdentifier('I'),
-                    undefined,
-                  ),
-                ),
-              ),
+            ...createInstanceTypeDef(!c.singleton ? ifaceNamesGuess : []),
             ts.factory.createPropertySignature(
               undefined,
               ts.factory.createIdentifier('name'),
