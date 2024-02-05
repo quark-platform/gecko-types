@@ -22,7 +22,7 @@ declare module Components {
     message?: string,
     result?: nsresult,
     stack?: unknown,
-    data?: T
+    data?: T,
   ): nsIExceptionType
 
   /**
@@ -40,11 +40,11 @@ declare module Components {
     ContractId extends keyof typeof Cc,
     InterfaceName extends (typeof Cc)[ContractId]['interfaceName'],
     Interface extends CiMap[InterfaceName],
-    Initializer extends keyof Interface
+    Initializer extends keyof Interface,
   >(
     contractId: ContractId,
     interfaceName: InterfaceName,
-    initializer: Initializer
+    initializer?: Initializer,
   ): {
     new (...params: Parameters<Interface[Initializer]>): Interface
   }

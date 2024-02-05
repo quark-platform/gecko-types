@@ -6,6 +6,4 @@ declare module PathUtils {
    * absolute path. There must be at least one component.
    */
   function join(...components: string[]): string
-
-  const File: new (path: string) => nsIFileType
 }
