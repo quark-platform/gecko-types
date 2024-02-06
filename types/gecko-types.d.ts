@@ -3,6 +3,7 @@
 ///<reference path="./custom/Components.d.ts" />
 ///<reference path="./custom/FileUtils.d.ts" />
 ///<reference path="./custom/PathUtils.d.ts" />
+///<reference path="./custom/Services.d.ts" />
 ///<reference path="./custom/idlTypes.d.ts" />
 ///<reference path="./custom/other.d.ts" />
 ///<reference path="./custom/webidlTypes.d.ts" />
